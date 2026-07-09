@@ -170,16 +170,11 @@
       color: var(--color-accent);
     }
     /* MAG 10 watchlist toggle (v3.36.0): sits to the right of the universe
-       buttons but is a filter, not a universe switch -- a left border
-       separates it visually so it doesn't read as an eighth universe.
-       No margin-left here: .universe-group's flex gap already provides
-       the same 6px spacing as every other button, so adding one here
-       would double the gap for this button alone. */
-    #mag10Btn {
-      padding-left: 12px;
-      border-left: 1px solid var(--color-border);
-      border-radius: 0 7px 7px 0;
-    }
+       buttons but is a filter, not a universe switch. It's a plain .btn (no
+       .u-btn), so it renders identically to the universe buttons -- same
+       rounded corners, same border -- and its .active state below mirrors
+       .u-btn.active. The .universe-group flex gap already spaces it evenly,
+       so no separator override is needed. */
     #mag10Btn.active {
       background: var(--color-accent-light);
       border-color: var(--color-accent);
