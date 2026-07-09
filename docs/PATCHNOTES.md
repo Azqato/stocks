@@ -2,6 +2,16 @@
 
 ---
 
+## v4.1.3 — 2026-07-09 — Docs backfill: sidebar rebrand entry (belated)
+
+**Backfilling a PATCHNOTES entry for the sidebar rebrand shipped earlier the same day (commit `b856324`), which landed without one.**
+
+### Changed
+
+- **Sidebar branding**: `.sidebar-brand a` renamed to "Azqato Invests" with a new sub-label "Individual Stocks" beneath it (`.sidebar-brand-sub`, muted small text). Brand text size increased 0.9rem → 1.125rem with tightened letter-spacing (-0.3px) to read as a wordmark rather than a nav link. Applied identically across all 8 content pages plus `screener.html`; shared styling lives in `style.css`.
+
+---
+
 ## v4.1.2 — 2026-07-09 — MAG 10 button styling unified with universe buttons
 
 **Owner reported the MAG 10 button "looks weird when I click on it" and asked for its CSS to match the other buttons.**

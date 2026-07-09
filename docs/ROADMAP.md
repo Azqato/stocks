@@ -1,17 +1,35 @@
 # ROADMAP.md — Implementation Plans for Planned Releases
 
-**Version:** 4.0.1
-**Last Updated:** 2026-07-04
+**Version:** 4.1.3
+**Last Updated:** 2026-07-09
 
 This document holds the detailed implementation plan for every item still open on the [PRD roadmap](PRD.md#roadmap). The PRD's milestone table remains the source of truth for **what** is planned and in what order; this file is the reference for **how** each item will be built. When a release ships, its plan here is trimmed to a pointer at the PRD milestone row and the PATCHNOTES entry.
 
-Release order (updated 2026-07-04): **v4.1.0 (next up)** → v4.2.0 → v4.3.0 → v4.4.0 → v4.5.0. (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, and v4.0.1 all shipped 2026-07-04.)
+Release order (updated 2026-07-09): **v4.1.0 Market Overview page (next up, new — prioritized ahead of sparklines)** → v4.2.0 score sparklines (renumbered from v4.1.0) → v4.3.0 index coverage (renumbered from v4.2.0) → v4.4.0 historical examples (renumbered from v4.3.0) → v4.5.0 philosophy sections (renumbered from v4.4.0) → v4.6.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, and v4.1.3 all shipped, most recently 2026-07-09.)
+
+---
+
+## v4.1.1 — Investor-vs-Trader Discipline & IPO-Timing Content — DONE 2026-07-08
+
+Content release pulled ahead of the roadmap queue by direct owner instruction, sourced from a video transcript review: two new `philosophy.html` sections ("Investor, Not Trader" and "Why We Wait on IPOs") plus two matching `faq.html` items, generalizing the transcript's warnings into durable, non-dated doctrine consistent with the site's existing no-advice/no-live-example rules. Ticker-specific and time-bound commentary from the source video was deliberately excluded. Not previously planned in this file (jumped the queue); see PATCHNOTES.md and the PRD milestone row for the full shipped record.
+
+---
+
+## v4.1.3 — Docs Backfill: Sidebar Rebrand Entry — DONE 2026-07-09
+
+The sidebar rebrand to "Azqato Invests" (with a new "Individual Stocks" sub-label) shipped as commit `b856324` earlier the same day without a PATCHNOTES entry. Logged retroactively: `.sidebar-brand a` sized up 0.9rem→1.125rem with -0.3px letter-spacing to read as a wordmark, new `.sidebar-brand-sub` muted sub-label beneath it, applied across all 8 content pages and `screener.html` via shared `style.css` rules. See PATCHNOTES.md for the backfilled record.
+
+---
+
+## v4.1.2 — MAG 10 Button Styling Unified with Universe Buttons — DONE 2026-07-09
+
+Owner reported the MAG 10 button "looks weird when I click on it." The v4.0.1 fix corrected the button's *spacing* but left its segmented-control styling (`border-radius: 0 7px 7px 0`, `border-left`, `padding-left: 12px`) in place; since `.universe-group` uses `gap: 6px`, the button never actually sat flush against the universe buttons, so the squared-off left corners just looked broken once the accent border lit up on click instead of reading as an intentional divider. Fix: removed all three segmented-control overrides from `#mag10Btn` in `screener.html` — it's now a plain `.btn`, rendering identically to the universe buttons in both resting and active states. **This reverses the v4.0.1 "keep the squared-off left corner" decision**: consistency wins now that the segmented look never worked once the flex gap was in place. See PATCHNOTES.md for the shipped record.
 
 ---
 
 ## v4.0.1 — MAG 10 Button Spacing Fix — DONE 2026-07-04
 
-Owner reported the MAG 10 button "appears different than the others" in the screener's app-bar. Diagnosed by injecting a debug script that measured `getBoundingClientRect()` for every app-bar button: the gap between International and MAG 10 was 12.0px, double the uniform 6.0px gap between every other consecutive pair. Root cause: `#mag10Btn`'s `margin-left: 6px` (added in v3.37.1, when the button moved from the tier-chip toolbar into the app-bar) stacked on top of `.universe-group`'s own flex `gap: 6px`. Fix: removed the redundant `margin-left` from `#mag10Btn` in `screener.html`, leaving the left-border divider and squared-off left corner (`border-radius: 0 7px 7px 0`) intact — those are the intentional visual cues that it's a filter, not an eighth universe. Re-verified with the same measurement script: all 8 gaps uniform at 6.0px. See PATCHNOTES.md for the shipped record.
+Owner reported the MAG 10 button "appears different than the others" in the screener's app-bar. Diagnosed by injecting a debug script that measured `getBoundingClientRect()` for every app-bar button: the gap between International and MAG 10 was 12.0px, double the uniform 6.0px gap between every other consecutive pair. Root cause: `#mag10Btn`'s `margin-left: 6px` (added in v3.37.1, when the button moved from the tier-chip toolbar into the app-bar) stacked on top of `.universe-group`'s own flex `gap: 6px`. Fix: removed the redundant `margin-left` from `#mag10Btn` in `screener.html`, leaving the left-border divider and squared-off left corner (`border-radius: 0 7px 7px 0`) intact — those were believed at the time to be intentional visual cues that it's a filter, not an eighth universe. Re-verified with the same measurement script: all 8 gaps uniform at 6.0px. **Superseded by v4.1.2**, which found the divider styling itself was the remaining problem and removed it. See PATCHNOTES.md for the shipped record.
 
 ---
 
@@ -294,7 +312,46 @@ Small by design, because v3.33.0 pre-paid for it:
 
 ---
 
-## v4.1.0 — Screener Score History Sparklines
+## v4.1.0 — Market Overview Page
+
+### Goal
+
+A new standalone page, styled as a CNBC-style card strip, showing at-a-glance daily price/change for the market's major broad benchmarks: DIA (Dow), SPY (S&P 500), QQQ (Nasdaq 100), IWM (Russell 2000), VTI (US Broad Market), VXUS (International Broad Market), VUG (Growth), VTV (Value), VIG (Dividend), and VIX (Volatility Index). Owner decisions locked 2026-07-04 (via AskUserQuestion): **new standalone page** (not a widget on an existing page), **daily snapshot** matching the site's existing once-daily batch pipeline (not live/intraday), **prioritized ahead of v4.1.0 sparklines** (this is the new v4.1.0; sparklines and everything after shift down one, see the renumbering note in PATCHNOTES.md/this file's release-order line).
+
+### Scope boundary (owner-set)
+
+This is a snapshot display, explicitly **not** the screener: no scoring, no tiers, no percentile ranking, no per-metric breakdown popup. Just symbol, name, last price, change, %change, and last-updated timestamp per card, refreshed once daily like the rest of the site.
+
+### Data
+
+1. **VIX is an index, not a fund** — Yahoo symbol `^VIX`, no shares/volume/AUM fields, only OHLC-style price data. Every other symbol in the list is a normal ETF already covered by the existing `fetch_screener_data.py`/`fetch_etf_data.py` patterns (price, previousClose).
+2. New lightweight fetch script (e.g. `scripts/fetch_market_overview.py`) rather than extending the ETFs universe fetch: this needs far fewer fields (no returns history, no RSI/52-week range, no technicals) than the scored ETFs universe, so reusing that heavier fetch would waste pipeline time and add unused fields to a feed that doesn't need them.
+3. Output: a new small feed, e.g. `data/market_overview.json`, `{"updated": ..., "quotes": {"DIA": {"name": ..., "price": ..., "prevClose": ..., "change": ..., "changePct": ...}, ...}}`.
+4. Workflow: new GitHub Actions job, same daily cadence and concurrency group as the existing five, positioned wherever it fits the existing post-close chain (see v3.34.5's schedule) since it's independent of the scored universes and doesn't need to run after them.
+
+### Frontend
+
+1. **New page** `market.html` (or similarly named; confirm exact filename with the owner at build time), following the existing guide-page sidebar/nav pattern used by the site's other 8 pages.
+2. **Card grid**: one card per symbol, CNBC-style — ticker, full name, last price, change arrow, change and %change, colored green/red by direction (reuse the site's existing `--color-positive`/`--color-negative` tokens, not new colors), "as of" timestamp matching the existing stale-data banner pattern from the screener.
+3. Responsive: card grid should reflow/wrap at the same breakpoints audited in v4.0.0 (375-1920px) rather than force horizontal scroll — apply the same auto-hide/wrap lessons from that pass rather than re-discovering them.
+4. Navigation: new nav item across all 9 pages (10th nav item after this ships), sitemap.xml entry, meta/OG tags following the existing page pattern.
+5. Content rule check: since this displays live-ish market data (not editorial content), it falls under the same labeled exception the screener already has for real-time data in the content rules.
+
+### Owner decisions still open (confirm before build)
+
+1. Exact page filename/nav label.
+2. Card order: fixed list order as given (DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, VIX) or sorted some other way.
+3. Whether to show anything beyond price/change/%change per card (e.g. a mini sparkline once v4.2.0 ships, day range, or keep it minimal like the CNBC reference).
+
+### Verification and acceptance
+
+- Headless Chrome: all 10 cards render with correct data, correct green/red coloring matches sign of change, responsive sweep 375-1920px shows zero horizontal overflow (reusing the v4.0.0 methodology: `scrollWidth === clientWidth` checks, not screenshots alone, plus `getBoundingClientRect()` gap checks for card spacing).
+- Workflow runs green in Actions, feed committed on schedule.
+- No regression to any existing page's nav (10th item doesn't break existing wrap/hamburger behavior).
+
+---
+
+## v4.2.0 — Screener Score History Sparklines
 
 ### Goal
 
@@ -330,7 +387,7 @@ A per-ticker score trend visual in the screener: a small inline sparkline column
 1. **Replay model**: recommend recomputing all history under the **current** model (consistent, comparable series). The alternative (as-shipped scores per era) is not reconstructible anyway; the historical rendered scores were never stored.
 2. **Window**: recommend 90 trading days shown; the miner can be re-run with a bigger window later since git history keeps everything.
 3. **Universes covered**: recommend all six including ETFs (rank-linear replays identically).
-4. Whether Trend ships as a **major** version: yes as planned (v4.1.0), it introduces the first derived-data artifact and a new default column across every universe.
+4. Whether Trend ships as a **major** version: yes as planned (v4.2.0), it introduces the first derived-data artifact and a new default column across every universe.
 
 ### Verification and acceptance
 
@@ -346,7 +403,7 @@ A per-ticker score trend visual in the screener: a small inline sparkline column
 
 ---
 
-## v4.2.0 — Deeper Index Fund Coverage
+## v4.3.0 — Deeper Index Fund Coverage
 
 ### Goal
 
@@ -359,7 +416,7 @@ Expand `indices.html` beyond the current core-index methodology with three new t
 3. **Bond tent strategy** — what it is (rising bond allocation approaching a goal date, descending after), why it exists (sequence-of-returns risk, defined at first use per content rules), and how it interacts with the income-contribution investing model the site teaches.
 4. Sequencing note: ship **after** v3.34.0 so the international section can link to the live International universe; the sector-ETF section already has the ETFs universe to point at.
 
-### Mechanics (applies to all four content releases, v4.2.0-v4.5.0)
+### Mechanics (applies to all four content releases, v4.3.0-v4.6.0)
 
 - Written for the primary persona (first-position investor): teach before asserting, define terms at first use, anchor to decisions the reader has faced.
 - Content rules: no em dashes, no advice language (educational framing only, no buy/sell verbs aimed at the reader), examples are descriptive not prescriptive.
@@ -369,7 +426,7 @@ Expand `indices.html` beyond the current core-index methodology with three new t
 
 ---
 
-## v4.3.0 — Additional Illustrative Examples (Historical Market Events)
+## v4.4.0 — Additional Illustrative Examples (Historical Market Events)
 
 ### Goal
 
@@ -381,11 +438,11 @@ Add worked historical examples across existing pages, showing the methodology ap
 2. Placement: each example embeds in the page whose concept it illustrates (metrics examples on `metrics.html`, timing examples on `indices.html`, temperament examples on `philosophy.html`) rather than a standalone examples page, so concepts and cases stay adjacent.
 3. Format per example: dated setup (what was knowable then, hindsight explicitly flagged), the metric readings at the time, what the methodology's rules said, what happened, and the teaching point. Historical figures verified against at least one primary-ish source before publishing; approximate figures rounded and labeled approximate.
 4. Constraint: examples must not read as track-record claims (no "this is what I bought"); they are illustrations of the rules, per the no-advice rule.
-5. Mechanics per the shared checklist in v4.2.0.
+5. Mechanics per the shared checklist in v4.3.0.
 
 ---
 
-## v4.4.0 — Additional Philosophy Sections
+## v4.5.0 — Additional Philosophy Sections
 
 ### Goal
 
@@ -396,11 +453,11 @@ Extend `philosophy.html` (currently 9 sections) with new conceptual material.
 1. Candidate sections (owner to pick at kickoff; these came out of prior roadmap discussion and PRD content-goals): when to sell (the hardest omission in most methodologies), position sizing and concentration for the income-contribution investor, drawdown temperament (what a 30% paper loss actually feels like and pre-committing behavior), the difference between conviction and stubbornness, and information diet (what to read daily vs quarterly vs never).
 2. Each section follows the existing philosophy-page pattern: concept, first-person grounding, the practical rule that falls out of it, cross-links to the metric/page that operationalizes it.
 3. FAQ additions for each new section (the FAQ page mirrors philosophy questions today).
-4. Mechanics per the shared checklist in v4.2.0.
+4. Mechanics per the shared checklist in v4.3.0.
 
 ---
 
-## v4.5.0 — Conference Call Research Guide
+## v4.6.0 — Conference Call Research Guide
 
 ### Goal
 
@@ -411,7 +468,7 @@ A new setup-guide page (peer to `finviz.html` and `seekingalpha.html`) teaching 
 1. **New page `conferencecalls.html`** following the existing guide-page pattern (step sections, sidebar nav, callout boxes): where calls live (IR pages, transcript sources incl. Seeking Alpha, cross-linking the existing guide), the anatomy of a call (prepared remarks vs Q&A and why Q&A matters more), what to listen for mapped to the site's six scored metrics (guidance vs the forward estimates the screener scores, margin commentary, balance-sheet language), red-flag phrasing patterns, and a simple insight log template (date, company, claim, metric affected, follow-up date).
 2. Navigation: header/footer nav additions across all pages (the one release in this set that touches every HTML file), sitemap entry, og/meta for the new page.
 3. Ties into the site loop: the guide should close the loop from screener score → "why is the forward estimate what it is" → hearing management's own version on the call.
-4. Mechanics per the shared checklist in v4.2.0, plus: full-site headless spot check since nav on every page changes.
+4. Mechanics per the shared checklist in v4.3.0, plus: full-site headless spot check since nav on every page changes.
 
 ---
 
