@@ -99,16 +99,23 @@ a:hover {
 }
 
 .sidebar-brand a {
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  letter-spacing: 0;
+  letter-spacing: -0.3px;
   white-space: nowrap;
 }
 
 .sidebar-brand a span { color: var(--color-accent); }
 
 .sidebar-brand a:hover { text-decoration: none; }
+
+.sidebar-brand-sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
 
 /* Mobile hamburger toggle: hidden on desktop, revealed under 1024px */
 .nav-toggle, .nav-burger { display: none; }
