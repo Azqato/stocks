@@ -2,6 +2,20 @@
 
 ---
 
+## v4.1.2 — 2026-07-09 — MAG 10 button styling unified with universe buttons
+
+**Owner reported the MAG 10 button "looks weird when I click on it" and asked for its CSS to match the other buttons.**
+
+### Fixed
+
+- **MAG 10 button no longer styled as a segmented-control segment**: `#mag10Btn` carried `border-radius: 0 7px 7px 0` (square left corners), `border-left`, and `padding-left: 12px` — a divider treatment meant to read as "filter, not an eighth universe" (see v4.0.1). But `.universe-group` uses `gap: 6px; flex-wrap: wrap`, so the button never sits flush against the universe buttons; it floats with a 6px gap, leaving two square left corners that looked broken once the accent border lit up on click. Removed all three overrides. MAG 10 is now a plain `.btn` (no `.u-btn`) that renders identically to the universe buttons in both resting and active states; its `.active` rule still mirrors `.u-btn.active`. **This reverses the "keep the squared-off left corner" decision from v4.0.1** — with the flex gap in place, the segmented look never worked, and consistency wins over the filter/universe visual distinction (the button's label, tooltip, and position already convey that).
+
+### Verified
+
+- `#mag10Btn` block in `screener.html` now contains only the `.active` rule; the JS toggle (`toggleMag10`/`updateMag10Button` in `screener.js`) was already correct and is unchanged.
+
+---
+
 ## v4.1.1 — 2026-07-08 — Investor-vs-trader discipline & IPO-timing content (video-sourced)
 
 **Owner asked for a video transcript to be reviewed for durable, non-dated concepts and folded into the site in the existing methodology's tone. Two new philosophy sections and two new FAQ items shipped; ticker-specific and time-bound commentary from the source video was left out by design.**
