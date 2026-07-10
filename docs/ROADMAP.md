@@ -1,11 +1,11 @@
 # ROADMAP.md — Implementation Plans for Planned Releases
 
-**Version:** 4.1.5
+**Version:** 4.1.6
 **Last Updated:** 2026-07-10
 
 This document holds the detailed implementation plan for every item still open on the [PRD roadmap](PRD.md#roadmap). The PRD's milestone table remains the source of truth for **what** is planned and in what order; this file is the reference for **how** each item will be built. When a release ships, its plan here is trimmed to a pointer at the PRD milestone row and the PATCHNOTES entry.
 
-Release order (updated 2026-07-10): **v4.2.0 Market Overview: reorganize categories & mortgage rate (next up, new — both awaiting owner scope/confirmation)** → v4.3.0 Market Overview: period-return filters (new — awaiting owner scope) → v4.4.0 score sparklines (renumbered from v4.1.0) → v4.5.0 index coverage (renumbered from v4.2.0) → v4.6.0 historical examples (renumbered from v4.3.0) → v4.7.0 philosophy sections (renumbered from v4.4.0) → v4.8.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, v4.1.0 Market Overview, v4.1.4, and v4.1.5 Market Overview expansions all shipped, most recently 2026-07-10.)
+Release order (updated 2026-07-10): **v4.2.0 Market Overview: mortgage rate (next up — awaiting owner confirmation on the FRED API key)** → v4.3.0 Market Overview: period-return filters (awaiting owner scope) → v4.4.0 score sparklines (renumbered from v4.1.0) → v4.5.0 index coverage (renumbered from v4.2.0) → v4.6.0 historical examples (renumbered from v4.3.0) → v4.7.0 philosophy sections (renumbered from v4.4.0) → v4.8.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, v4.1.0 Market Overview, v4.1.4, v4.1.5, and v4.1.6 Market Overview expansions/reorganization all shipped, most recently 2026-07-10.)
 
 ---
 
@@ -409,18 +409,58 @@ Gold (`GLD`) and Oil (`CL=F`, the front-month WTI crude futures contract) both w
 
 ---
 
-## v4.2.0 — Market Overview: Reorganize Categories & Mortgage Rate
+## v4.1.6 — Market Overview: Full Reorganization (Indices/Factors/Industries/Commodities/Bonds/Leveraged/Crypto) — DONE 2026-07-10
+
+Owner-driven reorganization, executed via a new spreadsheet workflow rather than back-and-forth chat edits.
+
+### New workflow: `data/market_overview_categories.xlsx`
+
+The owner asked for an editable spreadsheet (Category / Ticker / Display Name columns) to plan reorganizations and additions directly, rather than dictating changes one at a time. This became the standing process going forward: the owner edits the `.xlsx`, hands it back, and the site's `data/market_overview_list.json` (plus `market.html`'s rendering) is rebuilt from it. The `.xlsx` is regenerated after every change so the owner always has a current copy to review or edit further.
+
+### Architecture change: sections are now fully data-driven
+
+Previously (v4.1.4/v4.1.5), each category needed a hardcoded `<div id="market...Section">` in `market.html` plus a matching entry in a JS `GROUP_GRIDS`/`GROUP_SECTIONS` config — every new or renamed category meant editing markup and script by hand. Given the owner is now actively iterating on categories via the spreadsheet, this was refactored: `data/market_overview_list.json` entries carry a `"category"` field holding the **exact display text** (matches the spreadsheet's Category column 1:1, no abbreviation/lookup layer), and `market.html`'s `render()` builds `<div class="market-section"><h2>{category}</h2>...` dynamically for whatever categories are present, in first-seen order. Reorganizing categories now only ever requires editing the list file (or its source spreadsheet) — never the page's markup or script. `fetch_market_overview.py` was updated to read/pass through `"category"` (renamed from the old `"g"`/group field) unchanged.
+
+### Reorganization result: 7 categories, 61 symbols (up from 6 categories, 25 symbols)
+
+- **Indices** (12): SPY, QQQ, VIX, DIA, RSP, IWM, VTI, VXUS, TLT, IJR, VBR, IJH — broad benchmarks, kept together with the volatility index and (per owner's own placement) the long-bond ETF.
+- **Factors** (6): VUG, VTV, VIG, SPMO, SPHB, SPLV — style/factor tilts split out of the old catch-all Indices group. **SPLV's display name corrected** from the owner's draft "Low Beta" to "Low Volatility" (SPLV's actual name; there is no standard "S&P 500 Low Beta" ETF under that ticker) — flagged to the owner, not silently changed without note.
+- **Industries** (11): the 11 GICS sector SPDRs (XLP, XLI, XLV, XLF, XLRE, XLE, XLU, XLK, XLB, XLY, XLC) — the previous single-symbol placeholder (VNQ) was replaced with the full standard sector-SPDR family per the owner's edit; XLRE covers the same Real Estate sector VNQ did.
+- **Commodities** (6): Oil (`CL=F`), Natural Gas (`NG=F`), Gold (`GLD`), Silver (`SI=F`), Platinum (`PL=F`), Copper (`HG=F`) — futures contracts for the four new entries (owner gave names, not tickers, for Natural Gas/Silver/Platinum/Copper; picked front-month futures to match Oil's existing precedent, since Gold already breaks that pattern by using an ETF wrapper).
+- **Bonds** (4): 2-Year (`2YY=F`), 5-Year (`^FVX`, newly added), 10-Year (`^TNX`), 30-Year (`^TYX`) — all confirmed working directly via yfinance, already in percent.
+- **Leveraged ETFs** (9): the single TQQQ placeholder expanded to TQQQ, SPXL, TNA, UDOW, SOXL, TECL, QLD, SSO, USD. **QLD/SSO/USD corrected** from the owner's implied "3x" naming to the funds' actual leverage: QLD and SSO are ProShares **2x** funds ("Ultra," not "UltraPro"), USD (ProShares Ultra Semiconductors) is also 2x — verified against each fund's actual name via `Ticker.info`, not assumed from the row's position among the 3x entries.
+- **Crypto** (13, up from 1): BTC, ETH, BNB, XRP, SOL, TRX, DOGE, ZEC, XLM, ADA, XMR, LTC, AVAX — **ordered by live market cap** (largest first) per explicit owner instruction, which also applies going forward: re-sort by market cap whenever this section is edited, since ranks drift over time. Two corrections from the owner's draft: **XLM's name fixed** from "Steller" (typo) to "Stellar"; **HYPE (Hyperliquid) excluded** — Yahoo's `HYPE-USD` ticker resolves to an unrelated near-worthless token ("Supreme Finance," ~$8K market cap, not Hyperliquid), confirmed via a live probe. No clean Yahoo symbol exists for Hyperliquid as of 2026-07-10; do not add it under that ticker without re-verifying first.
+
+### Also shipped this pass
+
+- **Time-of-day emoji** on the "Last updated" badge (owner request, so the refresh window reads at a glance without parsing the timestamp): 🌅 for the ~15:00 UTC run (shortly after open), ☀️ for ~19:00 UTC (midday), 🌆 for ~22:00 UTC (shortly after close). Bucketed on the feed's own UTC schedule, not the viewer's local time.
+- Intro copy and meta/OG/Twitter descriptions rewritten to name all 7 categories instead of the earlier hand-picked highlight list.
+
+### Verified
+
+- `fetch_market_overview.py` run against live data: 61/61 symbols fetched successfully across all 7 categories.
+- Headless Chrome with `raw.githubusercontent.com` network-blocked: all 7 sections render in the correct order with correct data; crypto confirmed sorted by market cap; yield cards retain their percent + point-delta format; leveraged-fund labels verified against each fund's actual name.
+- Responsive sweep 375/700/1023/1920px: zero horizontal overflow at any width despite the page's much larger size (61 cards vs. 25).
+
+### Remaining open item
+
+**Mortgage rate** was requested alongside this reorganization but is **not** part of it — it still needs a non-yfinance data source (see the trimmed v4.2.0 below), unrelated to the category restructuring.
+
+---
+
+## v4.2.0 — Market Overview: Mortgage Rate
 
 ### Goal
 
-Two open items, logged together since both are small and unscoped pending owner input:
+Owner request: the current 30-year mortgage rate. **Reorganize categories, originally bundled with this item, shipped separately as v4.1.6** — this entry now covers only the mortgage-rate data-source problem.
 
-1. **Reorganize categories** (owner request, 2026-07-10, no specifics given yet). The page now has 6 sections (Indices, Bond Yields, Industries, Leveraged ETFs, Commodities, Crypto) added incrementally over one session — worth a deliberate pass on ordering, grouping, and whether "Indices" (17 symbols) should itself be split (e.g. broad index / factor-tilt / sector subgroups) now that it's grown well past the other sections. **Do not guess a new structure** — wait for the owner's specific direction on what "reorganize" means before touching section order or the grouping scheme.
-2. **Mortgage rate**: needs a non-yfinance data source. FRED's public API (`MORTGAGE30US` series, weekly Freddie Mac PMMS data) is the most likely candidate — free, no scraping fragility, but does require a FRED API key (free to obtain) and a second fetch mechanism alongside yfinance in `fetch_market_overview.py`, or a small dedicated fetch step. Needs a probe (confirm the FRED API's actual response shape and key-acquisition process) before committing to the design, same probe-first approach as the bond-yields item above.
+### Data source
+
+No Yahoo Finance ticker exists for the 30-year mortgage average — every plausible guess (`^MORTGAGE30US`, `MORTGAGE30US`) 404'd (confirmed 2026-07-10). This is genuinely a different data source, not a yfinance gap that more ticker-guessing will close. FRED's public API (`MORTGAGE30US` series, weekly Freddie Mac PMMS data) is the most likely candidate — free, no scraping fragility, but requires a FRED API key (free to obtain) and a second fetch mechanism alongside yfinance in `fetch_market_overview.py`, or a small dedicated fetch step. Needs a probe (confirm the FRED API's actual response shape and key-acquisition process) before committing to the design, same probe-first approach as the bond-yields item.
 
 ### Owner confirmation needed before implementation starts
 
-Both items need owner input before work begins: specifics on what "reorganize" should produce, and a decision on whether a FRED API key is acceptable (this site has otherwise been entirely key-free, so this would be a first).
+Whether a FRED API key is acceptable — this site has otherwise been entirely key-free (every other data source is yfinance/public Wikipedia/public Vanguard endpoints), so this would be a first.
 
 ---
 

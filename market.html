@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market Overview</title>
-  <meta name="description" content="A daily snapshot of the major US and international market benchmarks: Dow, S&P 500, Nasdaq 100, Russell 2000, US and international total-market funds, Growth, Value, Dividend, and the VIX volatility index.">
+  <meta name="description" content="A same-day market snapshot: major indices, factor and style funds, sector ETFs, commodities, Treasury yields, leveraged ETFs, and crypto, refreshed three times per trading day.">
   <link rel="canonical" href="https://azqato.github.io/stocks/market.html">
   <meta name="google-site-verification" content="p91IiuxXa8OCaa0C8U8XFgr7yP2QNWDE1fCN8PcZOp4">
   <!-- Open Graph / Discord -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://azqato.github.io/stocks/market.html">
   <meta property="og:title" content="Market Overview">
-  <meta property="og:description" content="A daily snapshot of the major US and international market benchmarks, refreshed once per trading day.">
+  <meta property="og:description" content="A same-day market snapshot across indices, factors, sectors, commodities, yields, leveraged ETFs, and crypto, refreshed three times per trading day.">
   <meta property="og:image" content="https://azqato.github.io/stocks/og-image.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Market Overview">
-  <meta name="twitter:description" content="A daily snapshot of the major US and international market benchmarks, refreshed once per trading day.">
+  <meta name="twitter:description" content="A same-day market snapshot across indices, factors, sectors, commodities, yields, leveraged ETFs, and crypto, refreshed three times per trading day.">
   <meta name="twitter:image" content="https://azqato.github.io/stocks/og-image.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
   <link rel="stylesheet" href="style.css">
@@ -154,43 +154,15 @@
 
           <div class="guide-intro">
             <h1>Market Overview</h1>
-            <p>A same-day snapshot across US indices, market-cap and factor tilts, sector and leveraged funds, commodities, crypto, and Treasury yields. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close) so it reads as a live check-in, not a stale close-of-business number.</p>
-            <div class="hero-badge market-asof">🕒 <span id="marketAsOf">Loading market data&hellip;</span></div>
+            <p>A same-day snapshot across Indices, Factors, Industries, Commodities, Bonds, Leveraged ETFs, and Crypto. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close) so it reads as a live check-in, not a stale close-of-business number.</p>
+            <div class="hero-badge market-asof"><span id="marketAsOfEmoji">🕒</span> <span id="marketAsOf">Loading market data&hellip;</span></div>
           </div>
 
           <div class="market-stale-banner" id="marketStaleBanner" style="margin-top: 28px;">
             <span id="marketStaleText"></span>
           </div>
 
-          <div class="market-section">
-            <h2>Indices</h2>
-            <div class="market-grid" id="marketGrid" aria-live="polite"></div>
-          </div>
-
-          <div id="marketYieldsSection" class="market-section" hidden>
-            <h2>Bond Yields</h2>
-            <div class="market-grid" id="marketYieldsGrid" aria-live="polite"></div>
-          </div>
-
-          <div id="marketIndustriesSection" class="market-section" hidden>
-            <h2>Industries</h2>
-            <div class="market-grid" id="marketIndustriesGrid" aria-live="polite"></div>
-          </div>
-
-          <div id="marketLeveragedSection" class="market-section" hidden>
-            <h2>Leveraged ETFs</h2>
-            <div class="market-grid" id="marketLeveragedGrid" aria-live="polite"></div>
-          </div>
-
-          <div id="marketCommoditiesSection" class="market-section" hidden>
-            <h2>Commodities</h2>
-            <div class="market-grid" id="marketCommoditiesGrid" aria-live="polite"></div>
-          </div>
-
-          <div id="marketCryptoSection" class="market-section" hidden>
-            <h2>Crypto</h2>
-            <div class="market-grid" id="marketCryptoGrid" aria-live="polite"></div>
-          </div>
+          <div id="marketSections"></div>
 
         </div>
       </main>
@@ -207,26 +179,19 @@
     (function () {
       "use strict";
 
-      // The symbol list and display order live in data/market_overview_list.json
-      // (via each quote's insertion order in the feed -- fetch_market_overview.py
-      // writes quotes in the list's order, so no separate hardcoded order is
-      // needed here). Pulled straight from GitHub (raw) so this works even
-      // opened locally; falls back to the same-origin copy.
+      // The symbol list, category structure, and display order all live in
+      // data/market_overview_list.json (via each quote's "category" field and
+      // its insertion order in the feed -- fetch_market_overview.py writes
+      // quotes in the list's order). Sections are built dynamically below from
+      // whatever categories are present, in first-seen order, so reorganizing
+      // categories (renaming, reordering, adding a new one) only ever requires
+      // editing the list file (or its source spreadsheet,
+      // data/market_overview_categories.xlsx) -- never this markup/script.
+      // Pulled straight from GitHub (raw) so this works even opened locally;
+      // falls back to the same-origin copy.
       var RAW_BASE = "https://raw.githubusercontent.com/Azqato/stocks/main/data/";
       var PATHS = [RAW_BASE + "market_overview.json", "data/market_overview.json"];
       var CACHE_KEY = "azq_market_overview_cache";
-      // Section grid element IDs, keyed by the feed's "group" field. "benchmarks"
-      // (the "Indices" heading) always has content; every other section is a
-      // placeholder the owner is seeding one or a few symbols at a time, hidden
-      // entirely if a group ends up with zero symbols.
-      var GROUP_GRIDS = {
-        benchmarks: "marketGrid", yields: "marketYieldsGrid", industries: "marketIndustriesGrid",
-        leveraged: "marketLeveragedGrid", commodities: "marketCommoditiesGrid", crypto: "marketCryptoGrid"
-      };
-      var GROUP_SECTIONS = {
-        yields: "marketYieldsSection", industries: "marketIndustriesSection",
-        leveraged: "marketLeveragedSection", commodities: "marketCommoditiesSection", crypto: "marketCryptoSection"
-      };
 
       function readCache() {
         try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch (e) { return null; }
@@ -305,29 +270,48 @@
         '</div>';
       }
 
+      // Purely cosmetic: lets the "Last updated" badge be read at a glance
+      // without parsing the timestamp. Bucketed on the feed's own UTC
+      // schedule (15:00/19:00/22:00 UTC, see market-overview.yml), not the
+      // viewer's local time -- this reflects which of the three daily runs
+      // produced the data, not what time it is for the person looking at it.
+      function timeEmoji(iso) {
+        if (!iso) return "🕒";
+        var hour = new Date(iso).getUTCHours();
+        if (hour < 17) return "🌅";   // ~15:00 UTC run, shortly after the US open
+        if (hour < 21) return "☀️";  // ~19:00 UTC run, midday
+        return "🌆";                  // ~22:00 UTC run, shortly after the US close
+      }
+
       function render(feed) {
         var quotes = feed.quotes || {};
-        var byGroup = {};
-        Object.keys(GROUP_GRIDS).forEach(function (g) { byGroup[g] = []; });
+
+        // Bucket tickers by category, preserving first-seen order (which
+        // matches the list file's order) so the section order on the page
+        // always matches the spreadsheet/list file without a hardcoded map.
+        var categoryOrder = [];
+        var byCategory = {};
         Object.keys(quotes).forEach(function (ticker) {
-          var group = quotes[ticker].group || "benchmarks";
-          (byGroup[group] || byGroup.benchmarks).push(ticker);
+          var cat = quotes[ticker].category || "Other";
+          if (!byCategory[cat]) { byCategory[cat] = []; categoryOrder.push(cat); }
+          byCategory[cat].push(ticker);
         });
 
-        Object.keys(GROUP_GRIDS).forEach(function (group) {
-          var grid = document.getElementById(GROUP_GRIDS[group]);
-          var tickers = byGroup[group] || [];
-          grid.innerHTML = tickers.map(function (t) { return cardHtml(t, quotes[t]); }).join("");
-          var sectionId = GROUP_SECTIONS[group];
-          if (sectionId) {
-            document.getElementById(sectionId).hidden = tickers.length === 0;
-          }
-        });
+        var container = document.getElementById("marketSections");
+        container.innerHTML = categoryOrder.map(function (cat) {
+          var cards = byCategory[cat].map(function (t) { return cardHtml(t, quotes[t]); }).join("");
+          return '<div class="market-section">' +
+            '<h2>' + cat + '</h2>' +
+            '<div class="market-grid">' + cards + '</div>' +
+          '</div>';
+        }).join("");
 
         var asOf = document.getElementById("marketAsOf");
         asOf.textContent = feed.updated
           ? "Last updated " + new Date(feed.updated).toLocaleString()
           : "Last updated time unavailable";
+        var emojiEl = document.getElementById("marketAsOfEmoji");
+        if (emojiEl) emojiEl.textContent = timeEmoji(feed.updated);
 
         // Threshold is 4 days, not the screener's 7: this feed updates three
         // times per trading day, so even a 3-day holiday weekend (Fri 22:00

@@ -2,6 +2,36 @@
 
 ---
 
+## v4.1.6 — 2026-07-10 — Market Overview: full reorganization (7 categories, 61 symbols)
+
+**Owner reorganized the page via a new editable spreadsheet workflow: 7 categories (Indices, Factors, Industries, Commodities, Bonds, Leveraged ETFs, Crypto) and 61 symbols, up from 6 categories and 25. Category rendering is now fully data-driven instead of hardcoded per section.**
+
+### Added
+
+- **`data/market_overview_categories.xlsx`**: new editable Category/Ticker/Display Name spreadsheet, the owner's working document for planning reorganizations and additions. Regenerated after every change so the owner always has a current copy to review.
+- **34 new symbols** across the reorganized categories: Factors (SPHB, SPLV — split out of the old Indices catch-all alongside VUG/VTV/VIG/SPMO), Industries (the full 11 GICS sector SPDRs XLP/XLI/XLV/XLF/XLRE/XLE/XLU/XLK/XLB/XLY/XLC, replacing the single VNQ placeholder), Commodities (Natural Gas, Silver, Platinum, Copper — futures contracts, matching Oil's existing precedent), Bonds (5-Year via `^FVX`, joining 2/10/30-Year), Leveraged ETFs (SPXL, TNA, UDOW, SOXL, TECL, QLD, SSO, USD, joining TQQQ), Crypto (ETH, BNB, XRP, SOL, TRX, DOGE, ZEC, XLM, ADA, XMR, LTC, AVAX, joining BTC — **ordered by market cap**, largest first, a standing rule for future edits since ranks drift over time).
+- **Time-of-day emoji** on the "Last updated" badge: 🌅 for the ~15:00 UTC run, ☀️ for ~19:00 UTC, 🌆 for ~22:00 UTC — bucketed on the feed's own refresh schedule, not the viewer's local time.
+
+### Changed
+
+- **Category rendering is now fully data-driven**: `data/market_overview_list.json` entries carry a `"category"` field holding the exact section-heading text (no abbreviation/lookup layer), and `market.html`'s `render()` builds each `<div class="market-section">` dynamically from whatever categories are present, in first-seen order. Previously every category needed a hardcoded HTML block plus a matching JS config entry — reorganizing now only ever requires editing the list file (or its source spreadsheet), never the page's markup or script. `fetch_market_overview.py` updated to read/pass through `"category"` (renamed from the old `"g"` group field).
+- Intro copy and meta/OG/Twitter descriptions rewritten to name all 7 categories.
+
+### Fixed (data corrections, flagged to the owner rather than silently applied)
+
+- **SPLV** relabeled "Low Beta" → **"Low Volatility"** (the fund's actual name — there's no standard S&P 500 "Low Beta" ETF under that ticker).
+- **QLD, SSO, USD** corrected from an implied 3x to their actual **2x** leverage (ProShares "Ultra" funds, not "UltraPro") — verified against each fund's real name via `Ticker.info`, not assumed from their position among the 3x entries.
+- **XLM** typo fixed: "Steller" → "Stellar".
+- **Hyperliquid (HYPE) excluded**: Yahoo's `HYPE-USD` ticker resolves to an unrelated near-worthless token ("Supreme Finance," ~$8K market cap), not Hyperliquid. No clean Yahoo symbol exists for it as of this writing.
+
+### Verified
+
+- `fetch_market_overview.py` run against live data: 61/61 symbols fetched successfully across all 7 categories.
+- Headless Chrome with `raw.githubusercontent.com` network-blocked: all 7 sections render in the correct order with correct data; crypto confirmed sorted by market cap; yield-card and leveraged-fund labels verified correct.
+- Responsive sweep 375/700/1023/1920px: zero horizontal overflow at any width despite the page's much larger size.
+
+---
+
 ## v4.1.5 — 2026-07-10 — Market Overview: bond yields, commodities, crypto, UI polish
 
 **Same-day continuation of v4.1.4: three new data categories, a rendering bug fix, and a round of UI polish requested while the owner tested the live page.**

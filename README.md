@@ -111,13 +111,14 @@ stocks/
 │   ├── etfs.json                     ← ETFs list: fixed, owner-curated 10 funds (hand-edited only)
 │   ├── vxus.json                     ← International list: top 100 VXUS holdings (Yahoo symbols)
 │   ├── vxus_map.json                 ← ISIN → Yahoo symbol resolution cache + manual overrides
-│   ├── market_overview_list.json     ← Market Overview list: fixed, owner-curated 10 symbols (hand-edited only)
+│   ├── market_overview_list.json     ← Market Overview list: owner-curated 61 symbols/7 categories (hand-edited, or rebuilt from market_overview_categories.xlsx)
+│   ├── market_overview_categories.xlsx ← Owner's editable Category/Ticker/Display Name spreadsheet (source of truth for reorganizing market_overview_list.json)
 │   ├── screener.json                 ← Generated Nasdaq 100 feed (Mon-Fri metrics)
 │   ├── screener_sp500.json           ← Generated S&P 500 feed (Mon-Fri metrics)
 │   ├── screener_gvd.json             ← Generated combined Growth/Value/Dividend feed
 │   ├── screener_etfs.json            ← Generated ETFs feed (technicals/returns/yield/cost)
 │   ├── screener_intl.json            ← Generated International feed (six-metric stock model, native currency)
-│   └── market_overview.json          ← Generated Market Overview feed (price/change snapshot, 10 symbols)
+│   └── market_overview.json          ← Generated Market Overview feed (price/change snapshot, 61 symbols/7 categories)
 ├── scripts/
 │   ├── fetch_screener_data.py        ← Python pipeline: yfinance → stock feeds (--list/--out, --combined)
 │   ├── fetch_etf_data.py             ← Python pipeline: yfinance → ETFs feed (returns, RSI, MAs, yield, ER, AUM)

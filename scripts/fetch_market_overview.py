@@ -22,29 +22,42 @@ the list's separate "y" (Yahoo fetch symbol) vs "t" (display ticker) columns.
 
 Uses yfinance (public Yahoo Finance data), so there is no API key.
 
-Each list entry also carries a "g" (group) field -- "benchmarks", "industries",
-"leveraged", "commodities", "crypto", or "yields" -- so the frontend can render
-separate sections without a second parallel config. Quote insertion order
-matches the list's order, so the frontend does not need its own hardcoded
-display-order array either.
+Each list entry carries a "category" field -- free text, e.g. "Indices",
+"Factors", "Industries", "Commodities", "Bonds", "Leveraged ETFs", "Crypto" --
+that becomes the section heading verbatim on the page. This is intentionally
+the *exact* structure of data/market_overview_categories.xlsx (Category /
+Ticker / Display Name columns), which is the owner's working document for
+reorganizing this page: the owner edits the spreadsheet, and this list (plus
+the section layout on market.html, which renders sections dynamically from
+whatever categories it finds -- no hardcoded per-category HTML/JS to update)
+is rebuilt from it. Quote insertion order matches the list's order, so the
+frontend does not need its own hardcoded display-order array either.
 
-"yields" entries carry an additional "unit": "pct" field, since their "price"
-IS already a percentage (a Treasury yield), not a fund NAV -- the frontend
-must not compute or display changePct for these (a small yield move looks
-like a huge, misleading percentage move; e.g. 4.539 -> 4.569 is +0.66% of
-the *number* but the actual, meaningful move is "+0.030 percentage points").
-The plain "change" field (price - prevClose) is already the correct
-point-change for these and needs no special handling. Yield symbols
-(data/market_overview_list.json's "yields" group): 2-Year via "2YY=F"
-(2-Year Yield Futures -- ^UST2Y/^US2Y do not exist on Yahoo, this is the
-closest working proxy), 10-Year via "^TNX", 30-Year via "^TYX". All three
-return the yield already in percent (no /10 scaling needed, verified
-2026-07-10) via the same Ticker.info fields as everything else. Foreign
-sovereign yields and the 30-year mortgage rate are NOT available via
-yfinance (every plausible ticker guess 404s) -- see ROADMAP.md.
+Crypto entries are ordered by market cap (largest first), per owner
+instruction (2026-07-10) -- re-check and reorder if reshuffling this section,
+market cap ranks change over time. NOTE: Yahoo's "HYPE-USD" ticker does NOT
+resolve to Hyperliquid -- it resolves to an unrelated near-worthless token
+("Supreme Finance", ~$8K market cap). Hyperliquid has no clean symbol on
+Yahoo Finance as of 2026-07-10; do not add it under that ticker without
+re-verifying first.
+
+"Bonds" category entries carry an additional "unit": "pct" field, since their
+"price" IS already a percentage (a Treasury yield), not a fund NAV -- the
+frontend must not compute or display changePct for these (a small yield move
+looks like a huge, misleading percentage move; e.g. 4.539 -> 4.569 is +0.66%
+of the *number* but the actual, meaningful move is "+0.030 percentage
+points"). The plain "change" field (price - prevClose) is already the
+correct point-change for these and needs no special handling. Yield symbols:
+2-Year via "2YY=F" (2-Year Yield Futures -- ^UST2Y/^US2Y do not exist on
+Yahoo, this is the closest working proxy), 5-Year via "^FVX", 10-Year via
+"^TNX", 30-Year via "^TYX". All four return the yield already in percent (no
+/10 scaling needed, verified 2026-07-10) via the same Ticker.info fields as
+everything else. Foreign sovereign yields and the 30-year mortgage rate are
+NOT available via yfinance (every plausible ticker guess 404s) -- see
+ROADMAP.md.
 
 Output schema: { "updated": ISO, "source": "yahoo",
-  "quotes": { TICKER: { "name", "group", "unit", "price", "prevClose", "change", "changePct" }, ... } }
+  "quotes": { TICKER: { "name", "category", "unit", "price", "prevClose", "change", "changePct" }, ... } }
 "unit" is only present ("pct") on yield entries; absent means "price" (default).
 
 Env:
@@ -95,7 +108,7 @@ def main():
     ok = 0
     for item in listing:
         ticker = item["t"]
-        rec = {"name": item["n"], "group": item.get("g", "benchmarks")}
+        rec = {"name": item["n"], "category": item["category"]}
         if item.get("unit"):
             rec["unit"] = item["unit"]
         for attempt in range(3):
