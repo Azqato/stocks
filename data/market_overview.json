@@ -1,182 +1,182 @@
 {
-  "updated": "2026-07-10T06:02:45.773667Z",
+  "updated": "2026-07-10T16:53:14.629927Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
       "name": "S&P 500",
       "group": "benchmarks",
-      "price": 751.71,
-      "prevClose": 745.4,
-      "change": 6.310000000000059,
-      "changePct": 0.8465253555138164
+      "price": 753.85,
+      "prevClose": 751.71,
+      "change": 2.1399999999999864,
+      "changePct": 0.28468425323595614
     },
     "QQQ": {
       "name": "Nasdaq 100",
       "group": "benchmarks",
-      "price": 723.28,
-      "prevClose": 711.44,
-      "change": 11.839999999999918,
-      "changePct": 1.664230293489255
+      "price": 725.32,
+      "prevClose": 723.2258,
+      "change": 2.0942000000000007,
+      "changePct": 0.2895637849202881
     },
     "VIX": {
       "name": "Volatility",
       "group": "benchmarks",
-      "price": 15.84,
-      "prevClose": 16.9,
-      "change": -1.0599999999999987,
-      "changePct": -6.2721893491124225
+      "price": 15.37,
+      "prevClose": 15.84,
+      "change": -0.47000000000000064,
+      "changePct": -2.967171717171724
     },
     "DIA": {
       "name": "Dow Jones",
       "group": "benchmarks",
-      "price": 524.19,
-      "prevClose": 522.77,
-      "change": 1.4200000000000728,
-      "changePct": 0.27162997111542797
+      "price": 525.49,
+      "prevClose": 524.19,
+      "change": 1.2999999999999545,
+      "changePct": 0.248001678780585
     },
     "RSP": {
       "name": "S&P 500 Equal Weight",
       "group": "benchmarks",
-      "price": 213.5,
-      "prevClose": 212.2,
-      "change": 1.3000000000000114,
-      "changePct": 0.6126295947219695
+      "price": 214.1492,
+      "prevClose": 213.5,
+      "change": 0.6492000000000075,
+      "changePct": 0.30407494145199276
     },
     "SPMO": {
       "name": "Momentum",
       "group": "benchmarks",
-      "price": 153.08,
-      "prevClose": 150.57,
-      "change": 2.5100000000000193,
-      "changePct": 1.6669987381284557
+      "price": 153.6,
+      "prevClose": 153.08,
+      "change": 0.5199999999999818,
+      "changePct": 0.3396916644891501
     },
     "IWM": {
       "name": "Russell 2000",
       "group": "benchmarks",
-      "price": 297.24,
-      "prevClose": 293.48,
-      "change": 3.759999999999991,
-      "changePct": 1.2811775930216651
+      "price": 295.64,
+      "prevClose": 297.24,
+      "change": -1.6000000000000227,
+      "changePct": -0.5382855604898484
     },
     "IJH": {
       "name": "Mid-Cap",
       "group": "benchmarks",
-      "price": 75.7,
-      "prevClose": 74.73,
-      "change": 0.9699999999999989,
-      "changePct": 1.2980061554931144
+      "price": 75.69,
+      "prevClose": 75.7,
+      "change": -0.010000000000005116,
+      "changePct": -0.013210039630129344
     },
     "IJR": {
       "name": "Small-Cap",
       "group": "benchmarks",
-      "price": 145.47,
-      "prevClose": 143.69,
-      "change": 1.7800000000000011,
-      "changePct": 1.2387779246989972
+      "price": 145.64,
+      "prevClose": 145.47,
+      "change": 0.1699999999999875,
+      "changePct": 0.1168625833505077
     },
     "VBR": {
       "name": "Small-Cap Value",
       "group": "benchmarks",
-      "price": 241.14,
-      "prevClose": 238.86,
-      "change": 2.2799999999999727,
-      "changePct": 0.9545340366741817
+      "price": 241.895,
+      "prevClose": 241.14,
+      "change": 0.7550000000000239,
+      "changePct": 0.31309612673136034
     },
     "VTI": {
       "name": "US Market",
       "group": "benchmarks",
-      "price": 371.45,
-      "prevClose": 368.25,
-      "change": 3.1999999999999886,
-      "changePct": 0.8689748811948395
+      "price": 372.26,
+      "prevClose": 371.45,
+      "change": 0.8100000000000023,
+      "changePct": 0.21806434244178163
     },
     "VXUS": {
       "name": "International Market",
       "group": "benchmarks",
-      "price": 84.9,
-      "prevClose": 84.44,
-      "change": 0.46000000000000796,
-      "changePct": 0.5447655139744212
+      "price": 85.43,
+      "prevClose": 84.9,
+      "change": 0.5300000000000011,
+      "changePct": 0.6242638398115341
     },
     "VUG": {
       "name": "Growth",
       "group": "benchmarks",
-      "price": 86.98,
-      "prevClose": 85.99,
-      "change": 0.9900000000000091,
-      "changePct": 1.1512966624026122
+      "price": 87.29,
+      "prevClose": 86.98,
+      "change": 0.3100000000000023,
+      "changePct": 0.35640377098182796
     },
     "VTV": {
       "name": "Value",
       "group": "benchmarks",
-      "price": 218.56,
-      "prevClose": 217.64,
-      "change": 0.9200000000000159,
-      "changePct": 0.42271641242419555
+      "price": 218.88,
+      "prevClose": 218.56,
+      "change": 0.3199999999999932,
+      "changePct": 0.14641288433381305
     },
     "VIG": {
       "name": "Dividend",
       "group": "benchmarks",
-      "price": 238.62,
-      "prevClose": 237.41,
-      "change": 1.210000000000008,
-      "changePct": 0.5096668211111544
+      "price": 238.54,
+      "prevClose": 238.62,
+      "change": -0.0800000000000125,
+      "changePct": -0.03352610845697157
     },
     "XLP": {
       "name": "Consumer Staples",
       "group": "benchmarks",
-      "price": 83.2,
-      "prevClose": 84.39,
-      "change": -1.1899999999999977,
-      "changePct": -1.4101196824268247
+      "price": 83.915,
+      "prevClose": 83.2,
+      "change": 0.7150000000000034,
+      "changePct": 0.8593749999999956
     },
     "TLT": {
       "name": "Long-Term Bonds",
       "group": "benchmarks",
-      "price": 84.49,
-      "prevClose": 84.36,
-      "change": 0.12999999999999545,
-      "changePct": 0.15410146989094375
+      "price": 84.44,
+      "prevClose": 84.49,
+      "change": -0.04999999999999716,
+      "changePct": -0.05917860101787298
     },
     "VNQ": {
       "name": "Real Estate",
       "group": "industries",
-      "price": 97.09,
-      "prevClose": 96.8,
-      "change": 0.29000000000000625,
-      "changePct": 0.2995867768595062
+      "price": 96.77,
+      "prevClose": 97.09,
+      "change": -0.3200000000000074,
+      "changePct": -0.329591101040283
     },
     "TQQQ": {
       "name": "3x Nasdaq 100",
       "group": "leveraged",
-      "price": 76.34,
-      "prevClose": 72.72,
-      "change": 3.6200000000000045,
-      "changePct": 4.977997799779987
+      "price": 76.97,
+      "prevClose": 76.34,
+      "change": 0.6299999999999955,
+      "changePct": 0.8252554362064402
     },
     "GLD": {
       "name": "Gold",
       "group": "commodities",
-      "price": 378.18,
-      "prevClose": 374.45,
-      "change": 3.730000000000018,
-      "changePct": 0.9961276538923869
+      "price": 376.76,
+      "prevClose": 378.18,
+      "change": -1.420000000000016,
+      "changePct": -0.3754825744354595
     },
     "CL": {
       "name": "Oil (WTI Crude)",
       "group": "commodities",
-      "price": 72.1,
+      "price": 71.22,
       "prevClose": 72.08,
-      "change": 0.01999999999999602,
-      "changePct": 0.02774694783573839
+      "change": -0.8599999999999994,
+      "changePct": -1.1931187569367396
     },
     "BTC": {
       "name": "Bitcoin",
       "group": "crypto",
-      "price": 64092.87,
+      "price": 64027.84,
       "prevClose": 63184.8,
-      "change": 908.0699999999997,
-      "changePct": 1.4371652675960078
+      "change": 843.0399999999936,
+      "changePct": 1.334244944986751
     },
     "US2Y": {
       "name": "2-Year",
@@ -191,19 +191,19 @@
       "name": "10-Year",
       "group": "yields",
       "unit": "pct",
-      "price": 4.539,
-      "prevClose": 4.569,
-      "change": -0.03000000000000025,
-      "changePct": -0.6565988181221338
+      "price": 4.557,
+      "prevClose": 4.539,
+      "change": 0.018000000000000682,
+      "changePct": 0.3965631196299002
     },
     "US30Y": {
       "name": "30-Year",
       "group": "yields",
       "unit": "pct",
-      "price": 5.053,
-      "prevClose": 5.065,
-      "change": -0.012000000000000455,
-      "changePct": -0.23692003948668772
+      "price": 5.063,
+      "prevClose": 5.053,
+      "change": 0.009999999999999787,
+      "changePct": 0.19790223629525538
     }
   }
 }
