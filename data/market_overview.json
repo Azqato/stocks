@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T05:32:36.512089Z",
+  "updated": "2026-07-10T06:02:45.773667Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
@@ -153,6 +153,57 @@
       "prevClose": 72.72,
       "change": 3.6200000000000045,
       "changePct": 4.977997799779987
+    },
+    "GLD": {
+      "name": "Gold",
+      "group": "commodities",
+      "price": 378.18,
+      "prevClose": 374.45,
+      "change": 3.730000000000018,
+      "changePct": 0.9961276538923869
+    },
+    "CL": {
+      "name": "Oil (WTI Crude)",
+      "group": "commodities",
+      "price": 72.1,
+      "prevClose": 72.08,
+      "change": 0.01999999999999602,
+      "changePct": 0.02774694783573839
+    },
+    "BTC": {
+      "name": "Bitcoin",
+      "group": "crypto",
+      "price": 64092.87,
+      "prevClose": 63184.8,
+      "change": 908.0699999999997,
+      "changePct": 1.4371652675960078
+    },
+    "US2Y": {
+      "name": "2-Year",
+      "group": "yields",
+      "unit": "pct",
+      "price": 3.886,
+      "prevClose": 3.939,
+      "change": -0.052999999999999936,
+      "changePct": -1.3455191673013456
+    },
+    "US10Y": {
+      "name": "10-Year",
+      "group": "yields",
+      "unit": "pct",
+      "price": 4.539,
+      "prevClose": 4.569,
+      "change": -0.03000000000000025,
+      "changePct": -0.6565988181221338
+    },
+    "US30Y": {
+      "name": "30-Year",
+      "group": "yields",
+      "unit": "pct",
+      "price": 5.053,
+      "prevClose": 5.065,
+      "change": -0.012000000000000455,
+      "changePct": -0.23692003948668772
     }
   }
 }

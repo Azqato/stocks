@@ -2,6 +2,34 @@
 
 ---
 
+## v4.1.5 — 2026-07-10 — Market Overview: bond yields, commodities, crypto, UI polish
+
+**Same-day continuation of v4.1.4: three new data categories, a rendering bug fix, and a round of UI polish requested while the owner tested the live page.**
+
+### Added
+
+- **Bond Yields section**: 2-Year (`2YY=F`), 10-Year (`^TNX`), 30-Year (`^TYX`) US Treasury yields. Owner asked for actual yields (a percentage plus a yield-point change, per a CNBC "Bonds" tab reference), not fund price movement. Data-source probe: US Treasury yields work directly via yfinance, already in percent (no scaling needed); foreign sovereign yields (Bund, Gilt, JGB) are **not available** via free Yahoo data (every ticker guess 404'd, including the CNBC-style `US10Y:Tradeweb` format) — shipped US-only, a real scope reduction from the reference screenshot, confirmed with the owner. New `"unit": "pct"` field on yield entries drives a distinct card format: price shown as `X.XXX%`, change shown as a bare point-delta (`+0.030`) rather than a misleading percent-of-percent.
+- **Commodities section**: Gold (`GLD`) and Oil (`CL=F`, front-month WTI crude futures). Both work through the same plain price/prevClose mechanism as every other card — no special API needed.
+- **Crypto section**: Bitcoin (`BTC-USD`), same mechanism.
+
+### Fixed
+
+- **New groups were silently misrouted into the Indices grid**: `render()`'s `byGroup` bucket object was hardcoded to `{ benchmarks, industries, leveraged }`, so any card in a group added after that (yields, commodities, crypto) fell through to the `benchmarks` fallback instead of its own section. Fixed by deriving the bucket keys from `GROUP_GRIDS` (the same config already used for grid/section lookups) instead of a second hardcoded list.
+
+### Changed
+
+- **"Benchmarks" retitled "Indices"** with a visible heading, matching every other section (it was previously the one unlabeled group).
+- **Removed** the "📊 Market Snapshot" hero badge.
+- **"Last updated" restyled** as a `.hero-badge` pill (reusing the site's existing badge component) with a clock emoji, moved inside the intro block (after the description, before the divider) instead of sitting below it as plain text.
+- **Tightened vertical spacing**: zeroed out the last-updated badge's own margin (it sits inside `.guide-intro`, which already supplies 40px of padding-bottom — the badge's default margin-bottom was stacking extra dead space on top of that); reduced section-heading-to-divider gap 40px→24px; increased section-heading-to-first-card gap 8px→16px (was too tight the other direction).
+
+### Verified
+
+- `fetch_market_overview.py` run against live data: 25/25 symbols across all 6 groups.
+- Headless Chrome with `raw.githubusercontent.com` network-blocked (`--host-resolver-rules`) to force the local-fallback data path: confirmed all 6 sections render independently with correct data after the bucket-bug fix; yield cards show percent + point-delta formatting; spacing changes visually confirmed.
+
+---
+
 ## v4.1.4 — 2026-07-10 — Market Overview: expanded symbol list, renames, sectioned placeholders
 
 **Same-day follow-up to v4.1.0 while the owner tested the live page: renamed several card labels, added 7 benchmark symbols plus two new placeholder sections, and reworked the list-to-frontend wiring to remove a config-drift risk.**

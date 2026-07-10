@@ -19,5 +19,14 @@
 
   { "t": "VNQ",  "y": "VNQ",  "n": "Real Estate",            "g": "industries" },
 
-  { "t": "TQQQ", "y": "TQQQ", "n": "3x Nasdaq 100",          "g": "leveraged" }
+  { "t": "TQQQ", "y": "TQQQ", "n": "3x Nasdaq 100",          "g": "leveraged" },
+
+  { "t": "GLD",  "y": "GLD",  "n": "Gold",                   "g": "commodities" },
+  { "t": "CL",   "y": "CL=F", "n": "Oil (WTI Crude)",        "g": "commodities" },
+
+  { "t": "BTC",  "y": "BTC-USD", "n": "Bitcoin",             "g": "crypto" },
+
+  { "t": "US2Y",  "y": "2YY=F", "n": "2-Year",  "g": "yields", "unit": "pct" },
+  { "t": "US10Y", "y": "^TNX",  "n": "10-Year", "g": "yields", "unit": "pct" },
+  { "t": "US30Y", "y": "^TYX",  "n": "30-Year", "g": "yields", "unit": "pct" }
 ]

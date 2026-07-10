@@ -34,25 +34,28 @@
     }
     .market-stale-banner.on { display: block; }
 
+    /* Reuses the site's .hero-badge pill (see style.css); zeroed out here
+       since it sits inside .guide-intro, which already supplies 40px of
+       padding-bottom before the divider -- the badge's own default
+       margin-bottom would otherwise stack on top of that and look like
+       dead space. */
     .market-asof {
-      font-size: 0.8rem;
-      color: var(--color-text-secondary);
-      margin: 4px 0 20px;
+      margin: 16px 0 0;
     }
 
     .market-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 14px;
-      margin-top: 8px;
+      margin-top: 16px;
     }
 
     .market-section {
-      margin-top: 36px;
+      margin-top: 24px;
     }
     .market-section h2 {
       font-size: 1rem;
-      margin-bottom: 4px;
+      margin-bottom: 0;
     }
 
     .market-card {
@@ -151,17 +154,23 @@
 
           <div class="guide-intro">
             <h1>Market Overview</h1>
-            <p>A snapshot of the major US and international market benchmarks: broad indices, market-cap and factor tilts, sector and style funds, long-term bonds, and the VIX volatility index. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close).</p>
-            <div class="hero-badge" style="margin-top: 16px;">📊 Market Snapshot</div>
+            <p>A same-day snapshot across US indices, market-cap and factor tilts, sector and leveraged funds, commodities, crypto, and Treasury yields. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close) so it reads as a live check-in, not a stale close-of-business number.</p>
+            <div class="hero-badge market-asof">🕒 <span id="marketAsOf">Loading market data&hellip;</span></div>
           </div>
 
           <div class="market-stale-banner" id="marketStaleBanner" style="margin-top: 28px;">
             <span id="marketStaleText"></span>
           </div>
 
-          <div class="market-asof" id="marketAsOf">Loading market data&hellip;</div>
+          <div class="market-section">
+            <h2>Indices</h2>
+            <div class="market-grid" id="marketGrid" aria-live="polite"></div>
+          </div>
 
-          <div class="market-grid" id="marketGrid" aria-live="polite"></div>
+          <div id="marketYieldsSection" class="market-section" hidden>
+            <h2>Bond Yields</h2>
+            <div class="market-grid" id="marketYieldsGrid" aria-live="polite"></div>
+          </div>
 
           <div id="marketIndustriesSection" class="market-section" hidden>
             <h2>Industries</h2>
@@ -171,6 +180,16 @@
           <div id="marketLeveragedSection" class="market-section" hidden>
             <h2>Leveraged ETFs</h2>
             <div class="market-grid" id="marketLeveragedGrid" aria-live="polite"></div>
+          </div>
+
+          <div id="marketCommoditiesSection" class="market-section" hidden>
+            <h2>Commodities</h2>
+            <div class="market-grid" id="marketCommoditiesGrid" aria-live="polite"></div>
+          </div>
+
+          <div id="marketCryptoSection" class="market-section" hidden>
+            <h2>Crypto</h2>
+            <div class="market-grid" id="marketCryptoGrid" aria-live="polite"></div>
           </div>
 
         </div>
@@ -197,11 +216,17 @@
       var PATHS = [RAW_BASE + "market_overview.json", "data/market_overview.json"];
       var CACHE_KEY = "azq_market_overview_cache";
       // Section grid element IDs, keyed by the feed's "group" field. "benchmarks"
-      // has no heading (it's the page's main content); "industries" and
-      // "leveraged" are placeholder sections the owner is seeding one symbol at
-      // a time, hidden entirely if a group ends up with zero symbols.
-      var GROUP_GRIDS = { benchmarks: "marketGrid", industries: "marketIndustriesGrid", leveraged: "marketLeveragedGrid" };
-      var GROUP_SECTIONS = { industries: "marketIndustriesSection", leveraged: "marketLeveragedSection" };
+      // (the "Indices" heading) always has content; every other section is a
+      // placeholder the owner is seeding one or a few symbols at a time, hidden
+      // entirely if a group ends up with zero symbols.
+      var GROUP_GRIDS = {
+        benchmarks: "marketGrid", yields: "marketYieldsGrid", industries: "marketIndustriesGrid",
+        leveraged: "marketLeveragedGrid", commodities: "marketCommoditiesGrid", crypto: "marketCryptoGrid"
+      };
+      var GROUP_SECTIONS = {
+        yields: "marketYieldsSection", industries: "marketIndustriesSection",
+        leveraged: "marketLeveragedSection", commodities: "marketCommoditiesSection", crypto: "marketCryptoSection"
+      };
 
       function readCache() {
         try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch (e) { return null; }
@@ -224,11 +249,24 @@
         var sign = p > 0 ? "+" : "";
         return sign + p.toFixed(2) + "%";
       }
+      // Yields format differently: the "price" IS a percent already, and the
+      // change is a point-delta (e.g. "+0.030"), not a percent-of-percent --
+      // computing changePct on a yield would make a 0.03-point move on a
+      // 4.539 base read as a misleading "+0.66%".
+      function fmtYield(p) {
+        if (p === null || p === undefined) return "—";
+        return p.toFixed(3) + "%";
+      }
+      function fmtYieldChange(c) {
+        if (c === null || c === undefined) return "—";
+        var sign = c > 0 ? "+" : "";
+        return sign + c.toFixed(3);
+      }
 
-      function dirClass(pct) {
-        if (pct === null || pct === undefined) return "flat";
-        if (pct > 0.005) return "up";
-        if (pct < -0.005) return "down";
+      function dirClass(delta) {
+        if (delta === null || delta === undefined) return "flat";
+        if (delta > 0.005) return "up";
+        if (delta < -0.005) return "down";
         return "flat";
       }
       function arrow(dir) {
@@ -240,6 +278,18 @@
           return '<div class="market-card flat">' +
             '<div class="market-card-name">' + ticker + '</div>' +
             '<div class="market-card-missing">Data unavailable</div>' +
+          '</div>';
+        }
+        if (q.unit === "pct") {
+          var ydir = dirClass(q.change);
+          return '<div class="market-card ' + ydir + '">' +
+            '<div class="market-card-name">' + (q.name || ticker) + '</div>' +
+            '<div class="market-card-ticker">' + ticker + '</div>' +
+            '<div class="market-card-price">' + fmtYield(q.price) + '</div>' +
+            '<div class="market-card-change">' +
+              '<span class="market-card-arrow">' + arrow(ydir) + '</span>' +
+              '<span>' + fmtYieldChange(q.change) + '</span>' +
+            '</div>' +
           '</div>';
         }
         var dir = dirClass(q.changePct);
@@ -257,7 +307,8 @@
 
       function render(feed) {
         var quotes = feed.quotes || {};
-        var byGroup = { benchmarks: [], industries: [], leveraged: [] };
+        var byGroup = {};
+        Object.keys(GROUP_GRIDS).forEach(function (g) { byGroup[g] = []; });
         Object.keys(quotes).forEach(function (ticker) {
           var group = quotes[ticker].group || "benchmarks";
           (byGroup[group] || byGroup.benchmarks).push(ticker);
