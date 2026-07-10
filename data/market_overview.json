@@ -1,14 +1,14 @@
 {
-  "updated": "2026-07-10T20:26:14.340601Z",
+  "updated": "2026-07-10T22:58:31.164218Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
       "name": "S&P 500",
       "group": "benchmarks",
-      "price": 754.941,
+      "price": 754.95,
       "prevClose": 751.71,
-      "change": 3.2309999999999945,
-      "changePct": 0.4298200103763472
+      "change": 3.240000000000009,
+      "changePct": 0.43101728060024325
     },
     "QQQ": {
       "name": "Nasdaq 100",
@@ -53,10 +53,10 @@
     "IWM": {
       "name": "Russell 2000",
       "group": "benchmarks",
-      "price": 295.95,
+      "price": 295.99,
       "prevClose": 297.24,
-      "change": -1.2900000000000205,
-      "changePct": -0.4339927331449389
+      "change": -1.25,
+      "changePct": -0.42053559413268715
     },
     "IJH": {
       "name": "Mid-Cap",
@@ -165,18 +165,18 @@
     "CL": {
       "name": "Oil (WTI Crude)",
       "group": "commodities",
-      "price": 71.58,
+      "price": 71.51,
       "prevClose": 72.08,
-      "change": -0.5,
-      "changePct": -0.6936736958934486
+      "change": -0.5699999999999932,
+      "changePct": -0.7907880133185219
     },
     "BTC": {
       "name": "Bitcoin",
       "group": "crypto",
-      "price": 63753.65,
+      "price": 64066.78,
       "prevClose": 63184.8,
-      "change": 568.8499999999985,
-      "changePct": 0.9002956407237139
+      "change": 881.9799999999959,
+      "changePct": 1.395873691140892
     },
     "US2Y": {
       "name": "2-Year",
