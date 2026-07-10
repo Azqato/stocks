@@ -22,8 +22,13 @@ the list's separate "y" (Yahoo fetch symbol) vs "t" (display ticker) columns.
 
 Uses yfinance (public Yahoo Finance data), so there is no API key.
 
+Each list entry also carries a "g" (group) field -- "benchmarks", "industries",
+or "leveraged" -- so the frontend can render separate sections without a second
+parallel config. Quote insertion order matches the list's order, so the
+frontend does not need its own hardcoded display-order array either.
+
 Output schema: { "updated": ISO, "source": "yahoo",
-  "quotes": { TICKER: { "name", "price", "prevClose", "change", "changePct" }, ... } }
+  "quotes": { TICKER: { "name", "group", "price", "prevClose", "change", "changePct" }, ... } }
 
 Env:
   PAUSE   seconds to wait between symbols (default 0.5) -- be polite to Yahoo
@@ -73,7 +78,7 @@ def main():
     ok = 0
     for item in listing:
         ticker = item["t"]
-        rec = {"name": item["n"]}
+        rec = {"name": item["n"], "group": item.get("g", "benchmarks")}
         for attempt in range(3):
             try:
                 rec.update(fetch(item["y"]))

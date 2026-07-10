@@ -1,11 +1,11 @@
 # ROADMAP.md — Implementation Plans for Planned Releases
 
-**Version:** 4.1.0
+**Version:** 4.1.4
 **Last Updated:** 2026-07-10
 
 This document holds the detailed implementation plan for every item still open on the [PRD roadmap](PRD.md#roadmap). The PRD's milestone table remains the source of truth for **what** is planned and in what order; this file is the reference for **how** each item will be built. When a release ships, its plan here is trimmed to a pointer at the PRD milestone row and the PATCHNOTES entry.
 
-Release order (updated 2026-07-10): **v4.2.0 score sparklines (next up, renumbered from v4.1.0)** → v4.3.0 index coverage (renumbered from v4.2.0) → v4.4.0 historical examples (renumbered from v4.3.0) → v4.5.0 philosophy sections (renumbered from v4.4.0) → v4.6.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, and v4.1.0 Market Overview all shipped, most recently 2026-07-10.)
+Release order (updated 2026-07-10): **v4.2.0 Market Overview bond yields (next up, new — prioritized ahead of sparklines, awaiting owner confirmation on scope)** → v4.3.0 score sparklines (renumbered from v4.1.0) → v4.4.0 index coverage (renumbered from v4.2.0) → v4.5.0 historical examples (renumbered from v4.3.0) → v4.6.0 philosophy sections (renumbered from v4.4.0) → v4.7.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, v4.1.0 Market Overview, and v4.1.4 Market Overview expansion all shipped, most recently 2026-07-10.)
 
 ---
 
@@ -312,6 +312,26 @@ Small by design, because v3.33.0 pre-paid for it:
 
 ---
 
+## v4.1.4 — Market Overview: Expanded Symbol List, Renames, Sectioned Placeholders — DONE 2026-07-10
+
+Follow-up owner requests, same day as v4.1.0 shipped, made iteratively while testing the live page:
+
+- **Renames** (shorter card labels): "Dow Jones 30"→"Dow Jones", "US Total Market"→"US Market", "International Total Market"→"International Market", "Dividend Appreciation"→"Dividend", "Volatility Index"→"Volatility".
+- **6 new benchmark symbols added** to the main grid: TLT (Long-Term Bonds), RSP (S&P 500 Equal Weight), SPMO (Momentum), VBR (Small-Cap Value), IJH (Mid-Cap), IJR (Small-Cap), XLP (Consumer Staples) — 17 symbols in the `benchmarks` group total.
+- **Reordered** so SPY, QQQ, VIX lead the grid (previously DIA led).
+- **Removed** the "This is a snapshot, not the screener" explainer callout entirely, per owner request — the page now goes straight from the intro to the data.
+- **New grouped-section architecture**: `data/market_overview_list.json` entries gained a `"g"` (group) field (`benchmarks`, `industries`, `leveraged`), which `fetch_market_overview.py` now copies through into each quote's `"group"` field in `data/market_overview.json`. This let `market.html` drop its previously-hardcoded `ORDER` array entirely — the frontend now iterates `Object.keys(feed.quotes)` (JSON preserves insertion order, which matches the list file's order) and buckets by `group`, rendering each into its own `.market-section` with a heading, hidden automatically if empty. This removes a config-drift risk: before this change, the symbol list and the display order lived in two separate places (`market_overview_list.json` and a hardcoded JS array) that had to be kept in sync by hand on every symbol add.
+- **New "Industries" section**: placeholder, seeded with one symbol (VNQ, Real Estate). Meant to grow one symbol at a time per future owner requests.
+- **New "Leveraged ETFs" section**: placeholder, seeded with one symbol (TQQQ, 3x Nasdaq 100).
+
+### Verified
+
+- `fetch_market_overview.py` re-run after each change: 11, then 14, then 16, then 17, then 19 symbols (final), all with live price data.
+- Headless Chrome, network-blocked to `raw.githubusercontent.com` to force the local-fallback data path (necessary since the previous v4.1.0 push already made old data live at that URL, which headless Chrome would otherwise fetch instead of the local copy under test): confirmed SPY/QQQ/VIX lead the grid, all renames applied, Industries and Leveraged sections render with their single placeholder symbols and correct headings, explainer callout fully removed.
+- TQQQ's live change (+4.98%) sanity-checked against QQQ's same-day move (+1.66%) — roughly the expected ~3x leveraged relationship, a good real-data confirmation that the leveraged-fund price data is being read correctly (not a validation of the fund's actual daily-reset leverage mechanics, which can drift from a clean 3x over any period longer than one day).
+
+---
+
 ## v4.1.0 — Market Overview Page — DONE 2026-07-10
 
 ### Goal
@@ -355,7 +375,45 @@ Originally scoped as a once-daily refresh alongside the rest of the site's pipel
 
 ---
 
-## v4.2.0 — Screener Score History Sparklines
+## v4.2.0 — Market Overview: Bond Yields
+
+### Goal
+
+Owner request (2026-07-10): add bond yields to Market Overview, explicitly **as yields, not price movement** — the CNBC "Bonds" tab reference shown (US 10-YR, Bund 10-YR, JPN 10-YR, UK 10-YR, FRA 10-YR, each showing a yield percentage like "4.541%" and a change in yield like "+0.002", not a fund's share price and %-change). This is a different kind of card than every existing Market Overview entry, all of which are ETF/index **prices**. `data/market_overview_list.json`'s existing `TLT` entry (Long-Term Bonds, added 2026-07-10) is a bond ETF's *price*, which moves inversely to yields but is not the same number the owner is asking for here — that entry stays as-is; this is additive, not a replacement.
+
+### Data source probe (done 2026-07-10, informs the plan below)
+
+Checked what yfinance can actually source before committing to a design, the same probe-first approach used for v3.34.0 International:
+
+1. **US Treasury yields work directly via yfinance**, no API key: `^TNX` (10-Year), `^TYX` (30-Year), `^FVX` (5-Year), `^IRX` (13-Week Bill) all returned live data via `Ticker.info`'s `regularMarketPrice`/`regularMarketPreviousClose` fields — e.g. `^TNX` returned `4.539`, meaning the value **is already the yield in percent**, not a scaled index value needing a `/10` conversion (an assumption worth checking again if the actual fetched values ever look 10x too large — Yahoo has historically been inconsistent about this across their yield tickers).
+2. **Foreign sovereign yields are NOT available via yfinance.** Tried several plausible Yahoo ticker guesses for German Bund, UK Gilt, and Japan JGB 10-year yields (`DE10Y-DE`, `GB10Y-GB`, `JP10Y-JP`, `DE10YT=RR`, etc.) — all returned HTTP 404 "Quote not found." This is a real constraint, not a probe that needs more tickers tried: free Yahoo Finance quote data does not reliably carry non-US sovereign bond yields, unlike CNBC's Bonds tab which pulls from a licensed institutional feed. **A CNBC-identical multi-country curve is not achievable with this site's current free data source.**
+3. **Recommendation**: scope this to **US Treasury yields only** (10-Year headline, optionally 30-Year/5-Year/13-Week as additional cards), not the 5-country curve shown in the reference screenshot. This is a real scope reduction from the reference image, not a stylistic choice — flag clearly to the owner before building so the "similar to this screenshot" expectation is corrected to "same card format, US-only coverage."
+
+### Design questions to resolve before build
+
+1. **Which tenors**: 10-Year only (closest single analog to "the" bond yield most financial media leads with), or the full set (13-Week, 5-Year, 10-Year, 30-Year) as a small yield curve snapshot?
+2. **Card format**: yield cards need a different layout than price cards — headline number is a percentage (`4.539%`) not a price, and the "change" is a **yield-point delta** (`+0.002`, i.e. 0.2 basis points) not a percent-of-price change. This is a distinct card variant, not a reuse of the existing price-card component; needs its own `market-card` modifier or a visually distinct section (a natural fit for the `market-section` pattern the Industries/Leveraged groups already established 2026-07-10 — a new `"g": "yields"` group with its own card renderer).
+3. **Placement**: new section (e.g. "Bond Yields", alongside the existing Industries/Leveraged placeholder sections) vs. folding into the main benchmarks grid. A separate section is recommended since the card content (percent + point-change) is structurally different from every other card on the page.
+4. **Color convention**: for prices, up=green is unambiguous. For yields, "up" doesn't mean "good" any more than "down" does (rising yields can mean a strengthening economy or inflation fear, depending on the frame) — recommend keeping the same green-up/red-down direction-only coloring already used everywhere else on this page (consistent, no new judgment call embedded in the UI), same as the CNBC reference's JPN 10-YR red arrow, which is a *direction* indicator, not a *good/bad* one, in this same-page vocabulary.
+
+### Data
+
+1. New entries with a distinct group in `data/market_overview_list.json`, e.g. `{"t": "US10Y", "y": "^TNX", "n": "US 10-Year", "g": "yields"}`.
+2. `scripts/fetch_market_overview.py` needs a per-entry "this is a yield, don't compute %-change" flag (`^TNX`'s `4.539` vs `4.569` should render as `+0.030` point-change, not `(-0.66%)` — computing the latter is misleading for a yield since a small yield move looks like a large percentage move). Likely a `"unit": "pct"` field on yield entries, read by both the fetch script (skip `changePct`, or better, don't compute it at all for this unit type) and the frontend (render logic branches by unit).
+
+### Verification and acceptance (once built)
+
+- Headless Chrome: yield cards render as percentages with point-change (not price/percent-change) formatting; verified against a live `^TNX` fetch.
+- Confirm no `changePct` field ships for yield-unit entries (or that the frontend correctly ignores it) so a future glance never misreads a yield-point move as a price-style percentage move.
+- Docs updated (this file trimmed to a pointer, PATCHNOTES entry, PRD milestone flipped).
+
+### Owner confirmation needed before implementation starts
+
+Per the design questions above — tenor scope, card layout, section placement — do not begin frontend work until these are confirmed; the data-source finding (US-only, no CNBC-style multi-country curve) should be surfaced to the owner explicitly since it changes what "similar to this screenshot" can actually mean.
+
+---
+
+## v4.3.0 — Screener Score History Sparklines
 
 ### Goal
 
@@ -391,7 +449,7 @@ A per-ticker score trend visual in the screener: a small inline sparkline column
 1. **Replay model**: recommend recomputing all history under the **current** model (consistent, comparable series). The alternative (as-shipped scores per era) is not reconstructible anyway; the historical rendered scores were never stored.
 2. **Window**: recommend 90 trading days shown; the miner can be re-run with a bigger window later since git history keeps everything.
 3. **Universes covered**: recommend all six including ETFs (rank-linear replays identically).
-4. Whether Trend ships as a **major** version: yes as planned (v4.2.0), it introduces the first derived-data artifact and a new default column across every universe.
+4. Whether Trend ships as a **major** version: yes as planned (v4.3.0), it introduces the first derived-data artifact and a new default column across every universe.
 
 ### Verification and acceptance
 
@@ -407,7 +465,7 @@ A per-ticker score trend visual in the screener: a small inline sparkline column
 
 ---
 
-## v4.3.0 — Deeper Index Fund Coverage
+## v4.4.0 — Deeper Index Fund Coverage
 
 ### Goal
 
@@ -420,7 +478,7 @@ Expand `indices.html` beyond the current core-index methodology with three new t
 3. **Bond tent strategy** — what it is (rising bond allocation approaching a goal date, descending after), why it exists (sequence-of-returns risk, defined at first use per content rules), and how it interacts with the income-contribution investing model the site teaches.
 4. Sequencing note: ship **after** v3.34.0 so the international section can link to the live International universe; the sector-ETF section already has the ETFs universe to point at.
 
-### Mechanics (applies to all four content releases, v4.3.0-v4.6.0)
+### Mechanics (applies to all four content releases, v4.4.0-v4.7.0)
 
 - Written for the primary persona (first-position investor): teach before asserting, define terms at first use, anchor to decisions the reader has faced.
 - Content rules: no em dashes, no advice language (educational framing only, no buy/sell verbs aimed at the reader), examples are descriptive not prescriptive.
@@ -430,7 +488,7 @@ Expand `indices.html` beyond the current core-index methodology with three new t
 
 ---
 
-## v4.4.0 — Additional Illustrative Examples (Historical Market Events)
+## v4.5.0 — Additional Illustrative Examples (Historical Market Events)
 
 ### Goal
 
@@ -442,11 +500,11 @@ Add worked historical examples across existing pages, showing the methodology ap
 2. Placement: each example embeds in the page whose concept it illustrates (metrics examples on `metrics.html`, timing examples on `indices.html`, temperament examples on `philosophy.html`) rather than a standalone examples page, so concepts and cases stay adjacent.
 3. Format per example: dated setup (what was knowable then, hindsight explicitly flagged), the metric readings at the time, what the methodology's rules said, what happened, and the teaching point. Historical figures verified against at least one primary-ish source before publishing; approximate figures rounded and labeled approximate.
 4. Constraint: examples must not read as track-record claims (no "this is what I bought"); they are illustrations of the rules, per the no-advice rule.
-5. Mechanics per the shared checklist in v4.3.0.
+5. Mechanics per the shared checklist in v4.4.0.
 
 ---
 
-## v4.5.0 — Additional Philosophy Sections
+## v4.6.0 — Additional Philosophy Sections
 
 ### Goal
 
@@ -457,11 +515,11 @@ Extend `philosophy.html` (currently 9 sections) with new conceptual material.
 1. Candidate sections (owner to pick at kickoff; these came out of prior roadmap discussion and PRD content-goals): when to sell (the hardest omission in most methodologies), position sizing and concentration for the income-contribution investor, drawdown temperament (what a 30% paper loss actually feels like and pre-committing behavior), the difference between conviction and stubbornness, and information diet (what to read daily vs quarterly vs never).
 2. Each section follows the existing philosophy-page pattern: concept, first-person grounding, the practical rule that falls out of it, cross-links to the metric/page that operationalizes it.
 3. FAQ additions for each new section (the FAQ page mirrors philosophy questions today).
-4. Mechanics per the shared checklist in v4.3.0.
+4. Mechanics per the shared checklist in v4.4.0.
 
 ---
 
-## v4.6.0 — Conference Call Research Guide
+## v4.7.0 — Conference Call Research Guide
 
 ### Goal
 
@@ -472,7 +530,7 @@ A new setup-guide page (peer to `finviz.html` and `seekingalpha.html`) teaching 
 1. **New page `conferencecalls.html`** following the existing guide-page pattern (step sections, sidebar nav, callout boxes): where calls live (IR pages, transcript sources incl. Seeking Alpha, cross-linking the existing guide), the anatomy of a call (prepared remarks vs Q&A and why Q&A matters more), what to listen for mapped to the site's six scored metrics (guidance vs the forward estimates the screener scores, margin commentary, balance-sheet language), red-flag phrasing patterns, and a simple insight log template (date, company, claim, metric affected, follow-up date).
 2. Navigation: header/footer nav additions across all pages (the one release in this set that touches every HTML file), sitemap entry, og/meta for the new page.
 3. Ties into the site loop: the guide should close the loop from screener score → "why is the forward estimate what it is" → hearing management's own version on the call.
-4. Mechanics per the shared checklist in v4.3.0, plus: full-site headless spot check since nav on every page changes.
+4. Mechanics per the shared checklist in v4.4.0, plus: full-site headless spot check since nav on every page changes.
 
 ---
 

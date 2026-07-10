@@ -47,6 +47,14 @@
       margin-top: 8px;
     }
 
+    .market-section {
+      margin-top: 36px;
+    }
+    .market-section h2 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
     .market-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -143,21 +151,27 @@
 
           <div class="guide-intro">
             <h1>Market Overview</h1>
-            <p>A snapshot of the major US and international market benchmarks: broad indices, style tilts, and the VIX volatility index. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close).</p>
+            <p>A snapshot of the major US and international market benchmarks: broad indices, market-cap and factor tilts, sector and style funds, long-term bonds, and the VIX volatility index. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close).</p>
             <div class="hero-badge" style="margin-top: 16px;">📊 Market Snapshot</div>
           </div>
 
-          <div class="guide-note" style="margin-top: 28px;">
-            <p><strong>This is a snapshot, not the screener.</strong> These 10 symbols are not scored, ranked, or tiered. Each card shows the fund or index's last price, its change from the previous close, and nothing else. For fundamentals-based stock scoring, use the <a href="screener.html">Screener</a>; for how to read the timing signals these benchmarks carry (RSI, 52-week range, VIX, AAII sentiment), see <a href="indices.html">Indices</a>.</p>
-          </div>
-
-          <div class="market-stale-banner" id="marketStaleBanner">
+          <div class="market-stale-banner" id="marketStaleBanner" style="margin-top: 28px;">
             <span id="marketStaleText"></span>
           </div>
 
           <div class="market-asof" id="marketAsOf">Loading market data&hellip;</div>
 
           <div class="market-grid" id="marketGrid" aria-live="polite"></div>
+
+          <div id="marketIndustriesSection" class="market-section" hidden>
+            <h2>Industries</h2>
+            <div class="market-grid" id="marketIndustriesGrid" aria-live="polite"></div>
+          </div>
+
+          <div id="marketLeveragedSection" class="market-section" hidden>
+            <h2>Leveraged ETFs</h2>
+            <div class="market-grid" id="marketLeveragedGrid" aria-live="polite"></div>
+          </div>
 
         </div>
       </main>
@@ -174,13 +188,20 @@
     (function () {
       "use strict";
 
-      // Fixed 10-symbol list, in the owner-specified display order (matches
-      // data/market_overview_list.json). Pulled straight from GitHub (raw) so
-      // this works even opened locally; falls back to the same-origin copy.
+      // The symbol list and display order live in data/market_overview_list.json
+      // (via each quote's insertion order in the feed -- fetch_market_overview.py
+      // writes quotes in the list's order, so no separate hardcoded order is
+      // needed here). Pulled straight from GitHub (raw) so this works even
+      // opened locally; falls back to the same-origin copy.
       var RAW_BASE = "https://raw.githubusercontent.com/Azqato/stocks/main/data/";
       var PATHS = [RAW_BASE + "market_overview.json", "data/market_overview.json"];
-      var ORDER = ["DIA", "SPY", "QQQ", "IWM", "VTI", "VXUS", "VUG", "VTV", "VIG", "VIX"];
       var CACHE_KEY = "azq_market_overview_cache";
+      // Section grid element IDs, keyed by the feed's "group" field. "benchmarks"
+      // has no heading (it's the page's main content); "industries" and
+      // "leveraged" are placeholder sections the owner is seeding one symbol at
+      // a time, hidden entirely if a group ends up with zero symbols.
+      var GROUP_GRIDS = { benchmarks: "marketGrid", industries: "marketIndustriesGrid", leveraged: "marketLeveragedGrid" };
+      var GROUP_SECTIONS = { industries: "marketIndustriesSection", leveraged: "marketLeveragedSection" };
 
       function readCache() {
         try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch (e) { return null; }
@@ -214,32 +235,42 @@
         return dir === "up" ? "▲" : dir === "down" ? "▼" : "–";
       }
 
+      function cardHtml(ticker, q) {
+        if (!q || q.price === null || q.price === undefined) {
+          return '<div class="market-card flat">' +
+            '<div class="market-card-name">' + ticker + '</div>' +
+            '<div class="market-card-missing">Data unavailable</div>' +
+          '</div>';
+        }
+        var dir = dirClass(q.changePct);
+        return '<div class="market-card ' + dir + '">' +
+          '<div class="market-card-name">' + (q.name || ticker) + '</div>' +
+          '<div class="market-card-ticker">' + ticker + '</div>' +
+          '<div class="market-card-price">' + fmtPrice(q.price) + '</div>' +
+          '<div class="market-card-change">' +
+            '<span class="market-card-arrow">' + arrow(dir) + '</span>' +
+            '<span>' + fmtChange(q.change) + '</span>' +
+            '<span>(' + fmtPct(q.changePct) + ')</span>' +
+          '</div>' +
+        '</div>';
+      }
+
       function render(feed) {
-        var grid = document.getElementById("marketGrid");
-        grid.innerHTML = "";
-        ORDER.forEach(function (ticker) {
-          var q = (feed.quotes || {})[ticker];
-          var card = document.createElement("div");
-          if (!q || q.price === null || q.price === undefined) {
-            card.className = "market-card flat";
-            card.innerHTML =
-              '<div class="market-card-name">' + ticker + '</div>' +
-              '<div class="market-card-missing">Data unavailable</div>';
-            grid.appendChild(card);
-            return;
+        var quotes = feed.quotes || {};
+        var byGroup = { benchmarks: [], industries: [], leveraged: [] };
+        Object.keys(quotes).forEach(function (ticker) {
+          var group = quotes[ticker].group || "benchmarks";
+          (byGroup[group] || byGroup.benchmarks).push(ticker);
+        });
+
+        Object.keys(GROUP_GRIDS).forEach(function (group) {
+          var grid = document.getElementById(GROUP_GRIDS[group]);
+          var tickers = byGroup[group] || [];
+          grid.innerHTML = tickers.map(function (t) { return cardHtml(t, quotes[t]); }).join("");
+          var sectionId = GROUP_SECTIONS[group];
+          if (sectionId) {
+            document.getElementById(sectionId).hidden = tickers.length === 0;
           }
-          var dir = dirClass(q.changePct);
-          card.className = "market-card " + dir;
-          card.innerHTML =
-            '<div class="market-card-name">' + (q.name || ticker) + '</div>' +
-            '<div class="market-card-ticker">' + ticker + '</div>' +
-            '<div class="market-card-price">' + fmtPrice(q.price) + '</div>' +
-            '<div class="market-card-change">' +
-              '<span class="market-card-arrow">' + arrow(dir) + '</span>' +
-              '<span>' + fmtChange(q.change) + '</span>' +
-              '<span>(' + fmtPct(q.changePct) + ')</span>' +
-            '</div>';
-          grid.appendChild(card);
         });
 
         var asOf = document.getElementById("marketAsOf");

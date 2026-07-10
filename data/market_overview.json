@@ -1,16 +1,10 @@
 {
-  "updated": "2026-07-10T01:09:20.776496Z",
+  "updated": "2026-07-10T05:32:36.512089Z",
   "source": "yahoo",
   "quotes": {
-    "DIA": {
-      "name": "Dow Jones 30",
-      "price": 524.19,
-      "prevClose": 522.77,
-      "change": 1.4200000000000728,
-      "changePct": 0.27162997111542797
-    },
     "SPY": {
       "name": "S&P 500",
+      "group": "benchmarks",
       "price": 751.71,
       "prevClose": 745.4,
       "change": 6.310000000000059,
@@ -18,27 +12,87 @@
     },
     "QQQ": {
       "name": "Nasdaq 100",
+      "group": "benchmarks",
       "price": 723.28,
       "prevClose": 711.44,
       "change": 11.839999999999918,
       "changePct": 1.664230293489255
     },
+    "VIX": {
+      "name": "Volatility",
+      "group": "benchmarks",
+      "price": 15.84,
+      "prevClose": 16.9,
+      "change": -1.0599999999999987,
+      "changePct": -6.2721893491124225
+    },
+    "DIA": {
+      "name": "Dow Jones",
+      "group": "benchmarks",
+      "price": 524.19,
+      "prevClose": 522.77,
+      "change": 1.4200000000000728,
+      "changePct": 0.27162997111542797
+    },
+    "RSP": {
+      "name": "S&P 500 Equal Weight",
+      "group": "benchmarks",
+      "price": 213.5,
+      "prevClose": 212.2,
+      "change": 1.3000000000000114,
+      "changePct": 0.6126295947219695
+    },
+    "SPMO": {
+      "name": "Momentum",
+      "group": "benchmarks",
+      "price": 153.08,
+      "prevClose": 150.57,
+      "change": 2.5100000000000193,
+      "changePct": 1.6669987381284557
+    },
     "IWM": {
       "name": "Russell 2000",
+      "group": "benchmarks",
       "price": 297.24,
       "prevClose": 293.48,
       "change": 3.759999999999991,
       "changePct": 1.2811775930216651
     },
+    "IJH": {
+      "name": "Mid-Cap",
+      "group": "benchmarks",
+      "price": 75.7,
+      "prevClose": 74.73,
+      "change": 0.9699999999999989,
+      "changePct": 1.2980061554931144
+    },
+    "IJR": {
+      "name": "Small-Cap",
+      "group": "benchmarks",
+      "price": 145.47,
+      "prevClose": 143.69,
+      "change": 1.7800000000000011,
+      "changePct": 1.2387779246989972
+    },
+    "VBR": {
+      "name": "Small-Cap Value",
+      "group": "benchmarks",
+      "price": 241.14,
+      "prevClose": 238.86,
+      "change": 2.2799999999999727,
+      "changePct": 0.9545340366741817
+    },
     "VTI": {
-      "name": "US Total Market",
+      "name": "US Market",
+      "group": "benchmarks",
       "price": 371.45,
       "prevClose": 368.25,
       "change": 3.1999999999999886,
       "changePct": 0.8689748811948395
     },
     "VXUS": {
-      "name": "International Total Market",
+      "name": "International Market",
+      "group": "benchmarks",
       "price": 84.9,
       "prevClose": 84.44,
       "change": 0.46000000000000796,
@@ -46,6 +100,7 @@
     },
     "VUG": {
       "name": "Growth",
+      "group": "benchmarks",
       "price": 86.98,
       "prevClose": 85.99,
       "change": 0.9900000000000091,
@@ -53,24 +108,51 @@
     },
     "VTV": {
       "name": "Value",
+      "group": "benchmarks",
       "price": 218.56,
       "prevClose": 217.64,
       "change": 0.9200000000000159,
       "changePct": 0.42271641242419555
     },
     "VIG": {
-      "name": "Dividend Appreciation",
+      "name": "Dividend",
+      "group": "benchmarks",
       "price": 238.62,
       "prevClose": 237.41,
       "change": 1.210000000000008,
       "changePct": 0.5096668211111544
     },
-    "VIX": {
-      "name": "Volatility Index",
-      "price": 15.84,
-      "prevClose": 16.9,
-      "change": -1.0599999999999987,
-      "changePct": -6.2721893491124225
+    "XLP": {
+      "name": "Consumer Staples",
+      "group": "benchmarks",
+      "price": 83.2,
+      "prevClose": 84.39,
+      "change": -1.1899999999999977,
+      "changePct": -1.4101196824268247
+    },
+    "TLT": {
+      "name": "Long-Term Bonds",
+      "group": "benchmarks",
+      "price": 84.49,
+      "prevClose": 84.36,
+      "change": 0.12999999999999545,
+      "changePct": 0.15410146989094375
+    },
+    "VNQ": {
+      "name": "Real Estate",
+      "group": "industries",
+      "price": 97.09,
+      "prevClose": 96.8,
+      "change": 0.29000000000000625,
+      "changePct": 0.2995867768595062
+    },
+    "TQQQ": {
+      "name": "3x Nasdaq 100",
+      "group": "leveraged",
+      "price": 76.34,
+      "prevClose": 72.72,
+      "change": 3.6200000000000045,
+      "changePct": 4.977997799779987
     }
   }
 }

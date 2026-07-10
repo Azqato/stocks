@@ -2,6 +2,31 @@
 
 ---
 
+## v4.1.4 — 2026-07-10 — Market Overview: expanded symbol list, renames, sectioned placeholders
+
+**Same-day follow-up to v4.1.0 while the owner tested the live page: renamed several card labels, added 7 benchmark symbols plus two new placeholder sections, and reworked the list-to-frontend wiring to remove a config-drift risk.**
+
+### Changed
+
+- **Card labels shortened**: "Dow Jones 30"→"Dow Jones", "US Total Market"→"US Market", "International Total Market"→"International Market", "Dividend Appreciation"→"Dividend", "Volatility Index"→"Volatility".
+- **Grid reordered** so SPY, QQQ, VIX lead (previously DIA led).
+- **Removed** the "This is a snapshot, not the screener" explainer callout entirely, per owner request.
+
+### Added
+
+- **7 new benchmark symbols**: TLT (Long-Term Bonds), RSP (S&P 500 Equal Weight), SPMO (Momentum), VBR (Small-Cap Value), IJH (Mid-Cap), IJR (Small-Cap), XLP (Consumer Staples) — 17 in the `benchmarks` group total.
+- **"Industries" section**: new placeholder group, seeded with VNQ (Real Estate). Meant to grow one symbol at a time.
+- **"Leveraged ETFs" section**: new placeholder group, seeded with TQQQ (3x Nasdaq 100).
+- **Grouped-section rendering**: `data/market_overview_list.json` entries gained a `"g"` (group) field; `fetch_market_overview.py` copies it through to each quote's `"group"` field in the feed. `market.html` now iterates the feed's own key order (which matches the list file's order) and buckets by group, rendering each into its own `.market-section` with a heading, auto-hidden if empty. This removes the previously-hardcoded JS `ORDER` array, which had to be kept in sync by hand with the list file on every symbol add — a config-drift risk that's now structurally impossible.
+
+### Verified
+
+- `fetch_market_overview.py` re-run after each addition (11 → 14 → 16 → 17 → 19 symbols final), all with live price data.
+- Headless Chrome with `raw.githubusercontent.com` network-blocked (`--host-resolver-rules`) to force the local-fallback data path, since the earlier v4.1.0 push had already made the previous data live at that URL: confirmed correct order, all renames, and both new sections rendering with their placeholder symbols.
+- TQQQ's live move (+4.98%) sanity-checked against QQQ's same-day move (+1.66%), consistent with the fund's ~3x daily leverage.
+
+---
+
 ## v4.1.0 — 2026-07-10 — Market Overview page shipped
 
 **New standalone page: a price/change snapshot for 10 major market benchmarks, in the style of a CNBC market-strip, refreshed three times per trading day. Owner-requested; scoped and prioritized ahead of the sparklines release via AskUserQuestion; cadence changed from once-daily to intraday mid-build per direct owner instruction.**

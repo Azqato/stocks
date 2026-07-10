@@ -1,12 +1,23 @@
 [
-  { "t": "DIA",  "y": "DIA",  "n": "Dow Jones 30" },
-  { "t": "SPY",  "y": "SPY",  "n": "S&P 500" },
-  { "t": "QQQ",  "y": "QQQ",  "n": "Nasdaq 100" },
-  { "t": "IWM",  "y": "IWM",  "n": "Russell 2000" },
-  { "t": "VTI",  "y": "VTI",  "n": "US Total Market" },
-  { "t": "VXUS", "y": "VXUS", "n": "International Total Market" },
-  { "t": "VUG",  "y": "VUG",  "n": "Growth" },
-  { "t": "VTV",  "y": "VTV",  "n": "Value" },
-  { "t": "VIG",  "y": "VIG",  "n": "Dividend Appreciation" },
-  { "t": "VIX",  "y": "^VIX", "n": "Volatility Index" }
+  { "t": "SPY",  "y": "SPY",  "n": "S&P 500",                "g": "benchmarks" },
+  { "t": "QQQ",  "y": "QQQ",  "n": "Nasdaq 100",             "g": "benchmarks" },
+  { "t": "VIX",  "y": "^VIX", "n": "Volatility",             "g": "benchmarks" },
+  { "t": "DIA",  "y": "DIA",  "n": "Dow Jones",              "g": "benchmarks" },
+  { "t": "RSP",  "y": "RSP",  "n": "S&P 500 Equal Weight",   "g": "benchmarks" },
+  { "t": "SPMO", "y": "SPMO", "n": "Momentum",                "g": "benchmarks" },
+  { "t": "IWM",  "y": "IWM",  "n": "Russell 2000",           "g": "benchmarks" },
+  { "t": "IJH",  "y": "IJH",  "n": "Mid-Cap",                "g": "benchmarks" },
+  { "t": "IJR",  "y": "IJR",  "n": "Small-Cap",              "g": "benchmarks" },
+  { "t": "VBR",  "y": "VBR",  "n": "Small-Cap Value",        "g": "benchmarks" },
+  { "t": "VTI",  "y": "VTI",  "n": "US Market",              "g": "benchmarks" },
+  { "t": "VXUS", "y": "VXUS", "n": "International Market",  "g": "benchmarks" },
+  { "t": "VUG",  "y": "VUG",  "n": "Growth",                 "g": "benchmarks" },
+  { "t": "VTV",  "y": "VTV",  "n": "Value",                  "g": "benchmarks" },
+  { "t": "VIG",  "y": "VIG",  "n": "Dividend",               "g": "benchmarks" },
+  { "t": "XLP",  "y": "XLP",  "n": "Consumer Staples",       "g": "benchmarks" },
+  { "t": "TLT",  "y": "TLT",  "n": "Long-Term Bonds",        "g": "benchmarks" },
+
+  { "t": "VNQ",  "y": "VNQ",  "n": "Real Estate",            "g": "industries" },
+
+  { "t": "TQQQ", "y": "TQQQ", "n": "3x Nasdaq 100",          "g": "leveraged" }
 ]
