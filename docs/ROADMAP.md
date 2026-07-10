@@ -1,11 +1,11 @@
 # ROADMAP.md — Implementation Plans for Planned Releases
 
-**Version:** 4.1.3
-**Last Updated:** 2026-07-09
+**Version:** 4.1.0
+**Last Updated:** 2026-07-10
 
 This document holds the detailed implementation plan for every item still open on the [PRD roadmap](PRD.md#roadmap). The PRD's milestone table remains the source of truth for **what** is planned and in what order; this file is the reference for **how** each item will be built. When a release ships, its plan here is trimmed to a pointer at the PRD milestone row and the PATCHNOTES entry.
 
-Release order (updated 2026-07-09): **v4.1.0 Market Overview page (next up, new — prioritized ahead of sparklines)** → v4.2.0 score sparklines (renumbered from v4.1.0) → v4.3.0 index coverage (renumbered from v4.2.0) → v4.4.0 historical examples (renumbered from v4.3.0) → v4.5.0 philosophy sections (renumbered from v4.4.0) → v4.6.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, and v4.1.3 all shipped, most recently 2026-07-09.)
+Release order (updated 2026-07-10): **v4.2.0 score sparklines (next up, renumbered from v4.1.0)** → v4.3.0 index coverage (renumbered from v4.2.0) → v4.4.0 historical examples (renumbered from v4.3.0) → v4.5.0 philosophy sections (renumbered from v4.4.0) → v4.6.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, and v4.1.0 Market Overview all shipped, most recently 2026-07-10.)
 
 ---
 
@@ -312,42 +312,46 @@ Small by design, because v3.33.0 pre-paid for it:
 
 ---
 
-## v4.1.0 — Market Overview Page
+## v4.1.0 — Market Overview Page — DONE 2026-07-10
 
 ### Goal
 
-A new standalone page, styled as a CNBC-style card strip, showing at-a-glance daily price/change for the market's major broad benchmarks: DIA (Dow), SPY (S&P 500), QQQ (Nasdaq 100), IWM (Russell 2000), VTI (US Broad Market), VXUS (International Broad Market), VUG (Growth), VTV (Value), VIG (Dividend), and VIX (Volatility Index). Owner decisions locked 2026-07-04 (via AskUserQuestion): **new standalone page** (not a widget on an existing page), **daily snapshot** matching the site's existing once-daily batch pipeline (not live/intraday), **prioritized ahead of v4.1.0 sparklines** (this is the new v4.1.0; sparklines and everything after shift down one, see the renumbering note in PATCHNOTES.md/this file's release-order line).
+A new standalone page, styled as a CNBC-style card strip, showing at-a-glance price/change for the market's major broad benchmarks: DIA (Dow), SPY (S&P 500), QQQ (Nasdaq 100), IWM (Russell 2000), VTI (US Broad Market), VXUS (International Broad Market), VUG (Growth), VTV (Value), VIG (Dividend), and VIX (Volatility Index). Owner decisions locked 2026-07-09 (via AskUserQuestion): **new standalone page** (not a widget on an existing page); **prioritized ahead of v4.1.0 sparklines** (this is the new v4.1.0; sparklines and everything after shifted down one, see the renumbering note in PATCHNOTES.md/this file's release-order line). Cadence was initially locked as a once-daily batch snapshot matching the rest of the site, then **changed mid-build to intraday**, three times per trading day, per direct owner instruction (see Cadence below) — this page is meant to feel like a same-day market check-in, not a close-of-business number.
 
 ### Scope boundary (owner-set)
 
-This is a snapshot display, explicitly **not** the screener: no scoring, no tiers, no percentile ranking, no per-metric breakdown popup. Just symbol, name, last price, change, %change, and last-updated timestamp per card, refreshed once daily like the rest of the site.
+This is a snapshot display, explicitly **not** the screener: no scoring, no tiers, no percentile ranking, no per-metric breakdown popup. Just symbol, name, last price, change, %change, and a "last updated" timestamp per card.
+
+### Cadence (revised mid-build)
+
+Originally scoped as a once-daily refresh alongside the rest of the site's pipeline. The owner asked, mid-implementation, for three updates per trading day instead: **15:00, 19:00, 22:00 UTC** (shortly after the US open, midday, and shortly after the US close). This is the only workflow in the pipeline that isn't once-daily-after-close; every other feed stayed on its existing schedule. The stale-data banner threshold was recalibrated from the screener's 7-day threshold down to **4 days**, since a 3x/day cadence makes 7 days too loose to mean anything, but a shorter threshold like 24 hours would falsely flag every ordinary weekend (Friday's 22:00 UTC run to Monday's 15:00 UTC run is already ~65 hours; a Monday holiday pushes it to ~89 hours) — 4 days safely covers a holiday weekend while still catching a genuinely stuck pipeline well before a week passes.
 
 ### Data
 
-1. **VIX is an index, not a fund** — Yahoo symbol `^VIX`, no shares/volume/AUM fields, only OHLC-style price data. Every other symbol in the list is a normal ETF already covered by the existing `fetch_screener_data.py`/`fetch_etf_data.py` patterns (price, previousClose).
-2. New lightweight fetch script (e.g. `scripts/fetch_market_overview.py`) rather than extending the ETFs universe fetch: this needs far fewer fields (no returns history, no RSI/52-week range, no technicals) than the scored ETFs universe, so reusing that heavier fetch would waste pipeline time and add unused fields to a feed that doesn't need them.
-3. Output: a new small feed, e.g. `data/market_overview.json`, `{"updated": ..., "quotes": {"DIA": {"name": ..., "price": ..., "prevClose": ..., "change": ..., "changePct": ...}, ...}}`.
-4. Workflow: new GitHub Actions job, same daily cadence and concurrency group as the existing five, positioned wherever it fits the existing post-close chain (see v3.34.5's schedule) since it's independent of the scored universes and doesn't need to run after them.
+1. **VIX is an index, not a fund** — Yahoo symbol `^VIX`, no shares/volume/AUM fields, only price data. Every other symbol is a normal ETF. `data/market_overview_list.json` carries both a `t` (display ticker) and `y` (Yahoo fetch symbol) column so VIX's `^VIX` fetch symbol never leaks into the display — no other special-casing was needed since the script only reads price fields.
+2. New lightweight `scripts/fetch_market_overview.py`, deliberately not an extension of `fetch_etf_data.py`: this only needs price and previous close (no returns history, RSI, or technicals), and staying independent means the scored ETFs list (`data/etfs.json`) can change without Market Overview following it.
+3. Output: `data/market_overview.json`, `{"updated": ..., "source": "yahoo", "quotes": {"DIA": {"name": ..., "price": ..., "prevClose": ..., "change": ..., "changePct": ...}, ...}}`.
+4. Workflow: `.github/workflows/market-overview.yml`, three cron entries (15:00/19:00/22:00 UTC, Mon-Fri), sharing the `screener-data` concurrency group with `cancel-in-progress: false` — the 22:00 run lands the same minute as `screener-data-etfs.yml`'s daily job, so the two simply queue rather than race.
 
 ### Frontend
 
-1. **New page** `market.html` (or similarly named; confirm exact filename with the owner at build time), following the existing guide-page sidebar/nav pattern used by the site's other 8 pages.
-2. **Card grid**: one card per symbol, CNBC-style — ticker, full name, last price, change arrow, change and %change, colored green/red by direction (reuse the site's existing `--color-positive`/`--color-negative` tokens, not new colors), "as of" timestamp matching the existing stale-data banner pattern from the screener.
-3. Responsive: card grid should reflow/wrap at the same breakpoints audited in v4.0.0 (375-1920px) rather than force horizontal scroll — apply the same auto-hide/wrap lessons from that pass rather than re-discovering them.
-4. Navigation: new nav item across all 9 pages (10th nav item after this ships), sitemap.xml entry, meta/OG tags following the existing page pattern.
-5. Content rule check: since this displays live-ish market data (not editorial content), it falls under the same labeled exception the screener already has for real-time data in the content rules.
+1. **New page `market.html`**, self-contained (its own inline `<style>` and `<script>`, no shared JS file needed for a page this size), following the existing guide-page sidebar/nav pattern.
+2. **Card grid**: one card per symbol in the owner-specified fixed order, showing name, ticker, last price, change arrow, change, and %change. Colored via a top accent border + colored change text using the site's existing `--color-positive`/`--color-negative` tokens — a solid CNBC-style fill was considered and rejected as inconsistent with the site's existing dark-theme, subtle-tint visual language (the same formula `.badge-good`/`.badge-negative` already use). "As of" timestamp and a stale-data banner reuse the screener's established pattern.
+3. Responsive: `grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))` reflows the grid naturally at any width; verified zero horizontal overflow 375-1920px via the v4.0.0 methodology (`scrollWidth === clientWidth`, not screenshots alone) plus a 700px screenshot confirming the 2-column mobile layout.
+4. Navigation: new "Market Overview" nav item added to all 9 pages (11th nav item total, inserted between Screener and Finviz), `sitemap.xml` entry added.
+5. Content rule check: falls under the same labeled real-time-data exception the screener already has, since this displays live-ish market data rather than editorial content.
 
-### Owner decisions still open (confirm before build)
+### Decisions made during build (no further owner input needed)
 
-1. Exact page filename/nav label.
-2. Card order: fixed list order as given (DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, VIX) or sorted some other way.
-3. Whether to show anything beyond price/change/%change per card (e.g. a mini sparkline once v4.2.0 ships, day range, or keep it minimal like the CNBC reference).
+1. Filename/nav label: `market.html` / "Market Overview".
+2. Card order: fixed list order exactly as the owner specified (DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, VIX).
+3. Card content: kept minimal (price, change, %change only) — no day range, no mini sparkline. A sparkline can be revisited once v4.2.0's score-history infrastructure exists, but Market Overview's benchmarks are outside that system's scope (it mines the *scored* universes' git history) so this would need its own follow-up design, not an automatic carry-over.
 
-### Verification and acceptance
+### Verified
 
-- Headless Chrome: all 10 cards render with correct data, correct green/red coloring matches sign of change, responsive sweep 375-1920px shows zero horizontal overflow (reusing the v4.0.0 methodology: `scrollWidth === clientWidth` checks, not screenshots alone, plus `getBoundingClientRect()` gap checks for card spacing).
-- Workflow runs green in Actions, feed committed on schedule.
-- No regression to any existing page's nav (10th item doesn't break existing wrap/hamburger behavior).
+- `scripts/fetch_market_overview.py` run against live data: 10/10 symbols fetched successfully, including `^VIX`.
+- Headless Chrome: all 10 cards render with correct data; correct green/red coloring confirmed against a live run where VIX was down and every ETF was up (exercising both color paths); responsive sweep 375-1920px shows zero overflow at every width tested.
+- `screener.html`'s new nav-link line confirmed non-breaking via headless dump (tier counts intact modulo normal weekly constituent drift, unrelated to this change).
 
 ---
 

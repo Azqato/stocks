@@ -1,6 +1,6 @@
 # PRD — Azqato Stock Methodology Site
 
-**Version:** 4.1.3
+**Version:** 4.1.0
 **Status:** Current
 **Author:** Azqato
 **Last Updated:** 2026-07-04
@@ -136,7 +136,7 @@ Most investing resources either oversimplify (buy low, sell high) or overwhelm (
 - Site loads with no errors and no external requests in any modern browser
 - Mobile-readable at 375px minimum width
 - No real-time data, no company-specific live recommendations, no financial advice language
-- Navigation is consistent and correct on all 8 pages (10 nav items total)
+- Navigation is consistent and correct on all 9 pages (11 nav items total)
 - All pages render a preview card when shared on Discord, X, or Slack
 
 ---
@@ -238,8 +238,8 @@ Detailed implementation plans for every Planned milestone below live in [docs/RO
 | v4.1.1 — Content: two new philosophy sections + two new FAQ items, sourced from a video transcript review (owner-requested, pulled ahead of v4.1.0 by direct instruction). "Investor, Not Trader" (`philosophy.html#section-trader`, `faq.html#answer-trader`) generalizes the transcript's warning about volatile stretches pulling investors into trading behavior (chasing price action, the gambler's-chase pattern) into durable doctrine: hold the fundamentals test constant regardless of a position's size or the last week's price swings. "Why We Wait on IPOs" (`philosophy.html#section-ipo`, `faq.html#answer-ipo`) is new ground for the site: IPO timing favors the seller, not the buyer, illustrated with the closed 2021 SPAC/IPO boom and Meta's own 2012 IPO ($38 to sub-$18 within the year) as historical (non-live-price) examples, and ties the "no-touch" rule to requirements the methodology already has (conference call history, multi-quarter financials) rather than inventing a new rule. Ticker-specific, dated commentary from the source video (single-stock price targets, capex debates, one creator's current portfolio positions) was deliberately excluded as out of scope per this doc's non-goals and permanence tenet. FAQ item count 34→36, philosophy section count 9(stale)/10(actual)→12; all three counts corrected across README/PRD | 2026-07-08 | Complete |
 | v4.1.2 — Screener UI bug fix. Owner reported the MAG 10 button "looks weird when I click on it." `#mag10Btn`'s segmented-control overrides (`border-radius: 0 7px 7px 0`, `border-left`, `padding-left: 12px` — added in v4.0.1 as a divider to read "filter, not an eighth universe") never actually sat flush against the universe buttons, since `.universe-group` uses `gap: 6px`; the squared-off left corners just looked broken once the accent border lit up on click. Removed all three overrides; MAG 10 is now a plain `.btn` rendering identically to the universe buttons in both states. **Reverses the v4.0.1 "keep the squared-off corner" decision** — consistency wins now that the segmented look never worked with the flex gap in place | 2026-07-09 | Complete |
 | v4.1.3 — Docs only, backfilled. Sidebar rebrand to "Azqato Invests" with an "Individual Stocks" sub-label (shipped as commit `b856324` without a PATCHNOTES entry) logged retroactively: brand text 0.9rem→1.125rem with -0.3px letter-spacing, new `.sidebar-brand-sub` muted sub-label, applied across all 8 content pages and screener.html via shared `style.css` rules | 2026-07-09 | Complete |
-| v4.1.0 — Market Overview page (owner-requested 2026-07-09). New standalone page, CNBC-style card strip showing daily price/change for DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, and VIX. Owner decisions locked via AskUserQuestion: standalone page (not a widget on an existing page); daily snapshot matching the site's existing once-daily batch pipeline (not live/intraday); prioritized ahead of the sparklines release, which shifts to v4.2.0 (and every release after it shifts by one). Explicitly a snapshot display, not a screener extension: no scoring, no tiers, no percentile ranking. See ROADMAP.md for the full plan (data source, new lightweight fetch script, card grid design, open owner decisions on filename/card order) | Next up | Planned |
-| v4.2.0 — Screener score history sparklines (mine screener.json git history for per-stock score trends; renumbered from v4.1.0 on 2026-07-09 to make room for the prioritized Market Overview page) | After v4.1.0 | Planned |
+| v4.1.0 — **Market Overview page, shipped.** New standalone page `market.html`: a CNBC-style card strip showing price/change for DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, and VIX, in that fixed order. Owner decisions (locked via AskUserQuestion before build): standalone page, not a widget on an existing page; prioritized ahead of the sparklines release (renumbered to v4.2.0). Cadence was initially scoped as a once-daily batch snapshot, then **changed mid-build to intraday** (three runs per trading day: 15:00, 19:00, 22:00 UTC) per direct owner instruction — the only workflow in the pipeline that isn't once-daily-after-close; the stale-banner threshold was recalibrated 7 days→4 days to fit. Explicitly a snapshot, not a screener extension: no scoring, tiers, or ranking. New lightweight `scripts/fetch_market_overview.py` and `data/market_overview.json` feed, kept independent of the scored ETFs universe (`fetch_etf_data.py`/`screener_etfs.json`) since it needs far fewer fields; VIX fetched via its Yahoo index symbol `^VIX`. New `market-overview.yml` workflow, sharing the `screener-data` concurrency group (its 22:00 UTC run queues behind the ETFs feed job rather than racing it). Nav link added to all 9 pages, `sitemap.xml` entry added. Verified via headless Chrome: correct data and green/red coloring on all 10 cards (including a live down-day on VIX exercising the red path), zero horizontal overflow 375-1920px, 2-column mobile card layout confirmed at 700px. See ROADMAP.md for the full as-built record | 2026-07-10 | Complete |
+| v4.2.0 — Screener score history sparklines (mine screener.json git history for per-stock score trends; renumbered from v4.1.0 on 2026-07-09 to make room for the prioritized Market Overview page) | Next up | Planned |
 | v4.3.0 — Deeper index fund coverage (sector ETFs, international allocation, bond tent strategy; renumbered from v4.2.0 on 2026-07-09) | TBD | Planned |
 | v4.4.0 — Additional illustrative examples using historical market events (renumbered from v4.3.0 on 2026-07-09) | TBD | Planned |
 | v4.5.0 — Additional philosophy sections (renumbered from v4.4.0 on 2026-07-09) | TBD | Planned |
@@ -249,9 +249,9 @@ Detailed implementation plans for every Planned milestone below live in [docs/RO
 
 **v3.x (current):** Screener with daily data, relative percentile scoring, methodology popup, documentation consolidation.
 
-**Queue head (updated 2026-07-04):** v3.28.0 GVD universes, v3.29.0 rank-based tier scale, v3.30.0 scoring model v2, v3.31.0 margins-out re-weighting, v3.32.0 pipeline cleanup, v3.33.0 ETFs universe, v3.34.0 International universe, v3.34.5 workflow timing review, v3.34.6 International same-company duplicate fix, v3.34.7 International name-primary display, v3.34.8 horizontal-scroll bug fix, v3.36.0 "MAG 10" filter, v3.37.0 ETF rating methodology review, and v4.0.0 screener responsive redesign are all shipped — all seven screener universes are live, the daily pipeline is re-scheduled (Nasdaq 100 21:30 → ETFs 22:00 → S&P 500 22:30 → GVD 23:00 → International 23:30 UTC, all Mon-Fri, 30-min gaps throughout, anchored to the latest-possible market close), the International list's top 100 correctly represents 100 distinct companies, the International universe leads with company names, a fixed 10-stock "MAG 10" watchlist toggle scores against the full S&P 500, the ETF scoring model is reweighted (Yield/Expense Ratio removed, 5Y/10Y weighted up), the screener now auto-hides column groups responsively so no width ever requires horizontal scroll, and `indices.html` documents Price vs 200-Day MA as a fifth timing signal. v3.34.10's scrollbar-visibility fix is superseded; v3.35.0 is retired and merged into v4.0.0. **Next: v4.1.0** Market Overview page, then v4.2.0 sparklines, then v4.3.0-v4.6.0 content releases. Constituent sourcing decision (2026-07-03): index universes stay on Wikipedia (updates within days of index changes); ETF universes use Vanguard's holdings API (authoritative but month-lagged, acceptable because the fund's published holdings are the universe definition). Switching the S&P 500 to VOO holdings was considered and rejected for the freshness reason. Note the dependency: the v4.2.0 sparklines mine the git history of the committed data feeds, so keeping generated data files in the repo is an intentional design choice, not tech debt.
+**Queue head (updated 2026-07-04):** v3.28.0 GVD universes, v3.29.0 rank-based tier scale, v3.30.0 scoring model v2, v3.31.0 margins-out re-weighting, v3.32.0 pipeline cleanup, v3.33.0 ETFs universe, v3.34.0 International universe, v3.34.5 workflow timing review, v3.34.6 International same-company duplicate fix, v3.34.7 International name-primary display, v3.34.8 horizontal-scroll bug fix, v3.36.0 "MAG 10" filter, v3.37.0 ETF rating methodology review, and v4.0.0 screener responsive redesign are all shipped — all seven screener universes are live, the daily pipeline is re-scheduled (Nasdaq 100 21:30 → ETFs 22:00 → S&P 500 22:30 → GVD 23:00 → International 23:30 UTC, all Mon-Fri, 30-min gaps throughout, anchored to the latest-possible market close), the International list's top 100 correctly represents 100 distinct companies, the International universe leads with company names, a fixed 10-stock "MAG 10" watchlist toggle scores against the full S&P 500, the ETF scoring model is reweighted (Yield/Expense Ratio removed, 5Y/10Y weighted up), the screener now auto-hides column groups responsively so no width ever requires horizontal scroll, and `indices.html` documents Price vs 200-Day MA as a fifth timing signal. v3.34.10's scrollbar-visibility fix is superseded; v3.35.0 is retired and merged into v4.0.0. v4.1.0 Market Overview page also shipped 2026-07-10 (`market.html`, 9th content page, own daily feed). **Next: v4.2.0** sparklines, then v4.3.0-v4.6.0 content releases. Constituent sourcing decision (2026-07-03): index universes stay on Wikipedia (updates within days of index changes); ETF universes use Vanguard's holdings API (authoritative but month-lagged, acceptable because the fund's published holdings are the universe definition). Switching the S&P 500 to VOO holdings was considered and rejected for the freshness reason. Note the dependency: the v4.2.0 sparklines mine the git history of the committed data feeds, so keeping generated data files in the repo is an intentional design choice, not tech debt.
 
-**v4.x (order updated 2026-07-09):** v4.0.0 screener responsive redesign & site-wide mobile-friendliness pass shipped 2026-07-04, v4.0.1 MAG 10 button spacing fix shipped same day, v4.1.1 two new philosophy sections + FAQ items shipped 2026-07-08, v4.1.0 Market Overview page next (owner-requested and prioritized 2026-07-09, ahead of sparklines), v4.2.0 score history sparklines (renumbered from v4.1.0), v4.3.0 deeper index fund coverage (renumbered from v4.2.0), v4.4.0 additional historical illustrative examples (renumbered from v4.3.0), v4.5.0 additional philosophy sections (renumbered from v4.4.0), v4.6.0 conference call research guide (renumbered from v4.5.0). Potential Growth/Value/Dividend standalone framework pages remain unversioned backlog.
+**v4.x (order updated 2026-07-10):** v4.0.0 screener responsive redesign & site-wide mobile-friendliness pass shipped 2026-07-04, v4.0.1 MAG 10 button spacing fix shipped same day, v4.1.1 two new philosophy sections + FAQ items shipped 2026-07-08, v4.1.2 MAG 10 button restyle and v4.1.3 sidebar rebrand (docs backfill) shipped 2026-07-09, v4.1.0 Market Overview page shipped 2026-07-10 (owner-requested and prioritized 2026-07-09, ahead of sparklines), v4.2.0 score history sparklines next (renumbered from v4.1.0), v4.3.0 deeper index fund coverage (renumbered from v4.2.0), v4.4.0 additional historical illustrative examples (renumbered from v4.3.0), v4.5.0 additional philosophy sections (renumbered from v4.4.0), v4.6.0 conference call research guide (renumbered from v4.5.0). Potential Growth/Value/Dividend standalone framework pages remain unversioned backlog.
 
 ### Explicitly Deferred
 
@@ -337,10 +337,11 @@ GitHub Pages is configured to serve from the repository root. No additional conf
 
 ### Data Pipeline (Automated)
 
-Five screener data feeds are refreshed automatically, staggered so the default Nasdaq 100 view always has priority. The whole daily chain (2026-07-04 schedule, owner-reviewed) is anchored 30 minutes after the **latest possible** US market close in UTC terms rather than a fixed Eastern-clock offset: close is always 4:00pm US Eastern, which is 21:00 UTC in winter (EST, UTC-5) but only 20:00 UTC in summer (EDT, UTC-4) — GitHub Actions cron is UTC-only and does not observe DST, so anchoring to the winter (later-in-UTC) close guarantees at least a 30-minute buffer after close year-round, growing to 90 minutes in summer. Every job in the chain now lands on the same calendar day (no more day-rollover crons):
+Six data feeds are refreshed automatically, staggered so the default Nasdaq 100 view always has priority. Five of the six run once daily (2026-07-04 schedule, owner-reviewed), anchored 30 minutes after the **latest possible** US market close in UTC terms rather than a fixed Eastern-clock offset: close is always 4:00pm US Eastern, which is 21:00 UTC in winter (EST, UTC-5) but only 20:00 UTC in summer (EDT, UTC-4) — GitHub Actions cron is UTC-only and does not observe DST, so anchoring to the winter (later-in-UTC) close guarantees at least a 30-minute buffer after close year-round, growing to 90 minutes in summer. Every job in that daily chain lands on the same calendar day (no more day-rollover crons). The sixth, Market Overview (added 2026-07-10), is the one exception: it runs **three times per trading day** rather than once after close, per direct owner instruction:
 
 - **Nasdaq 100** (`data/screener.json`): trading days (Mon-Fri) at 21:30 UTC via `.github/workflows/screener-data.yml`
 - **ETFs** (`data/screener_etfs.json`): trading days (Mon-Fri) at 22:00 UTC via `.github/workflows/screener-data-etfs.yml` (a 10-symbol fetch that slots between the two index jobs; run by `scripts/fetch_etf_data.py`, which shares no field logic with the stock fetcher)
+- **Market Overview** (`data/market_overview.json`): trading days (Mon-Fri) at 15:00, 19:00, and 22:00 UTC via `.github/workflows/market-overview.yml` — shortly after the open, midday, and shortly after the close, so this page reads as a same-day check-in rather than a close-of-business number. A 10-symbol price/change-only snapshot (`scripts/fetch_market_overview.py`), independent of the scored ETFs universe so it isn't affected by any future change to that list. The 22:00 run shares its trigger minute with the ETFs job above; both share the `screener-data` concurrency group with `cancel-in-progress: false`, so they queue rather than race
 - **S&P 500** (`data/screener_sp500.json`): trading days (Mon-Fri) at 22:30 UTC via `.github/workflows/screener-data-sp500.yml` (the larger ~500-symbol fetch runs after the small jobs so it never delays them)
 - **Growth/Value/Dividend** (`data/screener_gvd.json`): trading days (Mon-Fri) at 23:00 UTC via `.github/workflows/screener-data-gvd.yml`, 30 minutes after the S&P 500 job. One combined file holding all three universes; symbols shared between lists are fetched once (~220 unique of 300)
 - **International** (`data/screener_intl.json`): trading days (Mon-Fri) at 23:30 UTC via `.github/workflows/screener-data-intl.yml`, 30 minutes after the GVD job — the last job in the daily chain. Top 100 VXUS holdings, same `fetch_screener_data.py` stock fetcher as the domestic universes (`--list data/vxus.json --out data/screener_intl.json`), plus a `cur` field (native ISO currency code) that the frontend uses to label Price/Mkt Cap/Cash/Debt in the listing's own currency instead of USD
@@ -426,6 +427,10 @@ The site is a fully static architecture. No server processes any requests. No da
                  ├── Mon-Fri 23:30 UTC → fetch_screener_data.py --list vxus.json         → commits data/screener_intl.json
                  │                       (30 min after the GVD run; last job in the daily chain)
                  │
+                 ├── Mon-Fri 15:00, 19:00, 22:00 UTC → fetch_market_overview.py (fixed 10-symbol list) → commits data/market_overview.json
+                 │                       (intraday, not once-daily-after-close -- the one exception in this chain;
+                 │                        22:00 run shares its trigger minute with the ETFs job, queues via concurrency group)
+                 │
                  └── Sat 23:00 UTC     → update_constituents.py + update_etf_constituents.py → regenerates changed feed(s)
 ```
 
@@ -453,6 +458,7 @@ stocks/
 ├── metrics.html                       ← 12-metric glossary
 ├── screener.html                      ← Interactive Nasdaq 100 screener (app: markup + CSS)
 ├── screener.js                        ← Screener logic (data load, scoring, render, popup)
+├── market.html                        ← Market Overview: daily benchmark snapshot (self-contained)
 ├── finviz.html                        ← Finviz setup guide
 ├── seekingalpha.html                  ← Seeking Alpha setup guide
 ├── indices.html                       ← Index/ETF methodology
@@ -469,14 +475,17 @@ stocks/
 │   ├── etfs.json                      ← ETFs list: fixed, owner-curated 10 funds (hand-edited only)
 │   ├── vxus.json                      ← International list: top 100 VXUS holdings (auto-synced, ISIN-resolved)
 │   ├── vxus_map.json                  ← ISIN → Yahoo symbol resolution cache + manual overrides
+│   ├── market_overview_list.json      ← Market Overview list: fixed, owner-curated 10 symbols (hand-edited only)
 │   ├── screener.json                  ← Nasdaq 100 daily metrics feed
 │   ├── screener_sp500.json            ← S&P 500 daily metrics feed
 │   ├── screener_gvd.json              ← Combined Growth/Value/Dividend daily metrics feed
 │   ├── screener_etfs.json             ← ETFs daily metrics feed (technicals/returns/yield/cost)
-│   └── screener_intl.json             ← International daily metrics feed (six-metric stock model + `cur`)
+│   ├── screener_intl.json             ← International daily metrics feed (six-metric stock model + `cur`)
+│   └── market_overview.json           ← Market Overview daily price/change snapshot (10 symbols)
 ├── scripts/
 │   ├── fetch_screener_data.py         ← yfinance → stock screener feeds (--list/--out per index; --combined for GVD)
 │   ├── fetch_etf_data.py              ← yfinance → ETFs feed (returns, RSI, MAs, yield, expense ratio, AUM)
+│   ├── fetch_market_overview.py       ← yfinance → Market Overview feed (price/prevClose/change only)
 │   ├── update_constituents.py         ← Wikipedia → nasdaq100.json + sp500.json (weekly auto-sync)
 │   └── update_etf_constituents.py     ← Vanguard holdings API → vug/vtv/vig/vxus.json (weekly auto-sync)
 ├── img/                               ← Historical screenshots
@@ -487,6 +496,7 @@ stocks/
 │       ├── screener-data-sp500.yml    ← S&P 500 feed (Mon-Fri 22:30 UTC)
 │       ├── screener-data-gvd.yml      ← Growth/Value/Dividend feed (Mon-Fri 23:00 UTC)
 │       ├── screener-data-intl.yml     ← International feed (Mon-Fri 23:30 UTC)
+│       ├── market-overview.yml        ← Market Overview feed (Mon-Fri 22:05 UTC)
 │       └── constituents.yml           ← Constituent sync, indices + ETFs (Sat 23:00 UTC)
 └── docs/
     ├── PRD.md                         ← This file
@@ -877,11 +887,11 @@ Five files: README.md (developer front door), PRD.md (this file, the comprehensi
 
 ## Site Structure Reference
 
-### Navigation Order (10 items)
+### Navigation Order (11 items)
 
-Home → Philosophy → Metrics → Screener → Finviz → SeekingAlpha → Indices → FAQ → Leveraged Strategies → Support
+Home → Philosophy → Metrics → Screener → Market Overview → Finviz → SeekingAlpha → Indices → FAQ → Leveraged Strategies → Support
 
-**Nav label rule:** Every sidebar nav label is a single token (no spaces) except the two trailing external links. Labels: Home, Philosophy, Metrics, Screener, Finviz, SeekingAlpha, Indices, FAQ, Leveraged Strategies, Support.
+**Nav label rule:** Every sidebar nav label is a single token (no spaces) except "Market Overview" and the two trailing external links. Labels: Home, Philosophy, Metrics, Screener, Market Overview, Finviz, SeekingAlpha, Indices, FAQ, Leveraged Strategies, Support.
 
 ### Pages and Their Section IDs
 
@@ -895,6 +905,7 @@ Home → Philosophy → Metrics → Screener → Finviz → SeekingAlpha → Ind
 | `indices.html` | `#section-types`, `#section-dca`, `#section-lumpsum`, `#section-framework`, `#section-vix`, `#section-timing`, `#section-aaii`, `#section-quality`, `#section-signals`, `#section-sa-setup` |
 | `faq.html` | No "On This Page" block (accordion pattern) |
 | `screener.html` | No "On This Page" block (app page, no long-form sections) |
+| `market.html` | No "On This Page" block (card grid, no long-form sections) |
 
 ### Content Philosophy (Enforced Rules)
 

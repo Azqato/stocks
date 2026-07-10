@@ -10,7 +10,7 @@ A static educational website documenting Azqato's fundamentals-driven, long-term
 
 | Layer | Technology | Version / Notes |
 |-------|-----------|----------------|
-| HTML | HTML5 semantic | 8 pages, no preprocessor |
+| HTML | HTML5 semantic | 9 pages, no preprocessor |
 | CSS | CSS3 custom properties | 850+ lines, single file |
 | JavaScript | Vanilla ES6 | `script.js` (content pages) + `screener.js` (screener app), no framework |
 | Fonts | System fonts only | No external loading |
@@ -94,6 +94,7 @@ stocks/
 ├── metrics.html                      ← 12-metric glossary with examples
 ├── screener.html                     ← Interactive Nasdaq 100 screener (markup + CSS)
 ├── screener.js                       ← Screener logic (data load, scoring, render, popup)
+├── market.html                       ← Market Overview: daily benchmark price/change snapshot (self-contained)
 ├── finviz.html                       ← Finviz screener setup guide
 ├── seekingalpha.html                 ← Seeking Alpha watchlist setup guide
 ├── indices.html                      ← Index/ETF methodology and timing signals
@@ -110,14 +111,17 @@ stocks/
 │   ├── etfs.json                     ← ETFs list: fixed, owner-curated 10 funds (hand-edited only)
 │   ├── vxus.json                     ← International list: top 100 VXUS holdings (Yahoo symbols)
 │   ├── vxus_map.json                 ← ISIN → Yahoo symbol resolution cache + manual overrides
+│   ├── market_overview_list.json     ← Market Overview list: fixed, owner-curated 10 symbols (hand-edited only)
 │   ├── screener.json                 ← Generated Nasdaq 100 feed (Mon-Fri metrics)
 │   ├── screener_sp500.json           ← Generated S&P 500 feed (Mon-Fri metrics)
 │   ├── screener_gvd.json             ← Generated combined Growth/Value/Dividend feed
 │   ├── screener_etfs.json            ← Generated ETFs feed (technicals/returns/yield/cost)
-│   └── screener_intl.json            ← Generated International feed (six-metric stock model, native currency)
+│   ├── screener_intl.json            ← Generated International feed (six-metric stock model, native currency)
+│   └── market_overview.json          ← Generated Market Overview feed (price/change snapshot, 10 symbols)
 ├── scripts/
 │   ├── fetch_screener_data.py        ← Python pipeline: yfinance → stock feeds (--list/--out, --combined)
 │   ├── fetch_etf_data.py             ← Python pipeline: yfinance → ETFs feed (returns, RSI, MAs, yield, ER, AUM)
+│   ├── fetch_market_overview.py      ← Python pipeline: yfinance → Market Overview feed (price/change only)
 │   ├── update_constituents.py        ← Weekly auto-sync: Wikipedia → nasdaq100.json + sp500.json
 │   └── update_etf_constituents.py    ← Weekly auto-sync: Vanguard API → vug/vtv/vig/vxus.json
 ├── .github/
@@ -127,6 +131,7 @@ stocks/
 │       ├── screener-data-sp500.yml   ← S&P 500 feed (Mon-Fri 22:30 UTC)
 │       ├── screener-data-gvd.yml     ← Growth/Value/Dividend feed (Mon-Fri 23:00 UTC)
 │       ├── screener-data-intl.yml    ← International feed (Mon-Fri 23:30 UTC)
+│       ├── market-overview.yml       ← Market Overview feed (Mon-Fri 22:05 UTC)
 │       └── constituents.yml          ← Constituent sync, indices + ETFs (Sat 23:00 UTC)
 └── docs/
     ├── PRD.md                        ← Product requirements, architecture, runbook

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Overview</title>
+  <meta name="description" content="A daily snapshot of the major US and international market benchmarks: Dow, S&P 500, Nasdaq 100, Russell 2000, US and international total-market funds, Growth, Value, Dividend, and the VIX volatility index.">
+  <link rel="canonical" href="https://azqato.github.io/stocks/market.html">
+  <meta name="google-site-verification" content="p91IiuxXa8OCaa0C8U8XFgr7yP2QNWDE1fCN8PcZOp4">
+  <!-- Open Graph / Discord -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://azqato.github.io/stocks/market.html">
+  <meta property="og:title" content="Market Overview">
+  <meta property="og:description" content="A daily snapshot of the major US and international market benchmarks, refreshed once per trading day.">
+  <meta property="og:image" content="https://azqato.github.io/stocks/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Market Overview">
+  <meta name="twitter:description" content="A daily snapshot of the major US and international market benchmarks, refreshed once per trading day.">
+  <meta name="twitter:image" content="https://azqato.github.io/stocks/og-image.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== market.html: benchmark snapshot card grid ===== */
+    .market-stale-banner {
+      display: none;
+      background: rgba(255, 166, 87, 0.12);
+      border: 1px solid rgba(255, 166, 87, 0.3);
+      color: var(--color-warning);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin: 18px 0;
+    }
+    .market-stale-banner.on { display: block; }
+
+    .market-asof {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      margin: 4px 0 20px;
+    }
+
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .market-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      min-width: 0;
+    }
+    .market-card.up { border-top: 3px solid var(--color-positive); }
+    .market-card.down { border-top: 3px solid var(--color-negative); }
+    .market-card.flat { border-top: 3px solid var(--color-border); }
+
+    .market-card-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .market-card-ticker {
+      font-size: 0.72rem;
+      color: var(--color-text-secondary);
+      font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    }
+    .market-card-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-top: 8px;
+    }
+    .market-card-change {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .market-card.up .market-card-change { color: var(--color-positive); }
+    .market-card.down .market-card-change { color: var(--color-negative); }
+    .market-card.flat .market-card-change { color: var(--color-text-secondary); }
+    .market-card-arrow { font-size: 0.75rem; }
+
+    .market-card-missing {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 480px) {
+      .market-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+      .market-card { padding: 12px; }
+      .market-card-price { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <a href="https://azqato.com/invests">Azqato <span>Invests</span></a>
+          <div class="sidebar-brand-sub">Individual Stocks</div>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation"></label>
+        <nav class="sidebar-nav" aria-label="Site navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="metrics.html">Metrics</a></li>
+            <li><a href="screener.html">Screener</a></li>
+            <li><a href="market.html" class="active" aria-current="page">Market Overview</a></li>
+            <li><a href="finviz.html">Finviz</a></li>
+            <li><a href="seekingalpha.html">SeekingAlpha</a></li>
+            <li><a href="indices.html">Indices</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="https://azqato.github.io/leveraged-strategies/">Leveraged Strategies</a></li>
+            <li><a href="https://azqato.github.io/support.html" target="_blank" rel="noopener">Support</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          Educational use only.<br>Not financial advice.
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content-inner">
+
+          <div class="guide-intro">
+            <h1>Market Overview</h1>
+            <p>A snapshot of the major US and international market benchmarks: broad indices, style tilts, and the VIX volatility index. Refreshed three times per trading day (shortly after the open, midday, and shortly after the close).</p>
+            <div class="hero-badge" style="margin-top: 16px;">📊 Market Snapshot</div>
+          </div>
+
+          <div class="guide-note" style="margin-top: 28px;">
+            <p><strong>This is a snapshot, not the screener.</strong> These 10 symbols are not scored, ranked, or tiered. Each card shows the fund or index's last price, its change from the previous close, and nothing else. For fundamentals-based stock scoring, use the <a href="screener.html">Screener</a>; for how to read the timing signals these benchmarks carry (RSI, 52-week range, VIX, AAII sentiment), see <a href="indices.html">Indices</a>.</p>
+          </div>
+
+          <div class="market-stale-banner" id="marketStaleBanner">
+            <span id="marketStaleText"></span>
+          </div>
+
+          <div class="market-asof" id="marketAsOf">Loading market data&hellip;</div>
+
+          <div class="market-grid" id="marketGrid" aria-live="polite"></div>
+
+        </div>
+      </main>
+
+    </div>
+
+    <footer class="site-footer">
+      Built by <a href="https://azqato.github.io/" target="_blank" rel="noopener">Azqato</a><span style="color: var(--color-text-secondary);">.</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      // Fixed 10-symbol list, in the owner-specified display order (matches
+      // data/market_overview_list.json). Pulled straight from GitHub (raw) so
+      // this works even opened locally; falls back to the same-origin copy.
+      var RAW_BASE = "https://raw.githubusercontent.com/Azqato/stocks/main/data/";
+      var PATHS = [RAW_BASE + "market_overview.json", "data/market_overview.json"];
+      var ORDER = ["DIA", "SPY", "QQQ", "IWM", "VTI", "VXUS", "VUG", "VTV", "VIG", "VIX"];
+      var CACHE_KEY = "azq_market_overview_cache";
+
+      function readCache() {
+        try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch (e) { return null; }
+      }
+      function writeCache(feed) {
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify(feed)); } catch (e) {}
+      }
+
+      function fmtPrice(p) {
+        if (p === null || p === undefined) return "—";
+        return p.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      function fmtChange(c) {
+        if (c === null || c === undefined) return "—";
+        var sign = c > 0 ? "+" : "";
+        return sign + c.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      function fmtPct(p) {
+        if (p === null || p === undefined) return "—";
+        var sign = p > 0 ? "+" : "";
+        return sign + p.toFixed(2) + "%";
+      }
+
+      function dirClass(pct) {
+        if (pct === null || pct === undefined) return "flat";
+        if (pct > 0.005) return "up";
+        if (pct < -0.005) return "down";
+        return "flat";
+      }
+      function arrow(dir) {
+        return dir === "up" ? "▲" : dir === "down" ? "▼" : "–";
+      }
+
+      function render(feed) {
+        var grid = document.getElementById("marketGrid");
+        grid.innerHTML = "";
+        ORDER.forEach(function (ticker) {
+          var q = (feed.quotes || {})[ticker];
+          var card = document.createElement("div");
+          if (!q || q.price === null || q.price === undefined) {
+            card.className = "market-card flat";
+            card.innerHTML =
+              '<div class="market-card-name">' + ticker + '</div>' +
+              '<div class="market-card-missing">Data unavailable</div>';
+            grid.appendChild(card);
+            return;
+          }
+          var dir = dirClass(q.changePct);
+          card.className = "market-card " + dir;
+          card.innerHTML =
+            '<div class="market-card-name">' + (q.name || ticker) + '</div>' +
+            '<div class="market-card-ticker">' + ticker + '</div>' +
+            '<div class="market-card-price">' + fmtPrice(q.price) + '</div>' +
+            '<div class="market-card-change">' +
+              '<span class="market-card-arrow">' + arrow(dir) + '</span>' +
+              '<span>' + fmtChange(q.change) + '</span>' +
+              '<span>(' + fmtPct(q.changePct) + ')</span>' +
+            '</div>';
+          grid.appendChild(card);
+        });
+
+        var asOf = document.getElementById("marketAsOf");
+        asOf.textContent = feed.updated
+          ? "Last updated " + new Date(feed.updated).toLocaleString()
+          : "Last updated time unavailable";
+
+        // Threshold is 4 days, not the screener's 7: this feed updates three
+        // times per trading day, so even a 3-day holiday weekend (Fri 22:00
+        // UTC run to a Tue 15:00 UTC run after a Monday holiday) stays under
+        // 4 days, while a genuinely stuck pipeline still trips the banner
+        // well before a week goes by.
+        var stale = feed.updated && (Date.now() - new Date(feed.updated).getTime()) > 4 * 24 * 3600 * 1000;
+        var banner = document.getElementById("marketStaleBanner");
+        banner.classList.toggle("on", !!stale);
+        if (stale) {
+          document.getElementById("marketStaleText").textContent =
+            "This data is from " + new Date(feed.updated).toLocaleString() + " and may be out of date. The refresh may not have run.";
+        }
+      }
+
+      async function load() {
+        for (var i = 0; i < PATHS.length; i++) {
+          try {
+            var res = await fetch(PATHS[i], { cache: "no-store" });
+            if (!res.ok) continue;
+            var feed = await res.json();
+            if (feed && feed.quotes && Object.keys(feed.quotes).length) {
+              writeCache(feed);
+              render(feed);
+              return;
+            }
+          } catch (e) { /* try next path */ }
+        }
+        var cached = readCache();
+        if (cached && cached.quotes) {
+          render(cached);
+        } else {
+          document.getElementById("marketAsOf").textContent = "Unable to load market data. Check your connection and try again.";
+        }
+      }
+
+      load();
+    })();
+  </script>
+</body>
+</html>

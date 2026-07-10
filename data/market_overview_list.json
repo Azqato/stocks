@@ -1,0 +1,12 @@
+[
+  { "t": "DIA",  "y": "DIA",  "n": "Dow Jones 30" },
+  { "t": "SPY",  "y": "SPY",  "n": "S&P 500" },
+  { "t": "QQQ",  "y": "QQQ",  "n": "Nasdaq 100" },
+  { "t": "IWM",  "y": "IWM",  "n": "Russell 2000" },
+  { "t": "VTI",  "y": "VTI",  "n": "US Total Market" },
+  { "t": "VXUS", "y": "VXUS", "n": "International Total Market" },
+  { "t": "VUG",  "y": "VUG",  "n": "Growth" },
+  { "t": "VTV",  "y": "VTV",  "n": "Value" },
+  { "t": "VIG",  "y": "VIG",  "n": "Dividend Appreciation" },
+  { "t": "VIX",  "y": "^VIX", "n": "Volatility Index" }
+]

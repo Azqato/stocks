@@ -1,0 +1,76 @@
+{
+  "updated": "2026-07-10T01:09:20.776496Z",
+  "source": "yahoo",
+  "quotes": {
+    "DIA": {
+      "name": "Dow Jones 30",
+      "price": 524.19,
+      "prevClose": 522.77,
+      "change": 1.4200000000000728,
+      "changePct": 0.27162997111542797
+    },
+    "SPY": {
+      "name": "S&P 500",
+      "price": 751.71,
+      "prevClose": 745.4,
+      "change": 6.310000000000059,
+      "changePct": 0.8465253555138164
+    },
+    "QQQ": {
+      "name": "Nasdaq 100",
+      "price": 723.28,
+      "prevClose": 711.44,
+      "change": 11.839999999999918,
+      "changePct": 1.664230293489255
+    },
+    "IWM": {
+      "name": "Russell 2000",
+      "price": 297.24,
+      "prevClose": 293.48,
+      "change": 3.759999999999991,
+      "changePct": 1.2811775930216651
+    },
+    "VTI": {
+      "name": "US Total Market",
+      "price": 371.45,
+      "prevClose": 368.25,
+      "change": 3.1999999999999886,
+      "changePct": 0.8689748811948395
+    },
+    "VXUS": {
+      "name": "International Total Market",
+      "price": 84.9,
+      "prevClose": 84.44,
+      "change": 0.46000000000000796,
+      "changePct": 0.5447655139744212
+    },
+    "VUG": {
+      "name": "Growth",
+      "price": 86.98,
+      "prevClose": 85.99,
+      "change": 0.9900000000000091,
+      "changePct": 1.1512966624026122
+    },
+    "VTV": {
+      "name": "Value",
+      "price": 218.56,
+      "prevClose": 217.64,
+      "change": 0.9200000000000159,
+      "changePct": 0.42271641242419555
+    },
+    "VIG": {
+      "name": "Dividend Appreciation",
+      "price": 238.62,
+      "prevClose": 237.41,
+      "change": 1.210000000000008,
+      "changePct": 0.5096668211111544
+    },
+    "VIX": {
+      "name": "Volatility Index",
+      "price": 15.84,
+      "prevClose": 16.9,
+      "change": -1.0599999999999987,
+      "changePct": -6.2721893491124225
+    }
+  }
+}

@@ -1,0 +1,63 @@
+name: Update Market Overview Data
+
+# Intraday refresh of data/market_overview.json: a fixed, owner-curated list
+# of 10 symbols (data/market_overview_list.json, hand-edited only, no
+# auto-sync) -- 9 broad-market ETFs plus VIX. A plain price/change snapshot,
+# not the scored ETFs universe, so it's a separate lightweight job.
+#
+# Unlike every other screener-data workflow (once daily, after close), this
+# page updates three times per trading day so it reads as a live-ish market
+# check-in rather than a stale close-of-business number:
+#   15:00 UTC -- shortly after the US open (13:30 UTC EDT / 14:30 UTC EST)
+#   19:00 UTC -- midday
+#   22:00 UTC -- shortly after the US close (20:00 UTC EDT / 21:00 UTC EST)
+# GitHub cron is UTC-only and does not follow DST, so the exact offset from
+# open/close drifts by an hour across the DST boundary, same as every other
+# workflow in this pipeline (see screener-data.yml for the anchor note).
+# The 22:00 run lands at the same minute as screener-data-etfs.yml's daily
+# job; both share the "screener-data" concurrency group with
+# cancel-in-progress:false, so they simply queue (whichever triggers first
+# runs first) instead of racing -- not a bug, just worth knowing if this
+# run looks a minute or two late in the Actions log.
+# Uses yfinance (public Yahoo Finance data) -- no API key.
+
+on:
+  schedule:
+    - cron: "0 15 * * 1-5"
+    - cron: "0 19 * * 1-5"
+    - cron: "0 22 * * 1-5"
+  workflow_dispatch: {}   # allow manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Fetch Market Overview data
+        run: |
+          pip install --quiet yfinance==1.4.1
+          python scripts/fetch_market_overview.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/market_overview.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update market overview data [skip ci]"
+            git push
+          fi

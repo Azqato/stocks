@@ -2,6 +2,26 @@
 
 ---
 
+## v4.1.0 — 2026-07-10 — Market Overview page shipped
+
+**New standalone page: a price/change snapshot for 10 major market benchmarks, in the style of a CNBC market-strip, refreshed three times per trading day. Owner-requested; scoped and prioritized ahead of the sparklines release via AskUserQuestion; cadence changed from once-daily to intraday mid-build per direct owner instruction.**
+
+### Added
+
+- **`market.html`**: new page, self-contained (its own inline `<style>`/`<script>`, no shared JS file) following the existing guide-page sidebar/nav pattern. Card grid shows DIA, SPY, QQQ, IWM, VTI, VXUS, VUG, VTV, VIG, and VIX in that fixed order, each card showing name, ticker, last price, change, and %change, colored green/red by direction via the site's existing `--color-positive`/`--color-negative` tokens (a top accent border + colored change text, not a solid CNBC-style fill, to stay consistent with the site's existing dark theme). Explicitly **not** the screener: no scoring, no tiers, no ranking, just a snapshot. A stale-data banner and an "as of" timestamp reuse the screener's established pattern, with the threshold recalibrated to 4 days (down from the screener's 7) to match this page's faster refresh cadence while still tolerating a holiday weekend.
+- **`scripts/fetch_market_overview.py`**: new lightweight fetch script, deliberately separate from `fetch_etf_data.py`/`data/screener_etfs.json` (the scored ETFs universe) since this only needs price and previous close, not returns history, RSI, or technicals. Reads the fixed list from `data/market_overview_list.json` (owner-curated, hand-edited only, no auto-sync — same convention as `data/etfs.json`). VIX is fetched via its Yahoo index symbol `^VIX` (the list's `y` column) but displayed under the ticker `VIX` (the list's `t` column); no other special-casing was needed since the script only reads price fields.
+- **`data/market_overview.json`**: new generated feed, `{"updated", "source", "quotes": {TICKER: {"name","price","prevClose","change","changePct"}}}`.
+- **`.github/workflows/market-overview.yml`**: new workflow, three runs per trading day (15:00, 19:00, 22:00 UTC — shortly after the open, midday, shortly after the close), the only workflow in the pipeline that isn't once-daily-after-close. Shares the `screener-data` concurrency group with the other five data workflows; the 22:00 run lands the same minute as the ETFs feed job, so the two queue rather than race.
+- **Navigation**: new "Market Overview" nav item added to all 9 pages (between Screener and Finviz), `sitemap.xml` entry added.
+
+### Verified
+
+- Headless Chrome: all 10 cards render with correct data and correct green/red coloring (verified against a live run where VIX was down and every ETF was up, exercising both color paths); responsive sweep 375-1920px shows zero horizontal overflow (`scrollWidth === clientWidth` at every width, plus a 700px screenshot confirming the 2-column mobile card layout and hamburger nav both work).
+- `fetch_market_overview.py` run against live data: 10/10 symbols fetched successfully including `^VIX`.
+- Screener regression: `screener.html`'s nav-link addition confirmed non-breaking via headless dump (tier counts intact modulo normal weekly constituent drift, unrelated to this change).
+
+---
+
 ## v4.1.3 — 2026-07-09 — Docs backfill: sidebar rebrand entry (belated)
 
 **Backfilling a PATCHNOTES entry for the sidebar rebrand shipped earlier the same day (commit `b856324`), which landed without one.**
