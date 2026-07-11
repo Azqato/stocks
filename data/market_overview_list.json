@@ -22,12 +22,10 @@
   { "t": "XLK",  "y": "XLK",  "n": "Technology",             "category": "Industries" },
   { "t": "XLE",  "y": "XLE",  "n": "Energy",                 "category": "Industries" },
   { "t": "XLI",  "y": "XLI",  "n": "Industrials",            "category": "Industries" },
-  { "t": "XLF",  "y": "XLF",  "n": "Financials",             "category": "Industries" },
-  { "t": "XLU",  "y": "XLU",  "n": "Utilities",              "category": "Industries" },
-  { "t": "XLC",  "y": "XLC",  "n": "Communication Services", "category": "Industries" },
   { "t": "XLP",  "y": "XLP",  "n": "Consumer Staples",       "category": "Industries" },
+  { "t": "XLU",  "y": "XLU",  "n": "Utilities",              "category": "Industries" },
   { "t": "XLV",  "y": "XLV",  "n": "Health Care",            "category": "Industries" },
-  { "t": "XLB",  "y": "XLB",  "n": "Materials",              "category": "Industries" },
+  { "t": "XLF",  "y": "XLF",  "n": "Financials",             "category": "Industries" },
   { "t": "XLY",  "y": "XLY",  "n": "Consumer Discretionary", "category": "Industries" },
   { "t": "XLRE", "y": "XLRE", "n": "Real Estate",            "category": "Industries" },
 
@@ -39,7 +37,6 @@
   { "t": "HG",   "y": "HG=F", "n": "Copper",                 "category": "Commodities" },
 
   { "t": "US2Y",  "y": "2YY=F", "n": "2-Year",  "category": "Bonds", "unit": "pct" },
-  { "t": "US5Y",  "y": "^FVX",  "n": "5-Year",  "category": "Bonds", "unit": "pct" },
   { "t": "US10Y", "y": "^TNX",  "n": "10-Year", "category": "Bonds", "unit": "pct" },
   { "t": "US30Y", "y": "^TYX",  "n": "30-Year", "category": "Bonds", "unit": "pct" },
 
@@ -61,7 +58,6 @@
   { "t": "TRX",  "y": "TRX-USD",  "n": "Tron",      "category": "Crypto" },
   { "t": "DOGE", "y": "DOGE-USD", "n": "Dogecoin",  "category": "Crypto" },
   { "t": "ZEC",  "y": "ZEC-USD",  "n": "Zcash",     "category": "Crypto" },
-  { "t": "XLM",  "y": "XLM-USD",  "n": "Stellar",   "category": "Crypto" },
   { "t": "ADA",  "y": "ADA-USD",  "n": "Cardano",   "category": "Crypto" },
   { "t": "XMR",  "y": "XMR-USD",  "n": "Monero",    "category": "Crypto" },
   { "t": "LTC",  "y": "LTC-USD",  "n": "Litecoin",  "category": "Crypto" },

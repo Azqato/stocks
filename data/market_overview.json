@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T00:41:52.383177Z",
+  "updated": "2026-07-11T01:29:28.397601Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
@@ -170,13 +170,13 @@
       "change": 0.8099999999999739,
       "changePct": 0.4472420076196748
     },
-    "XLF": {
-      "name": "Financials",
+    "XLP": {
+      "name": "Consumer Staples",
       "category": "Industries",
-      "price": 55.71,
-      "prevClose": 55.54,
-      "change": 0.1700000000000017,
-      "changePct": 0.30608570399712764
+      "price": 84.12,
+      "prevClose": 83.2,
+      "change": 0.9200000000000017,
+      "changePct": 1.105769230769238
     },
     "XLU": {
       "name": "Utilities",
@@ -186,22 +186,6 @@
       "change": 0.27999999999999403,
       "changePct": 0.6204298692665589
     },
-    "XLC": {
-      "name": "Communication Services",
-      "category": "Industries",
-      "price": 111.64,
-      "prevClose": 110.51,
-      "change": 1.1299999999999955,
-      "changePct": 1.022531897565826
-    },
-    "XLP": {
-      "name": "Consumer Staples",
-      "category": "Industries",
-      "price": 84.12,
-      "prevClose": 83.2,
-      "change": 0.9200000000000017,
-      "changePct": 1.105769230769238
-    },
     "XLV": {
       "name": "Health Care",
       "category": "Industries",
@@ -210,13 +194,13 @@
       "change": -1.329999999999984,
       "changePct": -0.8201270271936734
     },
-    "XLB": {
-      "name": "Materials",
+    "XLF": {
+      "name": "Financials",
       "category": "Industries",
-      "price": 50.89,
-      "prevClose": 50.26,
-      "change": 0.6300000000000026,
-      "changePct": 1.253481894150421
+      "price": 55.71,
+      "prevClose": 55.54,
+      "change": 0.1700000000000017,
+      "changePct": 0.30608570399712764
     },
     "XLY": {
       "name": "Consumer Discretionary",
@@ -290,15 +274,6 @@
       "prevClose": 3.958,
       "change": -0.07200000000000006,
       "changePct": -1.8191005558362838
-    },
-    "US5Y": {
-      "name": "5-Year",
-      "category": "Bonds",
-      "unit": "pct",
-      "price": 4.308,
-      "prevClose": 4.269,
-      "change": 0.0389999999999997,
-      "changePct": 0.9135628952916308
     },
     "US10Y": {
       "name": "10-Year",
@@ -393,106 +368,98 @@
     "BTC": {
       "name": "Bitcoin",
       "category": "Crypto",
-      "price": 64057.99,
+      "price": 64184.12,
       "prevClose": 64125.902,
-      "change": -67.9120000000039,
-      "changePct": -0.10590416334417263
+      "change": 58.21800000000076,
+      "changePct": 0.09078702705811459
     },
     "ETH": {
       "name": "Ethereum",
       "category": "Crypto",
-      "price": 1791.69,
+      "price": 1794.5,
       "prevClose": 1795.6898,
-      "change": -3.99980000000005,
-      "changePct": -0.2227444851555127
+      "change": -1.1898000000001048,
+      "changePct": -0.06625866004251746
     },
     "BNB": {
       "name": "Binance",
       "category": "Crypto",
-      "price": 574.28,
+      "price": 575.1,
       "prevClose": 575.0144,
-      "change": -0.7344000000000506,
-      "changePct": -0.1277185406139525
+      "change": 0.08559999999999945,
+      "changePct": 0.014886583709894374
     },
     "XRP": {
       "name": "Ripple",
       "category": "Crypto",
-      "price": 1.1035,
+      "price": 1.1061,
       "prevClose": 1.1038929,
-      "change": -0.00039290000000002934,
-      "changePct": -0.03559222094824399
+      "change": 0.0022071000000001284,
+      "changePct": 0.19993787440792943
     },
     "SOL": {
       "name": "Solana",
       "category": "Crypto",
-      "price": 77.83,
+      "price": 77.94,
       "prevClose": 78.06103,
-      "change": -0.23103000000000407,
-      "changePct": -0.29596073738714646
+      "change": -0.12103000000000463,
+      "changePct": -0.1550453536162677
     },
     "TRX": {
       "name": "Tron",
       "category": "Crypto",
-      "price": 0.33002782,
+      "price": 0.33018583,
       "prevClose": 0.33022723,
-      "change": -0.00019940999999995546,
-      "changePct": -0.06038569260322646
+      "change": -4.139999999996924e-05,
+      "changePct": -0.012536821993747171
     },
     "DOGE": {
       "name": "Dogecoin",
       "category": "Crypto",
-      "price": 0.07404,
+      "price": 0.0742,
       "prevClose": 0.07404529,
-      "change": -5.290000000005013e-06,
-      "changePct": -0.007144276158554952
+      "change": 0.00015471000000000235,
+      "changePct": 0.20893969082975694
     },
     "ZEC": {
       "name": "Zcash",
       "category": "Crypto",
-      "price": 497.56,
+      "price": 497.55,
       "prevClose": 498.866,
-      "change": -1.3059999999999832,
-      "changePct": -0.261793748220962
-    },
-    "XLM": {
-      "name": "Stellar",
-      "category": "Crypto",
-      "price": 0.190059,
-      "prevClose": 0.19053204,
-      "change": -0.0004730400000000079,
-      "changePct": -0.24827320381390905
+      "change": -1.315999999999974,
+      "changePct": -0.26379829453199166
     },
     "ADA": {
       "name": "Cardano",
       "category": "Crypto",
-      "price": 0.1666,
+      "price": 0.1667,
       "prevClose": 0.16651735,
-      "change": 8.264999999998968e-05,
-      "changePct": 0.04963446751944378
+      "change": 0.00018264999999997866,
+      "changePct": 0.10968826972082013
     },
     "XMR": {
       "name": "Monero",
       "category": "Crypto",
-      "price": 323.44775,
+      "price": 323.5345,
       "prevClose": 322.07614,
-      "change": 1.3716099999999756,
-      "changePct": 0.42586513859734776
+      "change": 1.4583599999999706,
+      "changePct": 0.4527997634348191
     },
     "LTC": {
       "name": "Litecoin",
       "category": "Crypto",
-      "price": 44.7,
+      "price": 44.75,
       "prevClose": 44.75119,
-      "change": -0.05118999999999829,
-      "changePct": -0.114388019625844
+      "change": -0.0011900000000011346,
+      "changePct": -0.0026591471645853737
     },
     "AVAX": {
       "name": "Avalanche",
       "category": "Crypto",
-      "price": 6.72,
+      "price": 6.73,
       "prevClose": 6.736645,
-      "change": -0.016645000000000465,
-      "changePct": -0.24708144781268038
+      "change": -0.00664499999999979,
+      "changePct": -0.09863960472905609
     }
   }
 }
