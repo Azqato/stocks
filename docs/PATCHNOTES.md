@@ -2,6 +2,26 @@
 
 ---
 
+## v4.1.7 — 2026-07-11 — Content: living-below-your-means & start-young compounding illustration
+
+**Owner asked for a specific piece of advice ("always have more income than expenses, live under your means, start young, let compounding work for you") to be intelligently folded into the site's existing methodology. It builds directly on doctrine the site already had (`philosophy.html#section-offense`'s "more income than expenses") rather than introducing a new section, plus one new FAQ item with a concrete, hypothetical, non-dated compounding example.**
+
+### Added
+
+- **`philosophy.html#section-offense`**: new "Live under your means, and start as young as possible" content extending the existing Stay on Offense section — names living below your means (at any income level) as the mechanism behind "more income than expenses," warns against lifestyle creep, and adds a hypothetical worked example (Investor A: $500/month from age 25, 40 years, 8% average return → ~$1.75M by 65; Investor B: same $500/month from age 35, 30 years → ~$745K by 65) showing that ~$60K in extra contributions from starting 10 years earlier produces ~$1M more in ending balance, almost entirely from compounding on an earlier-built base. Caveat box added noting 8% is a long-run historical average, not a guaranteed or annual return.
+- **`faq.html#answer-offense`**: added a paragraph naming living-below-your-means and lifestyle creep explicitly, mirroring the philosophy edit.
+- **`faq.html#answer-startyoung`** (new, 37th item): "Does the age I start investing at actually matter, or just the amount?" — same Investor A/B illustration in FAQ form, cross-linking back to `philosophy.html#section-offense`. Matching FAQPage JSON-LD entry added. FAQ item count 36→37, corrected in the page's meta description, README.md, and PRD.md.
+
+### Not carried over
+
+- Nothing was excluded this round; unlike the prior video-transcript pass, this owner-provided advice was itself already durable, general, and non-dated, so no filtering against the site's non-goals was needed.
+
+### Verified
+
+- FAQ accordion item count and JSON-LD `Question` entry count both recount to 37 (`grep -c` on `faq.html`). The compounding illustration figures ($1.75M / $745K / ~$60K extra contributions / ~$1M extra ending balance) were computed directly from the standard future-value-of-annuity formula at a monthly-compounded 8% nominal rate, not asserted from memory.
+
+---
+
 ## v4.1.6 — 2026-07-10 — Market Overview: full reorganization (7 categories, 61 symbols)
 
 **Owner reorganized the page via a new editable spreadsheet workflow: 7 categories (Indices, Factors, Industries, Commodities, Bonds, Leveraged ETFs, Crypto) and 61 symbols, up from 6 categories and 25. Category rendering is now fully data-driven instead of hardcoded per section.**
