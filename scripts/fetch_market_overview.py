@@ -35,11 +35,7 @@ frontend does not need its own hardcoded display-order array either.
 
 Crypto entries are ordered by market cap (largest first), per owner
 instruction (2026-07-10) -- re-check and reorder if reshuffling this section,
-market cap ranks change over time. NOTE: Yahoo's "HYPE-USD" ticker does NOT
-resolve to Hyperliquid -- it resolves to an unrelated near-worthless token
-("Supreme Finance", ~$8K market cap). Hyperliquid has no clean symbol on
-Yahoo Finance as of 2026-07-10; do not add it under that ticker without
-re-verifying first.
+market cap ranks change over time.
 
 "Bonds" category entries carry an additional "unit": "pct" field, since their
 "price" IS already a percentage (a Treasury yield), not a fund NAV -- the

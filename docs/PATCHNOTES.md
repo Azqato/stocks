@@ -22,7 +22,6 @@
 - **SPLV** relabeled "Low Beta" → **"Low Volatility"** (the fund's actual name — there's no standard S&P 500 "Low Beta" ETF under that ticker).
 - **QLD, SSO, USD** corrected from an implied 3x to their actual **2x** leverage (ProShares "Ultra" funds, not "UltraPro") — verified against each fund's real name via `Ticker.info`, not assumed from their position among the 3x entries.
 - **XLM** typo fixed: "Steller" → "Stellar".
-- **Hyperliquid (HYPE) excluded**: Yahoo's `HYPE-USD` ticker resolves to an unrelated near-worthless token ("Supreme Finance," ~$8K market cap), not Hyperliquid. No clean Yahoo symbol exists for it as of this writing.
 
 ### Verified
 
