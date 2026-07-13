@@ -72,7 +72,20 @@ This is a static site. There is no build step.
 
 **Deploy:** Push to `main`. GitHub Pages serves directly from the repository root.
 
-**Data pipeline (automated):** GitHub Actions runs `scripts/fetch_screener_data.py` on trading days (Mon-Fri) at 21:30 UTC, commits `data/screener.json` to the repo, and GitHub Pages serves the updated file immediately. The schedule is deliberately anchored 30 minutes after the *latest* possible US market close in UTC terms (4:00pm US Eastern is 21:00 UTC in winter/EST, 20:00 UTC in summer/EDT — GitHub Actions cron doesn't observe DST, so this guarantees at least a 30-minute buffer after close year-round, growing to 90 minutes in summer). The ETFs feed (`scripts/fetch_etf_data.py`, a fixed 10-fund list) follows at 22:00 UTC, the S&P 500 feed at 22:30 UTC, the combined Growth/Value/Dividend feed at 23:00 UTC, and the International feed (top 100 VXUS holdings) at 23:30 UTC — each 30 minutes after the last, all same calendar day. The constituent sync (Wikipedia for the indices, Vanguard's holdings API for the VUG/VTV/VIG/VXUS lists — VXUS holdings are additionally resolved from ISIN to a Yahoo symbol via `data/vxus_map.json`; the ETFs list is hand-curated and never synced) runs Saturdays at 23:00 UTC.
+**Data pipeline (automated):** GitHub Actions runs `scripts/fetch_screener_data.py` on trading days (Mon-Fri) at 21:37 UTC, commits `data/screener.json` to the repo, and GitHub Pages serves the updated file immediately. The schedule is deliberately anchored 30+ minutes after the *latest* possible US market close in UTC terms (4:00pm US Eastern is 21:00 UTC in winter/EST, 20:00 UTC in summer/EDT — GitHub Actions cron doesn't observe DST, so this guarantees a buffer after close year-round, growing to ~90 minutes in summer). The ETFs feed (`scripts/fetch_etf_data.py`, a fixed 10-fund list) follows at 22:12 UTC, the S&P 500 feed at 22:42 UTC, the combined Growth/Value/Dividend feed at 23:12 UTC, and the International feed (top 100 VXUS holdings) at 23:42 UTC — each 30 minutes after the last, all same calendar day. The Market Overview feed refreshes three times per trading day (15:07 / 19:07 / 22:07 UTC). The constituent sync runs Saturdays at 23:17 UTC.
+
+Every cron deliberately fires on an **odd, off-peak minute** rather than `:00`/`:30`. GitHub's scheduler queues all repositories' crons globally, so the top of the hour is its most congested slot: jobs there are delayed and, under load, dropped outright. See `.github/workflows/market-overview.yml` for the incident that prompted this.
+
+**Constituent sources** (each with a fallback, so one source breaking doesn't stop the sync):
+
+| List | Primary | Fallback |
+|------|---------|----------|
+| `nasdaq100.json` | Nasdaq's official index API | Slickcharts |
+| `sp500.json` | State Street's published SPY holdings | Slickcharts |
+| `vug/vtv/vig/vxus.json` | Vanguard's holdings API | (none) |
+| `etfs.json` | Hand-curated, never synced | — |
+
+Wikipedia was the original source for the two index lists and was dropped on 2026-07-13: the Nasdaq-100 article's components table was removed outright, which silently broke the sync. VXUS holdings are additionally resolved from ISIN to a Yahoo symbol via `data/vxus_map.json`.
 
 **Data pipeline (manual):** Go to Actions → "Refresh Screener Data" → Run workflow. Or run locally:
 
@@ -123,7 +136,7 @@ stocks/
 │   ├── fetch_screener_data.py        ← Python pipeline: yfinance → stock feeds (--list/--out, --combined)
 │   ├── fetch_etf_data.py             ← Python pipeline: yfinance → ETFs feed (returns, RSI, MAs, yield, ER, AUM)
 │   ├── fetch_market_overview.py      ← Python pipeline: yfinance → Market Overview feed (price/change only)
-│   ├── update_constituents.py        ← Weekly auto-sync: Wikipedia → nasdaq100.json + sp500.json
+│   ├── update_constituents.py        ← Weekly auto-sync: Nasdaq API / SPY holdings → nasdaq100.json + sp500.json
 │   └── update_etf_constituents.py    ← Weekly auto-sync: Vanguard API → vug/vtv/vig/vxus.json
 ├── .github/
 │   └── workflows/

@@ -1,7 +1,9 @@
 name: Update Constituents
 
-# Weekly sync of the screener's constituent lists: data/nasdaq100.json and
-# data/sp500.json with the live indices (from Wikipedia), and data/vug.json,
+# Weekly sync of the screener's constituent lists: data/nasdaq100.json (from
+# Nasdaq's index API) and data/sp500.json (from State Street's published SPY
+# holdings), each with a slickcharts fallback -- see update_constituents.py for
+# why Wikipedia was dropped. Plus data/vug.json,
 # data/vtv.json, data/vig.json, data/vxus.json with the top 100 holdings of
 # the matching Vanguard ETFs (from Vanguard's profile API, which publishes
 # monthly). VXUS holdings are additionally resolved from ISIN to a suffixed
@@ -13,7 +15,7 @@ name: Update Constituents
 
 on:
   schedule:
-    - cron: "0 23 * * 6"   # Saturdays 23:00 UTC (after the weekday data jobs' 21:30-23:30 UTC window)
+    - cron: "17 23 * * 6"   # Saturdays 23:17 UTC (weekday data jobs are idle; off-peak minute, see market-overview.yml)
   workflow_dispatch: {}
 
 permissions:
@@ -35,7 +37,8 @@ jobs:
 
       - name: Sync constituent lists
         run: |
-          pip install --quiet requests pandas lxml
+          # openpyxl: reads State Street's SPY holdings .xlsx (the S&P 500 source).
+          pip install --quiet requests pandas lxml openpyxl
           python scripts/update_constituents.py
           python scripts/update_etf_constituents.py
 

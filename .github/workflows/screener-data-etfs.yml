@@ -10,9 +10,11 @@ name: Update Screener Data (ETFs)
 
 on:
   schedule:
-    # 22:00 UTC, Mon-Fri only (trading days). GitHub cron is UTC-only and does
+    # 22:12 UTC, Mon-Fri only (trading days). GitHub cron is UTC-only and does
     # not follow DST; see screener-data.yml for the anchor-to-latest-close note.
-    - cron: "0 22 * * 1-5"
+    # Off-peak minute (not :00) to dodge the scheduler's top-of-hour congestion;
+    # see market-overview.yml for why.
+    - cron: "12 22 * * 1-5"
   workflow_dispatch: {}   # allow manual runs
 
 permissions:

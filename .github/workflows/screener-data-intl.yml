@@ -9,7 +9,7 @@ name: Update Screener Data (International)
 
 on:
   schedule:
-    - cron: "30 23 * * 1-5"   # 30 min after the GVD run, Mon-Fri
+    - cron: "42 23 * * 1-5"   # 30 min after the GVD run, Mon-Fri (off-peak minute; see market-overview.yml)
   workflow_dispatch: {}       # allow manual runs (use this to seed the feed the first time)
 
 permissions:

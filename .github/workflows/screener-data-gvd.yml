@@ -10,7 +10,7 @@ name: Update Screener Data (Growth, Value & Dividend)
 
 on:
   schedule:
-    - cron: "0 23 * * 1-5"   # 30 min after the S&P 500 run, Mon-Fri
+    - cron: "12 23 * * 1-5"   # 30 min after the S&P 500 run, Mon-Fri (off-peak minute; see market-overview.yml)
   workflow_dispatch: {}      # allow manual runs (use this to seed the feed the first time)
 
 permissions:

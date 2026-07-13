@@ -8,24 +8,33 @@ name: Update Market Overview Data
 # Unlike every other screener-data workflow (once daily, after close), this
 # page updates three times per trading day so it reads as a live-ish market
 # check-in rather than a stale close-of-business number:
-#   15:00 UTC -- shortly after the US open (13:30 UTC EDT / 14:30 UTC EST)
-#   19:00 UTC -- midday
-#   22:00 UTC -- shortly after the US close (20:00 UTC EDT / 21:00 UTC EST)
+#   15:07 UTC -- shortly after the US open (13:30 UTC EDT / 14:30 UTC EST)
+#   19:07 UTC -- midday
+#   22:07 UTC -- shortly after the US close (20:00 UTC EDT / 21:00 UTC EST)
+#
+# WHY :07 AND NOT :00 (2026-07-13): GitHub's scheduler is best-effort and
+# queues every repo's cron globally, so the top of the hour is its single most
+# congested minute -- jobs there get delayed and, under enough load, dropped
+# outright. This job was on "0 15/19/22" and the delays were severe and
+# growing: on 2026-07-10 the three runs fired 112, 85 and 58 minutes late, and
+# on 2026-07-13 the 15:00 run never fired at all, leaving the page showing
+# Friday's data on a Monday morning. Odd, off-peak minutes are GitHub's own
+# documented recommendation. Do NOT move these back to :00.
+#
 # GitHub cron is UTC-only and does not follow DST, so the exact offset from
 # open/close drifts by an hour across the DST boundary, same as every other
 # workflow in this pipeline (see screener-data.yml for the anchor note).
-# The 22:00 run lands at the same minute as screener-data-etfs.yml's daily
-# job; both share the "screener-data" concurrency group with
-# cancel-in-progress:false, so they simply queue (whichever triggers first
-# runs first) instead of racing -- not a bug, just worth knowing if this
-# run looks a minute or two late in the Actions log.
+# The 22:07 run lands near screener-data-etfs.yml's daily job; both share the
+# "screener-data" concurrency group with cancel-in-progress:false, so they
+# simply queue instead of racing -- not a bug, just worth knowing if this run
+# looks a few minutes late in the Actions log.
 # Uses yfinance (public Yahoo Finance data) -- no API key.
 
 on:
   schedule:
-    - cron: "0 15 * * 1-5"
-    - cron: "0 19 * * 1-5"
-    - cron: "0 22 * * 1-5"
+    - cron: "7 15 * * 1-5"
+    - cron: "7 19 * * 1-5"
+    - cron: "7 22 * * 1-5"
   workflow_dispatch: {}   # allow manual runs
 
 permissions:

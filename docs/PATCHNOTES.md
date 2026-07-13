@@ -2,6 +2,53 @@
 
 ---
 
+## v4.1.8 — 2026-07-13 — Constituent sources rebuilt (Wikipedia dropped); all crons moved off-peak
+
+**Owner reported the Market Overview page hadn't updated on Monday morning. Investigating the Actions history surfaced two independent, unrelated failures: a silently-broken weekly constituent sync, and a scheduler problem affecting every workflow in the repo.**
+
+### Fixed — constituent sync (was failing silently since Wikipedia changed)
+
+- **Wikipedia dropped as a constituent source.** The weekly `Update Constituents` job had been failing with `RuntimeError: Could not find a constituents table at https://en.wikipedia.org/wiki/Nasdaq-100`. Cause: **Wikipedia removed the Nasdaq-100 article's components table outright** — the page now has no Components/Constituents section at all, so there was nothing left to scrape. This was not a code bug; the data source disappeared. Nobody noticed because a failing weekly cron is invisible unless you look at the Actions tab.
+- **Consequence of the outage:** `data/nasdaq100.json` had gone stale and was **missing two real constituents** — `HONA` (Honeywell Aerospace) and `SPCX` (Space Exploration Technologies). Both are now in the list and the feed (102/102 symbols fetched cleanly).
+- **New sourcing model: a primary source plus a fallback per index**, replacing the single-scrape-of-an-editable-page design that failed. A source returning a malformed or out-of-band list is rejected and the next is tried; only if *every* source for a list fails does the job abort, and the existing sanity checks still mean it never overwrites a good list with bad data.
+
+  | List | Primary | Fallback |
+  |------|---------|----------|
+  | `data/nasdaq100.json` | Nasdaq's official index API | Slickcharts |
+  | `data/sp500.json` | State Street's published SPY holdings (`.xlsx`) | Slickcharts |
+
+- **Sources evaluated and rejected** (recorded so they are not re-proposed):
+  - **QQQ holdings** for the Nasdaq 100: Invesco returns **HTTP 406** to non-browser clients — not fetchable from CI. Nasdaq's index API is more authoritative regardless.
+  - **yfinance ETF holdings** as a fallback for either index: `Ticker(...).funds_data.top_holdings` returns only the **top 10** holdings, never the full list. Unusable at 100/500 names.
+  - **Slickcharts as the sole source**: it works for both indices, but it disagreed with SPY's actual published holdings on the S&P 500 (`+SATS/-ECHO` against a list that SSGA and Wikipedia both confirmed), and making a single third-party scrape the only source repeats the exact failure being fixed. Retained as the fallback, not the primary.
+- **`clean_name()` now strips repeatedly and case-insensitively**, and knows the share-class/security-type tails the Nasdaq API appends. Without it the new entries would have landed as `"Honeywell Aerospace Inc. Common Stock"` and `"Space Exploration Technologies Corp. Class A Common Stock"` instead of `"Honeywell Aerospace"` and `"Space Exploration Technologies"`.
+- **Constituent files are now sorted by company name** before writing. Source order is an implementation detail, and without a stable sort, merely switching sources rewrites all ~500 lines and buries the real add/remove diff in churn.
+- `openpyxl` added to the workflow's pip install (needed to read SPY's `.xlsx` holdings file).
+
+### Fixed — every cron moved off the top of the hour
+
+- **Root cause of the missing Market Overview update.** Every workflow in the repo was scheduled on `:00` or `:30`. GitHub's scheduler queues all repositories' crons globally, making the top of the hour its single most congested slot; jobs there get delayed and, under enough load, **dropped entirely**. The evidence was unambiguous: on 2026-07-10 the three Market Overview runs (scheduled 15:00 / 19:00 / 22:00 UTC) actually started at **16:52 / 20:25 / 22:58** — 112, 85 and 58 minutes late — and on 2026-07-13 the 15:00 run **never fired at all**, which is exactly what the owner saw as a stale page on Monday morning.
+- **New schedule, all on odd minutes** (odd/off-peak minutes are GitHub's own documented recommendation), preserving the existing ~30-minute staggering and the anchor-after-latest-close rule:
+
+  | Job | Was | Now |
+  |-----|-----|-----|
+  | Nasdaq 100 | 21:30 | **21:37** |
+  | Market Overview | 15:00 / 19:00 / 22:00 | **15:07 / 19:07 / 22:07** |
+  | ETFs | 22:00 | **22:12** |
+  | S&P 500 | 22:30 | **22:42** |
+  | Growth/Value/Dividend | 23:00 | **23:12** |
+  | International | 23:30 | **23:42** |
+  | Constituents (Sat) | 23:00 | **23:17** |
+
+- Data for the dropped run was regenerated locally and committed so the pages were not left waiting on the next scheduled tick.
+
+### Verified
+
+- `update_constituents.py` run end-to-end: `nasdaq-api` returned 102 tickers (adding `SPCX`, `HONA`); `spy-holdings` returned 500, confirming the S&P list was already correct and unchanged. Both new tickers resolve in yfinance with full pricing and forward-P/E data, and the regenerated feed reports **102/102 symbols with price data**.
+- Before the name-sort fix, switching sources produced a 190-line diff on an 8-line change; after it, the diff is exactly the two added entries.
+
+---
+
 ## v4.1.7 — 2026-07-11 — Content: living-below-your-means & start-young compounding illustration
 
 **Owner asked for a specific piece of advice ("always have more income than expenses, live under your means, start young, let compounding work for you") to be intelligently folded into the site's existing methodology. It builds directly on doctrine the site already had (`philosophy.html#section-offense`'s "more income than expenses") rather than introducing a new section, plus one new FAQ item with a concrete, hypothetical, non-dated compounding example.**
@@ -124,16 +171,6 @@
 
 ---
 
-## v4.1.3 — 2026-07-09 — Docs backfill: sidebar rebrand entry (belated)
-
-**Backfilling a PATCHNOTES entry for the sidebar rebrand shipped earlier the same day (commit `b856324`), which landed without one.**
-
-### Changed
-
-- **Sidebar branding**: `.sidebar-brand a` renamed to "Azqato Invests" with a new sub-label "Individual Stocks" beneath it (`.sidebar-brand-sub`, muted small text). Brand text size increased 0.9rem → 1.125rem with tightened letter-spacing (-0.3px) to read as a wordmark rather than a nav link. Applied identically across all 8 content pages plus `screener.html`; shared styling lives in `style.css`.
-
----
-
 ## v4.1.2 — 2026-07-09 — MAG 10 button styling unified with universe buttons
 
 **Owner reported the MAG 10 button "looks weird when I click on it" and asked for its CSS to match the other buttons.**
@@ -145,6 +182,16 @@
 ### Verified
 
 - `#mag10Btn` block in `screener.html` now contains only the `.active` rule; the JS toggle (`toggleMag10`/`updateMag10Button` in `screener.js`) was already correct and is unchanged.
+
+---
+
+## v4.1.3 — 2026-07-09 — Docs backfill: sidebar rebrand entry (belated)
+
+**Backfilling a PATCHNOTES entry for the sidebar rebrand shipped earlier the same day (commit `b856324`), which landed without one.**
+
+### Changed
+
+- **Sidebar branding**: `.sidebar-brand a` renamed to "Azqato Invests" with a new sub-label "Individual Stocks" beneath it (`.sidebar-brand-sub`, muted small text). Brand text size increased 0.9rem → 1.125rem with tightened letter-spacing (-0.3px) to read as a wordmark rather than a nav link. Applied identically across all 8 content pages plus `screener.html`; shared styling lives in `style.css`.
 
 ---
 
