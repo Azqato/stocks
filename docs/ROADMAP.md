@@ -1,11 +1,11 @@
 # ROADMAP.md — Implementation Plans for Planned Releases
 
-**Version:** 4.1.6
-**Last Updated:** 2026-07-10
+**Version:** 4.1.8
+**Last Updated:** 2026-07-13
 
 This document holds the detailed implementation plan for every item still open on the [PRD roadmap](PRD.md#roadmap). The PRD's milestone table remains the source of truth for **what** is planned and in what order; this file is the reference for **how** each item will be built. When a release ships, its plan here is trimmed to a pointer at the PRD milestone row and the PATCHNOTES entry.
 
-Release order (updated 2026-07-10): **v4.2.0 Market Overview: mortgage rate (next up — awaiting owner confirmation on the FRED API key)** → v4.3.0 Market Overview: period-return filters (awaiting owner scope) → v4.4.0 score sparklines (renumbered from v4.1.0) → v4.5.0 index coverage (renumbered from v4.2.0) → v4.6.0 historical examples (renumbered from v4.3.0) → v4.7.0 philosophy sections (renumbered from v4.4.0) → v4.8.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, v4.1.0 Market Overview, v4.1.4, v4.1.5, and v4.1.6 Market Overview expansions/reorganization all shipped, most recently 2026-07-10.)
+Release order (updated 2026-07-13): **v4.2.0 Market Overview: mortgage rate — ON HOLD** (owner decision 2026-07-13: hold the FRED API key question until a later update; the site stays key-free for now) · **v4.4.0 score sparklines — BLOCKED ON DATA until ~Nov 2026** (owner decision 2026-07-13: paused; see the v4.4.0 entry for the snapshot-count finding) → next actionable: v4.3.0 Market Overview: period-return filters (awaiting owner scope) → v4.5.0 index coverage (renumbered from v4.2.0) → v4.5.0 index coverage (renumbered from v4.2.0) → v4.6.0 historical examples (renumbered from v4.3.0) → v4.7.0 philosophy sections (renumbered from v4.4.0) → v4.8.0 conference call guide (renumbered from v4.5.0). (v3.34.0, v3.34.5, v3.34.6, v3.34.7, v3.34.8, v3.36.0, v3.37.0, v3.37.1, v3.37.2, v4.0.0, v4.0.1, v4.1.1, v4.1.2, v4.1.3, v4.1.0 Market Overview, v4.1.4, v4.1.5, and v4.1.6 Market Overview expansions/reorganization all shipped, most recently 2026-07-10.)
 
 ---
 
@@ -458,9 +458,11 @@ Owner request: the current 30-year mortgage rate. **Reorganize categories, origi
 
 No Yahoo Finance ticker exists for the 30-year mortgage average — every plausible guess (`^MORTGAGE30US`, `MORTGAGE30US`) 404'd (confirmed 2026-07-10). This is genuinely a different data source, not a yfinance gap that more ticker-guessing will close. FRED's public API (`MORTGAGE30US` series, weekly Freddie Mac PMMS data) is the most likely candidate — free, no scraping fragility, but requires a FRED API key (free to obtain) and a second fetch mechanism alongside yfinance in `fetch_market_overview.py`, or a small dedicated fetch step. Needs a probe (confirm the FRED API's actual response shape and key-acquisition process) before committing to the design, same probe-first approach as the bond-yields item.
 
-### Owner confirmation needed before implementation starts
+### STATUS: ON HOLD (owner decision, 2026-07-13)
 
-Whether a FRED API key is acceptable — this site has otherwise been entirely key-free (every other data source is yfinance/public Wikipedia/public Vanguard endpoints), so this would be a first.
+Owner asked to **hold the FRED API key question until a later update**. The site stays entirely key-free for now, and this item is parked rather than cancelled. Nothing is blocked by the delay: no other roadmap item depends on the mortgage rate.
+
+When it is picked back up, the open question is unchanged: whether a FRED API key is acceptable — this site has otherwise been entirely key-free (yfinance plus public Nasdaq/SSGA/Vanguard endpoints), so it would be a first. Note the v4.1.8 lesson before considering a scrape-based alternative: scraping an editable public page is exactly what broke the constituent sync when Wikipedia removed its Nasdaq-100 table.
 
 ---
 
@@ -489,6 +491,26 @@ Do not begin building until the owner confirms: which symbols/sections this appl
 ### Goal
 
 A per-ticker score trend visual in the screener: a small inline sparkline column in the table and a larger score-history chart in the per-stock popup, mined from the git history of the committed data feeds. This is why the feeds live in git (PRD: reclassified as intentional design in v3.32.0).
+
+### STATUS: BLOCKED ON DATA until ~Nov 2026 (owner decision, 2026-07-13)
+
+**Paused before any code was written.** A feasibility probe run 2026-07-13 (the plan below assumed 90 trading days of history existed but never verified it) found the git history is far too short to mine:
+
+| Feed | Distinct daily snapshots | Since |
+|------|--------------------------|-------|
+| `data/screener.json` | **15** | 2026-06-26 |
+| `data/screener_sp500.json` | 12 | 2026-06-29 |
+| `data/screener_gvd.json` | 7 | 2026-07-03 |
+| `data/screener_etfs.json` | 6 | 2026-07-03 |
+| `data/screener_intl.json` | 6 | 2026-07-04 |
+
+The design calls for a 90-trading-day window. Shipping now would render a 6-to-15-point, near-flat line (scores are relative percentiles, so they move slowly by construction) — a feature that looks broken rather than informative.
+
+**Waiting is free and requires no preparatory work.** The daily feed commits already ARE the accumulation: git retains every snapshot, so the full 90-day window can be mined retroactively whenever it exists. Building the miner early would not collect one extra data point, and would mean testing the size budget and parity gate against 15 days instead of 90, then revisiting the same code later.
+
+**Earliest sensible start: ~November 2026** (90 trading days from 2026-06-26 for the Nasdaq feed; ~2026-11-10 for the universes that started 2026-07-03/04). A reduced 60-day window would be viable around late September 2026 if the feature is wanted sooner. Re-run the snapshot count above before starting — that probe is the go/no-go gate.
+
+---
 
 ### The central design fact
 
