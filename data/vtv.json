@@ -12,24 +12,12 @@
     "n": "Berkshire Hathaway"
   },
   {
-    "t": "XOM",
-    "n": "ExxonMobil"
-  },
-  {
     "t": "JNJ",
     "n": "Johnson & Johnson"
   },
   {
     "t": "WMT",
     "n": "Walmart"
-  },
-  {
-    "t": "INTC",
-    "n": "Intel"
-  },
-  {
-    "t": "CSCO",
-    "n": "Cisco"
   },
   {
     "t": "CAT",
@@ -40,16 +28,12 @@
     "n": "AbbVie"
   },
   {
-    "t": "CVX",
-    "n": "Chevron"
+    "t": "CSCO",
+    "n": "Cisco"
   },
   {
     "t": "UNH",
     "n": "UnitedHealth Group"
-  },
-  {
-    "t": "PG",
-    "n": "Procter & Gamble"
   },
   {
     "t": "BAC",
@@ -60,32 +44,36 @@
     "n": "Home Depot (The)"
   },
   {
+    "t": "PG",
+    "n": "Procter & Gamble"
+  },
+  {
     "t": "MRK",
     "n": "Merck & Co."
+  },
+  {
+    "t": "CVX",
+    "n": "Chevron"
   },
   {
     "t": "GS",
     "n": "Goldman Sachs"
   },
   {
-    "t": "IBM",
-    "n": "IBM"
-  },
-  {
     "t": "PM",
     "n": "Philip Morris International"
+  },
+  {
+    "t": "INTC",
+    "n": "Intel"
   },
   {
     "t": "KO",
     "n": "Coca-Cola Company (The)"
   },
   {
-    "t": "QCOM",
-    "n": "Qualcomm"
-  },
-  {
-    "t": "MS",
-    "n": "Morgan Stanley"
+    "t": "IBM",
+    "n": "IBM"
   },
   {
     "t": "RTX",
@@ -96,6 +84,10 @@
     "n": "Wells Fargo"
   },
   {
+    "t": "MS",
+    "n": "Morgan Stanley"
+  },
+  {
     "t": "LIN",
     "n": "Linde"
   },
@@ -104,96 +96,96 @@
     "n": "Citigroup"
   },
   {
-    "t": "ADI",
-    "n": "Analog Devices"
-  },
-  {
-    "t": "PEP",
-    "n": "PepsiCo"
-  },
-  {
-    "t": "TMO",
-    "n": "Thermo Fisher Scientific"
-  },
-  {
     "t": "AMGN",
     "n": "Amgen"
-  },
-  {
-    "t": "VZ",
-    "n": "Verizon"
-  },
-  {
-    "t": "DIS",
-    "n": "Walt Disney Company (The)"
-  },
-  {
-    "t": "AMAT",
-    "n": "Applied Materials"
-  },
-  {
-    "t": "T",
-    "n": "AT&T"
-  },
-  {
-    "t": "NEE",
-    "n": "NextEra Energy"
-  },
-  {
-    "t": "GILD",
-    "n": "Gilead Sciences"
   },
   {
     "t": "GE",
     "n": "GE Aerospace"
   },
   {
-    "t": "UNP",
-    "n": "Union Pacific"
+    "t": "QCOM",
+    "n": "Qualcomm"
   },
   {
-    "t": "ETN",
-    "n": "Eaton"
+    "t": "ADI",
+    "n": "Analog Devices"
+  },
+  {
+    "t": "TMO",
+    "n": "Thermo Fisher Scientific"
+  },
+  {
+    "t": "PEP",
+    "n": "PepsiCo"
   },
   {
     "t": "AXP",
     "n": "American Express"
   },
   {
-    "t": "HON",
-    "n": "Honeywell"
+    "t": "NEE",
+    "n": "NextEra Energy"
   },
   {
-    "t": "PFE",
-    "n": "Pfizer"
+    "t": "DIS",
+    "n": "Walt Disney Company (The)"
   },
   {
-    "t": "ABT",
-    "n": "Abbott Laboratories"
-  },
-  {
-    "t": "BLK",
-    "n": "BlackRock"
-  },
-  {
-    "t": "SCHW",
-    "n": "Charles Schwab"
-  },
-  {
-    "t": "GLW",
-    "n": "Corning"
-  },
-  {
-    "t": "COP",
-    "n": "ConocoPhillips"
+    "t": "ETN",
+    "n": "Eaton"
   },
   {
     "t": "DE",
     "n": "Deere &"
   },
   {
+    "t": "UNP",
+    "n": "Union Pacific"
+  },
+  {
+    "t": "VZ",
+    "n": "Verizon"
+  },
+  {
+    "t": "ABT",
+    "n": "Abbott Laboratories"
+  },
+  {
+    "t": "GILD",
+    "n": "Gilead Sciences"
+  },
+  {
+    "t": "SCHW",
+    "n": "Charles Schwab"
+  },
+  {
+    "t": "T",
+    "n": "AT&T"
+  },
+  {
+    "t": "PFE",
+    "n": "Pfizer"
+  },
+  {
     "t": "TXN",
     "n": "Texas Instruments"
+  },
+  {
+    "t": "BLK",
+    "n": "BlackRock"
+  },
+  {
+    "t": "CVS",
+    "n": "CVS Health"
+  },
+  {
+    "t": "PGR",
+    "n": "Progressive"
+  },
+  {
+    "t": "COP",
+    "n": "ConocoPhillips"
   },
   {
     "t": "PLD",
@@ -204,199 +196,207 @@
     "n": "Dell Technologies"
   },
   {
-    "t": "LMT",
-    "n": "Lockheed Martin"
+    "t": "COF",
+    "n": "Capital One"
   },
   {
     "t": "LOW",
     "n": "Lowe's"
   },
   {
-    "t": "NEM",
-    "n": "Newmont"
-  },
-  {
-    "t": "COF",
-    "n": "Capital One"
-  },
-  {
-    "t": "BMY",
-    "n": "Bristol Myers Squibb"
-  },
-  {
-    "t": "MO",
-    "n": "Altria"
-  },
-  {
-    "t": "DHR",
-    "n": "Danaher"
-  },
-  {
-    "t": "CVS",
-    "n": "CVS Health"
-  },
-  {
-    "t": "ACN",
-    "n": "Accenture"
-  },
-  {
-    "t": "PGR",
-    "n": "Progressive"
-  },
-  {
-    "t": "CB",
-    "n": "Chubb Limited"
-  },
-  {
     "t": "PH",
     "n": "Parker Hannifin"
-  },
-  {
-    "t": "SO",
-    "n": "Southern"
-  },
-  {
-    "t": "TT",
-    "n": "Trane Technologies"
-  },
-  {
-    "t": "CME",
-    "n": "CME Group"
-  },
-  {
-    "t": "BNY",
-    "n": "BNY Mellon"
-  },
-  {
-    "t": "DUK",
-    "n": "Duke Energy"
-  },
-  {
-    "t": "MDT",
-    "n": "Medtronic"
-  },
-  {
-    "t": "FCX",
-    "n": "Freeport-McMoRan"
-  },
-  {
-    "t": "MCK",
-    "n": "McKesson"
-  },
-  {
-    "t": "WDC",
-    "n": "Western Digital"
-  },
-  {
-    "t": "CMI",
-    "n": "Cummins"
-  },
-  {
-    "t": "ADP",
-    "n": "Automatic Data Processing"
-  },
-  {
-    "t": "CMCSA",
-    "n": "Comcast"
-  },
-  {
-    "t": "PNC",
-    "n": "PNC Financial Services"
-  },
-  {
-    "t": "CEG",
-    "n": "Constellation Energy"
-  },
-  {
-    "t": "WMB",
-    "n": "Williams Companies"
-  },
-  {
-    "t": "FDX",
-    "n": "FedEx"
-  },
-  {
-    "t": "AMT",
-    "n": "American Tower"
-  },
-  {
-    "t": "WM",
-    "n": "Waste Management"
-  },
-  {
-    "t": "USB",
-    "n": "U.S. Bancorp"
   },
   {
     "t": "CRM",
     "n": "Salesforce"
   },
   {
-    "t": "ELV",
-    "n": "Elevance Health"
+    "t": "DHR",
+    "n": "Danaher"
+  },
+  {
+    "t": "MO",
+    "n": "Altria"
+  },
+  {
+    "t": "CB",
+    "n": "Chubb Limited"
+  },
+  {
+    "t": "BMY",
+    "n": "Bristol Myers Squibb"
+  },
+  {
+    "t": "LMT",
+    "n": "Lockheed Martin"
+  },
+  {
+    "t": "SPGI",
+    "n": "S&P Global"
+  },
+  {
+    "t": "TT",
+    "n": "Trane Technologies"
+  },
+  {
+    "t": "SO",
+    "n": "Southern"
+  },
+  {
+    "t": "MDT",
+    "n": "Medtronic"
+  },
+  {
+    "t": "NEM",
+    "n": "Newmont"
+  },
+  {
+    "t": "BNY",
+    "n": "BNY Mellon"
+  },
+  {
+    "t": "PNC",
+    "n": "PNC Financial Services"
+  },
+  {
+    "t": "GLW",
+    "n": "Corning"
+  },
+  {
+    "t": "DUK",
+    "n": "Duke Energy"
+  },
+  {
+    "t": "CMI",
+    "n": "Cummins"
+  },
+  {
+    "t": "USB",
+    "n": "U.S. Bancorp"
   },
   {
     "t": "GD",
     "n": "General Dynamics"
   },
   {
-    "t": "CSX",
-    "n": "CSX"
+    "t": "WMB",
+    "n": "Williams Companies"
   },
   {
-    "t": "ICE",
-    "n": "Intercontinental Exchange"
+    "t": "MCK",
+    "n": "McKesson"
+  },
+  {
+    "t": "FCX",
+    "n": "Freeport-McMoRan"
+  },
+  {
+    "t": "ADP",
+    "n": "Automatic Data Processing"
+  },
+  {
+    "t": "WM",
+    "n": "Waste Management"
   },
   {
     "t": "JCI",
     "n": "Johnson Controls"
   },
   {
-    "t": "SLB",
-    "n": "Schlumberger"
+    "t": "CSX",
+    "n": "CSX"
   },
   {
-    "t": "EMR",
-    "n": "Emerson Electric"
+    "t": "CMCSA",
+    "n": "Comcast"
   },
   {
     "t": "MMM",
     "n": "3M"
   },
   {
-    "t": "NOC",
-    "n": "Northrop Grumman"
+    "t": "ELV",
+    "n": "Elevance Health"
   },
   {
-    "t": "UPS",
-    "n": "United Parcel Service"
-  },
-  {
-    "t": "MDLZ",
-    "n": "Mondelez International"
+    "t": "CEG",
+    "n": "Constellation Energy"
   },
   {
     "t": "MRSH",
     "n": "Marsh McLennan"
   },
   {
-    "t": "GM",
-    "n": "General Motors"
+    "t": "UPS",
+    "n": "United Parcel Service"
   },
   {
-    "t": "ROST",
-    "n": "Ross Stores"
+    "t": "EMR",
+    "n": "Emerson Electric"
   },
   {
-    "t": "MPC",
-    "n": "Marathon Petroleum"
+    "t": "CME",
+    "n": "CME Group"
   },
   {
     "t": "VLO",
     "n": "Valero Energy"
   },
   {
+    "t": "ACN",
+    "n": "Accenture"
+  },
+  {
+    "t": "AMT",
+    "n": "American Tower"
+  },
+  {
+    "t": "MPC",
+    "n": "Marathon Petroleum"
+  },
+  {
+    "t": "AEP",
+    "n": "American Electric Power Co."
+  },
+  {
+    "t": "MDLZ",
+    "n": "Mondelez International"
+  },
+  {
+    "t": "ITW",
+    "n": "Illinois Tool Works"
+  },
+  {
+    "t": "UBER",
+    "n": "Uber Technologies"
+  },
+  {
+    "t": "CL",
+    "n": "Colgate-Palmolive Co."
+  },
+  {
     "t": "CI",
     "n": "Cigna"
+  },
+  {
+    "t": "TMUS",
+    "n": "T-Mobile US"
+  },
+  {
+    "t": "NOC",
+    "n": "Northrop Grumman"
+  },
+  {
+    "t": "CRH",
+    "n": "CRH"
+  },
+  {
+    "t": "HON",
+    "n": "Honeywell"
+  },
+  {
+    "t": "URI",
+    "n": "United Rentals"
   }
 ]

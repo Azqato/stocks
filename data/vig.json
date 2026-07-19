@@ -8,10 +8,6 @@
     "n": "Apple"
   },
   {
-    "t": "MSFT",
-    "n": "Microsoft"
-  },
-  {
     "t": "LLY",
     "n": "Lilly (Eli)"
   },
@@ -20,12 +16,16 @@
     "n": "JPMorgan Chase"
   },
   {
-    "t": "XOM",
-    "n": "ExxonMobil"
+    "t": "MSFT",
+    "n": "Microsoft"
   },
   {
     "t": "JNJ",
     "n": "Johnson & Johnson"
+  },
+  {
+    "t": "LRCX",
+    "n": "Lam Research"
   },
   {
     "t": "V",
@@ -36,32 +36,28 @@
     "n": "Walmart"
   },
   {
-    "t": "CSCO",
-    "n": "Cisco"
-  },
-  {
-    "t": "COST",
-    "n": "Costco"
-  },
-  {
     "t": "CAT",
     "n": "Caterpillar"
   },
   {
-    "t": "MA",
-    "n": "Mastercard"
-  },
-  {
-    "t": "LRCX",
-    "n": "Lam Research"
+    "t": "CSCO",
+    "n": "Cisco"
   },
   {
     "t": "ABBV",
     "n": "AbbVie"
   },
   {
-    "t": "ORCL",
-    "n": "Oracle"
+    "t": "COST",
+    "n": "Costco"
+  },
+  {
+    "t": "MA",
+    "n": "Mastercard"
+  },
+  {
+    "t": "KLAC",
+    "n": "KLA"
   },
   {
     "t": "UNH",
@@ -72,48 +68,56 @@
     "n": "Bank of America"
   },
   {
-    "t": "PG",
-    "n": "Procter & Gamble"
-  },
-  {
     "t": "HD",
     "n": "Home Depot (The)"
   },
   {
-    "t": "KO",
-    "n": "Coca-Cola Company (The)"
+    "t": "PG",
+    "n": "Procter & Gamble"
   },
   {
     "t": "MRK",
     "n": "Merck & Co."
   },
   {
-    "t": "GS",
-    "n": "Goldman Sachs"
+    "t": "KO",
+    "n": "Coca-Cola Company (The)"
   },
   {
-    "t": "IBM",
-    "n": "IBM"
+    "t": "GS",
+    "n": "Goldman Sachs"
   },
   {
     "t": "TXN",
     "n": "Texas Instruments"
   },
   {
-    "t": "QCOM",
-    "n": "Qualcomm"
-  },
-  {
-    "t": "KLAC",
-    "n": "KLA"
+    "t": "IBM",
+    "n": "IBM"
   },
   {
     "t": "MS",
     "n": "Morgan Stanley"
   },
   {
+    "t": "ORCL",
+    "n": "Oracle"
+  },
+  {
     "t": "LIN",
     "n": "Linde"
+  },
+  {
+    "t": "APH",
+    "n": "Amphenol"
+  },
+  {
+    "t": "AMGN",
+    "n": "Amgen"
+  },
+  {
+    "t": "QCOM",
+    "n": "Qualcomm"
   },
   {
     "t": "ADI",
@@ -128,236 +132,212 @@
     "n": "PepsiCo"
   },
   {
-    "t": "APH",
-    "n": "Amphenol"
-  },
-  {
-    "t": "AMGN",
-    "n": "Amgen"
-  },
-  {
     "t": "NEE",
     "n": "NextEra Energy"
-  },
-  {
-    "t": "GILD",
-    "n": "Gilead Sciences"
-  },
-  {
-    "t": "UNP",
-    "n": "Union Pacific"
   },
   {
     "t": "ETN",
     "n": "Eaton"
   },
   {
-    "t": "BLK",
-    "n": "BlackRock"
-  },
-  {
-    "t": "HON",
-    "n": "Honeywell"
+    "t": "UNP",
+    "n": "Union Pacific"
   },
   {
     "t": "ABT",
     "n": "Abbott Laboratories"
   },
   {
-    "t": "SPGI",
-    "n": "S&P Global"
+    "t": "GILD",
+    "n": "Gilead Sciences"
+  },
+  {
+    "t": "BLK",
+    "n": "BlackRock"
   },
   {
     "t": "LOW",
     "n": "Lowe's"
   },
   {
-    "t": "ACN",
-    "n": "Accenture"
-  },
-  {
-    "t": "DHR",
-    "n": "Danaher"
+    "t": "SPGI",
+    "n": "S&P Global"
   },
   {
     "t": "CB",
     "n": "Chubb Limited"
   },
   {
-    "t": "SBUX",
-    "n": "Starbucks"
+    "t": "DHR",
+    "n": "Danaher"
   },
   {
-    "t": "LMT",
-    "n": "Lockheed Martin"
+    "t": "SBUX",
+    "n": "Starbucks"
   },
   {
     "t": "SYK",
     "n": "Stryker"
   },
   {
-    "t": "CME",
-    "n": "CME Group"
-  },
-  {
-    "t": "BNY",
-    "n": "BNY Mellon"
+    "t": "LMT",
+    "n": "Lockheed Martin"
   },
   {
     "t": "MDT",
     "n": "Medtronic"
   },
   {
-    "t": "INTU",
-    "n": "Intuit"
-  },
-  {
-    "t": "MCK",
-    "n": "McKesson"
+    "t": "BNY",
+    "n": "BNY Mellon"
   },
   {
     "t": "CMI",
     "n": "Cummins"
   },
   {
-    "t": "ADP",
-    "n": "Automatic Data Processing"
+    "t": "PNC",
+    "n": "PNC Financial Services"
+  },
+  {
+    "t": "MCK",
+    "n": "McKesson"
   },
   {
     "t": "GD",
     "n": "General Dynamics"
   },
   {
-    "t": "PNC",
-    "n": "PNC Financial Services"
-  },
-  {
-    "t": "ELV",
-    "n": "Elevance Health"
+    "t": "ADP",
+    "n": "Automatic Data Processing"
   },
   {
     "t": "CSX",
     "n": "CSX"
   },
   {
-    "t": "ICE",
-    "n": "Intercontinental Exchange"
-  },
-  {
-    "t": "EMR",
-    "n": "Emerson Electric"
-  },
-  {
     "t": "WM",
     "n": "Waste Management"
   },
   {
-    "t": "MDLZ",
-    "n": "Mondelez International"
+    "t": "ELV",
+    "n": "Elevance Health"
   },
   {
     "t": "MRSH",
     "n": "Marsh McLennan"
   },
   {
-    "t": "NOC",
-    "n": "Northrop Grumman"
+    "t": "EMR",
+    "n": "Emerson Electric"
   },
   {
-    "t": "CL",
-    "n": "Colgate-Palmolive"
-  },
-  {
-    "t": "PSX",
-    "n": "Phillips 66"
+    "t": "CME",
+    "n": "CME Group"
   },
   {
     "t": "SHW",
     "n": "Sherwin-Williams"
   },
   {
-    "t": "MCO",
-    "n": "Moody's"
+    "t": "ACN",
+    "n": "Accenture"
   },
   {
     "t": "AEP",
     "n": "American Electric Power"
   },
   {
+    "t": "MDLZ",
+    "n": "Mondelez International"
+  },
+  {
+    "t": "CL",
+    "n": "Colgate-Palmolive"
+  },
+  {
+    "t": "INTU",
+    "n": "Intuit"
+  },
+  {
+    "t": "HON",
+    "n": "Honeywell"
+  },
+  {
     "t": "AON",
     "n": "Aon"
-  },
-  {
-    "t": "MSI",
-    "n": "Motorola Solutions"
-  },
-  {
-    "t": "ECL",
-    "n": "Ecolab"
   },
   {
     "t": "ITW",
     "n": "Illinois Tool Works"
   },
   {
-    "t": "FIX",
-    "n": "Comfort Systems USA"
+    "t": "ECL",
+    "n": "Ecolab"
   },
   {
     "t": "TRV",
     "n": "Travelers Companies (The)"
   },
   {
-    "t": "TEL",
-    "n": "TE Connectivity"
+    "t": "HONA",
+    "n": "Honeywell Aerospace"
+  },
+  {
+    "t": "FIX",
+    "n": "Comfort Systems USA"
+  },
+  {
+    "t": "ICE",
+    "n": "Intercontinental Exchange"
+  },
+  {
+    "t": "MSI",
+    "n": "Motorola Solutions"
+  },
+  {
+    "t": "MCO",
+    "n": "Moody's"
+  },
+  {
+    "t": "NOC",
+    "n": "Northrop Grumman"
+  },
+  {
+    "t": "PSX",
+    "n": "Phillips 66"
   },
   {
     "t": "APD",
     "n": "Air Products"
   },
   {
-    "t": "LHX",
-    "n": "L3Harris"
-  },
-  {
-    "t": "CTAS",
-    "n": "Cintas"
+    "t": "ALL",
+    "n": "Allstate"
   },
   {
     "t": "SRE",
     "n": "Sempra"
   },
   {
-    "t": "NUE",
-    "n": "Nucor"
-  },
-  {
-    "t": "NKE",
-    "n": "Nike"
-  },
-  {
     "t": "GWW",
     "n": "W. W. Grainger"
-  },
-  {
-    "t": "ALL",
-    "n": "Allstate"
-  },
-  {
-    "t": "AFL",
-    "n": "Aflac"
-  },
-  {
-    "t": "COR",
-    "n": "Cencora"
   },
   {
     "t": "AJG",
     "n": "Arthur J. Gallagher & Co."
   },
   {
-    "t": "MCHP",
-    "n": "Microchip Technology"
+    "t": "TEL",
+    "n": "TE Connectivity"
+  },
+  {
+    "t": "CTAS",
+    "n": "Cintas"
+  },
+  {
+    "t": "CAH",
+    "n": "Cardinal Health"
   },
   {
     "t": "FAST",
@@ -368,35 +348,55 @@
     "n": "Rockwell Automation"
   },
   {
+    "t": "COR",
+    "n": "Cencora"
+  },
+  {
+    "t": "LHX",
+    "n": "L3Harris"
+  },
+  {
+    "t": "AFL",
+    "n": "Aflac"
+  },
+  {
     "t": "ETR",
     "n": "Entergy"
-  },
-  {
-    "t": "XEL",
-    "n": "Xcel Energy"
-  },
-  {
-    "t": "MSCI",
-    "n": "MSCI"
-  },
-  {
-    "t": "CAH",
-    "n": "Cardinal Health"
-  },
-  {
-    "t": "MET",
-    "n": "MetLife"
   },
   {
     "t": "FITB",
     "n": "Fifth Third Bancorp"
   },
   {
+    "t": "NUE",
+    "n": "Nucor"
+  },
+  {
+    "t": "XEL",
+    "n": "Xcel Energy"
+  },
+  {
+    "t": "MCHP",
+    "n": "Microchip Technology"
+  },
+  {
+    "t": "NKE",
+    "n": "Nike"
+  },
+  {
     "t": "STT",
     "n": "State Street"
   },
   {
-    "t": "BDX",
-    "n": "Becton Dickinson"
+    "t": "MET",
+    "n": "MetLife"
+  },
+  {
+    "t": "DHI",
+    "n": "DR Horton"
+  },
+  {
+    "t": "RSG",
+    "n": "Republic Services Inc. Class A"
   }
 ]
