@@ -2,6 +2,22 @@
 
 ---
 
+## v4.1.9 — 2026-07-30 — Leveraged Strategies nav link updated to new URL
+
+**The Leveraged Strategies site moved from `/leveraged-strategies/` to `/leverage/`. Updated the nav link across all HTML files to reflect the new path.**
+
+### Changed
+
+- Updated `href` in the Leveraged Strategies nav `<li>` from `https://azqato.github.io/leveraged-strategies/` to `https://azqato.github.io/leverage/` in all 9 HTML files: `index.html`, `philosophy.html`, `metrics.html`, `screener.html`, `watchlist.html`, `indices.html`, `faq.html`, `market.html`, `seekingalpha.html`
+- Updated the historical URL reference in PATCHNOTES.md (the v2.0.2 entry that originally documented adding the nav link) to match
+
+### Verified
+
+- `https://azqato.github.io/leverage/` fetched and confirmed live: page loads with "Leveraged Strategies" heading and full strategy content
+- Old URL (`/leveraged-strategies/`) no longer referenced anywhere in the project
+
+---
+
 ## v4.1.8 — 2026-07-13 — Constituent sources rebuilt (Wikipedia dropped); all crons moved off-peak
 
 **Owner reported the Market Overview page hadn't updated on Monday morning. Investigating the Actions history surfaced two independent, unrelated failures: a silently-broken weekly constituent sync, and a scheduler problem affecting every workflow in the repo.**
@@ -1470,7 +1486,7 @@ Nav labels are unchanged. The "Screener" nav item points to `finviz.html`, and t
 
 ### Navigation changes (all pages)
 
-- Added `<li><a href="https://azqato.github.io/leveraged-strategies/">Leveraged Strategies</a></li>` above the Support link on all eight HTML files: `index.html`, `philosophy.html`, `metrics.html`, `screener.html`, `watchlist.html`, `indices.html`, `faq.html`
+- Added `<li><a href="https://azqato.github.io/leverage/">Leveraged Strategies</a></li>` above the Support link on all eight HTML files: `index.html`, `philosophy.html`, `metrics.html`, `screener.html`, `watchlist.html`, `indices.html`, `faq.html`
 - Final nav order: **Home → Philosophy → Metrics → Screener → Watchlist → Indices → FAQ → Leveraged Strategies → Support**
 
 ---
