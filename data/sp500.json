@@ -548,6 +548,10 @@
     "n": "CVS Health"
   },
   {
+    "t": "DHI",
+    "n": "D. R. Horton"
+  },
+  {
     "t": "DHR",
     "n": "Danaher"
   },
@@ -624,10 +628,6 @@
     "n": "Dow"
   },
   {
-    "t": "DHI",
-    "n": "D. R. Horton"
-  },
-  {
     "t": "DTE",
     "n": "DTE Energy"
   },
@@ -662,10 +662,6 @@
   {
     "t": "EW",
     "n": "Edwards Lifesciences"
-  },
-  {
-    "t": "EA",
-    "n": "Electronic Arts"
   },
   {
     "t": "ELV",
@@ -778,6 +774,10 @@
   {
     "t": "FDXF",
     "n": "FedEx Freight"
+  },
+  {
+    "t": "FERG",
+    "n": "FERGUSON ENTERPRISES"
   },
   {
     "t": "FIS",
@@ -932,12 +932,12 @@
     "n": "Home Depot (The)"
   },
   {
-    "t": "HONA",
-    "n": "Honeywell Aerospace"
-  },
-  {
     "t": "HON",
     "n": "Honeywell"
+  },
+  {
+    "t": "HONA",
+    "n": "Honeywell Aerospace"
   },
   {
     "t": "HRL",
@@ -1046,6 +1046,10 @@
   {
     "t": "JBHT",
     "n": "J.B. Hunt"
+  },
+  {
+    "t": "SJM",
+    "n": "J.M. Smucker Company (The)"
   },
   {
     "t": "JBL",
@@ -1376,10 +1380,6 @@
     "n": "NXP Semiconductors"
   },
   {
-    "t": "ORLY",
-    "n": "O\u2019Reilly Automotive"
-  },
-  {
     "t": "OXY",
     "n": "Occidental Petroleum"
   },
@@ -1406,6 +1406,10 @@
   {
     "t": "OTIS",
     "n": "Otis Worldwide"
+  },
+  {
+    "t": "ORLY",
+    "n": "O\u2019Reilly Automotive"
   },
   {
     "t": "PCAR",
@@ -1500,12 +1504,12 @@
     "n": "Prudential Financial"
   },
   {
-    "t": "PEG",
-    "n": "Public Service Enterprise Group"
-  },
-  {
     "t": "PTC",
     "n": "PTC"
+  },
+  {
+    "t": "PEG",
+    "n": "Public Service Enterprise Group"
   },
   {
     "t": "PSA",
@@ -1516,20 +1520,20 @@
     "n": "PulteGroup"
   },
   {
-    "t": "PWR",
-    "n": "Quanta Services"
+    "t": "Q",
+    "n": "Qnity Electronics"
   },
   {
     "t": "QCOM",
     "n": "Qualcomm"
   },
   {
-    "t": "DGX",
-    "n": "Quest Diagnostics"
+    "t": "PWR",
+    "n": "Quanta Services"
   },
   {
-    "t": "Q",
-    "n": "Qnity Electronics"
+    "t": "DGX",
+    "n": "Quest Diagnostics"
   },
   {
     "t": "RL",
@@ -1538,10 +1542,6 @@
   {
     "t": "RJF",
     "n": "Raymond James Financial"
-  },
-  {
-    "t": "RTX",
-    "n": "RTX"
   },
   {
     "t": "O",
@@ -1596,6 +1596,10 @@
     "n": "Royal Caribbean Group"
   },
   {
+    "t": "RTX",
+    "n": "RTX"
+  },
+  {
     "t": "SPGI",
     "n": "S&P Global"
   },
@@ -1638,10 +1642,6 @@
   {
     "t": "SWKS",
     "n": "Skyworks Solutions"
-  },
-  {
-    "t": "SJM",
-    "n": "J.M. Smucker Company (The)"
   },
   {
     "t": "SW",
@@ -1768,12 +1768,12 @@
     "n": "TKO Group Holdings"
   },
   {
-    "t": "TTD",
-    "n": "Trade Desk (The)"
-  },
-  {
     "t": "TSCO",
     "n": "Tractor Supply"
+  },
+  {
+    "t": "TTD",
+    "n": "Trade Desk (The)"
   },
   {
     "t": "TT",
@@ -1956,12 +1956,12 @@
     "n": "Weyerhaeuser"
   },
   {
-    "t": "WSM",
-    "n": "Williams-Sonoma"
-  },
-  {
     "t": "WMB",
     "n": "Williams Companies"
+  },
+  {
+    "t": "WSM",
+    "n": "Williams-Sonoma"
   },
   {
     "t": "WTW",
