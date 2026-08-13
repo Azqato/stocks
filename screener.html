@@ -581,7 +581,7 @@
             <th class="grp-snapshot group-start" colspan="3">Snapshot</th>
             <th class="grp-growth group-start" colspan="4">Growth</th>
             <th class="grp-valuation group-start" colspan="2">Valuation</th>
-            <th class="grp-balance group-start" colspan="3">Balance Sheet</th>
+            <th class="grp-balance group-start" colspan="4">Balance Sheet</th>
             <th class="grp-snapshot group-start" colspan="1"></th>
           </tr>
           <tr class="head-row">
@@ -601,6 +601,7 @@
             <th class="grp-balance group-start" data-sort="cash">Total Cash</th>
             <th class="grp-balance" data-sort="debt">Total Debt</th>
             <th class="grp-balance" data-sort="cashDebt">Cash/Debt</th>
+            <th class="grp-balance" data-sort="netCashMc" title="Net cash (Total Cash minus Total Debt) as a percentage of market cap. Positive = net cash, negative = net debt. Colored by rank vs peers; context only, not scored.">Net Cash/Mkt Cap</th>
             <th class="grp-snapshot group-start" data-sort="updated">Updated</th>
           </tr>
         </thead>
@@ -669,7 +670,7 @@
           </tbody>
         </table>
       </div>
-      <p class="table-note">A company with negative forward earnings (a negative P/E) ranks worst on PEG, not best, since "cheap relative to earnings" has no meaning when there are no earnings. For those names the PEG column shows a negative value (computed from forward P/E and growth) rather than the data provider's misleading positive figure. The P/E FWD column is shown for context (colored by its own P/E-vs-growth ranking) but its points come through PEG, so valuation is not counted twice.</p>
+      <p class="table-note">A company with negative forward earnings (a negative P/E) ranks worst on PEG, not best, since "cheap relative to earnings" has no meaning when there are no earnings. For those names the PEG column shows a negative value (computed from forward P/E and growth) rather than the data provider's misleading positive figure. The P/E FWD column is shown for context (colored by its own P/E-vs-growth ranking) but its points come through PEG, so valuation is not counted twice. The <b>Net Cash/Mkt Cap</b> column (net cash, meaning total cash minus total debt, as a percentage of market cap) is likewise shown for context and colored by its rank against peers, but it is not scored: the balance-sheet points come from Cash vs Debt.</p>
 
       <h3>How a rank becomes points</h3>
       <p class="hint">For each metric, every stock is ranked against the others and given a <b>percentile</b>: the share of peers it beats (for "lower is better" metrics, being cheaper counts as beating). The percentile maps to points on this curve.</p>

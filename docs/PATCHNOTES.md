@@ -2,6 +2,32 @@
 
 ---
 
+## v4.1.10 — 2026-08-13 — Screener: "Net Cash / Mkt Cap" context column
+
+**Owner request: add a Net Cash to Market Cap metric, defined as (Total Cash - Total Debt) / Market Cap.**
+
+### Added
+
+- **New "Net Cash/Mkt Cap" column** in the screener's Balance Sheet group (stock universes only; the ETF view has no balance-sheet data). Shows net cash (Total Cash minus Total Debt) as a percentage of market cap: positive = the company holds more cash than debt worth that share of its value, negative = net debt. Sortable, and colored by percentile rank vs peers (green = most net cash, red = most net debt), the same treatment the P/E FWD column already uses.
+- No pipeline change was needed: `marketCap`, `cash`, and `debt` are already in every feed (`fetch_screener_data.py` lines 97-99), so this is a frontend-only addition computed at render time.
+
+### Not scored (deliberate)
+
+- The column is **context only**, exactly like P/E FWD. It does **not** contribute to the /100 score, and the six-metric model and its weights (Growth 60 / Valuation 20 / Balance sheet 20) are unchanged. Implemented by registering `netCashMc` as a **weight-0 metric** in `METRICS`: `computeScoreMap()` ranks every metric (so the column gets percentile colors for free) but sums only `weight > 0` metrics, so `scoredCount` stays 6 and no score moves. This mirrors the existing weight-0 `peVsG` metric that powers the P/E FWD color.
+- Rationale (see the earlier scoping discussion): net-cash-to-market-cap overlaps heavily with the scored Cash vs Debt metric, so scoring it too would double-count balance-sheet strength. Kept as context now; promoting it into the model (or replacing Cash vs Debt with it) would be a deliberate methodology change requiring the Python calibration step, and is not done here.
+
+### Changed
+
+- `screener.js`: added `netCashToMktCap()` helper (stores the value ×100 to match the growth-rate columns' percent convention), the weight-0 metric, the row-model field, and the header/cell in the stock `HEADS` constant.
+- `screener.html`: updated the static first-paint `<thead>` (Balance Sheet colspan 3→4 plus the new `<th>`) so the initial stock render matches; the static header is the live one on first load because the default universe shares the "stock" kind and never triggers a `renderHead()` rebuild. Extended the Scoring Methodology popup's context-columns note to explain the new column is shown but not scored.
+
+### Verified
+
+- Column-count parity reconciles at 18 across the group-header colspans, the sub-header `<th>` count, and the row `<td>` count (screenCells 4 + 14), in both the static HTML header and the JS-generated header.
+- Score is provably unchanged: the new metric has weight 0, so it is skipped in the score sum and `scoredCount` remains 6. Sorting needs no special-casing (net cash is a plain signed number; net debt sorts below net cash, missing sinks to the bottom via the existing generic path).
+
+---
+
 ## v4.1.9 — 2026-07-30 — Leveraged Strategies nav link updated to new URL
 
 **The Leveraged Strategies site moved from `/leveraged-strategies/` to `/leverage/`. Updated the nav link across all HTML files to reflect the new path.**

@@ -198,7 +198,10 @@
           if (isNum(d.peFwd) && d.peFwd <= 0) return Infinity; // unprofitable: Yahoo PEG is unreliable, rank worst
           return (isNum(d.pegFwd) && d.pegFwd > 0) ? d.pegFwd : null;
         } },
-      { key: "cashDebt", weight: 20, higher: true,  get: function (d) { if (!isNum(d.cash) || !isNum(d.debt)) return null; return d.debt === 0 ? (d.cash > 0 ? Infinity : null) : d.cash / d.debt; } }
+      { key: "cashDebt", weight: 20, higher: true,  get: function (d) { if (!isNum(d.cash) || !isNum(d.debt)) return null; return d.debt === 0 ? (d.cash > 0 ? Infinity : null) : d.cash / d.debt; } },
+      // Context only (weight 0): ranked so the column can be percentile-colored,
+      // but contributes nothing to the score (scoredCount counts weight > 0).
+      { key: "netCashMc", weight: 0,  higher: true,  get: function (d) { return netCashToMktCap(d); } }
     ];
 
     // ---- ETFs universe scoring (v3.33.0): a different model for a different question ----
@@ -366,6 +369,14 @@
       if (d.debt > 0) return d.cash / d.debt;
       return d.cash > 0 ? Infinity : null; // no debt = effectively unbounded
     }
+    // Net cash (cash minus debt) as a percentage of market cap. Positive = the
+    // company holds more cash than debt worth this share of its value; negative
+    // = net debt. Stored ×100 to match the growth-rate columns (fmtPct expects
+    // percent units). Context only, not scored.
+    function netCashToMktCap(d) {
+      if (!isNum(d.cash) || !isNum(d.debt) || !isNum(d.marketCap) || d.marketCap <= 0) return null;
+      return (d.cash - d.debt) / d.marketCap * 100;
+    }
     function fmtRatio(n) {
       if (n === null || n === undefined || (typeof n === "number" && isNaN(n))) return "—";
       if (!isFinite(n)) return "∞"; // no debt
@@ -406,6 +417,7 @@
           r.revTTM = d.revTTM; r.revFwd = d.revFwd; r.epsTTM = d.epsTTM; r.epsFwd = d.epsFwd;
           r.peFwd = d.peFwd; r.pegFwd = pegDisplay(d); r.cash = d.cash; r.debt = d.debt;
           r.cashDebt = cashDebtRatio(d); r.marketCap = d.marketCap;
+          r.netCashMc = netCashToMktCap(d);
           r.cur = d.cur; // native currency code (International universe only; USD elsewhere)
         }
         return r;
@@ -554,7 +566,7 @@
           '<th class="grp-snapshot group-start" colspan="3">Snapshot</th>' +
           '<th class="grp-growth group-start" colspan="4">Growth</th>' +
           '<th class="grp-valuation group-start" colspan="2">Valuation</th>' +
-          '<th class="grp-balance group-start" colspan="3">Balance Sheet</th>' +
+          '<th class="grp-balance group-start" colspan="4">Balance Sheet</th>' +
           '<th class="grp-snapshot group-start" colspan="1"></th>',
         head: '<th class="left col-ticker" data-sort="ticker">Ticker</th>' +
           '<th class="left group-start" data-sort="tier" title="Rank within the loaded list: S+ = a perfect 100 score, S = top 10%, A = next 10%, B = 20-50%, C = 50-75%, F = bottom 25%. Boundary ties round up.">Tier</th>' +
@@ -572,6 +584,7 @@
           '<th class="grp-balance group-start" data-sort="cash">Total Cash</th>' +
           '<th class="grp-balance" data-sort="debt">Total Debt</th>' +
           '<th class="grp-balance" data-sort="cashDebt">Cash/Debt</th>' +
+          '<th class="grp-balance" data-sort="netCashMc" title="Net cash (Total Cash minus Total Debt) as a percentage of market cap. Positive = net cash, negative = net debt. Colored by rank vs peers; context only, not scored.">Net Cash/Mkt Cap</th>' +
           '<th class="grp-snapshot group-start" data-sort="updated">Updated</th>'
       },
       etf: {
@@ -788,6 +801,7 @@
         '<td class="grp-balance group-start ' + colorScored(r.parts.cashDebt) + '">' + fmtMoney(r.cash, r.cur) + '</td>' +
         '<td class="grp-balance">' + fmtMoney(r.debt, r.cur) + '</td>' +
         '<td class="grp-balance ' + colorScored(r.parts.cashDebt) + '">' + fmtRatio(r.cashDebt) + '</td>' +
+        '<td class="grp-balance ' + colorFromPts(r.parts.netCashMc) + '">' + fmtPct(r.netCashMc) + '</td>' +
         '<td class="grp-snapshot group-start ' + clsAge(r.updated) + '" title="' + ageTitle(d) + '">' + fmtAge(r.updated) + '</td>' +
         '</tr>';
     }
