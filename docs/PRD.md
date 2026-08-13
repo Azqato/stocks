@@ -1,6 +1,6 @@
 # PRD — Azqato Stock Methodology Site
 
-**Version:** 4.1.10
+**Version:** 4.1.11
 **Status:** Current
 **Author:** Azqato
 **Last Updated:** 2026-08-13

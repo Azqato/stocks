@@ -2,6 +2,23 @@
 
 ---
 
+## v4.1.11 — 2026-08-13 — Fix: cash/debt currency mismatch for foreign-reporting stocks
+
+**Owner reported PDD showing significantly more cash than it actually holds.**
+
+### Fixed
+
+- **Root cause: balance-sheet figures were in the wrong currency.** yfinance reports `totalCash`/`totalDebt` in a company's `financialCurrency`, which is not always the currency it trades in. PDD (Pinduoduo) is priced and market-capped in **USD** but reports its balance sheet in **CNY**, so its stored cash was ~¥436B mislabeled as **$436B** — larger than the company's entire ~$127B market cap. The brand-new Net Cash/Mkt Cap column (v4.1.10) made it glaring, because it divided CNY cash by a USD market cap (showing ~+340% net cash instead of the true ~+50%).
+- **The fix** (`fetch_screener_data.py`): `fetch()` now converts cash/debt into the trading currency via a live Yahoo FX quote (`<FROM><TO>=X`, cached once per run) whenever `financialCurrency` differs from the trading currency, so they line up with `marketCap` and `price`. Same-currency listings — nearly all of them — are untouched. London `GBp` (pence) listings were already normalized to GBP and report in GBP, so they match and correctly skip conversion. If a needed FX rate can't be resolved, cash/debt are **nulled** (shown as "—") rather than displayed off by an FX factor.
+- **What was and wasn't affected:** the **scored Cash-vs-Debt metric is `cash / debt`, a currency-neutral ratio, so scores and tiers were always correct** and are unchanged by this fix. Only the **Total Cash / Total Debt display columns** and the new **Net Cash/Mkt Cap** column were wrong, and only for stocks that report in a different currency than they trade in.
+- **Committed feeds patched in place** for the 24 affected tickers so the live site is correct immediately: **PDD, ASML, CCEP, FER** in the Nasdaq 100 (EUR/CNY reporters) and **20 foreign listings** in International (e.g. 0700.HK/9988.HK reporting CNY, HSBA.L/SHEL.L/BP.L/RIO.L/AZN.L reporting USD, the Swiss names reporting USD). The S&P 500 and GVD feeds needed no changes (all US-reporting). Tonight's cron regenerates every feed with the fixed code.
+
+### Known limitation (unchanged, documented)
+
+- **Banks and insurers** (e.g. JPM, and in International: Barclays, HSBC, UBS, the Japanese and Canadian banks, Santander, AXA) legitimately carry cash exceeding their market cap — a real balance-sheet trait of financials, **not** a currency bug, so they are deliberately not altered. For these names, Total Cash / Net Cash/Mkt Cap (and the Cash-vs-Debt score) are inherently less meaningful than for an operating company; this predates the Net Cash column and is out of scope for this fix.
+
+---
+
 ## v4.1.10 — 2026-08-13 — Screener: "Net Cash / Mkt Cap" context column
 
 **Owner request: add a Net Cash to Market Cap metric, defined as (Total Cash - Total Debt) / Market Cap.**
