@@ -27,6 +27,12 @@ look a year further out). P/E FWD uses Yahoo's priceEpsCurrentYear and PEG FWD
 uses Yahoo's pegRatio, both of which track Seeking Alpha. EPS Growth FWD is
 GAAP-basis and will differ from SA's Non-GAAP figure.
 
+Cash and debt are reported in a company's `financialCurrency`, which is not
+always the currency it trades in (a US ADR like PDD is priced in USD but reports
+its balance sheet in CNY). `fetch()` converts cash/debt into the trading
+currency via a live Yahoo FX quote so they line up with marketCap/price; see the
+comment there. Same-currency listings (nearly all of them) are untouched.
+
 Output schema matches what screener.html reads:
   { "updated": ISO, "source": "yahoo", "stocks": { TICKER: {...}, ... } }
 
@@ -70,6 +76,40 @@ def num(x):
     if f != f or f in (float("inf"), float("-inf")):
         return None
     return f
+
+
+# FX rates fetched once per run and reused. Keyed by "FROMTO" (e.g. "CNYUSD").
+_FX_CACHE = {}
+
+
+def fx_rate(frm, to):
+    """Units of `to` per 1 unit of `frm` (e.g. fx_rate('CNY','USD') ~ 0.148).
+
+    Returns 1.0 when the currencies match, else the live Yahoo FX quote, else
+    None if it cannot be resolved. Yahoo publishes most pairs directly as
+    "<FROM><TO>=X"; a few resolve only as the inverse, so try both. Cached per
+    run to avoid re-hitting Yahoo for every ADR in the same currency.
+    """
+    if not frm or not to:
+        return None
+    if frm == to:
+        return 1.0
+    key = frm + to
+    if key in _FX_CACHE:
+        return _FX_CACHE[key]
+    rate = None
+    try:
+        rate = num(yf.Ticker(frm + to + "=X").info.get("regularMarketPrice"))
+    except Exception:
+        rate = None
+    if rate is None or rate == 0:
+        try:
+            inv = num(yf.Ticker(to + frm + "=X").info.get("regularMarketPrice"))
+            rate = 1.0 / inv if inv else None
+        except Exception:
+            rate = None
+    _FX_CACHE[key] = rate
+    return rate
 
 
 def estimate_growth(df, period):
@@ -118,6 +158,36 @@ def fetch(symbol):
         if prev is not None:
             prev /= 100
     rec["cur"] = cur
+
+    # Cash and debt come from the financial statements, reported in the company's
+    # `financialCurrency`, which is NOT always the currency it trades in: a US
+    # ADR like PDD (Pinduoduo) is priced and market-capped in USD but reports its
+    # balance sheet in CNY. Left raw, totalCash/totalDebt would be labeled with
+    # the wrong currency and, worse, the Net Cash / Mkt Cap column would divide
+    # CNY cash by a USD market cap (PDD showed ~$436B cash against a ~$120B cap).
+    # Convert cash/debt into the trading currency so they line up with marketCap
+    # and price. (The scored Cash-vs-Debt metric is cash/debt, a currency-neutral
+    # ratio, so it was already correct; this fixes the display + Net Cash column.)
+    # GBp London listings already normalized `cur` to GBP above and report in GBP,
+    # so they match here and skip conversion.
+    fin_cur = info.get("financialCurrency")
+    if fin_cur in ("GBp", "GBX"):
+        fin_cur = "GBP"
+    if fin_cur and cur and fin_cur != cur and (rec["cash"] is not None or rec["debt"] is not None):
+        rate = fx_rate(fin_cur, cur)
+        if rate:
+            if rec["cash"] is not None:
+                rec["cash"] *= rate
+            if rec["debt"] is not None:
+                rec["debt"] *= rate
+        else:
+            # Can't trust a cross-currency figure we can't convert: null both so
+            # the columns show "—" (and the ratio scores as missing) rather than
+            # displaying a number that is silently off by an FX factor.
+            print("  WARN %s: no FX rate %s->%s; nulling cash/debt" % (symbol, fin_cur, cur),
+                  file=sys.stderr)
+            rec["cash"] = None
+            rec["debt"] = None
     rec["prevClose"] = prev
     if rec["price"] is not None and prev not in (None, 0):
         rec["changePct"] = (rec["price"] / prev - 1) * 100
