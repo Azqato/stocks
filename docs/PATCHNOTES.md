@@ -2,6 +2,19 @@
 
 ---
 
+## v4.1.12 — 2026-08-19 — Scoring model v3: four even pillars, TTM weighted equal to FWD
+
+**Owner decision, reached while comparing weighting schemes against a private ad-hoc watchlist.**
+
+### Changed
+
+- **Stock scoring reweighted from three pillars to four, all equal at 25 points each: TTM 25 (Rev TTM 10, EPS TTM 15) · FWD 25 (Rev FWD 10, EPS FWD 15) · Valuation 25 (PEG FWD) · Balance sheet 25 (Cash vs Debt).** Replaces the prior model's Growth 60 (with forward growth weighted double trailing) / Valuation 20 / Balance sheet 20. The change removes forward growth's 2x weighting over trailing growth — proven TTM results now count exactly as much as analyst FWD estimates — and shifts 10 points total off Growth and onto Valuation (+5) and Balance sheet (+5). Within each of the new TTM/FWD pillars, EPS growth still outweighs Revenue growth (15 vs 10), unchanged from the prior model's relative split.
+- **Net effect**: favors companies with strong trailing fundamentals and a clean balance sheet even when forward guidance is soft (mature/proven earners), at the expense of companies whose score leaned on strong forward estimates alone (accelerating/story growth names) — a quality/value tilt over the prior model's growth tilt. Applies to all six stock universes (Nasdaq 100, S&P 500, Growth 100, Value 100, Dividend 100, International); the ETFs universe's separate technicals-based model is unaffected.
+- **Implementation**: `METRICS` weights changed in `screener.js` (`revTTM` 10, `revFwd` 20→10, `epsTTM` 10→15, `epsFwd` 20→15, `pegFwd` 20→25, `cashDebt` 20→25); `POPUP_METRICS` reordered/reweighted to match; `stockNote` summary text and the Methodology modal (`#methodStock` in `screener.html`) rewritten — pillar table now "TTM/FWD/Valuation/Balance sheet" instead of "Growth/Valuation/Balance sheet", worked example recalculated for the 25-point valuation pillar. No changes to the percentile-clamp curve, tier bands, or S+ threshold — only the pillar weights moved.
+- **Not re-clamped**: the 22% top/bottom clamp is unchanged from v3.31.0; S+ rarity may drift slightly from the "~1 Nasdaq 100 / ~5 S&P 500" target calibrated under the old weights until the next live-data check confirms whether recalibration is warranted.
+
+---
+
 ## v4.1.11 — 2026-08-13 — Fix: cash/debt currency mismatch for foreign-reporting stocks
 
 **Owner reported PDD showing significantly more cash than it actually holds.**

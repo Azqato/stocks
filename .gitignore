@@ -13,3 +13,6 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# Private portfolio/ad-hoc analysis (local only, never published)
+private/

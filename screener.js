@@ -167,11 +167,15 @@
       return "Price: " + p + "  •  Fundamentals: " + f;
     }
 
-    // ---- Scoring: relative percentile model v2 (v3.30.0-v3.31.0, three pillars) ----
-    // Six metrics in three pillars: Growth 60 (Rev TTM 10, Rev FWD 20, EPS TTM
-    // 10, EPS FWD 20 -- forward growth counts double, owner weights v3.31.0),
-    // Valuation 20 (PEG FWD), Balance sheet 20 (cash vs debt). Each metric's
-    // points ramp with the stock's percentile rank among its loaded peers,
+    // ---- Scoring: relative percentile model v3 (four even pillars) ----
+    // Six metrics in four equally-weighted 25pt pillars: TTM (Rev TTM 10, EPS
+    // TTM 15), FWD (Rev FWD 10, EPS FWD 15), Valuation 25 (PEG FWD), Balance
+    // sheet 25 (cash vs debt). Deliberately weights trailing, proven growth
+    // the same as forward analyst estimates (the prior model double-weighted
+    // FWD over TTM within Growth), and gives Valuation and Balance sheet more
+    // say -- a quality/value tilt over the prior model's growth tilt; owner
+    // decision, chosen over keeping FWD double-weighted. Each metric's points
+    // ramp with the stock's percentile rank among its loaded peers,
     // clamped at the top/bottom 22%: only the top 22% of a metric earns full
     // marks. The clamp is calibrated on live feeds so a perfect 100 stays
     // rare: roughly 1 stock in the Nasdaq 100 and 5 in the S&P 500, with more
@@ -186,19 +190,19 @@
     // context ratio) are ranked only so their cells can be colored by percentile.
     var METRICS = [
       { key: "revTTM",   weight: 10, higher: true,  get: function (d) { return isNum(d.revTTM) ? d.revTTM : null; } },
-      { key: "revFwd",   weight: 20, higher: true,  get: function (d) { return isNum(d.revFwd) ? d.revFwd : null; } },
-      { key: "epsTTM",   weight: 10, higher: true,  get: function (d) { return isNum(d.epsTTM) ? d.epsTTM : null; } },
-      { key: "epsFwd",   weight: 20, higher: true,  get: function (d) { return isNum(d.epsFwd) ? d.epsFwd : null; } },
+      { key: "revFwd",   weight: 10, higher: true,  get: function (d) { return isNum(d.revFwd) ? d.revFwd : null; } },
+      { key: "epsTTM",   weight: 15, higher: true,  get: function (d) { return isNum(d.epsTTM) ? d.epsTTM : null; } },
+      { key: "epsFwd",   weight: 15, higher: true,  get: function (d) { return isNum(d.epsFwd) ? d.epsFwd : null; } },
       { key: "peVsG",    weight: 0,  higher: false, get: function (d) {
           if (!isNum(d.peFwd) || !isNum(d.epsFwd)) return null;
           // Unprofitable (P/E <= 0) or shrinking earnings (growth <= 0) rank worst, not best/dropped.
           return (d.peFwd <= 0 || d.epsFwd <= 0) ? Infinity : d.peFwd / d.epsFwd;
         } },
-      { key: "pegFwd",   weight: 20, higher: false, get: function (d) {
+      { key: "pegFwd",   weight: 25, higher: false, get: function (d) {
           if (isNum(d.peFwd) && d.peFwd <= 0) return Infinity; // unprofitable: Yahoo PEG is unreliable, rank worst
           return (isNum(d.pegFwd) && d.pegFwd > 0) ? d.pegFwd : null;
         } },
-      { key: "cashDebt", weight: 20, higher: true,  get: function (d) { if (!isNum(d.cash) || !isNum(d.debt)) return null; return d.debt === 0 ? (d.cash > 0 ? Infinity : null) : d.cash / d.debt; } },
+      { key: "cashDebt", weight: 25, higher: true,  get: function (d) { if (!isNum(d.cash) || !isNum(d.debt)) return null; return d.debt === 0 ? (d.cash > 0 ? Infinity : null) : d.cash / d.debt; } },
       // Context only (weight 0): ranked so the column can be percentile-colored,
       // but contributes nothing to the score (scoredCount counts weight > 0).
       { key: "netCashMc", weight: 0,  higher: true,  get: function (d) { return netCashToMktCap(d); } }
@@ -879,11 +883,11 @@
     // ---- Per-stock breakdown popup ----
     var POPUP_METRICS = [
       { key: "revTTM",      label: "Revenue Growth TTM", weight: 10, fmt: function (d) { return fmtPct(d.revTTM); } },
-      { key: "revFwd",      label: "Revenue Growth FWD", weight: 20, fmt: function (d) { return fmtPct(d.revFwd); } },
-      { key: "epsTTM",      label: "EPS Growth TTM",     weight: 10, fmt: function (d) { return fmtPct(d.epsTTM); } },
-      { key: "epsFwd",      label: "EPS Growth FWD",     weight: 20, fmt: function (d) { return fmtPct(d.epsFwd); } },
-      { key: "pegFwd",      label: "PEG FWD",            weight: 20, fmt: function (d) { return fmtNum(pegDisplay(d)); } },
-      { key: "cashDebt",    label: "Cash vs Debt",       weight: 20, fmt: function (d) { return fmtRatio(cashDebtRatio(d)); } }
+      { key: "epsTTM",      label: "EPS Growth TTM",     weight: 15, fmt: function (d) { return fmtPct(d.epsTTM); } },
+      { key: "revFwd",      label: "Revenue Growth FWD", weight: 10, fmt: function (d) { return fmtPct(d.revFwd); } },
+      { key: "epsFwd",      label: "EPS Growth FWD",     weight: 15, fmt: function (d) { return fmtPct(d.epsFwd); } },
+      { key: "pegFwd",      label: "PEG FWD",            weight: 25, fmt: function (d) { return fmtNum(pegDisplay(d)); } },
+      { key: "cashDebt",    label: "Cash vs Debt",       weight: 25, fmt: function (d) { return fmtRatio(cashDebtRatio(d)); } }
     ];
 
     var ETF_POPUP_METRICS = [
@@ -937,7 +941,7 @@
           "(5-year and 10-year returns count double the 1-year return). A missing metric (—) scores zero. Open <b>Methodology</b> for the full method."
         : "Each metric's points come from its percentile rank vs the " +
           UNIVERSES[universeMode].label + " (green = top of the pack, red = bottom), weighted by pillar: " +
-          "Growth 60, Valuation 20, Balance sheet 20. A missing metric (—) scores zero. " +
+          "TTM 25, FWD 25, Valuation 25, Balance sheet 25. A missing metric (—) scores zero. " +
           "Open <b>Methodology</b> for the full method.";
 
       $("stockModal").hidden = false;

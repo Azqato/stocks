@@ -648,7 +648,7 @@
       <button class="modal-close" id="methodologyClose" aria-label="Close">&times;</button>
       <h2>Scoring Methodology</h2>
       <div id="methodStock">
-      <p class="hint">Each stock is graded <b>relative to the rest of the <span class="universe-name">Nasdaq 100</span></b> on six metrics in three weighted pillars: <b>Growth 60 &middot; Valuation 20 &middot; Balance sheet 20</b>, adding up to a <b>Score out of 100</b>. For each metric a stock earns points based on where it ranks against its peers. The score's rank within the list then maps to a <b>Tier</b>, exactly like a tier list: S is the top tenth of this list right now, F is its bottom quarter. This is a ranking, not a fixed-threshold test and not a buy or sell rating: a high tier means a stock looks better than most of the list right now, not that it cleared a specific target.</p>
+      <p class="hint">Each stock is graded <b>relative to the rest of the <span class="universe-name">Nasdaq 100</span></b> on six metrics in four evenly weighted pillars: <b>TTM 25 &middot; FWD 25 &middot; Valuation 25 &middot; Balance sheet 25</b>, adding up to a <b>Score out of 100</b>. For each metric a stock earns points based on where it ranks against its peers. The score's rank within the list then maps to a <b>Tier</b>, exactly like a tier list: S is the top tenth of this list right now, F is its bottom quarter. This is a ranking, not a fixed-threshold test and not a buy or sell rating: a high tier means a stock looks better than most of the list right now, not that it cleared a specific target.</p>
       <p class="hint" style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
         <span><span class="verdict v-sp">S+</span> perfect 100</span>
         <span><span class="verdict v-s">S</span> top 10%</span>
@@ -659,18 +659,19 @@
       </p>
       <p class="hint">Tier sizes are fixed by rank, so a 100-stock list always has about 10 S, 10 A, 30 B, 25 C, and 25 F stocks, and the S&amp;P 500 scales the same percentages to 500. The only exception is a tie: when stocks at a boundary share the same rounded score, they all round up into the higher tier. <b>S+</b> sits above the bands: any stock that scores a perfect <b>100 of 100</b> earns it, and the scoring curve is calibrated so that is roughly one stock in the Nasdaq 100 and five in the S&amp;P 500 at a time.</p>
 
-      <h3>The three pillars</h3>
+      <h3>The four pillars</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th scope="col">Pillar</th><th scope="col">Metrics</th><th scope="col" class="num">Weight</th><th scope="col">Better means</th></tr></thead>
           <tbody>
-            <tr><td>Growth</td><td>Revenue Growth TTM (10) &middot; Revenue Growth FWD (20) &middot; EPS Growth TTM (10) &middot; EPS Growth FWD (20)</td><td class="num">60 total</td><td>higher (faster sales and profit growth; expected growth counts double the trailing kind)</td></tr>
-            <tr><td>Valuation</td><td>PEG FWD</td><td class="num">20</td><td>lower (a cheaper price for the growth you get)</td></tr>
-            <tr><td>Balance sheet</td><td>Cash vs Debt</td><td class="num">20</td><td>higher (more cash than debt)</td></tr>
+            <tr><td>TTM</td><td>Revenue Growth TTM (10) &middot; EPS Growth TTM (15)</td><td class="num">25 total</td><td>higher (faster proven, trailing sales and profit growth)</td></tr>
+            <tr><td>FWD</td><td>Revenue Growth FWD (10) &middot; EPS Growth FWD (15)</td><td class="num">25 total</td><td>higher (faster expected sales and profit growth)</td></tr>
+            <tr><td>Valuation</td><td>PEG FWD</td><td class="num">25</td><td>lower (a cheaper price for the growth you get)</td></tr>
+            <tr><td>Balance sheet</td><td>Cash vs Debt</td><td class="num">25</td><td>higher (more cash than debt)</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note">A company with negative forward earnings (a negative P/E) ranks worst on PEG, not best, since "cheap relative to earnings" has no meaning when there are no earnings. For those names the PEG column shows a negative value (computed from forward P/E and growth) rather than the data provider's misleading positive figure. The P/E FWD column is shown for context (colored by its own P/E-vs-growth ranking) but its points come through PEG, so valuation is not counted twice. The <b>Net Cash/Mkt Cap</b> column (net cash, meaning total cash minus total debt, as a percentage of market cap) is likewise shown for context and colored by its rank against peers, but it is not scored: the balance-sheet points come from Cash vs Debt.</p>
+      <p class="table-note">Trailing (TTM) and expected (FWD) growth are weighted equally: proven results count the same as analyst forecasts, rather than forecasts counting double. Within each pillar EPS growth outweighs revenue growth (15 vs 10), since profit growth flows more directly to shareholders. A company with negative forward earnings (a negative P/E) ranks worst on PEG, not best, since "cheap relative to earnings" has no meaning when there are no earnings. For those names the PEG column shows a negative value (computed from forward P/E and growth) rather than the data provider's misleading positive figure. The P/E FWD column is shown for context (colored by its own P/E-vs-growth ranking) but its points come through PEG, so valuation is not counted twice. The <b>Net Cash/Mkt Cap</b> column (net cash, meaning total cash minus total debt, as a percentage of market cap) is likewise shown for context and colored by its rank against peers, but it is not scored: the balance-sheet points come from Cash vs Debt.</p>
 
       <h3>How a rank becomes points</h3>
       <p class="hint">For each metric, every stock is ranked against the others and given a <b>percentile</b>: the share of peers it beats (for "lower is better" metrics, being cheaper counts as beating). The percentile maps to points on this curve.</p>
@@ -689,7 +690,7 @@
       <p class="table-note">Formula: points = 20 &times; (percentile - 0.22) &divide; 0.56, capped between 0 and 20, then scaled by the metric's weight. Only the top 22% of a metric earns full marks, so a perfect 100 (the S+ tier) still requires ranking near the top of the list on <i>everything</i>; the clamp is calibrated against the live data so roughly one Nasdaq 100 stock and five S&amp;P 500 stocks manage it, with more only when rounded scores tie. The table's <b>cell colors follow the same ranking</b>: a green cell is top-of-the-pack on that metric, red is bottom, and amber is in between. <b>A missing value (—) scores zero for that metric and renders dark red</b>: the score is always out of the full 100, so incomplete data can never help a stock.</p>
 
       <h3>Worked example: Apple's PEG</h3>
-      <p class="hint">Apple's PEG of about 2.3 is cheaper than roughly 35% of the index. On the curve, the 35th percentile earns 20 &times; (0.35 - 0.22) &divide; 0.56 = about <b>5 of 20</b>, and since PEG carries the full 20-point valuation pillar, that is about <b>5 of its 20 score points</b>. Not because 2.3 fails a fixed bar, but because most other <span class="universe-name">Nasdaq 100</span> names are cheaper. A stock with a PEG in the cheapest 22% of the group would earn the full 20.</p>
+      <p class="hint">Apple's PEG of about 2.3 is cheaper than roughly 35% of the index. On the curve, the 35th percentile earns 20 &times; (0.35 - 0.22) &divide; 0.56 = about <b>5 of 20</b>, and since PEG carries the full 25-point valuation pillar, that scales to about <b>6 of its 25 score points</b>. Not because 2.3 fails a fixed bar, but because most other <span class="universe-name">Nasdaq 100</span> names are cheaper. A stock with a PEG in the cheapest 22% of the group would earn the full 25.</p>
 
       <h3>Adding up and the Factors chip</h3>
       <p class="hint">A stock that is exactly average on every metric scores <b>50</b>. The <b>Factors</b> column (for example <span class="factors">4/6</span>) counts how many of the six scored metrics land in the upper part of the pack (15 of 20 percentile points or better). A metric with missing data counts as a miss, never a pass.</p>
