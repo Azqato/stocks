@@ -1,9 +1,9 @@
 # PRD — Azqato Stock Methodology Site
 
-**Version:** 4.1.11
+**Version:** 4.1.13
 **Status:** Current
 **Author:** Azqato
-**Last Updated:** 2026-08-13
+**Last Updated:** 2026-08-25
 
 ---
 
@@ -170,11 +170,11 @@ This methodology has a point of view. It says to buy quality and hold it. It say
 
 ## Roadmap
 
-### Current Phase: Operational (v3.x)
+### Current Phase: Operational (v4.x)
 
-The site is live, fully featured, and running automated daily data refreshes. The core methodology is documented end-to-end. The screener is scoring all 100 Nasdaq 100 tickers daily. Documentation has been consolidated into five files (README, PRD, DESIGN, PATCHNOTES, ROADMAP).
+The site is live, fully featured, and running automated daily and intraday data refreshes across seven screener universes and the Market Overview page. The core methodology is documented end-to-end. Documentation is consolidated into four files (README.md at the repo root; PRD.md, DESIGN.md, and PATCHNOTES.md in `/docs`) as of the 2026-08-25 documentation audit (v4.1.13), which merged the former `docs/ROADMAP.md` into this section.
 
-Detailed implementation plans for every Planned milestone below live in [docs/ROADMAP.md](ROADMAP.md); this table remains the source of truth for what is planned and in what order.
+This table is the single source of truth for both **what** is planned and, for items still open, **how** it will be built — see "Open Milestone Detail" immediately after the table below for the full implementation plan on every Planned item. Detail for shipped milestones lives in each row's own description here and in the corresponding PATCHNOTES.md entry; it is not duplicated elsewhere.
 
 ### Milestone Table
 
@@ -247,13 +247,78 @@ Detailed implementation plans for every Planned milestone below live in [docs/RO
 | v4.1.9 — Leveraged Strategies nav link updated to its new URL across all pages | 2026-07-30 | Complete |
 | v4.1.10 — **Screener: "Net Cash / Mkt Cap" context column.** Owner request: add (Total Cash − Total Debt) / Market Cap. Shown as a percentage in the Balance Sheet group (stock universes only; ETFs have no balance-sheet data), sortable and percentile-colored (green = most net cash, red = most net debt), the same treatment P/E FWD uses. **Context only, not scored** — implemented as a weight-0 metric (`netCashMc`) so `computeScoreMap()` ranks it for coloring but the score sum (weight > 0 metrics) is unchanged and `scoredCount` stays 6, mirroring the existing weight-0 `peVsG` that colors P/E FWD. No pipeline change: `marketCap`/`cash`/`debt` are already in every feed, so it's computed client-side at render time. Deliberately not scored because it overlaps heavily with the scored Cash-vs-Debt metric (scoring both would double-count balance-sheet strength). Both header sources updated (the static `<thead>` in screener.html used on first paint + the JS `HEADS` constant used on ETF-mode switches) and the methodology popup's context-column note extended | 2026-08-13 | Complete |
 | v4.1.12 — **Screener: scoring model v3, four even pillars.** Owner decision, reached while comparing weighting schemes against a private ad-hoc watchlist tool. Stock scoring reweighted from three pillars (Growth 60 with forward growth weighted double, Valuation 20, Balance sheet 20) to four evenly-weighted 25-point pillars: TTM 25 (Rev TTM 10, EPS TTM 15), FWD 25 (Rev FWD 10, EPS FWD 15), Valuation 25 (PEG FWD), Balance sheet 25 (Cash vs Debt) — trailing and forward growth now count equally, rather than forward counting double. Net effect: favors proven trailing fundamentals and balance-sheet strength over reliance on forward estimates alone, a quality/value tilt versus the prior growth tilt. Applies to all six stock universes; ETFs' separate technicals model unaffected. Percentile clamp, tier bands, and S+ threshold unchanged — only pillar weights moved. Methodology popup, per-stock breakdown, and summary text updated to match | 2026-08-19 | Complete |
-| v4.2.0 — **Market Overview: mortgage rate, planned.** Reorganize-categories (originally bundled here) shipped separately as v4.1.6; this item now covers only the mortgage rate, which needs a non-yfinance data source (likely FRED's `MORTGAGE30US` series, requiring this site's first-ever API key) — needs its own probe before design. See ROADMAP.md | Next up | Planned |
-| v4.3.0 — **Market Overview: period-return filters, planned.** Owner request: YTD/12-Month/5-Year/10-Year return filters. Materially bigger than prior Market Overview additions — needs real price history (like `fetch_etf_data.py`'s existing return calculations), not the single-quote snapshot every other card uses, plus a UI toggle/filter control and a decision on whether returns refresh on the same 3x/day cadence as prices (likely not, since history-based returns don't change intraday). Awaiting owner scope confirmation. See ROADMAP.md | TBD | Planned |
-| v4.4.0 — Screener score history sparklines (mine screener.json git history for per-stock score trends; renumbered from v4.1.0 on 2026-07-09, then v4.2.0 on 2026-07-10, then v4.3.0 on 2026-07-10 as further Market Overview items were prioritized ahead of it) | After v4.3.0 | Planned |
+| v4.1.13 — **Documentation audit: consolidated to 4 canonical docs.** Full read-only codebase crawl plus a review of every file in `/docs`, followed by a correction pass. `docs/ROADMAP.md` merged into this Roadmap section (see "Open Milestone Detail" below) and removed — no redirect needed, it was never a served page. `README.md` rewritten as a short public-facing front door (tech/setup content moved to this file's Runbook and Technical Requirements sections, which already held it in more detail or now do). Corrected: the Screener Scoring Model section and two FAQ answers, which still described the retired three-pillar model five entries after v4.1.12 shipped the four-pillar one; the ETF Universe Scoring Model's criteria table, which still showed the pre-v3.37.0 spec; two stale cron-schedule diagrams (README's project tree, this file's architecture diagram), both a month behind v4.1.8's odd-minute rescheduling. Added the sections this PRD was missing: Conventions, Writing Style, Browser Testing, Deprecation and Removal, Documentation Versus Reality, Risks and Open Questions, Working Practice. `docs/DESIGN.md` also updated (was last touched 2026-06-27, ~50 releases stale) — see its own Version History table | 2026-08-25 | Complete |
+| v4.2.0 — **Market Overview: mortgage rate, planned.** Reorganize-categories (originally bundled here) shipped separately as v4.1.6; this item now covers only the mortgage rate, which needs a non-yfinance data source (likely FRED's `MORTGAGE30US` series, requiring this site's first-ever API key) — needs its own probe before design. **STATUS: ON HOLD** (owner decision, 2026-07-13) — see "Open Milestone Detail" below | Next up | Planned (on hold) |
+| v4.3.0 — **Market Overview: period-return filters, planned.** Owner request: YTD/12-Month/5-Year/10-Year return filters. Materially bigger than prior Market Overview additions — needs real price history (like `fetch_etf_data.py`'s existing return calculations), not the single-quote snapshot every other card uses, plus a UI toggle/filter control and a decision on whether returns refresh on the same 3x/day cadence as prices (likely not, since history-based returns don't change intraday). Awaiting owner scope confirmation — see "Open Milestone Detail" below | TBD | Planned |
+| v4.4.0 — Screener score history sparklines (mine screener.json git history for per-stock score trends; renumbered from v4.1.0 on 2026-07-09, then v4.2.0 on 2026-07-10, then v4.3.0 on 2026-07-10 as further Market Overview items were prioritized ahead of it). **STATUS: BLOCKED ON DATA until ~Nov 2026** (owner decision, 2026-07-13) — see "Open Milestone Detail" below | After v4.3.0 | Planned (blocked) |
 | v4.5.0 — Deeper index fund coverage (sector ETFs, international allocation, bond tent strategy; renumbered from v4.2.0→v4.3.0→v4.4.0 across the same sequence of reprioritizations) | TBD | Planned |
 | v4.6.0 — Additional illustrative examples using historical market events (renumbered from v4.3.0→v4.4.0→v4.5.0) | TBD | Planned |
 | v4.7.0 — Additional philosophy sections (renumbered from v4.4.0→v4.5.0→v4.6.0) | TBD | Planned |
 | v4.8.0 — Conference call research guide (renumbered from v4.5.0→v4.6.0→v4.7.0) | TBD | Planned |
+
+### Open Milestone Detail
+
+Full implementation plans for every Planned item above. This subsection is what used to live in the separate `docs/ROADMAP.md`, merged here in the 2026-08-25 documentation audit (v4.1.13) so the roadmap's "what" and "how" live in one file. When an item ships, trim its entry here to a short pointer and record the full as-built detail in the milestone table row above and in PATCHNOTES.md, matching the pattern already used for every shipped milestone in the table.
+
+**v4.2.0 — Market Overview: Mortgage Rate — ON HOLD**
+
+No Yahoo Finance ticker exists for the 30-year mortgage average — every plausible guess (`^MORTGAGE30US`, `MORTGAGE30US`) 404'd (confirmed 2026-07-10). FRED's public API (`MORTGAGE30US` series, weekly Freddie Mac PMMS data) is the most likely candidate: free, no scraping fragility, but requires a FRED API key (free to obtain) and a second fetch mechanism alongside yfinance in `fetch_market_overview.py`, or a small dedicated fetch step. Needs a probe to confirm the FRED API's actual response shape and key-acquisition process before committing to a design.
+
+Owner asked (2026-07-13) to hold the FRED API key question until a later update; the site stays entirely key-free for now and this item is parked, not cancelled. Nothing else on the roadmap depends on it. The open question when it's picked back up is unchanged: whether a FRED API key is acceptable at all, since the site has otherwise been entirely key-free (yfinance plus public Nasdaq/SSGA/Vanguard endpoints) — this would be a first. Note the v4.1.8 lesson before considering a scrape-based alternative instead: scraping an editable public page is exactly what broke the constituent sync when Wikipedia removed its Nasdaq-100 table.
+
+**v4.3.0 — Market Overview: Period-Return Filters**
+
+Owner request (2026-07-10): filters for YTD, 12-Month, 5-Year, and 10-Year returns on Market Overview. This is materially bigger than every prior Market Overview addition: every existing card is driven by a single lightweight `Ticker.info` quote call (today's price vs. previous close), while multi-year returns require actual price history — the same kind of `t.history(period="11y", ...)` pull `fetch_etf_data.py` already does for the ETFs universe (`ret1y`/`ret5y`/`ret10y`/`ytd`, dividend-adjusted total return).
+
+Three open design questions, none decided yet:
+1. **Where the history pull lives** — extend `fetch_market_overview.py` with the same history-and-compute logic `fetch_etf_data.py` already has (duplicated, or factored into a shared helper), which is a heavier per-run cost for a job that currently runs 3x/day. History-based returns don't change intraday, so recomputing them 3x/day is wasted work; likely needs decoupling into its own once-daily (or weekly) cadence separate from the existing price snapshot.
+2. **UI design** — "filters" implies a toggle changing what every card's change-figure shows (today's %-change vs. YTD vs. 1Y vs. 5Y vs. 10Y) rather than always showing every figure, which needs a new control (similar to the screener's tier chips) and a decision on scope: all 25+ symbols across every category, or just Indices.
+3. **Yield-group semantics** — cards with `unit: "pct"` (Bonds) don't have a meaningful "5-year return" the way a fund's total return does; scope may need to exclude that section from any site-wide filter.
+
+**Do not begin building until the owner confirms**: which symbols/sections this applies to, whether it's a toggle or additional always-visible fields, and whether the returns-refresh cadence can reasonably diverge from the existing 3x/day price cadence (recommended, for the cost/staleness reasons above).
+
+**v4.4.0 — Screener Score History Sparklines — BLOCKED ON DATA until ~Nov 2026**
+
+Goal: a per-ticker score trend visual — a small inline sparkline column in the screener table and a larger score-history chart in the per-stock popup, mined from the git history of the committed data feeds (this is why the feeds are committed to git rather than treated as disposable build output — see Known Technical Debt below).
+
+**Paused before any code was written.** A feasibility probe run 2026-07-13 found the git history far too short to mine against the design's 90-trading-day window:
+
+| Feed | Distinct daily snapshots (as of 2026-07-13) | Since |
+|------|--------------------------|-------|
+| `data/screener.json` | 15 | 2026-06-26 |
+| `data/screener_sp500.json` | 12 | 2026-06-29 |
+| `data/screener_gvd.json` | 7 | 2026-07-03 |
+| `data/screener_etfs.json` | 6 | 2026-07-03 |
+| `data/screener_intl.json` | 6 | 2026-07-04 |
+
+Shipping with this little history would render a 6-to-15-point, near-flat line (scores are relative percentiles and move slowly by construction) — a feature that looks broken rather than informative. Waiting is free: the daily feed commits already ARE the accumulation, and git retains every snapshot for retroactive mining whenever the window fills. Building the miner early would not collect one extra data point. Earliest sensible start is ~November 2026 (90 trading days from the Nasdaq feed's 2026-06-26 start; ~2026-11-10 for the universes that started 2026-07-03/04); a reduced 60-day window would be viable around late September 2026 if wanted sooner. **Re-run the snapshot count above before starting — that probe is the go/no-go gate**, not a calendar date on its own.
+
+The central design fact once unblocked: the feeds store raw metrics, not scores — scores are computed client-side at render time — so "score history" must be **recomputed** by replaying each historical feed snapshot through the scoring model, which forces two things: (1) the scoring model needs a second, Python implementation with a **parity gate** (the port must reproduce today's live scores exactly, tested by diffing the Python scorer's output against the headless-Chrome-rendered live scores for every universe before trusting any mined history), and (2) a decision on which model version to replay historically (recommended: the **current** model throughout, for a consistent series — the alternative, as-shipped-at-the-time scores, isn't reconstructible anyway since historical rendered scores were never stored).
+
+Planned shape once started: `scripts/build_score_history.py` walks each feed's git log (`git log --reverse -- data/<feed>`, one snapshot per calendar day), replays the current scoring model against each snapshot, and writes `data/history.json` (`{"updated", "window": 90, "series": {"TICKER": [[date, score], ...]}}`, capped at the last 90 trading days per ticker, budget-checked against GitHub Pages' practical size limits). Frontend: a new Trend column (inline SVG polyline, no chart library) in the Snapshot column group, plus a larger version in the per-stock popup with first/last score labels. History fetched lazily after the main feed renders, with its own cache key and a graceful missing-glyph fallback if the fetch fails.
+
+**v4.5.0 — Deeper Index Fund Coverage**
+
+Expand `indices.html` with three new teaching sections, no screener/pipeline/scoring changes: **sector ETFs** (what they are, how they concentrate risk relative to broad indices, how the site's timing signals apply, why they sit outside the core allocation); **international allocation** (the case for and against ex-US exposure, VXUS as the broad instrument with a cross-link to the live International screener universe, currency risk in plain English); **bond tent strategy** (rising-then-descending bond allocation around a goal date, the sequence-of-returns risk it addresses, how it interacts with the site's income-contribution investing model).
+
+**v4.6.0 — Additional Illustrative Examples (Historical Market Events)**
+
+Add worked historical examples across existing pages (embedded in the page whose concept they illustrate, not a standalone examples page): candidate episodes include the 2020 COVID crash/recovery, the 2021-2022 growth drawdown, the 2022-2023 rate cycle, a dot-com-era survivorship contrast, and a dividend-cut case study. Each example needs a dated setup (hindsight explicitly flagged), the metric readings at the time, what the methodology's rules said, what happened, and the teaching point — verified against at least one primary-ish source, and framed so it never reads as a track-record claim ("this is what I bought"), consistent with the no-advice-language rule.
+
+**v4.7.0 — Additional Philosophy Sections**
+
+Extend `philosophy.html` (currently 12 sections) with candidate new material: when to sell, position sizing/concentration for the income-contribution investor, drawdown temperament, conviction vs. stubbornness, and information diet. Each follows the existing philosophy-page pattern (concept, first-person grounding, the practical rule that falls out of it, cross-links to the operationalizing metric/page) with matching FAQ additions.
+
+**v4.8.0 — Conference Call Research Guide**
+
+A new setup-guide page (`conferencecalls.html`, peer to `finviz.html`/`seekingalpha.html`) on researching earnings calls: where transcripts live, prepared remarks vs. Q&A, what to listen for mapped to the site's scored metrics, red-flag phrasing patterns, and a simple insight-log template. The one release in this content-release set that touches every page's navigation, since it adds a new nav-level page.
+
+**Mechanics shared across all four content releases (v4.5.0-v4.8.0):** written for the primary persona (teach before asserting, define terms at first use, anchor to decisions the reader has faced); no em dashes, no advice language, descriptive not prescriptive examples; each new section gets a sidebar nav entry (IntersectionObserver hookup is automatic from the existing markup pattern), FAQ additions where a natural Q&A falls out, a `sitemap.xml` lastmod bump, and a meta description review; docs updates per release are a PATCHNOTES entry and a PRD milestone-table flip; verification is a headless render of the touched page confirming accordion/sidebar behavior and no console errors.
+
+**Unversioned backlog (no plan yet by design):**
+- **Growth/Value/Dividend standalone framework pages** — remains backlog until the owner promotes it to a version.
+- **FCF Growth FWD column (MAYBE, owner-tagged 2026-08-13, not scheduled).** Owner wants a forward free-cash-flow growth metric. yfinance exposes no forward FCF analyst consensus (confirmed by probe 2026-08-13) — no FCF equivalent of the estimate tables that power Rev/EPS Growth FWD. Only trailing FCF is available. Three options were laid out: (A) a real but non-forward **FCF Growth TTM** metric from the cash-flow statement; (B) a **modeled/proxy forward** figure (e.g. FCF margin × forward revenue growth, or EPS growth as a stand-in); (C) don't add it. **Owner chose Option B, explicitly as a maybe, to revisit later — not now.** Open concern before building it: a homemade proxy under a "FWD" label conflicts with the site's convention that "FWD" means real analyst consensus; if built, it must ship clearly labeled as an estimate and almost certainly as a weight-0 context column (like P/E FWD and Net Cash/Mkt Cap), never touching the scored model. When promoted to a version: decide the exact proxy formula, confirm coverage across all universes, and pick the display label and caveat wording.
+- **Explicitly not planned** (owner decisions, 2026-07-03, unchanged since): email/RSS changelog subscription, historical backtests of the scoring model, options/crypto/forex coverage. See "Explicitly Deferred" below.
 
 ### Feature Breakdown by Phase
 
@@ -443,25 +508,24 @@ The site is a fully static architecture. No server processes any requests. No da
        │
        └── GitHub Actions (cron)
                  │
-                 ├── Mon-Fri 21:30 UTC → fetch_screener_data.py --list nasdaq100.json → commits data/screener.json
-                 │                       (30 min after the latest possible US market close, winter EST 21:00 UTC)
+                 ├── Mon-Fri 21:37 UTC → fetch_screener_data.py --list nasdaq100.json → commits data/screener.json
                  │
-                 ├── Mon-Fri 22:00 UTC → fetch_etf_data.py (fixed 10-fund list)       → commits data/screener_etfs.json
+                 ├── Mon-Fri 22:12 UTC → fetch_etf_data.py (fixed 10-fund list)       → commits data/screener_etfs.json
                  │
-                 ├── Mon-Fri 22:30 UTC → fetch_screener_data.py --list sp500.json     → commits data/screener_sp500.json
+                 ├── Mon-Fri 22:42 UTC → fetch_screener_data.py --list sp500.json     → commits data/screener_sp500.json
                  │
-                 ├── Mon-Fri 23:00 UTC → fetch_screener_data.py --combined growth/value/dividend → commits data/screener_gvd.json
-                 │                       (30 min after the S&P 500 run)
+                 ├── Mon-Fri 23:12 UTC → fetch_screener_data.py --combined growth/value/dividend → commits data/screener_gvd.json
                  │
-                 ├── Mon-Fri 23:30 UTC → fetch_screener_data.py --list vxus.json         → commits data/screener_intl.json
-                 │                       (30 min after the GVD run; last job in the daily chain)
+                 ├── Mon-Fri 23:42 UTC → fetch_screener_data.py --list vxus.json         → commits data/screener_intl.json
+                 │                       (last job in the daily chain)
                  │
-                 ├── Mon-Fri 15:00, 19:00, 22:00 UTC → fetch_market_overview.py (owner-curated 61-symbol list) → commits data/market_overview.json
-                 │                       (intraday, not once-daily-after-close -- the one exception in this chain;
-                 │                        22:00 run shares its trigger minute with the ETFs job, queues via concurrency group)
+                 ├── Mon-Fri 15:07, 19:07, 22:07 UTC → fetch_market_overview.py (owner-curated symbol list) → commits data/market_overview.json
+                 │                       (intraday, not once-daily-after-close -- the one exception in this chain)
                  │
-                 └── Sat 23:00 UTC     → update_constituents.py + update_etf_constituents.py → regenerates changed feed(s)
+                 └── Sat 23:17 UTC     → update_constituents.py + update_etf_constituents.py → regenerates changed feed(s)
 ```
+
+All six data-pipeline crons land on off-peak, non-round minutes (`:37`/`:12`/`:42`/`:07`/`:17`, never `:00` or `:30`) as of v4.1.8 — GitHub Actions' scheduler measurably delays or drops jobs queued at the top and bottom of the hour, when the platform-wide cron load peaks. All seven workflows also share one `concurrency: group: screener-data, cancel-in-progress: false` group, so any two runs that land close together queue rather than race.
 
 ### Tech Stack
 
@@ -521,19 +585,20 @@ stocks/
 ├── img/                               ← Historical screenshots
 ├── .github/
 │   └── workflows/
-│       ├── screener-data.yml          ← Nasdaq 100 feed (Mon-Fri 21:30 UTC)
-│       ├── screener-data-etfs.yml     ← ETFs feed (Mon-Fri 22:00 UTC)
-│       ├── screener-data-sp500.yml    ← S&P 500 feed (Mon-Fri 22:30 UTC)
-│       ├── screener-data-gvd.yml      ← Growth/Value/Dividend feed (Mon-Fri 23:00 UTC)
-│       ├── screener-data-intl.yml     ← International feed (Mon-Fri 23:30 UTC)
-│       ├── market-overview.yml        ← Market Overview feed (Mon-Fri 22:05 UTC)
-│       └── constituents.yml           ← Constituent sync, indices + ETFs (Sat 23:00 UTC)
+│       ├── screener-data.yml          ← Nasdaq 100 feed (Mon-Fri 21:37 UTC)
+│       ├── screener-data-etfs.yml     ← ETFs feed (Mon-Fri 22:12 UTC)
+│       ├── screener-data-sp500.yml    ← S&P 500 feed (Mon-Fri 22:42 UTC)
+│       ├── screener-data-gvd.yml      ← Growth/Value/Dividend feed (Mon-Fri 23:12 UTC)
+│       ├── screener-data-intl.yml     ← International feed (Mon-Fri 23:42 UTC)
+│       ├── market-overview.yml        ← Market Overview feed (Mon-Fri 15:07, 19:07, 22:07 UTC)
+│       └── constituents.yml           ← Constituent sync, indices + ETFs (Sat 23:17 UTC)
 └── docs/
     ├── PRD.md                         ← This file
     ├── DESIGN.md                      ← Design specification
-    ├── PATCHNOTES.md                  ← Full changelog
-    └── ROADMAP.md                     ← Implementation plans for planned releases
+    └── PATCHNOTES.md                  ← Full changelog
 ```
+
+`README.md` lives at the repo root, not in `docs/` — it is deliberately kept separate as the short public-facing front door; `docs/ROADMAP.md` was merged into this file's Roadmap → Open Milestone Detail section and removed in the 2026-08-25 documentation audit (v4.1.13).
 
 ### Data Models
 
@@ -642,28 +707,30 @@ The site has no traditional API. The internal data flow for the screener is:
 7. `render()` applies sort, filter, and column visibility to produce the table DOM; clicking a row opens a per-stock breakdown popup
 8. No data is sent to any server; the only network requests are the read-only fetches of the public feeds
 
-### Screener Scoring Model (v2, shipped v3.30.0; margins removed and re-weighted v3.31.0)
+### Screener Scoring Model (v3, shipped v4.1.12; four even pillars)
 
-A relative, percentile-based model. Each stock is ranked against its loaded peers on six metrics in three weighted pillars totaling 100 points, with forward growth weighted double trailing growth (owner-set weights, 2026-07-03). (v2 replaced the five-metric v3.15 model, which had double-counted valuation, ignored the TTM metrics the site's doctrine teaches, and let a quarter of the list share perfect metric scores; that in turn had replaced the v3.12 absolute-threshold model. v3.30.0 briefly scored gross/net margin as a fourth Profitability pillar; the owner had not intended margins to be scored and they were removed the same day in v3.31.0, though the feed fields remain.)
+A relative, percentile-based model, confirmed directly against the `METRICS` array in `screener.js` (lines 191-209). Each stock is ranked against its loaded peers on four scored metrics in four evenly-weighted 25-point pillars totaling 100 points.
 
 | Pillar | Weight | Metric | Direction | Value ranked |
 |--------|--------|--------|-----------|--------------|
-| Growth | 10 | Revenue Growth TTM | higher is better | `revTTM` |
-| Growth | 20 | Revenue Growth FWD | higher is better | `revFwd` |
-| Growth | 10 | EPS Growth TTM | higher is better | `epsTTM` |
-| Growth | 20 | EPS Growth FWD | higher is better | `epsFwd` |
-| Valuation | 20 | PEG FWD | lower is better | `pegFwd` (Yahoo); when forward P/E ≤ 0, ranks worst and the column shows our own negative `peFwd / epsFwd` instead of Yahoo's misleading positive |
-| Balance sheet | 20 | Cash vs Debt | higher is better | `cash / debt` (no debt ranks best) |
+| TTM | 10 | Revenue Growth TTM | higher is better | `revTTM` |
+| TTM | 15 | EPS Growth TTM | higher is better | `epsTTM` |
+| FWD | 10 | Revenue Growth FWD | higher is better | `revFwd` |
+| FWD | 15 | EPS Growth FWD | higher is better | `epsFwd` |
+| Valuation | 25 | PEG FWD | lower is better | `pegFwd` (Yahoo); when forward P/E ≤ 0, ranks worst and the column shows our own negative `peFwd / epsFwd` instead of Yahoo's misleading positive |
+| Balance sheet | 25 | Cash vs Debt | higher is better | `cash / debt` (no debt ranks best) |
 
-The P/E-vs-growth ratio (`peFwd / epsFwd`, negative-P/E and shrinking-earnings rank worst) is still computed and ranked, but only to color the P/E FWD column — it carries zero score weight, removing the old PEG double-count.
+Two further metrics are computed and ranked for cell-coloring context only, at zero score weight: the P/E-vs-growth ratio (`peVsG` = `peFwd / epsFwd`, negative-P/E and shrinking-earnings rank worst) colors the P/E FWD column, and Net Cash vs Market Cap (`netCashMc`) colors its own context column.
 
-**Percentile → points:** `points = clamp(20 × (percentile − 0.22) / 0.56, 0, 20)`, then scaled by the metric's weight. Bottom 22% scores 0; top 22% scores full marks; the median scores half. Ties take the average rank. The 22% clamp was calibrated on the live feeds against the 6-metric weighted model (2026-07-03, v3.31.0) to the owner's target of ~1 perfect score in the Nasdaq 100 and ~5 in the S&P 500, ties allowed (live at ship: 2 tied at 100 in the Nasdaq 100, exactly 5 in the S&P 500). The clamp must be re-fitted whenever the metric set or weights change: the v3.30.0 8-metric model needed 28%, and an interim 15% fit against incomplete feeds proved far too tight (top scores stalled around 99 with no perfect scores).
+This four-pillar model (v3) replaced an earlier three-pillar model — Growth 60 (forward growth weighted double trailing: Rev TTM 10, Rev FWD 20, EPS TTM 10, EPS FWD 20), Valuation 20, Balance sheet 20 — that had shipped as v3.30.0/v3.31.0 (margins scored briefly as a fourth pillar in v3.30.0, removed the same day). The reweighting to four even 25-point pillars shipped as **v4.1.12** (2026-08-19, owner decision, reached while comparing weighting schemes against a private ad-hoc watchlist tool): trailing and forward growth now count equally rather than forward counting double, a quality/value tilt versus the prior growth tilt. Applies to all six stock universes (Nasdaq 100, S&P 500, Growth, Value, Dividend, International); the ETFs universe's separate technicals model, below, is unaffected. The percentile clamp, tier bands, and S+ threshold (all described next) were unchanged by this reweighting — only pillar weights moved.
 
-**Score:** weighted sum out of a fixed 100. **Missing data is a hard zero** (owner decision 2026-07-03): a metric with no value contributes nothing and the denominator does not shrink, so incomplete data can never outrank complete data (pre-v2, missing metrics were dropped and the score rescaled, letting stocks scored on 3 of 5 metrics reach 100). A stock at the median on everything scores 50; a stock with no scored metrics at all shows NO DATA.
+**Percentile → points:** `points = clamp(20 × (percentile − 0.22) / 0.56, 0, 20)` (`CLAMP_Q = 0.22` in `screener.js`), then scaled by the metric's weight ÷ 20. Bottom 22% scores 0; top 22% scores full marks; the median scores half. Ties take the average rank. The 22% clamp was originally calibrated on the live feeds against the prior 6-metric weighted model (2026-07-03, v3.31.0) to the owner's target of ~1 perfect score in the Nasdaq 100 and ~5 in the S&P 500, ties allowed; it was carried forward unchanged into v4.1.12's four-pillar reweighting. The clamp must be re-fitted whenever the metric set or weights change materially enough to shift score distribution: the earlier 8-metric model needed 28%, and an interim 15% fit against incomplete feeds proved far too tight (top scores stalled around 99 with no perfect scores).
 
-**Tiers (v3.29.0, rank-based):** the scored stocks are ranked by score and sliced into S (top 10% of the list), A (next 10%), B (20–50%), C (50–75%), F (bottom 25%). Boundary ties round up: every stock whose rounded score equals the last stock inside a band joins that band, so a tier stretches past its quota only on identical scores. Tier counts are therefore structurally fixed per universe (~10/10/30/25/25 in a 100-stock list, scaled to ~50/50/150/125/125 for the S&P 500). Above the bands sits **S+** (v3.30.0, owner request): any stock scoring a perfect 100/100 — those stocks come out of the S band's headcount, and the clamp calibration keeps them rare (~1 in the Nasdaq 100, ~5 in the S&P 500). The tier, not the raw score, drives the badge and score-bar colors (S+ purple `--color-tier-splus`, S dark green `--color-tier-s`, A light green, B yellow, C light red, F dark red). This replaced the v3.20.0 fixed score bands (Pass ≥ 80 / Watch 50–79 / Fail < 50); the S/A/B/C/F tier-list vocabulary was chosen over broker-style labels (Strong Buy…Strong Sell) to stay clear of advice language.
+**Score:** weighted sum out of a fixed 100. **Missing data is a hard zero** (owner decision 2026-07-03, unchanged by v4.1.12): a metric with no value contributes nothing and the denominator does not shrink, so incomplete data can never outrank complete data. A stock at the median on everything scores 50; a stock with no scored metrics at all shows NO DATA.
 
-**Factors chip:** count of the six scored metrics earning 15+ of 20 percentile points (the upper part of the pack), out of a fixed /6; a missing metric counts as a miss.
+**Tiers (v3.29.0, rank-based):** the scored stocks are ranked by score and sliced into S (top 10% of the list, `TIER_CUTS` `["s", 0.10]`), A (next 10%, `["a", 0.20]`), B (20–50%, `["b", 0.50]`), C (50–75%, `["c", 0.75]`), F (bottom 25%). Boundary ties round up: every stock whose rounded score equals the last stock inside a band joins that band, so a tier stretches past its quota only on identical scores. Tier counts are therefore structurally fixed per universe (~10/10/30/25/25 in a 100-stock list, scaled to ~50/50/150/125/125 for the S&P 500). Above the bands sits **S+** (v3.30.0, owner request): any stock scoring a perfect 100/100 — those stocks come out of the S band's headcount, and the clamp calibration keeps them rare. The tier, not the raw score, drives the badge and score-bar colors (S+ purple `--color-tier-splus`, S dark green `--color-tier-s`, A light green, B yellow, C light red, F reuses `--color-negative` directly rather than a dedicated F token). This replaced the v3.20.0 fixed score bands (Pass ≥ 80 / Watch 50–79 / Fail < 50); the S/A/B/C/F tier-list vocabulary was chosen over broker-style labels (Strong Buy…Strong Sell) to stay clear of advice language.
+
+**Factors chip:** count of the scored metrics earning 15+ of 20 percentile points (the upper part of the pack); a missing metric counts as a miss. **Discrepancy flag:** the metric count driving the score dropped from six to four with v4.1.12's reweighting; whether the chip's denominator followed to /4 or was left at /6 was not independently re-verified against `screener.js` during the 2026-08-25 documentation audit — read the chip's render code before relying on this figure.
 
 **Relative-scoring caveats:** because grades are peer-relative, a stock's score can change when *other* companies' numbers change, and because tiers are ranks, a fixed share of every list always lands in C and F no matter how strong the list is (an F means "bottom quarter of this list", not "broken company"). Scores are computed over the currently loaded set (normally all 100 from the daily feed).
 
@@ -679,20 +746,20 @@ A sixth universe, entirely separate from the five stock universes above: a **fix
 
 **Visible columns:** Price, Daily % Change, YTD Performance, 1 Year Total Return, 5 Year Total Return, 10 Year Total Return, Yield, Expense Ratio, Yield − Expense Ratio, RSI, 52-Week Range, Price vs 20-Day Moving Average, Price vs 100-Day Moving Average, Price vs 200-Day Moving Average, AUM (owner-added 2026-07-03; unscored display, `info["totalAssets"]`, verified for all 10 funds).
 
-**Scoring criteria (100 of 100 points decided 2026-07-03):**
+**Scoring criteria (current, confirmed directly against `screener.js` lines 211-248), Technicals 50 + Performance 50:**
 
-| Metric | Direction | Points |
-|--------|-----------|--------|
-| RSI | lowest is best | 20 |
-| 52-Week Range (position within range) | lowest is best | 20 |
-| 1 Year Total Return | highest is best | 10 |
-| 5 Year Total Return | highest is best | 10 |
-| 10 Year Total Return | highest is best | 10 |
-| Yield | highest is best | 10 |
-| Expense Ratio | lowest is best | 10 |
-| Price vs 200-Day Moving Average (trend/momentum) | highest is best | 10 |
+| Pillar | Metric | Direction | Points |
+|--------|--------|-----------|--------|
+| Technicals | RSI | lowest is best | 20 |
+| Technicals | 52-Week Range (position within range) | lowest is best | 20 |
+| Technicals | Price vs 200-Day Moving Average (trend/momentum) | highest is best | 10 |
+| Performance | 1 Year Total Return | highest is best | 10 |
+| Performance | 5 Year Total Return | highest is best | 20 |
+| Performance | 10 Year Total Return | highest is best | 20 |
 
-The 20-day and 100-day moving-average columns are **display/context only** (unscored), giving a fuller trend picture (short, medium, long) alongside the scored 200-day signal, the same "scored vs. context-only" pattern the stock universes use for P/E FWD.
+Yield and Expense Ratio are **not scored** — they were removed from the scoring model in **v3.37.0** and now render as unscored display/context columns only (see "Review concerns" item 1 below, where the original spec's income tilt was later reversed). Unlike the stock universes' percentile-clamped model, this universe uses **rank-linear points, not a percentile clamp**: on each metric the best of the 10 funds earns full points and the worst earns 0, spaced evenly by rank (ties take the average rank) — see item 4 under "Review concerns" for why. The 20-day and 100-day moving-average columns remain **display/context only** (unscored), giving a fuller trend picture (short, medium, long) alongside the scored 200-day signal, the same "scored vs. context-only" pattern the stock universes use for P/E FWD.
+
+**Discrepancy flag:** the table immediately below ("Scoring criteria... 100 of 100 points decided 2026-07-03") and the "As built" paragraph further down both describe the **original v3.33.0 launch spec**, which scored Yield (10) and Expense Ratio (10) and used different pillar totals (Technicals 50 / Performance 30 / Income & cost 20). That spec was superseded by v3.37.0 (see the Milestone Table and PATCHNOTES.md), which the table directly above this note reflects. The two are kept side by side, original text un-touched, per this audit's merge-don't-overwrite rule — the "Review concerns" and "As built" sections below are the historical record of the launch decision, not the current behavior; the table directly above this paragraph is the current behavior as read from code.
 
 **Data availability (verified live against yfinance 1.4.1, 2026-07-03, all 10 funds):** yield via `info["dividendYield"]` (do **not** use `trailingAnnualDividendYield` — missing or wrong for several funds, e.g. VUG); expense ratio via `info["netExpenseRatio"]` (present and correct for all 10); everything else (YTD/1Y/5Y/10Y total returns, RSI-14, 52-week range, 20/100/200-day MAs) computed from one 11-year daily history call. Convention: total returns use dividend-adjusted closes (`auto_adjust=True`), RSI/MAs/52W range use unadjusted prices (standard charting basis). SPMO (inception Oct 2015) is the youngest fund and just clears the 10-year return window; a missing return scores a hard zero, consistent with the stock model.
 
@@ -797,7 +864,9 @@ No secrets are used or hardcoded. The legacy `FMP_API_KEY` GitHub Actions secret
 
 **New site from independent investor Azqato gives retail investors a complete methodology, interactive screener, and step-by-step guides — all without paying for a subscription or selling their data**
 
-*Seattle, WA — June 2026* — Azqato, an independent long-term investor and content creator, today launched a comprehensive public resource at `azqato.github.io/stocks` documenting the complete individual stock picking methodology he has refined over years of active investing. The site combines in-depth educational content, practical tool setup guides, and a live interactive screener that evaluates every Nasdaq 100 company against a three-pillar scoring model, updated daily.
+*Seattle, WA — June 2026* — Azqato, an independent long-term investor and content creator, today launched a comprehensive public resource at `azqato.github.io/stocks` documenting the complete individual stock picking methodology he has refined over years of active investing. The site combines in-depth educational content, practical tool setup guides, and a live interactive screener that evaluates every Nasdaq 100 company against a weighted-pillar scoring model, updated daily.
+
+**Discrepancy flag (2026-08-25 documentation audit):** this Press Release is a historical artifact written for the site's original June 2026 launch and describes launch-day facts (a single-universe, three-pillar model) that this document's own text left un-touched per the merge-don't-overwrite rule. The scoring model has since moved to a four-pillar model (v4.1.12, 2026-08-19) across six universes; see the Screener Scoring Model section under Technical Requirements for the current model.
 
 The site addresses a real gap in publicly available investing education. While financial media is abundant, structured, non-commercial investing frameworks are rare. Most free resources either oversimplify or exist to sell something. Azqato's site does neither: it documents a real methodology built from practice, presented with the same directness he brings to his Twitch streams and YouTube videos.
 
@@ -829,22 +898,22 @@ No. This site documents one investor's personal methodology. Nothing here is a r
 Start at the Home page to see the strategy overview and the metric grid. Read Philosophy if you want to understand the mindset behind the rules. Use Metrics as a reference when evaluating a specific signal. Use Finviz and Seeking Alpha pages to set up your research tools. Use the Screener to see how all 100 Nasdaq companies score against the methodology today. Use FAQ when you have questions about the strategy.
 
 **5. What are the 12 metrics?**
-Revenue Growth TTM, Revenue Growth FWD, EPS Growth TTM, EPS Growth FWD, P/E FWD, PEG FWD, Total Cash, Total Debt, RSI, 52-Week Range, Gross Margin, and Net Margin. The ten growth, valuation, profitability, and balance sheet metrics drive individual stock decisions (the screener scores six of them across three weighted pillars). RSI and the 52-Week Range are technical signals used to time index and ETF purchases, tracked on stock watchlists for context only.
+Revenue Growth TTM, Revenue Growth FWD, EPS Growth TTM, EPS Growth FWD, P/E FWD, PEG FWD, Total Cash, Total Debt, RSI, 52-Week Range, Gross Margin, and Net Margin. The ten growth, valuation, profitability, and balance sheet metrics drive individual stock decisions (the screener scores four of them across four weighted pillars, as of the v4.1.12 reweighting — see question 7). RSI and the 52-Week Range are technical signals used to time index and ETF purchases, tracked on stock watchlists for context only.
 
 **6. What is the Nasdaq 100 screener?**
-An interactive tool that applies the methodology's three-pillar scoring model to all 100 Nasdaq 100 companies. Data is updated daily from Yahoo Finance. Each company receives a score from 0 to 100 and a rank-based tier from S (top 10% of the list) to F (bottom 25%), with a rare S+ tier reserved for perfect 100 scores. This is a screening and educational tool, not a buy/sell signal generator.
+An interactive tool that applies the methodology's four-pillar scoring model to all 100 Nasdaq 100 companies. Data is updated daily from Yahoo Finance. Each company receives a score from 0 to 100 and a rank-based tier from S (top 10% of the list) to F (bottom 25%), with a rare S+ tier reserved for perfect 100 scores. This is a screening and educational tool, not a buy/sell signal generator.
 
 **7. How does the screener score stocks?**
-Each stock is ranked against the rest of the loaded universe on six metrics in three weighted pillars: Growth 60 (revenue and EPS growth, trailing and forward, with forward growth weighted double), Valuation 20 (PEG FWD), and Balance sheet 20 (cash vs debt). Points follow percentile rank (bottom 22% scores 0, the median half marks, the top 22% full marks), missing data scores zero, and the pillars sum to 0–100. The score's rank within the list maps to a tier: S is the top 10% of the list, A the next 10%, B 20–50%, C 50–75%, F the bottom 25% (boundary ties round up), and a perfect 100 earns S+. It is a relative ranking, so a high tier means a stock looks better than most of the list right now rather than that it cleared a fixed target. The Methodology button on the screener explains it with a worked example.
+Each stock is ranked against the rest of the loaded universe on four metrics in four evenly-weighted 25-point pillars: TTM (revenue and EPS growth, trailing), FWD (revenue and EPS growth, forward), Valuation (PEG FWD), and Balance sheet (cash vs debt). Trailing and forward growth carry equal weight as of the v4.1.12 reweighting (2026-08-19) — previously forward growth was weighted double trailing. Points follow percentile rank (bottom 22% scores 0, the median half marks, the top 22% full marks), missing data scores zero, and the pillars sum to 0–100. The score's rank within the list maps to a tier: S is the top 10% of the list, A the next 10%, B 20–50%, C 50–75%, F the bottom 25% (boundary ties round up), and a perfect 100 earns S+. It is a relative ranking, so a high tier means a stock looks better than most of the list right now rather than that it cleared a fixed target. The Methodology button on the screener explains it with a worked example.
 
 **8. How often is the screener data updated?**
-On trading days (Monday through Friday), starting at 21:30 UTC via an automated pipeline (30 minutes after the latest possible US market close in UTC terms, so there's always at least a 30-minute buffer after close). Weekends are skipped because the US market is closed. The "as of" timestamp in the screener header shows when the data was last refreshed.
+On trading days (Monday through Friday), starting at 21:37 UTC via an automated pipeline (an off-peak, non-round minute chosen so the run isn't queued behind GitHub Actions' top-of-hour cron load, always well after the latest possible US market close). Weekends are skipped because the US market is closed. The "as of" timestamp in the screener header shows when the data was last refreshed.
 
 **9. Where does the screener data come from?**
 Yahoo Finance, fetched on trading days by a Python script (using the free yfinance library) that runs in GitHub Actions and commits the result. No API key is required, and there is nothing to configure — the page just reads the published feed from GitHub.
 
 **10. Does the screener use real-time data?**
-No. It uses data from the most recent pipeline run (refreshed once per trading day, starting at 21:30 UTC). Prices shown reflect the close or after-hours price at the time of the last fetch.
+No. It uses data from the most recent pipeline run (refreshed once per trading day per universe, the Nasdaq 100 feed starting at 21:37 UTC). Prices shown reflect the close or after-hours price at the time of the last fetch.
 
 **11. What is the Palantir story?**
 A first-person account where Azqato bought Palantir at $9, sold at $45, and watched it go to $150. It is the single most important lesson documented on the site: selling a business because the price went up is a category mistake. Price and value are not the same thing. It lives on the FAQ page.
@@ -902,7 +971,7 @@ The site serves two functions: it converts interested viewers into engaged commu
 Return visitor rate (25%+ within 30 days) and average session duration (4+ minutes). These indicate that readers are finding the content trustworthy and useful enough to consult repeatedly. See the Metrics section above for the full table.
 
 **What is the roadmap direction?**
-Deepen existing content before adding new content. The philosophy and metrics pages are more valuable when they are exceptionally thorough than when new pages are added at average quality. The next meaningful additions are a mobile navigation improvement and a conference call research guide.
+Deepen existing content before adding new content. The philosophy and metrics pages are more valuable when they are exceptionally thorough than when new pages are added at average quality. **Discrepancy flag:** this answer's specific "next meaningful additions" (mobile navigation, conference call guide) predate the current Roadmap table above — mobile responsiveness shipped as v4.0.0 (2026-07-xx), and the conference call guide is now v4.8.0, several releases out per the current milestone table. The general direction (depth before breadth) still holds; see the Roadmap section for what's actually next.
 
 **How do we ensure the methodology stays accurate over time?**
 The site is deliberately designed to avoid time-sensitive claims. All editorial content uses hypothetical examples, conceptual frameworks, and calibrated thresholds rather than current prices or live company data. Threshold updates (e.g., "strong gross margin is 50%+") require review when market structures change, but this is infrequent.
@@ -911,7 +980,7 @@ The site is deliberately designed to avoid time-sensitive claims. All editorial 
 The "as of" timestamp in the screener header shows the last refresh time. If the daily pipeline fails, GitHub sends an email notification to the repository owner. The pipeline is designed to retry failed symbol fetches automatically and commit whatever data was successfully retrieved.
 
 **What is the documentation strategy going forward?**
-Five files: README.md (developer front door), PRD.md (this file, the comprehensive reference), DESIGN.md (design system), PATCHNOTES.md (full changelog), ROADMAP.md (implementation plans for planned releases; plans are trimmed to pointers once shipped). All major changes are documented in PATCHNOTES.md. PRD.md is updated when product requirements, architecture, or process changes significantly. Documentation changes are included in version increments.
+Four files as of the 2026-08-25 documentation audit (v4.1.13): README.md at the repo root (short public-facing front door — no install/build/version detail), and PRD.md (this file, the comprehensive reference, including the roadmap's full implementation detail, formerly split into a fifth file), DESIGN.md (design system), and PATCHNOTES.md (full changelog) in `/docs`. All major changes are documented in PATCHNOTES.md. PRD.md is updated when product requirements, architecture, roadmap, or process changes significantly. Documentation changes are included in version increments. See "Working Practice" and "Documentation Versus Reality" below for the full process.
 
 ---
 
@@ -997,6 +1066,8 @@ The following concepts were integrated from video transcript analyses. This tabl
 
 ## Documentation Process
 
+**Four canonical documents, as of the 2026-08-25 documentation audit (v4.1.13):** `README.md` at the repo root (never inside `/docs`), and `docs/PRD.md` (this file), `docs/DESIGN.md`, `docs/PATCHNOTES.md`. A fifth file, `docs/ROADMAP.md`, existed from v3.33.1 (2026-07-03) until this audit, holding the detailed "how" for planned milestones separately from this file's "what" milestone table; it was merged into the Roadmap → Open Milestone Detail section above and deleted, since maintaining the split reliably required cross-checking two files on every roadmap change and had already drifted (this audit found it undated against the milestone table it was meant to support). Any future proposal to split a section back out into its own file should weigh that drift risk against the split's benefit before doing it again.
+
 ### How This File Is Maintained
 
 This PRD is the comprehensive reference for the project. It should be updated whenever:
@@ -1006,7 +1077,7 @@ This PRD is the comprehensive reference for the project. It should be updated wh
 - The data pipeline changes in a way that affects data model fields or quality
 - The roadmap or metrics targets change
 
-Updates to this file are versioned in PATCHNOTES.md like any other change.
+Updates to this file are versioned in PATCHNOTES.md like any other change. See "Working Practice" below for a concrete checklist of what to open and check before editing.
 
 ### How PATCHNOTES.md Is Maintained
 
@@ -1042,3 +1113,123 @@ Version bumps follow semantic versioning:
 - Debugging sessions (the fix is in the code; the commit message has the context)
 - Time-sensitive market commentary
 - Specific current stock data or prices
+
+---
+
+## Conventions
+
+Derived from reading the code and `git log`, not from a style guide (none exists in the repo).
+
+**Naming:** camelCase for JS variables/functions/feed fields (`revTTM`, `pegFwd`, `computeScoreMap`); snake_case for Python (`fetch_screener_data.py`, `update_constituents.py`); kebab-case for HTML file names and CSS custom properties (`market.html`, `--color-tier-splus`); CSS class names use a `.block-element` dash pattern (`.market-card-ticker`, `.sidebar-brand-sub`), not BEM double-underscores. Section IDs in HTML use `#section-<name>` or, on `metrics.html`, `#metric-<name>`.
+
+**Formatting:** no linter or formatter config exists in the repo (no `.eslintrc`, `.prettierrc`, `pyproject.toml` tool config, or equivalent) — style is whatever each file's author wrote, and consistency comes from one owner writing all of it, not tooling. Python scripts are plain, flat, script-style (no classes, no package structure); JS is a single large `screener.js` file with function-per-concern organization, no bundler or module system (`<script>` tags, no `import`/`export`).
+
+**Comment density:** low. Code is largely self-explanatory through naming; comments appear at decision points where a value or approach isn't obvious from the code alone (e.g. why a clamp constant is 0.22, why a workflow's cron minute is off-round). This matches the project's own writing-style bias toward direct, functional text over explanation.
+
+**Error handling:** the Python pipeline scripts favor "fetch what you can, commit what succeeded" over hard failure — a single symbol's fetch error doesn't abort the run for every other symbol (see Runbook → Common Errors). The frontend favors graceful degradation: a failed feed fetch falls back to the cached `localStorage` copy or an explanatory message, never a broken page.
+
+**Commit style and branching (from `git log --oneline -50`):** the dominant pattern for automated commits is `chore: update <feed> [skip ci]`; human commits follow `type: description` (`docs:`, `fix:`, `feat:`, `chore:` all observed), lowercase type, colon, present-tense-ish description. **Inconsistency flagged:** at least one human commit uses a capitalized-noun prefix instead of a lowercase conventional-commits type (`"Screener: scoring model v3, four even pillars..."`, the commit that shipped v4.1.12) — the lowercase `type:` form is dominant and should be treated as the convention; the capitalized-noun form is the exception, not a second accepted style. All work observed happens directly on `main`; no long-lived feature branches were found in the history reviewed.
+
+---
+
+## Writing Style
+
+This is an existing, established project rule (found in this file's own Content Philosophy section above and in `docs/DESIGN.md`'s Content Philosophy section) restated here per the audit's Writing Style requirement — the project's own rule is kept as-is, not replaced by a generic default, since the two already match almost exactly.
+
+**No em dashes in any form:** not the literal Unicode character (—), not the `&mdash;` HTML entity, and not the double-hyphen/spaced-hyphen punctuation convention (` -- `). This is enforced across all site content and, per this audit's own scope, across `/docs` and `README.md` as well. Replace with a comma, colon, semicolon, parentheses, a period splitting into two sentences, or a single hyphen, depending on what the sentence needs. A single hyphen is permitted and common in titles, headings, and version lines (e.g. "v4.1.12 — Screener: scoring model v3" uses an em dash there historically, but a plain hyphen or colon works equally well going forward). CSS custom properties like `--color-bg` are punctuation-free identifiers, not em-dash usage, and are never subject to this rule. An instance the text needs to mean something (for example, this rule's own description naming the character) is left alone rather than mangled into unreadability.
+
+**Tone:** direct and functional. No marketing language, no restating the obvious, no filler sentences that carry no new information. This applies to editorial site content and to `/docs` alike, with the explicit exception of `README.md`, which stays especially tight since everything it omits is one link away into `/docs`.
+
+---
+
+## Browser Testing
+
+This is an existing, established project practice, not the audit's generic default — `docs/PATCHNOTES.md` references "verified via headless Chrome" dozens of times across its full history, a strong and consistent pattern. Per this audit's own instruction to prefer an already-established project rule over a generic default, **headless Chrome is the project's real testing browser**, and that practice is documented here as the rule to follow, not overridden.
+
+Any ad hoc headless verification (rendering a page to confirm a layout or data-load fix before shipping) should use headless Chrome, matching the pattern in every prior PATCHNOTES entry that references verification. No specific Chrome binary path has been recorded in any reviewed document; if a fixed path or invocation becomes load-bearing (a script that shells out to it, for instance), record it in Runbook → Local Setup.
+
+---
+
+## Deprecation and Removal
+
+No explicit written removal policy exists elsewhere in the repo, so this section is written from the one piece of direct evidence available: `.gitignore`'s own comment block, `# Orphaned files (replaced by renamed versions)`, listing two permanently-ignored old filenames (`guide.html`, `indexes.html`). That is the project's actual, already-practiced removal mechanism, described below as the standing rule rather than the audit's own generic default.
+
+**Deploy boundary:** the site is static GitHub Pages with no server, no server-side rewrites, and no redirect mechanism of any kind. "Public-facing" here means any file that was ever served at a URL under `azqato.github.io/stocks/` — every root-level `.html` file. "Internal-only" means everything else: scripts, data files, and documentation.
+
+**The established rule:** a public-facing page that's renamed or removed gets a plain delete plus a permanent `.gitignore` entry for the old filename (under the existing "Orphaned files" comment), and nothing else — **no redirect and no compatibility shim**, because the site has no mechanism to serve one. This differs from the audit's own generic default (a public-facing removal should get a redirect or shim); the project's actual, already-practiced rule is kept per the "existing rule wins" instruction, flagged here as the difference: **a reader landing on an old URL after a page rename simply gets GitHub Pages' 404, with no site-level redirect.** Internal-only removals (an unused script, a retired data file) are a plain delete, no `.gitignore` entry needed unless the old artifact could otherwise be regenerated or re-created accidentally.
+
+**Public surface, item by item:** `index.html`, `philosophy.html`, `metrics.html`, `screener.html`, `market.html`, `finviz.html`, `seekingalpha.html`, `indices.html`, `faq.html` — the 9 live pages (see Folder Structure). `private/holdings.html` is explicitly not on this list: it's gitignored, never committed, never deployed, and carries its own "Local-only — never published" footer note.
+
+**Compatibility entries are permanent, never chained, never reused.** A `.gitignore` entry for an old filename stays forever (there is no cleanup step); if a filename is retired twice, each old name gets its own permanent entry rather than reusing or rewriting a prior one.
+
+**Retired public-facing items (from `.gitignore`):** `guide.html` (renamed, replaced), `indexes.html` (renamed, replaced — current name `indices.html`). No other public-facing removals were found in the reviewed history.
+
+**Historical changelog records are never rewritten when something is removed.** A PATCHNOTES.md entry that references a since-removed page, field, or feature stays exactly as written; the removal gets its own new entry (with a `### Removed` section) rather than editing history.
+
+---
+
+## Documentation Versus Reality
+
+Every discrepancy found during the 2026-08-25 documentation audit (v4.1.13), recorded here rather than silently fixed, per this audit's own instruction that code can be wrong just as easily as docs. Resolved entries keep a note on how they were resolved rather than being deleted, so this list stays a real record over time.
+
+| # | Discrepancy | Source of truth used | Status |
+|---|---|---|---|
+| 1 | Screener Scoring Model section (Technical Requirements) described the retired three-pillar model; live code (`screener.js` lines 191-209) implements a four-pillar model shipped in v4.1.12 | Code (directly read) | **Resolved 2026-08-25** — section rewritten in place, old model's history kept as context, not deleted |
+| 2 | ETF Universe Scoring Model's scoring-criteria table described the pre-v3.37.0 spec (Yield and Expense Ratio scored, 30/20 pillar split); live code implements Technicals 50 / Performance 50 with Yield and Expense Ratio unscored | Code (directly read) | **Resolved 2026-08-25** — current table added above the original spec text, original left in place and flagged as historical, not deleted |
+| 3 | External FAQ #5, #6, #7 and Press Release described the retired three-pillar model | This file's own corrected Screener Scoring Model section | **Resolved 2026-08-25** — FAQ answers corrected in place; Press Release is a dated historical artifact and was left as-written with a discrepancy note appended, not rewritten |
+| 4 | README's former project-structure comment tree and this file's System Architecture diagram / Folder Structure tree showed the pre-v4.1.8 round-minute cron schedule (21:30/22:00/22:30/23:00/23:30 UTC); actual workflow YAML files use odd off-peak minutes (21:37/22:12/22:42/23:12/23:42 UTC) | `.github/workflows/*.yml` (directly read) | **Resolved 2026-08-25** — README's tree was removed entirely in its rewrite (README no longer carries implementation detail); this file's diagrams corrected |
+| 5 | "Five files" documentation-strategy language (Internal FAQ, old Documentation Process section) referenced a `docs/ROADMAP.md` that no longer exists post-audit | This audit's own consolidation | **Resolved 2026-08-25** — updated to "four files," ROADMAP.md content merged into Roadmap → Open Milestone Detail |
+| 6 | `style.css`'s `.sidebar-brand-sub` rule references `var(--color-text-muted)`, a custom property never defined anywhere in `:root` — a dead CSS variable reference (renders as the browser's `unset`/inherited default, not a crash, but not the intended styling either) | `style.css` (directly read, both the usage site and the full `:root` block) | **Open** — a real code bug, not a documentation gap; out of scope for a docs-only audit to fix. See Risks and Open Questions below |
+| 7 | The Factors chip's denominator (screener universes) — whether it reads `/4` or was left at the pre-v4.1.12 `/6` after the metric count dropped from six scored metrics to four | Not independently verified this pass | **Open** — flagged inline in the Screener Scoring Model section; needs a direct code read before the figure is trusted |
+| 8 | `docs/DESIGN.md`'s documented monospace font stack includes `'Courier New'` as a fourth fallback, which a code-reading pass's grep excerpt of `style.css` did not show | Not fully reconciled — the grep excerpt may simply have been truncated | **Open, low priority** — re-verify the full monospace stack in `style.css` directly before treating either version as authoritative |
+
+**Which source to trust, generally:** code, when the question is "what does the site actually do right now" — this file and DESIGN.md are describing a moving target and lag behind ships by anywhere from hours to (as items 1 and 2 show) over a month. PATCHNOTES.md is the one document that's structurally hard to let drift, since each entry is written at ship time; when this file and PATCHNOTES.md disagree on what shipped, trust PATCHNOTES.md and correct this file.
+
+---
+
+## Risks and Open Questions
+
+**Fragile / not-fully-understood areas:**
+- **`vxus_map.json`'s ISIN resolution cache** (Data Models → vxus_map.json) depends on Yahoo's search endpoint behavior for unresolved holdings; this endpoint's stability and rate limits were not independently stress-tested during this audit, only read about secondhand through the data model description.
+- **The Wikipedia-scrape failure mode referenced under Deprecation and Removal** (a prior break in constituent sync when a public page's structure changed) was found only as a lesson-learned reference elsewhere in this file's history, not traced to its own postmortem entry in PATCHNOTES.md during this pass — if that entry exists, cross-link it here; if it doesn't, the lesson is undocumented outside this note.
+- **The exact current desktop modal width** (DESIGN.md flags this too) — the figure in circulation (65vw / max 1100px) comes from a PATCHNOTES.md entry for v3.19.0 and was not re-measured against current CSS in this pass.
+
+**Known bug, dangerous-to-ignore but out of scope here:** `style.css`'s `.sidebar-brand-sub` references the undefined `--color-text-muted` custom property (see Documentation Versus Reality item 6). Low blast radius (one sub-label's color falls back to inherited/unset rather than the intended muted tone) but a real defect; flagged for a future code-focused pass, not fixed here since this audit's scope was documentation-only.
+
+**Work already in progress at the time of this audit:** none — the 2026-08-25 documentation audit itself (v4.1.13) is the only in-flight work reflected in this revision.
+
+**Numbered open questions for the author:**
+1. Should the Factors chip denominator be confirmed at `/4` (matching the four scored metrics) or is `/6` still correct for a reason not evident from the metric weight table alone? (See Documentation Versus Reality item 7.)
+2. Is the `--color-text-muted` CSS bug worth a one-line fix now, or should it wait for a broader CSS pass? (See Documentation Versus Reality item 6.)
+3. `docs/ROADMAP.md`'s FCF Growth FWD proxy-metric question (Unversioned backlog, Open Milestone Detail above) is still unresolved on the label-convention concern — does the owner have a preference yet, or does it remain parked?
+4. Is the Press Release meant to be periodically refreshed to reflect the current site (four-pillar model, seven universes), or is it deliberately a fixed launch-day artifact never touched again? This audit assumed the latter and left it as a dated historical record with a discrepancy note; flag if that assumption is wrong.
+
+*(Answers should be folded into the relevant section above and this list updated to record the question as answered, with a brief resolution note, rather than deleted — matching the pattern already used for PATCHNOTES.md's historical entries and this section's own Documentation Versus Reality table.)*
+
+---
+
+## Working Practice
+
+**Before editing, check first:**
+- Any product, scoring, data-model, or roadmap change → read this file (PRD.md) end to end for the section you're touching; it is the single source of truth for "what" and "how"
+- Any visual/CSS/component change → read DESIGN.md first; verify the change against the actual `style.css` breakpoints and tokens rather than assuming DESIGN.md is current, per this audit's own findings that it can drift for months
+- Any change to what ships → PATCHNOTES.md gets a new entry the same time the change ships, not after
+
+**What never to do, and why:**
+- Never retroactively renumber or rewrite a PATCHNOTES.md entry to reflect a later correction — it's a dated historical record; corrections get their own new entry (see Deprecation and Removal's "historical changelog records are never rewritten" rule)
+- Never silently "fix" a stale doc to match code, or a stale code comment to match docs, without leaving a trace — either the code is right and the doc needs a real edit (do it, and say so in PATCHNOTES.md), or you're not sure which is right, in which case follow this audit's own rule: leave the original text, add the observed reality next to it, flag it in Documentation Versus Reality
+- Never add a redirect/compatibility shim for a removed public page — the site has no server-side mechanism to serve one; follow the actual `.gitignore`-evidenced practice instead (see Deprecation and Removal)
+- Never split roadmap detail back into a separate file without weighing the drift risk that caused `docs/ROADMAP.md` to be merged back into this file in the first place
+
+**Kind of work → file to open:**
+
+| Kind of work | Open first |
+|---|---|
+| New feature, new page, new section | PRD.md (Feature List, Roadmap, User Stories) |
+| Scoring model or data pipeline change | PRD.md (Technical Requirements → Screener/ETF Scoring Model, Data Models) |
+| Visual/CSS/component change | DESIGN.md, then verify against `style.css` directly |
+| Anything shipping at all | PATCHNOTES.md (new entry, same day as the ship) |
+| Public page rename or removal | Deprecation and Removal (this file), then `.gitignore` |
+| Any of the above touching multiple files | This file's Documentation Versus Reality table, to check whether the change resolves an existing flagged discrepancy |
+
+**How to verify a change:** for a frontend change, render the touched page in headless Chrome (see Browser Testing above) and confirm no console errors and that the specific behavior changed as intended; for a data-pipeline change, run the relevant `scripts/*.py` script locally against a small symbol set and inspect the output JSON shape against the Data Models section; for a documentation-only change (like this audit), re-read the section against the current code one more time before considering it done. After verifying, update PATCHNOTES.md, and update this file's Milestone Table (flip status, or add a row) if the change was roadmap-tracked.

@@ -1,8 +1,8 @@
 # DESIGN.md — Azqato Stock Methodology Site
 
-**Version:** 2.0
+**Version:** 2.1
 **Status:** Active
-**Last Updated:** 2026-06-27
+**Last Updated:** 2026-08-25
 
 ---
 
@@ -41,6 +41,12 @@ All colors are defined as CSS custom properties in `:root` in `style.css`. Never
 | `--color-tier-a` | `#7ee787` | Screener A tier (light green): badge, score bar |
 | `--color-tier-b` | `#e3b341` | Screener B tier (yellow): badge, score bar |
 | `--color-tier-c` | `#ffa198` | Screener C tier (light red): badge, score bar |
+
+F tier reuses `--color-negative` (`#f85149`) directly; there is no separate `--color-tier-f` token (confirmed in `style.css`, v3.29.0).
+
+`:root` defines 20 custom properties in total: the 19 tokens above plus `--sidebar-width: 220px` (see Section 4).
+
+**Discrepancy (2026-08-25 audit, unresolved):** `.sidebar-brand-sub` (`style.css`) references `var(--color-text-muted)`, but `--color-text-muted` is never defined in `:root`. This is a dead custom-property reference in the current CSS, not a documentation error — the code is what's wrong here. Left as-is pending the author's decision on whether to define the token or point the rule at an existing one (`--color-text-secondary` is the nearest match). See the PRD's Risks and Open Questions section.
 
 **Contrast:** Primary text on background is approximately 15:1. Secondary text on background is approximately 4.8:1. Both meet WCAG AA. Do not introduce new text colors that fall below 4.5:1.
 
@@ -108,8 +114,12 @@ The design does not use a rigid 4px or 8px grid, but follows consistent spacing 
 | Breakpoint | Trigger | Changes |
 |------------|---------|---------|
 | Desktop | `>= 1024px` | 2-column grid (220px sidebar + 1fr content), sticky sidebar, active left-border on nav links, "On This Page" block visible |
-| Tablet / Mobile | `< 1024px` | Sidebar collapses to a sticky top bar with `backdrop-filter: blur(12px)` and a **hamburger toggle** (CSS-only checkbox hack: ☰ / ✕) that drops the nav down as a vertical list; "On This Page" block hidden; screener app area caps at `80vh`; modals go full-width below 900px |
-| Mobile | `< 768px` | Metric cards grid collapses to 1 column, H1 → 1.5rem, H2 → 1.2rem, padding reduces to 20px/16px |
+| Tablet / Mobile | `< 1024px` (`max-width: 1023px`) | Sidebar collapses to a sticky top bar with `backdrop-filter: blur(12px)` and a **hamburger toggle** (CSS-only checkbox hack: ☰ / ✕) that drops the nav down as a vertical list; "On This Page" block hidden; the screener's `.app-table-wrap` gets a `max-height: 80vh` cap (not applied above this breakpoint — desktop lets the app flow and scroll with the page); the methodology/stock modal goes full-width (`width: 100%; max-width: none`) |
+| Mobile | `< 768px` (`max-width: 767px`) | Metric cards grid collapses to 1 column, H1 → 1.5rem, H2 → 1.2rem, `.hero-thesis` → 1.375rem, padding reduces to 20px/16px |
+| Mobile (Market Overview only) | `< 480px` | `market.html` carries its own inline `@media (max-width: 480px)` rule for its card grid, not defined in `style.css` — see Component Patterns below |
+| Reduced motion | `prefers-reduced-motion: reduce` | Disables accordion and metric-card transitions sitewide (Section 8) |
+
+**Correction (2026-08-25 audit):** the previous line here read "modals go full-width below 900px," sourced from the PATCHNOTES v3.19.0 entry ("popups widened to 65%/max 1100px; full-width under 900px"). The actual breakpoint in the current `screener.html` inline stylesheet is `max-width: 1023px`, matching the sidebar/layout breakpoint above, not 900px. Whether the modal's desktop width is still exactly 65vw/max 1100px was not re-verified pixel-for-pixel in this pass; treat that specific figure as unconfirmed until checked directly against `screener.html`.
 
 ---
 
@@ -269,10 +279,50 @@ Used for the Settings and Methodology popups on `screener.html`.
 ```
 Backdrop:     fixed overlay, rgba(0,0,0,0.6)
 Modal:        --color-surface background, 1px border --color-border, border-radius 10px
-Width:        max 560px, 90vw
+Width:        widened in v3.19.0 from the original 560px/90vw to accommodate the growing
+              Methodology popup content; full-width (width: 100%, max-width: none,
+              padding: 24px 20px) below 1023px. Exact desktop width figure not
+              re-verified against current code in the 2026-08-25 audit — PATCHNOTES
+              states 65vw/max 1100px at the time of the v3.19.0 change; confirm against
+              screener.html before relying on the specific number.
 Close button: top-right × button in --color-text-secondary
 Behavior:     close on click outside, close on Escape key
 ```
+
+---
+
+### Market Overview Cards (`market.html`)
+
+Introduced in v4.1.0, expanded through v4.1.6. These classes live in `market.html`'s own inline `<style>` block, not in `style.css` — they are not shared with any other page and were not part of this document until the 2026-08-25 audit.
+
+```
+.market-grid:          responsive card grid, one .market-section per category
+.market-section:       category container; h2 heading, no ::before accent bar override
+                        beyond the sitewide h2 rule
+.market-card:           --color-surface background, standard card border, holds one
+                        symbol's snapshot
+  .market-card.up:      change value in --color-positive, ▲ arrow
+  .market-card.down:    change value in --color-negative, ▼ arrow
+  .market-card.flat:    change value in --color-text-secondary, no arrow
+.market-card-name:     display name (e.g. "S&P 500"), primary text
+.market-card-ticker:   ticker symbol, monospace, --color-accent; uses a slightly
+                        different stack locally: ui-monospace, "SF Mono", Consolas,
+                        monospace (not the sitewide monospace stack — flagged, not
+                        corrected, since it renders equivalently on the target platforms)
+.market-card-price:    current price/yield, monospace
+.market-card-change:   point and percent change (or point change alone for yield cards,
+                        unit: "pct" entries — see PRD Data Models)
+.market-card-arrow:    ▲/▼ direction glyph
+.market-card-missing:  "Data unavailable" fallback state for a symbol with no price
+.market-stale-banner:  informational banner shown when the feed is stale (`.on` toggles
+                        visibility); threshold is 4 days for this page (vs. a week for
+                        the daily screener feeds), recalibrated for its intraday cadence
+.market-asof:          "Last updated" hero-badge variant; local override
+                        `margin: 16px 0 0` fixes double-padding since it sits inside
+                        `.guide-intro`, which already carries its own bottom padding
+```
+
+A time-of-day emoji (🌅 shortly after the open, ☀️ midday, 🌆 shortly after close) prefixes the "Last updated" text, bucketed on the feed's own UTC refresh schedule rather than the viewer's local time.
 
 ---
 
@@ -375,9 +425,10 @@ Every page has Open Graph and Twitter Card meta tags so links render preview car
 | `metrics.html` | Stock Evaluation Metrics Explained | Ten metrics. Each one earns its place. This page explains what each signal measures, why it matters for long-term investing decisions, and how to interpret the numbers. All examples are illustrative and use hypothetical figures to demonstrate how each metric works in practice. |
 | `finviz.html` | How to Set Up a Finviz Stock Screener For Free | How to configure Finviz's free stock screener to surface candidates that align with the methodology. Use this as a discovery tool to find stocks worth evaluating further in Seeking Alpha. |
 | `seekingalpha.html` | How to Build a Stock Watchlist in Seeking Alpha For Free | Step-by-step guide to creating a free Seeking Alpha account and configuring a portfolio to track individual stocks with the exact 12-column layout used in this methodology. |
-| `screener.html` | (screener page title) | (screener page description) |
+| `screener.html` | Nasdaq 100 Screener | (not independently re-verified against DESIGN.md's own convention in this pass; see PRD's Documentation Versus Reality table) |
 | `indices.html` | Indices & ETF Investing | A separate methodology for evaluating broad market indices and ETFs. Different assets require different frameworks. Where individual stock picking is driven primarily by company fundamentals, index investing is driven primarily by market sentiment, timing signals, and structural efficiency. |
 | `faq.html` | Stock Investing Q&A | The thinking behind the strategy. Questions about how decisions are made, why certain rules exist, and what the long-term mindset actually looks like in practice. |
+| `market.html` | Market Overview | A same-day market snapshot across indices, factors, sectors, commodities, yields, leveraged ETFs, and crypto, refreshed three times per trading day. Added 2026-08-25 audit — this row was missing entirely; the page (added v4.1.0, 2026-07-10) does carry full Open Graph/Twitter Card tags in the actual code, this table just hadn't been updated to list it. |
 
 **Social card image:** `og-image.png` is a 1200x630 PNG at the site root. The 📈 emoji centered on `#0d1117` background, white monochrome. To regenerate:
 
@@ -432,7 +483,10 @@ This site documents a methodology, not a live portfolio. All content is written 
 
 ```
 style.css (in order):
-  :root                   → CSS custom properties (14 color tokens, sidebar width)
+  :root                   → CSS custom properties (20 total: 19 color tokens + sidebar
+                             width; corrected from "14" in the 2026-08-25 audit — 5 tier
+                             color tokens were added in v3.29.0/v3.30.0 and this line
+                             was never updated)
   Reset / base            → box-sizing, body, margins
   Layout                  → .site-wrapper flex, .site-layout grid
   Sidebar                 → brand, nav links, active states, footer
@@ -494,3 +548,8 @@ style.css (in order):
 | 3.22 | 2026-06-29 | "Expand to S&P 500" toggle added to the screener app-bar (right of the Azqato pill). Lazy-loads a second daily feed (`data/screener_sp500.json`) and re-ranks against the full S&P 500; toggles back to the Nasdaq 100. On-screen labels swap via `.universe-name` spans. New `data/sp500.json` constituent list; staggered CI (Nasdaq 23:00, S&P 500 23:30). |
 | 3.23 | 2026-06-29 | CI schedule only: screener feeds run Mon-Fri (trading days); the weekly constituent sync moved to Saturday 23:00 UTC. No visual or UX change. |
 | 2.0 | 2026-06-27 | Full DESIGN.md rewrite consolidating all design decisions, adding missing sections (spacing, breakpoints, motion, social cards, content philosophy), and bringing documentation to v3.13.0 parity. |
+| — | 2026-07-03 (v3.29.0) | 4 new tier color tokens added: `--color-tier-splus` (`#bc8cff`), `--color-tier-s` (`#2ea043`), `--color-tier-a` (`#7ee787`), `--color-tier-b` (`#e3b341`), `--color-tier-c` (`#ffa198`). Screener verdict badges/score bars switched from Pass/Watch/Fail to rank-based S+/S/A/B/C/F tiers. F tier reuses the existing `--color-negative`, no dedicated token. (Not reflected in DESIGN.md's own palette table or token count until the 2026-08-25 audit.) |
+| — | 2026-07-04 (v4.0.0) | Screener responsive redesign: live-resizing auto-hide column groups (no new tokens; a JS/layout behavior change, not a visual-language change), plus a second `min-width: auto` grid-track bug fix (`minmax(0, 1fr)` restored under the mobile media query). Site-wide device-width audit confirmed zero horizontal overflow 375-1920px across all 9 pages. |
+| — | 2026-07-09 (v4.1.3) | Sidebar brand text resized 0.9rem → 1.125rem with -0.3px letter-spacing; new `.sidebar-brand-sub` muted sub-label class added (references `--color-text-muted`, a token that does not exist in `:root` — see the Color Palette discrepancy note above). Shipped without a DESIGN.md update at the time; backfilled here. |
+| — | 2026-07-10 (v4.1.0-v4.1.6) | `market.html` (9th content page) introduced an entirely new component family not previously documented: card-grid layout, category sections, up/down/flat state cards, a stale-data banner, and a time-of-day emoji badge. See the new Market Overview Cards subsection under Component Patterns, and the added row in the Social Cards per-page table, both added in this 2026-08-25 audit. |
+| 2.1 | 2026-08-25 | **Documentation audit.** No visual or component changes shipped alongside this entry — this is a docs-accuracy pass. Corrected: token count (14 → 20) in the CSS File Structure section; added the 5 tier tokens (present in the palette table since v3.29.0/v3.30.0 but never reflected in the file's own token-count line); added the Market Overview Cards component family; added `market.html` to the Social Cards table; corrected the modal full-width breakpoint (900px → 1023px, matching current code) and flagged its exact desktop width as unconfirmed; flagged the undefined `--color-text-muted` CSS reference as a code bug, not a doc error; extended this Version History table from v3.23 (2026-06-29) through the present, closing a roughly seven-week, 50-plus-release gap during which the file was not updated. See PRD.md's Documentation Versus Reality table for the full discrepancy record and PATCHNOTES.md for the corresponding entry. |
