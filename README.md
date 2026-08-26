@@ -1,4 +1,4 @@
-# Azqato — Individual Stock Methodology
+# Azqato - Individual Stock Methodology
 
 A public, educational website documenting Azqato's fundamentals-driven, long-term equity investing methodology: how to evaluate a stock, how to think about index and ETF investing, and how to set up the free tools that support the workflow.
 
@@ -22,12 +22,12 @@ Beginner to intermediate self-directed investors who want a structured, non-comm
 
 ## Current status
 
-Live and actively maintained. The educational content is complete and stable; the screener and Market Overview page run on automated daily and intraday data refreshes with no manual intervention required. New content sections and features are added periodically — see the documentation below for what's shipped and what's planned next.
+Live and actively maintained. The educational content is complete and stable; the screener and Market Overview page run on automated daily and intraday data refreshes with no manual intervention required. New content sections and features are added periodically; see the documentation below for what's shipped and what's planned next.
 
 ## Where to learn more
 
 Everything about how the site works, how it's built, and where it's headed lives in [`/docs`](docs/):
 
-- [docs/PRD.md](docs/PRD.md) — the complete product reference: what the site is, who it's for, the methodology and scoring models in full detail, the technical architecture, the setup and deployment process, security posture, and the roadmap
-- [docs/DESIGN.md](docs/DESIGN.md) — the visual design system: colors, typography, spacing, components, and accessibility standards
-- [docs/PATCHNOTES.md](docs/PATCHNOTES.md) — the complete version history, from initial launch to the present
+- [docs/PRD.md](docs/PRD.md): the complete product reference: what the site is, who it's for, the methodology and scoring models in full detail, the technical architecture, the setup and deployment process, security posture, and the roadmap
+- [docs/DESIGN.md](docs/DESIGN.md): the visual design system: colors, typography, spacing, components, and accessibility standards
+- [docs/PATCHNOTES.md](docs/PATCHNOTES.md): the complete version history, from initial launch to the present
