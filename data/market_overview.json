@@ -1,270 +1,270 @@
 {
-  "updated": "2026-08-28T06:03:56.865363Z",
+  "updated": "2026-08-28T23:59:49.228400Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
       "name": "S&P 500",
       "category": "Indices",
-      "price": 771.1,
-      "prevClose": 766.08,
-      "change": 5.019999999999982,
-      "changePct": 0.6552840434419283
+      "price": 769.35,
+      "prevClose": 771.1,
+      "change": -1.75,
+      "changePct": -0.22694851510828284
     },
     "QQQ": {
       "name": "Nasdaq 100",
       "category": "Indices",
-      "price": 721.11,
-      "prevClose": 711.37,
-      "change": 9.740000000000009,
-      "changePct": 1.3691890296189113
+      "price": 716.43,
+      "prevClose": 721.11,
+      "change": -4.680000000000064,
+      "changePct": -0.6489994591671211
     },
     "VIX": {
       "name": "Volatility",
       "category": "Indices",
-      "price": 14.51,
-      "prevClose": 15.21,
-      "change": -0.7000000000000011,
-      "changePct": -4.602235371466145
+      "price": 14.43,
+      "prevClose": 14.51,
+      "change": -0.08000000000000007,
+      "changePct": -0.5513439007580945
     },
     "DIA": {
       "name": "Dow Jones",
       "category": "Indices",
-      "price": 535.22,
-      "prevClose": 534.23,
-      "change": 0.9900000000000091,
-      "changePct": 0.18531344177601383
+      "price": 535.06,
+      "prevClose": 535.22,
+      "change": -0.16000000000008185,
+      "changePct": -0.02989424909384253
     },
     "RSP": {
       "name": "S&P 500 Equal Weight",
       "category": "Indices",
-      "price": 221.45,
-      "prevClose": 222.11,
-      "change": -0.660000000000025,
-      "changePct": -0.2971500607807043
+      "price": 220.69,
+      "prevClose": 221.45,
+      "change": -0.7599999999999909,
+      "changePct": -0.34319259426506266
     },
     "IWM": {
       "name": "Russell 2000",
       "category": "Indices",
-      "price": 299.81,
-      "prevClose": 298.93,
-      "change": 0.8799999999999955,
-      "changePct": 0.2943833004382279
+      "price": 295.75,
+      "prevClose": 299.81,
+      "change": -4.060000000000002,
+      "changePct": -1.354190987625492
     },
     "VTI": {
       "name": "US Market",
       "category": "Indices",
-      "price": 380.63,
-      "prevClose": 378.23,
-      "change": 2.3999999999999773,
-      "changePct": 0.6345345424741522
+      "price": 379.36,
+      "prevClose": 380.63,
+      "change": -1.2699999999999818,
+      "changePct": -0.333657357538808
     },
     "VXUS": {
       "name": "International Market",
       "category": "Indices",
-      "price": 87.93,
-      "prevClose": 87.82,
-      "change": 0.11000000000001364,
-      "changePct": 0.12525620587566788
+      "price": 87.52,
+      "prevClose": 87.93,
+      "change": -0.4100000000000108,
+      "changePct": -0.46627999545093557
     },
     "TLT": {
       "name": "Long-Term Bonds",
       "category": "Indices",
-      "price": 83.13,
-      "prevClose": 83.3,
-      "change": -0.1700000000000017,
-      "changePct": -0.20408163265306367
+      "price": 82.88,
+      "prevClose": 83.13,
+      "change": -0.25,
+      "changePct": -0.30073379044869286
     },
     "IJR": {
       "name": "Small-Cap",
       "category": "Indices",
-      "price": 146.78,
-      "prevClose": 146.77,
-      "change": 0.009999999999990905,
-      "changePct": 0.0068133814812298965
+      "price": 145.58,
+      "prevClose": 146.78,
+      "change": -1.1999999999999886,
+      "changePct": -0.8175500749420861
     },
     "VBR": {
       "name": "Small-Cap Value",
       "category": "Indices",
-      "price": 248.36,
-      "prevClose": 249.08,
-      "change": -0.7199999999999989,
-      "changePct": -0.28906375461699163
+      "price": 246.81,
+      "prevClose": 248.36,
+      "change": -1.5500000000000114,
+      "changePct": -0.624094057014013
     },
     "IJH": {
       "name": "Mid-Cap",
       "category": "Indices",
-      "price": 76.65,
-      "prevClose": 76.62,
-      "change": 0.030000000000001137,
-      "changePct": 0.03915426781520015
+      "price": 75.76,
+      "prevClose": 76.65,
+      "change": -0.8900000000000006,
+      "changePct": -1.1611219830397923
     },
     "VUG": {
       "name": "Growth",
       "category": "Factors",
-      "price": 88.9,
-      "prevClose": 87.41,
-      "change": 1.490000000000009,
-      "changePct": 1.7046104564695241
+      "price": 88.54,
+      "prevClose": 88.9,
+      "change": -0.35999999999999943,
+      "changePct": -0.40494938132733527
     },
     "VTV": {
       "name": "Value",
       "category": "Factors",
-      "price": 225.45,
-      "prevClose": 226.83,
-      "change": -1.3800000000000239,
-      "changePct": -0.6083851342415181
+      "price": 225.29,
+      "prevClose": 225.45,
+      "change": -0.1599999999999966,
+      "changePct": -0.07096917276557813
     },
     "VIG": {
       "name": "Dividend",
       "category": "Factors",
-      "price": 243.23,
-      "prevClose": 244.12,
-      "change": -0.8900000000000148,
-      "changePct": -0.36457479927904934
+      "price": 243.07,
+      "prevClose": 243.23,
+      "change": -0.1599999999999966,
+      "changePct": -0.06578135920732864
     },
     "SPMO": {
       "name": "Momentum",
       "category": "Factors",
-      "price": 148.6,
-      "prevClose": 147.52,
-      "change": 1.079999999999984,
-      "changePct": 0.7321041214750412
+      "price": 146.78,
+      "prevClose": 148.6,
+      "change": -1.8199999999999932,
+      "changePct": -1.2247644683714642
     },
     "SPHB": {
       "name": "High Beta",
       "category": "Factors",
-      "price": 149.54,
-      "prevClose": 148.79,
-      "change": 0.75,
-      "changePct": 0.5040661334767105
+      "price": 146.22,
+      "prevClose": 149.54,
+      "change": -3.319999999999993,
+      "changePct": -2.2201417680888014
     },
     "SPLV": {
       "name": "Low Volatility",
       "category": "Factors",
-      "price": 75.12,
-      "prevClose": 75.88,
-      "change": -0.7599999999999909,
-      "changePct": -1.0015814443858573
+      "price": 75.08,
+      "prevClose": 75.12,
+      "change": -0.04000000000000625,
+      "changePct": -0.05324813631524261
     },
     "XLK": {
       "name": "Technology",
       "category": "Industries",
-      "price": 188.61,
-      "prevClose": 182.84,
-      "change": 5.77000000000001,
-      "changePct": 3.155764602931521
+      "price": 185.69,
+      "prevClose": 188.61,
+      "change": -2.920000000000016,
+      "changePct": -1.548168177721232
     },
     "XLE": {
       "name": "Energy",
       "category": "Industries",
-      "price": 62.29,
-      "prevClose": 62.43,
-      "change": -0.14000000000000057,
-      "changePct": -0.22425116130065925
+      "price": 62.68,
+      "prevClose": 62.29,
+      "change": 0.39000000000000057,
+      "changePct": 0.6261037084604348
     },
     "XLI": {
       "name": "Industrials",
       "category": "Industries",
-      "price": 178.8,
-      "prevClose": 180.34,
-      "change": -1.539999999999992,
-      "changePct": -0.8539425529555222
+      "price": 177.14,
+      "prevClose": 178.8,
+      "change": -1.660000000000025,
+      "changePct": -0.9284116331096381
     },
     "XLP": {
       "name": "Consumer Staples",
       "category": "Industries",
-      "price": 85.08,
-      "prevClose": 86.27,
-      "change": -1.1899999999999977,
-      "changePct": -1.3793902863104224
+      "price": 85.45,
+      "prevClose": 85.08,
+      "change": 0.37000000000000455,
+      "changePct": 0.43488481429243553
     },
     "XLU": {
       "name": "Utilities",
       "category": "Industries",
-      "price": 43.18,
-      "prevClose": 43.51,
-      "change": -0.3299999999999983,
-      "changePct": -0.7584463341760439
+      "price": 42.73,
+      "prevClose": 43.18,
+      "change": -0.45000000000000284,
+      "changePct": -1.0421491431218177
     },
     "XLV": {
       "name": "Health Care",
       "category": "Industries",
-      "price": 171.58,
-      "prevClose": 173.54,
-      "change": -1.9599999999999795,
-      "changePct": -1.1294226115016626
+      "price": 171.16,
+      "prevClose": 171.58,
+      "change": -0.4200000000000159,
+      "changePct": -0.24478377433267973
     },
     "XLF": {
       "name": "Financials",
       "category": "Industries",
-      "price": 57.88,
-      "prevClose": 58.26,
-      "change": -0.37999999999999545,
-      "changePct": -0.6522485410229928
+      "price": 58.1,
+      "prevClose": 57.88,
+      "change": 0.21999999999999886,
+      "changePct": 0.38009675190047165
     },
     "XLY": {
       "name": "Consumer Discretionary",
       "category": "Industries",
-      "price": 115.88,
-      "prevClose": 117.16,
-      "change": -1.2800000000000011,
-      "changePct": -1.0925230454079893
+      "price": 117.21,
+      "prevClose": 115.88,
+      "change": 1.3299999999999983,
+      "changePct": 1.1477390403866083
     },
     "XLRE": {
       "name": "Real Estate",
       "category": "Industries",
-      "price": 44.66,
-      "prevClose": 45.09,
-      "change": -0.4300000000000068,
-      "changePct": -0.9536482590374984
+      "price": 44.48,
+      "prevClose": 44.66,
+      "change": -0.17999999999999972,
+      "changePct": -0.40304523063143805
     },
     "CL": {
       "name": "Oil (WTI Crude)",
       "category": "Commodities",
-      "price": 83.18,
+      "price": 83.44,
       "prevClose": 83.53,
-      "change": -0.3499999999999943,
-      "changePct": -0.4190111337244007
+      "change": -0.09000000000000341,
+      "changePct": -0.1077457201005716
     },
     "NG": {
       "name": "Natural Gas",
       "category": "Commodities",
-      "price": 2.921,
+      "price": 2.881,
       "prevClose": 2.914,
-      "change": 0.006999999999999673,
-      "changePct": 0.24021962937541552
+      "change": -0.03300000000000036,
+      "changePct": -1.132463967055608
     },
     "GLD": {
       "name": "Gold",
       "category": "Commodities",
-      "price": 422.6,
-      "prevClose": 421.32,
-      "change": 1.2800000000000296,
-      "changePct": 0.30380708250261623
+      "price": 408.89,
+      "prevClose": 422.6,
+      "change": -13.710000000000036,
+      "changePct": -3.2442025556081444
     },
     "SI": {
       "name": "Silver",
       "category": "Commodities",
-      "price": 69.535,
+      "price": 67.09,
       "prevClose": 70.239,
-      "change": -0.7040000000000077,
-      "changePct": -1.0022921738635393
+      "change": -3.149000000000001,
+      "changePct": -4.483264283375332
     },
     "PL": {
       "name": "Platinum",
       "category": "Commodities",
-      "price": 1848.0,
+      "price": 1833.5,
       "prevClose": 1853.8,
-      "change": -5.7999999999999545,
-      "changePct": -0.31287085985542973
+      "change": -20.299999999999955,
+      "changePct": -1.0950480094940152
     },
     "HG": {
       "name": "Copper",
       "category": "Commodities",
-      "price": 6.6905,
+      "price": 6.64,
       "prevClose": 6.689,
-      "change": 0.0015000000000000568,
-      "changePct": 0.022424876663174054
+      "change": -0.04900000000000038,
+      "changePct": -0.7325459709971671
     },
     "US2Y": {
       "name": "2-Year",
@@ -279,187 +279,187 @@
       "name": "10-Year",
       "category": "Bonds",
       "unit": "pct",
-      "price": 4.672,
-      "prevClose": 4.664,
-      "change": 0.008000000000000007,
-      "changePct": 0.17152658662091813
+      "price": 4.7200003,
+      "prevClose": 4.672,
+      "change": 0.048000299999999996,
+      "changePct": 1.0274036815068444
     },
     "US30Y": {
       "name": "30-Year",
       "category": "Bonds",
       "unit": "pct",
-      "price": 5.191,
-      "prevClose": 5.186,
-      "change": 0.004999999999999893,
-      "changePct": 0.09641342074817594
+      "price": 5.2060003,
+      "prevClose": 5.191,
+      "change": 0.015000300000000522,
+      "changePct": 0.28896744365247695
     },
     "TQQQ": {
       "name": "3x Nasdaq 100",
       "category": "Leveraged ETFs",
-      "price": 73.3,
-      "prevClose": 70.47,
-      "change": 2.8299999999999983,
-      "changePct": 4.015893287923933
+      "price": 71.85,
+      "prevClose": 73.3,
+      "change": -1.4500000000000028,
+      "changePct": -1.9781718963165162
     },
     "SOXL": {
       "name": "3x Semiconductors",
       "category": "Leveraged ETFs",
-      "price": 123.05,
-      "prevClose": 116.6,
-      "change": 6.450000000000003,
-      "changePct": 5.531732418524871
+      "price": 111.34,
+      "prevClose": 123.05,
+      "change": -11.709999999999994,
+      "changePct": -9.516456724908572
     },
     "SPXL": {
       "name": "3x S&P 500",
       "category": "Leveraged ETFs",
-      "price": 292.25,
-      "prevClose": 286.65,
-      "change": 5.600000000000023,
-      "changePct": 1.9536019536019689
+      "price": 290.14,
+      "prevClose": 292.25,
+      "change": -2.1100000000000136,
+      "changePct": -0.7219846022241239
     },
     "TNA": {
       "name": "3x Small-Cap",
       "category": "Leveraged ETFs",
-      "price": 72.93,
-      "prevClose": 72.33,
-      "change": 0.6000000000000085,
-      "changePct": 0.8295313148071415
+      "price": 69.95,
+      "prevClose": 72.93,
+      "change": -2.980000000000004,
+      "changePct": -4.086109968462914
     },
     "UDOW": {
       "name": "3x Dow Jones",
       "category": "Leveraged ETFs",
-      "price": 74.02,
-      "prevClose": 73.66,
-      "change": 0.35999999999999943,
-      "changePct": 0.48873201194679083
+      "price": 73.87,
+      "prevClose": 74.02,
+      "change": -0.14999999999999147,
+      "changePct": -0.20264793299107353
     },
     "TECL": {
       "name": "3x Technology",
       "category": "Leveraged ETFs",
-      "price": 210.66,
-      "prevClose": 192.7,
-      "change": 17.960000000000008,
-      "changePct": 9.320186818889464
+      "price": 200.82,
+      "prevClose": 210.66,
+      "change": -9.840000000000003,
+      "changePct": -4.671033893477638
     },
     "QLD": {
       "name": "2x Nasdaq 100",
       "category": "Leveraged ETFs",
-      "price": 91.38,
-      "prevClose": 88.93,
-      "change": 2.4499999999999886,
-      "changePct": 2.754975823681538
+      "price": 90.17,
+      "prevClose": 91.38,
+      "change": -1.2099999999999937,
+      "changePct": -1.3241409498796153
     },
     "SSO": {
       "name": "2x S&P 500",
       "category": "Leveraged ETFs",
-      "price": 71.07,
-      "prevClose": 70.16,
-      "change": 0.9099999999999966,
-      "changePct": 1.2970353477764984
+      "price": 70.74,
+      "prevClose": 71.07,
+      "change": -0.3299999999999983,
+      "changePct": -0.4643309413254526
     },
     "USD": {
       "name": "2x Semiconductors",
       "category": "Leveraged ETFs",
-      "price": 88.82,
-      "prevClose": 81.21,
-      "change": 7.609999999999999,
-      "changePct": 9.37076714690308
+      "price": 82.82,
+      "prevClose": 88.82,
+      "change": -6.0,
+      "changePct": -6.755235307363206
     },
     "BTC": {
       "name": "Bitcoin",
       "category": "Crypto",
-      "price": 79840.39,
+      "price": 77793.91,
       "prevClose": 80261.86,
-      "change": -421.47000000000116,
-      "changePct": -0.5251186553613452
+      "change": -2467.949999999997,
+      "changePct": -3.0748726730230214
     },
     "ETH": {
       "name": "Ethereum",
       "category": "Crypto",
-      "price": 2499.16,
+      "price": 2442.39,
       "prevClose": 2511.308,
-      "change": -12.148000000000138,
-      "changePct": -0.48373198349227486
+      "change": -68.91800000000012,
+      "changePct": -2.744306950800146
     },
     "BNB": {
       "name": "Binance",
       "category": "Crypto",
-      "price": 712.41,
+      "price": 691.29,
       "prevClose": 712.1339,
-      "change": 0.2760999999999285,
-      "changePct": 0.03877079858154442
+      "change": -20.843900000000076,
+      "changePct": -2.9269635949082162
     },
     "XRP": {
       "name": "Ripple",
       "category": "Crypto",
-      "price": 1.4248,
+      "price": 1.383,
       "prevClose": 1.4531243,
-      "change": -0.02832429999999997,
-      "changePct": -1.9492000787544428
+      "change": -0.07012430000000003,
+      "changePct": -4.825760604237372
     },
     "SOL": {
       "name": "Solana",
       "category": "Crypto",
-      "price": 107.42,
+      "price": 104.13,
       "prevClose": 109.198105,
-      "change": -1.7781049999999965,
-      "changePct": -1.6283295392351294
+      "change": -5.068105000000003,
+      "changePct": -4.641202335883032
     },
     "TRX": {
       "name": "Tron",
       "category": "Crypto",
-      "price": 0.33923048,
+      "price": 0.34134993,
       "prevClose": 0.33769968,
-      "change": 0.0015307999999999988,
-      "changePct": 0.4533021766558898
+      "change": 0.0036502500000000215,
+      "changePct": 1.0809160375870208
     },
     "DOGE": {
       "name": "Dogecoin",
       "category": "Crypto",
-      "price": 0.08793,
+      "price": 0.0852,
       "prevClose": 0.08914009,
-      "change": -0.0012100900000000109,
-      "changePct": -1.3575148959351635
+      "change": -0.003940090000000007,
+      "changePct": -4.420109963990393
     },
     "ZEC": {
       "name": "Zcash",
       "category": "Crypto",
-      "price": 791.28,
+      "price": 800.51,
       "prevClose": 810.14124,
-      "change": -18.861240000000066,
-      "changePct": -2.328142189132365
+      "change": -9.631240000000048,
+      "changePct": -1.1888346777655712
     },
     "ADA": {
       "name": "Cardano",
       "category": "Crypto",
-      "price": 0.21018,
+      "price": 0.20315,
       "prevClose": 0.21381518,
-      "change": -0.003635179999999988,
-      "changePct": -1.700150569290726
+      "change": -0.010665179999999996,
+      "changePct": -4.988036864361078
     },
     "XMR": {
       "name": "Monero",
       "category": "Crypto",
-      "price": 459.90057,
+      "price": 471.87177,
       "prevClose": 454.71237,
-      "change": 5.188199999999995,
-      "changePct": 1.1409850143289546
+      "change": 17.159400000000005,
+      "changePct": 3.7736822510458623
     },
     "LTC": {
       "name": "Litecoin",
       "category": "Crypto",
-      "price": 49.279,
+      "price": 49.322,
       "prevClose": 49.92565,
-      "change": -0.646649999999994,
-      "changePct": -1.2952260010635652
+      "change": -0.6036499999999947,
+      "changePct": -1.209097928619851
     },
     "AVAX": {
       "name": "Avalanche",
       "category": "Crypto",
-      "price": 7.484,
+      "price": 7.305,
       "prevClose": 7.5262566,
-      "change": -0.04225659999999998,
-      "changePct": -0.5614557441477652
+      "change": -0.22125660000000025,
+      "changePct": -2.9397961265365313
     }
   }
 }
