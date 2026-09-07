@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T23:13:21.618261Z",
+  "updated": "2026-09-07T23:42:29.165941Z",
   "source": "yahoo",
   "stocks": {
     "ADBE": {
@@ -19,9 +19,9 @@
       "peFwd": 10.917705,
       "epsFwd": 16.580000000000002,
       "revFwd": 11.66,
-      "pegFwd": 0.7,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.65,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AMD": {
       "t": "AMD",
@@ -40,9 +40,9 @@
       "peFwd": 63.10436,
       "epsFwd": 81.49,
       "revFwd": 46.7,
-      "pegFwd": 0.48,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.49,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ABNB": {
       "t": "ABNB",
@@ -61,9 +61,9 @@
       "peFwd": 34.452396,
       "epsFwd": 31.350002,
       "revFwd": 15.640001,
-      "pegFwd": 1.76,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.73,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ALNY": {
       "t": "ALNY",
@@ -83,8 +83,8 @@
       "epsFwd": 75.5,
       "revFwd": 47.849998,
       "pegFwd": 0.34,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "GOOGL": {
       "t": "GOOGL",
@@ -103,9 +103,9 @@
       "peFwd": 16.432402,
       "epsFwd": 90.58999399999999,
       "revFwd": 23.64,
-      "pegFwd": 1.27,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.25,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AMZN": {
       "t": "AMZN",
@@ -124,9 +124,9 @@
       "peFwd": 20.594206,
       "epsFwd": 75.29,
       "revFwd": 15.529999,
-      "pegFwd": 1.52,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.51,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AEP": {
       "t": "AEP",
@@ -146,8 +146,8 @@
       "epsFwd": 6.859999999999999,
       "revFwd": 7.71,
       "pegFwd": 1.97,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AMGN": {
       "t": "AMGN",
@@ -166,9 +166,9 @@
       "peFwd": 18.975794,
       "epsFwd": 5.5,
       "revFwd": 5.9499998,
-      "pegFwd": 2.14,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.11,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ADI": {
       "t": "ADI",
@@ -187,9 +187,9 @@
       "peFwd": 28.201677,
       "epsFwd": 64.89,
       "revFwd": 36.95,
-      "pegFwd": 0.53,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.54,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AAPL": {
       "t": "AAPL",
@@ -208,9 +208,9 @@
       "peFwd": 36.2587,
       "epsFwd": 18.129998,
       "revFwd": 14.790000000000001,
-      "pegFwd": 2.58,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.52,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AMAT": {
       "t": "AMAT",
@@ -229,15 +229,15 @@
       "peFwd": 35.53974,
       "epsFwd": 35.819998,
       "revFwd": 20.75,
-      "pegFwd": 0.87,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.9,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "APP": {
       "t": "APP",
       "name": "AppLovin",
       "price": 320.56,
-      "marketCap": 107688771584.0,
+      "marketCap": 107275575296.0,
       "cash": 3053306112.0,
       "debt": 3515072000.0,
       "cur": "USD",
@@ -250,9 +250,9 @@
       "peFwd": 19.132063,
       "epsFwd": 61.01,
       "revFwd": 48.119998,
-      "pegFwd": 0.68,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.69,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ARM": {
       "t": "ARM",
@@ -271,17 +271,17 @@
       "peFwd": 113.11433,
       "epsFwd": 25.91,
       "revFwd": 23.020001,
-      "pegFwd": 1.99,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.07,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ASML": {
       "t": "ASML",
       "name": "ASML",
       "price": 1714.88,
       "marketCap": 658685427712.0,
-      "cash": 8810575519.08695,
-      "debt": 2306101204.44,
+      "cash": 8818773394.933146,
+      "debt": 2308246936.16,
       "cur": "USD",
       "prevClose": 1646.19,
       "changePct": 4.172665366695227,
@@ -292,9 +292,9 @@
       "peFwd": 44.90403,
       "epsFwd": 54.55,
       "revFwd": 31.080000000000002,
-      "pegFwd": 1.47,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.53,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ALAB": {
       "t": "ALAB",
@@ -314,8 +314,8 @@
       "epsFwd": 119.14,
       "revFwd": 123.86999999999999,
       "pegFwd": 0.6461332046332047,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ADSK": {
       "t": "ADSK",
@@ -334,9 +334,9 @@
       "peFwd": 17.270884,
       "epsFwd": 20.959999,
       "revFwd": 15.52,
-      "pegFwd": 0.91,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.84,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ADP": {
       "t": "ADP",
@@ -355,9 +355,9 @@
       "peFwd": 22.649508,
       "epsFwd": 10.229999600000001,
       "revFwd": 5.82,
-      "pegFwd": 2.63,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.58,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AXON": {
       "t": "AXON",
@@ -376,9 +376,9 @@
       "peFwd": 66.856476,
       "epsFwd": 12.6,
       "revFwd": 33.380002,
-      "pegFwd": 2.47,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.37,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "BKR": {
       "t": "BKR",
@@ -397,15 +397,15 @@
       "peFwd": 24.164608,
       "epsFwd": 1.0699999999999998,
       "revFwd": 4.8899997,
-      "pegFwd": 1.78,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.77,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "BKNG": {
       "t": "BKNG",
       "name": "Booking Holdings",
       "price": 193.29,
-      "marketCap": 145234329600.0,
+      "marketCap": 149776252928.0,
       "cash": 17213999104.0,
       "debt": 20924000256.0,
       "cur": "USD",
@@ -418,9 +418,9 @@
       "peFwd": 18.499039,
       "epsFwd": 14.540000000000001,
       "revFwd": 8.7,
-      "pegFwd": 0.72,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.71,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "AVGO": {
       "t": "AVGO",
@@ -439,15 +439,15 @@
       "peFwd": 30.751749,
       "epsFwd": 70.65,
       "revFwd": 65.860003,
-      "pegFwd": 0.4,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.35,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CDNS": {
       "t": "CDNS",
       "name": "Cadence Design",
       "price": 292.7,
-      "marketCap": 80607535104.0,
+      "marketCap": 80731348992.0,
       "cash": 1531835008.0,
       "debt": 2651358976.0,
       "cur": "USD",
@@ -460,9 +460,9 @@
       "peFwd": 35.94741,
       "epsFwd": 18.370001,
       "revFwd": 19.29,
-      "pegFwd": 2.3,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.21,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CTAS": {
       "t": "CTAS",
@@ -481,9 +481,9 @@
       "peFwd": 36.50551,
       "epsFwd": 11.799999999999999,
       "revFwd": 8.430000399999999,
-      "pegFwd": 3.19,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 3.18,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CSCO": {
       "t": "CSCO",
@@ -502,17 +502,17 @@
       "peFwd": 21.226347,
       "epsFwd": 18.81,
       "revFwd": 15.540000000000001,
-      "pegFwd": 1.0,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.01,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CCEP": {
       "t": "CCEP",
       "name": "Coca-Cola Europacific",
       "price": 105.76,
-      "marketCap": 46655410176.0,
-      "cash": 2317257509.4,
-      "debt": 14165020582.023169,
+      "marketCap": 46680199168.0,
+      "cash": 2319413621.6,
+      "debt": 14178200547.377151,
       "cur": "USD",
       "prevClose": 109.15,
       "changePct": -3.105817682088874,
@@ -523,9 +523,9 @@
       "peFwd": 23.536585,
       "epsFwd": 4.8600003,
       "revFwd": 3.2800000000000002,
-      "pegFwd": 2.89,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.8,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CMCSA": {
       "t": "CMCSA",
@@ -545,8 +545,8 @@
       "epsFwd": -18.43,
       "revFwd": -2.48,
       "pegFwd": 142.98,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CEG": {
       "t": "CEG",
@@ -566,14 +566,14 @@
       "epsFwd": 29.049999999999997,
       "revFwd": 37.580000000000005,
       "pegFwd": 3.74,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CPRT": {
       "t": "CPRT",
       "name": "Copart",
       "price": 33.72,
-      "marketCap": 31218364416.0,
+      "marketCap": 32482760704.0,
       "cash": 4199712000.0,
       "debt": 93116000.0,
       "cur": "USD",
@@ -586,9 +586,9 @@
       "peFwd": 21.30523,
       "epsFwd": -0.45999999999999996,
       "revFwd": -0.05,
-      "pegFwd": 4.03,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 4.05,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CRWV": {
       "t": "CRWV",
@@ -608,8 +608,8 @@
       "epsFwd": -88.19,
       "revFwd": 151.39999,
       "pegFwd": null,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "COST": {
       "t": "COST",
@@ -628,9 +628,9 @@
       "peFwd": 44.533558,
       "epsFwd": 13.01,
       "revFwd": 9.6499994,
-      "pegFwd": 4.49,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 4.44,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CRWD": {
       "t": "CRWD",
@@ -649,9 +649,9 @@
       "peFwd": 169.61969,
       "epsFwd": 34.73,
       "revFwd": 24.82,
-      "pegFwd": 6.88,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 6.82,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "CSX": {
       "t": "CSX",
@@ -670,9 +670,9 @@
       "peFwd": 24.634546,
       "epsFwd": 24.58,
       "revFwd": 7.7800006,
-      "pegFwd": 1.76,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.78,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "DDOG": {
       "t": "DDOG",
@@ -691,9 +691,9 @@
       "peFwd": 84.25397,
       "epsFwd": 23.28,
       "revFwd": 30.48,
-      "pegFwd": 1.09,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.08,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "DXCM": {
       "t": "DXCM",
@@ -712,15 +712,15 @@
       "peFwd": 33.01607,
       "epsFwd": 27.38,
       "revFwd": 12.1800005,
-      "pegFwd": 1.38,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.35,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "FANG": {
       "t": "FANG",
       "name": "Diamondback Energy",
       "price": 199.22,
-      "marketCap": 55785541632.0,
+      "marketCap": 56043237376.0,
       "cash": 462000000.0,
       "debt": 12613999616.0,
       "cur": "USD",
@@ -733,9 +733,9 @@
       "peFwd": 9.742395,
       "epsFwd": 52.949999999999996,
       "revFwd": 23.05,
-      "pegFwd": 24.36,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 24.49,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "DASH": {
       "t": "DASH",
@@ -754,9 +754,9 @@
       "peFwd": 36.54108,
       "epsFwd": 22.489999,
       "revFwd": 29.930001,
-      "pegFwd": 2.82,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.64,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "EXC": {
       "t": "EXC",
@@ -775,9 +775,9 @@
       "peFwd": 15.276154,
       "epsFwd": 3.1300000000000003,
       "revFwd": 5.1999997,
-      "pegFwd": 2.39,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.35,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "FAST": {
       "t": "FAST",
@@ -796,17 +796,17 @@
       "peFwd": 39.252926,
       "epsFwd": 15.67,
       "revFwd": 13.25,
-      "pegFwd": 3.27,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 3.3,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "FER": {
       "t": "FER",
       "name": "Ferrovial",
       "price": 58.05,
-      "marketCap": 41836756992.0,
-      "cash": 4490412746.400001,
-      "debt": 12384661141.327566,
+      "marketCap": 41839665152.0,
+      "cash": 4494590889.599999,
+      "debt": 12396184555.911985,
       "cur": "USD",
       "prevClose": 58.1,
       "changePct": -0.0860585197934638,
@@ -817,9 +817,9 @@
       "peFwd": 55.131344,
       "epsFwd": 11.21,
       "revFwd": 4.8699997,
-      "pegFwd": 3.43,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 8.67,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "FTNT": {
       "t": "FTNT",
@@ -839,14 +839,14 @@
       "epsFwd": 25.010001999999997,
       "revFwd": 19.409999,
       "pegFwd": 1.71,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "GEHC": {
       "t": "GEHC",
       "name": "GE HealthCare",
       "price": 68.86,
-      "marketCap": 31103115264.0,
+      "marketCap": 31323848704.0,
       "cash": 2079000064.0,
       "debt": 10540999680.0,
       "cur": "USD",
@@ -859,9 +859,9 @@
       "peFwd": 13.974745,
       "epsFwd": 7.35,
       "revFwd": 5.3200003,
-      "pegFwd": 1.74,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.72,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "GILD": {
       "t": "GILD",
@@ -880,9 +880,9 @@
       "peFwd": -350.64557,
       "epsFwd": -105.27998999999998,
       "revFwd": 4.2299999999999995,
-      "pegFwd": 2.03,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.02,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "HON": {
       "t": "HON",
@@ -898,12 +898,12 @@
       "epsTTM": 263.9,
       "grossMargin": 36.510999999999996,
       "netMargin": 21.581,
-      "peFwd": 25.217152,
-      "epsFwd": -57.49999999999999,
-      "revFwd": -46.150002,
-      "pegFwd": 3.39,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "peFwd": 25.222431,
+      "epsFwd": -57.50999999999999,
+      "revFwd": -46.21,
+      "pegFwd": 3.38,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "HONA": {
       "t": "HONA",
@@ -922,15 +922,15 @@
       "peFwd": 20.64731,
       "epsFwd": null,
       "revFwd": 5.3100000000000005,
-      "pegFwd": 0.99,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.03,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "IDXX": {
       "t": "IDXX",
       "name": "Idexx Laboratories",
       "price": 535.38,
-      "marketCap": 42177835008.0,
+      "marketCap": 42232381440.0,
       "cash": 196932992.0,
       "debt": 1096081024.0,
       "cur": "USD",
@@ -943,9 +943,9 @@
       "peFwd": 36.089027,
       "epsFwd": 13.420000000000002,
       "revFwd": 9.770001,
-      "pegFwd": 2.9,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.93,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "INTC": {
       "t": "INTC",
@@ -965,8 +965,8 @@
       "epsFwd": 260.59000000000003,
       "revFwd": 19.259999999999998,
       "pegFwd": 1.36,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "INTU": {
       "t": "INTU",
@@ -985,9 +985,9 @@
       "peFwd": 13.758958,
       "epsFwd": -0.37,
       "revFwd": 9.15,
-      "pegFwd": 1.09,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.06,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ISRG": {
       "t": "ISRG",
@@ -1006,9 +1006,9 @@
       "peFwd": 33.970028,
       "epsFwd": 20.879998999999998,
       "revFwd": 16.98,
-      "pegFwd": 1.61,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.6,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "KDP": {
       "t": "KDP",
@@ -1027,9 +1027,9 @@
       "peFwd": 14.212387,
       "epsFwd": 11.8599996,
       "revFwd": 58.46,
-      "pegFwd": 1.02,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.01,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "KLAC": {
       "t": "KLAC",
@@ -1048,9 +1048,9 @@
       "peFwd": 34.03806,
       "epsFwd": 45.019999999999996,
       "revFwd": 33.35,
-      "pegFwd": 1.65,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.77,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "KHC": {
       "t": "KHC",
@@ -1070,8 +1070,8 @@
       "epsFwd": -21.040001999999998,
       "revFwd": -1.27,
       "pegFwd": 0.99,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "LRCX": {
       "t": "LRCX",
@@ -1090,9 +1090,9 @@
       "peFwd": 32.512344,
       "epsFwd": 62.590003,
       "revFwd": 49.8,
-      "pegFwd": 1.36,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.43,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "LIN": {
       "t": "LIN",
@@ -1111,9 +1111,9 @@
       "peFwd": 26.717337,
       "epsFwd": 8.6,
       "revFwd": 6.81,
-      "pegFwd": 1.87,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.85,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "LITE": {
       "t": "LITE",
@@ -1133,8 +1133,8 @@
       "epsFwd": 149.63001,
       "revFwd": 108.35,
       "pegFwd": 0.63,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MAR": {
       "t": "MAR",
@@ -1154,8 +1154,8 @@
       "epsFwd": 16.950001,
       "revFwd": 6.1100002,
       "pegFwd": 1.68,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MRVL": {
       "t": "MRVL",
@@ -1174,9 +1174,9 @@
       "peFwd": 53.21289,
       "epsFwd": 47.919998,
       "revFwd": 46.97,
-      "pegFwd": 1.11,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.19,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MELI": {
       "t": "MELI",
@@ -1186,8 +1186,8 @@
       "cash": 5744999936.0,
       "debt": 13207000064.0,
       "cur": "USD",
-      "prevClose": 1991.055,
-      "changePct": -0.6376016734846668,
+      "prevClose": 1991.06,
+      "changePct": -0.6378511948409438,
       "revTTM": 49.8,
       "epsTTM": -10.9,
       "grossMargin": 47.749,
@@ -1195,9 +1195,9 @@
       "peFwd": 50.637447,
       "epsFwd": -2.8299998,
       "revFwd": 44.3,
-      "pegFwd": 0.97,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.96,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "META": {
       "t": "META",
@@ -1216,9 +1216,9 @@
       "peFwd": 19.794834,
       "epsFwd": 33.560002,
       "revFwd": 26.490000000000002,
-      "pegFwd": 0.81,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.82,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MCHP": {
       "t": "MCHP",
@@ -1238,8 +1238,8 @@
       "epsFwd": 122.37,
       "revFwd": 35.709998,
       "pegFwd": 0.22,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MU": {
       "t": "MU",
@@ -1258,9 +1258,9 @@
       "peFwd": 13.849918,
       "epsFwd": 785.40998,
       "revFwd": 247.08999999999997,
-      "pegFwd": 0.14,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.15,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MSFT": {
       "t": "MSFT",
@@ -1279,9 +1279,9 @@
       "peFwd": 25.297348,
       "epsFwd": 14.310001,
       "revFwd": 17.849999999999998,
-      "pegFwd": 1.66,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.62,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MSTR": {
       "t": "MSTR",
@@ -1301,14 +1301,14 @@
       "epsFwd": -63.470000000000006,
       "revFwd": 5.0100001999999995,
       "pegFwd": 2.85,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MDLZ": {
       "t": "MDLZ",
       "name": "Mondelez",
       "price": 61.28,
-      "marketCap": 78212161536.0,
+      "marketCap": 78662057984.0,
       "cash": 1716000000.0,
       "debt": 22058999808.0,
       "cur": "USD",
@@ -1322,8 +1322,8 @@
       "epsFwd": 4.3999999999999995,
       "revFwd": 4.1199997,
       "pegFwd": 0.91,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MPWR": {
       "t": "MPWR",
@@ -1342,9 +1342,9 @@
       "peFwd": 44.616077,
       "epsFwd": 54.37,
       "revFwd": 47.81,
-      "pegFwd": 0.91,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.92,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "MNST": {
       "t": "MNST",
@@ -1363,15 +1363,15 @@
       "peFwd": 37.945637,
       "epsFwd": 18.66,
       "revFwd": 17.29,
-      "pegFwd": 2.27,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.25,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "NBIS": {
       "t": "NBIS",
       "name": "Nebius Group",
       "price": 226.39,
-      "marketCap": 61545304064.0,
+      "marketCap": 57480011776.0,
       "cash": 8042100224.0,
       "debt": 10195300352.0,
       "cur": "USD",
@@ -1384,9 +1384,9 @@
       "peFwd": -110.67386,
       "epsFwd": null,
       "revFwd": 530.99,
-      "pegFwd": 0.5,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.54,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "NFLX": {
       "t": "NFLX",
@@ -1405,9 +1405,9 @@
       "peFwd": 21.795261,
       "epsFwd": 41.669998,
       "revFwd": 13.36,
-      "pegFwd": 1.53,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.45,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "NVDA": {
       "t": "NVDA",
@@ -1426,9 +1426,9 @@
       "peFwd": 24.750172,
       "epsFwd": 95.12,
       "revFwd": 90.48999500000001,
-      "pegFwd": 0.58,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.59,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "NXPI": {
       "t": "NXPI",
@@ -1448,8 +1448,8 @@
       "epsFwd": 27.51,
       "revFwd": 16.1,
       "pegFwd": 0.45,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ORLY": {
       "t": "ORLY",
@@ -1468,15 +1468,15 @@
       "peFwd": 26.797203,
       "epsFwd": 10.42,
       "revFwd": 7.48,
-      "pegFwd": 1.64,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.65,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ODFL": {
       "t": "ODFL",
       "name": "Old Dominion Freight",
       "price": 185.87,
-      "marketCap": 38655066112.0,
+      "marketCap": 38541373440.0,
       "cash": 283939008.0,
       "debt": 19997000.0,
       "cur": "USD",
@@ -1486,12 +1486,12 @@
       "epsTTM": 32.300000000000004,
       "grossMargin": 39.566,
       "netMargin": 19.443001,
-      "peFwd": 31.939005,
-      "epsFwd": 19.940001,
-      "revFwd": 7.539999999999999,
-      "pegFwd": 2.33,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "peFwd": 31.931818,
+      "epsFwd": 19.99,
+      "revFwd": 7.5600000000000005,
+      "pegFwd": 2.32,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PCAR": {
       "t": "PCAR",
@@ -1510,9 +1510,9 @@
       "peFwd": 20.981468,
       "epsFwd": 32.25,
       "revFwd": 10.13,
-      "pegFwd": 1.01,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.02,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PLTR": {
       "t": "PLTR",
@@ -1528,12 +1528,12 @@
       "epsTTM": 215.39999999999998,
       "grossMargin": 84.796,
       "netMargin": 49.005002,
-      "peFwd": 108.77134,
-      "epsFwd": 113.7,
+      "peFwd": 108.37509,
+      "epsFwd": 114.48001000000001,
       "revFwd": 82.97,
-      "pegFwd": 1.76,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.68,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PANW": {
       "t": "PANW",
@@ -1552,15 +1552,15 @@
       "peFwd": 79.51024,
       "epsFwd": 10.84,
       "revFwd": 23.87,
-      "pegFwd": 1.67,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.7,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PAYX": {
       "t": "PAYX",
       "name": "Paychex",
       "price": 121.71,
-      "marketCap": 43290161152.0,
+      "marketCap": 43326382080.0,
       "cash": 1143699968.0,
       "debt": 4630300160.0,
       "cur": "USD",
@@ -1573,15 +1573,15 @@
       "peFwd": 20.368681,
       "epsFwd": 8.450000000000001,
       "revFwd": 5.609999999999999,
-      "pegFwd": 2.2,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.14,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PYPL": {
       "t": "PYPL",
       "name": "PayPal",
       "price": 54.96,
-      "marketCap": 47016128512.0,
+      "marketCap": 47375519744.0,
       "cash": 11256000512.0,
       "debt": 14220999680.0,
       "cur": "USD",
@@ -1594,17 +1594,17 @@
       "peFwd": 10.200218,
       "epsFwd": 1.47,
       "revFwd": 4.66,
-      "pegFwd": 0.94,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.91,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PDD": {
       "t": "PDD",
       "name": "PDD Holdings",
       "price": 82.21,
       "marketCap": 117017419776.0,
-      "cash": 68108274652.29927,
-      "debt": 722844824.0815412,
+      "cash": 68120474598.604805,
+      "debt": 722974304.208384,
       "cur": "USD",
       "prevClose": 81.63,
       "changePct": 0.7105230920004812,
@@ -1616,8 +1616,8 @@
       "epsFwd": -4.46,
       "revFwd": 8.44,
       "pegFwd": 0.72,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "PEP": {
       "t": "PEP",
@@ -1636,9 +1636,9 @@
       "peFwd": 16.078629,
       "epsFwd": 5.1599998000000005,
       "revFwd": 5.35,
-      "pegFwd": 1.43,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.41,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "QCOM": {
       "t": "QCOM",
@@ -1654,12 +1654,12 @@
       "epsTTM": -23.0,
       "grossMargin": 54.226,
       "netMargin": 21.013,
-      "peFwd": 16.035322,
+      "peFwd": 16.036205,
       "epsFwd": -12.529999,
-      "revFwd": -2.69,
+      "revFwd": -2.7,
       "pegFwd": 0.75,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "REGN": {
       "t": "REGN",
@@ -1678,9 +1678,9 @@
       "peFwd": 15.457691,
       "epsFwd": 20.849999999999998,
       "revFwd": 17.979999,
-      "pegFwd": 1.19,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.17,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "RKLB": {
       "t": "RKLB",
@@ -1700,8 +1700,8 @@
       "epsFwd": 27.029999999999998,
       "revFwd": 59.230000000000004,
       "pegFwd": -52.00959304476508,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ROP": {
       "t": "ROP",
@@ -1720,15 +1720,15 @@
       "peFwd": 18.330736,
       "epsFwd": 11.09,
       "revFwd": 8.4,
-      "pegFwd": 1.66,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.6,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "ROST": {
       "t": "ROST",
       "name": "Ross Stores",
       "price": 230.69,
-      "marketCap": 74000990208.0,
+      "marketCap": 73694642176.0,
       "cash": 4288123904.0,
       "debt": 4739150848.0,
       "cur": "USD",
@@ -1741,9 +1741,9 @@
       "peFwd": 27.583115,
       "epsFwd": 30.5,
       "revFwd": 12.870000000000001,
-      "pegFwd": 2.48,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.47,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "SNDK": {
       "t": "SNDK",
@@ -1763,14 +1763,14 @@
       "epsFwd": 202.06,
       "revFwd": 141.79999999999998,
       "pegFwd": 0.040221280807680886,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "STX": {
       "t": "STX",
       "name": "Seagate Technology",
       "price": 849.28,
-      "marketCap": 192484655104.0,
+      "marketCap": 192786563072.0,
       "cash": 1704000000.0,
       "debt": 3897999872.0,
       "cur": "USD",
@@ -1783,15 +1783,15 @@
       "peFwd": 23.735561,
       "epsFwd": 129.66,
       "revFwd": 54.04,
-      "pegFwd": 0.46,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.49,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "SHOP": {
       "t": "SHOP",
       "name": "Shopify",
       "price": 145.09,
-      "marketCap": 188276703232.0,
+      "marketCap": 186679164928.0,
       "cash": 4946999808.0,
       "debt": 178000000.0,
       "cur": "USD",
@@ -1805,14 +1805,14 @@
       "epsFwd": 33.300000000000004,
       "revFwd": 31.819999999999997,
       "pegFwd": 2.61,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "SPCX": {
       "t": "SPCX",
       "name": "Space Exploration Technologies",
       "price": 147.95,
-      "marketCap": 1950244274176.0,
+      "marketCap": 1949120987136.0,
       "cash": 100009000960.0,
       "debt": 39708000256.0,
       "cur": "USD",
@@ -1826,8 +1826,8 @@
       "epsFwd": 101.46,
       "revFwd": null,
       "pegFwd": 16.561160063079047,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "SBUX": {
       "t": "SBUX",
@@ -1846,9 +1846,9 @@
       "peFwd": 40.328743,
       "epsFwd": 21.620001,
       "revFwd": 2.16,
-      "pegFwd": 1.29,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.27,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "SNPS": {
       "t": "SNPS",
@@ -1867,9 +1867,9 @@
       "peFwd": 26.009945,
       "epsFwd": 17.29,
       "revFwd": 37.82,
-      "pegFwd": 2.23,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.11,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TMUS": {
       "t": "TMUS",
@@ -1888,9 +1888,9 @@
       "peFwd": 14.907807,
       "epsFwd": 12.61,
       "revFwd": 6.859999999999999,
-      "pegFwd": 0.66,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.64,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TTWO": {
       "t": "TTWO",
@@ -1909,9 +1909,9 @@
       "peFwd": 31.252275,
       "epsFwd": 218.31,
       "revFwd": 26.700002,
-      "pegFwd": 2.93,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 2.94,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TER": {
       "t": "TER",
@@ -1930,9 +1930,9 @@
       "peFwd": 39.271652,
       "epsFwd": 129.58,
       "revFwd": 61.19,
-      "pegFwd": 0.62,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.65,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TSLA": {
       "t": "TSLA",
@@ -1948,12 +1948,12 @@
       "epsTTM": -3.0,
       "grossMargin": 18.852,
       "netMargin": 3.671,
-      "peFwd": 199.74388,
-      "epsFwd": 6.79,
-      "revFwd": 11.82,
-      "pegFwd": 4.26,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "peFwd": 200.17639,
+      "epsFwd": 6.5600000000000005,
+      "revFwd": 11.89,
+      "pegFwd": 4.23,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TXN": {
       "t": "TXN",
@@ -1972,9 +1972,9 @@
       "peFwd": 30.455297,
       "epsFwd": 56.07,
       "revFwd": 23.93,
-      "pegFwd": 0.9,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.92,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "TRI": {
       "t": "TRI",
@@ -1994,14 +1994,14 @@
       "epsFwd": 11.4300005,
       "revFwd": 8.51,
       "pegFwd": 1.59,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "VRTX": {
       "t": "VRTX",
       "name": "Vertex Pharmaceuticals",
       "price": 546.12,
-      "marketCap": 138420076544.0,
+      "marketCap": 138332192768.0,
       "cash": 7852400128.0,
       "debt": 1977600000.0,
       "cur": "USD",
@@ -2014,15 +2014,15 @@
       "peFwd": 32.786278,
       "epsFwd": -9.47,
       "revFwd": 9.9300005,
-      "pegFwd": 1.7,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.67,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "WMT": {
       "t": "WMT",
       "name": "Walmart",
       "price": 107.14,
-      "marketCap": 852628602880.0,
+      "marketCap": 850021580800.0,
       "cash": 11528999936.0,
       "debt": 75092000768.0,
       "cur": "USD",
@@ -2035,9 +2035,9 @@
       "peFwd": 37.117874,
       "epsFwd": 9.34,
       "revFwd": 6.59,
-      "pegFwd": 4.14,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 4.09,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "WBD": {
       "t": "WBD",
@@ -2056,9 +2056,9 @@
       "peFwd": -26.279068,
       "epsFwd": -486.82003,
       "revFwd": -2.91,
-      "pegFwd": 55.33,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 55.18,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "WDC": {
       "t": "WDC",
@@ -2077,9 +2077,9 @@
       "peFwd": 23.266636,
       "epsFwd": 96.589994,
       "revFwd": 48.560002000000004,
-      "pegFwd": 0.84,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.89,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "WDAY": {
       "t": "WDAY",
@@ -2098,30 +2098,30 @@
       "peFwd": 17.698994,
       "epsFwd": 19.85,
       "revFwd": 11.68,
-      "pegFwd": 0.76,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 0.72,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     },
     "XEL": {
       "t": "XEL",
       "name": "Xcel Energy",
-      "price": 75.72,
-      "marketCap": 47297310720.0,
+      "price": 75.7238,
+      "marketCap": 47299682304.0,
       "cash": 2018000000.0,
       "debt": 41650999296.0,
       "cur": "USD",
       "prevClose": 76.34,
-      "changePct": -0.8121561435682545,
+      "changePct": -0.8071784123657388,
       "revTTM": -5.1,
       "epsTTM": 24.0,
       "grossMargin": 46.825,
       "netMargin": 15.278,
-      "peFwd": 18.403566,
+      "peFwd": 18.40449,
       "epsFwd": 8.270001,
       "revFwd": 6.5799996,
-      "pegFwd": 1.92,
-      "priceUpdated": "2026-09-04T23:13:21.618261Z",
-      "fundamentalsUpdated": "2026-09-04T23:13:21.618261Z"
+      "pegFwd": 1.9,
+      "priceUpdated": "2026-09-07T23:42:29.165941Z",
+      "fundamentalsUpdated": "2026-09-07T23:42:29.165941Z"
     }
   }
 }
