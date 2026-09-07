@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T19:06:49.387232Z",
+  "updated": "2026-09-07T21:58:40.335241Z",
   "source": "yahoo",
   "quotes": {
     "SPY": {
@@ -368,98 +368,98 @@
     "BTC": {
       "name": "Bitcoin",
       "category": "Crypto",
-      "price": 79168.28,
+      "price": 79179.56,
       "prevClose": 80351.4,
-      "change": -1183.1199999999953,
-      "changePct": -1.472432340942409
+      "change": -1171.8399999999965,
+      "changePct": -1.45839400433595
     },
     "ETH": {
       "name": "Ethereum",
       "category": "Crypto",
-      "price": 2490.61,
+      "price": 2491.14,
       "prevClose": 2514.8005,
-      "change": -24.1904999999997,
-      "changePct": -0.961925210369563
+      "change": -23.660499999999956,
+      "changePct": -0.9408499799487102
     },
     "BNB": {
       "name": "Binance",
       "category": "Crypto",
-      "price": 739.52,
+      "price": 739.47,
       "prevClose": 752.5518,
-      "change": -13.031799999999976,
-      "changePct": -1.7316814603326902
+      "change": -13.08179999999993,
+      "changePct": -1.7383255212464976
     },
     "XRP": {
       "name": "Ripple",
       "category": "Crypto",
-      "price": 1.3945,
+      "price": 1.3972,
       "prevClose": 1.4229332,
-      "change": -0.028433199999999825,
-      "changePct": -1.9982104571036663
+      "change": -0.0257331999999999,
+      "changePct": -1.8084615637613877
     },
     "SOL": {
       "name": "Solana",
       "category": "Crypto",
-      "price": 103.87,
+      "price": 103.91,
       "prevClose": 106.45802,
-      "change": -2.58802,
-      "changePct": -2.4310239848533755
+      "change": -2.548020000000008,
+      "changePct": -2.3934504887466512
     },
     "TRX": {
       "name": "Tron",
       "category": "Crypto",
-      "price": 0.3344444,
+      "price": 0.3346647,
       "prevClose": 0.3352058,
-      "change": -0.0007614000000000232,
-      "changePct": -0.22714404106373154
+      "change": -0.0005411000000000166,
+      "changePct": -0.16142322119725439
     },
     "DOGE": {
       "name": "Dogecoin",
       "category": "Crypto",
-      "price": 0.08975,
+      "price": 0.09038,
       "prevClose": 0.0908308,
-      "change": -0.0010808000000000068,
-      "changePct": -1.1899047459672296
+      "change": -0.0004508000000000012,
+      "changePct": -0.49630741995005945
     },
     "ZEC": {
       "name": "Zcash",
       "category": "Crypto",
-      "price": 1155.29,
+      "price": 1152.08,
       "prevClose": 1227.7565,
-      "change": -72.4665,
-      "changePct": -5.902351158393381
+      "change": -75.67650000000003,
+      "changePct": -6.163803653248834
     },
     "ADA": {
       "name": "Cardano",
       "category": "Crypto",
-      "price": 0.21909,
+      "price": 0.22043,
       "prevClose": 0.22316347,
-      "change": -0.004073469999999996,
-      "changePct": -1.8253301044297232
+      "change": -0.0027334700000000156,
+      "changePct": -1.2248734078207368
     },
     "XMR": {
       "name": "Monero",
       "category": "Crypto",
-      "price": 517.18,
+      "price": 516.009,
       "prevClose": 539.5546,
-      "change": -22.3746000000001,
-      "changePct": -4.146864839999531
+      "change": -23.545600000000036,
+      "changePct": -4.363895702121723
     },
     "LTC": {
       "name": "Litecoin",
       "category": "Crypto",
-      "price": 55.02,
+      "price": 55.593,
       "prevClose": 54.978096,
-      "change": 0.041904000000002384,
-      "changePct": 0.07621944564977223
+      "change": 0.6149040000000028,
+      "changePct": 1.1184527015995593
     },
     "AVAX": {
       "name": "Avalanche",
       "category": "Crypto",
-      "price": 8.094,
+      "price": 8.106,
       "prevClose": 7.908788,
-      "change": 0.18521199999999904,
-      "changePct": 2.341850609726781
+      "change": 0.1972119999999995,
+      "changePct": 2.4935805587404714
     }
   }
 }
