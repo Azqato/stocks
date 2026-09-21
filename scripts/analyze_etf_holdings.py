@@ -48,7 +48,14 @@ from fetch_screener_data import PAUSE, fetch, num
 # that actually resolves. Keyed by what top_holdings returns.
 SYMBOL_FIXES = {
     "005930.KQ": "005930.KS",  # Samsung Electronics: KOSDAQ suffix returned, KOSPI is correct
+    "000660.KQ": "000660.KS",  # SK hynix: same, and .KQ silently returns a different instrument's price
 }
+
+# A holding scoring on fewer than this many of the six metrics is treated as
+# unfetched rather than rated. Without this, a bad symbol that still returns a
+# price (see SYMBOL_FIXES) scores near-zero on five hard zeros and renders as a
+# confident F, which is indistinguishable from a genuinely weak company.
+MIN_METRICS = 3
 
 # Hand port of screener.js METRICS (stock universes). Weights total 100.
 # The two weight-0 context metrics in screener.js (peVsG, netCashMc) are
@@ -96,8 +103,16 @@ def points_from_pct(p):
 
 
 def compute_scores(data):
-    """Percentile-rank every holding on every metric and sum to a 0-100 score."""
-    tickers = list(data.keys())
+    """Percentile-rank every holding on every metric and sum to a 0-100 score.
+
+    Holdings with too little data are dropped from the ranking pools entirely,
+    not just from the final score: leaving them in would let a bad symbol's
+    stray value shift everyone else's percentile on that metric.
+    """
+    coverage = {t: sum(1 for key, _, _ in METRIC_WEIGHTS if metric_value(key, data[t]) is not None)
+                for t in data}
+    thin = sorted(t for t in data if coverage[t] < MIN_METRICS)
+    tickers = [t for t in data if coverage[t] >= MIN_METRICS]
     pts = {t: {} for t in tickers}
     total_weight = sum(w for _, w, _ in METRIC_WEIGHTS)
 
@@ -135,7 +150,11 @@ def compute_scores(data):
             have += 1
             total += p * (weight / 20)
         scores[t] = round(total / total_weight * 100) if have else None
-    return scores, pts
+    for t in thin:
+        scores[t] = None
+        print(f"WARN {t}: only {coverage[t]}/{len(METRIC_WEIGHTS)} metrics available, not rated",
+              file=sys.stderr)
+    return scores, pts, thin
 
 
 def compute_tiers(scores):
@@ -216,12 +235,16 @@ def render(etfs, holdings, scores, tiers, universe_size):
                 acc += s * h["weight"]
                 wsum += h["weight"]
         avg = acc / wsum if wsum else None
+        unrated = [h["symbol"] for h in hl if scores.get(h["symbol"]) is None]
         lines.append("")
         if avg is None:
             lines.append("**Overall: no scorable holdings.**")
         else:
-            lines.append(f"**{etf} overall: weighted avg {avg:.1f}, {rating_for(avg)}** "
-                         f"(from {len(hl)} holdings returned).")
+            rated = len(hl) - len(unrated)
+            detail = f"from {rated} of {len(hl)} holdings"
+            if unrated:
+                detail += f", excluding {', '.join(unrated)} for insufficient data"
+            lines.append(f"**{etf} overall: weighted avg {avg:.1f}, {rating_for(avg)}** ({detail}).")
             summary.append((etf, avg))
         lines.append("")
 
@@ -274,7 +297,7 @@ def main():
             data[sym] = {}
         time.sleep(PAUSE)
 
-    scores, pts = compute_scores(data)
+    scores, pts, thin = compute_scores(data)
     tiers = compute_tiers(scores)
 
     report = render(etfs, holdings, scores, tiers, len(symbols))
@@ -287,8 +310,8 @@ def main():
 
     if args.json_path:
         with open(args.json_path, "w", encoding="utf-8") as f:
-            json.dump({"holdings": holdings, "fundamentals": data,
-                       "scores": scores, "tiers": tiers, "points": pts}, f, indent=2)
+            json.dump({"holdings": holdings, "fundamentals": data, "scores": scores,
+                       "tiers": tiers, "points": pts, "unrated": thin}, f, indent=2)
             f.write("\n")
         print(f"Wrote {args.json_path}", file=sys.stderr)
 
