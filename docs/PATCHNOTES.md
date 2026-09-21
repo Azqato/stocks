@@ -19,6 +19,10 @@
 - Symbol matching across the dot/dash dual-class spelling split, so a holding returned as `BRK-B` resolves against the feed's `BRK.B` and reuses the site's own record instead of being re-fetched as a separate entry.
 - `RY` to `SYMBOL_FIXES`, mapping Royal Bank of Canada onto the Toronto listing the International feed tracks.
 
+### Verification
+
+The earlier v4.2.0 check (8 funds hand-computed, all 34 holding scores matched) was run in what is now `--universe holdings` mode, so it validates the ported scoring curve and tier cuts but not the new index routing. The index-relative path was checked separately by scoring each committed feed standalone and confirming the tier bands land on their `TIER_CUTS` proportions across 100-name and 500-name universes; the per-feed table is in PRD.md. A cell-by-cell reconciliation against the live site's rendered screener view is still outstanding and is recorded there as the next verification step.
+
 ### Known limitation, recorded rather than fixed
 
 The `RATING_BANDS` fund-level labels were calibrated against the old holdings-only pool and compress against a broad index: on a 17-fund run, 11 funds landed within 6 points and all read "Excellent." The ordering and the per-holding tiers carry the signal there. The bands were deliberately not re-tuned, since doing so to manufacture spread would be fitting the labels to one run. Recorded in PRD.md under the same Runbook section.
