@@ -2,6 +2,27 @@
 
 ---
 
+## v4.2.0 - 2026-09-21 - Ad hoc ETF holdings analysis script
+
+**Makes a by-hand analysis repeatable. Owner asked for the ability to run it against ETFs supplied later. No site, content, or feed changes: this script is run by hand, is not on a cron, and writes nothing into `data/`.**
+
+### Added
+
+- **`scripts/analyze_etf_holdings.py`**, which rates the top-10 holdings of any list of ETFs using the **individual-stock** scoring model (the four-pillar v3 model from `screener.js`), then rolls each fund's holdings up into one weighted-average number by fund weight. Takes any number of tickers (`python3 scripts/analyze_etf_holdings.py SCHD SCHG FNDX`), with `--out` for a markdown file and `--json` for raw holdings, fundamentals, scores, and per-metric points. Output is one table per fund (ticker, company, weight, score, tier), an overall rating per fund, and a summary ranking table.
+- **A Runbook section in `docs/PRD.md`** (Ad Hoc ETF Holdings Analysis) documenting how to run it, why it is deliberately not the ETF Universe Scoring Model, why its scores are relative to the specific fund list in a given run, and its known rough edges.
+
+### Notes on the model
+
+This grades the companies inside a fund and ignores the wrapper entirely, including expense ratio, yield, and every technical. That is a different question from the screener's ETFs tab, which grades a fund as a timing decision using technicals and long-horizon returns; both models are valid and will frequently disagree on the same fund. A dividend-oriented fund scores poorly here by construction, since the stock model rewards growth and a PEG-cheap valuation: a model-fit result, not a judgment on the fund.
+
+Scores are relative to the combined set of holdings pulled in a given run, the same way the live screener ranks within whichever universe is loaded. Changing the list of funds changes every score, so a figure from this script is only meaningful quoted alongside the fund list that produced it; the report prints its universe size for that reason.
+
+`fetch()` and `num()` are imported from `fetch_screener_data.py` rather than copied, so metric definitions cannot drift from the live daily pipeline. The scoring curve, weights, and tier cuts are a hand port of `screener.js` and must be updated by hand if that model changes; this is recorded in the PRD section above as the script's one real maintenance burden.
+
+**Verified** on 2026-09-21 against a hand-computed run of SCHD, SCHG, SCHB, FNDB, FNDX, FNDF, SCHK, and SCHX: all 8 fund-level weighted averages and all 34 holding-level scores and tiers matched the hand computation exactly.
+
+---
+
 ## v4.1.13 - 2026-08-25 - Full documentation audit: consolidated to 4 canonical docs
 
 **Full read-only crawl of the codebase and every file in /docs, followed by a rewrite pass correcting drift and adding required PRD sections. No product, code, or data changes shipped in this entry: docs only.**

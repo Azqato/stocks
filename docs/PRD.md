@@ -445,6 +445,26 @@ VXUS holdings are additionally resolved from ISIN to a suffixed Yahoo symbol via
 - **Output:** each feed holds its list's tickers with price, market cap, cash, debt, growth metrics, P/E, PEG, currency code, and timestamps; the GVD feed nests one `{updated, source, stocks}` object per universe under a `universes` key
 - **No API key required** for the yfinance pipeline (yfinance is pinned to 1.4.1 in all workflows)
 
+### Ad Hoc ETF Holdings Analysis
+
+`scripts/analyze_etf_holdings.py` rates the top-10 holdings of any list of ETFs using the **individual-stock** scoring model, then rolls the holdings up into one number per fund. Added v4.2.0 (2026-09-21) after the analysis was run by hand and the owner asked for it to be repeatable on funds supplied later.
+
+- **Run:** `python3 scripts/analyze_etf_holdings.py SCHD SCHG FNDX` (any number of tickers; add `--out report.md` to write the markdown instead of printing it, and `--json raw.json` to dump holdings, fundamentals, scores, and per-metric points for further work)
+- **Output:** one markdown table per fund (ticker, company, fund weight, score, tier), an overall weighted-average rating per fund, and a summary table ranking the funds
+- **Not on a cron, not wired into any feed.** It reads nothing from `data/` and writes nothing into it.
+
+**This is deliberately not the ETF Universe Scoring Model** documented under Technical Requirements. That model grades a fund as a timing decision (technicals plus long-horizon returns) and is the right model for the screener's ETFs tab. This script ignores the wrapper completely, including expense ratio, yield, and every technical, and asks a different question: what would the screener say about the companies inside the fund? Both answers are valid and they will frequently disagree. A dividend-oriented fund scores poorly here by construction, since the stock model rewards revenue and EPS growth and a PEG-cheap valuation, which mature high-payout companies structurally do not have. That is a model-fit result, not a judgment on the fund.
+
+**Scores are relative to the run, which is the single most important caveat when quoting one.** Percentiles are computed against the combined set of every holding pulled in that invocation, exactly as the live screener ranks within whichever universe is loaded. Running a different list of funds changes the universe and therefore changes every score and tier. A number from this script is only meaningful alongside the fund list that produced it, so the report prints the universe size in its header.
+
+**Drift control:** `fetch()` and `num()` are imported from `fetch_screener_data.py` rather than copied, so metric definitions cannot drift from the live daily pipeline. The scoring curve, weights, and tier cuts are a hand port of `screener.js` (`METRICS`, `pointsFromPct`, `computeScoreMap`, `computeTierMap`) and **must be updated by hand when that model changes**; the port omits the two weight-0 context metrics (`peVsG`, `netCashMc`), which color cells in the UI and contribute nothing to a score. Verified on 2026-09-21 against a hand-computed run of the same 8 funds: all 8 fund-level averages and all 34 holding-level scores matched exactly.
+
+**Known rough edges, by design rather than unresolved:**
+- Some funds return fewer than 10 holdings from Yahoo (FNDF returned 9 on 2026-09-21). The script reports the count it got and says so in the fund's summary line rather than padding the table.
+- Yahoo's fund-holdings endpoint returns a few foreign listings under an exchange suffix its own quote endpoint then rejects. `SYMBOL_FIXES` maps them (currently one entry: Samsung Electronics comes back as `005930.KQ`, which 404s, and resolves as `005930.KS`). Expect to add entries when analyzing new international funds.
+- The `funds_data.top_holdings` top-10 limit, flagged above as the reason yfinance cannot substitute for a constituent source, is exactly the wanted behavior here.
+- Cyclical recoveries score very high on a model with no way to tell a rebound off a depressed base from durable growth (memory-chip names scored S+ on the 2026-09-21 run). Holding companies score poorly for the mirror reason: Berkshire's PEG is not a meaningful input. Flag both when presenting results.
+
 ### Rollback
 
 To revert to a previous version of the site:
@@ -581,7 +601,8 @@ stocks/
 │   ├── fetch_etf_data.py              ← yfinance → ETFs feed (returns, RSI, MAs, yield, expense ratio, AUM)
 │   ├── fetch_market_overview.py       ← yfinance → Market Overview feed (price/prevClose/change only)
 │   ├── update_constituents.py         ← Nasdaq API / SPY holdings → nasdaq100.json + sp500.json (weekly auto-sync)
-│   └── update_etf_constituents.py     ← Vanguard holdings API → vug/vtv/vig/vxus.json (weekly auto-sync)
+│   ├── update_etf_constituents.py     ← Vanguard holdings API → vug/vtv/vig/vxus.json (weekly auto-sync)
+│   └── analyze_etf_holdings.py        ← Ad hoc, run by hand: rates any ETF's top-10 holdings with the stock model (no cron, writes nothing to data/)
 ├── img/                               ← Historical screenshots
 ├── .github/
 │   └── workflows/
