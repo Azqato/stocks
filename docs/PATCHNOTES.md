@@ -2,6 +2,20 @@
 
 ---
 
+## v4.3.1 - 2026-09-21 - Roadmap: multi-year forward EPS and P/E table logged
+
+**Docs only. Owner shared a competitor screenshot and asked for the visualization to be logged as a roadmap option. No code, pipeline, or site changes.**
+
+### Added
+
+- **Unversioned backlog entry for a multi-year forward EPS and P/E table** (PRD.md, Roadmap, Unversioned backlog): a ticker-list tool showing each company's forward EPS ladder with the P/E implied at each year, with editable EPS cells that recalculate the P/E columns live.
+- **The reference implementation's column math, reverse-engineered and verified against live data rather than assumed.** Current-FY P/E is `price / 0y EPS`, already stored in every feed as `peFwd`; next-FY P/E is `price / +1y EPS`, which is exactly yfinance's `forwardPE` (checked on NVDA: screenshot 14.5x, live 14.50x); the 2-year EPS change is `+2y EPS - 0y EPS` over `0y EPS` (checked on NVDA at 130.5% and Alphabet at -12.7%, the negative case).
+- **A blocking data constraint, found by probing rather than by planning around it:** yfinance returns only `0q`, `+1q`, `0y`, `+1y` from `earnings_estimate` and `revenue_estimate`, so the third forward year the reference implementation shows has no free source in the current pipeline. Two of its three years are already available. Four options are recorded (two-year honest ladder, modeled third year, paid source, or don't build) with none chosen, since that is an owner decision.
+
+Three open concerns are logged with the entry: the "FWD means current fiscal year" naming convention that a multi-year ladder collides with (the same concern already standing against the FCF proxy item), the fact that editable assumption cells make this a modeling tool rather than a screening one and therefore need framing against the no-advice-language non-goal, and that absolute valuation should not borrow the screener's percentile tier vocabulary.
+
+---
+
 ## v4.3.0 - 2026-09-21 - ETF holdings analysis ranks against the real index feeds
 
 **Owner question that prompted it: were the ratings against the top 10 holdings or against the entire index? They were against the holdings, which was the wrong default.**
