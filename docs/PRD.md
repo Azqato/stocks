@@ -333,6 +333,7 @@ A new setup-guide page (`conferencecalls.html`, peer to `finviz.html`/`seekingal
 - Email/RSS changelog subscription: removed from the roadmap by owner decision (2026-07-03); not planned
 - Historical backtests of the scoring model: removed from the roadmap by owner decision (2026-07-03); not planned
 - Options/crypto/forex coverage: out of scope permanently; this methodology is equities-only
+- Live ETF holdings-rating page (enter a fund, rate its top 10, keep a localStorage history ranked against prior entries): considered and deferred by owner decision (2026-09-21); the analysis stays an ad hoc script run on request. Scoring would need no server (the S&P 500 and International feeds are already committed and loaded client-side), but the holdings lookup would: `funds_data.top_holdings` is yfinance calling Yahoo from Python, and Yahoo sends no CORS headers, so a static GitHub Pages site cannot fetch it from the browser. The feasible version was a cron pre-computing holdings for a curated fund list into `data/etf_holdings.json`, which buys a fast page but means a new ETF requires a list edit and a run rather than being typed in. Owner judged the ad hoc script sufficient. Revisit only if a proxy or server ever enters the architecture, which the Deprecation and Removal section notes does not exist today.
 
 ---
 
