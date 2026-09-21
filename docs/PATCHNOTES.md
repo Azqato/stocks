@@ -2,6 +2,20 @@
 
 ---
 
+## v4.3.2 - 2026-09-21 - Roadmap: separation from the screener recorded as a requirement
+
+**Docs only, following v4.3.1 the same day. Owner clarified that the multi-year forward EPS and P/E table is separate from the screener entirely. v4.3.1 mentioned this in passing; this entry makes it a stated requirement with the concrete constraints that follow from it, so a future build cannot satisfy the letter of the roadmap item while drifting into the screener.**
+
+### Changed
+
+- **The backlog entry now leads with the separation requirement** (PRD.md, Roadmap, Unversioned backlog) rather than describing it as an aside. Recorded as owner instruction, dated, and expanded into four concrete constraints: it is its own standalone page (a peer to `finviz.html` and `seekingalpha.html` with its own nav entry, not a screener universe, tab, or set of columns); it must not be implemented by extending `screener.js`'s per-universe config-driven header system; it carries no scores, percentiles, tiers, or S+/S/A/B/C/F vocabulary; and it shares no scoring code, so either side can change without touching the other.
+- **The `screener.js` universe-extension point is called out by name as the specific wrong turn to avoid.** v3.33.0 deliberately made the table header and Columns menu config-driven per universe kind to pre-pay for future universes, which makes it the obvious shortcut for anyone building a new ticker table. That machinery is for screening universes; reusing it here would couple an absolute-valuation tool to the ranking model.
+- The closing note about the absolute-versus-relative mismatch now points at the separation requirement instead of restating it, since that mismatch is the reason the separation is a requirement rather than a preference.
+
+Rationale for the division of the two questions, recorded with the entry: the screener asks how a company ranks against its peers, and this tool asks how cheap a company becomes if the estimates hold. Per the project's own rule that historical changelog entries are never rewritten, v4.3.1 below is left exactly as shipped and this entry carries the clarification.
+
+---
+
 ## v4.3.1 - 2026-09-21 - Roadmap: multi-year forward EPS and P/E table logged
 
 **Docs only. Owner shared a competitor screenshot and asked for the visualization to be logged as a roadmap option. No code, pipeline, or site changes.**
