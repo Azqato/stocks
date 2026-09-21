@@ -2,6 +2,29 @@
 
 ---
 
+## v4.3.0 - 2026-09-21 - ETF holdings analysis ranks against the real index feeds
+
+**Owner question that prompted it: were the ratings against the top 10 holdings or against the entire index? They were against the holdings, which was the wrong default.**
+
+### Changed
+
+- **`scripts/analyze_etf_holdings.py` now ranks each holding against the committed daily feed for its market by default**, domestic against `data/screener_sp500.json` and foreign-listed against `data/screener_intl.json`, rather than against the other funds' top-10 holdings. Each pool is ranked independently, the way the live screener ranks within a loaded universe, so a holding present in a feed now scores what the site shows for it. Holdings missing from a feed (a second share class like GOOG, or a fund-only name) are fetched and added to that pool. `--universe` and `--intl-universe` override either baseline, and `--universe holdings` restores the previous self-contained behavior.
+- **Tables gained a "Ranked in" column** naming the pool each holding was scored against, since a fund like VXUS or FNDF draws from both.
+
+**Why the old default was wrong, concretely:** ranking a handful of mega-caps only against each other means the pool contains no weak companies, so the percentile clamp forces strong ones into the bottom bands. On a 2026-09-21 run, Apple scored 12/F against a 16-name pool of growth-fund holdings and 65/B against the S&P 500, same day, same fundamentals. Tiers also moved whenever the fund list changed, making any quoted rating unreproducible.
+
+### Added
+
+- `UNIVERSE_FEEDS` shorthands (`sp500`, `nasdaq100`, `intl`, `growth`, `value`, `dividend`) so a baseline can be named instead of pathed; a raw path still works.
+- Symbol matching across the dot/dash dual-class spelling split, so a holding returned as `BRK-B` resolves against the feed's `BRK.B` and reuses the site's own record instead of being re-fetched as a separate entry.
+- `RY` to `SYMBOL_FIXES`, mapping Royal Bank of Canada onto the Toronto listing the International feed tracks.
+
+### Known limitation, recorded rather than fixed
+
+The `RATING_BANDS` fund-level labels were calibrated against the old holdings-only pool and compress against a broad index: on a 17-fund run, 11 funds landed within 6 points and all read "Excellent." The ordering and the per-holding tiers carry the signal there. The bands were deliberately not re-tuned, since doing so to manufacture spread would be fitting the labels to one run. Recorded in PRD.md under the same Runbook section.
+
+---
+
 ## v4.2.0 - 2026-09-21 - Ad hoc ETF holdings analysis script
 
 **Makes a by-hand analysis repeatable. Owner asked for the ability to run it against ETFs supplied later. No site, content, or feed changes: this script is run by hand, is not on a cron, and writes nothing into `data/`.**

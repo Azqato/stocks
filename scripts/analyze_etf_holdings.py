@@ -13,11 +13,21 @@ decision. This script ignores the wrapper entirely, including expense ratio,
 yield, and every technical, and grades only the underlying companies on
 fundamentals, then rolls them up by fund weight.
 
-Scoring is relative, the same way the live screener is: a holding's percentile
-is measured against the combined set of every holding pulled in this run, not
-against the Nasdaq 100 or the S&P 500. Running a different list of funds
-changes the universe and therefore changes the scores. The universe size is
-printed with the results so the number is never quoted without its basis.
+Scoring is relative, the same way the live screener is. By default a holding is
+ranked against the committed daily feed for its market: domestic holdings
+against the S&P 500 (`data/screener_sp500.json`), foreign-listed holdings
+against the International feed (`data/screener_intl.json`). Each pool is ranked
+independently, exactly as the site ranks within whichever universe is loaded, so
+a holding that is in a feed scores what the site shows for it. Holdings missing
+from a feed (a second share class, a fund-only name) are fetched and added to
+that pool.
+
+`--universe holdings` restores the original self-contained behavior, ranking the
+holdings only against each other. That is useful for comparing funds head to
+head but produces much harsher, less stable tiers: with only a few dozen
+mega-caps in the pool and no weak companies to sit below them, strong companies
+are forced into the bottom bands, and the tiers shift whenever the fund list
+changes. Prefer an index baseline when quoting a rating.
 
 fetch() and num() are imported from fetch_screener_data rather than copied, so
 the metric definitions here cannot drift from the live daily pipeline. The
@@ -49,6 +59,7 @@ from fetch_screener_data import PAUSE, fetch, num
 SYMBOL_FIXES = {
     "005930.KQ": "005930.KS",  # Samsung Electronics: KOSDAQ suffix returned, KOSPI is correct
     "000660.KQ": "000660.KS",  # SK hynix: same, and .KQ silently returns a different instrument's price
+    "RY": "RY.TO",             # Royal Bank of Canada: the intl feed tracks the Toronto listing
 }
 
 # A holding scoring on fewer than this many of the six metrics is treated as
@@ -56,6 +67,18 @@ SYMBOL_FIXES = {
 # price (see SYMBOL_FIXES) scores near-zero on five hard zeros and renders as a
 # confident F, which is indistinguishable from a genuinely weak company.
 MIN_METRICS = 3
+
+# Committed daily feeds usable as a ranking baseline, by shorthand name. A raw
+# path works too. These are the same files the live screener loads, so scoring
+# against one reproduces what the site shows for a holding that is in it.
+UNIVERSE_FEEDS = {
+    "sp500": "data/screener_sp500.json",
+    "nasdaq100": "data/screener.json",
+    "intl": "data/screener_intl.json",
+    "growth": "data/screener_gvd.json",
+    "value": "data/screener_gvd.json",
+    "dividend": "data/screener_gvd.json",
+}
 
 # Hand port of screener.js METRICS (stock universes). Weights total 100.
 # The two weight-0 context metrics in screener.js (peVsG, netCashMc) are
@@ -183,6 +206,40 @@ def compute_tiers(scores):
     return tiers
 
 
+def load_universe(spec):
+    """Load a screener feed as {symbol: record} to rank holdings against."""
+    path = UNIVERSE_FEEDS.get(spec, spec)
+    with open(path, encoding="utf-8") as f:
+        feed = json.load(f)
+    if "universes" in feed:
+        if spec in feed["universes"]:
+            return dict(feed["universes"][spec]["stocks"]), f"{spec} ({path})"
+        merged = {}
+        for sub in feed["universes"].values():
+            merged.update(sub["stocks"])
+        return merged, f"all universes in {path}"
+    return dict(feed.get("stocks", {})), path
+
+
+def match_symbol(sym, universe):
+    """Find a holding in a feed, allowing for the dot/dash dual-class spelling split."""
+    for cand in (sym, sym.replace("-", "."), sym.replace(".", "-")):
+        if cand in universe:
+            return cand
+    return None
+
+
+# A trailing exchange suffix (".TW", ".KS", ".L") means a foreign listing. The
+# domestic dual-class spellings are the exception: those dots are share classes.
+DOMESTIC_DOT_SUFFIXES = {"A", "B", "C"}
+
+
+def is_foreign(sym):
+    if "." not in sym:
+        return False
+    return sym.rsplit(".", 1)[1].upper() not in DOMESTIC_DOT_SUFFIXES
+
+
 def get_holdings(etf):
     """Top holdings for one fund as [{symbol, name, weight}], weight a fraction."""
     df = yf.Ticker(etf).funds_data.top_holdings
@@ -203,13 +260,14 @@ def rating_for(score):
     return "Weak"
 
 
-def render(etfs, holdings, scores, tiers, universe_size):
+def render(etfs, holdings, scores, tiers, pool_of, basis):
     lines = []
     lines.append("# ETF top-holdings analysis")
     lines.append("")
-    lines.append(f"Scored against a combined universe of {universe_size} unique holdings "
-                 f"across {len(etfs)} funds. Technicals, expense ratio, and dividend yield "
-                 f"are excluded: this rates the underlying companies only.")
+    lines.append(basis)
+    lines.append("")
+    lines.append("Technicals, expense ratio, and dividend yield are excluded: this rates "
+                 "the underlying companies only.")
     lines.append("")
 
     summary = []
@@ -221,16 +279,18 @@ def render(etfs, holdings, scores, tiers, universe_size):
             lines.append("No holdings returned.")
             lines.append("")
             continue
-        lines.append("| Ticker | Company | Weight | Score | Tier |")
-        lines.append("|---|---|---|---|---|")
+        lines.append("| Ticker | Company | Weight | Score | Tier | Ranked in |")
+        lines.append("|---|---|---|---|---|---|")
         wsum = 0.0
         acc = 0.0
         for h in sorted(hl, key=lambda x: (scores.get(x["symbol"]) is None,
                                            -(scores.get(x["symbol"]) or 0))):
-            s = scores.get(h["symbol"])
-            tier = TIER_LABELS.get(tiers.get(h["symbol"]), "n/a")
+            sym = h["symbol"]
+            s = scores.get(sym)
+            tier = TIER_LABELS.get(tiers.get(sym), "n/a")
             shown = "n/a" if s is None else str(s)
-            lines.append(f"| {h['symbol']} | {h['name']} | {h['weight'] * 100:.2f}% | {shown} | {tier} |")
+            lines.append(f"| {sym} | {h['name']} | {h['weight'] * 100:.2f}% | {shown} | "
+                         f"{tier} | {pool_of.get(sym, 'n/a')} |")
             if s is not None:
                 acc += s * h["weight"]
                 wsum += h["weight"]
@@ -265,6 +325,12 @@ def main():
     ap.add_argument("etfs", nargs="+", help="ETF tickers, e.g. SCHD SCHG FNDX")
     ap.add_argument("--out", help="write the markdown report here (default: stdout)")
     ap.add_argument("--json", dest="json_path", help="also write raw holdings/fundamentals/scores here")
+    ap.add_argument("--universe", default="sp500",
+                    help="feed to rank domestic holdings against (shorthand or path, "
+                         "default sp500); 'holdings' ranks them against each other instead")
+    ap.add_argument("--intl-universe", dest="intl_universe", default="intl",
+                    help="feed to rank foreign-listed holdings against (default intl); "
+                         "'holdings' folds them into the domestic pool")
     args = ap.parse_args()
 
     etfs = [e.upper() for e in args.etfs]
@@ -287,20 +353,61 @@ def main():
             if h["symbol"] not in symbols:
                 symbols.append(h["symbol"])
 
+    # Each pool is ranked independently, the way the live screener ranks within
+    # whichever universe is loaded. A holding already in a feed reuses that
+    # feed's own record, so its score matches what the site shows; anything
+    # missing (a second share class, a fund-only name) is fetched and added.
+    pools = {}
+    labels = {}
+    for name, spec in (("domestic", args.universe), ("international", args.intl_universe)):
+        if spec == "holdings":
+            continue
+        pools[name], labels[name] = load_universe(spec)
+
     data = {}
+    pool_of = {}
+    key_for = {}
     for sym in symbols:
-        target = SYMBOL_FIXES.get(sym, sym)
-        try:
-            data[sym] = fetch(target)
-        except Exception as e:  # noqa: BLE001 - score what resolved, report what did not
-            print(f"{sym}: fetch failed: {e!r}", file=sys.stderr)
-            data[sym] = {}
-        time.sleep(PAUSE)
+        canon = SYMBOL_FIXES.get(sym, sym)
+        target = "international" if (is_foreign(canon) and "international" in pools) else "domestic"
+        if target not in pools:
+            pools.setdefault("domestic", {})
+            labels.setdefault("domestic", "the holdings themselves")
+            target = "domestic"
+        hit = match_symbol(canon, pools[target])
+        if hit:
+            key_for[sym] = hit
+        else:
+            try:
+                pools[target][canon] = fetch(canon)
+            except Exception as e:  # noqa: BLE001 - score what resolved, report what did not
+                print(f"{sym}: fetch failed: {e!r}", file=sys.stderr)
+                pools[target][canon] = {}
+            key_for[sym] = canon
+            time.sleep(PAUSE)
+        pool_of[sym] = target
+        data[sym] = pools[target][key_for[sym]]
 
-    scores, pts, thin = compute_scores(data)
-    tiers = compute_tiers(scores)
+    scores = {}
+    tiers = {}
+    pts = {}
+    thin = []
+    sizes = {}
+    for name, pool in pools.items():
+        s, p, t = compute_scores(pool)
+        ti = compute_tiers(s)
+        sizes[name] = len(pool)
+        thin += t
+        # Re-key from pool symbols back to the holding symbols the tables use.
+        for sym in symbols:
+            if pool_of.get(sym) == name:
+                scores[sym] = s.get(key_for[sym])
+                tiers[sym] = ti.get(key_for[sym])
+                pts[sym] = p.get(key_for[sym], {})
 
-    report = render(etfs, holdings, scores, tiers, len(symbols))
+    basis = "; ".join(f"**{name}** holdings ranked in `{labels[name]}` ({sizes[name]} companies)"
+                      for name in sorted(pools) if sizes.get(name))
+    report = render(etfs, holdings, scores, tiers, pool_of, "Scored against " + basis + ".")
     if args.out:
         with open(args.out, "w", encoding="utf-8") as f:
             f.write(report + "\n")
@@ -311,7 +418,9 @@ def main():
     if args.json_path:
         with open(args.json_path, "w", encoding="utf-8") as f:
             json.dump({"holdings": holdings, "fundamentals": data, "scores": scores,
-                       "tiers": tiers, "points": pts, "unrated": thin}, f, indent=2)
+                       "tiers": tiers, "points": pts, "unrated": thin,
+                       "pool_of": pool_of, "pool_key": key_for,
+                       "pool_sizes": sizes}, f, indent=2)
             f.write("\n")
         print(f"Wrote {args.json_path}", file=sys.stderr)
 
