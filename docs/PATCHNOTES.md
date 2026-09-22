@@ -2,6 +2,22 @@
 
 ---
 
+## v4.3.3 - 2026-09-21 - ADR forward P/E currency defect recorded
+
+**Docs only. Found while answering an ad hoc question (what NVO would rate inside the S&P 500), not by an audit. No code or data change: the fix is specified but deliberately not shipped in a documentation entry.**
+
+### Added
+
+- **Known Technical Debt entry for `peFwd` not being FX-converted** (PRD.md). `fetch()` converts `cash` and `debt` out of `financialCurrency` into the trading currency, but `peFwd` comes straight from Yahoo's `priceEpsCurrentYear`, which for an ADR reporting in a foreign currency divides a trading-currency price by a reporting-currency EPS. The stored value is then off by whatever the FX rate is. NVO is the worked example: a USD 39.80 price over a DKK 22.57 EPS gives a feed value of 1.76 where the real forward P/E is near 11.9, a 6.7x error on a displayed column.
+- **Documentation Versus Reality item 9**, carrying the same finding with the sources it was read from, so it stays visible in the open-findings list rather than only in the debt table.
+- **A warning on the `peFwd` row of the Data Models field table**, so the field cannot be picked up for a new surface without the caveat traveling with it.
+
+### Not changed, and why
+
+Scores are unaffected, which is why this ships as a record instead of a patch. `peFwd` carries zero weight, PEG comes from `info.pegRatio` rather than being derived from it, and `peFwd`'s only scored role is the PEG sign guard, which asks whether the value is at or below zero. Dividing by a positive FX rate cannot change a sign, so every affected ADR guards identically either way. The real damage is a wrong number in the P/E FWD column and a skewed weight-0 `peVsG` ratio, which colors that cell. The specified fix (recompute as `price / (EPS x rate)` using the `fx_rate()` helper already in the pipeline, and null the field when no rate resolves, matching the cash and debt behavior) is recorded with the debt entry and becomes urgent if `peFwd` ever gains weight or feeds the planned multi-year EPS and P/E tool from v4.3.1.
+
+---
+
 ## v4.3.2 - 2026-09-21 - Roadmap: separation from the screener recorded as a requirement
 
 **Docs only, following v4.3.1 the same day. Owner clarified that the multi-year forward EPS and P/E table is separate from the screener entirely. v4.3.1 mentioned this in passing; this entry makes it a stated requirement with the concrete constraints that follow from it, so a future build cannot satisfy the letter of the roadmap item while drifting into the screener.**
