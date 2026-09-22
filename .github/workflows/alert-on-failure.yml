@@ -1,0 +1,68 @@
+name: Alert On Failure
+
+# Opens (or updates) a GitHub issue whenever any other workflow in this repo
+# fails. One file covers every workflow, present and future, via workflow_run.
+#
+# Why this exists: a failing scheduled workflow is silent. The Wikipedia
+# constituent break (v4.1.8) and the Vanguard endpoint break (v4.3.4) each ran
+# for over a month before anyone noticed, and in both cases the daily feeds
+# stayed fresh the whole time, so the site looked healthy from the outside.
+# An issue is durable, carries GitHub's own notification, and unlike a red run
+# in the Actions tab it does not need anyone to go looking.
+#
+# One open issue per workflow: a repeat failure comments on the existing issue
+# instead of opening a second one, so a job that fails weekly does not bury the
+# issue list. Closing the issue is the signal that it was dealt with; the next
+# failure after that opens a fresh one.
+
+on:
+  workflow_run:
+    # These must match each workflow's own `name:` EXACTLY; a typo here
+    # watches nothing and fails silently, which is the very thing this file
+    # exists to prevent. check_workflow_health.py verifies the list against
+    # the workflow files on every push, so drift is caught locally.
+    workflows:
+      - Update Constituents
+      - Update Market Overview Data
+      - Update Screener Data (ETFs)
+      - Update Screener Data (Growth, Value & Dividend)
+      - Update Screener Data (International)
+      - Update Screener Data (Nasdaq 100)
+      - Update Screener Data (S&P 500)
+    types: [completed]
+
+permissions:
+  issues: write
+
+jobs:
+  alert:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update the failure issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          WF: ${{ github.event.workflow_run.name }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          STARTED: ${{ github.event.workflow_run.run_started_at }}
+        run: |
+          title="CI failure: $WF"
+          body=$(printf '%s\n' \
+            "\`$WF\` failed." \
+            "" \
+            "- Run: $RUN_URL" \
+            "- Started: $STARTED" \
+            "" \
+            "Opened automatically by Alert On Failure. Close this issue once the cause is fixed; the next failure after that opens a fresh one, and a repeat failure while it is open adds a comment instead.")
+          existing=$(gh issue list --state open --search "$title in:title" \
+                       --json number,title \
+                       --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [ -n "$existing" ]; then
+            echo "Commenting on existing issue #$existing"
+            gh issue comment "$existing" --body "$body"
+          else
+            echo "Opening a new issue"
+            gh issue create --title "$title" --body "$body" --label ci-failure \
+              || gh issue create --title "$title" --body "$body"
+          fi

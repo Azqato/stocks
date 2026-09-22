@@ -1,0 +1,25 @@
+#!/bin/sh
+# Prints the health of the repo's GitHub Actions workflows before every push.
+#
+# Why a hook: two multi-week outages (v4.1.8, v4.3.4) were both invisible
+# because a failing scheduled workflow produces no signal anywhere a human or
+# an agent looks. Pushing is the one moment we are reliably at this repo with
+# a network connection, so the report goes here.
+#
+# This hook NEVER blocks a push. The push might well be the fix, and a check
+# that blocks work gets disabled within a week. It warns, loudly, and exits 0.
+#
+# Enable in a fresh clone (hooks are not copied by git clone):
+#   git config core.hooksPath .githooks
+
+if command -v python >/dev/null 2>&1; then
+  PY=python
+elif command -v python3 >/dev/null 2>&1; then
+  PY=python3
+else
+  exit 0
+fi
+
+"$PY" "$(git rev-parse --show-toplevel)/scripts/check_workflow_health.py" --quiet
+
+exit 0

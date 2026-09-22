@@ -2,6 +2,30 @@
 
 ---
 
+## v4.3.5 - 2026-09-21 - Workflow failure detection, both in CI and before a push
+
+**Direct follow-up to v4.3.4, at the owner's instruction: "this is the second time a weekly cron has failed invisibly for over a month, which is the actual root cause behind both incidents." Two layers, because they fail in different situations.**
+
+### Added
+
+- **`.github/workflows/alert-on-failure.yml`: a GitHub issue opens whenever any other workflow fails.** One `workflow_run` listener covers all seven workflows rather than a failure step bolted onto each. Repeat failures comment on the existing open issue instead of opening a second one, so a job failing weekly does not bury the issue list; closing the issue is the signal it was handled, and the next failure after that opens a fresh one. This is the layer that works when nobody is touching the repo, which is exactly the condition under which both outages went unnoticed.
+- **`scripts/check_workflow_health.py`: a report of every workflow's latest run.** It flags two independent conditions, because the two historical outages were one of each: a run that **failed** (Vanguard, which ran and failed every week) and a run that is **stale** (Wikipedia, where the job stopped producing anything). GitHub's own `pages-build-deployment` is included, since a failed site deploy is equally invisible. Reads the public Actions API, so no token is needed.
+- **`.githooks/pre-push`: that report runs before every push.** Pushing is the one moment we are reliably at this repo with a network connection. The hook **never blocks**: the push in progress is often the fix, and a check that blocks work gets disabled within a week. It warns and exits 0. Hooks are not copied by `git clone`, so a clone needs `git config core.hooksPath .githooks` once (now set locally, and documented in PRD).
+
+### Added - a guard against this feature rotting
+
+`workflow_run` matches on a workflow's `name:` field, not its filename, so a typo or a rename silently watches nothing, producing the same invisible failure the alert exists to catch. **Six of the seven names were guessed wrong on the first attempt at writing the watch list**, which is the strongest possible argument for not trusting it to stay correct by hand. `check_workflow_health.py` now parses `alert-on-failure.yml` and compares its watch list against the `name:` of every workflow file, reporting any that are unwatched. Verified by deliberately corrupting a watched name and confirming the check reported it.
+
+### Verification
+
+Run live against the repo. It correctly reported `constituents.yml` as FAILING from its 2026-09-20 run (the v4.3.4 break, whose fix lands on the next Saturday run) with all six daily workflows and the Pages deploy healthy, and the drift check was confirmed against a deliberately typo'd watch entry. The hook was confirmed to exit 0 while printing the failure.
+
+### Not covered
+
+Repository Actions failure **emails** are an account-level notification setting (github.com, Settings, Notifications, Actions) that the repo cannot enable on the owner's behalf. The two layers here are what the repo itself can do.
+
+---
+
 ## v4.3.4 - 2026-09-21 - Fix: Vanguard holdings endpoint retired; constituent sync had been failing for six weeks
 
 **Found by an owner audit request ("check that all the GitHub scripts executed correctly"), not by any alarm. The six daily data workflows were and are healthy, 12 of 12 successful runs each, every trading day. The weekly Update Constituents workflow had failed six consecutive Saturdays.**

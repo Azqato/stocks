@@ -1,0 +1,4 @@
+# Shell hooks must keep LF endings: a CRLF shebang fails with "bad interpreter"
+# on Linux and in some Windows shells, which would silently disable the
+# workflow-health check (see docs/PRD.md, Runbook, Workflow Failure Detection).
+.githooks/* text eol=lf

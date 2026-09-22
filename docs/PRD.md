@@ -464,6 +464,23 @@ VXUS holdings are additionally resolved from ISIN to a suffixed Yahoo symbol via
 - **Output:** each feed holds its list's tickers with price, market cap, cash, debt, growth metrics, P/E, PEG, currency code, and timestamps; the GVD feed nests one `{updated, source, stocks}` object per universe under a `universes` key
 - **No API key required** for the yfinance pipeline (yfinance is pinned to 1.4.1 in all workflows)
 
+### Workflow Failure Detection
+
+Two independent layers, added in v4.3.5 after a second multi-week silent outage. Neither replaces the other: the CI layer catches failures when nobody is working in the repo, and the local layer catches them at the moment someone is about to build on top of a broken pipeline.
+
+**CI layer, `.github/workflows/alert-on-failure.yml`.** A single `workflow_run` listener covering every other workflow. On a failure it opens a GitHub issue titled `CI failure: <workflow name>`, or comments on the existing open one so a job that fails weekly does not bury the issue list. Closing the issue is the "dealt with" signal; the next failure after that opens a fresh one.
+
+> `workflow_run` matches on a workflow's **`name:` field, not its filename**. A typo or a renamed workflow silently watches nothing, which is the same class of invisible failure this is meant to catch, so `check_workflow_health.py` verifies the watch list against the workflow files on every push. Six of the seven names were guessed wrong on the first attempt at writing that list, which is why the check exists.
+
+**Local layer, `.githooks/pre-push` plus `scripts/check_workflow_health.py`.** Prints each workflow's latest run state before a push. It flags two separate conditions, because the two historical outages were one of each: a run that **failed** (the Vanguard break, which ran and failed weekly), and a run that is **stale** (the Wikipedia break, where the job stopped producing anything). GitHub's own `pages-build-deployment` is included, since a failed site deploy is just as invisible. It reads the public Actions API and needs no token.
+
+- **Enable in a clone** (git does not copy hooks): `git config core.hooksPath .githooks`
+- **Run by hand:** `python3 scripts/check_workflow_health.py` (add `--quiet` to print only when something is wrong)
+- **It never blocks a push.** The push is often the fix, and a check that blocks work gets disabled within a week. It warns and exits 0; only the standalone script exits 1.
+- **Staleness thresholds** live in `MAX_AGE_HOURS` and carry deliberate slack for GitHub's scheduler firing hours late (see Known Technical Debt). Tighten them only alongside that entry.
+
+**Still owner-only:** repository Actions failure emails are an account notification setting (github.com → Settings → Notifications → Actions), not something the repo can turn on for you.
+
 ### Ad Hoc ETF Holdings Analysis
 
 `scripts/analyze_etf_holdings.py` rates the top-10 holdings of any list of ETFs using the **individual-stock** scoring model, then rolls the holdings up into one number per fund. Added v4.2.0 (2026-09-21) after the analysis was run by hand and the owner asked for it to be repeatable on funds supplied later.
@@ -638,7 +655,10 @@ stocks/
 │   ├── fetch_market_overview.py       ← yfinance → Market Overview feed (price/prevClose/change only)
 │   ├── update_constituents.py         ← Nasdaq API / SPY holdings → nasdaq100.json + sp500.json (weekly auto-sync)
 │   ├── update_etf_constituents.py     ← Vanguard holdings API → vug/vtv/vig/vxus.json (weekly auto-sync)
-│   └── analyze_etf_holdings.py        ← Ad hoc, run by hand: rates any ETF's top-10 holdings with the stock model (no cron, writes nothing to data/)
+│   ├── analyze_etf_holdings.py        ← Ad hoc, run by hand: rates any ETF's top-10 holdings with the stock model (no cron, writes nothing to data/)
+│   └── check_workflow_health.py       ← Reports failing/stale workflows via the public Actions API (run by the pre-push hook; no token needed)
+├── .githooks/                         ← Committed hooks; enable per clone with `git config core.hooksPath .githooks`
+│   └── pre-push                       ← Prints workflow health before every push; warns, never blocks
 ├── img/                               ← Historical screenshots
 ├── .github/
 │   └── workflows/
@@ -648,6 +668,7 @@ stocks/
 │       ├── screener-data-gvd.yml      ← Growth/Value/Dividend feed (Mon-Fri 23:12 UTC)
 │       ├── screener-data-intl.yml     ← International feed (Mon-Fri 23:42 UTC)
 │       ├── market-overview.yml        ← Market Overview feed (Mon-Fri 15:07, 19:07, 22:07 UTC)
+│       ├── alert-on-failure.yml       ← Opens/updates a GitHub issue when any other workflow fails (workflow_run)
 │       └── constituents.yml           ← Constituent sync, indices + ETFs (Sat 23:17 UTC)
 └── docs/
     ├── PRD.md                         ← This file
@@ -865,7 +886,7 @@ No cookies. No session storage. No server-side state.
 | Constituent name quality | New tickers added by the auto-sync use cleaned source names, which may be slightly longer than the curated short names (`clean_name()` strips corporate and share-class tails like "Inc." / "Class A Common Stock") | Hand-edit `data/nasdaq100.json` names after a sync if desired (existing names are preserved automatically) |
 | `peFwd` not FX-converted for ADRs | `fetch()` converts `cash` and `debt` from `financialCurrency` into the trading currency but applies no equivalent treatment to `peFwd`, which Yahoo supplies via `priceEpsCurrentYear` already computed as a trading-currency price over a reporting-currency EPS. Any ADR reporting in a different currency therefore carries a forward P/E off by an FX factor. Found 2026-09-21 on NVO (Novo Nordisk ADR): feed value 1.76 against a real forward P/E near 11.9, because a USD 39.80 price is divided by a DKK 22.57 EPS. **Scoring is not affected today** and this is a display defect: `peFwd` carries zero weight, and its only scored use is the sign guard in the PEG metric (`peFwd <= 0` ranks worst), which survives because dividing by a positive FX rate preserves sign. It does corrupt the weight-0 `peVsG` context ratio that colors the P/E FWD column, so affected ADRs get a miscolored cell as well as a wrong number | Apply the same `fx_rate()` conversion `fetch()` already uses for cash and debt: when `financialCurrency` differs from `currency`, recompute `peFwd` as `price / (EPS × rate)` rather than trusting Yahoo's `priceEpsCurrentYear`, and fall back to nulling the field when no rate resolves, matching the existing cash/debt behavior. Would become urgent if `peFwd` is ever given scoring weight or surfaced in the planned multi-year EPS and P/E tool |
 | Scheduled crons fire hours late | GitHub is starting every scheduled run well after its cron time, and the lag is growing: measured 2026-09-21, `screener-data` fired 2h37m late (21:37 UTC cron, 00:14 UTC start) and Market Overview's three runs fired 4h49m, 3h25m and 2h34m late. `run_started_at` equals `created_at` on every run, so this is the scheduler firing late, not slow jobs. The v4.1.8 off-peak-minute fix (odd minutes to dodge top-of-hour congestion) is no longer sufficient. **The screener feeds are unaffected** (they only need to land after the US close and still do), but **Market Overview's three snapshots have collapsed**: mid-morning, pre-close and post-close were all pushed to at or after the close, so two of the three now read the same post-close prices | No clean fix available inside GitHub Actions, whose schedule is best-effort by design. Options, none chosen: move Market Overview's crons hours earlier to land where they were meant to; accept two redundant snapshots and drop one; or move the trigger off GitHub's scheduler entirely (an external ping to `workflow_dispatch`). Re-measure before acting, since the lag is not stable |
-| A failing cron is invisible | No notification exists when a scheduled workflow fails, so a weekly job can fail indefinitely without anyone noticing. This has now caused two multi-week silent outages: the Wikipedia constituent break (v4.1.8) and the Vanguard endpoint break (v4.3.4, six consecutive Saturday failures found only because the owner asked for an audit). The v4.3.4 workflow guard makes the constituents run go red on a partial failure, which is necessary but not sufficient: red runs still need somebody to look | Turn on Actions failure notifications for the repo, or add a step that opens an issue / posts a webhook on failure. Until then, the only detection mechanism is a manual check of run history, and the daily feed `updated` stamps are no help because the daily jobs are healthy and mask a broken weekly one |
+| A failing cron is invisible | No notification existed when a scheduled workflow failed, so a weekly job could fail indefinitely without anyone noticing. This caused two multi-week silent outages: the Wikipedia constituent break (v4.1.8) and the Vanguard endpoint break (v4.3.4, six consecutive Saturday failures found only because the owner asked for an audit) | **Largely addressed in v4.3.5** by two layers, documented under Runbook, Workflow Failure Detection: `alert-on-failure.yml` opens a GitHub issue on any workflow failure, and `.githooks/pre-push` reports failing or stale workflows before a push. What remains is outside the repo: Actions failure emails are an account-level notification setting only the owner can enable, and the pre-push hook needs `git config core.hooksPath .githooks` once per clone |
 
 Not debt (reclassified v3.32.0): the generated data feeds (`screener.json`, `screener_sp500.json`, `screener_gvd.json`, `screener_etfs.json`, `screener_intl.json`) are committed to the repo **intentionally**. Their git history is the site's only record of past scores and is the data source for the planned v4.1.0 score-history sparklines. Do not move them to GitHub Releases or external artifact storage; the growing history is the feature.
 
