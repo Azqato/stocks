@@ -40,80 +40,52 @@
     "n": "Advanced Micro Devices"
   },
   {
-    "t": "AMAT",
-    "n": "Applied Materials"
-  },
-  {
     "t": "V",
     "n": "Visa"
-  },
-  {
-    "t": "LRCX",
-    "n": "Lam Research"
-  },
-  {
-    "t": "COST",
-    "n": "Costco"
   },
   {
     "t": "MA",
     "n": "Mastercard"
   },
   {
-    "t": "KLAC",
-    "n": "KLA"
-  },
-  {
-    "t": "SNDK",
-    "n": "Sandisk"
-  },
-  {
-    "t": "GEV",
-    "n": "GE Vernova"
-  },
-  {
-    "t": "NFLX",
-    "n": "Netflix"
-  },
-  {
-    "t": "INTC",
-    "n": "Intel"
-  },
-  {
-    "t": "PANW",
-    "n": "Palo Alto Networks"
-  },
-  {
-    "t": "MRVL",
-    "n": "Marvell Technology"
+    "t": "COST",
+    "n": "Costco"
   },
   {
     "t": "PLTR",
     "n": "Palantir Technologies"
   },
   {
+    "t": "LRCX",
+    "n": "Lam Research"
+  },
+  {
+    "t": "AMAT",
+    "n": "Applied Materials"
+  },
+  {
+    "t": "NFLX",
+    "n": "Netflix"
+  },
+  {
+    "t": "PANW",
+    "n": "Palo Alto Networks"
+  },
+  {
     "t": "ORCL",
     "n": "Oracle"
   },
   {
-    "t": "WDC",
-    "n": "Western Digital"
+    "t": "GEV",
+    "n": "GE Vernova"
   },
   {
-    "t": "APH",
-    "n": "Amphenol"
+    "t": "SNDK",
+    "n": "Sandisk"
   },
   {
-    "t": "STX",
-    "n": "Seagate Technology"
-  },
-  {
-    "t": "GE",
-    "n": "GE Aerospace"
-  },
-  {
-    "t": "MCD",
-    "n": "McDonald's"
+    "t": "KLAC",
+    "n": "KLA"
   },
   {
     "t": "CRWD",
@@ -124,48 +96,88 @@
     "n": "Arista Networks"
   },
   {
-    "t": "BA",
-    "n": "Boeing"
+    "t": "APH",
+    "n": "Amphenol"
   },
   {
-    "t": "TJX",
-    "n": "TJX Companies"
+    "t": "MRVL",
+    "n": "Marvell Technology"
+  },
+  {
+    "t": "MCD",
+    "n": "McDonald's"
+  },
+  {
+    "t": "INTC",
+    "n": "Intel"
+  },
+  {
+    "t": "STX",
+    "n": "Seagate Technology"
+  },
+  {
+    "t": "GE",
+    "n": "GE Aerospace"
   },
   {
     "t": "WELL",
     "n": "Welltower"
   },
   {
-    "t": "APP",
-    "n": "AppLovin"
+    "t": "BA",
+    "n": "Boeing"
   },
   {
-    "t": "ISRG",
-    "n": "Intuitive Surgical"
+    "t": "NOW",
+    "n": "ServiceNow"
   },
   {
     "t": "BKNG",
     "n": "Booking Holdings"
   },
   {
-    "t": "TXN",
-    "n": "Texas Instruments"
+    "t": "WDC",
+    "n": "Western Digital"
   },
   {
-    "t": "VRT",
-    "n": "Vertiv"
+    "t": "TJX",
+    "n": "TJX Companies"
   },
   {
     "t": "VRTX",
     "n": "Vertex Pharmaceuticals"
   },
   {
+    "t": "ISRG",
+    "n": "Intuitive Surgical"
+  },
+  {
     "t": "SBUX",
     "n": "Starbucks"
   },
   {
-    "t": "PWR",
-    "n": "Quanta Services"
+    "t": "TXN",
+    "n": "Texas Instruments"
+  },
+  {
+    "t": "SNOW",
+    "n": "Snowflake"
+  },
+  {
+    "t": "FTNT",
+    "n": "Fortinet"
+  },
+  {
+    "t": "EQIX",
+    "n": "Equinix"
+  },
+  {
+    "t": "NET",
+    "n": "Cloudflare Inc. Class A"
+  },
+  {
+    "t": "VRT",
+    "n": "Vertiv"
   },
   {
     "t": "HWM",
@@ -176,80 +188,124 @@
     "n": "Cadence Design Systems"
   },
   {
-    "t": "NOW",
-    "n": "ServiceNow"
+    "t": "PWR",
+    "n": "Quanta Services"
   },
   {
-    "t": "EQIX",
-    "n": "Equinix"
-  },
-  {
-    "t": "GLW",
-    "n": "Corning"
-  },
-  {
-    "t": "SPCX",
-    "n": "Space Exploration Technologies Corp. Class A"
-  },
-  {
-    "t": "FTNT",
-    "n": "Fortinet"
-  },
-  {
-    "t": "DDOG",
-    "n": "Datadog"
+    "t": "DASH",
+    "n": "DoorDash"
   },
   {
     "t": "SNPS",
     "n": "Synopsys"
   },
   {
-    "t": "SNOW",
-    "n": "Snowflake"
+    "t": "APP",
+    "n": "AppLovin"
   },
   {
-    "t": "BE",
-    "n": "Bloom Energy Corp. Class A"
+    "t": "SPCX",
+    "n": "Space Exploration Technologies Corp. Class A"
   },
   {
     "t": "HOOD",
     "n": "Robinhood Markets"
   },
   {
-    "t": "NET",
-    "n": "Cloudflare Inc. Class A"
+    "t": "MSI",
+    "n": "Motorola Solutions"
   },
   {
-    "t": "MAR",
-    "n": "Marriott International"
-  },
-  {
-    "t": "COHR",
-    "n": "Coherent"
-  },
-  {
-    "t": "TER",
-    "n": "Teradyne"
-  },
-  {
-    "t": "ORLY",
-    "n": "O\u2019Reilly Automotive"
-  },
-  {
-    "t": "HLT",
-    "n": "Hilton Worldwide"
-  },
-  {
-    "t": "TDG",
-    "n": "TransDigm Group"
+    "t": "DDOG",
+    "n": "Datadog"
   },
   {
     "t": "UBER",
     "n": "Uber"
   },
   {
+    "t": "MCO",
+    "n": "Moody's"
+  },
+  {
+    "t": "ABNB",
+    "n": "Airbnb"
+  },
+  {
+    "t": "ORLY",
+    "n": "O\u2019Reilly Automotive"
+  },
+  {
     "t": "ECL",
     "n": "Ecolab"
+  },
+  {
+    "t": "LITE",
+    "n": "Lumentum"
+  },
+  {
+    "t": "HLT",
+    "n": "Hilton Worldwide"
+  },
+  {
+    "t": "MAR",
+    "n": "Marriott International"
+  },
+  {
+    "t": "CTAS",
+    "n": "Cintas"
+  },
+  {
+    "t": "TDG",
+    "n": "TransDigm Group"
+  },
+  {
+    "t": "TRGP",
+    "n": "Targa Resources"
+  },
+  {
+    "t": "MNST",
+    "n": "Monster Beverage"
+  },
+  {
+    "t": "ADBE",
+    "n": "Adobe"
+  },
+  {
+    "t": "GWW",
+    "n": "W. W. Grainger"
+  },
+  {
+    "t": "MPWR",
+    "n": "Monolithic Power Systems"
+  },
+  {
+    "t": "FAST",
+    "n": "Fastenal"
+  },
+  {
+    "t": "ADSK",
+    "n": "Autodesk"
+  },
+  {
+    "t": "GLW",
+    "n": "Corning"
+  },
+  {
+    "t": "SYK",
+    "n": "Stryker"
+  },
+  {
+    "t": "BX",
+    "n": "Blackstone"
+  },
+  {
+    "t": "BE",
+    "n": "Bloom Energy Corp. Class A"
+  },
+  {
+    "t": "TER",
+    "n": "Teradyne"
   },
   {
     "t": "CIEN",
@@ -260,143 +316,87 @@
     "n": "Comfort Systems USA"
   },
   {
-    "t": "MSI",
-    "n": "Motorola Solutions"
+    "t": "COHR",
+    "n": "Coherent"
   },
   {
-    "t": "DASH",
-    "n": "DoorDash"
-  },
-  {
-    "t": "MCO",
-    "n": "Moody's"
-  },
-  {
-    "t": "LITE",
-    "n": "Lumentum"
-  },
-  {
-    "t": "MNST",
-    "n": "Monster Beverage"
-  },
-  {
-    "t": "MPWR",
-    "n": "Monolithic Power Systems"
-  },
-  {
-    "t": "GWW",
-    "n": "W. W. Grainger"
-  },
-  {
-    "t": "RKLB",
-    "n": "Rocket Lab"
-  },
-  {
-    "t": "CTAS",
-    "n": "Cintas"
-  },
-  {
-    "t": "TRGP",
-    "n": "Targa Resources"
-  },
-  {
-    "t": "ABNB",
-    "n": "Airbnb"
-  },
-  {
-    "t": "FAST",
-    "n": "Fastenal"
-  },
-  {
-    "t": "SYK",
-    "n": "Stryker"
-  },
-  {
-    "t": "AZO",
-    "n": "AutoZone"
+    "t": "INTU",
+    "n": "Intuit"
   },
   {
     "t": "CVNA",
     "n": "Carvana"
   },
   {
-    "t": "AXON",
-    "n": "Axon Enterprise"
-  },
-  {
-    "t": "TTWO",
-    "n": "Take-Two Interactive"
-  },
-  {
-    "t": "YUM",
-    "n": "Yum! Brands"
-  },
-  {
     "t": "CMG",
     "n": "Chipotle Mexican Grill"
   },
   {
-    "t": "BX",
-    "n": "Blackstone"
+    "t": "AZO",
+    "n": "AutoZone"
   },
   {
-    "t": "WCN",
-    "n": "Waste Connections"
+    "t": "VEEV",
+    "n": "Veeva Systems"
   },
   {
-    "t": "ADBE",
-    "n": "Adobe"
-  },
-  {
-    "t": "IDXX",
-    "n": "Idexx Laboratories"
-  },
-  {
-    "t": "ADSK",
-    "n": "Autodesk"
-  },
-  {
-    "t": "SHW",
-    "n": "Sherwin-Williams"
+    "t": "AXON",
+    "n": "Axon Enterprise"
   },
   {
     "t": "XYZ",
     "n": "Block"
   },
   {
-    "t": "ALNY",
-    "n": "Alnylam Pharmaceuticals"
+    "t": "IDXX",
+    "n": "Idexx Laboratories"
   },
   {
-    "t": "ODFL",
-    "n": "Old Dominion"
+    "t": "WDAY",
+    "n": "Workday"
   },
   {
-    "t": "ALAB",
-    "n": "Astera Labs"
+    "t": "WCN",
+    "n": "Waste Connections"
   },
   {
-    "t": "RCL",
-    "n": "Royal Caribbean Group"
+    "t": "YUM",
+    "n": "Yum! Brands"
+  },
+  {
+    "t": "COIN",
+    "n": "Coinbase Global"
+  },
+  {
+    "t": "SHW",
+    "n": "Sherwin-Williams"
   },
   {
     "t": "MSCI",
     "n": "MSCI"
   },
   {
-    "t": "VMC",
-    "n": "Vulcan Materials"
+    "t": "TEAM",
+    "n": "Atlassian"
   },
   {
-    "t": "CRWV",
-    "n": "CoreWeave Inc. Class A"
+    "t": "TTWO",
+    "n": "Take-Two Interactive"
   },
   {
-    "t": "RBLX",
-    "n": "ROBLOX"
+    "t": "MDB",
+    "n": "MongoDB"
   },
   {
-    "t": "INTU",
-    "n": "Intuit"
+    "t": "DXCM",
+    "n": "Dexcom"
+  },
+  {
+    "t": "ODFL",
+    "n": "Old Dominion"
+  },
+  {
+    "t": "RMD",
+    "n": "ResMed"
   }
 ]

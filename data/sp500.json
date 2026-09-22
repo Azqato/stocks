@@ -208,10 +208,6 @@
     "n": "AutoZone"
   },
   {
-    "t": "AVB",
-    "n": "AvalonBay Communities"
-  },
-  {
     "t": "AVY",
     "n": "Avery Dennison"
   },
@@ -268,6 +264,10 @@
     "n": "Block"
   },
   {
+    "t": "BE",
+    "n": "BLOOM ENERGY CORP  A"
+  },
+  {
     "t": "BNY",
     "n": "BNY Mellon"
   },
@@ -302,10 +302,6 @@
   {
     "t": "BF.B",
     "n": "Brown\u2013Forman"
-  },
-  {
-    "t": "BLDR",
-    "n": "Builders FirstSource"
   },
   {
     "t": "BG",
@@ -696,10 +692,6 @@
     "n": "Equinix"
   },
   {
-    "t": "EQR",
-    "n": "Equity Residential"
-  },
-  {
     "t": "ERIE",
     "n": "Erie Indemnity"
   },
@@ -718,6 +710,10 @@
   {
     "t": "EVRG",
     "n": "Evergy"
+  },
+  {
+    "t": "P",
+    "n": "EVERPURE INC A"
   },
   {
     "t": "ES",
@@ -986,6 +982,10 @@
   {
     "t": "ITW",
     "n": "Illinois Tool Works"
+  },
+  {
+    "t": "ILMN",
+    "n": "ILLUMINA"
   },
   {
     "t": "INCY",
@@ -1272,10 +1272,6 @@
     "n": "Moderna"
   },
   {
-    "t": "TAP",
-    "n": "Molson Coors Beverage"
-  },
-  {
     "t": "MDLZ",
     "n": "Mondelez International"
   },
@@ -1548,6 +1544,10 @@
     "n": "Realty Income"
   },
   {
+    "t": "RDDT",
+    "n": "REDDIT INC CL A"
+  },
+  {
     "t": "REG",
     "n": "Regency Centers"
   },
@@ -1772,10 +1772,6 @@
     "n": "Tractor Supply"
   },
   {
-    "t": "TTD",
-    "n": "Trade Desk (The)"
-  },
-  {
     "t": "TT",
     "n": "Trane Technologies"
   },
@@ -1894,6 +1890,10 @@
   {
     "t": "VST",
     "n": "Vistra"
+  },
+  {
+    "t": "VMRK",
+    "n": "VIVMARK RESIDENTIAL"
   },
   {
     "t": "VMC",

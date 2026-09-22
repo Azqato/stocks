@@ -7,8 +7,8 @@ Dividend, and International universes rank against:
   data/vig.json   -- top 100 holdings of VIG (Vanguard Dividend Appreciation ETF)
   data/vxus.json  -- top 100 holdings of VXUS (Vanguard Total International Stock ETF)
 
-For VUG/VTV/VIG it fetches the full stock holdings from Vanguard's own profile
-API (weight-sorted, refreshed monthly by Vanguard), applies the dual-class rule
+For VUG/VTV/VIG it fetches the full stock holdings from Vanguard's own
+holdings API (weight-sorted, refreshed monthly by Vanguard), applies the dual-class rule
 (keep only the Class A voting share when a fund holds multiple classes), takes
 the top 100 by weight, sanity-checks the result, preserves existing curated
 short names, and writes the file only if membership actually changed. Prints
@@ -43,7 +43,14 @@ UA = {
     "Accept": "application/json",
 }
 
-API = "https://investor.vanguard.com/investment-products/etfs/profile/api/{fund}/portfolio-holding/stock"
+# Vanguard's holdings endpoint, as called by their own portfolio-composition
+# web component (fundsBaseUrl in common-*.js). The previous profile-API path
+# (/investment-products/etfs/profile/api/{fund}/portfolio-holding/stock) was
+# retired sometime after 2026-08-08 and is now swallowed by the site's SPA
+# router, which answers HTTP 200 with the app's HTML shell, so
+# raise_for_status() passes and only .json() fails. check_payload() below
+# turns that class of failure into an explicit abort.
+API = "https://investor.vanguard.com/irr/funds/profile/{fund}-AdditionalFundData"
 YAHOO_SEARCH = "https://query2.finance.yahoo.com/v1/finance/search"
 
 # Duplicate share classes to drop, but only when the kept sibling is present.
@@ -69,14 +76,18 @@ FUNDS = {
     "vig": {"fund": "VIG", "path": "data/vig.json", "raw_lo": 110, "raw_hi": 500},
 }
 
-# VXUS config: Vanguard's holdings API caps at exactly 500 entities for this
-# fund (confirmed empirically 2026-07-03, not the ~8,500 VXUS actually holds),
-# so the guard band is tight rather than the wide 110-500 used above.
+# VXUS config: the retired profile API capped this fund at exactly 500
+# entities (confirmed empirically 2026-07-03), so the guard band used to be a
+# tight 480-520. The current endpoint returns the full holdings list instead
+# (8,794 rows on 2026-09-21), so the band is widened to match. Because the
+# list is weight-sorted and only the top 100 is kept, the practical effect of
+# the cap's removal is nil, but same-issuer ISIN duplicates can now be found
+# deeper in the list than the old 500-row window reached.
 VXUS_FUND = "VXUS"
 VXUS_LIST_PATH = "data/vxus.json"
 VXUS_MAP_PATH = "data/vxus_map.json"
-VXUS_RAW_LO = 480
-VXUS_RAW_HI = 520
+VXUS_RAW_LO = 7000
+VXUS_RAW_HI = 11000
 # A Yahoo symbol looks like TICKER or TICKER.SUFFIX, where TICKER may contain
 # digits (Asian local tickers) and letters (Western ones), and SUFFIX is a
 # short exchange code -- much looser than the domestic BRK.B-style regex.
@@ -118,21 +129,70 @@ def clean_name(n):
     return n
 
 
-def fetch_holdings(fund, raw_lo, raw_hi):
-    """Return [(symbol, name), ...] weight-sorted from Vanguard's profile API."""
-    r = requests.get(API.format(fund=fund), headers=UA, timeout=60)
+def parse_weight(v):
+    """'13.61%' -> 13.61. Vanguard sends the weight as a percent string."""
+    m = re.search(r"-?[\d.]+", str(v).replace(",", ""))
+    return float(m.group()) if m else 0.0
+
+
+def fetch_entities(fund, raw_lo, raw_hi):
+    """Return Vanguard's equity holdings for `fund`, normalized and guarded.
+
+    Each row is {ticker, name, weight, isin}. The response also carries
+    shortTermReservesHoldings and derivativeHoldings, which are deliberately
+    not merged in: only equityHoldings holds the stocks the screener ranks.
+    """
+    r = requests.get(API.format(fund=fund), headers=UA, timeout=90)
     r.raise_for_status()
-    entities = r.json()["fund"]["entity"]
+    entities = check_payload(r, fund)
     if not (raw_lo <= len(entities) <= raw_hi):
         sys.exit(f"ABORT [{fund}]: unexpected raw holdings count {len(entities)} "
                  f"(expected {raw_lo}-{raw_hi}).")
+    return [{
+        # This endpoint spells share classes with a slash ("BRK/B"); the lists,
+        # the DUAL_CLASS rule and the screener all use the dot form ("BRK.B").
+        "ticker": str(e.get("ticker") or "").strip().upper()
+                  .replace(" ", "").replace("/", "."),
+        "name": str(e.get("securityLongDescription")
+                    or e.get("securityShortDescription") or "").strip(),
+        "weight": parse_weight(e.get("marketValuePercentage")),
+        "isin": str(e.get("isin") or "").strip(),
+    } for e in entities]
+
+
+def check_payload(r, fund):
+    """Return holdingDetails.equityHoldings, or abort with a readable reason.
+
+    Exists because the retired endpoint answers 200-with-HTML rather than 404:
+    a silent source removal that read as a JSONDecodeError traceback and went
+    unnoticed for six weekly runs. Anything other than the expected JSON shape
+    aborts here, naming what arrived instead.
+    """
+    ctype = r.headers.get("content-type", "")
+    if "json" not in ctype.lower():
+        sys.exit(f"ABORT [{fund}]: expected JSON from {r.url}, got "
+                 f"{ctype!r} ({len(r.text)} bytes). The endpoint has most "
+                 f"likely moved again; re-derive it from the fundsBaseUrl "
+                 f"value in Vanguard's portfolio-composition web component.")
+    try:
+        entities = r.json()["holdingDetails"]["equityHoldings"]
+    except (ValueError, KeyError, TypeError) as exc:
+        sys.exit(f"ABORT [{fund}]: JSON from {r.url} has an unexpected shape "
+                 f"({type(exc).__name__}: {exc}); expected "
+                 f"holdingDetails.equityHoldings.")
+    if not isinstance(entities, list) or not entities:
+        sys.exit(f"ABORT [{fund}]: holdingDetails.equityHoldings is empty or "
+                 f"not a list.")
+    return entities
+
+
+def fetch_holdings(fund, raw_lo, raw_hi):
+    """Return [(symbol, name), ...] weight-sorted from Vanguard's holdings API."""
     rows = []
-    for e in entities:
-        sym = str(e.get("ticker") or "").strip().upper().replace(" ", "")
-        name = str(e.get("longName") or e.get("shortName") or "").strip()
-        wt = float(e.get("percentWeight") or 0)
+    for e in fetch_entities(fund, raw_lo, raw_hi):
+        sym, name = e["ticker"], e["name"]
         if sym and name:
-            rows.append((wt, sym, name))
+            rows.append((e["weight"], sym, name))
     rows.sort(key=lambda x: -x[0])  # the API is weight-sorted; make it explicit
     present = {s for _, s, _ in rows}
     out = []
@@ -193,27 +253,16 @@ def fetch_vxus_raw():
     custody-record duplicate), so "top 100 by weight" also means 100 distinct
     companies, not a company occupying two slots under two ISINs.
     """
-    r = requests.get(API.format(fund=VXUS_FUND), headers=UA, timeout=60)
-    r.raise_for_status()
-    entities = r.json()["fund"]["entity"]
-    if not (VXUS_RAW_LO <= len(entities) <= VXUS_RAW_HI):
-        sys.exit(f"ABORT [vxus]: unexpected raw holdings count {len(entities)} "
-                 f"(expected {VXUS_RAW_LO}-{VXUS_RAW_HI}).")
+    entities = fetch_entities(VXUS_FUND, VXUS_RAW_LO, VXUS_RAW_HI)
     by_isin = {}
     for e in entities:
-        isin = str(e.get("isin") or "").strip()
+        isin = e["isin"]
         if not isin:
             continue
-        wt = float(e.get("percentWeight") or 0)
         if isin in by_isin:
-            by_isin[isin]["weight"] += wt
+            by_isin[isin]["weight"] += e["weight"]
         else:
-            by_isin[isin] = {
-                "isin": isin,
-                "ticker": str(e.get("ticker") or "").strip(),
-                "name": str(e.get("longName") or e.get("shortName") or "").strip(),
-                "weight": wt,
-            }
+            by_isin[isin] = dict(e)
     for kept, dropped_isins in VXUS_SAME_ISSUER_MERGE.items():
         if kept not in by_isin:
             continue

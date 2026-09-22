@@ -2,6 +2,46 @@
 
 ---
 
+## v4.3.4 - 2026-09-21 - Fix: Vanguard holdings endpoint retired; constituent sync had been failing for six weeks
+
+**Found by an owner audit request ("check that all the GitHub scripts executed correctly"), not by any alarm. The six daily data workflows were and are healthy, 12 of 12 successful runs each, every trading day. The weekly Update Constituents workflow had failed six consecutive Saturdays.**
+
+### Fixed
+
+- **`scripts/update_etf_constituents.py` repointed at Vanguard's current holdings endpoint.** The profile API it used (`/investment-products/etfs/profile/api/{fund}/portfolio-holding/stock`) was retired sometime after the last good run on 2026-08-08. The new endpoint is `/irr/funds/profile/{TICKER}-AdditionalFundData`, derived from `fundsBaseUrl` in Vanguard's own `portfolio-composition` web component bundle rather than guessed. Holdings moved from `fund.entity` to `holdingDetails.equityHoldings`, and every field the script reads was renamed: `longName`/`shortName` to `securityLongDescription`/`securityShortDescription`, and `percentWeight` (a number) to `marketValuePercentage` (a percent string like `"13.61%"`, now parsed by `parse_weight()`). The response separates `shortTermReservesHoldings` and `derivativeHoldings` from `equityHoldings`, so the stock list is cleaner than before.
+- **Share classes are spelled with a slash on the new endpoint** (`BRK/B`), against the dot form (`BRK.B`) used by the lists, the `DUAL_CLASS` rule and the screener. Normalized on read. The existing suspicious-ticker guard caught this on the first run rather than writing `BRK/B` into a list, which is the guard doing its job.
+- **`check_payload()` added: a wrong-shape response now aborts with a readable reason.** This is the actual reason the outage lasted six weeks. The retired endpoint answers **HTTP 200 with the SPA's HTML shell**, so `raise_for_status()` passed and the failure surfaced only as a `JSONDecodeError` traceback deep in a step log. The new guard checks the content type and the JSON shape, and names the endpoint plus what arrived instead.
+- **The VXUS raw-count guard widened from 480-520 to 7,000-11,000.** The old endpoint capped this fund at exactly 500 entities; the new one returns the full 8,794-row holdings list. Membership is unchanged by this (the list is weight-sorted and only the top 100 is kept), but same-issuer ISIN duplicates can now be found deeper than the old 500-row window reached.
+
+### Fixed - the failure mode that made it expensive
+
+- **`constituents.yml` no longer runs both syncs in one step.** `update_constituents.py` (Nasdaq 100 and S&P 500, from Nasdaq's API and State Street's SPY holdings) and `update_etf_constituents.py` (the four Vanguard lists) draw on entirely unrelated third-party sources, but shared a single `run:` block. The index sync succeeded every week; the Vanguard script then aborted the step, and because the step failed, "Regenerate changed feeds and commit" was skipped. **Six weeks of perfectly good index updates were computed and thrown away.** They are now separate steps, the ETF one marked `continue-on-error`, so a broken source costs only its own lists.
+- **A new final step fails the run when the ETF sync failed**, after the good lists are committed, so a partial outage is still visible as a red run instead of being hidden by the `continue-on-error` that protects the index sync.
+
+### Changed - data
+
+Membership had been frozen since 2026-08-08. Synced from live sources and committed; the daily feed jobs read these list files, so they rebuild the affected feeds on their next run without a manual regeneration.
+
+- **Nasdaq 100**: removed KHC.
+- **S&P 500**: added BE, VMRK, ILMN, P, RDDT; removed AVB, BLDR, EQR, TAP, TTD. Each of the ten was checked against live quote data before the list was committed, because the script's only structural guard is an exact count of 500 and a parse artifact would pass it. All ten are real, liquid listings with sensible market caps, and the pattern is coherent (VMRK Residential at $47B arriving as AvalonBay and Equity Residential leave).
+- **VUG**: added VEEV, WDAY, COIN, TEAM, MDB, DXCM, RMD; removed RKLB, ALNY, ALAB, RCL, VMC, CRWV, RBLX.
+- **VTV**: added XOM, PSX, ICE, SLB, REGN, GM, TRV, EOG, NSC; removed GLW, AEP, ITW, CL, CI, NOC, CRH, HON, URI.
+- **VIG**: added XOM, BDX, AMP; removed MCHP, DHI, RSG.
+- **VXUS**: added 8001.T, GLEN.L, O39.SI, SU.TO, 1398.HK, MUV2.DE; removed 402340.KS, 4063.T, 009150.KS, ABI.BR, 3711.TW, 6503.T. Munich Re's auto-cleaned name arrived as "Muenchener Rueckversicherungs-Gesellschaft AG in Muenchen" and was hand-shortened, per the curated-name practice in the Known Technical Debt entry on constituent name quality.
+
+All four Vanguard lists carry an `asOfDate` of 08/31/2026, which is the current monthly publication, so one monthly refresh was missed rather than two.
+
+### Added - documentation
+
+- **Two Known Technical Debt entries** (PRD.md): scheduled crons now firing hours late (measured, with the Market Overview consequence spelled out), and the absence of any notification when a cron fails, which is the common root cause behind this outage and the v4.1.8 Wikipedia one.
+- **Documentation Versus Reality item 10**, recording the retired endpoint and its resolution.
+
+### Not fixed
+
+The cron lag is recorded, not addressed. Every job still fires and the screener feeds still land after the US close, so the feeds are correct; Market Overview's three intraday snapshots are the real casualty, and choosing between moving its crons, dropping a redundant one, or triggering from outside GitHub's scheduler is an owner decision rather than a patch.
+
+---
+
 ## v4.3.3 - 2026-09-21 - ADR forward P/E currency defect recorded
 
 **Docs only. Found while answering an ad hoc question (what NVO would rate inside the S&P 500), not by an audit. No code or data change: the fix is specified but deliberately not shipped in a documentation entry.**

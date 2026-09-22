@@ -5,7 +5,7 @@ name: Update Constituents
 # holdings), each with a slickcharts fallback -- see update_constituents.py for
 # why Wikipedia was dropped. Plus data/vug.json,
 # data/vtv.json, data/vig.json, data/vxus.json with the top 100 holdings of
-# the matching Vanguard ETFs (from Vanguard's profile API, which publishes
+# the matching Vanguard ETFs (from Vanguard's holdings API, which publishes
 # monthly). VXUS holdings are additionally resolved from ISIN to a suffixed
 # Yahoo symbol via data/vxus_map.json (see update_etf_constituents.py). For
 # whichever list's membership changed, regenerates the matching data feed and
@@ -35,12 +35,26 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Sync constituent lists
+      - name: Install sync dependencies
         run: |
           # openpyxl: reads State Street's SPY holdings .xlsx (the S&P 500 source).
           pip install --quiet requests pandas lxml openpyxl
-          python scripts/update_constituents.py
-          python scripts/update_etf_constituents.py
+
+      # The two syncs are separate steps, and the ETF one is allowed to fail
+      # without failing the job, because they draw on unrelated third-party
+      # sources. They shared one step until 2026-09-21, which meant Vanguard's
+      # retired endpoint aborted the step AFTER the index sync had succeeded,
+      # so the commit step was skipped and six weeks of good index updates
+      # were silently thrown away. A broken source should now cost only its
+      # own lists. The job still surfaces the breakage: the guard step below
+      # fails the run once the good lists are committed.
+      - name: Sync index constituent lists (Nasdaq 100, S&P 500)
+        run: python scripts/update_constituents.py
+
+      - name: Sync ETF holdings lists (VUG, VTV, VIG, VXUS)
+        id: etf_sync
+        continue-on-error: true
+        run: python scripts/update_etf_constituents.py
 
       - name: Regenerate changed feeds and commit
         run: |
@@ -85,3 +99,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update index constituents [skip ci]"
           git push
+
+      # Runs after the commit so a broken ETF source still turns the run red
+      # (and still sends the Actions failure notification) without costing the
+      # index updates that did work.
+      - name: Fail if the ETF holdings sync failed
+        if: steps.etf_sync.outcome == 'failure'
+        run: |
+          echo "::error::update_etf_constituents.py failed; the ETF holdings lists (vug/vtv/vig/vxus) are stale. Index lists were synced and committed normally."
+          exit 1
