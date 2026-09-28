@@ -1,45 +1,13 @@
-# TODO — Azqato Stock Methodology Site
+# TODO: Azqato Stock Methodology Site
 
 Ideas and planned work not yet in the PRD roadmap. Move an item into the PRD (with a version) when it is scheduled.
 
 ---
 
-## 1. One stock-data job for every list, in 500-stock parts (owner idea, 2026-09-28)
+## 1. One stock-data job for every list, in 500-stock parts (SCHEDULED)
 
-**Why.** Six workflows fetch overlapping lists today (Nasdaq 100, S&P 500, Growth/Value/Dividend, International, ETFs, plus the weekly statements job from v4.3.6). A stock in four lists is fetched four times a day by different jobs. The owner also wants the whole US market (VTI) covered for Automate Fundamentals' Research page, which the per-list design cannot scale to.
+**Moved into the PRD roadmap on 2026-09-28 as v4.9.0 through v4.9.3**, per this file's own rule that a scheduled item moves out of here and into the roadmap with a version. See `docs/PRD.md`, Roadmap, Open Milestone Detail, "One Stock-Data Job For Every List, In 500-Stock Parts" for the implementation plan.
 
-**The idea.**
+The plan there keeps the owner's original design intact (one master universe, one record per ticker per day, parts of up to 500 ordered by importance, lists reduced to pure membership) and adds what costing it out turned up: parallel parts do conflict on push and need a rebase-retry loop, a 500-stock part runs in about 10 minutes rather than 30 to 45, parts weigh about 380 KB rather than 250 KB, the ETF feed stays separate because its records share only 7 of 20 fields with stock records, and the legacy per-list feeds keep being written permanently because v4.4.0's score-history sparklines mine their git history. The three owner decisions recorded here on 2026-09-28 (International stays at 100, VTI becomes its own "Total US market" list, one daily run time for everything) carry over unchanged, joined by a fourth: missing metrics keep scoring zero, with no coverage gate for the whole-market universe.
 
-- **One master universe.** Every ticker in every list (`nasdaq100.json`, `sp500.json`, `vug.json`, `vtv.json`, `vig.json`, `vxus.json`, `etfs.json`, and later VTI), with duplicates removed.
-- **One job, one record per ticker.** Each stock is fetched once per day, no matter how many lists hold it.
-- **Lists become membership only.** Each list file stays exactly what it is: tickers and curated names. The screener picks a list, then looks each ticker up in the shared data. How a list is defined does not change; only where its numbers come from does.
-- **Parts of up to 500 stocks.** The data is written as `data/stocks/part-01.json`, `part-02.json`, and so on. `data/stocks/index.json` maps each ticker to its part and records each part's `updated` time.
-- **Parts ordered by importance, so the default view stays fast.**
-  - Part 1 is the Nasdaq 100 plus the ETFs.
-  - The next parts hold the rest of the S&P 500, then the Growth, Value, and Dividend lists, then International, then VTI.
-  - The screener's default Nasdaq 100 view downloads one file, as it does today. The S&P 500 view downloads about 2.
-  - Only a whole-market view would download everything.
-  - A ticker keeps its part until it leaves every list, so parts do not reshuffle daily.
-- **Parts run in parallel.** A GitHub Actions matrix runs one job per part, each within about 30 to 45 minutes. Each part commits only its own file, so the parts cannot conflict. Part 1 runs first, so the most-used view is fresh soonest, as the Nasdaq-first chain guarantees today.
-- **Statements on a rolling week.** The per-stock statements (`data/statements/<TICKER>.json`) refresh a seventh of the stocks each day instead of all on Saturday. Every stock still refreshes weekly, and Yahoo sees an even daily load.
-
-**Size check (VTI added).**
-
-- About 4,000 US stocks plus 100 International plus 10 ETFs, which is about 9 parts.
-- The daily data is about 500 bytes a stock, so about 250 KB a part.
-- Yahoo load: one `info` call and two estimate calls per stock a day, plus about 600 statement fetches a day. That is higher than today, so the rollout should add VTI last, after the merge has run cleanly for a week.
-
-**What has to change together.**
-
-- `scripts/fetch_screener_data.py` gains a `--part N` mode; the six screener workflows become one matrix workflow.
-- `screener.js` loads `index.json` and then only the parts a list needs, instead of one file per list.
-- Scoring does not change: it already runs in the browser over whatever stocks the list holds.
-- `constituents.yml` rebuilds the master universe and `index.json` when lists change.
-- `alert-on-failure.yml` and `check_workflow_health.py` watch the new workflow name.
-- **Automate Fundamentals** (`AzqatoFeedSource`) reads the old per-list files. Keep writing the old files for one transition release, then switch Automate Fundamentals to the parts in the same week.
-
-**Owner decisions (2026-09-28).**
-
-1. **International stays at the top 100 VXUS holdings.** Full VXUS is about 8,500 stocks, too much for Yahoo, and Automate Fundamentals cannot trade most of them through Alpaca.
-2. **VTI becomes its own screener list, "Total US market".** It is a new selectable universe next to the Nasdaq 100 and the S&P 500, with holdings synced weekly from Vanguard like Growth, Value, and Dividend. It is scored like the other stock lists. At about 4,000 stocks the view downloads every part, so it should load after the page's first render, with a loading state.
-3. **One daily run time for everything.** Every part runs together at the current Nasdaq 100 time (21:37 UTC, Mon-Fri), so the Nasdaq-first chain of staggered schedules goes away.
+Nothing further is tracked here for this item.

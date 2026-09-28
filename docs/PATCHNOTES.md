@@ -2,6 +2,38 @@
 
 ---
 
+## v4.3.7 - 2026-09-28 - Roadmap: the one-job, 500-stock-parts plan scheduled as v4.9.0 through v4.9.3
+
+**Docs only. The owner asked for a review of `docs/TODO.md` item 1 (their own idea from the same day) against the live site, then for it to be documented and built. This entry records the plan, the four corrections that came out of costing it, and the decisions taken. No code, pipeline, or site changes.**
+
+### Added
+
+- **A full implementation plan in PRD.md** (Roadmap, Open Milestone Detail), split into four independently shippable phases: v4.9.0 pipeline only, v4.9.1 frontend, v4.9.2 consumers and statements, v4.9.3 the VTI "Total US market" universe. Each phase carries a gate that must pass before the next starts. Four roadmap table rows added to match.
+- **The measured case for the change, rather than the assumed one.** Five daily jobs issue 1,010 ticker-slots, 932 actual Yahoo fetches after the combined GVD run dedupes internally, against 629 unique tickers: **303 redundant fetches a day, a third of the budget**. 102 tickers sit in three lists, 22 in four, one in five.
+- **VTI feasibility confirmed against the live source**, not assumed: Vanguard serves 3,507 equity rows for VTI (3,466 with tickers) from the same endpoint v4.3.4 repointed to. The master universe comes to 3,586 tickers, so 8 parts, and only 11 of the existing 520 US list members are absent from VTI.
+
+### Changed - four corrections to the TODO's numbers
+
+- **Parallel parts do conflict on push.** The TODO stated that parts committing separate files "cannot conflict"; that holds for merge conflicts and fails for pushes, since git rejects a non-fast-forward push whatever the paths. Every data workflow currently shares `concurrency: group: screener-data`, which serializes them, which is the only reason this has never bitten. A rebase-retry push loop per matrix job is the chosen fix, over a single collect-and-commit job, because part-1-freshest is an explicit goal.
+- **A 500-stock part runs in about 10 minutes, not 30 to 45.** Measured from run timings: 1.18 s per symbol on the S&P 500 job, 1.14 on GVD, 1.29 on the Nasdaq 100. The whole market in 8 parallel parts is about 12 minutes, and about 72 minutes even fully serial, so parallelism is a convenience rather than a requirement.
+- **Parts weigh about 380 KB, not 250 KB**, once v4.3.6's nine ratio fields are counted (553 bytes per stock today at `indent=2`, about 780 with them). Compact JSON would cut a third but would destroy the per-field git diffs v4.4.0 depends on, so the pretty printing stays.
+- **The ETF feed stays separate.** ETF records share only 7 of 20 fields with stock records, come from a different script and score on a different model, so folding 10 symbols and 7 KB into part 1 as the TODO proposed would put two record shapes in one file for no gain.
+
+### Changed - a dependency the plan had not accounted for
+
+**The legacy per-list feeds will keep being written permanently, derived from the parts.** v4.4.0's score-history sparklines mine the git history of those files, which is why committing generated feeds is documented as an intentional design choice. That feature unblocks around November 2026 with about three months of history now banked; dropping the per-list feeds in October would sever the accumulation immediately before it becomes usable. Writing them from the parts costs no extra Yahoo calls, and it also removes the single-release deadline the TODO had placed on the Automate Fundamentals migration.
+
+### Decided
+
+- **Missing metrics keep scoring zero; no coverage gate is built.** Raised as a risk with evidence: a 16-name random sample of VTI's bottom half had only 6 of 16 carrying all six scored metrics, so most of the roughly 3,000 stocks VTI adds will take structural hard zeros and fill the F band, lifting better-covered companies into higher tiers. `analyze_etf_holdings.py`'s `MIN_METRICS` gate was offered as precedent. **Owner: "i don't mind if things are missing pegFwd for example it should get 0 that's fine."** The hard-zero rule applies unchanged to every universe including the whole market.
+- **`docs/TODO.md` is a staging list, not a fifth canonical document.** It was created 2026-09-28, after the v4.1.13 audit consolidated the docs to four files and recorded why a fifth (`ROADMAP.md`) had drifted. PRD.md now states the exemption and its reasoning: TODO.md is a queue, nothing points into it for detail, and an item leaves it the moment it acquires a version. Item 1 has accordingly been replaced with a pointer to the roadmap, per the file's own rule.
+
+### Verification of the current state, recorded because it gates v4.9.0
+
+v4.3.6 shipped earlier the same day and **had produced no data yet**: the live feeds still carried the old 19 fields (last run 2026-09-25) and `data/statements/` did not exist, its first run being Saturday 2026-10-03. The v4.9.0 cutover therefore waits on one clean daily run carrying the new ratios and one clean statements run, so that a pipeline restructure is never debugged on top of untested code. All seven workflows were otherwise green.
+
+---
+
 ## v4.3.6 - 2026-09-28 - Trailing ratios and weekly financial statements (for Automate Fundamentals Research)
 
 **Requested by the owner for Automate Fundamentals' Research page (its roadmap item RS3), which showed dashes for every metric the feeds did not carry. The screener pages are unchanged; they ignore the new fields.**
