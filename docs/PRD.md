@@ -332,7 +332,9 @@ Scheduled 2026-09-28 from `docs/TODO.md` item 1 (owner idea, same day). The TODO
 | **v4.9.2** | Automate Fundamentals switches to the parts; statements move to a rolling seventh per day | Research page unchanged; every stock still refreshes within 7 days |
 | **v4.9.3** | VTI as the "Total US market" list, loaded after first render with a loading state | Tier distribution measured on a real run before the universe becomes selectable |
 
-**Phase 0, before any of it (2026-09-28).** v4.3.6 shipped the same day this was scheduled and had produced **no data yet**: the live feeds still carried the old 19 fields, and `data/statements/` did not exist, since its first run is Saturday 2026-10-03. Restructuring `fetch_screener_data.py` and all six workflows on top of code that has never run in CI would mean debugging two changes at once, so the v4.9.0 cutover waits on one clean daily run carrying the new ratios and one clean statements run.
+**Phase 0, before any of it (2026-09-28).** v4.3.6 shipped the same day this was scheduled and had produced **no data yet**: the live feeds still carried the old 19 fields, and `data/statements/` did not exist, since its first scheduled run is Saturday 2026-10-03. Restructuring `fetch_screener_data.py` and all six workflows on top of code that has never run in CI would mean debugging two changes at once, so the v4.9.0 cutover waits on one clean daily run carrying the new ratios and one clean statements run.
+
+**Phase 0 status (2026-09-28, 21:00 UTC): half met.** The statements half passed ahead of schedule: a run at 20:37 UTC committed **520 files, 0.8 MB, none truncated**, each carrying 4 annual periods across `income`/`balance`/`cashflow` plus `revCagr3y`, `fcfGrowth` and `cur`. The daily-feed half is still pending, since the first run carrying v4.3.6's nine ratio fields is tonight at 21:37 UTC.
 
 **Also changing together:** `constituents.yml` rebuilds the master universe and `index.json` when lists change; `alert-on-failure.yml` and `check_workflow_health.py` learn the new workflow name (and the watch-list drift check added in v4.3.5 catches it if they do not).
 
