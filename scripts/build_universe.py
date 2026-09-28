@@ -198,9 +198,21 @@ def main():
     ap = argparse.ArgumentParser(description="Build the master universe part index.")
     ap.add_argument("--check", action="store_true",
                     help="exit 1 if the mapping would change; write nothing")
+    ap.add_argument("--changed-parts", action="store_true",
+                    help="print only the parts that gained tickers, space separated, "
+                         "for a caller that wants to refetch just those")
     args = ap.parse_args()
 
     index, tickers, st = build()
+
+    if args.changed_parts:
+        # Printed alone and before anything else, because the caller reads
+        # stdout. A moved ticker counts as well as a new one: its record is not
+        # in the part it now belongs to.
+        touched = sorted({tickers["tickers"][t]
+                          for t in st["added"] + st["moved"]})
+        print(" ".join(str(p) for p in touched))
+        return 0
 
     def read(path):
         try:
