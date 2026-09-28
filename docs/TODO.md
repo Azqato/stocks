@@ -38,8 +38,8 @@ Ideas and planned work not yet in the PRD roadmap. Move an item into the PRD (wi
 - `alert-on-failure.yml` and `check_workflow_health.py` watch the new workflow name.
 - **Automate Fundamentals** (`AzqatoFeedSource`) reads the old per-list files. Keep writing the old files for one transition release, then switch Automate Fundamentals to the parts in the same week.
 
-**Open questions for the owner.**
+**Owner decisions (2026-09-28).**
 
-1. Should International stay at the top 100 VXUS holdings? Full VXUS is about 8,500 stocks, which is too much for Yahoo, and Automate Fundamentals cannot trade most of them through Alpaca.
-2. Is VTI wanted on the Azqato screener as its own list ("Total US market"), or only as data for Automate Fundamentals?
-3. Is one combined daily time acceptable, or should the Nasdaq 100 part keep its own earlier schedule?
+1. **International stays at the top 100 VXUS holdings.** Full VXUS is about 8,500 stocks, too much for Yahoo, and Automate Fundamentals cannot trade most of them through Alpaca.
+2. **VTI becomes its own screener list, "Total US market".** It is a new selectable universe next to the Nasdaq 100 and the S&P 500, with holdings synced weekly from Vanguard like Growth, Value, and Dividend. It is scored like the other stock lists. At about 4,000 stocks the view downloads every part, so it should load after the page's first render, with a loading state.
+3. **One daily run time for everything.** Every part runs together at the current Nasdaq 100 time (21:37 UTC, Mon-Fri), so the Nasdaq-first chain of staggered schedules goes away.
