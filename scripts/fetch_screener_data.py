@@ -40,6 +40,13 @@ screener.html ignores them.
 Output schema matches what screener.html reads:
   { "updated": ISO, "source": "yahoo", "stocks": { TICKER: {...}, ... } }
 
+--part N (v4.9.0) fetches one part of the master universe instead of one list,
+which is how a ticker held by four lists gets fetched once a day rather than
+four times. The part's membership comes from data/stocks/tickers.json, built by
+build_universe.py, and names come from the list files through its name_map();
+the output carries the same schema plus a "part" field. Per-list feeds are then
+derived from the parts by build_legacy_feeds.py, with no further fetching.
+
 Env:
   PAUSE   seconds to wait between symbols (default 0.8) -- be polite to Yahoo
 """
@@ -55,6 +62,7 @@ import yfinance as yf
 
 DEFAULT_LIST = "data/nasdaq100.json"
 DEFAULT_OUT = "data/screener.json"
+PARTS_DIR = "data/stocks"
 PAUSE = float(os.environ.get("PAUSE", "0.8"))
 
 
@@ -315,6 +323,25 @@ def build_stocks(listing, now, cache):
     return stocks, ok
 
 
+def part_listing(part):
+    """Return [{"t","n"}, ...] for one part of the master universe.
+
+    Order follows tickers.json, which build_universe.py writes in list-priority
+    order, so a part file's key order is stable from day to day and its git
+    diffs stay readable (v4.4.0 mines those diffs).
+    """
+    import build_universe
+
+    part_of = build_universe.part_map()
+    names = build_universe.name_map()
+    listing = [{"t": t, "n": names.get(t, t)}
+               for t, p in part_of.items() if p == part]
+    if not listing:
+        sys.exit(f"ABORT: part {part} holds no tickers; "
+                 f"run build_universe.py first (or check --part).")
+    return listing
+
+
 def main():
     ap = argparse.ArgumentParser(description="Build a screener data feed from a constituent list.")
     ap.add_argument("--list", dest="list_path", default=DEFAULT_LIST,
@@ -322,14 +349,28 @@ def main():
     ap.add_argument("--combined", action="append", default=[], metavar="NAME=LIST",
                     help="bundle several universes into one feed keyed by NAME "
                          "(repeatable, e.g. --combined growth=data/vug.json); overrides --list")
-    ap.add_argument("--out", dest="out_path", default=DEFAULT_OUT,
+    ap.add_argument("--part", type=int, default=None, metavar="N",
+                    help="fetch part N of the master universe instead of a list; "
+                         f"writes {PARTS_DIR}/part-NN.json unless --out says otherwise")
+    ap.add_argument("--out", dest="out_path", default=None,
                     help=f"output feed JSON (default {DEFAULT_OUT})")
     args = ap.parse_args()
 
     now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
     cache = {}  # symbol -> fetched record, shared across universes in one run
 
-    if args.combined:
+    if args.part is not None and args.combined:
+        sys.exit("--part and --combined are mutually exclusive.")
+    out_path = args.out_path or (f"{PARTS_DIR}/part-{args.part:02d}.json"
+                                 if args.part is not None else DEFAULT_OUT)
+
+    if args.part is not None:
+        listing = part_listing(args.part)
+        stocks, ok = build_stocks(listing, now, cache)
+        out = {"updated": now, "source": "yahoo", "part": args.part, "stocks": stocks}
+        summary = f"part {args.part}: {ok}/{len(listing)}"
+        os.makedirs(PARTS_DIR, exist_ok=True)
+    elif args.combined:
         universes = {}
         totals = []
         for spec in args.combined:
@@ -350,11 +391,11 @@ def main():
         out = {"updated": now, "source": "yahoo", "stocks": stocks}
         summary = f"{ok}/{len(listing)}"
 
-    with open(args.out_path, "w", encoding="utf-8") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
         f.write("\n")
 
-    print(f"Wrote {args.out_path}: {summary} symbols with price data.")
+    print(f"Wrote {out_path}: {summary} symbols with price data.")
 
 
 if __name__ == "__main__":

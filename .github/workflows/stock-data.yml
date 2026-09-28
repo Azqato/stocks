@@ -1,0 +1,150 @@
+name: Update Stock Data (Parts)
+
+# One daily job for every screener list (v4.9.0). The master universe is split
+# into parts of up to 500 stocks by build_universe.py; this workflow fetches one
+# part per matrix leg, so a stock held by four lists is fetched once a day
+# instead of four times (measured 2026-09-28: 932 fetches a day for 629 unique
+# tickers). The per-list feeds the site reads are then derived from the parts by
+# build_legacy_feeds.py, with no further Yahoo calls.
+#
+# DISPATCH ONLY for now, deliberately: the five per-list workflows still own the
+# schedule until this has run clean by hand. The cron here and their removal
+# land in a separate commit, so a bad cutover is one revert.
+#
+# Why a push retry loop rather than one collect-and-commit job: `concurrency`
+# is workflow-level, so the matrix legs do NOT get the serialization the five
+# old workflows relied on, and git rejects a non-fast-forward push whatever
+# paths it touches. Parts committing separately keeps part 1 (the default view)
+# freshest, which a single collecting commit would lose.
+
+on:
+  workflow_dispatch:
+    inputs:
+      parts:
+        description: "Comma-separated part numbers to run (blank = every part in the index)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener-data    # shared with the other data workflows so cross-workflow pushes never race
+  cancel-in-progress: false
+
+jobs:
+  # The index is the single source of truth for how many parts exist, so the
+  # matrix is read from it rather than hard-coded and left to drift.
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - id: plan
+        name: Read the part list from the universe index
+        env:
+          REQUESTED: ${{ inputs.parts }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          with open("data/stocks/index.json", encoding="utf-8") as f:
+              parts = list(range(1, len(json.load(f)["parts"]) + 1))
+          want = [p.strip() for p in os.environ.get("REQUESTED", "").split(",") if p.strip()]
+          if want:
+              chosen = [int(p) for p in want]
+              missing = [p for p in chosen if p not in parts]
+              if missing:
+                  raise SystemExit(f"part(s) {missing} are not in the index (have {parts})")
+          else:
+              chosen = parts
+          print("matrix=" + json.dumps({"part": chosen}))
+          PY
+          cat "$GITHUB_OUTPUT"
+
+  part:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false          # one bad part must not cancel the others
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+      max-parallel: 4
+    steps:
+      # Full history: `git pull --rebase` in the retry loop below is unreliable
+      # on the default shallow clone.
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Fetch part ${{ matrix.part }}
+        run: |
+          pip install --quiet yfinance==1.4.1
+          python scripts/fetch_screener_data.py --part ${{ matrix.part }}
+
+      - name: Commit part ${{ matrix.part }}
+        run: |
+          part=$(printf "part-%02d.json" ${{ matrix.part }})
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "data/stocks/$part"
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update stock data ($part) [skip ci]"
+          # Parallel legs push to the same branch, so a rejected push is
+          # expected rather than an error. Rebase onto whatever landed first and
+          # try again; only our own file is touched, so this never conflicts.
+          for attempt in 1 2 3 4 5 6; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing onto origin/main."
+            sleep $(( (RANDOM % 15) + 3 ))
+            git pull --rebase --autostash origin main
+          done
+          echo "::error::Could not push $part after 6 attempts."
+          exit 1
+
+  # Derived, not fetched. Must wait for every part, because one list can span
+  # several parts (sp500 spans parts 1 and 2 today).
+  feeds:
+    needs: part
+    if: ${{ !cancelled() }}     # a single failed part still leaves the other feeds derivable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Derive the per-list feeds from the parts
+        run: python scripts/build_legacy_feeds.py
+
+      - name: Commit feeds
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/screener.json data/screener_sp500.json data/screener_gvd.json data/screener_intl.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: derive screener feeds from stock parts [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $attempt); rebasing onto origin/main."
+            sleep $(( (RANDOM % 10) + 3 ))
+            git pull --rebase --autostash origin main
+          done
+          echo "::error::Could not push the derived feeds after 3 attempts."
+          exit 1

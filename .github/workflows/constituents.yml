@@ -56,6 +56,14 @@ jobs:
         continue-on-error: true
         run: python scripts/update_etf_constituents.py
 
+      # Runs after both syncs and before the feed regeneration, so a membership
+      # change reaches the part index in the same commit as the lists. New
+      # tickers get the lowest-numbered part with room; existing tickers keep
+      # their part, so the parts do not reshuffle and each part file's git
+      # history stays a clean per-stock series.
+      - name: Rebuild the master universe part index
+        run: python scripts/build_universe.py
+
       - name: Regenerate changed feeds and commit
         run: |
           changed=0
@@ -82,6 +90,13 @@ jobs:
             echo "VXUS holdings changed; regenerating the International feed."
             python scripts/fetch_screener_data.py --list data/vxus.json --out data/screener_intl.json
             git add data/vxus.json data/screener_intl.json
+            changed=1
+          fi
+          # The universe index tracks list membership, so it changes whenever
+          # any list above did. Staged independently because build_universe.py
+          # writes nothing when the mapping is unchanged.
+          if ! git diff --quiet data/stocks/index.json data/stocks/tickers.json              || [ -n "$(git status --porcelain data/stocks)" ]; then
+            git add data/stocks/index.json data/stocks/tickers.json
             changed=1
           fi
           # The ISIN->symbol resolution cache can change even when membership

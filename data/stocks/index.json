@@ -1,0 +1,62 @@
+{
+  "updated": "2026-09-28T20:48:26.816812Z",
+  "partSize": 500,
+  "parts": [
+    {
+      "file": "part-01.json",
+      "count": 500
+    },
+    {
+      "file": "part-02.json",
+      "count": 119
+    }
+  ],
+  "lists": {
+    "nasdaq100": {
+      "list": "data/nasdaq100.json",
+      "parts": [
+        1
+      ],
+      "count": 100
+    },
+    "sp500": {
+      "list": "data/sp500.json",
+      "parts": [
+        1,
+        2
+      ],
+      "count": 500
+    },
+    "growth": {
+      "list": "data/vug.json",
+      "parts": [
+        1,
+        2
+      ],
+      "count": 100
+    },
+    "value": {
+      "list": "data/vtv.json",
+      "parts": [
+        1,
+        2
+      ],
+      "count": 100
+    },
+    "dividend": {
+      "list": "data/vig.json",
+      "parts": [
+        1
+      ],
+      "count": 100
+    },
+    "intl": {
+      "list": "data/vxus.json",
+      "parts": [
+        1,
+        2
+      ],
+      "count": 100
+    }
+  }
+}

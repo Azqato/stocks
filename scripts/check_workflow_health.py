@@ -48,6 +48,7 @@ MAX_AGE_HOURS = {
     "screener-data-intl.yml": 24 * 4,
     "screener-data-sp500.yml": 24 * 4,
     "statements.yml": 24 * 9,        # weekly (Saturdays), 9 days
+    "stock-data.yml": 24 * 4,        # dispatch-only until the v4.9.0 cutover; see below
 }
 DEFAULT_MAX_AGE_HOURS = 24 * 9
 
@@ -75,7 +76,7 @@ def get(url):
         return json.load(r)
 
 
-def check(repo):
+def check(repo, root=None):
     """Return (rows, problems). A row is (name, state, detail)."""
     wfs = get(f"{API}/repos/{repo}/actions/workflows")["workflows"]
     rows, problems = [], []
@@ -96,17 +97,33 @@ def check(repo):
         age = now - started
         conclusion = run["conclusion"] or run["status"]
         limit = timedelta(hours=MAX_AGE_HOURS.get(fname, DEFAULT_MAX_AGE_HOURS))
+        # A workflow with no cron is only ever run by hand, so "not run lately"
+        # says nothing about its health. Read that from the file rather than a
+        # second hand-kept list, so a workflow gaining or losing its schedule
+        # cannot drift out of sync with this check.
+        scheduled = has_schedule(root, fname)
         stamp = f"{age_str(age)} ago"
         if conclusion == "failure":
             rows.append((fname, "FAILING", f"last run {stamp}: {run['html_url']}"))
             problems.append(f"{fname} last run FAILED ({stamp})")
-        elif age > limit:
+        elif age > limit and scheduled:
             rows.append((fname, "STALE", f"last run {stamp}, expected within "
                                          f"{limit.days}d"))
             problems.append(f"{fname} has not run in {age_str(age)}")
         else:
             rows.append((fname, "ok", f"{conclusion}, {stamp}"))
     return rows, problems
+
+
+def has_schedule(root, fname):
+    """True if this workflow file declares a cron. Unknown files count as scheduled."""
+    if not root:
+        return True
+    path = os.path.join(root, ".github/workflows", fname)
+    if not os.path.exists(path):
+        return True          # pages-build-deployment and friends: assume scheduled
+    with open(path, encoding="utf-8") as f:
+        return "cron:" in f.read()
 
 
 ALERT_WORKFLOW = ".github/workflows/alert-on-failure.yml"
@@ -161,13 +178,18 @@ def main():
                               check=True).stdout.strip()
         unwatched = check_alert_watchlist(root)
     except Exception:
-        unwatched = []
+        root, unwatched = None, []
 
     try:
-        rows, problems = check(repo)
+        rows, problems = check(repo, root)
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as e:
         # Never let a network hiccup or a rate limit stand in the way of a push.
         print(f"workflow health: could not reach the GitHub API ({e}); skipping.")
+        # The watch-list check is local, so report it even when the API is out
+        # of reach; unauthenticated rate limits are common enough that hiding
+        # it behind a live API call would mean it often never runs.
+        for w in unwatched:
+            print(f"  ! alert-on-failure.yml does not watch {w}")
         return 0
 
     for w in unwatched:

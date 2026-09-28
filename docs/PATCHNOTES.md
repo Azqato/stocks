@@ -2,6 +2,46 @@
 
 ---
 
+## v4.9.0 - 2026-09-28 - One stock-data job for every list, in 500-stock parts (pipeline only)
+
+**Phase 1 of 4 of the plan scheduled in v4.3.7. The daily data pipeline now fetches a deduplicated master universe in parts instead of fetching each list separately, which removes a third of the daily Yahoo requests. The site, the feeds it reads and the five per-list workflows' schedules are all deliberately untouched: the new workflow ships dispatch-only, and the schedule cutover is a separate commit.**
+
+### Added
+
+- **`scripts/build_universe.py`.** Unions every constituent list, deduplicates, and assigns each ticker to a numbered part of at most 500. Verified on the live lists: **619 unique tickers from 1,000 list slots, 381 duplicates removed**, into 2 parts (500 and 119). Idempotent (a second run writes nothing) with a `--check` mode that exits 1 if the mapping would change. Assignment is **sticky**: a ticker keeps its part until it leaves every list, so parts do not reshuffle daily and each part file's git history stays a clean per-stock series, which is what v4.4.0's score-history sparklines mine.
+- **`fetch_screener_data.py --part N`.** Fetches one part of the universe and writes `data/stocks/part-NN.json` with the same record schema as a per-list feed plus a `part` field. Membership comes from `tickers.json`; names come from the list files, so nothing duplicates them.
+- **`scripts/build_legacy_feeds.py`.** Regroups the part records into the four per-list feeds the site and Automate Fundamentals already read, with **no extra Yahoo calls**. A `MIN_COVERAGE` of 90% aborts rather than overwrite a good feed with a gutted one if a part job failed.
+- **`.github/workflows/stock-data.yml`,** a matrix over the parts with the part list read from `index.json` rather than hard-coded, `fail-fast: false` so one bad part does not cancel the others, `max-parallel: 4`, and a `needs:`-gated job that derives the feeds once every part has landed. The per-leg push is a rebase-and-retry loop, because `concurrency` is workflow-level and so matrix legs do not get the serialization the five old workflows relied on.
+
+### Changed
+
+- **`constituents.yml`** rebuilds the part index after the list syncs and commits it with the lists, so a membership change reaches the universe in the same commit.
+- **`check_workflow_health.py`** no longer reports an unscheduled workflow as stale. Whether a workflow has a cron is read from its file rather than a second hand-kept list, so a workflow gaining or losing its schedule cannot drift out of sync with the check. Its local watch-list drift check also now reports when the Actions API is unreachable; unauthenticated rate limits are common enough that hiding a purely local check behind a live API call meant it often never ran.
+- **`alert-on-failure.yml`** watches the new workflow. Verified by deliberately typo'ing the entry and confirming the drift check named it.
+
+### Fixed
+
+- **The same ticker no longer disagrees with itself between lists.** Under the old pipeline the five daily jobs ran up to two hours apart, so a stock in several lists carried a different price in each feed. TXN, the one ticker in all five lists, now shows **one price and one `priceUpdated` across every feed** (verified: 2 distinct fetch timestamps across the whole run, one per part). This was never reported as a bug and is a side effect of fetching once, but it is a real behavior change.
+
+### Verification
+
+The v4.9.0 gate from the PRD, run against a full live fetch of both parts (619/619 symbols priced):
+
+- **Feeds match the old pipeline field for field.** For all four feeds and all six universes: ticker sets identical, curated names identical, per-record key order identical, no field dropped, and the only added fields are v4.3.6's nine ratios.
+- **Scoring is unaffected.** Nasdaq 100 tier distribution is **identical** to the committed feed's (4 S+ / 6 S / 10 A / 30 B / 25 C / 25 F); the S&P 500's moves by a few names per band, consistent with three days of market data (largest single move 3 points).
+- **Fetch count drops 932 to 619,** a 34% cut, and the dedupe is confirmed at the record level rather than inferred from counts.
+- **One correction to the v4.3.7 estimate:** part files are **878 bytes per stock, not 780** (429 KB for 500 stocks), so the whole market comes to about 3.1 MB across 8 parts rather than 2.7 MB.
+
+### Not done in this release, deliberately
+
+`stock-data.yml` has **no cron**; the five per-list workflows still own the schedule, unmodified. The cutover waits on the Phase 0 gate recorded in v4.3.7 (one clean daily run carrying v4.3.6's ratio fields, and the first statements run on Saturday 2026-10-03) plus one successful hand-run of the new workflow, since the rebase-retry push loop cannot be tested locally. The frontend still reads the per-list feeds; that is v4.9.1.
+
+### Design note
+
+**The TODO's single `index.json` became two files.** `index.json` holds only the parts that exist and the parts each list spans, so it stays about **1 KB and does not grow with the universe**, because the frontend will fetch it before anything renders from v4.9.1. `tickers.json` holds the full ticker-to-part map for the pipeline and per-ticker consumers, and is the file that scales (9.6 KB now, about 60 KB with the whole market). Per-part `updated` stamps live inside the part files, which leaves `build_universe.py` the single writer of both index files, so the parallel part jobs have nothing to contend over.
+
+---
+
 ## v4.3.7 - 2026-09-28 - Roadmap: the one-job, 500-stock-parts plan scheduled as v4.9.0 through v4.9.3
 
 **Docs only. The owner asked for a review of `docs/TODO.md` item 1 (their own idea from the same day) against the live site, then for it to be documented and built. This entry records the plan, the four corrections that came out of costing it, and the decisions taken. No code, pipeline, or site changes.**
