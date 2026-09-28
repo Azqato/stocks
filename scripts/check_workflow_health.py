@@ -47,6 +47,7 @@ MAX_AGE_HOURS = {
     "screener-data-gvd.yml": 24 * 4,
     "screener-data-intl.yml": 24 * 4,
     "screener-data-sp500.yml": 24 * 4,
+    "statements.yml": 24 * 9,        # weekly (Saturdays), 9 days
 }
 DEFAULT_MAX_AGE_HOURS = 24 * 9
 

@@ -33,6 +33,10 @@ its balance sheet in CNY). `fetch()` converts cash/debt into the trading
 currency via a live Yahoo FX quote so they line up with marketCap/price; see the
 comment there. Same-currency listings (nearly all of them) are untouched.
 
+Trailing ratios (peTTM, psTTM, evEbitda, divYield, opMargin, roe, debtToEquity,
+currentRatio, fcfYield) are extra fields for Automate Fundamentals' Research page;
+screener.html ignores them.
+
 Output schema matches what screener.html reads:
   { "updated": ISO, "source": "yahoo", "stocks": { TICKER: {...}, ... } }
 
@@ -250,6 +254,30 @@ def fetch(symbol):
     if (peg is None or peg == 0) and rec["peFwd"] is not None and rec["epsFwd"] not in (None, 0) and rec["epsFwd"] > 0:
         peg = rec["peFwd"] / rec["epsFwd"]
     rec["pegFwd"] = peg
+
+    # Trailing ratios Yahoo computes itself (added 2026-09-28 for Automate Fundamentals Research, RS3).
+    # Units: margins/ROE come as decimals and are stored as percents like the other margins;
+    # Yahoo already reports dividendYield and debtToEquity in percent, so D/E is divided by 100
+    # to store a plain multiple (0.78x, not 78).
+    rec["peTTM"] = num(info.get("trailingPE"))
+    rec["psTTM"] = num(info.get("priceToSalesTrailing12Months"))
+    rec["evEbitda"] = num(info.get("enterpriseToEbitda"))
+    rec["divYield"] = num(info.get("dividendYield"))
+    om = num(info.get("operatingMargins"))
+    rec["opMargin"] = om * 100 if om is not None else None
+    roe = num(info.get("returnOnEquity"))
+    rec["roe"] = roe * 100 if roe is not None else None
+    de = num(info.get("debtToEquity"))
+    rec["debtToEquity"] = de / 100 if de is not None else None
+    rec["currentRatio"] = num(info.get("currentRatio"))
+    # FCF yield = TTM free cash flow / market cap. FCF is in the reporting currency, so convert it
+    # to the trading currency first, exactly as cash/debt above.
+    fcf = num(info.get("freeCashflow"))
+    if fcf is not None and fin_cur and cur and fin_cur != cur:
+        rate = fx_rate(fin_cur, cur)
+        fcf = fcf * rate if rate else None
+    cap = rec["marketCap"]
+    rec["fcfYield"] = fcf / cap * 100 if fcf is not None and cap else None
 
     return rec
 

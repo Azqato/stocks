@@ -2,6 +2,22 @@
 
 ---
 
+## v4.3.6 - 2026-09-28 - Trailing ratios and weekly financial statements (for Automate Fundamentals Research)
+
+**Requested by the owner for Automate Fundamentals' Research page (its roadmap item RS3), which showed dashes for every metric the feeds did not carry. The screener pages are unchanged; they ignore the new fields.**
+
+### Added
+
+- **Nine trailing ratios on every stock in the screener feeds:** `peTTM`, `psTTM`, `evEbitda`, `divYield`, `opMargin`, `roe`, `debtToEquity`, `currentRatio`, and `fcfYield`, all from the same `Ticker.info` call the feed already makes, so no extra Yahoo requests. Margins and ROE are stored as percents like the existing margins; Yahoo's `debtToEquity` is a percent and is stored as a plain multiple (78.4 becomes 0.784); `dividendYield` is already a percent in yfinance 1.x. FCF yield converts free cash flow into the trading currency first, the same FX fix as cash and debt.
+- **`scripts/fetch_statements.py` and `statements.yml`: one file per stock at `data/statements/<TICKER>.json`.** Income statement, balance sheet, and cash flow for TTM plus the last three fiscal years, and two derived growth rates (`revCagr3y`, `fcfGrowth`). Per-ticker files because Research shows one company at a time. Weekly on Saturdays (statements change quarterly), over the ~520 US stocks in the Nasdaq 100, S&P 500, Growth, Value, and Dividend lists; about an hour.
+- The new workflow is on the `alert-on-failure.yml` watch list and in `check_workflow_health.py` (stale after 9 days).
+
+### Verification
+
+Run locally against AAPL, BRK.B, and PDD: every value checked against Yahoo; BRK.B and PDD have gaps only where Yahoo reports no line item (a bank-style income statement has no gross profit).
+
+---
+
 ## v4.3.5 - 2026-09-21 - Workflow failure detection, both in CI and before a push
 
 **Direct follow-up to v4.3.4, at the owner's instruction: "this is the second time a weekly cron has failed invisibly for over a month, which is the actual root cause behind both incidents." Two layers, because they fail in different situations.**

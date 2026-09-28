@@ -23,6 +23,7 @@ on:
     # the workflow files on every push, so drift is caught locally.
     workflows:
       - Update Constituents
+      - Update Financial Statements
       - Update Market Overview Data
       - Update Screener Data (ETFs)
       - Update Screener Data (Growth, Value & Dividend)
