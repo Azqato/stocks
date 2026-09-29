@@ -2,6 +2,29 @@
 
 ---
 
+## v4.9.5 - 2026-09-29 - Three defects in the cutover, found by verifying it against the live repo
+
+**A post-cutover audit of v4.9.4 rather than new work. One of the three was a silent logic error that made the constituent sync's refetch dead code; it was reproduced before being fixed, and the fix was reproduced too.**
+
+### Fixed
+
+- **`constituents.yml` never refetched a newly added ticker, because it rebuilt the index before asking what changed.** A leftover unconditional "Rebuild the master universe part index" step from v4.9.0 ran `build_universe.py` ahead of the v4.9.4 step that runs `--changed-parts`. `--changed-parts` diffs the new membership against the **`tickers.json` on disk**, so the earlier rebuild had already made every new ticker look pre-existing: `added` and `moved` both came back empty and the refetch loop ran over nothing, reporting "Membership moved but no part gained a ticker" every time. **Reproduced before fixing:** adding a fake holding to `data/vti.json` and running the two steps in the workflow's own order printed `added: ['ZZTEST']` from the first step and then **nothing** from `--changed-parts`; with the redundant step removed, `--changed-parts` correctly printed `8`. The consequence was bounded rather than silent forever, since the daily run covers the curated parts anyway, but a VTI-only addition would have had no data until the following Sunday. The comment block now states that the order matters and what breaks when it is wrong.
+- **A derived feed stamped itself with the time it was written, not the time its data was fetched.** `build_legacy_feeds.py` put `now` in every feed's `updated`, so a feed rebuilt hours after a part job failed would still report itself fresh, which is exactly the case the screener's stale banner exists to catch. Each feed now carries the **oldest stamp among the parts its list spans**, which is also what `screener.js` already does for the whole-market universe, so both paths report freshness the same way. Verified: with part 1 at 20:50 and part 8 at 22:17, all four feeds stamp 20:50, since every curated list spans part 1.
+- **`stock-data.yml`'s `plan` job called `python` with no toolchain set up**, unlike every other job in this repo. It decides the matrix and is a `needs:` for the rest, so a missing interpreter would have cost the whole run rather than one part. It now runs `actions/setup-python@v6` like everything else.
+
+### Changed
+
+- **The three per-list feeds were regenerated from the committed parts.** `screener_sp500.json`, `screener_gvd.json` and `screener_intl.json` were still at **2026-09-26 with the old 19 fields**: the retired workflows' 22:42, 23:12 and 23:42 crons had not yet fired for Monday when v4.9.4 deleted them, so those three runs were lost. Deriving them from Monday's parts costs no Yahoo calls and moved all four feeds to **28 fields** (spot-checked JNJ: peTTM 31.55, roe 25.74, fcfYield 2.58, currentRatio 1.089, debtToEquity 0.577), three days earlier than waiting for the next daily run would have.
+
+### Verified unchanged
+
+- The `plan` job's matrix logic was re-extracted from the edited YAML and re-run across **six branches**, now including the empty-curated guard: daily gives parts 1 and 2, weekly and manual-with-no-input give 1 to 8, an explicit `3,5` gives 3 and 5, part 99 aborts naming the valid parts, and an empty curated list refuses to run an empty matrix.
+- All six workflow files parse; `build_legacy_feeds.py` parses and derives all six lists at **100% coverage**.
+- The alert watch list matches every live workflow's `name:` field exactly, and the `pre-push` hook that checks for drift is wired (`core.hooksPath = .githooks`).
+- **GitHub has already dropped the four retired workflows from its workflow listing**, which `docs/TODO.md` had flagged as an unobserved transition. v4.9.4's retired-workflow skip in `check_workflow_health.py` is therefore moot in practice, and correct to keep for the next deletion.
+
+---
+
 ## v4.9.4 - 2026-09-29 - The schedule cutover: one daily job for the curated universes, one weekly for the whole market
 
 **The half of v4.9.0 that was deliberately held back. The four per-list feed workflows are gone and `stock-data.yml` owns the daily stock data, on two schedules split by how fast the data actually moves. Both halves of the Phase 0 gate passed first.**

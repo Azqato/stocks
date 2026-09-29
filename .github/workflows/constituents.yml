@@ -56,18 +56,19 @@ jobs:
         continue-on-error: true
         run: python scripts/update_etf_constituents.py
 
-      # Runs after both syncs and before the feed regeneration, so a membership
-      # change reaches the part index in the same commit as the lists. New
-      # tickers get the lowest-numbered part with room; existing tickers keep
-      # their part, so the parts do not reshuffle and each part file's git
-      # history stays a clean per-stock series.
-      - name: Rebuild the master universe part index
-        run: python scripts/build_universe.py
-
       # Rebuilt here rather than left to Monday so a list that changed on
       # Saturday has data for its new tickers before the next trading day. Only
       # the parts that gained tickers are refetched, which on a normal week is
-      # one part or none at all; build_universe.py reports them.
+      # one part or none at all; build_universe.py reports them. New tickers get
+      # the lowest-numbered part with room; existing tickers keep their part, so
+      # the parts do not reshuffle and each part file's git history stays a clean
+      # per-stock series.
+      #
+      # ORDER MATTERS, and getting it wrong fails silently. --changed-parts
+      # diffs the new membership against the tickers.json ON DISK, so anything
+      # that rebuilds the index first makes every ticker look pre-existing and
+      # the refetch loop below runs over an empty list. A separate unconditional
+      # "rebuild the part index" step did exactly that until 2026-09-29.
       - name: Rebuild the universe and refetch only what changed
         run: |
           pip install --quiet yfinance==1.4.1

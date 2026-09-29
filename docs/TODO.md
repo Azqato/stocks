@@ -22,7 +22,9 @@ Two things worth doing alongside, if that lands:
 
 - **The first Sunday whole-market run** (Sunday 21:17 UTC, about 21 minutes over 8 parts). The daily half has run under the old per-list schedule for months at this minute; the weekly half has only ever run locally and by dispatch.
 - **A new index member landing in a high part.** The daily matrix comes from `build_universe.py --parts-for`, so this should self-correct, but the first time `constituents.yml` adds a ticker after the cutover is the real test of both `--changed-parts` and `--parts-for` together.
-- **`check_workflow_health.py` reporting the retired workflows.** It now skips any workflow GitHub still lists whose file is gone, but GitHub drops them from the listing eventually and that transition has not been observed.
+- ~~**`check_workflow_health.py` reporting the retired workflows.**~~ Settled 2026-09-29: GitHub dropped all four from its workflow listing within hours, so v4.9.4's retired-workflow skip never had to carry them. Worth keeping for the next deletion.
+
+**One post-cutover audit already happened (v4.9.5) and found three defects**, including a silent one that made the constituent sync's refetch dead code. Worth a second pass after the first Sunday run and the first post-cutover constituent change, since both exercise paths nothing has run yet.
 
 ### Verification already banked, worth not repeating
 

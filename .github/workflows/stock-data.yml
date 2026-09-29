@@ -66,6 +66,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # This job decides the matrix, so a missing interpreter here costs the
+      # whole run. Set the toolchain up explicitly like every other job, rather
+      # than relying on whatever `python` the runner image happens to expose.
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
       # Which parts the curated universes occupy is read from the index rather
       # than hardcoded, because sticky assignment can put a newly added index
       # member in a high part; see build_universe.py --parts-for.

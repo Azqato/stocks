@@ -55,21 +55,23 @@ MIN_COVERAGE = 0.90
 
 
 def load_parts():
-    """Return {ticker: record} across every part file that exists."""
+    """Return (index, {ticker: record}, {part number: that part's stamp})."""
     with open(INDEX_PATH, encoding="utf-8") as f:
         index = json.load(f)
-    records = {}
-    for p in index["parts"]:
+    records, stamps = {}, {}
+    for n, p in enumerate(index["parts"], start=1):
         path = os.path.join(PARTS_DIR, p["file"])
         if not os.path.exists(path):
             print(f"[legacy] WARNING: {path} missing; feeds will be short.",
                   file=sys.stderr)
             continue
         with open(path, encoding="utf-8") as f:
-            records.update(json.load(f)["stocks"])
+            body = json.load(f)
+        records.update(body["stocks"])
+        stamps[n] = body.get("updated")
     if not records:
         sys.exit("ABORT: no part files found; run fetch_screener_data.py --part N first.")
-    return index, records
+    return index, records, stamps
 
 
 def stocks_for(list_path, records, missing):
@@ -92,9 +94,22 @@ def main():
                     help="report what each feed would contain; write nothing")
     args = ap.parse_args()
 
-    index, records = load_parts()
+    index, records, stamps = load_parts()
     now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
     failures = []
+
+    def as_of(spans):
+        """The oldest stamp among the parts a list spans, or now if unknown.
+
+        The stamp has to describe the DATA, not this script's run time. Stamping
+        every derived feed `now` would report a feed as fresh even when the part
+        job that feeds it failed hours ago, which is precisely the case the
+        screener's stale banner exists to catch. screener.js does the same thing
+        for the whole-market universe (oldest contributing part wins), so both
+        paths report freshness the same way.
+        """
+        have = [stamps[p] for p in spans if stamps.get(p)]
+        return min(have) if have else now
 
     for out_path, members in FEEDS:
         blocks = {}
@@ -113,16 +128,19 @@ def main():
                 print(f"[legacy] {list_key}: {len(missing)} tickers absent from the "
                       f"parts: {missing[:10]}{' ...' if len(missing) > 10 else ''}")
             blocks[feed_key or list_key] = {
-                "updated": now, "source": "yahoo", "stocks": stocks}
+                "updated": as_of(info["parts"]), "source": "yahoo",
+                "stocks": stocks}
             counts.append(f"{list_key} {len(stocks)}/{expected}")
 
         if not blocks:
             continue
         if len(members) == 1:
             body = next(iter(blocks.values()))
-            out = {"updated": now, "source": "yahoo", "stocks": body["stocks"]}
+            out = {"updated": body["updated"], "source": "yahoo",
+                   "stocks": body["stocks"]}
         else:
-            out = {"updated": now, "source": "yahoo", "universes": blocks}
+            out = {"updated": min(b["updated"] for b in blocks.values()),
+                   "source": "yahoo", "universes": blocks}
 
         if args.dry_run:
             print(f"[legacy] would write {out_path}: {'; '.join(counts)}")
