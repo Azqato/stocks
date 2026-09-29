@@ -169,12 +169,15 @@
       border-color: var(--color-accent);
       color: var(--color-accent);
     }
-    /* MAG 10 watchlist toggle (v3.36.0): sits to the right of the universe
-       buttons but is a filter, not a universe switch. It's a plain .btn (no
-       .u-btn), so it renders identically to the universe buttons -- same
-       rounded corners, same border -- and its .active state below mirrors
-       .u-btn.active. The .universe-group flex gap already spaces it evenly,
-       so no separator override is needed. */
+    /* MAG 10 watchlist toggle (v3.36.0): sits third, next to the S&P 500
+       button whose data it filters (owner-specified order, v4.9.6), but it is
+       a filter, not a universe switch. It's a plain .btn (no .u-btn), so it
+       renders identically to the universe buttons: same rounded corners, same
+       border, and its .active state below mirrors .u-btn.active. The
+       .universe-group flex gap already spaces it evenly, so no separator
+       override is needed. Because it is not a .u-btn, the disabled and active
+       sweeps over #universeGroup .u-btn have to name it explicitly; see
+       setUniverseButtonsDisabled() and updateUniverseButtons(). */
     #mag10Btn.active {
       background: var(--color-accent-light);
       border-color: var(--color-accent);
@@ -526,13 +529,13 @@
       <div class="universe-group" id="universeGroup" role="group" aria-label="Choose a universe">
         <button class="btn u-btn active" data-universe="nasdaq100">Nasdaq 100</button>
         <button class="btn u-btn" data-universe="sp500">S&amp;P 500</button>
+        <button class="btn" id="mag10Btn" title="Filter to a fixed 10-stock watchlist (AAPL, AMD, AMZN, AVGO, GOOGL, META, MSFT, NFLX, NVDA, TSLA), scored against the S&amp;P 500">MAG 10</button>
         <button class="btn u-btn" data-universe="growth" title="Top 100 holdings of VUG (Vanguard Growth ETF)">Growth</button>
         <button class="btn u-btn" data-universe="value" title="Top 100 holdings of VTV (Vanguard Value ETF)">Value</button>
         <button class="btn u-btn" data-universe="dividend" title="Top 100 holdings of VIG (Vanguard Dividend Appreciation ETF)">Dividend</button>
-        <button class="btn u-btn" data-universe="etfs" title="A fixed list of 10 broad-market and factor ETFs, scored on technicals, long-term performance, and cost instead of fundamentals">ETFs</button>
+        <button class="btn u-btn" data-universe="vti" title="Every US holding of VTI (Vanguard Total Stock Market ETF), about 3,500 stocks, scored on the same fundamentals model. Larger download than the other universes; loads on first use">Domestic</button>
         <button class="btn u-btn" data-universe="intl" title="Top 100 holdings of VXUS (Vanguard Total International Stock ETF), scored on the same fundamentals model as the other stock universes">International</button>
-        <button class="btn u-btn" data-universe="vti" title="Every US holding of VTI (Vanguard Total Stock Market ETF), about 3,500 stocks, scored on the same fundamentals model. Larger download than the other universes; loads on first use">Total US market</button>
-        <button class="btn" id="mag10Btn" title="Filter to a fixed 10-stock watchlist (AAPL, AMD, AMZN, AVGO, GOOGL, META, MSFT, NFLX, NVDA, TSLA), scored against the S&amp;P 500">MAG 10</button>
+        <button class="btn u-btn" data-universe="etfs" title="A fixed list of 10 broad-market and factor ETFs, scored on technicals, long-term performance, and cost instead of fundamentals">ETFs</button>
       </div>
       <span class="spacer"></span>
       <span class="as-of" id="asOf">no data loaded</span>

@@ -2,6 +2,26 @@
 
 ---
 
+## v4.9.6 - 2026-09-29 - Screener nav: owner-specified button order, "Domestic", and MAG 10 stops lighting two buttons
+
+**Owner request, given as the order to use. Presentation only: no universe's data, membership or scoring changed.**
+
+### Changed
+
+- **The universe bar is now, in order: Nasdaq 100, S&P 500, MAG 10, Growth, Value, Dividend, Domestic, International, ETFs.** MAG 10 moves from the far right to third, beside the S&P 500 button whose data it filters. The two geographic universes sit together, and ETFs goes last, which suits the one universe on a different scoring model and a different column set. It needed no CSS: since v4.1.2 the MAG 10 button has been a plain `.btn` that renders identically to its neighbours, so moving it in the markup was the whole change.
+- **"Total US market" is now "Domestic"**, matching the International button it sits next to. Label only: the `vti` universe key, its parts loader, its 10-day staleness allowance and its `data/vti.json` membership are all untouched.
+
+### Fixed
+
+- **Selecting MAG 10 no longer leaves S&P 500 lit as well.** MAG 10 is a filter over S&P 500 data, so `universeMode` really is `sp500` while it is on, and the highlight sweep lit the button that matched. Two buttons lit said the reader was looking at all 500 names when they were looking at 10. While the filter is on it now owns the highlight alone, and turning it off hands the highlight back. **The second half of that needed a second change:** `updateMag10Button()` now re-runs the universe sweep, because `toggleMag10()` skips `selectUniverse()` when S&P 500 is already loaded, so nothing else would have repainted the bar.
+- **MAG 10 stayed clickable while every button beside it was greyed out mid-fetch.** `setUniverseButtonsDisabled()` sweeps `#universeGroup .u-btn`, and MAG 10 is deliberately not a `.u-btn`, so it was never disabled. Invisible at the far right; obvious now that it sits third. It is named explicitly there now.
+
+### Verification
+
+Ran screener.js's **own** `updateUniverseButtons`, `updateMag10Button`, `setUniverseButtonsDisabled` and `toggleMag10`, lifted out as source text against a stub DOM, so a shape change breaks the harness rather than passing a reimplementation: **8 of 8**, covering initial load, switching universes, MAG 10 on from S&P 500 (S&P goes dark), MAG 10 off (highlight returns), MAG 10 on from a universe that has to load S&P 500 first, leaving MAG 10 by clicking Domestic (the filter drops), and every button including MAG 10 greying out mid-fetch. `screener.js` parses under `node --check`.
+
+---
+
 ## v4.9.5 - 2026-09-29 - Three defects in the cutover, found by verifying it against the live repo
 
 **A post-cutover audit of v4.9.4 rather than new work. One of the three was a silent logic error that made the constituent sync's refetch dead code; it was reproduced before being fixed, and the fix was reproduced too.**

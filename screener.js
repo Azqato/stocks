@@ -17,7 +17,7 @@
     var RAW_BASE = "https://raw.githubusercontent.com/Azqato/stocks/main/data/";
     var GVD_PATHS = [RAW_BASE + "screener_gvd.json", "data/screener_gvd.json"];
 
-    // Total US market (v4.9.3) is the one universe assembled from the master
+    // Domestic (v4.9.3) is the one universe assembled from the master
     // universe parts rather than from a per-list feed. The seven lists above
     // keep their own feeds on purpose: a per-list feed is far smaller than the
     // parts its members are spread across (16.9 KB gzipped for the Nasdaq 100
@@ -81,7 +81,7 @@
         store: null
       },
       vti: {
-        label: "Total US market",      // every US holding of VTI (data/vti.json)
+        label: "Domestic",             // every US holding of VTI (data/vti.json)
         // Assembled from data/stocks/: see PARTS_INDEX above for why this
         // universe alone works that way. `listKey` is its key in index.json.
         listKey: "vti",
@@ -613,7 +613,7 @@
         Object.keys(body.stocks).forEach(function (t) { records[t] = body.stocks[t]; });
         if (body.updated && (!oldest || body.updated < oldest)) oldest = body.updated;
       });
-      if (missingParts) console.warn("Total US market: " + missingParts + " part(s) unavailable.");
+      if (missingParts) console.warn("Domestic: " + missingParts + " part(s) unavailable.");
 
       var stocks = {};
       var found = 0;
@@ -782,15 +782,22 @@
       document.title = label + " Screener";
     }
 
-    // Light up the active universe's button.
+    // Light up the active universe's button. MAG 10 runs on S&P 500 data, so
+    // universeMode is "sp500" while it is on, but lighting both would say the
+    // reader is looking at all 500 names when they are looking at 10. While the
+    // filter is on it owns the highlight alone (owner request, v4.9.6).
     function updateUniverseButtons() {
       document.querySelectorAll("#universeGroup .u-btn").forEach(function (b) {
-        b.classList.toggle("active", b.getAttribute("data-universe") === universeMode);
+        b.classList.toggle("active",
+          b.getAttribute("data-universe") === universeMode && !mag10Active);
       });
     }
 
+    // MAG 10 is not a .u-btn, so it needs naming separately; without this it
+    // stays clickable while every button beside it is greyed out mid-fetch.
     function setUniverseButtonsDisabled(on) {
       document.querySelectorAll("#universeGroup .u-btn").forEach(function (b) { b.disabled = on; });
+      $("mag10Btn").disabled = on;
     }
 
     // Initial page load: fetch the default Nasdaq 100 feed.
@@ -829,6 +836,7 @@
     // ---- MAG 10 watchlist toggle (v3.36.0) ----
     function updateMag10Button() {
       $("mag10Btn").classList.toggle("active", mag10Active);
+      updateUniverseButtons();   // hands the highlight to, or back from, S&P 500
     }
     async function toggleMag10() {
       if (!mag10Active) {
