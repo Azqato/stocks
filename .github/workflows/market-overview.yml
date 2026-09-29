@@ -23,7 +23,7 @@ name: Update Market Overview Data
 #
 # GitHub cron is UTC-only and does not follow DST, so the exact offset from
 # open/close drifts by an hour across the DST boundary, same as every other
-# workflow in this pipeline (see screener-data.yml for the anchor note).
+# workflow in this pipeline (see stock-data.yml for the anchor note).
 # The 22:07 run lands near screener-data-etfs.yml's daily job; both share the
 # "screener-data" concurrency group with cancel-in-progress:false, so they
 # simply queue instead of racing -- not a bug, just worth knowing if this run

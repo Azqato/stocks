@@ -42,13 +42,9 @@ API = "https://api.github.com"
 MAX_AGE_HOURS = {
     "constituents.yml": 24 * 9,      # weekly (Saturdays), 9 days
     "market-overview.yml": 24 * 4,   # 3x per weekday, 4 days covers a long weekend
-    "screener-data.yml": 24 * 4,
     "screener-data-etfs.yml": 24 * 4,
-    "screener-data-gvd.yml": 24 * 4,
-    "screener-data-intl.yml": 24 * 4,
-    "screener-data-sp500.yml": 24 * 4,
     "statements.yml": 24 * 9,        # weekly (Saturdays), 9 days
-    "stock-data.yml": 24 * 4,        # dispatch-only until the v4.9.0 cutover; see below
+    "stock-data.yml": 24 * 4,        # daily Mon-Fri, plus the whole market Sundays
 }
 DEFAULT_MAX_AGE_HOURS = 24 * 9
 
@@ -83,6 +79,13 @@ def check(repo, root=None):
     now = datetime.now(timezone.utc)
     for wf in sorted(wfs, key=lambda w: w["path"]):
         fname = wf["path"].rsplit("/", 1)[-1]
+        # A retired workflow keeps appearing here for as long as its run history
+        # exists, so a deleted file is not a problem to report: skip it. Only a
+        # path that really is under .github/workflows/ counts, which leaves
+        # GitHub's own synthetic pages-build-deployment path untouched.
+        if (root and wf["path"].startswith(".github/workflows/")
+                and not os.path.exists(os.path.join(root, wf["path"]))):
+            continue
         # Looked up by id, not filename: GitHub's own pages-build-deployment
         # workflow reports a synthetic path with no real file behind it, and a
         # filename lookup 404s on it. It is worth watching, since a failed

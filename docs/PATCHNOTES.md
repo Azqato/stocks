@@ -2,6 +2,46 @@
 
 ---
 
+## v4.9.4 - 2026-09-29 - The schedule cutover: one daily job for the curated universes, one weekly for the whole market
+
+**The half of v4.9.0 that was deliberately held back. The four per-list feed workflows are gone and `stock-data.yml` owns the daily stock data, on two schedules split by how fast the data actually moves. Both halves of the Phase 0 gate passed first.**
+
+### Changed
+
+- **Two crons on `stock-data.yml`, an owner decision (2026-09-29) taken after reviewing the current schedule against the proposed one.**
+  - **Daily, `37 21 * * 1-5`: the curated universes only,** about 1,000 symbols in a single wave, roughly 11 minutes. That is **less Yahoo load than the old 932-fetch chain and nearly two hours shorter than its 2h07m window** (21:37 to 23:44). This half stays daily because price, `prevClose` and `changePct` are daily by nature, `pegFwd` moves with price, and v4.4.0's score history wants a point a day rather than one a week.
+  - **Weekly, `17 21 * * 0`: the whole market,** about 3,575 symbols, roughly 21 minutes. Sunday afternoon US Pacific (14:17 PDT, 13:17 PST). Markets are closed on Sunday, so **every part carries the same Friday close**, which makes the whole-market universe internally consistent instead of smeared across a week of different closes. Sunday is otherwise empty (constituent sync is Saturday 23:17, Market Overview is weekdays only), so it never queues behind anything.
+- **Deleted `screener-data.yml`, `screener-data-sp500.yml`, `screener-data-gvd.yml`, `screener-data-intl.yml`.** The ETFs job stays: ETF records share only 7 of their 20 fields with stock records and score on a different model. Reverting this one commit restores all four, which is why the cutover was kept separate from v4.9.0 from the start.
+- **`constituents.yml`'s four per-list regeneration blocks became one parts-aware block:** rebuild the universe, refetch only the parts that gained tickers (`--changed-parts`), then derive the feeds. On a normal week that is one part or none. `data/vti.json` joined the watched list.
+- **The stale-data banner is now per universe** (`isStale(ts, days)`). The whole-market universe carries `staleDays: 10` and the banner says "weekly refresh"; **the seven daily universes keep 7 days on purpose**, because a week-old daily feed is a genuine outage and blunting that alarm would hide it.
+
+### Added
+
+- **`build_universe.py --parts-for LISTS`** prints the parts a set of lists spans, read from the committed index. The daily job's matrix comes from this rather than a hardcoded "parts 1 and 2", because **sticky assignment can put a newly added index member in a high part**: parts 1 and 2 are both full at 500 and part 2's spare slots went to VTI names, so a new S&P 500 member would land in part 8 and a hardcoded daily run would miss it for up to a week. Asking the index makes that self-correcting.
+- **The plan job branches on `github.event.schedule`,** so one workflow serves both cadences. A manual run with no input covers every part.
+
+### Fixed
+
+- **`check_workflow_health.py` would have reported all four retired workflows as STALE forever.** GitHub keeps listing a workflow for as long as its run history exists, and the `has_schedule()` fallback treats a path with no file behind it as scheduled (which is correct for GitHub's synthetic `pages-build-deployment` path). A workflow whose path really is under `.github/workflows/` but whose file is gone is now skipped as retired. Caught by running the check against the live API immediately after deleting the four files, not by reasoning about it.
+
+### The Phase 0 gate, both halves now met
+
+- **Statements: passed 2026-09-28 20:37 UTC.** 520 files, 0.8 MB, none truncated.
+- **Daily feed: passed 2026-09-29 01:12 UTC.** Monday's run fired about 3h35m after its 21:37 cron, consistent with the known scheduler lag rather than any failure, and committed `data/screener.json` with **28 fields per record including all nine of v4.3.6's ratios** (`peTTM`, `psTTM`, `evEbitda`, `divYield`, `opMargin`, `roe`, `debtToEquity`, `currentRatio`, `fcfYield`; spot-checked ADBE: peTTM 13.14, roe 61.9, fcfYield 10.18). So the restructure is not landing on top of untested code, which was the whole point of the gate.
+
+### Verification
+
+- Every remaining workflow file parses as YAML; `build_universe.py`, `check_workflow_health.py` and `screener.js` all parse.
+- `--parts-for` returns `1 2` for the six curated lists, `1 2 3 4 5 6 7 8` for `vti`, and aborts naming the valid keys on an unknown list.
+- **The plan job's decision logic was extracted from the workflow YAML and run through all five branches:** daily cron gives parts 1 and 2, weekly cron gives 1 to 8, manual with no input gives 1 to 8, manual with `3,5` gives 3 and 5, and an out-of-range part aborts.
+- The health check reports the five live workflows plus `pages-build-deployment`, with the four retired ones correctly absent and the alert watch list showing no drift.
+
+### Still open, deliberately not in this release
+
+The **rolling statements schedule**. `statements.yml` remains weekly (Saturday 14:17 UTC) over the curated US lists; v4.9.2's `--universe --oldest-first 520` is shipped but unscheduled. A daily slot has to avoid Market Overview's 15:07/19:07/22:07 runs, because statements sit in their own concurrency group and that script has no push retry loop. **02:17 UTC was proposed and is undecided.**
+
+---
+
 ## v4.9.3 - 2026-09-28 - Total US market: an eighth universe, about 3,500 stocks
 
 **The whole US market as a screener universe, and the only universe assembled from the master universe parts rather than from a per-list feed. Built and verified locally; it refreshes daily only once the schedule cutover lands, which is on hold by owner decision, so until then it is a 2026-09-28 snapshot.**

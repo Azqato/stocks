@@ -64,50 +64,36 @@ jobs:
       - name: Rebuild the master universe part index
         run: python scripts/build_universe.py
 
-      - name: Regenerate changed feeds and commit
+      # Rebuilt here rather than left to Monday so a list that changed on
+      # Saturday has data for its new tickers before the next trading day. Only
+      # the parts that gained tickers are refetched, which on a normal week is
+      # one part or none at all; build_universe.py reports them.
+      - name: Rebuild the universe and refetch only what changed
         run: |
-          changed=0
           pip install --quiet yfinance==1.4.1
-          if ! git diff --quiet data/nasdaq100.json; then
-            echo "Nasdaq 100 membership changed; regenerating feed."
-            python scripts/fetch_screener_data.py --list data/nasdaq100.json --out data/screener.json
-            git add data/nasdaq100.json data/screener.json
-            changed=1
-          fi
-          if ! git diff --quiet data/sp500.json || [ -n "$(git status --porcelain data/sp500.json)" ]; then
-            echo "S&P 500 membership changed (or list is new); regenerating feed."
-            python scripts/fetch_screener_data.py --list data/sp500.json --out data/screener_sp500.json
-            git add data/sp500.json data/screener_sp500.json
-            changed=1
-          fi
-          if ! git diff --quiet data/vug.json data/vtv.json data/vig.json; then
-            echo "ETF holdings changed; regenerating the combined GVD feed."
-            python scripts/fetch_screener_data.py --combined growth=data/vug.json --combined value=data/vtv.json --combined dividend=data/vig.json --out data/screener_gvd.json
-            git add data/vug.json data/vtv.json data/vig.json data/screener_gvd.json
-            changed=1
-          fi
-          if ! git diff --quiet data/vxus.json; then
-            echo "VXUS holdings changed; regenerating the International feed."
-            python scripts/fetch_screener_data.py --list data/vxus.json --out data/screener_intl.json
-            git add data/vxus.json data/screener_intl.json
-            changed=1
-          fi
-          # The universe index tracks list membership, so it changes whenever
-          # any list above did. Staged independently because build_universe.py
-          # writes nothing when the mapping is unchanged.
-          if ! git diff --quiet data/stocks/index.json data/stocks/tickers.json              || [ -n "$(git status --porcelain data/stocks)" ]; then
-            git add data/stocks/index.json data/stocks/tickers.json
-            changed=1
-          fi
-          # The ISIN->symbol resolution cache can change even when membership
-          # doesn't (e.g. a newly-resolved holding that later dropped back out
-          # of the top 100), so stage and check it independently of the diff above.
-          if ! git diff --quiet data/vxus_map.json; then
-            git add data/vxus_map.json
-            changed=1
-          fi
-          if [ "$changed" -eq 0 ]; then
+          if git diff --quiet data/nasdaq100.json data/sp500.json data/vug.json \
+             data/vtv.json data/vig.json data/vxus.json data/vti.json \
+             data/vxus_map.json; then
             echo "Constituents unchanged; nothing to do."
+            exit 0
+          fi
+          parts=$(python scripts/build_universe.py --changed-parts)
+          python scripts/build_universe.py
+          if [ -n "$parts" ]; then
+            echo "Parts gaining tickers: $parts"
+            for p in $parts; do
+              python scripts/fetch_screener_data.py --part "$p"
+            done
+          else
+            echo "Membership moved but no part gained a ticker; feeds only."
+          fi
+          python scripts/build_legacy_feeds.py
+          git add data/nasdaq100.json data/sp500.json data/vug.json data/vtv.json \
+                  data/vig.json data/vxus.json data/vti.json data/vxus_map.json \
+                  data/stocks data/screener.json data/screener_sp500.json \
+                  data/screener_gvd.json data/screener_intl.json
+          if git diff --staged --quiet; then
+            echo "Nothing staged after the rebuild."
             exit 0
           fi
           git config user.name "github-actions[bot]"

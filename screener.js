@@ -85,6 +85,10 @@
         // Assembled from data/stocks/: see PARTS_INDEX above for why this
         // universe alone works that way. `listKey` is its key in index.json.
         listKey: "vti",
+        // Refreshed once a week (Sundays), so the 7-day default would cry wolf
+        // every Sunday evening while GitHub's scheduler catches up.
+        staleDays: 10,
+        refresh: "weekly",
         listPaths: [RAW_BASE + "vti.json", "data/vti.json"],
         // No offline cache: about 3,500 records is several MB of JSON, which
         // blows the ~5 MB localStorage quota and would evict the small
@@ -533,18 +537,23 @@
     // Threshold is 7 days, not 24 hours: the daily refresh can slip a day or
     // two (weekends, a rate-limited run) without it being worth alarming the
     // user -- only a genuinely stuck pipeline (a week+) warrants the banner.
-    function isStale(ts) {
+    // `days` is per universe: a weekly universe would otherwise trip the banner
+    // on its own correct data every week, since GitHub's cron lag is hours.
+    function isStale(ts, days) {
       if (!ts) return true;
-      return (Date.now() - new Date(ts).getTime()) > 7 * 24 * 3600 * 1000;
+      return (Date.now() - new Date(ts).getTime()) > (days || 7) * 24 * 3600 * 1000;
     }
 
     function checkStale() {
       var has = Object.keys(data).length > 0;
-      var stale = has && isStale(meta.updated);
+      var u = UNIVERSES[universeMode];
+      var stale = has && isStale(meta.updated, u.staleDays);
       $("staleBanner").classList.toggle("on", stale);
       if (stale) {
         $("staleText").innerHTML = meta.updated
-          ? "This data is from " + new Date(meta.updated).toLocaleString() + " (more than a week old). The daily refresh may not have run."
+          ? "This data is from " + new Date(meta.updated).toLocaleString() +
+            " (more than " + (u.staleDays || 7) + " days old). The " +
+            (u.refresh || "daily") + " refresh may not have run."
           : "This data has no timestamp and may be out of date.";
       }
     }

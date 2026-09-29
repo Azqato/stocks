@@ -26,10 +26,6 @@ on:
       - Update Financial Statements
       - Update Market Overview Data
       - Update Screener Data (ETFs)
-      - Update Screener Data (Growth, Value & Dividend)
-      - Update Screener Data (International)
-      - Update Screener Data (Nasdaq 100)
-      - Update Screener Data (S&P 500)
       - Update Stock Data (Parts)
     types: [completed]
 

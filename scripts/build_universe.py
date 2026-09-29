@@ -198,10 +198,31 @@ def main():
     ap = argparse.ArgumentParser(description="Build the master universe part index.")
     ap.add_argument("--check", action="store_true",
                     help="exit 1 if the mapping would change; write nothing")
+    ap.add_argument("--parts-for", metavar="LISTS",
+                    help="print the parts spanning these comma separated lists "
+                         "(e.g. nasdaq100,sp500), for the daily job's matrix")
     ap.add_argument("--changed-parts", action="store_true",
                     help="print only the parts that gained tickers, space separated, "
                          "for a caller that wants to refetch just those")
     args = ap.parse_args()
+
+    # Answered from the committed index, before any rebuild: the daily job asks
+    # which parts its universes live in, and must get the answer for the parts
+    # that exist right now. Because assignment is sticky and parts 1 and 2 are
+    # full, a newly added S&P 500 member can land in a high part; asking the
+    # index rather than assuming "parts 1 and 2" is what keeps the daily run
+    # from missing it until the weekly whole-market run catches up.
+    if args.parts_for:
+        with open(INDEX_PATH, encoding="utf-8") as f:
+            idx = json.load(f)
+        want = [k.strip() for k in args.parts_for.split(",") if k.strip()]
+        missing = [k for k in want if k not in idx.get("lists", {})]
+        if missing:
+            sys.exit(f"ABORT: {missing} not in the universe index "
+                     f"(have {sorted(idx.get('lists', {}))}).")
+        spans = sorted({p for k in want for p in idx["lists"][k]["parts"]})
+        print(" ".join(str(p) for p in spans))
+        return 0
 
     index, tickers, st = build()
 
