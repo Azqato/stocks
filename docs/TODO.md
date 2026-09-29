@@ -44,3 +44,20 @@ Two things worth doing alongside, if that lands:
 The plan there keeps the owner's original design intact (one master universe, one record per ticker per day, parts of up to 500 ordered by importance, lists reduced to pure membership) and adds what costing it out turned up: parallel parts do conflict on push and need a rebase-retry loop, a 500-stock part runs in about 10 minutes rather than 30 to 45, parts weigh about 380 KB rather than 250 KB, the ETF feed stays separate because its records share only 7 of 20 fields with stock records, and the legacy per-list feeds keep being written permanently because v4.4.0's score-history sparklines mine their git history. The three owner decisions recorded here on 2026-09-28 (International stays at 100, VTI becomes its own "Total US market" list, one daily run time for everything) carry over unchanged, joined by a fourth: missing metrics keep scoring zero, with no coverage gate for the whole-market universe.
 
 Nothing further is tracked here for this item.
+
+---
+
+## 2. More fundamentals fields for Automate Fundamentals (owner request, 2026-09-29)
+
+**Why.** Automate Fundamentals audited its 31 stock metrics (its PRD, "Fundamentals metrics audit (2026-09-29)", items FM1 to FM6). Most gaps are fields Yahoo already returns in the `Ticker.info` call each stock-data part makes, so adding them costs no extra requests. The screener can ignore them, as it does the v4.3.6 ratios.
+
+**Check first (affects this screener too).** Yahoo documents `revenueGrowth` and `earningsGrowth` as the latest quarter versus the same quarter a year earlier, not trailing 12 months, and the screener labels them "Rev Growth TTM" and "EPS Growth TTM". Confirm against `quarterly_income_stmt`. If it holds, the label (and possibly the metric) is an owner decision here.
+
+**Stock-record fields to add (from `info`, no extra requests):**
+- TTM amounts (FM2): `totalRevenue`, `trailingEps`, `ebitda`, `netIncomeToCommon`, `freeCashflow` (FX-convert money fields the way cash and debt are).
+- Ratios (FM3): `priceToBook`, `enterpriseToRevenue`, `enterpriseValue`, `trailingPegRatio`, `returnOnAssets`, `ebitdaMargins`, `quickRatio`, `payoutRatio`, `fiveYearAvgDividendYield`, `beta`, `shortPercentOfFloat`, `heldPercentInsiders`, `heldPercentInstitutions`, `targetMeanPrice`, `recommendationMean`, `numberOfAnalystOpinions`. Store fractions as percents, like the existing margins.
+- Price trend for stocks (FM5): `fiftyTwoWeekHigh`, `fiftyTwoWeekLow`, `twoHundredDayAverage`, `52WeekChange`.
+
+**Statement rows to add to `fetch_statements.py` (FM4):** interest expense, EBIT, stock-based compensation, and diluted average shares, for the TTM and fiscal-year columns. Automate Fundamentals computes ROIC, interest coverage, FCF margin, SBC share of revenue, share-count change, 3-year EPS CAGR, dividend growth, and net debt to EBITDA from them, and later Piotroski F and Altman Z (FM6).
+
+**Size.** About 20 more fields, roughly 400 bytes a stock at `indent=2`, so about 200 KB more per 500-stock part.
