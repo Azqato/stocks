@@ -22,17 +22,36 @@ Each file:
     "fcfGrowth": -9.2    # %, last fiscal year versus the year before
   }
 
+A stock Yahoo publishes no statements for still gets a file, carrying
+`"noStatements": true` and null arrays, so that --oldest-first ages it like any
+other instead of treating it as missing and refetching it every night.
+
 Every array lines up with "columns"; a missing value is null. Money is in the
 company's reporting currency ("cur"), which can differ from the trading currency
 for ADRs. The balance sheet's TTM column is the latest quarter's balance sheet.
 
 Usage:
   python scripts/fetch_statements.py data/nasdaq100.json data/sp500.json ...
+  python scripts/fetch_statements.py --universe --oldest-first 520
+
+--universe takes the symbol list from the master universe (data/stocks/tickers.json)
+instead of named list files, so statements cover every stock the screener knows
+about rather than only the curated lists.
+
+--oldest-first N fetches just the N symbols whose statement files are missing or
+least recently updated, which is how the daily rolling refresh works (v4.9.2).
+The whole universe is about 3,575 stocks and a statements fetch is three Yahoo
+tables per symbol, far too slow for one nightly run, so a seventh of it goes each
+night and every stock comes round within a week. Choosing by file age rather than
+by a fixed day-of-week shard is deliberate: a new ticker is picked up on the next
+run instead of waiting for its shard, and a night that fails simply leaves those
+files oldest, so the next run retries them without any state to keep.
 
 Env:
   PAUSE   seconds to wait between symbols (default 0.8) -- be polite to Yahoo
 """
 
+import argparse
 import datetime
 import json
 import os
@@ -150,14 +169,54 @@ def fetch(symbol):
     return rec
 
 
+UNIVERSE_PATH = "data/stocks/tickers.json"
+
+
+def universe_symbols():
+    """Every ticker in the master universe, in part order."""
+    with open(UNIVERSE_PATH, encoding="utf-8") as f:
+        return list(json.load(f)["tickers"].keys())
+
+
+def oldest_first(symbols, limit):
+    """Return the `limit` symbols whose statement files are missing or oldest.
+
+    A missing file sorts before every existing one, so a newly added ticker is
+    always in the next run's batch.
+    """
+    def age_key(sym):
+        path = os.path.join(OUT_DIR, sym + ".json")
+        try:
+            with open(path, encoding="utf-8") as f:
+                return (1, json.load(f).get("updated") or "")
+        except Exception:
+            return (0, "")          # missing or unreadable: refresh first
+    return sorted(symbols, key=age_key)[:limit]
+
+
 def main():
-    lists = sys.argv[1:] or ["data/nasdaq100.json"]
-    symbols = []
-    for path in lists:
-        with open(path, encoding="utf-8") as f:
-            for item in json.load(f):
-                if item["t"] not in symbols:
-                    symbols.append(item["t"])
+    ap = argparse.ArgumentParser(description="Build per-stock financial statement files.")
+    ap.add_argument("lists", nargs="*", help="constituent list JSON files")
+    ap.add_argument("--universe", action="store_true",
+                    help=f"take symbols from {UNIVERSE_PATH} instead of list files")
+    ap.add_argument("--oldest-first", type=int, default=None, metavar="N",
+                    help="fetch only the N symbols whose files are missing or oldest")
+    args = ap.parse_args()
+
+    if args.universe:
+        symbols = universe_symbols()
+    else:
+        symbols = []
+        for path in (args.lists or ["data/nasdaq100.json"]):
+            with open(path, encoding="utf-8") as f:
+                for item in json.load(f):
+                    if item["t"] not in symbols:
+                        symbols.append(item["t"])
+
+    total = len(symbols)
+    if args.oldest_first:
+        symbols = oldest_first(symbols, args.oldest_first)
+        print(f"Refreshing the {len(symbols)} least recently updated of {total} symbols.")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
@@ -167,7 +226,18 @@ def main():
             try:
                 rec = fetch(sym)
                 if rec["income"]["revenue"][0] is None and rec["income"]["revenue"][1] is None:
+                    # Still written, flagged, rather than skipped. Yahoo has no
+                    # statements for plenty of real listings (most foreign ones
+                    # among them), and leaving no file meant --oldest-first saw
+                    # them as missing and refetched them every single night,
+                    # starving the stocks that do have data. A flagged file ages
+                    # like any other, so they come round once a week.
                     print(f"{sym}: no statements", file=sys.stderr)
+                    rec["noStatements"] = True
+                    rec["updated"] = now
+                    with open(os.path.join(OUT_DIR, sym + ".json"), "w", encoding="utf-8") as f:
+                        json.dump(rec, f, indent=1)
+                        f.write("\n")
                     break
                 rec["updated"] = now
                 # Tickers are file names; dual-class dots stay (BRK.B.json), matching the feeds' keys.
@@ -184,6 +254,9 @@ def main():
         time.sleep(PAUSE)
 
     print(f"Wrote {ok}/{len(symbols)} statement files to {OUT_DIR}/.")
+    if args.oldest_first:
+        have = len([f for f in os.listdir(OUT_DIR) if f.endswith(".json")])
+        print(f"{have}/{total} symbols in the universe now have a statements file.")
 
 
 if __name__ == "__main__":

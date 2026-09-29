@@ -2,6 +2,55 @@
 
 ---
 
+## v4.9.3 - 2026-09-28 - Total US market: an eighth universe, about 3,500 stocks
+
+**The whole US market as a screener universe, and the only universe assembled from the master universe parts rather than from a per-list feed. Built and verified locally; it refreshes daily only once the schedule cutover lands, which is on hold by owner decision, so until then it is a 2026-09-28 snapshot.**
+
+### Added
+
+- **`sync_vti()` in `update_etf_constituents.py`** writes `data/vti.json` from Vanguard's holdings API: 3,507 raw rows in, 42 without a domestic ticker dropped, **3,465 US holdings kept**, weight-sorted. Two deliberate differences from every other list here. It is **not cut to a top N**, because the point of the universe is every holding. And it **keeps both share classes of an issuer** (GOOG and GOOGL, FOX and FOXA), because VTI genuinely holds both; the `DUAL_CLASS` dedupe exists so that "top 100" means 100 companies, which does not apply to a whole-market list. Guard band `VTI_MIN` 2800 to `VTI_MAX` 4200, so a half-empty response aborts rather than gutting the list. Wired into `main()`, so the weekly sync maintains it.
+- **The master universe grew to 3,575 tickers in 8 parts** (7 of 500 plus one of 75) from 4,465 list slots, 890 duplicates removed. Sticky assignment held: `--changed-parts` reported `2 3 4 5 6 7 8`, so **part 1 was not refetched at all**, and the existing 619 tickers kept their part numbers.
+- **A "Total US market" button** in `screener.html`, and a parts loader in `screener.js`. Three reads: the index says which parts the list spans, the list file supplies membership and curated names, and the parts supply the records. It **keeps no localStorage cache** (`cacheKey: null`), because several MB would blow the roughly 5 MB quota and evict every other universe's cache to store one that may not fit. A part that fails to load costs its own stocks, not the whole view, and the progress line counts parts as they arrive.
+
+### Changed
+
+- **v4.9.1 was rescoped into this release rather than shipped, after measuring it.** The plan had every universe read the parts. Measured gzipped, that made the **default Nasdaq 100 view 4.8x heavier: 16.9 KB as a per-list feed against 81.9 KB** as index plus list plus part 1, because part 1 holds 500 stocks and that list needs 100 of them. A six-universe browsing session did get cheaper (164.4 KB to 113.3 KB), but most visits only load the default view, and v4.9.0 had already committed to writing the per-list feeds **permanently** for v4.4.0's score history, so the frontend has a cheap permanent source and gains nothing by abandoning it. **The seven existing universes are untouched; only the whole-market universe reads parts.** Owner confirmed.
+- **Documentation that enumerated the universes**: README.md (seven becomes eight), `screener.html`'s meta description, and the PRD's universe-buttons description, which now records the two ways this universe differs.
+
+### Verification
+
+- **Tier distribution measured on real data before the universe became selectable,** which is the gate the PRD set, using **screener.js's own scoring code** lifted out as source text and run under node rather than a port: **3,465 stocks, 3,451 scored, 14 S+ / 340 S / 362 A / 1,020 B / 871 C / 844 F.**
+- **Coverage is exactly the concern that was raised and accepted:** only **46% of the whole market carries all six scored metrics**, against 90% of the S&P 500, and 11% carry three or fewer. Those stocks take structural hard zeros and fill the lower bands. This is the owner's accepted rule ("i don't mind if things are missing pegFwd, it should get 0"), recorded here because it is what a tier means on a 3,465-stock list.
+- **The seven existing universes are provably unaffected:** scored from their committed feeds through the same harness, Nasdaq 100 is 4 S+ / 6 S / 10 A / 30 B / 25 C / 25 F and the S&P 500 is 10 S+ / 41 S / 54 A / 148 B / 122 C / 125 F, both unchanged.
+- **The parts loader passes 10 of 10 checks** in a node harness that runs the real `fetchFromParts` text with `fetch` stubbed: remote tried before the local fallback, membership and names taken from the list file, records carrying every scored metric, `updated` taken from the oldest part, and, run deliberately with only 2 of 8 parts on disk, **509 records instead of a blank table**.
+- **The legacy feeds still derive at 100% coverage** from the 8-part universe (100/100, 500/500, 100/100 x3, 100/100), so nothing about the existing site changed.
+
+### Known limits
+
+- **12 of 3,575 tickers have no price data** (LEN.B, BF.A, CRD.A, CRD.B, BH.A, SBT, ARAV, BTCSP, NOVS, RLMT, HYZN and one more): illiquid dual-class lines and recently delisted names Yahoo has no quote for. They score null and are excluded from the tier ranking, not counted as F.
+- **Total parts weight 2.98 MB** across 8 files, close to the 3.1 MB projected in v4.9.0.
+
+---
+
+## v4.9.2 - 2026-09-28 - Statements roll through the universe instead of all landing on Saturday
+
+**The script half. The daily schedule for it is part of the cutover that is on hold, so `statements.yml` still runs weekly over the curated US lists until that lands.**
+
+### Added
+
+- **`fetch_statements.py --universe`** takes its symbol list from `data/stocks/tickers.json`, so statements can cover every stock the screener knows about (3,575) rather than only the roughly 520 in the curated lists.
+- **`--oldest-first N`** fetches only the N symbols whose files are missing or least recently updated. At 520 a night the whole universe comes round in **6.9 days**. **Chosen over a fixed day-of-week shard on purpose:** a newly added ticker is picked up on the very next run instead of waiting for its shard, a failed night simply leaves those files oldest so the next run retries them, and there is no state to keep anywhere.
+
+### Fixed
+
+- **A starvation bug in the above, found while testing it.** A stock Yahoo publishes no statements for was skipped without writing a file, so `--oldest-first` saw it as missing **every single night** and refetched it forever, starving the stocks that do have data. Such stocks now get a file carrying `"noStatements": true` and null arrays, so they age like any other and come round once a week.
+
+### Verification
+
+Ran live at `--universe --oldest-first 3`: the three symbols picked were the ones with no file at all (`2330.TW`, `005930.KS`, `000660.KS`, international names the Saturday job never covered), all three fetched successfully in native currency, and coverage went to 523 of 3,575.
+
+---
+
 ## v4.9.0 - 2026-09-28 - One stock-data job for every list, in 500-stock parts (pipeline only)
 
 **Phase 1 of 4 of the plan scheduled in v4.3.7. The daily data pipeline now fetches a deduplicated master universe in parts instead of fetching each list separately, which removes a third of the daily Yahoo requests. The site, the feeds it reads and the five per-list workflows' schedules are all deliberately untouched: the new workflow ships dispatch-only, and the schedule cutover is a separate commit.**

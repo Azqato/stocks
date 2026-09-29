@@ -16,6 +16,19 @@
     // (screener_gvd.json) keyed by `feedKey`, so one fetch fills all three.
     var RAW_BASE = "https://raw.githubusercontent.com/Azqato/stocks/main/data/";
     var GVD_PATHS = [RAW_BASE + "screener_gvd.json", "data/screener_gvd.json"];
+
+    // Total US market (v4.9.3) is the one universe assembled from the master
+    // universe parts rather than from a per-list feed. The seven lists above
+    // keep their own feeds on purpose: a per-list feed is far smaller than the
+    // parts its members are spread across (16.9 KB gzipped for the Nasdaq 100
+    // against 81.9 KB for index + list + part 1), and those feeds are written
+    // permanently anyway for v4.4.0's score history. A per-list feed for the
+    // whole market would instead be a second copy of all 3.1 MB, which is why
+    // this universe, and only this one, reads the parts.
+    var PARTS_INDEX = [RAW_BASE + "stocks/index.json", "data/stocks/index.json"];
+    function partPaths(file) {
+      return [RAW_BASE + "stocks/" + file, "data/stocks/" + file];
+    }
     var UNIVERSES = {
       nasdaq100: {
         label: "Nasdaq 100",
@@ -66,6 +79,18 @@
         // every other universe, which all leave this unset.
         nameFirst: true,
         store: null
+      },
+      vti: {
+        label: "Total US market",      // every US holding of VTI (data/vti.json)
+        // Assembled from data/stocks/: see PARTS_INDEX above for why this
+        // universe alone works that way. `listKey` is its key in index.json.
+        listKey: "vti",
+        listPaths: [RAW_BASE + "vti.json", "data/vti.json"],
+        // No offline cache: about 3,500 records is several MB of JSON, which
+        // blows the ~5 MB localStorage quota and would evict the small
+        // universes' caches to store one that probably will not fit anyway.
+        cacheKey: null,
+        store: null
       }
     };
 
@@ -93,9 +118,11 @@
 
     // ---- Cache (offline fallback only; one key per universe) ----
     function readCache(key) {
+      if (!key) return null;   // universes that opt out of caching (see vti)
       try { var c = JSON.parse(localStorage.getItem(key)); return (c && c.stocks) ? c : null; } catch (e) { return null; }
     }
     function writeCache(key, feed) {
+      if (!key) return;
       try { localStorage.setItem(key, JSON.stringify({ updated: feed.updated, source: feed.source, stocks: feed.stocks })); } catch (e) {}
     }
     function loadState() {
@@ -528,8 +555,77 @@
     // Universes with a `feedKey` live inside the combined GVD file: the wanted
     // universe is extracted, and the siblings that came along in the same file
     // are stored and cached too, so switching between them needs no new fetch.
+    // Fetch the first path that answers with usable JSON, or null.
+    async function fetchFirst(paths) {
+      for (var i = 0; i < paths.length; i++) {
+        try {
+          var res = await fetch(paths[i], { cache: "no-store" });
+          if (!res.ok) continue;
+          return await res.json();
+        } catch (e) { /* try the next source */ }
+      }
+      return null;
+    }
+
+    // Assemble a universe from the master universe parts (v4.9.3, Total US
+    // market only). Three reads: the index says which parts the list spans, the
+    // list file supplies membership and curated names, and the parts supply the
+    // records. Membership comes from the list rather than the parts because a
+    // part holds whatever tickers were assigned to it, which is a mix of lists.
+    async function fetchFromParts(key) {
+      var u = UNIVERSES[key];
+      var index = await fetchFirst(PARTS_INDEX);
+      var info = index && index.lists && index.lists[u.listKey];
+      if (!info || !info.parts || !info.parts.length) return null;
+
+      var listing = await fetchFirst(u.listPaths);
+      if (!Array.isArray(listing) || !listing.length) return null;
+
+      var files = index.parts || [];
+      var loaded = 0;
+      var bodies = await Promise.all(info.parts.map(async function (n) {
+        var file = (files[n - 1] && files[n - 1].file) || ("part-" + (n < 10 ? "0" : "") + n + ".json");
+        var body = await fetchFirst(partPaths(file));
+        loaded++;
+        if (toggling) {
+          $("summary").innerHTML = "Loading the " + u.label + " (part " +
+            loaded + " of " + info.parts.length + ")&hellip;";
+        }
+        return body;
+      }));
+
+      // A part that failed to load costs its own stocks, not the whole view:
+      // the list is 3,500 names deep and a short table beats a blank one.
+      var records = {};
+      var oldest = null;
+      var missingParts = 0;
+      bodies.forEach(function (body) {
+        if (!body || !body.stocks) { missingParts++; return; }
+        Object.keys(body.stocks).forEach(function (t) { records[t] = body.stocks[t]; });
+        if (body.updated && (!oldest || body.updated < oldest)) oldest = body.updated;
+      });
+      if (missingParts) console.warn("Total US market: " + missingParts + " part(s) unavailable.");
+
+      var stocks = {};
+      var found = 0;
+      listing.forEach(function (row) {
+        var rec = records[row.t];
+        if (!rec) return;
+        var copy = {};
+        Object.keys(rec).forEach(function (f) { copy[f] = rec[f]; });
+        copy.name = row.n;      // the list keeps its own curated name
+        stocks[row.t] = copy;
+        found++;
+      });
+      if (!found) return null;
+
+      u.store = { stocks: stocks, updated: oldest, source: "parts" };
+      return u.store;
+    }
+
     async function fetchUniverse(key) {
       var u = UNIVERSES[key];
+      if (u.listKey) return await fetchFromParts(key);
       for (var i = 0; i < u.paths.length; i++) {
         try {
           var res = await fetch(u.paths[i], { cache: "no-store" });

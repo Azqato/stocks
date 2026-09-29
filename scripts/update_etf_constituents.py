@@ -6,6 +6,7 @@ Dividend, and International universes rank against:
   data/vtv.json   -- top 100 holdings of VTV (Vanguard Value ETF)
   data/vig.json   -- top 100 holdings of VIG (Vanguard Dividend Appreciation ETF)
   data/vxus.json  -- top 100 holdings of VXUS (Vanguard Total International Stock ETF)
+  data/vti.json   : EVERY US holding of VTI (Vanguard Total Stock Market ETF)
 
 For VUG/VTV/VIG it fetches the full stock holdings from Vanguard's own
 holdings API (weight-sorted, refreshed monthly by Vanguard), applies the dual-class rule
@@ -83,6 +84,24 @@ FUNDS = {
 # list is weight-sorted and only the top 100 is kept, the practical effect of
 # the cap's removal is nil, but same-issuer ISIN duplicates can now be found
 # deeper in the list than the old 500-row window reached.
+# VTI config (v4.9.3). Unlike every other list here, VTI is NOT cut to a top N:
+# the whole point of the "Total US market" universe is every holding, about
+# 3,500 of them. It is also the only list that keeps both share classes of the
+# same issuer (GOOG and GOOGL, FOX and FOXA), because VTI genuinely holds both
+# and a whole-market list that silently dropped one would be wrong; the
+# DUAL_CLASS dedupe exists so that "top 100 issuers" means 100 companies, which
+# does not apply here.
+VTI_FUND = "VTI"
+VTI_LIST_PATH = "data/vti.json"
+VTI_RAW_LO = 2500
+VTI_RAW_HI = 5000
+# Accepted band for the final list, after non-US and unticketed rows are
+# dropped. Wide, because index reconstitution moves it by dozens at a time, but
+# not so wide that a half-empty response passes (measured 2026-09-28: 3,466
+# rows carried a ticker out of 3,507 equity rows).
+VTI_MIN = 2800
+VTI_MAX = 4200
+
 VXUS_FUND = "VXUS"
 VXUS_LIST_PATH = "data/vxus.json"
 VXUS_MAP_PATH = "data/vxus_map.json"
@@ -241,6 +260,68 @@ def sync(name, cfg):
     return True
 
 
+def sync_vti():
+    """Write data/vti.json: every US-listed VTI holding, weight-sorted.
+
+    Weight order is deliberate and load-bearing: build_universe.py assigns parts
+    in list order, so the largest companies land in the lowest-numbered parts and
+    a reader of part 1 gets the names it is most likely to be looking for.
+
+    Foreign and unticketed rows are dropped rather than resolved. VTI is a US
+    total-market fund, so anything that fails the domestic ticker shape is a
+    custody or cash line, not a company worth chasing; VXUS is where the
+    ISIN-to-local-symbol resolution lives.
+    """
+    entities = fetch_entities(VTI_FUND, VTI_RAW_LO, VTI_RAW_HI)
+    rows = []
+    seen = {}
+    skipped = []
+    for e in entities:
+        sym, name = e["ticker"], e["name"]
+        if not sym or not name or not re.match(r"^[A-Z][A-Z.]{0,5}$", sym):
+            if sym or name:
+                skipped.append(sym or name)
+            continue
+        # Vanguard occasionally reports one ticker on two custody lines; sum the
+        # weights so the sort order reflects the real position.
+        if sym in seen:
+            rows[seen[sym]][0] += e["weight"]
+            continue
+        seen[sym] = len(rows)
+        rows.append([e["weight"], sym, name])
+    rows.sort(key=lambda x: -x[0])
+    syms = [r[1] for r in rows]
+
+    # --- sanity checks: never clobber the list on a bad fetch ---
+    if not (VTI_MIN <= len(syms) <= VTI_MAX):
+        sys.exit(f"ABORT [vti]: expected {VTI_MIN}-{VTI_MAX} US holdings, got {len(syms)} "
+                 f"(from {len(entities)} raw rows).")
+    if len(set(syms)) != len(syms):
+        sys.exit("ABORT [vti]: duplicate tickers survived the dedupe.")
+
+    try:
+        old = json.load(open(VTI_LIST_PATH, encoding="utf-8"))
+    except Exception:
+        old = []
+    old_names = {x["t"]: x["n"] for x in old}
+    old_syms = [x["t"] for x in old]
+    listing = [{"t": s2, "n": old_names.get(s2) or clean_name(nm)} for _, s2, nm in rows]
+
+    added = [s2 for s2 in syms if s2 not in old_syms]
+    removed = [s2 for s2 in old_syms if s2 not in syms]
+    print(f"[vti] {len(entities)} raw rows, {len(syms)} US holdings kept, "
+          f"{len(skipped)} rows without a domestic ticker dropped.")
+    if not added and not removed:
+        print(f"[vti] No constituent changes ({len(syms)} tickers).")
+        return False
+    with open(VTI_LIST_PATH, "w", encoding="utf-8") as f:
+        json.dump(listing, f, indent=2)
+        f.write("\n")
+    print(f"[vti] Updated {VTI_LIST_PATH}: {len(syms)} tickers. "
+          f"Added {len(added)}, removed {len(removed)}.")
+    return True
+
+
 def fetch_vxus_raw():
     """Return VXUS holdings deduped by ISIN (weight summed), weight-sorted.
 
@@ -364,6 +445,8 @@ def main():
         if sync(name, cfg):
             changed = True
     if sync_vxus():
+        changed = True
+    if sync_vti():
         changed = True
     # Exit 0 either way; the workflow inspects the git diff to decide what to do.
     if not changed:
