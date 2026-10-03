@@ -2,6 +2,15 @@
 
 ---
 
+## v5.0.0 - 2026-10-02 - The pages moved to Azqato Invests; this repo is now a data feed
+
+### Changed
+- Every page now redirects to its new home on Azqato Invests (azqato.com/invests/), as agreed in that site's PRD (decision D7). Each page keeps its old title and carries a canonical link, an immediate meta refresh, a `location.replace()` that keeps any `#section`, and a plain link, so each old address reaches its new page in one hop. Never reuse these addresses for other content. The map is in the Azqato Invests PRD (azqato.github.io repo, docs/PRD.md Part 2, Invests: Deprecation and Removal).
+- `data/`, the scheduled jobs and the scripts that write the data are unchanged: Azqato Invests' Screener and Market Overview read them.
+
+### Removed
+- `sitemap.xml`: it listed pages that now only redirect.
+
 ## v4.9.6 - 2026-09-29 - Screener nav: owner-specified button order, "Domestic", and MAG 10 stops lighting two buttons
 
 **Owner request, given as the order to use. Presentation only: no universe's data, membership or scoring changed.**
