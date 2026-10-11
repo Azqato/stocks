@@ -1,8 +1,38 @@
 {
-  "updated": "2026-10-10T01:12:53.358990Z",
+  "updated": "2026-10-11T01:58:01.805833Z",
   "source": "yahoo",
   "part": 8,
   "stocks": {
+    "SKYD": {
+      "t": "SKYD",
+      "name": "SKYDANCE",
+      "price": 9.16,
+      "marketCap": 46186348544.0,
+      "cash": 1627000064.0,
+      "debt": 16202000384.0,
+      "cur": "USD",
+      "prevClose": 9.28,
+      "changePct": -1.2931034482758563,
+      "revTTM": 0.8999999999999999,
+      "epsTTM": -54.1,
+      "grossMargin": 33.328998,
+      "netMargin": -2.1329998999999997,
+      "peFwd": 7.8965516,
+      "epsFwd": 123.07999999999998,
+      "revFwd": 130.03999,
+      "pegFwd": 1.03,
+      "peTTM": null,
+      "psTTM": 1.5866145,
+      "evEbitda": 7.822,
+      "divYield": 2.18,
+      "opMargin": 9.345,
+      "roe": -0.8959999999999999,
+      "debtToEquity": 1.26479,
+      "currentRatio": 1.04,
+      "fcfYield": 38.0916123889718,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
+    },
     "VYLR": {
       "t": "VYLR",
       "name": "VYLOR",
@@ -30,8 +60,8 @@
       "debtToEquity": 0.19191,
       "currentRatio": 1.516,
       "fcfYield": 4.644129051698067,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "COHN": {
       "t": "COHN",
@@ -54,14 +84,14 @@
       "peTTM": 2.275641,
       "psTTM": 0.111374795,
       "evEbitda": null,
-      "divYield": 9.33,
+      "divYield": 9.39,
       "opMargin": 16.278000000000002,
       "roe": 45.539,
       "debtToEquity": 4.5561,
       "currentRatio": 1.065,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NOMA": {
       "t": "NOMA",
@@ -90,8 +120,8 @@
       "debtToEquity": 0.13048,
       "currentRatio": 1.125,
       "fcfYield": -22.865254834116524,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ASPSW": {
       "t": "ASPSW",
@@ -120,8 +150,8 @@
       "debtToEquity": null,
       "currentRatio": 1.168,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "VHUB": {
       "t": "VHUB",
@@ -143,15 +173,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 81.85108,
-      "evEbitda": -1.005,
+      "evEbitda": -0.918,
       "divYield": 0.0,
       "opMargin": -11757.405,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.766,
       "fcfYield": -10.246272292234531,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "RDIB": {
       "t": "RDIB",
@@ -173,15 +203,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 1.3800616,
-      "evEbitda": 39.277,
+      "evEbitda": 39.083,
       "divYield": 0.0,
       "opMargin": 11.1770004,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.23,
       "fcfYield": 1.5900716025430954,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "RMCO": {
       "t": "RMCO",
@@ -203,15 +233,15 @@
       "pegFwd": -3.1375,
       "peTTM": null,
       "psTTM": 6.1748877,
-      "evEbitda": -163.102,
+      "evEbitda": -163.706,
       "divYield": 0.4,
       "opMargin": -4.947,
       "roe": -6.43,
       "debtToEquity": 0.03467,
       "currentRatio": 1.413,
       "fcfYield": -1.126929103357528,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "GRML": {
       "t": "GRML",
@@ -240,8 +270,8 @@
       "debtToEquity": 0.00515,
       "currentRatio": 10.092,
       "fcfYield": -12.271718355533956,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "DLPN": {
       "t": "DLPN",
@@ -263,15 +293,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.23722835,
-      "evEbitda": 301.811,
+      "evEbitda": 307.249,
       "divYield": 0.0,
       "opMargin": -7.138999999999999,
       "roe": -51.599,
       "debtToEquity": 4.47626,
       "currentRatio": 0.767,
       "fcfYield": -20.377827020408866,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NTRP": {
       "t": "NTRP",
@@ -289,19 +319,19 @@
       "netMargin": -289.95402,
       "peFwd": -2.2258065,
       "epsFwd": 46.150002,
-      "revFwd": 123.08999,
+      "revFwd": 123.37,
       "pegFwd": -0.04822982456208778,
       "peTTM": null,
       "psTTM": 6.210326,
-      "evEbitda": -2.453,
+      "evEbitda": -2.695,
       "divYield": 0.0,
       "opMargin": -200.70798000000002,
       "roe": -260.827,
       "debtToEquity": 0.88887,
       "currentRatio": 0.609,
       "fcfYield": -24.083108397953286,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ATHR": {
       "t": "ATHR",
@@ -323,15 +353,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 27.10594,
-      "evEbitda": -7.56,
+      "evEbitda": -7.188,
       "divYield": 0.0,
       "opMargin": -393.56,
       "roe": -146.55499999999998,
       "debtToEquity": 2.78108,
       "currentRatio": 3.371,
       "fcfYield": -12.61807976305406,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SNTI": {
       "t": "SNTI",
@@ -353,15 +383,15 @@
       "pegFwd": -0.004874615035644847,
       "peTTM": null,
       "psTTM": 178.03836,
-      "evEbitda": -0.476,
+      "evEbitda": -0.467,
       "divYield": 0.0,
       "opMargin": -79370.59000000001,
       "roe": -466.46299999999997,
       "debtToEquity": null,
       "currentRatio": 0.825,
       "fcfYield": -174.7567786718082,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "REFR": {
       "t": "REFR",
@@ -383,15 +413,15 @@
       "pegFwd": 3.15,
       "peTTM": null,
       "psTTM": 31.62032,
-      "evEbitda": -10.499,
+      "evEbitda": -9.113,
       "divYield": 0.0,
       "opMargin": -775.66304,
       "roe": -154.02299,
       "debtToEquity": 0.97458,
       "currentRatio": 3.543,
       "fcfYield": -2.8879508036329575,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "GIFT": {
       "t": "GIFT",
@@ -413,15 +443,15 @@
       "pegFwd": -0.08572622963101705,
       "peTTM": null,
       "psTTM": 0.25362033,
-      "evEbitda": -3.552,
+      "evEbitda": -3.509,
       "divYield": 0.0,
       "opMargin": -5.766,
       "roe": -40.229,
       "debtToEquity": 0.22376000000000001,
       "currentRatio": 1.019,
       "fcfYield": 6.616103630423788,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BCG": {
       "t": "BCG",
@@ -450,8 +480,8 @@
       "debtToEquity": 1.22635,
       "currentRatio": 0.786,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "FFAI": {
       "t": "FFAI",
@@ -468,9 +498,9 @@
       "grossMargin": 0.0,
       "netMargin": 0.0,
       "peFwd": -0.90163934,
-      "epsFwd": 87.37,
-      "revFwd": 926.12,
-      "pegFwd": -0.010319781847316013,
+      "epsFwd": 88.339996,
+      "revFwd": 1005.2198999999999,
+      "pegFwd": -0.010206467974030698,
       "peTTM": null,
       "psTTM": 4.4515843,
       "evEbitda": -1.572,
@@ -480,8 +510,8 @@
       "debtToEquity": 118.29037,
       "currentRatio": 0.384,
       "fcfYield": -1925.1805755716982,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "LOCL": {
       "t": "LOCL",
@@ -503,15 +533,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.47805735,
-      "evEbitda": -17.136,
+      "evEbitda": -17.107,
       "divYield": 0.0,
       "opMargin": -100.708,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 1.071,
       "fcfYield": -77.17756076139166,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "GWH": {
       "t": "GWH",
@@ -527,10 +557,10 @@
       "epsTTM": null,
       "grossMargin": 0.0,
       "netMargin": 0.0,
-      "peFwd": -0.09327381,
+      "peFwd": -0.19835442,
       "epsFwd": 61.29,
       "revFwd": -74.67,
-      "pegFwd": -0.0015218438570729319,
+      "pegFwd": -0.0032363259911894274,
       "peTTM": null,
       "psTTM": -5.3801866,
       "evEbitda": -0.262,
@@ -540,8 +570,8 @@
       "debtToEquity": null,
       "currentRatio": 0.68,
       "fcfYield": -532.3101607853894,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "AUID": {
       "t": "AUID",
@@ -563,15 +593,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 4.600618,
-      "evEbitda": -0.478,
+      "evEbitda": -0.465,
       "divYield": 0.0,
       "opMargin": -827.392,
       "roe": -245.12900000000002,
       "debtToEquity": 1.8652799999999998,
       "currentRatio": 0.571,
       "fcfYield": -121.33531664907457,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SKYE": {
       "t": "SKYE",
@@ -593,15 +623,15 @@
       "pegFwd": -0.00602980507103039,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": 0.054,
+      "evEbitda": 0.051,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -233.873,
       "debtToEquity": null,
       "currentRatio": 0.95,
       "fcfYield": -250.0415888657305,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "FEMY": {
       "t": "FEMY",
@@ -630,8 +660,8 @@
       "debtToEquity": 1.18837,
       "currentRatio": 2.144,
       "fcfYield": -67.04468534847709,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "TPST": {
       "t": "TPST",
@@ -653,15 +683,15 @@
       "pegFwd": -0.011425642051655149,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -0.907,
+      "evEbitda": -0.884,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -931.1400000000001,
       "debtToEquity": null,
       "currentRatio": 0.381,
       "fcfYield": -120.81987157881503,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "VGAS": {
       "t": "VGAS",
@@ -683,15 +713,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": 0.598,
+      "evEbitda": 0.631,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -21.94,
       "debtToEquity": 0.00656,
       "currentRatio": 26.165,
       "fcfYield": -22.032264212474537,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "MGLD": {
       "t": "MGLD",
@@ -720,8 +750,8 @@
       "debtToEquity": 0.02434,
       "currentRatio": 4.35,
       "fcfYield": -3.0465277974297185,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BTAI": {
       "t": "BTAI",
@@ -750,8 +780,8 @@
       "debtToEquity": null,
       "currentRatio": 0.209,
       "fcfYield": -1372.1992361278008,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "KFFB": {
       "t": "KFFB",
@@ -774,14 +804,14 @@
       "peTTM": 23.958334,
       "psTTM": 4.0423036,
       "evEbitda": null,
-      "divYield": 3.34,
+      "divYield": 3.48,
       "opMargin": 29.876,
       "roe": 3.8699999999999997,
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "TVGN": {
       "t": "TVGN",
@@ -803,15 +833,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -2.792,
+      "evEbitda": -2.881,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.327,
       "fcfYield": -6.912929538035534,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "DBGI": {
       "t": "DBGI",
@@ -833,15 +863,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.64741856,
-      "evEbitda": -0.731,
+      "evEbitda": -0.722,
       "divYield": 0.0,
       "opMargin": -618.5559999999999,
       "roe": -1161.8979,
       "debtToEquity": 40.03887,
       "currentRatio": 0.583,
       "fcfYield": -710.8442096709089,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "TRAW": {
       "t": "TRAW",
@@ -863,15 +893,15 @@
       "pegFwd": -0.0077039544303797464,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -0.11,
+      "evEbitda": -0.085,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -433.35699999999997,
       "debtToEquity": null,
       "currentRatio": 0.927,
       "fcfYield": -194.76883587546664,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ASPSZ": {
       "t": "ASPSZ",
@@ -900,8 +930,8 @@
       "debtToEquity": null,
       "currentRatio": 1.168,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ELWT": {
       "t": "ELWT",
@@ -930,8 +960,8 @@
       "debtToEquity": null,
       "currentRatio": 0.901,
       "fcfYield": -14.235710586851921,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "CISO": {
       "t": "CISO",
@@ -953,15 +983,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.3489066,
-      "evEbitda": -2.007,
+      "evEbitda": -1.872,
       "divYield": 0.0,
       "opMargin": -25.677,
       "roe": -28.827998,
       "debtToEquity": 0.35981,
       "currentRatio": 0.226,
       "fcfYield": -20.734614189237952,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "CSAI": {
       "t": "CSAI",
@@ -983,15 +1013,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.3962019,
-      "evEbitda": 0.027,
+      "evEbitda": 0.031,
       "divYield": 0.0,
       "opMargin": -170.722,
       "roe": -151.43800000000002,
       "debtToEquity": 0.36963,
       "currentRatio": 4.957,
       "fcfYield": -179.05880055396472,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BTOC": {
       "t": "BTOC",
@@ -1013,15 +1043,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.05259937,
-      "evEbitda": -6.662,
+      "evEbitda": -6.661,
       "divYield": 0.0,
       "opMargin": -12.808,
       "roe": -126.11000000000001,
       "debtToEquity": 13.945599999999999,
       "currentRatio": 0.438,
       "fcfYield": -9.700457512869564,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "LESL": {
       "t": "LESL",
@@ -1050,8 +1080,8 @@
       "debtToEquity": null,
       "currentRatio": 1.35,
       "fcfYield": 3779.6197546682747,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "AIFA": {
       "t": "AIFA",
@@ -1073,15 +1103,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 5.5406814,
-      "evEbitda": -1.36,
+      "evEbitda": -0.914,
       "divYield": 0.0,
       "opMargin": -275.603,
       "roe": -68.801004,
       "debtToEquity": 0.45626,
       "currentRatio": 1.686,
       "fcfYield": 10.40275652286843,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NYC": {
       "t": "NYC",
@@ -1103,15 +1133,15 @@
       "pegFwd": null,
       "peTTM": 1.155102,
       "psTTM": 0.5359841,
-      "evEbitda": -108.102,
+      "evEbitda": -107.45,
       "divYield": 0.0,
       "opMargin": -57.635000000000005,
       "roe": 29.369,
       "debtToEquity": 4.74043,
       "currentRatio": 0.423,
       "fcfYield": 34.78761717478614,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "AIRI": {
       "t": "AIRI",
@@ -1133,15 +1163,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.28064403,
-      "evEbitda": 17.761,
+      "evEbitda": 17.942,
       "divYield": 0.0,
       "opMargin": -3.0509999999999997,
       "roe": -10.5550006,
       "debtToEquity": 1.6986,
       "currentRatio": 1.235,
       "fcfYield": -56.65555368190932,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NXB": {
       "t": "NXB",
@@ -1163,15 +1193,15 @@
       "pegFwd": 0.2333314025159775,
       "peTTM": null,
       "psTTM": 0.33482254,
-      "evEbitda": -25.012,
+      "evEbitda": -24.857,
       "divYield": 0.0,
       "opMargin": -1.7510000000000001,
       "roe": -132.561,
       "debtToEquity": 6.51187,
       "currentRatio": 1.043,
       "fcfYield": -66.14803243031352,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "JVA": {
       "t": "JVA",
@@ -1193,15 +1223,15 @@
       "pegFwd": 0.89,
       "peTTM": 5.5783134,
       "psTTM": 0.27212933,
-      "evEbitda": 4.157,
-      "divYield": 1.79,
+      "evEbitda": 4.14,
+      "divYield": 1.73,
       "opMargin": 10.718001000000001,
       "roe": 16.320999,
       "debtToEquity": 0.13236,
       "currentRatio": 4.143,
       "fcfYield": 21.194168110877236,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ZEO": {
       "t": "ZEO",
@@ -1223,15 +1253,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.33474225,
-      "evEbitda": -4.211,
+      "evEbitda": -4.087,
       "divYield": 0.0,
       "opMargin": -18.485,
       "roe": -31.074,
       "debtToEquity": 0.037309999999999996,
       "currentRatio": 1.562,
       "fcfYield": -31.466018545170787,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "MSAI": {
       "t": "MSAI",
@@ -1253,45 +1283,45 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 1.6355067,
-      "evEbitda": 1.375,
+      "evEbitda": 1.361,
       "divYield": 0.0,
       "opMargin": -153.62800000000001,
       "roe": -46.471000000000004,
       "debtToEquity": null,
       "currentRatio": 7.193,
       "fcfYield": -71.20770986469438,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SMXT": {
       "t": "SMXT",
       "name": "SolarMax Technology",
       "price": 4.26,
       "marketCap": 20201632.0,
-      "cash": 4307362.0,
-      "debt": 36269384.0,
+      "cash": 2158233.0,
+      "debt": 36031448.0,
       "cur": "USD",
       "prevClose": 4.66,
       "changePct": -8.58369098712447,
-      "revTTM": 114.1,
+      "revTTM": 48.8,
       "epsTTM": null,
-      "grossMargin": 5.924,
-      "netMargin": -5.396,
+      "grossMargin": 7.4990004,
+      "netMargin": -7.915,
       "peFwd": null,
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": null,
       "peTTM": null,
-      "psTTM": 0.20429279,
-      "evEbitda": -10.58,
+      "psTTM": 0.19757815,
+      "evEbitda": -15.812,
       "divYield": 0.0,
-      "opMargin": 0.649,
+      "opMargin": -1.9,
       "roe": null,
       "debtToEquity": null,
-      "currentRatio": 0.821,
-      "fcfYield": -3.9325288174737563,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "currentRatio": 0.976,
+      "fcfYield": -114.15390598145734,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SURG": {
       "t": "SURG",
@@ -1313,15 +1343,15 @@
       "pegFwd": 0.48,
       "peTTM": null,
       "psTTM": 0.1118826,
-      "evEbitda": -1.018,
+      "evEbitda": -1.002,
       "divYield": 0.0,
       "opMargin": 21.305001,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.186,
       "fcfYield": -8.31772280228737,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BCDA": {
       "t": "BCDA",
@@ -1343,15 +1373,15 @@
       "pegFwd": -0.03464495751974627,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -1.718,
+      "evEbitda": -1.616,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -1803.194,
       "debtToEquity": 0.10852,
       "currentRatio": 2.091,
       "fcfYield": -35.95420650719214,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BNKK": {
       "t": "BNKK",
@@ -1372,22 +1402,22 @@
       "revFwd": null,
       "pegFwd": null,
       "peTTM": null,
-      "psTTM": 1.1958815,
-      "evEbitda": -0.471,
+      "psTTM": 1.2160165,
+      "evEbitda": -0.458,
       "divYield": 0.0,
       "opMargin": -178.85499000000002,
       "roe": -332.396,
       "debtToEquity": 0.00818,
       "currentRatio": 1.05,
       "fcfYield": -79.19037500349872,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "CVKD": {
       "t": "CVKD",
       "name": "Cadrenal Therapeutics",
       "price": 0.9101,
-      "marketCap": 2820028.0,
+      "marketCap": 3246865.0,
       "cash": 2388135.0,
       "debt": 0.0,
       "cur": "USD",
@@ -1403,15 +1433,15 @@
       "pegFwd": -0.005664348927875244,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -0.093,
+      "evEbitda": -0.074,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -275.15999999999997,
       "debtToEquity": null,
       "currentRatio": 3.73,
-      "fcfYield": -302.74280964586166,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "fcfYield": -262.9438550725084,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "LSBK": {
       "t": "LSBK",
@@ -1431,17 +1461,17 @@
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": null,
-      "peTTM": 15.732759,
+      "peTTM": 15.869566,
       "psTTM": 4.785058,
       "evEbitda": null,
-      "divYield": 2.0,
+      "divYield": 1.97,
       "opMargin": 36.196,
       "roe": 7.061000000000001,
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "KLXER": {
       "t": "KLXER",
@@ -1470,8 +1500,8 @@
       "debtToEquity": null,
       "currentRatio": 1.18,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "MSGM": {
       "t": "MSGM",
@@ -1493,15 +1523,15 @@
       "pegFwd": 0.19,
       "peTTM": 13.5,
       "psTTM": 1.6213781,
-      "evEbitda": 6.543,
+      "evEbitda": 6.261,
       "divYield": 0.0,
       "opMargin": 18.030001000000002,
       "roe": 51.395,
       "debtToEquity": 0.2736,
       "currentRatio": 1.851,
       "fcfYield": 14.80280370631889,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SDST": {
       "t": "SDST",
@@ -1523,15 +1553,15 @@
       "pegFwd": -0.01312868935064935,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -0.253,
+      "evEbitda": -0.235,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.061,
       "fcfYield": -317.65073255316076,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NXPL": {
       "t": "NXPL",
@@ -1553,15 +1583,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.49944773,
-      "evEbitda": -2.657,
+      "evEbitda": -2.517,
       "divYield": 0.0,
       "opMargin": -1.069,
       "roe": -39.946997,
       "debtToEquity": 0.09584,
       "currentRatio": 2.29,
       "fcfYield": -0.5769073735130328,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SCNX": {
       "t": "SCNX",
@@ -1583,15 +1613,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 7.5197067,
-      "evEbitda": -0.751,
+      "evEbitda": -0.702,
       "divYield": 0.0,
       "opMargin": -785.631,
       "roe": -53.468,
       "debtToEquity": 0.16676,
       "currentRatio": 3.041,
       "fcfYield": -123.2411568044808,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "MAMO": {
       "t": "MAMO",
@@ -1613,21 +1643,21 @@
       "pegFwd": null,
       "peTTM": 9.349999,
       "psTTM": 0.5931136,
-      "evEbitda": 7.889,
+      "evEbitda": 7.923,
       "divYield": 0.0,
       "opMargin": 11.137,
       "roe": 17.929001,
       "debtToEquity": 0.34847,
       "currentRatio": 1.85,
       "fcfYield": 15.78593749694999,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "VEEA": {
       "t": "VEEA",
       "name": "Veea",
       "price": 5.7,
-      "marketCap": 354620672.0,
+      "marketCap": 17731036.0,
       "cash": 886966.0,
       "debt": 13438310.0,
       "cur": "USD",
@@ -1642,16 +1672,16 @@
       "revFwd": null,
       "pegFwd": null,
       "peTTM": null,
-      "psTTM": 721.5246,
-      "evEbitda": -1.461,
+      "psTTM": 36.076233,
+      "evEbitda": -1.626,
       "divYield": 0.0,
       "opMargin": -4013.0499999999997,
       "roe": null,
       "debtToEquity": 1.66918,
       "currentRatio": 1.574,
-      "fcfYield": -4.476050397874155,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "fcfYield": -89.52099584028818,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ATCH": {
       "t": "ATCH",
@@ -1673,15 +1703,15 @@
       "pegFwd": -0.07094868625546381,
       "peTTM": 8.765,
       "psTTM": 1.3273733,
-      "evEbitda": -8.685,
+      "evEbitda": -8.441,
       "divYield": 0.0,
       "opMargin": -39.347,
       "roe": 27.371000000000002,
       "debtToEquity": 0.7104900000000001,
       "currentRatio": 1.503,
       "fcfYield": -49.281659838660026,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "AIRE": {
       "t": "AIRE",
@@ -1710,8 +1740,8 @@
       "debtToEquity": 0.04504,
       "currentRatio": 1.025,
       "fcfYield": -109.24852458275602,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "XCUR": {
       "t": "XCUR",
@@ -1733,15 +1763,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -0.698,
+      "evEbitda": -0.725,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -168.37399,
       "debtToEquity": null,
       "currentRatio": 0.557,
       "fcfYield": -52.649428352693775,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "CRIS": {
       "t": "CRIS",
@@ -1763,15 +1793,15 @@
       "pegFwd": -0.0005133542462265866,
       "peTTM": 0.50848484,
       "psTTM": 0.37730923,
-      "evEbitda": 0.069,
+      "evEbitda": 0.073,
       "divYield": 0.0,
       "opMargin": -833.403,
       "roe": null,
       "debtToEquity": 0.22236,
       "currentRatio": 0.492,
       "fcfYield": -968.5988676129439,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "MWYN": {
       "t": "MWYN",
@@ -1793,15 +1823,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 5.227998,
-      "evEbitda": -38.077,
+      "evEbitda": -38.638,
       "divYield": 0.0,
       "opMargin": -7.7170000000000005,
       "roe": -31.086999999999996,
       "debtToEquity": 0.059930000000000004,
       "currentRatio": 4.941,
       "fcfYield": -2.666245513318053,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "RAIN": {
       "t": "RAIN",
@@ -1823,15 +1853,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 746.8299,
-      "evEbitda": -1.658,
+      "evEbitda": -1.575,
       "divYield": 0.0,
       "opMargin": -101882.51299999999,
       "roe": null,
       "debtToEquity": null,
       "currentRatio": 0.032,
       "fcfYield": -28.99265390194031,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "CRNX": {
       "t": "CRNX",
@@ -1860,14 +1890,14 @@
       "debtToEquity": 0.03959,
       "currentRatio": 15.571,
       "fcfYield": -2.7600965881009594,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "INTZ": {
       "t": "INTZ",
       "name": "Intrusion",
       "price": 0.6614,
-      "marketCap": 15051531.0,
+      "marketCap": 16208899.0,
       "cash": 182000.0,
       "debt": 4793000.0,
       "cur": "USD",
@@ -1882,16 +1912,16 @@
       "revFwd": 22.620001000000002,
       "pegFwd": -0.08450884084636615,
       "peTTM": null,
-      "psTTM": 2.6004717,
-      "evEbitda": -2.461,
+      "psTTM": 2.8004317,
+      "evEbitda": -2.359,
       "divYield": 0.0,
       "opMargin": -171.576,
       "roe": -140.959,
       "debtToEquity": 1.17332,
       "currentRatio": 0.386,
-      "fcfYield": -38.39642625059205,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "fcfYield": -35.654796787863255,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ADGM": {
       "t": "ADGM",
@@ -1913,21 +1943,21 @@
       "pegFwd": -0.004288603328917894,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -1.118,
+      "evEbitda": -1.114,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -657.763,
       "debtToEquity": null,
       "currentRatio": 1.414,
       "fcfYield": -223.56767871551392,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "VRM": {
       "t": "VRM",
       "name": "Vroom",
       "price": 9.31,
-      "marketCap": 48483008.0,
+      "marketCap": 48731856.0,
       "cash": 16359000.0,
       "debt": 778622016.0,
       "cur": "USD",
@@ -1942,16 +1972,16 @@
       "revFwd": null,
       "pegFwd": null,
       "peTTM": null,
-      "psTTM": 0.23295923,
-      "evEbitda": 71.019,
+      "psTTM": 0.23415492,
+      "evEbitda": 71.221,
       "divYield": 0.0,
       "opMargin": 30.895,
       "roe": -42.803000000000004,
       "debtToEquity": 6.4342,
       "currentRatio": 3.367,
-      "fcfYield": 8.498596044205838,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "fcfYield": 8.45519817673269,
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "AMOD": {
       "t": "AMOD",
@@ -1980,8 +2010,8 @@
       "debtToEquity": null,
       "currentRatio": 0.345,
       "fcfYield": -3.6192666654276686,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ADTI": {
       "t": "ADTI",
@@ -2010,8 +2040,8 @@
       "debtToEquity": 0.93108,
       "currentRatio": 0.682,
       "fcfYield": -5.934501030001368,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ARAI": {
       "t": "ARAI",
@@ -2033,15 +2063,15 @@
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 150.90356,
-      "evEbitda": -0.756,
+      "evEbitda": -0.605,
       "divYield": 0.0,
       "opMargin": -30290.857,
       "roe": -672.2909999999999,
       "debtToEquity": 1.14707,
       "currentRatio": 0.916,
       "fcfYield": 22.23009214802085,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SQFTW": {
       "t": "SQFTW",
@@ -2070,8 +2100,8 @@
       "debtToEquity": 3.7420400000000003,
       "currentRatio": 0.352,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "SBT": {
       "t": "SBT",
@@ -2100,8 +2130,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "ARAV": {
       "t": "ARAV",
@@ -2130,8 +2160,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "BTCSP": {
       "t": "BTCSP",
@@ -2160,8 +2190,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "NOVS": {
       "t": "NOVS",
@@ -2190,8 +2220,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "RLMT": {
       "t": "RLMT",
@@ -2220,8 +2250,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "HYZN": {
       "t": "HYZN",
@@ -2250,8 +2280,8 @@
       "debtToEquity": null,
       "currentRatio": null,
       "fcfYield": null,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     },
     "INAB": {
       "t": "INAB",
@@ -2273,15 +2303,15 @@
       "pegFwd": -0.01606294541572134,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": 0.111,
+      "evEbitda": 0.144,
       "divYield": 0.0,
       "opMargin": 0.0,
       "roe": -111.106,
       "debtToEquity": 0.11855,
       "currentRatio": 8.206,
       "fcfYield": -59.92039959322446,
-      "priceUpdated": "2026-10-10T01:12:53.358990Z",
-      "fundamentalsUpdated": "2026-10-10T01:12:53.358990Z"
+      "priceUpdated": "2026-10-11T01:58:01.805833Z",
+      "fundamentalsUpdated": "2026-10-11T01:58:01.805833Z"
     }
   }
 }

@@ -244,6 +244,10 @@
     "n": "MicroStrategy"
   },
   {
+    "t": "MRNA",
+    "n": "Moderna"
+  },
+  {
     "t": "MDLZ",
     "n": "Mondelez"
   },
@@ -382,10 +386,6 @@
   {
     "t": "WMT",
     "n": "Walmart"
-  },
-  {
-    "t": "WBD",
-    "n": "Warner Bros Discovery"
   },
   {
     "t": "WDC",

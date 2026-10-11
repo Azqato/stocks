@@ -508,10 +508,6 @@
     "n": "Corpay"
   },
   {
-    "t": "CTVA",
-    "n": "Corteva"
-  },
-  {
     "t": "CSGP",
     "n": "CoStar Group"
   },
@@ -1424,10 +1420,6 @@
     "n": "Palo Alto Networks"
   },
   {
-    "t": "PSKY",
-    "n": "Paramount Skydance"
-  },
-  {
     "t": "PH",
     "n": "Parker Hannifin"
   },
@@ -1640,6 +1632,10 @@
     "n": "Simon Property Group"
   },
   {
+    "t": "SKYD",
+    "n": "SKYDANCE"
+  },
+  {
     "t": "SWKS",
     "n": "Skyworks Solutions"
   },
@@ -1792,6 +1788,10 @@
     "n": "Truist Financial"
   },
   {
+    "t": "TWLO",
+    "n": "TWILIO INC   A"
+  },
+  {
     "t": "TYL",
     "n": "Tyler Technologies"
   },
@@ -1922,10 +1922,6 @@
   {
     "t": "DIS",
     "n": "Walt Disney Company (The)"
-  },
-  {
-    "t": "WBD",
-    "n": "Warner Bros. Discovery"
   },
   {
     "t": "WM",
