@@ -1,33 +1,25 @@
-# Azqato - Individual Stock Methodology
+# Azqato Stocks: Data Feed
 
-A public, educational website documenting Azqato's fundamentals-driven, long-term equity investing methodology: how to evaluate a stock, how to think about index and ETF investing, and how to set up the free tools that support the workflow.
+Scheduled jobs that fetch public market data and publish it as JSON for [Azqato Invests](https://azqato.com/invests/) and Automate Fundamentals. The methodology pages moved to Azqato Invests on 2026-10-02; the old page addresses here only redirect there.
 
-**Live site:** [azqato.github.io/stocks](https://azqato.github.io/stocks/)
+## What it publishes
 
----
+Served at `azqato.github.io/stocks/data/`:
 
-## What the site offers
+| Data | Written by | When (UTC) | Read by |
+|------|-----------|-----------|---------|
+| `stocks/` parts, `screener.json`, `screener_sp500.json`, `screener_gvd.json`, `screener_intl.json` | `stock-data.yml` | Mon-Fri 21:37; whole market Sun 21:17 | Invests Screener |
+| `screener_etfs.json` (36 funds from `etfs.json`) | `screener-data-etfs.yml` | Mon-Fri 22:12 | Invests Screener (ETFs) |
+| `market_overview.json` | `market-overview.yml` | Mon-Fri 15:07, 19:07, 22:07 | Invests Market Overview |
+| `statements/<TICKER>.json` | `statements.yml` | Sat 14:17 | Automate Fundamentals |
+| Index and fund membership lists | `constituents.yml` | Sat 23:17 | the jobs above |
 
-- **A 12-metric evaluation framework** (revenue growth, EPS growth, valuation, cash and debt, technical timing signals, and margins) explained in plain language, with worked examples and common pitfalls for each one.
-- **A philosophy section** covering the conceptual and behavioral foundation of the methodology: why ownership thinking beats price-watching, why selling winners early is usually a mistake, why IPOs are worth waiting on, and how to hold a position through volatility without panicking.
-- **An interactive screener** that scores hundreds of stocks and funds every trading day against the methodology's own model, across eight switchable universes (the Nasdaq 100, the S&P 500, Vanguard's Growth/Value/Dividend Appreciation fund holdings, a fixed list of major ETFs, the top international holdings outside the US, and the whole US market, about 3,500 stocks). Each entry gets a transparent score and letter tier, with a full breakdown available on click.
-- **A Market Overview page** showing a same-day snapshot of major indices, sector funds, commodities, bond yields, leveraged funds, and crypto, refreshed several times a day.
-- **Step-by-step setup guides** for Finviz (a free stock screener) and Seeking Alpha (a free watchlist tool), so a reader can rebuild the exact research workflow the methodology assumes.
-- **A separate index and ETF methodology**, since broad-market funds are evaluated on different signals (market sentiment, technical timing, structural cost) than individual companies are.
-- **A Q&A section** answering the most common questions about the strategy, the site's tools, and the reasoning behind specific rules.
+A failed job opens a GitHub issue (`alert-on-failure.yml`). Data comes from Yahoo Finance, Nasdaq, State Street and Vanguard; no API keys.
 
-## Who it is for
+## Documentation
 
-Beginner to intermediate self-directed investors who want a structured, non-commercial framework for evaluating individual stocks and funds, rather than another source of hot tips or short-term trading signals. The site assumes no finance background: every term is defined in plain English the first time it's used. It is not built for day traders, swing traders, professional analysts, or anyone looking for personalized financial advice.
+- [docs/PRD.md](docs/PRD.md): how the feed works: jobs, scripts, data models, scoring models, runbook
+- [docs/PATCHNOTES.md](docs/PATCHNOTES.md): every change, newest first
+- [docs/TODO.md](docs/TODO.md): ideas with no version yet
 
-## Current status
-
-Live and actively maintained. The educational content is complete and stable; the screener and Market Overview page run on automated daily and intraday data refreshes with no manual intervention required. New content sections and features are added periodically; see the documentation below for what's shipped and what's planned next.
-
-## Where to learn more
-
-Everything about how the site works, how it's built, and where it's headed lives in [`/docs`](docs/):
-
-- [docs/PRD.md](docs/PRD.md): the complete product reference: what the site is, who it's for, the methodology and scoring models in full detail, the technical architecture, the setup and deployment process, security posture, and the roadmap
-- [docs/DESIGN.md](docs/DESIGN.md): the visual design system: colors, typography, spacing, components, and accessibility standards
-- [docs/PATCHNOTES.md](docs/PATCHNOTES.md): the complete version history, from initial launch to the present
+Educational use only. Not financial advice.

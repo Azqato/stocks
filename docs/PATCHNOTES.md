@@ -1,6 +1,28 @@
-# PATCHNOTES.md — Azqato Stock Methodology Site
+# PATCHNOTES.md - Azqato Stocks Data Feed
 
 ---
+
+## v5.1.0 - 2026-10-11 - Cleanup: the repo holds only the data jobs, redirects and docs
+
+### Removed
+- The old site's files, which no redirect page loads and nothing else uses: `screener.js`, `script.js`, `style.css`, `og-image.png` and the four images in `img/`. Azqato Invests runs its own copy of the screener.
+- `docs/DESIGN.md`: the design system for pages that no longer live here.
+- The two `.gitignore` lines for `guide.html` and `indexes.html`, pages retired long ago.
+
+### Changed
+- `README.md` rewritten as a short guide to the feed: what each file is, which job writes it and when, and who reads it.
+- `docs/PRD.md` rewritten around the data feed (431 lines, from 1,367). Kept: the data pipeline, failure detection, the ad hoc ETF holdings analysis, data models, both scoring models, known technical debt and the Documentation Versus Reality record. Dropped: the old site's goals, users, roadmap, metrics, press release, FAQ, page structure, browser testing and design notes, which now belong to the Azqato Invests PRD. The earlier text stays in git history.
+- `docs/TODO.md` cut down to the two open items: the overnight statements schedule and more fundamentals fields for Automate Fundamentals. The shipped v4.9.x parts work was removed.
+- `scripts/analyze_etf_holdings.py`: the comments now point to the Invests copy of `screener.js`, the model it ports.
+
+## v5.0.1 - 2026-10-11 - ETFs universe: 26 more funds (36 in all)
+
+### Added
+- At the owner's request, `data/etfs.json` gains RWL, SPHQ, SPHB, FNDF, MGV, VBR, SCHD, RSP, VBK, ISCG, FNDB, FNDX, SCHB, IMCG, XLG, SPGP, ILCG, IUSG, IVW, SPYG, SCHG, IWF, VONG, MGK, IWY and MLRG (the iShares MSCI USA ETF). Each was checked on Yahoo first, and all 36 funds came back with full data.
+- `data/screener_etfs.json` rebuilt with all 36; the daily job keeps it fresh from here.
+
+### Changed
+- `docs/PRD.md` lists the 36 funds.
 
 ## v5.0.0 - 2026-10-02 - The pages moved to Azqato Invests; this repo is now a data feed
 

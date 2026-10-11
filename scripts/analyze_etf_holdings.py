@@ -7,7 +7,8 @@ question "what would the screener say about the companies inside these funds?"
 for arbitrary tickers the owner supplies, including funds that are not in
 data/etfs.json.
 
-This is deliberately NOT the ETF universe model in screener.js (ETF_METRICS:
+This is deliberately NOT the ETF universe model in Azqato Invests' screener.js
+(azqato.github.io repo, invests/assets/js/stocks/screener.js; ETF_METRICS:
 technicals and long-horizon returns). That model grades a fund as a timing
 decision. This script ignores the wrapper entirely, including expense ratio,
 yield, and every technical, and grades only the underlying companies on
@@ -31,7 +32,7 @@ changes. Prefer an index baseline when quoting a rating.
 
 fetch() and num() are imported from fetch_screener_data rather than copied, so
 the metric definitions here cannot drift from the live daily pipeline. The
-scoring curve, weights, and tier cuts below are a hand port of screener.js
+scoring curve, weights, and tier cuts below are a hand port of that screener.js
 (METRICS, pointsFromPct, computeScoreMap, computeTierMap) and DO have to be
 kept in sync by hand if that file's model changes.
 
