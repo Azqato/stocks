@@ -23,6 +23,11 @@ Each file:
     "fcfGrowth": -9.2    # %, last fiscal year versus the year before
   }
 
+One file name is not simply the ticker: a ticker that collides with a Windows
+reserved device name (CON, PRN, AUX, NUL, COM0-9, LPT0-9) gets a trailing
+underscore, so CON is stored as CON_.json. See file_name() for why this is not
+optional. The "t" field inside the record always holds the real ticker.
+
 A stock Yahoo publishes no statements for still gets a file, carrying
 `"noStatements": true` and null arrays, so that --oldest-first ages it like any
 other instead of treating it as missing and refetching it every night.
@@ -64,6 +69,27 @@ import yfinance as yf
 from fetch_screener_data import num, yahoo_symbol
 
 OUT_DIR = "data/statements"
+
+# Tickers whose file name Windows refuses. These are reserved DOS device names,
+# and the reservation applies with any extension, so "CON.json" is as
+# unopenable as "CON". Git on Windows refuses to check such a path out at all
+# (core.protectNTFS), which means one of these files makes the whole repo
+# unclonable there, not just unreadable. Hit for real on 2026-10-11: v5.2.0's
+# first whole-universe pass reached CON (Concentra Group Holdings) and every
+# Windows clone stopped being able to pull. A trailing underscore is appended
+# instead, so CON is stored as CON_.json. Readers resolving a ticker to a file
+# name must apply the same rule; nothing else about the record changes, and
+# the "t" field inside still carries the real ticker.
+RESERVED_NAMES = {"CON", "PRN", "AUX", "NUL", "CLOCK$"}
+RESERVED_NAMES |= {"COM" + d for d in "0123456789"}
+RESERVED_NAMES |= {"LPT" + d for d in "0123456789"}
+
+
+def file_name(symbol):
+    """The statements file name for a ticker, dodging Windows device names."""
+    stem = symbol + "_" if symbol.upper() in RESERVED_NAMES else symbol
+    # Dual-class dots stay (BRK.B.json), matching the feeds' keys.
+    return stem + ".json"
 PAUSE = float(os.environ.get("PAUSE", "0.8"))
 YEARS = 3  # fiscal-year columns after TTM
 
@@ -197,7 +223,7 @@ def oldest_first(symbols, limit):
     always in the next run's batch.
     """
     def age_key(sym):
-        path = os.path.join(OUT_DIR, sym + ".json")
+        path = os.path.join(OUT_DIR, file_name(sym))
         try:
             with open(path, encoding="utf-8") as f:
                 return (1, json.load(f).get("updated") or "")
@@ -247,13 +273,13 @@ def main():
                     print(f"{sym}: no statements", file=sys.stderr)
                     rec["noStatements"] = True
                     rec["updated"] = now
-                    with open(os.path.join(OUT_DIR, sym + ".json"), "w", encoding="utf-8") as f:
+                    with open(os.path.join(OUT_DIR, file_name(sym)), "w", encoding="utf-8") as f:
                         json.dump(rec, f, indent=1)
                         f.write("\n")
                     break
                 rec["updated"] = now
                 # Tickers are file names; dual-class dots stay (BRK.B.json), matching the feeds' keys.
-                with open(os.path.join(OUT_DIR, sym + ".json"), "w", encoding="utf-8") as f:
+                with open(os.path.join(OUT_DIR, file_name(sym)), "w", encoding="utf-8") as f:
                     json.dump(rec, f, indent=1)
                     f.write("\n")
                 ok += 1

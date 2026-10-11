@@ -2,6 +2,17 @@
 
 ---
 
+## v5.2.2 - 2026-10-11 - Fix: a ticker named CON made the repo unclonable on Windows
+
+### Fixed
+- **`data/statements/CON.json` could not be checked out on Windows, which broke `git pull` for the whole repository there.** `CON` is a reserved DOS device name, the reservation applies with any extension, and git on Windows refuses such a path outright (`core.protectNTFS`), so this was not one unreadable file but a clone that could not be updated at all. v5.2.0 made the statements pass cover the whole universe, the first full run reached Concentra Group Holdings (ticker `CON`), and the file landed from a Linux runner where nothing objects. Found immediately afterwards on the owner's own machine.
+- `fetch_statements.py` now routes every path through `file_name()`, which appends an underscore for the reserved set (`CON`, `PRN`, `AUX`, `NUL`, `CLOCK$`, `COM0-9`, `LPT0-9`), so Concentra is stored as `CON_.json`. `--oldest-first` uses the same function, so the aging logic is not confused by the rename. Near-misses are untouched: `CONN` and `CONX` keep their plain names. The record's `t` field still carries the real ticker, and the regenerated file holds identical figures to the one removed.
+- **`CON` is the only collision in the current 3,577-stock universe**, checked against the full reserved set. There were no tickers with a trailing dot or space either, the other class of path Windows cannot represent.
+- **Readers must apply the same rule.** Automate Fundamentals reads `data/statements/` by ticker and does not know about it yet; recorded under Risks and Open Questions in `docs/PRD.md`.
+
+### Changed
+- The 1,000-a-night cadence from v5.2.1 is now a measurement rather than an estimate: a dispatched run at the new count took **36m18s** and wrote 995 of 1,000 files, against an extrapolated 37 minutes. Coverage reached 1,531 of 3,577 stocks.
+
 ## v5.2.1 - 2026-10-11 - Statements cadence: 1,000 a night, a 3.6-day cycle
 
 ### Changed

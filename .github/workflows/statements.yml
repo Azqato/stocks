@@ -15,7 +15,8 @@ name: Update Financial Statements
 # N is 1000 a night (owner decision 2026-10-11), a 3.6-day cycle at 3,577
 # stocks. It is a policy choice, not a constraint: measured 2026-10-10, 520
 # symbols took 20m01s, so about 2.1 seconds a symbol including the 0.8s
-# politeness pause, which puts 1000 at roughly 37 minutes, a fifth of the
+# politeness pause, which put 1000 at roughly 37 minutes. Measured directly
+# 2026-10-11 at the new count: 36m18s, 995/1000 files written, a fifth of the
 # timeout below. The ceiling is near 5,000 and the whole universe would fit in
 # one night at about 127 minutes, but statements only change when a company
 # reports, so a nightly full pass would re-download an identical file about 90
