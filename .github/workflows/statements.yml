@@ -1,17 +1,41 @@
 name: Update Financial Statements
 
-# Weekly refresh of data/statements/<TICKER>.json: income statement, balance
-# sheet, and cash flow (TTM plus the last three fiscal years) for every US stock
-# in the screener lists. Read by Automate Fundamentals' Research page (RS3).
-# Statements change once a quarter, so weekly is plenty. Uses yfinance, like the
-# screener feeds. About 520 symbols; roughly an hour.
+# Builds data/statements/<TICKER>.json: income statement, balance sheet, and
+# cash flow (TTM plus the last three fiscal years). Read by Automate
+# Fundamentals' Research page (RS3). Uses yfinance, like the screener feeds.
+#
+# Rolling, not per-list (v5.2.0). The job used to run once a week over the five
+# curated US lists, about 520 symbols, which left the roughly 3,050 stocks in
+# the master universe outside those lists with no statements at all. It now runs
+# every night over the universe with --oldest-first 520, so the whole universe
+# comes round in 6.9 days (3,577 / 520) and nothing is ever staler than about a
+# week. The curated lists come round on the same cadence they had before, so
+# nothing the site reads got slower, and a newly added ticker is picked up the
+# very next night because a missing file sorts ahead of every existing one.
+#
+# The separate weekly curated run is gone rather than kept alongside: it would
+# refetch 520 symbols the rolling pass already covers and guarantee nothing the
+# rolling pass does not. Statements change once a quarter, so a 6.9-day cycle is
+# well inside the data's own refresh rate.
 
 on:
   schedule:
-    # Saturday 14:17 UTC: markets are closed and the weekday feed runs are done.
-    # Off-peak minute; see market-overview.yml.
-    - cron: "17 14 * * 6"
-  workflow_dispatch: {}   # allow manual runs
+    # 02:17 UTC daily. Picked to sit clear of every other job in the repo:
+    # Market Overview runs 15:07, 19:07 and 22:07, stock data 21:37 weekdays and
+    # 21:17 Sunday, the constituent sync Saturday 23:17, and the ETFs feed in the
+    # evening. 02:17 is the only window with nothing on either side of it.
+    # Off-peak minute rather than :00 or :15; see market-overview.yml for why.
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many of the oldest symbols to refresh (blank = 520)"
+        required: false
+        default: ""
+      lists:
+        description: "Space-separated list files to run instead of the rolling universe pass"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -25,16 +49,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
+      # Full history: the rebase in the push retry loop below is unreliable on
+      # the default shallow clone. Same reason as stock-data.yml.
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Fetch statements
+        env:
+          COUNT: ${{ inputs.count }}
+          LISTS: ${{ inputs.lists }}
         run: |
           pip install --quiet yfinance==1.4.1
-          python scripts/fetch_statements.py data/nasdaq100.json data/sp500.json data/vug.json data/vtv.json data/vig.json
+          if [ -n "$LISTS" ]; then
+            python scripts/fetch_statements.py $LISTS
+          else
+            python scripts/fetch_statements.py --universe --oldest-first "${COUNT:-520}"
+          fi
 
       - name: Commit updated data
         run: |
@@ -43,8 +78,23 @@ jobs:
           git add data/statements
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore: update financial statements [skip ci]"
-            git pull --rebase
-            git push
+            exit 0
           fi
+          git commit -m "chore: update financial statements [skip ci]"
+          # This job is in its own concurrency group, so a push can be rejected
+          # by any of the data workflows landing a commit first. fetch_statements
+          # had no retry loop until v5.2.0, which made the choice of time slot
+          # delicate: a rejected push threw away an hour of fetching. Rebase and
+          # retry instead; only data/statements is touched, so this never
+          # conflicts. Same loop as stock-data.yml.
+          for attempt in 1 2 3 4 5 6; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing onto origin/main."
+            sleep $(( (RANDOM % 15) + 3 ))
+            git pull --rebase --autostash origin main
+          done
+          echo "::error::Could not push the statements after 6 attempts."
+          exit 1

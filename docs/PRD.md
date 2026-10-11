@@ -43,6 +43,7 @@ Four data pipelines are refreshed automatically, staggered so the default Nasdaq
 - **ETFs** (`data/screener_etfs.json`): trading days (Mon-Fri) at 22:12 UTC via `.github/workflows/screener-data-etfs.yml` (a 36-symbol fetch that slots between the two index jobs; run by `scripts/fetch_etf_data.py`, which shares no field logic with the stock fetcher)
 - **International** (`data/screener_intl.json`): derived from the parts like the other three, and still the only stock feed carrying a `cur` field (native ISO currency code) that the frontend uses to label Price/Mkt Cap/Cash/Debt in the listing's own currency instead of USD
 - **Constituent sync**: Saturdays at 23:17 UTC via `.github/workflows/constituents.yml`; regenerates a feed only if a list's membership changed. Sources below
+- **Financial statements** (`data/statements/<TICKER>.json`): **nightly at 02:17 UTC** via `.github/workflows/statements.yml` (v5.2.0), rolling rather than per-list. `fetch_statements.py --universe --oldest-first 520` refreshes the 520 symbols whose files are missing or least recently updated, so the whole 3,577-stock universe comes round in 6.9 days and a newly added index member is picked up the next night (a missing file sorts ahead of every existing one). Before v5.2.0 this ran weekly over the five curated US lists only, which left the roughly 3,050 stocks outside them with no statements at all. 02:17 is the one slot in the day with nothing on either side of it, and the job now carries `stock-data.yml`'s rebase-retry push loop, so a commit landing from another workflow no longer throws away an hour of fetching. This is the only data job outside the `screener-data` concurrency group
 
 #### Constituent sources (v4.1.8)
 
@@ -157,7 +158,7 @@ GitHub Actions (cron)
    ├── Sun 21:17 UTC     → stock-data.yml: every part (whole market, about 3,575 symbols)
    ├── Mon-Fri 22:12 UTC → screener-data-etfs.yml: fetch_etf_data.py (36 funds) → data/screener_etfs.json
    ├── Mon-Fri 15:07, 19:07, 22:07 UTC → market-overview.yml: fetch_market_overview.py → data/market_overview.json
-   ├── Sat 14:17 UTC     → statements.yml: fetch_statements.py → data/statements/<TICKER>.json
+   ├── Daily 02:17 UTC   → statements.yml: fetch_statements.py → data/statements/<TICKER>.json
    ├── Sat 23:17 UTC     → constituents.yml: update_constituents.py + update_etf_constituents.py
    └── on any failure    → alert-on-failure.yml opens or comments on a GitHub issue
         │
@@ -231,8 +232,8 @@ Array of 100 objects. `t` = ticker symbol (string), `n` = company name (string).
 | `marketCap` | number | Market capitalization (USD) |
 | `cash` | number | Total cash and equivalents (USD) |
 | `debt` | number | Total debt (USD) |
-| `revTTM` | number | Revenue growth TTM (%) |
-| `epsTTM` | number | EPS growth TTM (%) |
+| `revTTM` | number | Yahoo's `revenueGrowth` (%). **Not a TTM figure despite the key**: it is the latest quarter against the same quarter a year earlier. Measured 2026-10-11 against `quarterly_income_stmt` for AAPL, MSFT, NVDA, KO and WMT, it matched latest-quarter year over year to within 0.05 percentage points on all five (AAPL 16.40 vs 16.36, NVDA 105.90 vs 105.85). The key is kept because two other repos read it; see Documentation Versus Reality item 11 |
+| `epsTTM` | number | Yahoo's `earningsGrowth` (%). Same quarterly basis as `revTTM`, and the same naming problem |
 | `grossMargin` | number | Gross margin TTM (%), in the feed but not scored or displayed since v3.31.0 |
 | `netMargin` | number | Net (profit) margin TTM (%), in the feed but not scored or displayed since v3.31.0 |
 | `peFwd` | number | Forward P/E (price ÷ current-FY EPS). **Unreliable for ADRs whose `financialCurrency` differs from their trading currency:** Yahoo divides a trading-currency price by a reporting-currency EPS, so the value is off by an FX factor (see Known Technical Debt) |
@@ -242,6 +243,21 @@ Array of 100 objects. `t` = ticker symbol (string), `n` = company name (string).
 | `cur` | string | ISO currency code (e.g. `"USD"`, `"TWD"`, `"GBP"`); added v3.34.0, used only by the International universe to label $-formatted cells in the listing's own currency. Yahoo's London-listed quotes report in pence (`GBp`), not pounds, while that listing's `marketCap`/`cash`/`debt` are already in pounds, the pipeline normalizes `GBp`/`GBX` to `GBP` and divides `price`/`prevClose` by 100 before this field is ever written, so nothing downstream needs to know about the pence convention |
 | `priceUpdated` | ISO 8601 string | Timestamp of price data |
 | `fundamentalsUpdated` | ISO 8601 string | Timestamp of fundamentals data |
+
+Trailing ratios in the feed for Automate Fundamentals, unused by the screener: `peTTM`, `psTTM`, `evEbitda`, `divYield`, `opMargin` (%), `roe` (%), `debtToEquity` (a plain multiple, Yahoo's percent divided by 100), `currentRatio`, `fcfYield` (%) from v4.3.6.
+
+**Fields added in v5.2.0**, also for Automate Fundamentals (its metrics audit FM2, FM3, FM5) and also ignored by the screener. Every one comes out of the same `Ticker.info` call the pipeline already makes, so they add no Yahoo requests and about 400 bytes a stock.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `revenue`, `ebitda`, `netIncome`, `fcf`, `ev` | number | TTM amounts and enterprise value, FX-converted from `financialCurrency` into the trading currency exactly as `cash`/`debt` are, and nulled when no rate resolves. They are divided against each other downstream, so they must share one currency |
+| `eps` | number | Trailing EPS per share, already in the trading currency |
+| `pb`, `evRevenue`, `pegTTM`, `quickRatio`, `beta` | number | Yahoo's `priceToBook`, `enterpriseToRevenue`, `trailingPegRatio`, `quickRatio`, `beta`. Currency-neutral, so untouched. `pb` is not always sane: Yahoo returned 0.00098 for BRK.B on 2026-10-11, apparently dividing a per-share price by total book equity. Stored as returned |
+| `roa`, `ebitdaMargin`, `payoutRatio`, `shortFloat`, `heldInsiders`, `heldInstitutions`, `change52w` | number | Fractions from Yahoo stored as percents, like the existing margins. `ebitdaMargin` is nulled when `ebitda` is missing, because Yahoo answers `0.0` rather than null for a company it has no EBITDA for (every bank) |
+| `divYield5yAvg` | number | Yahoo's `fiveYearAvgDividendYield`, which is **already** a percent; not scaled, same as `divYield` |
+| `targetMean`, `analystRating`, `analystCount` | number | Mean price target, consensus rating (1 strong buy to 5 sell) and the number of analysts behind it |
+| `high52`, `low52`, `ma200` | number | 52-week high and low and the 200-day average, in the same currency as `price`, so the `GBp` pence division applies to these and to `targetMean` too |
+
 
 **screener_gvd.json (combined feed)**
 
@@ -412,6 +428,8 @@ Every discrepancy found during the 2026-08-25 documentation audit (v4.1.13), rec
 | 7 | The Factors chip's denominator (screener universes): whether it reads `/4` or was left at the pre-v4.1.12 `/6` after the metric count dropped from six scored metrics to four | Not independently verified this pass | **Open**: flagged inline in the Screener Scoring Model section; needs a direct code read before the figure is trusted |
 | 8 | `docs/DESIGN.md`'s documented monospace font stack includes `'Courier New'` as a fourth fallback, which a code-reading pass's grep excerpt of `style.css` did not show | Not fully reconciled; the grep excerpt may simply have been truncated | **Open, low priority**: re-verify the full monospace stack in `style.css` directly before treating either version as authoritative |
 | 9 | `peFwd` in the committed feeds is Yahoo's `priceEpsCurrentYear`, which for an ADR reporting in a foreign currency divides a trading-currency price by a reporting-currency EPS; `fetch()` FX-converts `cash` and `debt` for exactly this reason but does nothing for `peFwd` | `fetch_screener_data.py` and the live `data/screener_sp500.json` record for NVO (both directly read, 2026-09-21) | **Open**: display-only today (`peFwd` has zero scoring weight and its only scored use, the PEG sign guard, survives a positive FX factor), but it also skews the weight-0 `peVsG` context ratio that colors the P/E FWD cell. See Known Technical Debt for the fix |
+| 11 | `revTTM` and `epsTTM` are named and documented as trailing 12-month growth, and were labeled "Rev Growth TTM" / "EPS Growth TTM" on the screener, but they carry Yahoo's `revenueGrowth` and `earningsGrowth`, which are the latest quarter against the same quarter a year earlier | Yahoo's own `quarterly_income_stmt`, measured directly for AAPL, MSFT, NVDA, KO and WMT on 2026-10-11: agreement with latest-quarter year over year was within 0.05 percentage points on all five | **Open, by decision (v5.2.0)**: the measurement settles it, but the feed keys are read by Azqato Invests and Automate Fundamentals, so renaming them is a breaking change across three repos and not worth it for a naming defect. The semantics are now documented at the field, in the fetcher's docstring and here. **The label fix belongs to the Invests screener**, which is where the two column headers now live |
+| 12 | `psTTM` carried Yahoo's `priceToSalesTrailing12Months` unconverted, which for an ADR divides a trading-currency price by reporting-currency sales per share | The feed's own FX-converted revenue, added v5.2.0: NVO read `psTTM` 0.52 against a market cap over revenue of 3.46 (measured 2026-10-11, DKK sales against a USD price) | **Resolved 2026-10-11 (v5.2.0)**: `psTTM` is now derived as `marketCap / revenue` whenever `financialCurrency` differs from the trading currency, and left as Yahoo's for the same-currency majority. Item 9 (`peFwd`) stays open because there is no converted forward EPS to derive a replacement from |
 | 10 | This file described Vanguard's holdings source as the profile API at `/investment-products/etfs/profile/api/{fund}/portfolio-holding/stock`, with a 500-entity cap on VXUS; that endpoint was retired between 2026-08-08 and 2026-08-15 and now answers HTTP 200 with the site's SPA HTML shell | Vanguard's own `portfolio-composition` web component (`fundsBaseUrl` in its `common-*.js` bundle), read directly 2026-09-21 | **Resolved 2026-09-21 (v4.3.4)**: script repointed at `/irr/funds/profile/{TICKER}-AdditionalFundData`, field names remapped, the VXUS guard band widened for the now-uncapped response, and this file's data-model note corrected |
 
 **Which source to trust, generally:** code, when the question is "what does the site actually do right now": this file and DESIGN.md are describing a moving target and lag behind ships by anywhere from hours to (as items 1 and 2 show) over a month. PATCHNOTES.md is the one document that's structurally hard to let drift, since each entry is written at ship time; when this file and PATCHNOTES.md disagree on what shipped, trust PATCHNOTES.md and correct this file.
@@ -426,5 +444,5 @@ Every discrepancy found during the 2026-08-25 documentation audit (v4.1.13), rec
 ## Risks and Open Questions
 
 - **GitHub's scheduler fires crons hours late** (see Known Technical Debt). The screener feeds only need to land after the close and still do; Market Overview's three snapshots can collapse into one.
-- **The overnight statements schedule is undecided** (see `docs/TODO.md`).
+- ~~The overnight statements schedule is undecided.~~ **Settled in v5.2.0**: nightly at 02:17 UTC, 520 symbols a night, with a push retry loop. The open question that remains is the cadence, not the slot: 520 a night was sized for a 619-stock universe and gives a 6.9-day cycle at 3,577. It is a policy choice, not a constraint.
 - **The feeds are read from other repos.** A field or file change here can break Invests or Automate Fundamentals without any check in this repo noticing; check both readers before changing a feed's shape.

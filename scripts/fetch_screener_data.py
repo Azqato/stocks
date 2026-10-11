@@ -35,7 +35,24 @@ comment there. Same-currency listings (nearly all of them) are untouched.
 
 Trailing ratios (peTTM, psTTM, evEbitda, divYield, opMargin, roe, debtToEquity,
 currentRatio, fcfYield) are extra fields for Automate Fundamentals' Research page;
-screener.html ignores them.
+screener.html ignores them. v5.2.0 added a second, larger block of them for the
+same reader: TTM amounts (revenue, ebitda, netIncome, fcf, eps, ev), ratios (pb,
+evRevenue, pegTTM, roa, ebitdaMargin, quickRatio, payoutRatio, divYield5yAvg,
+beta, shortFloat, heldInsiders, heldInstitutions, targetMean, analystRating,
+analystCount) and a price trend (high52, low52, ma200, change52w).
+
+CAREFUL with revTTM and epsTTM: despite the names, they are NOT trailing
+12-month figures. They carry Yahoo's `revenueGrowth` and `earningsGrowth`, which
+are the LATEST QUARTER against the same quarter a year earlier. Measured
+2026-10-11 against `quarterly_income_stmt` for AAPL, MSFT, NVDA, KO and WMT:
+`revenueGrowth` matched the latest quarter year over year to within 0.05
+percentage points on all five (AAPL 16.40 vs 16.36, NVDA 105.90 vs 105.85) and
+is nowhere near a TTM-over-prior-TTM figure. The keys are left as they are
+because the feeds are read by two other repos; the fix belongs in their labels.
+
+Also note `priceToBook` is Yahoo's own and is not always sane: it returns
+0.00098 for BRK.B (2026-10-11), apparently dividing a per-share price by total
+book equity. Stored as returned rather than second-guessed.
 
 Output schema matches what screener.html reads:
   { "updated": ISO, "source": "yahoo", "stocks": { TICKER: {...}, ... } }
@@ -286,6 +303,79 @@ def fetch(symbol):
         fcf = fcf * rate if rate else None
     cap = rec["marketCap"]
     rec["fcfYield"] = fcf / cap * 100 if fcf is not None and cap else None
+
+    # Fields added 2026-10-11 (v5.2.0) for Automate Fundamentals' metrics
+    # audit (its PRD, FM2/FM3/FM5). Every one comes out of the same `info` call
+    # above, so they cost no extra Yahoo requests. The screener ignores them,
+    # as it does the v4.3.6 trailing ratios.
+
+    def money(key):
+        """A reporting-currency amount from `info`, converted to the trading currency.
+
+        Same trap as cash/debt: these come off the statements in
+        `financialCurrency`, so an ADR like NVO reports revenue in DKK against a
+        USD price. Null rather than wrong when the rate cannot be resolved.
+        """
+        v = num(info.get(key))
+        if v is None or not (fin_cur and cur) or fin_cur == cur:
+            return v
+        rate = fx_rate(fin_cur, cur)
+        return v * rate if rate else None
+
+    def pct(key):
+        """A fraction from `info`, stored as a percent like the margins above."""
+        v = num(info.get(key))
+        return v * 100 if v is not None else None
+
+    # TTM amounts (FM2). Automate Fundamentals divides these against each other
+    # for margins and multiples, so they must share one currency.
+    rec["revenue"] = money("totalRevenue")
+    rec["ebitda"] = money("ebitda")
+    rec["netIncome"] = money("netIncomeToCommon")
+    rec["ev"] = money("enterpriseValue")
+    rec["fcf"] = fcf                      # already converted for fcfYield above
+    rec["eps"] = num(info.get("trailingEps"))   # per share, already in the trading currency
+
+    # Ratios (FM3). Currency-neutral, so no conversion.
+    rec["pb"] = num(info.get("priceToBook"))
+    rec["evRevenue"] = num(info.get("enterpriseToRevenue"))
+    rec["pegTTM"] = num(info.get("trailingPegRatio"))
+    rec["roa"] = pct("returnOnAssets")
+    # Yahoo answers 0.0 rather than null for a company it has no EBITDA for
+    # (every bank: HSBA.L, 2026-10-11), which would read as a real zero margin.
+    rec["ebitdaMargin"] = pct("ebitdaMargins") if rec["ebitda"] is not None else None
+    rec["quickRatio"] = num(info.get("quickRatio"))
+    rec["payoutRatio"] = pct("payoutRatio")
+    # Already a percent on Yahoo's side, like dividendYield; do not scale it.
+    rec["divYield5yAvg"] = num(info.get("fiveYearAvgDividendYield"))
+    rec["beta"] = num(info.get("beta"))
+    rec["shortFloat"] = pct("shortPercentOfFloat")
+    rec["heldInsiders"] = pct("heldPercentInsiders")
+    rec["heldInstitutions"] = pct("heldPercentInstitutions")
+    rec["targetMean"] = num(info.get("targetMeanPrice"))
+    rec["analystRating"] = num(info.get("recommendationMean"))   # 1 strong buy to 5 sell
+    rec["analystCount"] = num(info.get("numberOfAnalystOpinions"))
+
+    # Price trend (FM5). Same currency as price, so the GBp halving above applies.
+    rec["high52"] = num(info.get("fiftyTwoWeekHigh"))
+    rec["low52"] = num(info.get("fiftyTwoWeekLow"))
+    rec["ma200"] = num(info.get("twoHundredDayAverage"))
+    if cur == "GBP" and info.get("currency") in ("GBp", "GBX"):
+        for k in ("high52", "low52", "ma200", "targetMean"):
+            if rec[k] is not None:
+                rec[k] /= 100
+    rec["change52w"] = pct("52WeekChange")
+
+    # psTTM above is Yahoo's priceToSalesTrailing12Months, which for an ADR
+    # divides a trading-currency price by reporting-currency sales per share:
+    # NVO read 0.52 against a true 3.46 (measured 2026-10-11, DKK sales against
+    # a USD price). Now that revenue is FX-converted, derive it instead whenever
+    # the two currencies differ. This is the same class of bug as peFwd in the
+    # PRD's Documentation Versus Reality item 9, which is still open because
+    # there is no converted forward EPS to derive a replacement from.
+    if fin_cur and cur and fin_cur != cur:
+        rec["psTTM"] = (rec["marketCap"] / rec["revenue"]
+                        if rec.get("marketCap") and rec.get("revenue") else None)
 
     return rec
 

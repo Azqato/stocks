@@ -14,10 +14,11 @@ Each file:
     "t": "AAPL", "updated": ISO, "source": "yahoo", "cur": "USD",
     "columns": ["TTM", "FY2025", "FY2024", "FY2023"],
     "income":   { "revenue": [...], "grossProfit": [...], "operatingIncome": [...],
-                  "netIncome": [...], "epsDiluted": [...] },
+                  "netIncome": [...], "epsDiluted": [...], "ebit": [...],
+                  "interestExpense": [...], "dilutedShares": [...] },
     "balance":  { "cash": [...], "totalAssets": [...], "totalDebt": [...], "equity": [...] },
     "cashflow": { "operatingCashFlow": [...], "capex": [...], "freeCashFlow": [...],
-                  "dividendsPaid": [...], "buybacks": [...] },
+                  "dividendsPaid": [...], "buybacks": [...], "stockComp": [...] },
     "revCagr3y": 7.1,    # % a year, last fiscal year versus three years earlier
     "fcfGrowth": -9.2    # %, last fiscal year versus the year before
   }
@@ -73,6 +74,14 @@ INCOME = {
     "operatingIncome": ["Operating Income", "Total Operating Income As Reported"],
     "netIncome": ["Net Income", "Net Income Common Stockholders"],
     "epsDiluted": ["Diluted EPS"],
+    # Added 2026-10-11 (v5.2.0) for Automate Fundamentals' FM4 metrics: ROIC,
+    # interest coverage, share-count change, and later Piotroski F / Altman Z.
+    "ebit": ["EBIT", "Operating Income"],
+    # Yahoo carries interest expense on the ANNUAL income statement but not in
+    # the TTM column (checked for AAPL, 2026-10-11), so the TTM cell is usually
+    # null here. Interest coverage is a fiscal-year figure in practice.
+    "interestExpense": ["Interest Expense", "Interest Expense Non Operating"],
+    "dilutedShares": ["Diluted Average Shares", "Basic Average Shares"],
 }
 BALANCE = {
     "cash": ["Cash And Cash Equivalents", "Cash Cash Equivalents And Short Term Investments"],
@@ -86,6 +95,9 @@ CASHFLOW = {
     "freeCashFlow": ["Free Cash Flow"],
     "dividendsPaid": ["Cash Dividends Paid", "Common Stock Dividend Paid"],
     "buybacks": ["Repurchase Of Capital Stock", "Common Stock Payments"],
+    # SBC is a cash-flow row on Yahoo, not an income-statement one, and it is
+    # present in both the TTM and annual columns (v5.2.0, FM4).
+    "stockComp": ["Stock Based Compensation"],
 }
 
 

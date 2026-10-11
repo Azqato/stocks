@@ -2,6 +2,27 @@
 
 ---
 
+## v5.2.0 - 2026-10-11 - Statements go nightly over the whole universe; 25 more fundamentals fields
+
+Both open items in `docs/TODO.md`, closed together.
+
+### Added
+- **`statements.yml` now runs nightly at 02:17 UTC** over the master universe, `--universe --oldest-first 520`, instead of weekly over the five curated US lists. The whole 3,577-stock universe comes round in 6.9 days, and the roughly 3,050 stocks outside the curated lists have statements for the first time. A newly added index member is picked up the next night, because a missing file sorts ahead of every existing one; verified by running the pass, which wrote the first statements file for SKYD, the S&P 500 member added last week. 02:17 is the one slot with nothing on either side of it: Market Overview runs 15:07, 19:07 and 22:07, stock data 21:37 weekdays and 21:17 Sunday, the ETFs feed 22:12 and the constituent sync Saturday 23:17.
+- **A rebase-retry push loop in `statements.yml`**, the same six-attempt loop `stock-data.yml` uses, with `fetch-depth: 0` so the rebase is reliable. This job is the only data job outside the `screener-data` concurrency group, so a push could be rejected by any other workflow committing first and an hour of fetching was lost. That risk is what made the slot choice delicate; it no longer is.
+- **`workflow_dispatch` inputs on `statements.yml`**: `count` to run a different number of the oldest symbols, and `lists` to run the old per-list behaviour by hand.
+- **25 fields per stock record** in `fetch_screener_data.py`, for Automate Fundamentals' metrics audit (FM2, FM3, FM5). TTM amounts `revenue`, `ebitda`, `netIncome`, `fcf`, `ev`, `eps`; ratios `pb`, `evRevenue`, `pegTTM`, `roa`, `ebitdaMargin`, `quickRatio`, `payoutRatio`, `divYield5yAvg`, `beta`, `shortFloat`, `heldInsiders`, `heldInstitutions`, `targetMean`, `analystRating`, `analystCount`; price trend `high52`, `low52`, `ma200`, `change52w`. All come out of the `Ticker.info` call the pipeline already makes, so they add no Yahoo requests, about 400 bytes a stock and about 200 KB a part. The screener ignores them, as it does the v4.3.6 ratios. Checked live against AAPL, NVO and HSBA.L.
+- **Four statement rows** in `fetch_statements.py` (FM4): `income.ebit`, `income.interestExpense`, `income.dilutedShares` and `cashflow.stockComp`, for ROIC, interest coverage, SBC share of revenue, share-count change and later Piotroski F and Altman Z. Yahoo carries interest expense on the annual statement but not in the TTM column, so that cell is usually null for the TTM period and sometimes null throughout (AAPL has it for FY2023 only); SBC is a cash-flow row, not an income-statement one, and is present in both periods.
+
+### Fixed
+- **`psTTM` was wrong for every ADR reporting in another currency.** It carried Yahoo's `priceToSalesTrailing12Months`, which divides a trading-currency price by reporting-currency sales per share: NVO read 0.52 against a true 3.46. Now that TTM revenue is in the feed FX-converted, `psTTM` is derived as `marketCap / revenue` whenever `financialCurrency` differs from the trading currency, and left as Yahoo's for the same-currency majority. This is the same class of defect as `peFwd` in the PRD's Documentation Versus Reality item 9, which stays open because there is no converted forward EPS to derive a replacement from.
+- **`ebitdaMargin` no longer reads as a real zero** for a company Yahoo has no EBITDA for. Yahoo answers `0.0` rather than null there, which is every bank; the field is nulled when `ebitda` is missing.
+
+### Changed
+- **The weekly Saturday 14:17 statements run is retired**, not kept alongside the nightly pass. It would refetch 520 symbols the rolling pass already covers and guarantee nothing the rolling pass does not; statements change once a quarter, so a 6.9-day cycle sits well inside the data's own refresh rate. The curated lists come round on the same cadence they had before, so nothing the site reads got slower.
+- **`revTTM` and `epsTTM` are documented for what they actually are.** The TODO asked for this to be checked first and it does not hold: Yahoo's `revenueGrowth` and `earningsGrowth` are the latest quarter against the same quarter a year earlier, not trailing 12 months. Measured against `quarterly_income_stmt` for AAPL, MSFT, NVDA, KO and WMT, agreement with latest-quarter year over year was within 0.05 percentage points on all five (AAPL 16.40 vs 16.36, NVDA 105.90 vs 105.85). **The keys are deliberately left alone**: they are read by Azqato Invests and Automate Fundamentals, so a rename is a breaking change across three repos for a naming defect. The semantics are now recorded at the field in `docs/PRD.md`, in the fetcher's docstring and as item 11 of Documentation Versus Reality. The two column headers that say "TTM" live in the Invests screener now, and the label fix belongs there.
+- `docs/TODO.md` is empty of items, both having shipped here.
+- `README.md` and `docs/PRD.md` updated: the statements row and schedule, the new fields in the data model, and the Risks entry for the statements slot closed.
+
 ## v5.1.0 - 2026-10-11 - Cleanup: the repo holds only the data jobs, redirects and docs
 
 ### Removed

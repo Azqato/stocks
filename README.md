@@ -11,7 +11,7 @@ Served at `azqato.github.io/stocks/data/`:
 | `stocks/` parts, `screener.json`, `screener_sp500.json`, `screener_gvd.json`, `screener_intl.json` | `stock-data.yml` | Mon-Fri 21:37; whole market Sun 21:17 | Invests Screener |
 | `screener_etfs.json` (36 funds from `etfs.json`) | `screener-data-etfs.yml` | Mon-Fri 22:12 | Invests Screener (ETFs) |
 | `market_overview.json` | `market-overview.yml` | Mon-Fri 15:07, 19:07, 22:07 | Invests Market Overview |
-| `statements/<TICKER>.json` | `statements.yml` | Sat 14:17 | Automate Fundamentals |
+| `statements/<TICKER>.json` | `statements.yml` | daily 02:17, 520 oldest a night | Automate Fundamentals |
 | Index and fund membership lists | `constituents.yml` | Sat 23:17 | the jobs above |
 
 A failed job opens a GitHub issue (`alert-on-failure.yml`). Data comes from Yahoo Finance, Nasdaq, State Street and Vanguard; no API keys.
