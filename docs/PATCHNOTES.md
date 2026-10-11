@@ -2,6 +2,15 @@
 
 ---
 
+## v5.2.1 - 2026-10-11 - Statements cadence: 1,000 a night, a 3.6-day cycle
+
+### Changed
+- **The nightly statements pass refreshes 1,000 symbols instead of 520** (owner decision), which takes the universe cycle from 6.9 days to 3.6. The 520 was not chosen for a 3,577-stock universe at all: it was sized when this job covered the five curated US lists, about 619 stocks, where it meant "nearly the whole list every night". Once v5.2.0 made the job rolling, the same number silently became a cycle length instead.
+- The arithmetic, so the next change to this number is not guesswork. Measured 2026-10-10, 520 symbols took 20m01s, about 2.1 seconds a symbol including the 0.8s politeness pause. That puts 1,000 near 37 minutes, a fifth of the job's 180-minute timeout; the hard ceiling is roughly 5,000 a night, and the whole universe would in fact fit in a single pass at about 127 minutes.
+- **Why not a nightly full pass, given that it fits.** Statements only change when a company reports, once a quarter, so refreshing all 3,577 every night would re-download an identical file about 90 times a quarter for no fresher data, at seven times the Yahoo request budget. Yahoo publishes no rate limit and gives no warning, so the failure mode is silent throttling, visible only as a falling `Wrote N/1000` count. 1,000 holds the post-earnings pickup lag under four days at twice the budget rather than seven times, and leaves 80% of the timeout as margin.
+- `count` on `workflow_dispatch` now defaults to 1,000 when left blank, so a manual run matches the scheduled one.
+- Thresholds for revisiting it are recorded in `docs/PRD.md` under Risks and Open Questions: raise it if the universe outgrows about 7,000 stocks, lower it only on evidence of throttling.
+
 ## v5.2.0 - 2026-10-11 - Statements go nightly over the whole universe; 25 more fundamentals fields
 
 Both open items in `docs/TODO.md`, closed together.

@@ -7,11 +7,20 @@ name: Update Financial Statements
 # Rolling, not per-list (v5.2.0). The job used to run once a week over the five
 # curated US lists, about 520 symbols, which left the roughly 3,050 stocks in
 # the master universe outside those lists with no statements at all. It now runs
-# every night over the universe with --oldest-first 520, so the whole universe
-# comes round in 6.9 days (3,577 / 520) and nothing is ever staler than about a
-# week. The curated lists come round on the same cadence they had before, so
-# nothing the site reads got slower, and a newly added ticker is picked up the
-# very next night because a missing file sorts ahead of every existing one.
+# every night over the universe with --oldest-first, taking the N symbols whose
+# files are missing or oldest, so each stock comes round on a fixed cycle and a
+# newly added ticker is picked up the very next night (a missing file sorts
+# ahead of every existing one).
+#
+# N is 1000 a night (owner decision 2026-10-11), a 3.6-day cycle at 3,577
+# stocks. It is a policy choice, not a constraint: measured 2026-10-10, 520
+# symbols took 20m01s, so about 2.1 seconds a symbol including the 0.8s
+# politeness pause, which puts 1000 at roughly 37 minutes, a fifth of the
+# timeout below. The ceiling is near 5,000 and the whole universe would fit in
+# one night at about 127 minutes, but statements only change when a company
+# reports, so a nightly full pass would re-download an identical file about 90
+# times a quarter. 1000 keeps the pickup lag under four days through earnings
+# season at 2x the request budget rather than 7x.
 #
 # The separate weekly curated run is gone rather than kept alongside: it would
 # refetch 520 symbols the rolling pass already covers and guarantee nothing the
@@ -29,7 +38,7 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: "How many of the oldest symbols to refresh (blank = 520)"
+        description: "How many of the oldest symbols to refresh (blank = 1000)"
         required: false
         default: ""
       lists:
@@ -68,7 +77,7 @@ jobs:
           if [ -n "$LISTS" ]; then
             python scripts/fetch_statements.py $LISTS
           else
-            python scripts/fetch_statements.py --universe --oldest-first "${COUNT:-520}"
+            python scripts/fetch_statements.py --universe --oldest-first "${COUNT:-1000}"
           fi
 
       - name: Commit updated data
