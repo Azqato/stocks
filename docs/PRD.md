@@ -680,7 +680,7 @@ stocks/
 │   ├── vug.json                       ← Growth list: top 100 VUG holdings (auto-synced from Vanguard)
 │   ├── vtv.json                       ← Value list: top 100 VTV holdings (auto-synced from Vanguard)
 │   ├── vig.json                       ← Dividend list: top 100 VIG holdings (auto-synced from Vanguard)
-│   ├── etfs.json                      ← ETFs list: fixed, owner-curated 10 funds (hand-edited only)
+│   ├── etfs.json                      ← ETFs list: fixed, owner-curated 36 funds (hand-edited only)
 │   ├── vxus.json                      ← International list: top 100 VXUS holdings (auto-synced, ISIN-resolved)
 │   ├── vxus_map.json                  ← ISIN → Yahoo symbol resolution cache + manual overrides
 │   ├── market_overview_list.json      ← Market Overview list: owner-curated 61 symbols/7 categories (rebuilt from the .xlsx below)
@@ -865,9 +865,9 @@ This four-pillar model (v3) replaced an earlier three-pillar model (Growth 60, f
 
 ### ETF Universe Scoring Model (v3.33.0, shipped 2026-07-03)
 
-A sixth universe, entirely separate from the five stock universes above: a **fixed, owner-picked list of 10 ETFs**, not an auto-synced index or fund-holdings list. Doctrine-consistent by design — the site's own rule is that individual stocks are judged on fundamentals while index/ETF purchases are timed on technicals, so this universe scores exactly the technical and cost signals the stock universes deliberately exclude.
+A sixth universe, entirely separate from the five stock universes above: a **fixed, owner-picked list of 36 ETFs**, not an auto-synced index or fund-holdings list. Doctrine-consistent by design — the site's own rule is that individual stocks are judged on fundamentals while index/ETF purchases are timed on technicals, so this universe scores exactly the technical and cost signals the stock universes deliberately exclude.
 
-**The 10 ETFs (fixed list, no auto-sync):** QQQ, SPY, DIA, IWM, VTI, VXUS, VUG, VIG, VTV, SPMO.
+**The 36 ETFs (fixed list, no auto-sync):** QQQ, SPY, DIA, IWM, VTI, VXUS, VUG, VIG, VTV, SPMO, RWL, SPHQ, SPHB, FNDF, MGV, VBR, SCHD, RSP, VBK, ISCG, FNDB, FNDX, SCHB, IMCG, XLG, SPGP, ILCG, IUSG, IVW, SPYG, SCHG, IWF, VONG, MGK, IWY, MLRG. The first 10 shipped 2026-07-03; the other 26 were added 2026-10-11 at the owner's request (all verified on Yahoo with full data; MLRG is the iShares MSCI USA ETF).
 
 **Visible columns:** Price, Daily % Change, YTD Performance, 1 Year Total Return, 5 Year Total Return, 10 Year Total Return, Yield, Expense Ratio, Yield − Expense Ratio, RSI, 52-Week Range, Price vs 20-Day Moving Average, Price vs 100-Day Moving Average, Price vs 200-Day Moving Average, AUM (owner-added 2026-07-03; unscored display, `info["totalAssets"]`, verified for all 10 funds).
 
