@@ -1,0 +1,129 @@
+{
+ "t": "BRK.A",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  null,
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "netIncome": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "ebit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "interestExpense": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "totalAssets": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "totalDebt": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "equity": [
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "capex": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": null,
+ "noStatements": true,
+ "updated": "2026-10-11T22:08:04.732308Z"
+}

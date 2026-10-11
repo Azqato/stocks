@@ -1,0 +1,128 @@
+{
+ "t": "ORKA",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2025",
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   0.0,
+   0.0,
+   null,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   -155077000.0,
+   -122051000.0,
+   null,
+   null
+  ],
+  "netIncome": [
+   -132886000.0,
+   -105433000.0,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   -2.04,
+   -1.85,
+   null,
+   null
+  ],
+  "ebit": [
+   -138459000.0,
+   -105433000.0,
+   null,
+   null
+  ],
+  "interestExpense": [
+   null,
+   0.0,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   54188754.0,
+   45614142.0,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   268470000.0,
+   46935000.0,
+   null,
+   null
+  ],
+  "totalAssets": [
+   1139394000.0,
+   488617000.0,
+   null,
+   null
+  ],
+  "totalDebt": [
+   2546000.0,
+   1932000.0,
+   null,
+   null
+  ],
+  "equity": [
+   1111618000.0,
+   468999000.0,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   -100919000.0,
+   -88210000.0,
+   null,
+   null
+  ],
+  "capex": [
+   -235000.0,
+   -209000.0,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   -101154000.0,
+   -88419000.0,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   28532000.0,
+   24240000.0,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "updated": "2026-10-11T22:08:04.732308Z"
+}
