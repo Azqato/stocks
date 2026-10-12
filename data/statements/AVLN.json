@@ -1,0 +1,128 @@
+{
+ "t": "AVLN",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2025",
+  "FY2024",
+  null
+ ],
+ "income": {
+  "revenue": [
+   0.0,
+   0.0,
+   0.0,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   -109998000.0,
+   -91292000.0,
+   -57121000.0,
+   null
+  ],
+  "netIncome": [
+   -103314000.0,
+   -85204000.0,
+   -49744000.0,
+   null
+  ],
+  "epsDiluted": [
+   -2.330404,
+   -2.037786,
+   -1.189705,
+   null
+  ],
+  "ebit": [
+   -109032000.0,
+   -91292000.0,
+   -57121000.0,
+   null
+  ],
+  "interestExpense": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   44333094.0,
+   41812047.0,
+   41812047.0,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   264197000.0,
+   52315000.0,
+   23955000.0,
+   null
+  ],
+  "totalAssets": [
+   425448000.0,
+   148881000.0,
+   124519000.0,
+   null
+  ],
+  "totalDebt": [
+   17109000.0,
+   1669000.0,
+   0.0,
+   null
+  ],
+  "equity": [
+   398346000.0,
+   -238656000.0,
+   -174522000.0,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   -97479000.0,
+   -81484000.0,
+   -48368000.0,
+   null
+  ],
+  "capex": [
+   -923000.0,
+   -344000.0,
+   -95000.0,
+   null
+  ],
+  "freeCashFlow": [
+   -98402000.0,
+   -81828000.0,
+   -48463000.0,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   5586000.0,
+   3274000.0,
+   2471000.0,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "updated": "2026-10-12T09:11:02.160911Z"
+}

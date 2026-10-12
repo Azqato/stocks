@@ -1,0 +1,128 @@
+{
+ "t": "CBIO",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2025",
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   11883000.0,
+   10844000.0,
+   null,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   -168470000.0,
+   -152632000.0,
+   null,
+   null
+  ],
+  "netIncome": [
+   -165124000.0,
+   -153942000.0,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   -0.14,
+   -12.81,
+   null,
+   null
+  ],
+  "ebit": [
+   -163124000.0,
+   -149757000.0,
+   null,
+   null
+  ],
+  "interestExpense": [
+   0.0,
+   2185000.0,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   24480677.0,
+   10413649.0,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   171593000.0,
+   213192000.0,
+   null,
+   null
+  ],
+  "totalAssets": [
+   182758000.0,
+   240293000.0,
+   null,
+   null
+  ],
+  "totalDebt": [
+   1437000.0,
+   1644000.0,
+   null,
+   null
+  ],
+  "equity": [
+   163255000.0,
+   203012000.0,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   -72679000.0,
+   -71532000.0,
+   null,
+   null
+  ],
+  "capex": [
+   -80939000.0,
+   -72919000.0,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   -153618000.0,
+   -144451000.0,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   0.0,
+   -177000.0,
+   null,
+   null
+  ],
+  "stockComp": [
+   14809000.0,
+   13300000.0,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "updated": "2026-10-12T09:11:02.160911Z"
+}

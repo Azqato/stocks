@@ -1,0 +1,128 @@
+{
+ "t": "JBIO",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2025",
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   0.0,
+   0.0,
+   null,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   -164741000.0,
+   -113542000.0,
+   null,
+   null
+  ],
+  "netIncome": [
+   -153240000.0,
+   -127410000.0,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   -1.07,
+   -3.19,
+   null,
+   null
+  ],
+  "ebit": [
+   -164741000.0,
+   -113542000.0,
+   null,
+   null
+  ],
+  "interestExpense": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   53109453.0,
+   31359958.0,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   107250000.0,
+   88438000.0,
+   null,
+   null
+  ],
+  "totalAssets": [
+   472113000.0,
+   349781000.0,
+   null,
+   null
+  ],
+  "totalDebt": [
+   628000.0,
+   724000.0,
+   null,
+   null
+  ],
+  "equity": [
+   439915000.0,
+   332518000.0,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   -123510000.0,
+   -94689000.0,
+   null,
+   null
+  ],
+  "capex": [
+   null,
+   -196000.0,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   -123570000.0,
+   -94885000.0,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   34702000.0,
+   20009000.0,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "updated": "2026-10-12T09:11:02.160911Z"
+}
