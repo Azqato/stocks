@@ -2,6 +2,18 @@
 
 ---
 
+## v5.2.3 - 2026-10-11 - The TTM naming defect is corrected where readers see it
+
+### Changed
+- **Documentation Versus Reality item 11 is resolved**, across three repositories. v5.2.0 established by measurement that `revTTM` and `epsTTM` are not trailing 12-month figures: they carry Yahoo's `revenueGrowth` and `earningsGrowth`, the latest reported quarter against the same quarter a year earlier, matching quarterly income statements for AAPL, MSFT, NVDA, KO and WMT to within 0.05 percentage points. This entry records the fix to everything a reader sees.
+- **The feed keys stay.** They are internal names, and both consumers already treat them as quarterly: Automate Fundamentals' own SEC pipeline computes `RevenueGrowthQYoy` for the same key, its metric glossary describes the quarterly comparison correctly, and its quality report labels it "Revenue growth (quarter, YoY)". Renaming would cost a coordinated three-repo deploy, break saved strategy rules that reference the metric by name, and gain a reader nothing.
+- **Azqato Invests 2.18.1** renamed the screener columns to Rev Q YoY and EPS Q YoY, renamed the first scoring pillar from TTM to Reported, retitled and rewrote both metrics-page sections to describe the quarterly comparison, and **removed guidance that was actively misleading**: the page told readers that consistent deceleration across four or more quarters is one of the clearest warning signals available, and to watch a +20%, +15%, +10%, +5% sequence, on a page whose figure is a single quarter and cannot show a sequence. Those corrections live in `site.py`, not in the regenerated source snapshots, and each asserts its target text is present so a future snapshot cannot silently undo them.
+- **Automate Fundamentals v0.124.2** corrected its two Learn lessons, which defined trailing growth as four quarters against the four before.
+- **This repo's scoring-model table** now names the pillar Reported and both metrics as latest-quarter year over year, so the spec matches the data.
+
+### Notes
+- **Switching the metric to fiscal-year growth was considered and not done.** It only became possible today, since v5.2.0 gives the whole universe statements, but it would move the model materially: measured across the Nasdaq 100 on 2026-10-11, quarterly and fiscal-year growth differ by a median 7.0 percentage points, 61 of 100 names differ by more than 5, 10 of 100 disagree on whether the company is growing at all, and the scored ordering shifts a median 9 places (maximum 63). These two metrics carry 25 of 100 points, and the percentile clamp is owner-calibrated, so it would need re-fitting. Recorded under Risks and Open Questions rather than scheduled.
+
 ## v5.2.2 - 2026-10-11 - Fix: a ticker named CON made the repo unclonable on Windows
 
 ### Fixed
