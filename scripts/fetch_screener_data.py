@@ -157,6 +157,80 @@ def estimate_avg(df, period):
         return None
 
 
+def quarterly_yoy(t):
+    """Latest reported quarter against the same quarter a year earlier, from the
+    quarterly income statement. Returns (revenue %, eps %); either may be None.
+
+    This is a FALLBACK ONLY, called when Yahoo's own revenueGrowth /
+    earningsGrowth came back empty. Yahoo suppresses those fields whenever the
+    year-earlier quarter was negative, because a percentage change from a
+    negative base has no agreed convention; measured 2026-10-13, that left
+    epsTTM absent for 1,598 of the 3,465 Domestic names (46%), each taking a
+    hard zero on a 15-point metric. The comparison computed here is the same one
+    Yahoo publishes when it does publish it, so a derived value and a reported
+    value mean the same thing and rank against each other fairly.
+
+    Five columns are needed (the latest quarter and the one four back). Yahoo
+    serves five or six, so a name with a short history returns None rather than
+    a comparison against the wrong quarter.
+    """
+    try:
+        q = t.quarterly_income_stmt
+    except Exception:
+        return None, None
+    if q is None or getattr(q, "empty", True):
+        return None, None
+
+    def row(name):
+        if name not in q.index:
+            return None
+        return [num(v) for v in q.loc[name].values]
+
+    def yoy(vals):
+        if not vals or len(vals) < 5:
+            return None
+        new, old = vals[0], vals[4]
+        if new is None or old is None or old == 0:
+            return None
+        # Percent change against the absolute base, so a loss-to-profit flip
+        # reads positive rather than inverting its sign (owner decision
+        # 2026-10-13, chosen over a symmetric or floored denominator).
+        return (new - old) / abs(old) * 100
+
+    eps = row("Diluted EPS") or row("Basic EPS")
+    return yoy(row("Total Revenue")), yoy(eps)
+
+
+def statements_balance(symbol):
+    """Cash and total debt from this symbol's statements file, if one exists.
+
+    Fallback for the 27 Domestic names whose quote carries no totalCash or
+    totalDebt. The statements files are written by fetch_statements.py on its
+    own nightly rotation, so a value here can be up to a few days older than the
+    quote it backs up; that is acceptable for a balance sheet, which only moves
+    when a new report lands. Imported inside the function because
+    fetch_statements imports this module at module level.
+    """
+    try:
+        from fetch_statements import OUT_DIR, file_name
+    except Exception:
+        return None, None
+    path = os.path.join(OUT_DIR, file_name(symbol))
+    if not os.path.exists(path):
+        return None, None
+    try:
+        with open(path, encoding="utf-8") as fh:
+            bal = (json.load(fh) or {}).get("balance") or {}
+    except Exception:
+        return None, None
+
+    def latest(key):
+        vals = bal.get(key) or []
+        return num(vals[0]) if vals else None
+
+    return latest("cash"), latest("totalDebt")
+
+
 def fetch(symbol):
     t = yf.Ticker(yahoo_symbol(symbol))
     info = t.info or {}
@@ -217,6 +291,20 @@ def fetch(symbol):
                   file=sys.stderr)
             rec["cash"] = None
             rec["debt"] = None
+    # Same rule for the balance sheet: fall back to the statements file only
+    # when the quote carried nothing. A cross-currency record that was nulled
+    # above is deliberately NOT refilled here, because the statements figures
+    # are in the reporting currency and would reintroduce the FX error.
+    if rec["cash"] is None and rec["debt"] is None and not (fin_cur and cur and fin_cur != cur):
+        s_cash, s_debt = statements_balance(symbol)
+        if s_cash is not None or s_debt is not None:
+            rec["cash"], rec["debt"] = s_cash, s_debt
+            derived_cd = True
+        else:
+            derived_cd = False
+    else:
+        derived_cd = False
+
     rec["prevClose"] = prev
     if rec["price"] is not None and prev not in (None, 0):
         rec["changePct"] = (rec["price"] / prev - 1) * 100
@@ -227,6 +315,20 @@ def fetch(symbol):
     rec["revTTM"] = rg * 100 if rg is not None else None
     eg = num(info.get("earningsGrowth"))
     rec["epsTTM"] = eg * 100 if eg is not None else None
+
+    # Derive what the quote did not carry, and only then: the extra request is
+    # never made for the symbols whose pull already worked. `derived` records
+    # which fields are ours rather than Yahoo's, so the site can say so and the
+    # PRD can account for them.
+    derived = ["cash", "debt"] if derived_cd else []
+    if rec["revTTM"] is None or rec["epsTTM"] is None:
+        q_rev, q_eps = quarterly_yoy(t)
+        if rec["revTTM"] is None and q_rev is not None:
+            rec["revTTM"] = q_rev
+            derived.append("revTTM")
+        if rec["epsTTM"] is None and q_eps is not None:
+            rec["epsTTM"] = q_eps
+            derived.append("epsTTM")
 
     # Margins (TTM), for the scoring model's profitability pillar (v3.30.0).
     gm = num(info.get("grossMargins"))
@@ -376,6 +478,11 @@ def fetch(symbol):
     if fin_cur and cur and fin_cur != cur:
         rec["psTTM"] = (rec["marketCap"] / rec["revenue"]
                         if rec.get("marketCap") and rec.get("revenue") else None)
+
+    # Only when something was derived, so the parts files do not grow a key per
+    # record for the majority of symbols that need no fallback at all.
+    if derived:
+        rec["derived"] = derived
 
     return rec
 

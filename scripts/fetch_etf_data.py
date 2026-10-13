@@ -122,11 +122,24 @@ def fetch(symbol):
         rec["ret1y"] = rec["ret5y"] = rec["ret10y"] = rec["ytd"] = None
 
     # Technicals: unadjusted closes (standard charting basis).
-    raw = t.history(period="1y", interval="1d", auto_adjust=False)["Close"].dropna()
+    hist = t.history(period="1y", interval="1d", auto_adjust=False)
+    raw = hist["Close"].dropna()
     raw_closes = [num(c) for c in raw]
     rec["rsi"] = rsi14(raw_closes)
-    rec["wk52Low"] = min(raw_closes) if raw_closes else None
-    rec["wk52High"] = max(raw_closes) if raw_closes else None
+
+    # The 52-week range is INTRADAY (v5.3.0), the conventional definition and
+    # the one Yahoo's own fiftyTwoWeekLow/High reports. These were the min and
+    # max of the daily closes, which understates the range and therefore
+    # misplaces a fund inside it: MGK read a low of 70.70 against a true 63.74
+    # (measured 2026-10-13), and the 52-week range position is 20 of the 100
+    # points in the ETF model. Falls back to the closes if the frame has no
+    # high/low columns.
+    lows = [num(v) for v in hist["Low"].dropna()] if "Low" in hist else []
+    highs = [num(v) for v in hist["High"].dropna()] if "High" in hist else []
+    lows = [v for v in lows if v is not None] or raw_closes
+    highs = [v for v in highs if v is not None] or raw_closes
+    rec["wk52Low"] = min(lows) if lows else None
+    rec["wk52High"] = max(highs) if highs else None
     raw_last = raw_closes[-1] if raw_closes else None
     for n in (20, 100, 200):
         key = f"pctVs{n}dma"
