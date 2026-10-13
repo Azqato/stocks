@@ -1,0 +1,129 @@
+{
+ "t": "BXDC",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  null,
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "netIncome": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "ebit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "interestExpense": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   1943383000.0,
+   null,
+   null,
+   null
+  ],
+  "totalAssets": [
+   1959153000.0,
+   null,
+   null,
+   null
+  ],
+  "totalDebt": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "equity": [
+   1931690000.0,
+   null,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "capex": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "noStatements": true,
+ "updated": "2026-10-13T09:25:06.291494Z"
+}

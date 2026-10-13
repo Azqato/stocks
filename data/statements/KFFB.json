@@ -1,0 +1,128 @@
+{
+ "t": "KFFB",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2025",
+  "FY2024",
+  "FY2023"
+ ],
+ "income": {
+  "revenue": [
+   11740000.0,
+   null,
+   7245000.0,
+   9148000.0
+  ],
+  "grossProfit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "netIncome": [
+   1909000.0,
+   null,
+   -1721000.0,
+   933000.0
+  ],
+  "epsDiluted": [
+   0.24,
+   0.02,
+   -0.21,
+   0.11
+  ],
+  "ebit": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "interestExpense": [
+   9681000.0,
+   null,
+   9283000.0,
+   3902000.0
+  ],
+  "dilutedShares": [
+   8086715.0,
+   8098715.0,
+   8098715.0,
+   8133927.0
+  ]
+ },
+ "balance": {
+  "cash": [
+   16223000.0,
+   null,
+   17584000.0,
+   7502000.0
+  ],
+  "totalAssets": [
+   374541000.0,
+   null,
+   374968000.0,
+   349022000.0
+  ],
+  "totalDebt": [
+   48937000.0,
+   null,
+   68988000.0,
+   70087000.0
+  ],
+  "equity": [
+   49658000.0,
+   null,
+   47997000.0,
+   50711000.0
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   null,
+   null,
+   -1454000.0,
+   1152000.0
+  ],
+  "capex": [
+   null,
+   null,
+   -66000.0,
+   -127000.0
+  ],
+  "freeCashFlow": [
+   null,
+   null,
+   -1520000.0,
+   1025000.0
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   -670000.0,
+   -1363000.0
+  ],
+  "buybacks": [
+   null,
+   null,
+   0.0,
+   -461000.0
+  ],
+  "stockComp": [
+   null,
+   null,
+   0.0,
+   4000.0
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "USD",
+ "updated": "2026-10-13T09:25:06.291494Z"
+}
