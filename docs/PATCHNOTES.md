@@ -2,6 +2,11 @@
 
 ---
 
+## v5.8.1 - 2026-10-12 - A stale tier caveat in the PRD
+
+### Fixed
+- The **Relative-scoring caveats** paragraph still read that "a fixed share of every list always lands in C and F" and that an F means the "bottom quarter of this list". With the v5.8.0 bands that is C, D and F, and the bottom fifth.
+
 ## v5.8.0 - 2026-10-12 - A D tier, and six equal-ish bands below the top fifth
 
 ### Changed
