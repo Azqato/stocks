@@ -2,6 +2,18 @@
 
 ---
 
+## v5.9.0 - 2026-10-12 - A Data column: how many of the six metrics a company actually publishes
+
+### Added
+- **A `Data` column** in the screener, next to Factors, reading `n/6`: the number of the six scored metrics the company actually publishes. It is sortable, and flagged amber whenever anything is unreported. The score breakdown popup also states it in words ("4 of 6 metrics reported") when anything is missing.
+- **Why it exists.** A missing metric is a hard zero against a denominator fixed at 100, so a low score conflates two different things: a company that reports everything and ranks badly, and a company nobody publishes estimates for. The second kind dominates the bottom of the market, where the share of names missing at least one metric runs **24% in C, 38% in D and 59% in F**. Until now the only way to tell them apart was to open the breakdown and count the blanks.
+- **This closes the item the D tier deliberately did not fix.** v5.8.0 recorded that the F ambiguity is a data problem and that the right answer was a coverage column rather than a seventh letter. This is that column.
+
+### Notes
+- **Nothing is computed that was not already being computed.** `computeScoreMap` tracked `have`, the count of metrics with data, purely to decide whether a stock had any data at all, and then threw it away. The column exposes it. No score, rank or tier changes.
+- Verified against the real function rather than a transcription: a company with all six reports 6/6, one missing only Cash vs Debt reports 5/6 and still loses the full 25 points, one with three metrics reports 3/6, and a company with nothing stays NO DATA rather than reporting 0/6 as a score.
+- The `Azqato Screen` group header widens from 3 columns to 4 in both the stock and the ETF layouts, and the group spans were checked against the header cell counts in both (20 and 21, in sync).
+
 ## v5.8.1 - 2026-10-12 - A stale tier caveat in the PRD
 
 ### Fixed
