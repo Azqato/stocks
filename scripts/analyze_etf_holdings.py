@@ -99,7 +99,7 @@ METRIC_WEIGHTS = [
     ("pegFwd", 25, False),
     ("cashDebt", 25, True),
 ]
-TIER_CUTS = [("s", 0.10), ("a", 0.20), ("b", 0.70), ("c", 0.90)]  # f = the rest (owner cuts, 2026-10-12)
+TIER_CUTS = [("s", 0.10), ("a", 0.25), ("b", 0.50), ("c", 0.75)]  # f = the rest (owner cuts, 2026-10-12)
 TIER_LABELS = {"sp": "S+", "s": "S", "a": "A", "b": "B", "c": "C", "f": "F"}
 
 # Absolute bands for the fund-level weighted average. These are a presentation

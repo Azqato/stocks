@@ -2,6 +2,20 @@
 
 ---
 
+## v5.7.0 - 2026-10-12 - Tier cuts settle at 10/15/25/25/25, and v5.6.0 is reverted
+
+### Changed
+- **`TIER_CUTS` becomes `[s 0.10, a 0.25, b 0.50, c 0.75]`** in `screener.js`, `scripts/analyze_etf_holdings.py` and the untracked `private/build.py`: S the top 10%, A the next 15%, B the next 25%, C the next 25%, F the bottom 25% (owner distribution).
+- **This reverts v5.6.0's 10/10/50/20/10 the same day.** That release shrank F from a quarter of the market to a tenth on the argument that a band holding a quarter of everything says little about anything in it. The argument was right and the fix was wrong: it put *half* the market in B, failing the same test twice as badly.
+- **The sizing rule is now stated explicitly**, in `screener.js` and the PRD: no band may grow so large that the label stops narrowing anything down. Measured as the information content of a tier label on the Domestic universe, the live cuts give **2.28 bits** against 2.23 for the original 10/10/30/25/25 and **2.00** for v5.6.0's arrangement. The ceiling with six labels is 2.58 bits, reached only by equal buckets.
+- The screener page's tier legend, the Tier column tooltip, the band explanation and the ETF universe copy are updated to the new bands and per-100 counts (about 10 S, 15 A, 25 B, 25 C, 25 F).
+
+### Notes
+- **Measured on the live feeds.** Domestic lands at 9.4% S, 15.8% A, 24.4% B, 25.1% C, 24.6% F. No band exceeds 25%.
+- **No score and no ranking changes.** Tier cuts are applied to the finished ranking and cannot feed back into it. Against the pre-v5.6.0 original, the only movement is A widening into the top of B.
+- **A D band was evaluated and rejected.** The case for it was real: F mixes genuinely shrinking companies with companies nobody publishes estimates for, and the score cannot tell them apart. It does not survive measurement. A D covering the bottom 10-25% would be 50% missing-data cases against F's 62%, because the contamination is smeared across the whole bottom third rather than concentrated in a tail. Efficiency against the per-label ceiling moves only from 88.4% to 89.7%, which is what adding any bucket does. The ambiguity is a data problem, and the intended fix is a column reporting how many of the six metrics a company actually publishes, not a seventh letter.
+- **Per-tier point profiles**, Domestic medians, for reference when reading a score: an S takes full marks on all four growth metrics and on PEG, giving up ground only on Cash:Debt (21.6 of 25), which is the hardest 25 points in the model. An A runs 80 to 85% of available points across the board. A B sits near 58%. A C collapses on valuation first (PEG 8.1 of 25) while its balance sheet holds up (13.1 of 25). The median F scores **0.0 of 15 on forward EPS and 0.1 of 10 on forward revenue**, and 31% of F names have no forward EPS published at all.
+
 ## v5.6.0 - 2026-10-12 - New tier cuts: B is the middle of the pack, F is the worst tenth
 
 ### Changed
