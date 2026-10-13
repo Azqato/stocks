@@ -140,6 +140,12 @@ def compute_scores(data):
     Holdings with too little data are dropped from the ranking pools entirely,
     not just from the final score: leaving them in would let a bad symbol's
     stray value shift everyone else's percentile on that metric.
+
+    Returns (scores, pts, thin, coverage). `coverage` is how many of the six
+    metrics each holding actually publishes, the same figure the screener shows
+    in its Data column: a missing metric is a hard zero against a denominator
+    fixed at 100, so a low score on thin coverage understates the company
+    rather than judging it.
     """
     coverage = {t: sum(1 for key, _, _ in METRIC_WEIGHTS if metric_value(key, data[t]) is not None)
                 for t in data}
@@ -186,7 +192,7 @@ def compute_scores(data):
         scores[t] = None
         print(f"WARN {t}: only {coverage[t]}/{len(METRIC_WEIGHTS)} metrics available, not rated",
               file=sys.stderr)
-    return scores, pts, thin
+    return scores, pts, thin, coverage
 
 
 def compute_tiers(scores):
@@ -269,7 +275,7 @@ def rating_for(score):
     return "Weak"
 
 
-def render(etfs, holdings, scores, tiers, pool_of, basis):
+def render(etfs, holdings, scores, tiers, pool_of, reported, basis):
     lines = []
     lines.append("# ETF top-holdings analysis")
     lines.append("")
@@ -277,6 +283,11 @@ def render(etfs, holdings, scores, tiers, pool_of, basis):
     lines.append("")
     lines.append("Technicals, expense ratio, and dividend yield are excluded: this rates "
                  "the underlying companies only.")
+    lines.append("")
+    lines.append("**Data** is how many of the six scored metrics the company actually "
+                 "publishes. A missing metric scores zero against a denominator fixed at "
+                 "100, so anything under 6/6 (shown in bold) means the score understates "
+                 "the company rather than judging it.")
     lines.append("")
 
     summary = []
@@ -288,8 +299,8 @@ def render(etfs, holdings, scores, tiers, pool_of, basis):
             lines.append("No holdings returned.")
             lines.append("")
             continue
-        lines.append("| Ticker | Company | Weight | Score | Tier | Ranked in |")
-        lines.append("|---|---|---|---|---|---|")
+        lines.append("| Ticker | Company | Weight | Score | Tier | Data | Ranked in |")
+        lines.append("|---|---|---|---|---|---|---|")
         wsum = 0.0
         acc = 0.0
         for h in sorted(hl, key=lambda x: (scores.get(x["symbol"]) is None,
@@ -298,8 +309,14 @@ def render(etfs, holdings, scores, tiers, pool_of, basis):
             s = scores.get(sym)
             tier = TIER_LABELS.get(tiers.get(sym), "n/a")
             shown = "n/a" if s is None else str(s)
+            n = len(METRIC_WEIGHTS)
+            rep_n = reported.get(sym)
+            # Bolded when incomplete, so a score resting on missing data is
+            # visible in the table rather than only in the WARN on stderr.
+            cov = "n/a" if rep_n is None else (f"{rep_n}/{n}" if rep_n == n
+                                               else f"**{rep_n}/{n}**")
             lines.append(f"| {sym} | {h['name']} | {h['weight'] * 100:.2f}% | {shown} | "
-                         f"{tier} | {pool_of.get(sym, 'n/a')} |")
+                         f"{tier} | {cov} | {pool_of.get(sym, 'n/a')} |")
             if s is not None:
                 acc += s * h["weight"]
                 wsum += h["weight"]
@@ -400,10 +417,11 @@ def main():
     scores = {}
     tiers = {}
     pts = {}
+    reported = {}
     thin = []
     sizes = {}
     for name, pool in pools.items():
-        s, p, t = compute_scores(pool)
+        s, p, t, cov = compute_scores(pool)
         ti = compute_tiers(s)
         sizes[name] = len(pool)
         thin += t
@@ -413,10 +431,12 @@ def main():
                 scores[sym] = s.get(key_for[sym])
                 tiers[sym] = ti.get(key_for[sym])
                 pts[sym] = p.get(key_for[sym], {})
+                reported[sym] = cov.get(key_for[sym])
 
     basis = "; ".join(f"**{name}** holdings ranked in `{labels[name]}` ({sizes[name]} companies)"
                       for name in sorted(pools) if sizes.get(name))
-    report = render(etfs, holdings, scores, tiers, pool_of, "Scored against " + basis + ".")
+    report = render(etfs, holdings, scores, tiers, pool_of, reported,
+                    "Scored against " + basis + ".")
     if args.out:
         with open(args.out, "w", encoding="utf-8") as f:
             f.write(report + "\n")

@@ -2,6 +2,17 @@
 
 ---
 
+## v5.9.1 - 2026-10-12 - Metric coverage in the ETF holdings analyzer
+
+### Added
+- **A `Data` column in the ETF top-holdings report**, matching the screener's: how many of the six scored metrics each holding actually publishes, bolded when it is under 6 of 6, with a one-line explanation above the tables.
+- `compute_scores` already built this count to decide which holdings were too thin to rank, used it for a stderr warning and then discarded it. It now returns it as a fourth value, so nothing new is computed.
+- **It earns its place immediately.** On SCHD, MRK scores 16 and lands in F on **5 of 6** metrics, so that score understates the company rather than judging it. Previously the only hint was a WARN on stderr, and only for holdings thin enough to be dropped from the ranking entirely.
+
+### Notes
+- Verified by running the analyzer end to end against the live S&P 500 feed, not by inspection.
+- The report's `render` signature gains a `reported` argument; it has one caller.
+
 ## v5.9.0 - 2026-10-12 - A Data column: how many of the six metrics a company actually publishes
 
 ### Added
