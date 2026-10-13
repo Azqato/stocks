@@ -2,6 +2,24 @@
 
 ---
 
+## v5.5.0 - 2026-10-12 - The clamp's two ends are set independently
+
+Supersedes v5.4.0 the same day, which refitted the single symmetric constant to 0.13. The owner judged that too strict at the top, and revisiting it showed the symmetric form was the actual problem rather than the value.
+
+### Added
+- **`CLAMP_LO` and `CLAMP_HI` replace `CLAMP_Q`** in `screener.js`, with the same pair in `scripts/analyze_etf_holdings.py` and the untracked `private/build.py`. A metric scores zero at or below the `CLAMP_LO`th percentile and full marks at or above the (1 - `CLAMP_HI`)th, so the floor and the ceiling no longer have to mirror each other. Live values are 0.13 and 0.22: zero in the bottom 13%, full marks in the top 22%, median 11.4 of 20, `points = clamp(20 x (percentile - 0.13) / 0.65, 0, 20)`.
+- Both ends are counted inward from their own end, so a larger `CLAMP_LO` is harsher and a larger `CLAMP_HI` is more generous. The source comment says so, since the old single constant's direction had already been got backwards once.
+
+### Changed
+- **The calibration target is no longer the count of perfect scores.** It is now the share of metric cells flattened to 0 or 20, because a pinned cell carries no information about where a company ranks: under the old symmetric 22% clamp a name in the 2nd percentile and one in the 15th both scored zero. Measured on the Domestic universe: 45.6% flattened at symmetric 0.22, 23.9% at symmetric 0.13, **32.9%** at the 0.13 / 0.22 split.
+- **The screener page's "How a rank becomes points" section** is rewritten for the split curve: the table rows (0 at the 13th, 5 at the 29th, 11.4 at the median, 15 at the 62nd, 20 at the 78th), the formula, and an explanation of why the floor matters more than the ceiling.
+
+### Notes
+- **Net effect against this morning's 0.22**, Domestic: median 45 to 50, p90 77 to 80, cells flattened 45.6% to 32.9%, perfect scores unchanged at 5 in the Nasdaq 100 and 12 in the S&P 500. The top of the book is restored to where it was or slightly better (GOOGL 92, TOST 98, HUBS 97, AMD 99) while the floor stays at the 13th percentile rather than the 22nd.
+- **Dropping the clamp entirely was measured and rejected.** Pure rank-linear points (`20 x percentile`, the ETF model's curve) flatten 0% of cells and need no constants at all, which would permanently end the recalibration problem. It compresses the top instead: no stock in any universe reaches 100, the Domestic p90 falls to 69 and the maximum to 97, and AMD reads 84 against 99. The ordering barely notices either way, Spearman 0.9903 against the split with 13.3% of Domestic tier assignments differing, which is the point: the clamp spends a little information at the extremes to buy separation among the leaders in the displayed score.
+- **The perfect-score target was partly unreachable and is retired.** MU and SNDK rank top-percentile on all six scored metrics and score 100 at any clamp value, so 2 was always the Nasdaq 100's floor against a documented target of ~1.
+- Tiers are rank cuts, not score thresholds, so they are close to immune to the curve. That is why the score levels were worth fixing on their own terms and why doing so changed little about who ranks above whom.
+
 ## v5.4.0 - 2026-10-12 - The percentile clamp is refitted to its documented target
 
 ### Changed

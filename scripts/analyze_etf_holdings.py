@@ -84,7 +84,13 @@ UNIVERSE_FEEDS = {
 # Hand port of screener.js METRICS (stock universes). Weights total 100.
 # The two weight-0 context metrics in screener.js (peVsG, netCashMc) are
 # omitted: they color cells in the UI and contribute nothing to the score.
-CLAMP_Q = 0.13  # refitted 2026-10-12; see docs/PRD.md and screener.js
+# The clamp's two ends, set independently (2026-10-12; see docs/PRD.md and
+# screener.js). Zero at or below the 13th percentile, full marks at or above
+# the 78th. A single symmetric constant flattened 45.6% of all metric cells to
+# 0 or 20, against 32.9% now.
+CLAMP_LO = 0.13
+CLAMP_HI = 0.22
+CLAMP_SPAN = (1 - CLAMP_HI) - CLAMP_LO
 METRIC_WEIGHTS = [
     ("revTTM", 10, True),
     ("revFwd", 10, True),
@@ -122,7 +128,7 @@ def metric_value(key, d):
 
 
 def points_from_pct(p):
-    v = 20 * (p - CLAMP_Q) / (1 - 2 * CLAMP_Q)
+    v = 20 * (p - CLAMP_LO) / CLAMP_SPAN
     return max(0.0, min(20.0, v))
 
 
