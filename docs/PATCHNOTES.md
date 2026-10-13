@@ -2,6 +2,20 @@
 
 ---
 
+## v5.6.0 - 2026-10-12 - New tier cuts: B is the middle of the pack, F is the worst tenth
+
+### Changed
+- **`TIER_CUTS` becomes `[s 0.10, a 0.20, b 0.70, c 0.90]`** in `screener.js`, `scripts/analyze_etf_holdings.py` and the untracked `private/build.py`. S and A are unchanged at the top 10% and the next 10%. B goes from 30% to **50%**, C from 25% to **20%**, and F from 25% to **10%** (owner distribution).
+- The old split made F a quarter of the market, and a tier holding a quarter of everything says very little about anything in it. B is now explicitly the middle of the pack, where most of any market actually sits, and F is reserved for the worst tenth so that seeing one means something.
+- **The screener page's tier legend, the Tier column tooltip, the band explanation and the ETF universe note** are all updated to the new bands and counts.
+
+### Notes
+- **Measured on the live feeds.** Domestic lands at 9.4% S, 10.6% A, 49.9% B, 19.9% C, 9.6% F against targets of 10/10/50/20/10; the drift is entirely boundary ties rounding up. The S&P 500 lands at 7.8/11.0/50.2/19.0/9.6.
+- **Nothing is demoted.** Exactly two transitions occur in the Domestic universe: 702 names move C to B and 520 move F to C, 1,222 labels in all, or 35.3%. No stock's score changes, and no stock's rank changes, because tier cuts are applied to the finished ranking and cannot feed back into it.
+- **In the owner's portfolio only LULU moves**, C to B at rank 2,062 of 3,465. It is still rated SELL on the trajectory rule, which is the point worth internalising about the new bands: with B holding half the market, a B is a statement that a name is unremarkable, not that it is sound.
+- **S+ is unchanged and stays defined as a score of exactly 100**, by owner decision, rather than becoming a top-1% rank cut. It is therefore the only tier whose size the clamp governs: Domestic membership runs 0 unclamped, 7 at a symmetric 0.13, 23 at the live 0.13/0.22 and 41 at a symmetric 0.28. The open consequence is that S+ cannot be made rarer on its own; `CLAMP_HI` is the only lever and it harshens the entire top of the scale at the same time.
+- A tier is a rank, not a grade. These cuts change what the labels mean, not what any company is worth.
+
 ## v5.5.0 - 2026-10-12 - The clamp's two ends are set independently
 
 Supersedes v5.4.0 the same day, which refitted the single symmetric constant to 0.13. The owner judged that too strict at the top, and revisiting it showed the symmetric form was the actual problem rather than the value.
