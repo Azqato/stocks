@@ -99,8 +99,10 @@ METRIC_WEIGHTS = [
     ("pegFwd", 25, False),
     ("cashDebt", 25, True),
 ]
-TIER_CUTS = [("s", 0.10), ("a", 0.25), ("b", 0.50), ("c", 0.75)]  # f = the rest (owner cuts, 2026-10-12)
-TIER_LABELS = {"sp": "S+", "s": "S", "a": "A", "b": "B", "c": "C", "f": "F"}
+TIER_CUTS = [("s", 0.10), ("a", 0.20), ("b", 0.40), ("c", 0.60), ("d", 0.80)]  # f = the rest. Owner cuts 2026-10-12: S 10%, A 10%, B 20%, C 20%, D 20%,
+# F 20%. See docs/PRD.md for why D exists (the C/D line is where valuation
+# support disappears) and screener.js for the matching definition.
+TIER_LABELS = {"sp": "S+", "s": "S", "a": "A", "b": "B", "c": "C", "d": "D", "f": "F"}
 
 # Absolute bands for the fund-level weighted average. These are a presentation
 # convenience for a single roll-up number and are NOT the site's tier model:

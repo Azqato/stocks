@@ -2,6 +2,23 @@
 
 ---
 
+## v5.8.0 - 2026-10-12 - A D tier, and six equal-ish bands below the top fifth
+
+### Changed
+- **`TIER_CUTS` becomes `[s 0.10, a 0.20, b 0.40, c 0.60, d 0.80]`** in `screener.js`, `scripts/analyze_etf_holdings.py` and the untracked `private/build.py`: S the top 10%, A the next 10%, B the next 20%, C the next 20%, **D the next 20%** and F the bottom 20% (owner distribution).
+- **A D tier is added**, the first new letter since S+. `TIER_LABEL`, `TIER_LABELS` and `TIER_COLOR` gain a `d` entry in both the JS and the Python consumer, and the private holdings page gains a `.v-d` badge class.
+- **The color ramp shifts so it stays monotonic.** C moves from light red to orange (`--color-tier-c` is now `--ti-color-orange`, hex `#f0883e`) and D inherits the light red C used to own (new `--color-tier-d`, hex `#ffa198`). S+ purple, S dark green, A light green, B yellow and F's reuse of `--color-negative` are unchanged.
+- **Two stale `<th title>` tooltips in `screener.js` are fixed.** The stock and ETF header rows emit their own tier tooltips from JS string concatenation, and both still described the original v3.29.0 scheme (`A = next 10%, B = 20-50%, C = 50-75%, F = bottom 25%`). Every earlier pass over the reader-facing copy edited the static HTML and missed them, so the page has been showing two different band definitions depending on where you hovered. They now match.
+- The screener page's tier legend, Tier column tooltip, band explanation and ETF universe copy are updated, including a new paragraph on what the C/D line means.
+
+### Notes
+- **Measured on the live feeds.** Domestic (n=3,465) lands at 0.7% S+, 9.4% S, 10.6% A, 20.8% B, 18.6% C, 20.6% D and 19.4% F. The shape holds elsewhere: sp500 2/8/11/19/21/19/20, nasdaq100 5/5/11/19/21/19/20, intl 3/8/9/20/20/20/20.
+- **This is a better fit to the sizing rule than v5.7.0.** 2.56 of a 2.81-bit ceiling, 91.3%, with no band wider than 20.8%, against 2.28 of 2.58, 88.3%, and a 25.1% widest band. Adding a label raises the ceiling, so the comparison that matters is efficiency against ceiling, not raw bits.
+- **D is not a cosmetic split of a big middle.** Median PEG points collapse from 11.4 of 25 in C to **0.6 of 25** in D, so the C/D line is where a reasonable price for the growth on offer stops existing. The share of names missing at least one of the six metrics runs 24% in C, 38% in D and 59% in F, so the band also separates weak from unmeasured.
+- **This supersedes the D rejection recorded in v5.7.0, which was measured at a different sizing.** That evaluation sized D at the bottom 15%, where it came out 50% missing-data cases against F's 62% and so cut one population twice. At 20% the split is cleaner. The underlying ambiguity, that an F can be a shrinking company or an uncovered one, is still a data problem, and the intended fix is still a reported-metric-count column rather than a further letter.
+- **No score and no ranking changes.** Tier cuts are applied to the finished ranking and cannot feed back into it. In the owner's portfolio only **TEAM** and **AXP** move, both A to B at score 67.
+- **Per-tier score ranges**, Domestic: S+ 100, S 80-99, A 69-79, B 55-68, C 44-54, D 31-43, F 0-30.
+
 ## v5.7.0 - 2026-10-12 - Tier cuts settle at 10/15/25/25/25, and v5.6.0 is reverted
 
 ### Changed
