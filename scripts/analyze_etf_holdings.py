@@ -84,7 +84,7 @@ UNIVERSE_FEEDS = {
 # Hand port of screener.js METRICS (stock universes). Weights total 100.
 # The two weight-0 context metrics in screener.js (peVsG, netCashMc) are
 # omitted: they color cells in the UI and contribute nothing to the score.
-CLAMP_Q = 0.22
+CLAMP_Q = 0.13  # refitted 2026-10-12; see docs/PRD.md and screener.js
 METRIC_WEIGHTS = [
     ("revTTM", 10, True),
     ("revFwd", 10, True),

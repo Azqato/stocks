@@ -2,6 +2,23 @@
 
 ---
 
+## v5.4.0 - 2026-10-12 - The percentile clamp is refitted to its documented target
+
+### Changed
+- **`CLAMP_Q` moves from 0.22 to 0.13** in `screener.js`, with the same constant updated in `scripts/analyze_etf_holdings.py` and the untracked `private/build.py` so every consumer of the stock model agrees. The scoring curve is now `points = clamp(20 x (percentile - 0.13) / 0.74, 0, 20)`: zero at or below the 13th percentile, full marks at the 87th and up, and the median still exactly half.
+- **The screener's own explanation of the curve** (`invests/stocks/screener.html`, "How a rank becomes points") is updated to match: the table's rows, the formula, and the calibration sentence, which now says roughly two Nasdaq 100 and five S&P 500 stocks reach a perfect 100.
+
+### Fixed
+- **Documentation Versus Reality item 13 is closed.** The clamp was documented as calibrated to about 1 perfect score in the Nasdaq 100 and about 5 in the S&P 500. It had drifted to 4 and 10 as the feeds' data changed, and v5.3.0's derived growth took it to 5 and 12. At 0.13 the live feeds produce **2 and 5**.
+- **The target itself was wrong on one side, and is corrected rather than chased.** The Nasdaq 100 cannot be brought to 1 at any clamp value: MU and SNDK sit in the top percentile of all six scored metrics and score 100 even at `CLAMP_Q` = 0.10, so 2 is that universe's structural floor. The PRD now records 2 as the target.
+- **A bug in the measuring port was found and fixed before the constant was touched.** The sweep that picked the value had been *excluding* unprofitable names from the `pegFwd` ranking, where `screener.js` ranks them worst via `Infinity`. Excluding them shrinks that metric's denominator and shifts every percentile in the universe, and it showed up as a 6-point disagreement on GOOGL against a previously validated figure. The corrected port reproduces all 3,451 live Domestic scores exactly, and only then was the sweep rerun and the value chosen.
+
+### Notes
+- **Impact, measured.** 2,920 of 3,465 Domestic scores moved, 91 of 100 in the Nasdaq 100, 437 of 500 in the S&P 500 and 88 of 100 in International. The band is -10 to +9 points, the mean is -0.2, and there are 310 Domestic tier changes, 10 in the Nasdaq 100 and 51 in the S&P 500.
+- **Nearly everything drifts down a little, and that is the point.** Scores are percentile ranks, so refitting cannot move the average much; it tightens the top. The names that fall are those that had been collecting full marks from the 78th percentile upward and now need the 87th. In the owner's portfolio: GOOGL 91 to 85, REGN 75 to 69, HUBS 97 to 91, TOST 98 to 93, AMD 99 to 95, with RVLV the one tier change (S to A, 78 to 73). ZM rises 57 to 60 and WYNN 57 to 58, both by standing still while others fall.
+- **The sweep is reproducible.** Values 0.10 through 0.25 were measured against the Nasdaq 100, S&P 500, Domestic and International feeds with the derived growth of v5.3.0 applied. 0.12 gives 4 S&P 500 perfect scores and 0.14 gives 6, so 0.13 is the only value that lands the documented 5.
+- **This was deliberately not bundled into v5.3.0.** The drift predated that release, and mixing a data-quality fix with a change that moves every score on the site would have made neither measurable on its own.
+
 ## v5.3.0 - 2026-10-13 - Derived growth when the quote carries none; the ETF 52-week range becomes intraday
 
 ### Added
