@@ -37,6 +37,24 @@
    10.69,
    11.48,
    8.53
+  ],
+  "ebit": [
+   null,
+   null,
+   757279000.0,
+   561936000.0
+  ],
+  "interestExpense": [
+   null,
+   null,
+   0.0,
+   0.0
+  ],
+  "dilutedShares": [
+   52305488.0,
+   52307966.0,
+   52308808.0,
+   52299411.0
   ]
  },
  "balance": {
@@ -95,10 +113,16 @@
    null,
    null,
    null
+  ],
+  "stockComp": [
+   null,
+   null,
+   null,
+   null
   ]
  },
  "revCagr3y": 13.315715446994947,
  "fcfGrowth": 17.384931044974962,
  "cur": "USD",
- "updated": "2026-10-10T18:36:38.270759Z"
+ "updated": "2026-10-14T07:37:39.253624Z"
 }
