@@ -2,6 +2,21 @@
 
 ---
 
+## v5.10.0 - 2026-10-18 - Market Overview: 52-week range, 10-day RSI, Fed Funds and CPI
+
+### Added
+- **A 52-week low and high on every quote** (`low52`, `high52`). Funds and indices use Yahoo's own 52-week range; Treasury yields, and any symbol whose Yahoo range is missing or bad, compute it from a year of daily history. The range is widened to include the current price, so the page's range dot never falls outside its bar.
+- **A 10-day RSI** (`rsi10`, Wilder smoothing) on every Yahoo symbol except the Treasury yields.
+- **Fed Funds Rate, CPI and Core CPI in Bonds**, from FRED's keyless CSV endpoint: DFF as a level, CPIAUCSL and CPILFESL as year-over-year change. Each carries `asOf`, the observation date, and the CPI pair carries `freq: "monthly"` so the page shows "Sep 2026" rather than a misleading day. `changePct` is null for these, since a percent change of a percent is noise. `source` is now `"yahoo+fred"`.
+
+### Changed
+- **Categories reorganized** (68 symbols, 9 categories): Indices (DIA, SPY, QQQ, IWM, VIX), Broad Market (VT, VTI, VXUS, BND, BNDX), Bond Funds (TLT, VGLT, VGIT, VGSH, VTEB) and Size (RSP, IJH, IJR, VBR, TOPT) lead, followed by the unchanged Factors, Industries, Commodities, Bonds, Leveraged ETFs and Crypto. `market_overview_categories.xlsx` regenerated to match.
+- The workflow header, README and PRD describe the new fields.
+
+### Notes
+- A YoY observation dated 29 February is skipped rather than crashing the run (no same-day match a year earlier). CPI is dated the 1st, so it cannot trigger today.
+- Verified by running the fetcher end to end against live data to a scratch path: 68/68 symbols, Fed Funds 3.88% as of 2026-10-15, CPI 3.7% YoY as of September 2026. The committed `market_overview.json` was not touched; the next workflow run writes it.
+
 ## v5.9.1 - 2026-10-12 - Metric coverage in the ETF holdings analyzer
 
 ### Added

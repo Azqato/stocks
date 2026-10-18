@@ -1,9 +1,11 @@
 name: Update Market Overview Data
 
 # Intraday refresh of data/market_overview.json: a fixed, owner-curated list
-# of 10 symbols (data/market_overview_list.json, hand-edited only, no
-# auto-sync) -- 9 broad-market ETFs plus VIX. A plain price/change snapshot,
-# not the scored ETFs universe, so it's a separate lightweight job.
+# of 68 symbols in 9 categories (data/market_overview_list.json, hand-edited
+# only, no auto-sync): ETFs, indices, yields, commodities and crypto from
+# Yahoo, plus the Fed Funds Rate, CPI and Core CPI from FRED's keyless CSV.
+# Price, change, 52-week range and 10-day RSI; not the scored ETFs universe,
+# so it's a separate lightweight job.
 #
 # Unlike every other screener-data workflow (once daily, after close), this
 # page updates three times per trading day so it reads as a live-ish market
