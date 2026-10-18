@@ -1,0 +1,128 @@
+{
+ "t": "VUECF",
+ "source": "yahoo",
+ "columns": [
+  "TTM",
+  "FY2026",
+  null,
+  null
+ ],
+ "income": {
+  "revenue": [
+   0.0,
+   null,
+   null,
+   null
+  ],
+  "grossProfit": [
+   -7871.0,
+   null,
+   null,
+   null
+  ],
+  "operatingIncome": [
+   -12055150.0,
+   null,
+   null,
+   null
+  ],
+  "netIncome": [
+   -11919979.0,
+   null,
+   null,
+   null
+  ],
+  "epsDiluted": [
+   -0.39,
+   -0.39,
+   null,
+   null
+  ],
+  "ebit": [
+   -11918173.0,
+   null,
+   null,
+   null
+  ],
+  "interestExpense": [
+   1806.0,
+   null,
+   null,
+   null
+  ],
+  "dilutedShares": [
+   30633721.0,
+   30633721.0,
+   null,
+   null
+  ]
+ },
+ "balance": {
+  "cash": [
+   24258222.0,
+   null,
+   null,
+   null
+  ],
+  "totalAssets": [
+   35663773.0,
+   null,
+   null,
+   null
+  ],
+  "totalDebt": [
+   83465.0,
+   null,
+   null,
+   null
+  ],
+  "equity": [
+   35297008.0,
+   null,
+   null,
+   null
+  ]
+ },
+ "cashflow": {
+  "operatingCashFlow": [
+   -2277752.0,
+   null,
+   null,
+   null
+  ],
+  "capex": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "freeCashFlow": [
+   -2277752.0,
+   null,
+   null,
+   null
+  ],
+  "dividendsPaid": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "buybacks": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "stockComp": [
+   1096502.0,
+   null,
+   null,
+   null
+  ]
+ },
+ "revCagr3y": null,
+ "fcfGrowth": null,
+ "cur": "CAD",
+ "updated": "2026-10-18T07:13:28.176576Z"
+}
