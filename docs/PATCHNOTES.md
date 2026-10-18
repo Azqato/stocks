@@ -2,6 +2,13 @@
 
 ---
 
+## v5.10.1 - 2026-10-18 - Market Overview: Market Cap category and shorter names
+
+### Changed
+- **Size is now Market Cap**, ordered TOPT, RSP, IJR, VBR, IJH.
+- Display names: CPI (YoY) is now CPI, Core CPI (YoY) is Core CPI, and Tax-Exempt Munis (VTEB) is Muni Bonds.
+- `market_overview_categories.xlsx` regenerated to match.
+
 ## v5.10.0 - 2026-10-18 - Market Overview: 52-week range, 10-day RSI, Fed Funds and CPI
 
 ### Added
