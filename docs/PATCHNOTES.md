@@ -2,6 +2,12 @@
 
 ---
 
+## v5.10.2 - 2026-10-18 - Market Overview: Bonds order
+
+### Changed
+- Bonds is now ordered Core CPI, CPI, Fed Funds Rate, 2-Year, 10-Year, 30-Year, and Core CPI's display name is now Core.
+- `market_overview_categories.xlsx` regenerated to match.
+
 ## v5.10.1 - 2026-10-18 - Market Overview: Market Cap category and shorter names
 
 ### Changed

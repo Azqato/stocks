@@ -47,12 +47,12 @@
   { "t": "PL",   "y": "PL=F", "n": "Platinum",               "category": "Commodities" },
   { "t": "HG",   "y": "HG=F", "n": "Copper",                 "category": "Commodities" },
 
+  { "t": "CORECPI",  "fred": "CPILFESL", "transform": "yoy", "n": "Core",           "category": "Bonds", "unit": "pct", "dp": 1 },
+  { "t": "CPI",      "fred": "CPIAUCSL", "transform": "yoy", "n": "CPI",            "category": "Bonds", "unit": "pct", "dp": 1 },
   { "t": "FEDFUNDS", "fred": "DFF", "transform": "level", "n": "Fed Funds Rate", "category": "Bonds", "unit": "pct", "dp": 2 },
   { "t": "US2Y",  "y": "2YY=F", "n": "2-Year",  "category": "Bonds", "unit": "pct" },
   { "t": "US10Y", "y": "^TNX",  "n": "10-Year", "category": "Bonds", "unit": "pct" },
   { "t": "US30Y", "y": "^TYX",  "n": "30-Year", "category": "Bonds", "unit": "pct" },
-  { "t": "CPI",      "fred": "CPIAUCSL", "transform": "yoy", "n": "CPI",            "category": "Bonds", "unit": "pct", "dp": 1 },
-  { "t": "CORECPI",  "fred": "CPILFESL", "transform": "yoy", "n": "Core CPI",       "category": "Bonds", "unit": "pct", "dp": 1 },
 
   { "t": "TQQQ", "y": "TQQQ", "n": "3x Nasdaq 100",       "category": "Leveraged ETFs" },
   { "t": "SOXL", "y": "SOXL", "n": "3x Semiconductors",   "category": "Leveraged ETFs" },
