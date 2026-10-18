@@ -20,76 +20,76 @@
     "n": "Johnson & Johnson"
   },
   {
-    "t": "WMT",
-    "n": "Walmart"
-  },
-  {
     "t": "ABBV",
     "n": "AbbVie"
   },
   {
-    "t": "BAC",
-    "n": "Bank of America"
-  },
-  {
-    "t": "CSCO",
-    "n": "Cisco"
+    "t": "WMT",
+    "n": "Walmart"
   },
   {
     "t": "CVX",
     "n": "Chevron"
   },
   {
+    "t": "CSCO",
+    "n": "Cisco"
+  },
+  {
     "t": "CAT",
     "n": "Caterpillar"
+  },
+  {
+    "t": "BAC",
+    "n": "Bank of America"
   },
   {
     "t": "MRK",
     "n": "Merck & Co."
   },
   {
-    "t": "UNH",
-    "n": "UnitedHealth Group"
-  },
-  {
     "t": "PG",
     "n": "Procter & Gamble"
-  },
-  {
-    "t": "HD",
-    "n": "Home Depot (The)"
   },
   {
     "t": "KO",
     "n": "Coca-Cola Company (The)"
   },
   {
+    "t": "UNH",
+    "n": "UnitedHealth Group"
+  },
+  {
     "t": "PM",
     "n": "Philip Morris International"
   },
   {
-    "t": "GS",
-    "n": "Goldman Sachs"
+    "t": "HD",
+    "n": "Home Depot (The)"
   },
   {
     "t": "RTX",
     "n": "RTX"
   },
   {
-    "t": "WFC",
-    "n": "Wells Fargo"
+    "t": "TMO",
+    "n": "Thermo Fisher Scientific"
   },
   {
-    "t": "MS",
-    "n": "Morgan Stanley"
+    "t": "GS",
+    "n": "Goldman Sachs"
+  },
+  {
+    "t": "WFC",
+    "n": "Wells Fargo"
   },
   {
     "t": "AMGN",
     "n": "Amgen"
   },
   {
-    "t": "TMO",
-    "n": "Thermo Fisher Scientific"
+    "t": "MS",
+    "n": "Morgan Stanley"
   },
   {
     "t": "LIN",
@@ -104,32 +104,60 @@
     "n": "IBM"
   },
   {
-    "t": "CRM",
-    "n": "Salesforce"
+    "t": "QCOM",
+    "n": "Qualcomm"
   },
   {
-    "t": "ABT",
-    "n": "Abbott Laboratories"
-  },
-  {
-    "t": "PEP",
-    "n": "PepsiCo"
-  },
-  {
-    "t": "INTC",
-    "n": "Intel"
+    "t": "ADI",
+    "n": "Analog Devices"
   },
   {
     "t": "VZ",
     "n": "Verizon"
   },
   {
+    "t": "GILD",
+    "n": "Gilead Sciences"
+  },
+  {
     "t": "DIS",
     "n": "Walt Disney Company (The)"
   },
   {
-    "t": "GILD",
-    "n": "Gilead Sciences"
+    "t": "CRM",
+    "n": "Salesforce"
+  },
+  {
+    "t": "PEP",
+    "n": "PepsiCo"
+  },
+  {
+    "t": "DE",
+    "n": "Deere &"
+  },
+  {
+    "t": "ABT",
+    "n": "Abbott Laboratories"
+  },
+  {
+    "t": "T",
+    "n": "AT&T"
+  },
+  {
+    "t": "ETN",
+    "n": "Eaton"
+  },
+  {
+    "t": "PFE",
+    "n": "Pfizer"
+  },
+  {
+    "t": "GE",
+    "n": "GE Aerospace"
+  },
+  {
+    "t": "UNP",
+    "n": "Union Pacific"
   },
   {
     "t": "SCHW",
@@ -140,108 +168,88 @@
     "n": "American Express"
   },
   {
-    "t": "T",
-    "n": "AT&T"
-  },
-  {
-    "t": "QCOM",
-    "n": "Qualcomm"
-  },
-  {
-    "t": "UNP",
-    "n": "Union Pacific"
-  },
-  {
-    "t": "ADI",
-    "n": "Analog Devices"
-  },
-  {
-    "t": "GE",
-    "n": "GE Aerospace"
-  },
-  {
-    "t": "DE",
-    "n": "Deere &"
+    "t": "COP",
+    "n": "ConocoPhillips"
   },
   {
     "t": "NEE",
     "n": "NextEra Energy"
   },
   {
-    "t": "PFE",
-    "n": "Pfizer"
-  },
-  {
-    "t": "COP",
-    "n": "ConocoPhillips"
-  },
-  {
     "t": "BLK",
     "n": "BlackRock"
-  },
-  {
-    "t": "ETN",
-    "n": "Eaton"
-  },
-  {
-    "t": "BMY",
-    "n": "Bristol Myers Squibb"
   },
   {
     "t": "DHR",
     "n": "Danaher"
   },
   {
-    "t": "NEM",
-    "n": "Newmont"
-  },
-  {
-    "t": "COF",
-    "n": "Capital One"
-  },
-  {
-    "t": "DELL",
-    "n": "Dell Technologies"
-  },
-  {
-    "t": "PLD",
-    "n": "Prologis"
-  },
-  {
-    "t": "LMT",
-    "n": "Lockheed Martin"
-  },
-  {
-    "t": "PGR",
-    "n": "Progressive"
-  },
-  {
-    "t": "SPGI",
-    "n": "S&P Global"
-  },
-  {
-    "t": "PH",
-    "n": "Parker Hannifin"
-  },
-  {
-    "t": "CVS",
-    "n": "CVS Health"
+    "t": "UBER",
+    "n": "Uber Technologies"
   },
   {
     "t": "TXN",
     "n": "Texas Instruments"
   },
   {
+    "t": "BMY",
+    "n": "Bristol Myers Squibb"
+  },
+  {
+    "t": "PLD",
+    "n": "Prologis"
+  },
+  {
+    "t": "NEM",
+    "n": "Newmont"
+  },
+  {
+    "t": "PGR",
+    "n": "Progressive"
+  },
+  {
+    "t": "PH",
+    "n": "Parker Hannifin"
+  },
+  {
+    "t": "COF",
+    "n": "Capital One"
+  },
+  {
+    "t": "LMT",
+    "n": "Lockheed Martin"
+  },
+  {
+    "t": "SPGI",
+    "n": "S&P Global"
+  },
+  {
     "t": "CB",
     "n": "Chubb Limited"
+  },
+  {
+    "t": "MO",
+    "n": "Altria"
   },
   {
     "t": "ACN",
     "n": "Accenture"
   },
   {
+    "t": "VLO",
+    "n": "Valero Energy"
+  },
+  {
+    "t": "MPC",
+    "n": "Marathon Petroleum"
+  },
+  {
     "t": "MDT",
     "n": "Medtronic"
+  },
+  {
+    "t": "CVS",
+    "n": "CVS Health"
   },
   {
     "t": "LOW",
@@ -252,28 +260,32 @@
     "n": "Automatic Data Processing"
   },
   {
-    "t": "MO",
-    "n": "Altria"
-  },
-  {
-    "t": "BNY",
-    "n": "BNY Mellon"
-  },
-  {
-    "t": "MPC",
-    "n": "Marathon Petroleum"
+    "t": "PSX",
+    "n": "Phillips 66"
   },
   {
     "t": "FCX",
     "n": "Freeport-McMoRan"
   },
   {
-    "t": "VLO",
-    "n": "Valero Energy"
-  },
-  {
     "t": "MCK",
     "n": "McKesson"
+  },
+  {
+    "t": "TT",
+    "n": "Trane Technologies"
+  },
+  {
+    "t": "BNY",
+    "n": "BNY Mellon"
+  },
+  {
+    "t": "ADBE",
+    "n": "Adobe"
+  },
+  {
+    "t": "SYK",
+    "n": "Stryker"
   },
   {
     "t": "CME",
@@ -284,76 +296,80 @@
     "n": "Southern"
   },
   {
-    "t": "PSX",
-    "n": "Phillips 66"
-  },
-  {
-    "t": "TT",
-    "n": "Trane Technologies"
-  },
-  {
-    "t": "PNC",
-    "n": "PNC Financial Services"
+    "t": "JCI",
+    "n": "Johnson Controls"
   },
   {
     "t": "USB",
     "n": "U.S. Bancorp"
   },
   {
-    "t": "GD",
-    "n": "General Dynamics"
-  },
-  {
-    "t": "CMCSA",
-    "n": "Comcast"
-  },
-  {
-    "t": "CSX",
-    "n": "CSX"
-  },
-  {
     "t": "DUK",
     "n": "Duke Energy"
   },
   {
-    "t": "WMB",
-    "n": "Williams Companies"
-  },
-  {
-    "t": "MRSH",
-    "n": "Marsh McLennan"
-  },
-  {
-    "t": "ICE",
-    "n": "Intercontinental Exchange"
-  },
-  {
-    "t": "SLB",
-    "n": "SLB"
-  },
-  {
-    "t": "MMM",
-    "n": "3M"
-  },
-  {
-    "t": "CEG",
-    "n": "Constellation Energy"
-  },
-  {
-    "t": "WM",
-    "n": "Waste Management"
+    "t": "PNC",
+    "n": "PNC Financial Services"
   },
   {
     "t": "EMR",
     "n": "Emerson Electric"
   },
   {
-    "t": "JCI",
-    "n": "Johnson Controls"
+    "t": "CSX",
+    "n": "CSX"
+  },
+  {
+    "t": "CEG",
+    "n": "Constellation Energy"
+  },
+  {
+    "t": "ICE",
+    "n": "Intercontinental Exchange"
+  },
+  {
+    "t": "GD",
+    "n": "General Dynamics"
+  },
+  {
+    "t": "MMM",
+    "n": "3M"
+  },
+  {
+    "t": "WMB",
+    "n": "Williams Companies"
   },
   {
     "t": "ELV",
     "n": "Elevance Health"
+  },
+  {
+    "t": "MCD",
+    "n": "McDonald's"
+  },
+  {
+    "t": "WM",
+    "n": "Waste Management"
+  },
+  {
+    "t": "MRSH",
+    "n": "Marsh McLennan"
+  },
+  {
+    "t": "HPE",
+    "n": "Hewlett Packard Enterprise Co"
+  },
+  {
+    "t": "DELL",
+    "n": "Dell Technologies"
+  },
+  {
+    "t": "SHW",
+    "n": "Sherwin-Williams Co/The"
+  },
+  {
+    "t": "CMCSA",
+    "n": "Comcast"
   },
   {
     "t": "REGN",
@@ -364,39 +380,23 @@
     "n": "American Tower"
   },
   {
-    "t": "MDLZ",
-    "n": "Mondelez International"
+    "t": "INTU",
+    "n": "Intuit"
   },
   {
-    "t": "TMUS",
-    "n": "T-Mobile US"
-  },
-  {
-    "t": "CMI",
-    "n": "Cummins"
-  },
-  {
-    "t": "GM",
-    "n": "General Motors Co"
-  },
-  {
-    "t": "UPS",
-    "n": "United Parcel Service"
+    "t": "ROST",
+    "n": "Ross Stores"
   },
   {
     "t": "TRV",
     "n": "Travelers Cos Inc/The"
   },
   {
-    "t": "EOG",
-    "n": "EOG Resources"
+    "t": "WBD",
+    "n": "Warner Bros Discovery"
   },
   {
-    "t": "NSC",
-    "n": "Norfolk Southern"
-  },
-  {
-    "t": "UBER",
-    "n": "Uber Technologies"
+    "t": "MDLZ",
+    "n": "Mondelez International"
   }
 ]
