@@ -10,9 +10,16 @@ name: Update Market Overview Data
 # Unlike every other screener-data workflow (once daily, after close), this
 # page updates three times per trading day so it reads as a live-ish market
 # check-in rather than a stale close-of-business number:
-#   15:07 UTC -- shortly after the US open (13:30 UTC EDT / 14:30 UTC EST)
-#   19:07 UTC -- midday
-#   22:07 UTC -- shortly after the US close (20:00 UTC EDT / 21:00 UTC EST)
+#   13:47 UTC -- aimed at late morning ET
+#   17:07 UTC -- aimed at the afternoon
+#   21:07 UTC -- aimed at after the US close (20:00 UTC EDT / 21:00 UTC EST)
+#
+# SCHEDULED EARLY ON PURPOSE (2026-10-19): GitHub has been starting these runs
+# hours late (the 15:07 run started 3h38m to 5h29m late on 2026-10-13..16), so
+# the crons sit about 2 hours ahead of the moment they're meant to capture.
+# Not 3: the lag varies, and if it disappears the first run should still come
+# after the 13:30 UTC (EDT) open and the last after the close is near. The
+# owner chose to stay on GitHub's scheduler rather than trigger from outside.
 #
 # WHY :07 AND NOT :00 (2026-07-13): GitHub's scheduler is best-effort and
 # queues every repo's cron globally, so the top of the hour is its single most
@@ -26,7 +33,7 @@ name: Update Market Overview Data
 # GitHub cron is UTC-only and does not follow DST, so the exact offset from
 # open/close drifts by an hour across the DST boundary, same as every other
 # workflow in this pipeline (see stock-data.yml for the anchor note).
-# The 22:07 run lands near screener-data-etfs.yml's daily job; both share the
+# The 21:07 run lands near screener-data-etfs.yml's daily job; both share the
 # "screener-data" concurrency group with cancel-in-progress:false, so they
 # simply queue instead of racing -- not a bug, just worth knowing if this run
 # looks a few minutes late in the Actions log.
@@ -34,9 +41,9 @@ name: Update Market Overview Data
 
 on:
   schedule:
-    - cron: "7 15 * * 1-5"
-    - cron: "7 19 * * 1-5"
-    - cron: "7 22 * * 1-5"
+    - cron: "47 13 * * 1-5"
+    - cron: "7 17 * * 1-5"
+    - cron: "7 21 * * 1-5"
   workflow_dispatch: {}   # allow manual runs
 
 permissions:

@@ -2,6 +2,13 @@
 
 ---
 
+## v5.10.4 - 2026-10-19 - Market Overview: crons moved about 2 hours earlier
+
+### Changed
+- **`market-overview.yml` now runs at 13:47, 17:07 and 21:07 UTC** (was 15:07, 19:07, 22:07). GitHub has been starting the first run 3h38m to 5h29m late (2026-10-13 to 16), so Monday 2026-10-19's page still showed the overnight data at 17:30 UTC. Moving earlier by about 2 hours, not 3, keeps the snapshots spread across the trading day at last week's lag, while a run that fires on time still comes after the 13:30 UTC (EDT) open.
+- The owner chose to stay on GitHub's scheduler for now; an external trigger to `workflow_dispatch` remains the only fix that removes the lag. Recorded in the PRD's Known Technical Debt entry, with a note to re-measure after a week.
+- README, PRD and the `statements.yml` schedule comment updated to the new times.
+
 ## v5.10.3 - 2026-10-18 - Market Overview: SMH in Industries
 
 ### Added

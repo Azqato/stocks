@@ -31,7 +31,7 @@ name: Update Financial Statements
 on:
   schedule:
     # 02:17 UTC daily. Picked to sit clear of every other job in the repo:
-    # Market Overview runs 15:07, 19:07 and 22:07, stock data 21:37 weekdays and
+    # Market Overview runs 13:47, 17:07 and 21:07, stock data 21:37 weekdays and
     # 21:17 Sunday, the constituent sync Saturday 23:17, and the ETFs feed in the
     # evening. 02:17 is the only window with nothing on either side of it.
     # Off-peak minute rather than :00 or :15; see market-overview.yml for why.
