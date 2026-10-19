@@ -31,6 +31,7 @@
   { "t": "SPLV", "y": "SPLV", "n": "Low Volatility",         "category": "Factors" },
 
   { "t": "XLK",  "y": "XLK",  "n": "Technology",             "category": "Industries" },
+  { "t": "SMH",  "y": "SMH",  "n": "Semiconductors",         "category": "Industries" },
   { "t": "XLE",  "y": "XLE",  "n": "Energy",                 "category": "Industries" },
   { "t": "XLI",  "y": "XLI",  "n": "Industrials",            "category": "Industries" },
   { "t": "XLP",  "y": "XLP",  "n": "Consumer Staples",       "category": "Industries" },

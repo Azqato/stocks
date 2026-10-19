@@ -2,6 +2,11 @@
 
 ---
 
+## v5.10.3 - 2026-10-18 - Market Overview: SMH in Industries
+
+### Added
+- **SMH (Semiconductors)** in Industries, after Technology. 69 symbols. `market_overview_categories.xlsx` regenerated; README, PRD and the workflow header say 69.
+
 ## v5.10.2 - 2026-10-18 - Market Overview: Bonds order
 
 ### Changed

@@ -1,7 +1,7 @@
 name: Update Market Overview Data
 
 # Intraday refresh of data/market_overview.json: a fixed, owner-curated list
-# of 68 symbols in 9 categories (data/market_overview_list.json, hand-edited
+# of 69 symbols in 9 categories (data/market_overview_list.json, hand-edited
 # only, no auto-sync): ETFs, indices, yields, commodities and crypto from
 # Yahoo, plus the Fed Funds Rate, CPI and Core CPI from FRED's keyless CSV.
 # Price, change, 52-week range and 10-day RSI; not the scored ETFs universe,
