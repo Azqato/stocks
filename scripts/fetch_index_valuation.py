@@ -20,14 +20,17 @@ Method:
                 fiscal year and next (Yahoo's earnings_estimate "0y" and
                 "+1y").
   Losses are netted against profits: total market cap over total earnings,
-  the textbook definition (FactSet's too). When an index's total earnings
-  are negative its P/E is not meaningful and is written as null, which the
-  page shows as n/m: the Russell 2000's trailing on 2026-10-20 (losses
-  -$149B against profits +$128B). Its forward nets to 25.33 against WSJ's
+  the textbook definition (FactSet's too). If an index's netted earnings are
+  still zero or negative, it falls back to profits only, so the page never
+  shows n/m (the owner's rule). Netted in full, the Russell 2000's trailing
+  was negative on 2026-10-20 (losses -$149B against profits +$128B). Its forward nets to 25.33 against WSJ's
   26.32. Rules tried and dropped (v5.11.0, v5.11.1): profitable companies
   only (R2K 15.4 / 13.6), and all market cap over profits only (24 / 16.5).
-  Capping each loss at a share of market cap fits WSJ's trailing near 6%
-  but its forward only uncapped, so no one cap is consistent.
+  Trailing caps each company's loss at TRAILING_LOSS_CAP of its market cap
+  (owner's choice, 2026-10-20): netted in full, the Russell 2000's trailing
+  is negative (-153), but WSJ, likely on earnings before one-off charges,
+  shows 34.62. A 5% cap reads 32.7; it barely moves the other indices.
+  Forward is netted in full, which already matches WSJ.
   Net income, not the feed's eps field, gives trailing earnings: eps can be
   stale after a split (ASST read -$20.7B of implied loss, against -$0.98B).
   Growth        trailing / forward - 1: the earnings growth the two imply.
@@ -66,6 +69,7 @@ import update_etf_constituents as vanguard  # noqa: E402  (shared Vanguard holdi
 OUT_PATH = "data/index_valuation.json"
 UA = vanguard.UA
 WORKERS = 4
+TRAILING_LOSS_CAP = 0.05  # a loss counts up to this share of market cap (trailing only)
 MIN_FORWARD_SHARE = 0.85  # abort below this share of members with estimates
 TICKER_OK = vanguard.re.compile(r"^[A-Z][A-Z.]{0,5}$")
 
@@ -159,6 +163,7 @@ def estimates(t):
 def valuation(idx, tickers, stocks, fwd):
     price_w = idx["weight"] == "price"
     cap_t = earn_t = cap_f = earn_f = 0.0
+    pos_t = pos_f = 0.0  # profits only: the fallback when netted earnings are <= 0
     n_t = n_f = 0
     for t in tickers:
         s = stocks.get(t) or {}
@@ -172,15 +177,19 @@ def valuation(idx, tickers, stocks, fwd):
         earn = size * ni / cap if ok(ni) else size / pe if ok(pe) and pe > 0 else None
         if earn is not None:
             cap_t += size
-            earn_t += earn
+            earn_t += max(earn, -TRAILING_LOSS_CAP * size)
+            pos_t += max(earn, 0)
             n_t += earn > 0
         eps = fwd.get(t)
         if ok(eps):
             cap_f += size
             earn_f += size * eps / price
+            pos_f += max(size * eps / price, 0)
             n_f += eps > 0
-    trailing = cap_t / earn_t if earn_t > 0 else None
-    forward = cap_f / earn_f if earn_f > 0 else None
+    # The page never shows n/m (owner, 2026-10-20): if losses still outweigh
+    # profits, count profits only rather than publish a negative P/E.
+    trailing = cap_t / earn_t if earn_t > 0 else cap_t / pos_t if pos_t > 0 else None
+    forward = cap_f / earn_f if earn_f > 0 else cap_f / pos_f if pos_f > 0 else None
     return {
         "key": idx["key"], "name": idx["name"], "weighting": idx["weight"],
         "members": len(tickers), "trailingCount": n_t, "forwardCount": n_f,
@@ -220,7 +229,7 @@ def main():
     out = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "source": "yahoo",
-        "method": "Total market cap / total earnings, losses netted; null when total earnings are negative. Trailing uses the last 12 "
+        "method": "Total market cap / total earnings, losses netted (trailing: each loss capped at 5% of market cap); profits only if the net is not positive. Trailing uses the last 12 "
                   "months; forward uses the average of this and next fiscal year's analyst EPS "
                   "estimates. The Dow is price-weighted.",
         "indices": [valuation(idx, lists[idx["key"]], stocks, fwd) for idx in INDICES],

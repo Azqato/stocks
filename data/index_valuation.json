@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-20T23:00:45.237266+00:00",
+  "updated": "2026-10-20T23:43:33.123815+00:00",
   "source": "yahoo",
-  "method": "Total market cap / total earnings, losses netted; null when total earnings are negative. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
+  "method": "Total market cap / total earnings, losses netted (trailing: each loss capped at 5% of market cap); profits only if the net is not positive. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
   "indices": [
     {
       "key": "sp500",
@@ -10,9 +10,9 @@
       "members": 500,
       "trailingCount": 475,
       "forwardCount": 496,
-      "trailingPE": 25.74,
+      "trailingPE": 25.54,
       "forwardPE": 19.44,
-      "growthPct": 32.4
+      "growthPct": 31.3
     },
     {
       "key": "nasdaq100",
@@ -21,9 +21,9 @@
       "members": 100,
       "trailingCount": 91,
       "forwardCount": 95,
-      "trailingPE": 32.14,
+      "trailingPE": 31.38,
       "forwardPE": 21.82,
-      "growthPct": 47.3
+      "growthPct": 43.8
     },
     {
       "key": "dow",
@@ -43,9 +43,9 @@
       "members": 1990,
       "trailingCount": 1138,
       "forwardCount": 1327,
-      "trailingPE": null,
+      "trailingPE": 33.02,
       "forwardPE": 25.33,
-      "growthPct": null
+      "growthPct": 30.4
     }
   ]
 }

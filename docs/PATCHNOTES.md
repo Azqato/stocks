@@ -2,6 +2,13 @@
 
 ---
 
+## v5.11.3 - 2026-10-20 - Index Valuation: trailing losses capped, never n/m
+
+### Changed
+- **Trailing P/E caps each company's loss at 5% of its market cap** (`TRAILING_LOSS_CAP`, the owner's choice). Netted in full, the Russell 2000's trailing was -153 (shown as n/m); WSJ, likely on earnings before one-off charges, shows 34.62. It now reads 33.02 (-4.6%). Forward stays fully netted.
+- **Never null:** if an index's netted earnings are still zero or negative, it falls back to profits only, so the page never shows n/m (the owner's rule). The run aborts only when an index has no profitable members.
+- Results against WSJ: S&P 500 25.54 / 19.44 (23.51 / 19.25), Nasdaq 100 31.38 / 21.82 (30.27 / 21.45), Dow 20.45 / 18.80 (20.85 / 19.78), Russell 2000 33.02 / 25.33 (34.62 / 26.32), growth +30.4% (+31.5%).
+
 ## v5.11.2 - 2026-10-20 - Index Valuation: losses netted, n/m when negative
 
 ### Changed
