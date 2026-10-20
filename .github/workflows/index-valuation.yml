@@ -1,0 +1,75 @@
+name: Update Index Valuation Data
+
+# Weekly refresh of data/index_valuation.json: trailing and forward P/E for
+# the S&P 500, Nasdaq 100, Dow and Russell 2000, calculated from their member
+# stocks by scripts/fetch_index_valuation.py (method in its docstring). Feeds
+# the Invests Index Valuation page.
+#
+# Monday 05:47 UTC: after stock-data.yml's Sunday whole-market run (21:17 UTC),
+# whose parts supply the prices, market caps and trailing P/Es, with room for
+# GitHub's scheduler running hours late (see the PRD's Known Technical Debt).
+# Prices are Friday's close either way, since markets are shut over the weekend.
+# Odd minute, off the top of the hour, like every workflow here.
+#
+# The script fetches analyst estimates for about 2,500 stocks, gently, so it
+# takes about 8 minutes. It aborts without writing if Yahoo answered for too
+# few of them, so a throttled run keeps last week's numbers.
+# It also writes the Dow and Russell 2000 member lists (data/dow30.json,
+# data/russell2000.json) when their fund-holdings fetch succeeds.
+# Uses yfinance and public fund-holdings files -- no API key.
+
+on:
+  schedule:
+    - cron: "47 5 * * 1"
+  workflow_dispatch: {}   # allow manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index-valuation
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      # Full history: `git pull --rebase` in the retry loop below is unreliable
+      # on the default shallow clone.
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Calculate index valuations
+        run: |
+          pip install --quiet yfinance==1.4.1 requests pandas lxml openpyxl
+          python scripts/fetch_index_valuation.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/index_valuation.json data/dow30.json data/russell2000.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update index valuation data [skip ci]"
+          # Other data jobs may push meanwhile; only our own files are touched,
+          # so rebasing onto whatever landed never conflicts.
+          for attempt in 1 2 3 4 5 6; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing onto origin/main."
+            sleep $(( (RANDOM % 15) + 3 ))
+            git pull --rebase --autostash origin main
+          done
+          echo "::error::Could not push after 6 attempts."
+          exit 1

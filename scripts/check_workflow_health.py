@@ -41,6 +41,7 @@ API = "https://api.github.com"
 # fires hours late and getting later (see PRD, Known Technical Debt).
 MAX_AGE_HOURS = {
     "constituents.yml": 24 * 9,      # weekly (Saturdays), 9 days
+    "index-valuation.yml": 24 * 9,   # weekly (Mondays), 9 days
     "market-overview.yml": 24 * 4,   # 3x per weekday, 4 days covers a long weekend
     "screener-data-etfs.yml": 24 * 4,
     "statements.yml": 24 * 9,        # weekly (Saturdays), 9 days

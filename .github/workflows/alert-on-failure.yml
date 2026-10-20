@@ -24,6 +24,7 @@ on:
     workflows:
       - Update Constituents
       - Update Financial Statements
+      - Update Index Valuation Data
       - Update Market Overview Data
       - Update Screener Data (ETFs)
       - Update Stock Data (Parts)

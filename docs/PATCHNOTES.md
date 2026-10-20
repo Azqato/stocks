@@ -2,6 +2,15 @@
 
 ---
 
+## v5.11.0 - 2026-10-20 - Index Valuation feed
+
+### Added
+- **`data/index_valuation.json`**, weekly (Mondays 05:47 UTC, `index-valuation.yml`): trailing P/E, forward P/E and implied earnings growth for the S&P 500, Nasdaq 100, Dow and Russell 2000, for the new Invests Index Valuation page.
+- **`scripts/fetch_index_valuation.py`**: index market cap over index earnings, profitable companies only; forward EPS is the average of Yahoo's estimates for this fiscal year and next. The Dow is price-weighted. Throttled estimates get a slower second pass, and the run aborts without writing below 85% coverage.
+- **`data/dow30.json`** (SSGA DIA holdings, slickcharts fallback) and **`data/russell2000.json`** (Vanguard VTWO holdings), refreshed by the same run and kept when a fetch fails.
+- `alert-on-failure.yml` and `check_workflow_health.py` cover the new workflow.
+- Checked against WSJ's P/E table (2026-10-16): within about 6% for the S&P 500, Nasdaq 100 and Dow. The Russell 2000 differs because its losses outweigh its profits.
+
 ## v5.10.4 - 2026-10-19 - Market Overview: crons moved about 2 hours earlier
 
 ### Changed
