@@ -19,13 +19,15 @@ Method:
                 forward EPS is the average of analysts' estimates for this
                 fiscal year and next (Yahoo's earnings_estimate "0y" and
                 "+1y").
-  Losses: every member's market cap counts, but only profits count as
-  earnings, so a loss-making company adds to the price and nothing to the
-  earnings (the usual index-provider rule). Netting losses was tried: for
-  the Russell 2000 they outweigh the profits (-$149B against +$128B on
-  2026-10-20), making its trailing P/E negative. Counting profitable
-  companies only (v5.11.0) read about 15 / 13.6 against WSJ's 34.62 / 26.32;
-  this rule reads about 24 / 16.5, and brings the Nasdaq 100 within 1-2%.
+  Losses are netted against profits: total market cap over total earnings,
+  the textbook definition (FactSet's too). When an index's total earnings
+  are negative its P/E is not meaningful and is written as null, which the
+  page shows as n/m: the Russell 2000's trailing on 2026-10-20 (losses
+  -$149B against profits +$128B). Its forward nets to 25.33 against WSJ's
+  26.32. Rules tried and dropped (v5.11.0, v5.11.1): profitable companies
+  only (R2K 15.4 / 13.6), and all market cap over profits only (24 / 16.5).
+  Capping each loss at a share of market cap fits WSJ's trailing near 6%
+  but its forward only uncapped, so no one cap is consistent.
   Net income, not the feed's eps field, gives trailing earnings: eps can be
   stale after a split (ASST read -$20.7B of implied loss, against -$0.98B).
   Growth        trailing / forward - 1: the earnings growth the two imply.
@@ -170,15 +172,13 @@ def valuation(idx, tickers, stocks, fwd):
         earn = size * ni / cap if ok(ni) else size / pe if ok(pe) and pe > 0 else None
         if earn is not None:
             cap_t += size
-            if earn > 0:
-                earn_t += earn
-                n_t += 1
+            earn_t += earn
+            n_t += earn > 0
         eps = fwd.get(t)
         if ok(eps):
             cap_f += size
-            if eps > 0:
-                earn_f += size * eps / price
-                n_f += 1
+            earn_f += size * eps / price
+            n_f += eps > 0
     trailing = cap_t / earn_t if earn_t > 0 else None
     forward = cap_f / earn_f if earn_f > 0 else None
     return {
@@ -220,14 +220,15 @@ def main():
     out = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "source": "yahoo",
-        "method": "Market cap / earnings. Every member's market cap counts; only profits count as earnings. Trailing uses the last 12 "
+        "method": "Total market cap / total earnings, losses netted; null when total earnings are negative. Trailing uses the last 12 "
                   "months; forward uses the average of this and next fiscal year's analyst EPS "
                   "estimates. The Dow is price-weighted.",
         "indices": [valuation(idx, lists[idx["key"]], stocks, fwd) for idx in INDICES],
     }
     for r in out["indices"]:
-        if r["trailingPE"] is None or r["forwardPE"] is None:
-            sys.exit(f"ABORT: no P/E for {r['name']}; not overwriting {OUT_PATH}")
+        # Negative total earnings (n/m) is a real answer; no members is not.
+        if not r["trailingCount"] or not r["forwardCount"]:
+            sys.exit(f"ABORT: no earnings data for {r['name']}; not overwriting {OUT_PATH}")
     got = sum(1 for v in fwd.values() if v is not None)
     if got < MIN_FORWARD_SHARE * len(universe):
         sys.exit(f"ABORT: estimates for only {got} of {len(universe)} members (Yahoo throttling?); "

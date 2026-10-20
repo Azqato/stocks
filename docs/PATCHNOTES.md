@@ -2,6 +2,13 @@
 
 ---
 
+## v5.11.2 - 2026-10-20 - Index Valuation: losses netted, n/m when negative
+
+### Changed
+- **Losses are now netted against profits**: total market cap over total earnings, the textbook definition. When an index's total earnings are negative, its P/E (and growth) is written as `null`, shown as n/m on the page. The run no longer aborts on that, only when an index has no earnings data at all.
+- Results against WSJ's table: Russell 2000 forward 25.33 vs 26.32 (was 16.53); its trailing is n/m, since its members' losses (-$149B) outweigh their profits (+$128B). S&P 500 25.74 / 19.44, Nasdaq 100 32.14 / 21.82, Dow 20.45 / 18.80 (unchanged; all 30 profitable).
+- Tried and dropped: capping each loss at a share of market cap. About 6% fits WSJ's Russell 2000 trailing, but its forward fits only uncapped, so no one cap is consistent.
+
 ## v5.11.1 - 2026-10-20 - Index Valuation: losses count in the price
 
 ### Changed
