@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T23:43:33.123815+00:00",
+  "updated": "2026-10-20T23:51:27.939955+00:00",
   "source": "yahoo",
   "method": "Total market cap / total earnings, losses netted (trailing: each loss capped at 5% of market cap); profits only if the net is not positive. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
   "indices": [
