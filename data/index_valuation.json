@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T21:17:35.722456+00:00",
+  "updated": "2026-10-20T21:43:08.005457+00:00",
   "source": "yahoo",
   "method": "Market cap / earnings, profitable companies only. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
   "indices": [
