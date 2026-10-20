@@ -2,6 +2,13 @@
 
 ---
 
+## v5.11.1 - 2026-10-20 - Index Valuation: losses count in the price
+
+### Changed
+- **Every member's market cap now counts; only profits count as earnings** (was: profitable companies only, for both). A loss-making company adds to the price and nothing to the earnings, the usual index-provider rule. Against WSJ's table: Nasdaq 100 trailing 30.58 vs 30.27 (was 5% off), Russell 2000 23.8 / 16.5 vs 34.62 / 26.32 (was 15.4 / 13.6). Netting losses was ruled out: the Russell 2000's trailing total is negative.
+- **Trailing earnings come from net income** (`netIncome`), falling back to market cap / trailing P/E. The feed's `eps` field can be stale after a split (ASST implied -$20.7B, against -$0.98B net income). Members fetched straight from Yahoo now carry `netIncomeToCommon`.
+- Dow: trailing 20.45 vs 20.85 (net income moved it from 20.95); the 5% forward gap is in the estimates. Using this year's estimates only fits the Dow better but puts the S&P 500 and Nasdaq 100 7-10% off.
+
 ## v5.11.0 - 2026-10-20 - Index Valuation feed
 
 ### Added

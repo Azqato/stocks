@@ -13,17 +13,21 @@ about 6% on both for the S&P 500, Nasdaq 100 and Dow.
 
 Method:
   Trailing P/E  index market cap / index trailing earnings (a company's
-                earnings are its market cap / its trailing P/E, from the
-                stock feed).
+                earnings are its net income from the stock feed, or its
+                market cap / trailing P/E when that is missing).
   Forward P/E   index market cap / index forward earnings, where a company's
                 forward EPS is the average of analysts' estimates for this
                 fiscal year and next (Yahoo's earnings_estimate "0y" and
                 "+1y").
-  Both count profitable companies only, so the two are comparable. Counting
-  losses was tried: for the Russell 2000 the losses outweigh the profits
-  (-$149B against +$128B on 2026-10-20), which makes its P/E meaningless.
-  WSJ's Russell 2000 figures (34.62 / 26.32) can't be reproduced by any one
-  consistent rule; ours read about 15 / 13.
+  Losses: every member's market cap counts, but only profits count as
+  earnings, so a loss-making company adds to the price and nothing to the
+  earnings (the usual index-provider rule). Netting losses was tried: for
+  the Russell 2000 they outweigh the profits (-$149B against +$128B on
+  2026-10-20), making its trailing P/E negative. Counting profitable
+  companies only (v5.11.0) read about 15 / 13.6 against WSJ's 34.62 / 26.32;
+  this rule reads about 24 / 16.5, and brings the Nasdaq 100 within 1-2%.
+  Net income, not the feed's eps field, gives trailing earnings: eps can be
+  stale after a split (ASST read -$20.7B of implied loss, against -$0.98B).
   Growth        trailing / forward - 1: the earnings growth the two imply.
   The Dow is price-weighted, so it sums share prices and EPS instead of
   market caps and earnings.
@@ -127,7 +131,8 @@ def yahoo_quote(t):
     try:
         i = yf.Ticker(t.replace(".", "-")).info
         return {"price": i.get("currentPrice") or i.get("regularMarketPrice"),
-                "marketCap": i.get("marketCap"), "peTTM": i.get("trailingPE")}
+                "marketCap": i.get("marketCap"), "peTTM": i.get("trailingPE"),
+                "netIncome": i.get("netIncomeToCommon")}
     except Exception:
         return {}
 
@@ -159,15 +164,21 @@ def valuation(idx, tickers, stocks, fwd):
         if not (ok(price) and price > 0 and ok(cap) and cap > 0):
             continue
         size = price if price_w else cap
-        if ok(pe) and pe > 0:
+        # Earnings scaled to the company's weight: net income for cap
+        # weighting, EPS for price weighting (size / cap does both).
+        ni = s.get("netIncome")
+        earn = size * ni / cap if ok(ni) else size / pe if ok(pe) and pe > 0 else None
+        if earn is not None:
             cap_t += size
-            earn_t += size / pe
-            n_t += 1
+            if earn > 0:
+                earn_t += earn
+                n_t += 1
         eps = fwd.get(t)
-        if ok(eps) and eps > 0:
+        if ok(eps):
             cap_f += size
-            earn_f += size * eps / price
-            n_f += 1
+            if eps > 0:
+                earn_f += size * eps / price
+                n_f += 1
     trailing = cap_t / earn_t if earn_t > 0 else None
     forward = cap_f / earn_f if earn_f > 0 else None
     return {
@@ -209,7 +220,7 @@ def main():
     out = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "source": "yahoo",
-        "method": "Market cap / earnings, profitable companies only. Trailing uses the last 12 "
+        "method": "Market cap / earnings. Every member's market cap counts; only profits count as earnings. Trailing uses the last 12 "
                   "months; forward uses the average of this and next fiscal year's analyst EPS "
                   "estimates. The Dow is price-weighted.",
         "indices": [valuation(idx, lists[idx["key"]], stocks, fwd) for idx in INDICES],
