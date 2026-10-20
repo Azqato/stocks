@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T22:37:02.103928+00:00",
+  "updated": "2026-10-20T22:40:41.993910+00:00",
   "source": "yahoo",
   "method": "Market cap / earnings. Every member's market cap counts; only profits count as earnings. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
   "indices": [
@@ -41,10 +41,10 @@
       "name": "Russell 2000",
       "weighting": "cap",
       "members": 1990,
-      "trailingCount": 1138,
-      "forwardCount": 1327,
-      "trailingPE": 23.78,
-      "forwardPE": 16.53,
+      "trailingCount": 1136,
+      "forwardCount": 1325,
+      "trailingPE": 23.8,
+      "forwardPE": 16.54,
       "growthPct": 43.9
     }
   ]
