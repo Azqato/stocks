@@ -2,6 +2,15 @@
 
 ---
 
+## v5.12.1 - 2026-10-20 - Earnings calendar: market caps, FOMC dates, US-dollar listings only
+
+### Added
+- **`c` on each report**: market cap in $ millions, so the calendar lists the biggest companies first.
+- **`fomc`**: the Fed's scheduled FOMC meetings (`start`, `end`, `sep` for meetings with economic projections), read from federalreserve.gov's calendar page each run. If the page can't be read or parses to fewer than 8 meetings, the previous file's list is kept.
+
+### Changed
+- **US-dollar listings only**: the International universe's local listings (005930.KS, 6501.T) carried market caps in their own currency, which sorted Samsung's won above Alphabet's dollars. Their dollar ADRs stay. 3,113 reports.
+
 ## v5.12.0 - 2026-10-20 - Earnings dates and calendar; Screener feeds one run behind fixed
 
 ### Added
