@@ -11,13 +11,16 @@ date that old is stale rather than upcoming.
 
 Output:
   { "updated": ISO, "source": "yahoo",
-    "reports": [ {"t", "n", "d", "c"?, "e"?, "time"?, "est"?}, ... ],  sorted by date
+    "reports": [ {"t", "n", "d", "c"?, "u"?, "e"?, "time"?, "est"?}, ... ],  sorted by date
     "fomc": [ {"start", "end", "sep"}, ... ] }
   d     YYYY-MM-DD, US Eastern
   e     last day of an unconfirmed multi-day window (only when present)
   time  "bmo" before the open / "amc" after the close (only when known)
   est   true when the date is Yahoo's estimate (only when true)
   c     market cap in $ millions, so the page can list the biggest first
+  u     the curated universes it belongs to (v5.12.2), one letter each, for the
+        page's filter buttons: s S&P 500, n Nasdaq 100, g Growth, v Value,
+        d Dividend (only when in any)
   fomc  the Fed's scheduled FOMC meetings (v5.12.1), read from its calendar
         page each run; start/end are the two days, the decision comes on
         end at 2:00 pm ET, and sep marks meetings with economic projections.
@@ -40,6 +43,9 @@ from zoneinfo import ZoneInfo
 ET = ZoneInfo("America/New_York")
 KEEP_DAYS = 7  # keep reports this many days back
 FOMC_URL = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+# index.json list key -> one-letter code in "u"; the whole-market list (vti) is
+# every report, so it needs no code.
+UNIVERSES = {"sp500": "s", "nasdaq100": "n", "growth": "g", "value": "v", "dividend": "d"}  # intl: its local listings aren't in dollars, so they're left out above
 MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July",
                                       "August", "September", "October", "November", "December"], 1)}
 
@@ -80,6 +86,26 @@ def fetch_fomc():
     return out
 
 
+def universes():
+    """{ticker: "sn..."} from the curated lists data/stocks/index.json names."""
+    try:
+        with open("data/stocks/index.json", encoding="utf-8") as f:
+            lists = json.load(f)["lists"]
+    except (OSError, ValueError, KeyError):
+        return {}
+    out = {}
+    for key, code in UNIVERSES.items():
+        try:
+            with open(lists[key]["list"], encoding="utf-8") as f:
+                members = json.load(f)
+        except (OSError, ValueError, KeyError):
+            continue
+        for m in members:
+            t = m["t"] if isinstance(m, dict) else m
+            out[t] = out.get(t, "") + code
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("feeds", nargs="*")
@@ -88,7 +114,7 @@ def main():
     feeds = args.feeds or sorted(glob.glob("data/stocks/part-*.json"))
 
     cutoff = (datetime.datetime.now(ET).date() - datetime.timedelta(days=KEEP_DAYS)).isoformat()
-    reports, seen = [], set()
+    reports, seen, uni = [], set(), universes()
     for path in feeds:
         with open(path, encoding="utf-8") as f:
             stocks = json.load(f)["stocks"]
@@ -105,6 +131,8 @@ def main():
             cap = s.get("marketCap")
             if isinstance(cap, (int, float)) and cap > 0:
                 r["c"] = round(cap / 1e6)
+            if uni.get(t):
+                r["u"] = uni[t]
             if s.get("earnDateEnd"):
                 r["e"] = s["earnDateEnd"]
             if s.get("earnTime"):

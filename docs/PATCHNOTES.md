@@ -2,6 +2,11 @@
 
 ---
 
+## v5.12.2 - 2026-10-20 - Earnings calendar: universe codes
+
+### Added
+- **`u` on each report**: the curated universes it belongs to, one letter each (`s` S&P 500, `n` Nasdaq 100, `g` Growth, `v` Value, `d` Dividend), read from the lists `data/stocks/index.json` names, for the calendar's filter buttons. International is left out: its local listings aren't in dollars, so they're already excluded.
+
 ## v5.12.1 - 2026-10-20 - Earnings calendar: market caps, FOMC dates, US-dollar listings only
 
 ### Added
