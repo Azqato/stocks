@@ -177,8 +177,13 @@ jobs:
     if: ${{ !cancelled() }}     # a single failed part still leaves the other feeds derivable
     runs-on: ubuntu-latest
     steps:
+      # ref: main, not the commit the run started from: the parts were pushed
+      # after that, and deriving from the starting commit rebuilt the feeds from
+      # the previous run's parts (found 2026-10-20: screener.json lagged its
+      # parts by one run).
       - uses: actions/checkout@v5
         with:
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-python@v6
@@ -188,11 +193,17 @@ jobs:
       - name: Derive the per-list feeds from the parts
         run: python scripts/build_legacy_feeds.py
 
+      # Every stock's next earnings report, in one small file for the Invests
+      # Earnings Calendar (v5.12.0). Daily runs refresh the curated universes'
+      # dates; the Sunday run refreshes the whole market's.
+      - name: Build the earnings calendar
+        run: python scripts/build_earnings_calendar.py
+
       - name: Commit feeds
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/screener.json data/screener_sp500.json data/screener_gvd.json data/screener_intl.json
+          git add data/screener.json data/screener_sp500.json data/screener_gvd.json data/screener_intl.json data/earnings_calendar.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

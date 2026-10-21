@@ -74,10 +74,12 @@ import json
 import os
 import sys
 import time
+from zoneinfo import ZoneInfo
 
 import yfinance as yf
 
 DEFAULT_LIST = "data/nasdaq100.json"
+ET = ZoneInfo("America/New_York")  # earnings dates are US Eastern
 DEFAULT_OUT = "data/screener.json"
 PARTS_DIR = "data/stocks"
 PAUSE = float(os.environ.get("PAUSE", "0.8"))
@@ -231,6 +233,38 @@ def statements_balance(symbol):
     return latest("cash"), latest("totalDebt")
 
 
+def earnings_date(info):
+    """The next earnings report, from the same quote (v5.12.0), for the
+    Invests Earnings Calendar.
+
+    earnDate     YYYY-MM-DD in US Eastern time, or None.
+    earnDateEnd  last day of Yahoo's window when the date is not confirmed and
+                 spans several days; otherwise None.
+    earnTime     "bmo" (before the open, report before 09:30 ET), "amc" (after
+                 the close, 15:00 ET or later), or None (during the session,
+                 or unknown: Yahoo often stamps unconfirmed dates at midnight).
+                 15:00, not 16:00: Yahoo converts future times with daylight
+                 time, so after the clocks change a 16:00 report reads 15:00
+                 EST (AAPL, AMD, NVDA for November 2026). Reports in the last
+                 trading hour are rare enough to call after the close.
+    earnEst      True when Yahoo marks the date as an estimate, not confirmed.
+    Yahoo keeps the last report's timestamp until the next is announced, so a
+    date in the past is normal; the calendar filters by date.
+    """
+    start = num(info.get("earningsTimestampStart")) or num(info.get("earningsTimestamp"))
+    if start is None:
+        return {"earnDate": None, "earnDateEnd": None, "earnTime": None, "earnEst": None}
+    end = num(info.get("earningsTimestampEnd"))
+    s = datetime.datetime.fromtimestamp(start, ET)
+    e = datetime.datetime.fromtimestamp(end, ET) if end is not None else s
+    est = bool(info.get("isEarningsDateEstimate"))
+    hm = s.hour * 60 + s.minute
+    time_ = None if est and hm == 0 else "bmo" if hm < 9 * 60 + 30 else "amc" if hm >= 15 * 60 else None
+    return {"earnDate": s.date().isoformat(),
+            "earnDateEnd": e.date().isoformat() if e.date() > s.date() else None,
+            "earnTime": time_, "earnEst": est}
+
+
 def fetch(symbol):
     t = yf.Ticker(yahoo_symbol(symbol))
     info = t.info or {}
@@ -310,6 +344,8 @@ def fetch(symbol):
         rec["changePct"] = (rec["price"] / prev - 1) * 100
     else:
         rec["changePct"] = None
+
+    rec.update(earnings_date(info))
 
     rg = num(info.get("revenueGrowth"))
     rec["revTTM"] = rg * 100 if rg is not None else None

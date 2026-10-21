@@ -11,6 +11,7 @@ Served at `azqato.github.io/stocks/data/`:
 | `stocks/` parts, `screener.json`, `screener_sp500.json`, `screener_gvd.json`, `screener_intl.json` | `stock-data.yml` | Mon-Fri 21:37; whole market Sun 21:17 | Invests Screener |
 | `screener_etfs.json` (36 funds from `etfs.json`) | `screener-data-etfs.yml` | Mon-Fri 22:12 | Invests Screener (ETFs) |
 | `market_overview.json` | `market-overview.yml` | Mon-Fri 13:47, 17:07, 21:07 (about 2h early, for GitHub's lag) | Invests Market Overview: 69 symbols, price, change, 52-week range, 10-day RSI; Fed Funds and CPI from FRED |
+| `earnings_calendar.json` | `stock-data.yml` (after the parts) | with the stock data | Invests Earnings Calendar: every stock's next earnings date, before/after the open, from the stock parts' `earnDate` fields |
 | `index_valuation.json` | `index-valuation.yml` | Mondays 05:47 | Invests Index Valuation: trailing and forward P/E, and implied earnings growth, for the S&P 500, Nasdaq 100, Dow and Russell 2000, calculated from member stocks |
 | `statements/<TICKER>.json` | `statements.yml` | daily 02:17, 1,000 oldest a night | Automate Fundamentals |
 | Index and fund membership lists | `constituents.yml` | Sat 23:17 | the jobs above |

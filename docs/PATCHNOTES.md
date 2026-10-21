@@ -2,6 +2,15 @@
 
 ---
 
+## v5.12.0 - 2026-10-20 - Earnings dates and calendar; Screener feeds one run behind fixed
+
+### Added
+- **Earnings dates on every stock**: `fetch_screener_data.py` stores `earnDate` (US Eastern), `earnDateEnd` (when Yahoo gives only a window), `earnTime` (`bmo` / `amc`) and `earnEst` (not yet confirmed), from the quote it already fetches, so no extra requests. Yahoo converts future times with daylight time, so after the November clock change a 16:00 report reads 15:00 EST; 15:00 or later counts as after the close.
+- **`data/earnings_calendar.json`**, written by the new `build_earnings_calendar.py` in `stock-data.yml`'s feeds job: every stock's next report (ticker, name, date, time), kept from a week back, for the new Invests Earnings Calendar. Seeded from a local Nasdaq 100 run (96 reports); the first full run fills in the rest.
+
+### Fixed
+- **The derived Screener feeds were one run behind.** The feeds job checked out the commit the run started from, before the parts were pushed, so `screener.json` and the other three were rebuilt from the previous run's parts (2026-10-21: part-01 had AAPL at 339.50, `screener.json` 342.94). It now checks out `main`.
+
 ## v5.11.3 - 2026-10-20 - Index Valuation: trailing losses capped, never n/m
 
 ### Changed
