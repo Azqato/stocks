@@ -9,28 +9,28 @@
  ],
  "income": {
   "revenue": [
-   null,
-   null,
-   null,
-   null
+   3211610.0,
+   2964377.0,
+   3298361.0,
+   3554712.0
   ],
   "grossProfit": [
-   null,
-   null,
-   null,
-   null
+   1410657.0,
+   1289164.0,
+   1688925.0,
+   2062922.0
   ],
   "operatingIncome": [
-   null,
-   null,
-   null,
-   null
+   -6555188.0,
+   -4406199.0,
+   -182032.0,
+   253158.0
   ],
   "netIncome": [
-   null,
-   null,
-   null,
-   null
+   -4953142.0,
+   -3677030.0,
+   -183700.0,
+   386128.0
   ],
   "epsDiluted": [
    -0.295,
@@ -39,16 +39,16 @@
    0.027819
   ],
   "ebit": [
-   null,
-   null,
-   null,
-   null
+   -5120294.0,
+   -3763951.0,
+   -137214.0,
+   281256.0
   ],
   "interestExpense": [
-   null,
-   null,
-   null,
-   null
+   0.0,
+   4491.0,
+   25550.0,
+   30393.0
   ],
   "dilutedShares": [
    30972510.0,
@@ -59,48 +59,48 @@
  },
  "balance": {
   "cash": [
-   20713480.0,
-   null,
-   null,
-   null
+   22200258.0,
+   28668169.0,
+   457142.0,
+   646294.0
   ],
   "totalAssets": [
-   28849306.0,
-   null,
-   null,
-   null
+   48093598.0,
+   34751338.0,
+   5211893.0,
+   4749169.0
   ],
   "totalDebt": [
-   20090564.0,
-   null,
-   null,
-   null
+   803421.0,
+   933778.0,
+   967924.0,
+   1148611.0
   ],
   "equity": [
-   383493.0,
-   null,
-   null,
-   null
+   46642020.0,
+   32715258.0,
+   1069464.0,
+   1246636.0
   ]
  },
  "cashflow": {
   "operatingCashFlow": [
-   null,
-   null,
-   null,
-   null
+   -1599180.0,
+   -2028348.0,
+   89676.0,
+   848032.0
   ],
   "capex": [
-   null,
-   null,
-   null,
-   null
+   -651530.0,
+   -1074008.0,
+   -126679.0,
+   -251389.0
   ],
   "freeCashFlow": [
-   null,
-   null,
-   null,
-   null
+   -2250710.0,
+   -3102356.0,
+   -37003.0,
+   596643.0
   ],
   "dividendsPaid": [
    null,
@@ -115,15 +115,14 @@
    null
   ],
   "stockComp": [
-   null,
-   null,
-   null,
+   3426958.0,
+   1890958.0,
+   0.0,
    null
   ]
  },
- "revCagr3y": null,
+ "revCagr3y": -0.4929778670567875,
  "fcfGrowth": null,
  "cur": "USD",
- "noStatements": true,
- "updated": "2026-10-21T07:38:34.812734Z"
+ "updated": "2026-10-25T07:34:56.357372Z"
 }
