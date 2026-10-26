@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T23:51:27.939955+00:00",
+  "updated": "2026-10-26T11:38:14.336063+00:00",
   "source": "yahoo",
   "method": "Total market cap / total earnings, losses netted (trailing: each loss capped at 5% of market cap); profits only if the net is not positive. Trailing uses the last 12 months; forward uses the average of this and next fiscal year's analyst EPS estimates. The Dow is price-weighted.",
   "indices": [
@@ -10,9 +10,9 @@
       "members": 500,
       "trailingCount": 475,
       "forwardCount": 496,
-      "trailingPE": 25.54,
-      "forwardPE": 19.44,
-      "growthPct": 31.3
+      "trailingPE": 25.12,
+      "forwardPE": 19.23,
+      "growthPct": 30.6
     },
     {
       "key": "nasdaq100",
@@ -21,9 +21,9 @@
       "members": 100,
       "trailingCount": 91,
       "forwardCount": 95,
-      "trailingPE": 31.38,
-      "forwardPE": 21.82,
-      "growthPct": 43.8
+      "trailingPE": 30.29,
+      "forwardPE": 21.15,
+      "growthPct": 43.2
     },
     {
       "key": "dow",
@@ -32,20 +32,20 @@
       "members": 30,
       "trailingCount": 30,
       "forwardCount": 30,
-      "trailingPE": 20.45,
-      "forwardPE": 18.8,
-      "growthPct": 8.8
+      "trailingPE": 20.27,
+      "forwardPE": 18.85,
+      "growthPct": 7.6
     },
     {
       "key": "russell2000",
       "name": "Russell 2000",
       "weighting": "cap",
       "members": 1990,
-      "trailingCount": 1138,
-      "forwardCount": 1327,
-      "trailingPE": 33.02,
-      "forwardPE": 25.33,
-      "growthPct": 30.4
+      "trailingCount": 1136,
+      "forwardCount": 1328,
+      "trailingPE": 33.89,
+      "forwardPE": 25.94,
+      "growthPct": 30.7
     }
   ]
 }
