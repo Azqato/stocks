@@ -10,7 +10,7 @@
  "income": {
   "revenue": [
    0.0,
-   null,
+   0.0,
    null,
    null
   ],
@@ -22,13 +22,13 @@
   ],
   "operatingIncome": [
    -35404000.0,
-   null,
+   -4505000.0,
    null,
    null
   ],
   "netIncome": [
    -94840000.0,
-   null,
+   -66052000.0,
    null,
    null
   ],
@@ -40,7 +40,7 @@
   ],
   "ebit": [
    -35404000.0,
-   null,
+   -4505000.0,
    null,
    null
   ],
@@ -60,13 +60,13 @@
  "balance": {
   "cash": [
    122831000.0,
-   null,
+   89161000.0,
    null,
    null
   ],
   "totalAssets": [
    126956000.0,
-   null,
+   89350000.0,
    null,
    null
   ],
@@ -78,7 +78,7 @@
   ],
   "equity": [
    -95906000.0,
-   null,
+   -65872000.0,
    null,
    null
   ]
@@ -86,19 +86,19 @@
  "cashflow": {
   "operatingCashFlow": [
    -24150000.0,
-   null,
+   -2014000.0,
    null,
    null
   ],
   "capex": [
    null,
-   null,
+   -33569000.0,
    null,
    null
   ],
   "freeCashFlow": [
    -60747000.0,
-   null,
+   -35583000.0,
    null,
    null
   ],
@@ -116,7 +116,7 @@
   ],
   "stockComp": [
    3022000.0,
-   null,
+   176000.0,
    null,
    null
   ]
@@ -124,5 +124,5 @@
  "revCagr3y": null,
  "fcfGrowth": null,
  "cur": "USD",
- "updated": "2026-10-25T07:34:56.357372Z"
+ "updated": "2026-10-29T08:28:15.827817Z"
 }
