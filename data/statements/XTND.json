@@ -33,9 +33,9 @@
    null
   ],
   "epsDiluted": [
-   null,
-   null,
-   null,
+   -0.131232,
+   -0.107686,
+   -0.0692,
    null
   ],
   "ebit": [
@@ -51,9 +51,9 @@
    null
   ],
   "dilutedShares": [
-   null,
-   null,
-   null,
+   249131959.0,
+   249131959.0,
+   249131959.0,
    null
   ]
  },
@@ -124,5 +124,5 @@
  "revCagr3y": null,
  "fcfGrowth": null,
  "cur": "USD",
- "updated": "2026-10-26T07:47:07.360240Z"
+ "updated": "2026-10-30T08:38:37.878134Z"
 }
