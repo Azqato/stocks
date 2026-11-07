@@ -1,6 +1,6 @@
 # Azqato Stocks: Data Feed
 
-Scheduled jobs that fetch public market data and publish it as JSON for [Azqato Invests](https://azqato.com/invests/) and Automate Fundamentals. The methodology pages moved to Azqato Invests on 2026-10-02; the old page addresses here only redirect there.
+Scheduled jobs that fetch public market data and publish it as JSON.
 
 ## What it publishes
 
