@@ -3,9 +3,9 @@
  "source": "yahoo",
  "columns": [
   "TTM",
-  "FY2025",
-  "FY2024",
-  "FY2023"
+  null,
+  null,
+  null
  ],
  "income": {
   "revenue": [
@@ -33,10 +33,10 @@
    null
   ],
   "epsDiluted": [
-   -0.295,
-   -0.27,
-   -0.013235,
-   0.027819
+   null,
+   null,
+   null,
+   null
   ],
   "ebit": [
    null,
@@ -51,22 +51,22 @@
    null
   ],
   "dilutedShares": [
-   30972510.0,
-   13859559.0,
-   13880000.0,
-   13880000.0
+   null,
+   null,
+   null,
+   null
   ]
  },
  "balance": {
   "cash": [
    20713480.0,
-   630408.0,
+   null,
    null,
    null
   ],
   "totalAssets": [
    28849306.0,
-   642436.0,
+   null,
    null,
    null
   ],
@@ -78,7 +78,7 @@
   ],
   "equity": [
    383493.0,
-   -808512.0,
+   null,
    null,
    null
   ]
@@ -125,5 +125,5 @@
  "fcfGrowth": null,
  "cur": "USD",
  "noStatements": true,
- "updated": "2026-11-06T09:23:03.783363Z"
+ "updated": "2026-11-10T09:48:09.132985Z"
 }
