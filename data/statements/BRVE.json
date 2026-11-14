@@ -10,7 +10,7 @@
  "income": {
   "revenue": [
    0.0,
-   null,
+   0.0,
    null,
    null
   ],
@@ -21,26 +21,26 @@
    null
   ],
   "operatingIncome": [
-   -35404000.0,
-   null,
+   -68062000.0,
+   -66749000.0,
    null,
    null
   ],
   "netIncome": [
-   -94840000.0,
-   null,
+   -62217000.0,
+   -66052000.0,
    null,
    null
   ],
   "epsDiluted": [
-   -1.345881,
+   -0.73115,
    -5.32,
    null,
    null
   ],
   "ebit": [
-   -35404000.0,
-   null,
+   -68062000.0,
+   -66749000.0,
    null,
    null
   ],
@@ -51,7 +51,7 @@
    null
   ],
   "dilutedShares": [
-   73152838.0,
+   90038969.0,
    12411309.0,
    null,
    null
@@ -59,46 +59,46 @@
  },
  "balance": {
   "cash": [
-   122831000.0,
-   null,
+   121291000.0,
+   89161000.0,
    null,
    null
   ],
   "totalAssets": [
-   126956000.0,
-   null,
+   514450000.0,
+   89350000.0,
    null,
    null
   ],
   "totalDebt": [
-   575000.0,
+   515000.0,
    null,
    null,
    null
   ],
   "equity": [
-   -95906000.0,
-   null,
+   497602000.0,
+   84017000.0,
    null,
    null
   ]
  },
  "cashflow": {
   "operatingCashFlow": [
-   -24150000.0,
-   null,
+   -47783000.0,
+   -2014000.0,
    null,
    null
   ],
   "capex": [
-   null,
-   null,
+   -3863000.0,
+   -33569000.0,
    null,
    null
   ],
   "freeCashFlow": [
-   -60747000.0,
-   null,
+   -51646000.0,
+   -35583000.0,
    null,
    null
   ],
@@ -115,8 +115,8 @@
    null
   ],
   "stockComp": [
-   3022000.0,
-   null,
+   11957000.0,
+   176000.0,
    null,
    null
   ]
@@ -124,5 +124,5 @@
  "revCagr3y": null,
  "fcfGrowth": null,
  "cur": "USD",
- "updated": "2026-11-10T09:48:09.132985Z"
+ "updated": "2026-11-14T08:57:51.767285Z"
 }
