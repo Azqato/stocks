@@ -59,25 +59,25 @@
  },
  "balance": {
   "cash": [
-   122357000.0,
+   116182000.0,
    null,
    null,
    null
   ],
   "totalAssets": [
-   209772000.0,
+   197373000.0,
    null,
    null,
    null
   ],
   "totalDebt": [
-   613000.0,
+   598000.0,
    null,
    null,
    null
   ],
   "equity": [
-   190604000.0,
+   177633000.0,
    null,
    null,
    null
@@ -125,5 +125,5 @@
  "fcfGrowth": null,
  "cur": "USD",
  "noStatements": true,
- "updated": "2026-11-16T09:40:58.320892Z"
+ "updated": "2026-11-20T10:00:12.301837Z"
 }
