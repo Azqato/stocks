@@ -3,14 +3,14 @@
  "source": "yahoo",
  "columns": [
   "TTM",
-  null,
+  "FY2025",
   null,
   null
  ],
  "income": {
   "revenue": [
-   null,
-   null,
+   2622807.0,
+   2267481.0,
    null,
    null
   ],
@@ -21,26 +21,26 @@
    null
   ],
   "operatingIncome": [
-   null,
-   null,
+   -4055416.0,
+   -3652627.0,
    null,
    null
   ],
   "netIncome": [
-   null,
-   null,
+   -2346302.0,
+   -3253331.0,
    null,
    null
   ],
   "epsDiluted": [
-   null,
-   null,
+   -0.014168,
+   -0.019645,
    null,
    null
   ],
   "ebit": [
-   null,
-   null,
+   -2424148.0,
+   -3278471.0,
    null,
    null
   ],
@@ -51,42 +51,42 @@
    null
   ],
   "dilutedShares": [
-   null,
-   null,
+   165605608.0,
+   165605608.0,
    null,
    null
   ]
  },
  "balance": {
   "cash": [
-   20713480.0,
-   null,
+   21707051.0,
+   630408.0,
    null,
    null
   ],
   "totalAssets": [
-   28849306.0,
-   null,
+   48210653.0,
+   642436.0,
    null,
    null
   ],
   "totalDebt": [
-   20000000.0,
+   743674.0,
    null,
    null,
    null
   ],
   "equity": [
-   383493.0,
-   null,
+   46423899.0,
+   -808512.0,
    null,
    null
   ]
  },
  "cashflow": {
   "operatingCashFlow": [
-   null,
-   null,
+   -785943.0,
+   -1503399.0,
    null,
    null
   ],
@@ -97,8 +97,8 @@
    null
   ],
   "freeCashFlow": [
-   null,
-   null,
+   -1043538.0,
+   -2350451.0,
    null,
    null
   ],
@@ -124,6 +124,5 @@
  "revCagr3y": null,
  "fcfGrowth": null,
  "cur": "USD",
- "noStatements": true,
- "updated": "2026-11-18T10:08:21.217547Z"
+ "updated": "2026-11-22T09:45:35.961134Z"
 }
