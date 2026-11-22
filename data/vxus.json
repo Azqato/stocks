@@ -8,20 +8,12 @@
     "n": "Samsung Electronics Co."
   },
   {
-    "t": "000660.KS",
-    "n": "SK hynix"
-  },
-  {
     "t": "ASML.AS",
     "n": "ASML Holding"
   },
   {
-    "t": "0700.HK",
-    "n": "Tencent Holdings"
-  },
-  {
-    "t": "HSBA.L",
-    "n": "HSBC Holdings"
+    "t": "000660.KS",
+    "n": "SK hynix"
   },
   {
     "t": "ROP.SW",
@@ -32,20 +24,20 @@
     "n": "Shell"
   },
   {
-    "t": "RY.TO",
-    "n": "Royal Bank of Canada"
+    "t": "0700.HK",
+    "n": "Tencent Holdings"
   },
   {
     "t": "NOVN.SW",
     "n": "Novartis"
   },
   {
-    "t": "9988.HK",
-    "n": "Alibaba Group Holding"
+    "t": "HSBA.L",
+    "n": "HSBC Holdings"
   },
   {
-    "t": "8306.T",
-    "n": "Mitsubishi UFJ Financial Group"
+    "t": "RY.TO",
+    "n": "Royal Bank of Canada"
   },
   {
     "t": "AZN.L",
@@ -56,24 +48,20 @@
     "n": "Nestle"
   },
   {
-    "t": "2454.TW",
-    "n": "MediaTek"
+    "t": "8306.T",
+    "n": "Mitsubishi UFJ Financial Group"
   },
   {
-    "t": "SIE.DE",
-    "n": "Siemens"
-  },
-  {
-    "t": "BHP.AX",
-    "n": "BHP Group"
+    "t": "9988.HK",
+    "n": "Alibaba Group Holding"
   },
   {
     "t": "SAP.DE",
     "n": "SAP"
   },
   {
-    "t": "SAN.MC",
-    "n": "Banco Santander"
+    "t": "SIE.DE",
+    "n": "Siemens"
   },
   {
     "t": "TD",
@@ -84,284 +72,292 @@
     "n": "Toyota Motor"
   },
   {
-    "t": "SHOP",
-    "n": "Shopify Inc. Class A"
-  },
-  {
-    "t": "ALV.DE",
-    "n": "Allianz"
-  },
-  {
-    "t": "SU.PA",
-    "n": "Schneider Electric"
+    "t": "BHP.AX",
+    "n": "BHP Group"
   },
   {
     "t": "CBA.AX",
     "n": "Commonwealth Bank of Australia"
   },
   {
+    "t": "SHOP",
+    "n": "Shopify Inc. Class A"
+  },
+  {
     "t": "TTE.PA",
     "n": "TotalEnergies"
   },
   {
-    "t": "8035.T",
-    "n": "Tokyo Electron"
+    "t": "ALV.DE",
+    "n": "Allianz"
   },
   {
-    "t": "RR.L",
-    "n": "Rolls-Royce Holdings"
-  },
-  {
-    "t": "6857.T",
-    "n": "Advantest"
-  },
-  {
-    "t": "8316.T",
-    "n": "Sumitomo Mitsui Financial Group"
-  },
-  {
-    "t": "BBVA.MC",
-    "n": "Banco Bilbao Vizcaya Argentaria"
+    "t": "2454.TW",
+    "n": "MediaTek"
   },
   {
     "t": "IBE.MC",
     "n": "Iberdrola"
   },
   {
-    "t": "6501.T",
-    "n": "Hitachi"
-  },
-  {
-    "t": "9984.T",
-    "n": "SoftBank Group"
-  },
-  {
-    "t": "UBSG.SW",
-    "n": "UBS Group"
-  },
-  {
-    "t": "ABBN.SW",
-    "n": "ABB"
-  },
-  {
     "t": "6098.T",
     "n": "Recruit Holdings Co."
+  },
+  {
+    "t": "SAN.MC",
+    "n": "Banco Santander"
+  },
+  {
+    "t": "6857.T",
+    "n": "Advantest"
+  },
+  {
+    "t": "SU.PA",
+    "n": "Schneider Electric"
   },
   {
     "t": "6758.T",
     "n": "Sony Group"
   },
   {
-    "t": "RIO.L",
-    "n": "Rio Tinto"
+    "t": "UBSG.SW",
+    "n": "UBS Group"
   },
   {
-    "t": "285A.T",
-    "n": "Kioxia Holdings"
+    "t": "8316.T",
+    "n": "Sumitomo Mitsui Financial Group"
   },
   {
-    "t": "UCG.MI",
-    "n": "UniCredit SPA"
+    "t": "6501.T",
+    "n": "Hitachi"
   },
   {
-    "t": "8411.T",
-    "n": "Mizuho Financial Group"
-  },
-  {
-    "t": "SAF.PA",
-    "n": "Safran"
+    "t": "RR.L",
+    "n": "Rolls-Royce Holdings"
   },
   {
     "t": "ULVR.L",
     "n": "Unilever"
   },
   {
-    "t": "AIR.PA",
-    "n": "Airbus"
+    "t": "8035.T",
+    "n": "Tokyo Electron"
   },
   {
-    "t": "D05.SI",
-    "n": "DBS Group Holdings"
+    "t": "ABBN.SW",
+    "n": "ABB"
   },
   {
-    "t": "ENR.DE",
-    "n": "Siemens Energy"
-  },
-  {
-    "t": "NOVO-B.CO",
-    "n": "Novo Nordisk A/S Class B"
-  },
-  {
-    "t": "BMO.TO",
-    "n": "Bank of Montreal"
+    "t": "BBVA.MC",
+    "n": "Banco Bilbao Vizcaya Argentaria"
   },
   {
     "t": "BP.L",
     "n": "BP"
   },
   {
-    "t": "2308.TW",
-    "n": "Delta Electronics"
+    "t": "NOVO-B.CO",
+    "n": "Novo Nordisk A/S Class B"
   },
   {
-    "t": "ISP.MI",
-    "n": "Intesa Sanpaolo SPA (Registered)"
-  },
-  {
-    "t": "CFR.SW",
-    "n": "Cie Financiere Richemont"
-  },
-  {
-    "t": "BNS.TO",
-    "n": "Bank of Nova Scotia"
+    "t": "AIR.PA",
+    "n": "Airbus"
   },
   {
     "t": "BATS.L",
     "n": "British American Tobacco"
   },
   {
+    "t": "BMO.TO",
+    "n": "Bank of Montreal"
+  },
+  {
+    "t": "RIO.L",
+    "n": "Rio Tinto"
+  },
+  {
     "t": "0939.HK",
     "n": "China Construction Bank Corp. Class H"
+  },
+  {
+    "t": "D05.SI",
+    "n": "DBS Group Holdings"
+  },
+  {
+    "t": "BNS.TO",
+    "n": "Bank of Nova Scotia"
+  },
+  {
+    "t": "UCG.MI",
+    "n": "UniCredit SPA"
   },
   {
     "t": "AI.PA",
     "n": "Air Liquide"
   },
   {
-    "t": "MC.PA",
-    "n": "LVMH Moet Hennessy Louis Vuitton"
+    "t": "CNQ.TO",
+    "n": "Canadian Natural Resources"
   },
   {
-    "t": "BNP.PA",
-    "n": "BNP Paribas"
-  },
-  {
-    "t": "ENB.TO",
-    "n": "Enbridge"
-  },
-  {
-    "t": "INGA.AS",
-    "n": "ING Groep"
-  },
-  {
-    "t": "DTE.DE",
-    "n": "Deutsche Telekom"
-  },
-  {
-    "t": "CM.TO",
-    "n": "Canadian Imperial Bank of Commerce"
+    "t": "8411.T",
+    "n": "Mizuho Financial Group"
   },
   {
     "t": "ZURN.SW",
     "n": "Zurich Insurance Group"
   },
   {
+    "t": "ENB.TO",
+    "n": "Enbridge"
+  },
+  {
+    "t": "CM.TO",
+    "n": "Canadian Imperial Bank of Commerce"
+  },
+  {
+    "t": "CFR.SW",
+    "n": "Cie Financiere Richemont"
+  },
+  {
+    "t": "ENR.DE",
+    "n": "Siemens Energy"
+  },
+  {
+    "t": "MC.PA",
+    "n": "LVMH Moet Hennessy Louis Vuitton"
+  },
+  {
     "t": "OR.PA",
     "n": "L'Oreal"
   },
   {
-    "t": "GSK.L",
-    "n": "GSK"
+    "t": "SAF.PA",
+    "n": "Safran"
   },
   {
-    "t": "1299.HK",
-    "n": "AIA Group"
-  },
-  {
-    "t": "2317.TW",
-    "n": "Hon Hai Precision Industry Co."
-  },
-  {
-    "t": "CNQ.TO",
-    "n": "Canadian Natural Resources"
-  },
-  {
-    "t": "8058.T",
-    "n": "Mitsubishi"
-  },
-  {
-    "t": "6861.T",
-    "n": "Keyence"
+    "t": "9984.T",
+    "n": "SoftBank Group"
   },
   {
     "t": "8766.T",
     "n": "Tokio Marine Holdings"
   },
   {
-    "t": "AEM",
-    "n": "Agnico Eagle Mines"
+    "t": "ISP.MI",
+    "n": "Intesa Sanpaolo SPA (Registered)"
   },
   {
-    "t": "SAN.PA",
-    "n": "Sanofi"
+    "t": "DTE.DE",
+    "n": "Deutsche Telekom"
+  },
+  {
+    "t": "1299.HK",
+    "n": "AIA Group"
+  },
+  {
+    "t": "GSK.L",
+    "n": "GSK"
   },
   {
     "t": "INVE-B.ST",
     "n": "Investor AB Class B"
   },
   {
-    "t": "8001.T",
-    "n": "ITOCHU"
+    "t": "8058.T",
+    "n": "Mitsubishi"
   },
   {
-    "t": "IFX.DE",
-    "n": "Infineon Technologies"
-  },
-  {
-    "t": "6981.T",
-    "n": "Murata Manufacturing Co."
-  },
-  {
-    "t": "HDFCBANK.NS",
-    "n": "HDFC Bank"
-  },
-  {
-    "t": "NAB.AX",
-    "n": "National Australia Bank"
-  },
-  {
-    "t": "RELIANCE.NS",
-    "n": "Reliance Industries"
-  },
-  {
-    "t": "WBC.AX",
-    "n": "Westpac Banking"
-  },
-  {
-    "t": "LLOY.L",
-    "n": "Lloyds Banking Group"
-  },
-  {
-    "t": "9983.T",
-    "n": "Fast Retailing Co."
-  },
-  {
-    "t": "BARC.L",
-    "n": "Barclays"
-  },
-  {
-    "t": "O39.SI",
-    "n": "Oversea-Chinese Banking Corp"
+    "t": "SAN.PA",
+    "n": "Sanofi"
   },
   {
     "t": "SU.TO",
     "n": "Suncor Energy"
   },
   {
+    "t": "BNP.PA",
+    "n": "BNP Paribas"
+  },
+  {
+    "t": "8001.T",
+    "n": "ITOCHU"
+  },
+  {
+    "t": "6861.T",
+    "n": "Keyence"
+  },
+  {
+    "t": "INGA.AS",
+    "n": "ING Groep"
+  },
+  {
+    "t": "2317.TW",
+    "n": "Hon Hai Precision Industry Co."
+  },
+  {
+    "t": "NAB.AX",
+    "n": "National Australia Bank"
+  },
+  {
+    "t": "285A.T",
+    "n": "Kioxia Holdings"
+  },
+  {
+    "t": "WBC.AX",
+    "n": "Westpac Banking"
+  },
+  {
+    "t": "9983.T",
+    "n": "Fast Retailing Co."
+  },
+  {
     "t": "ANZ.AX",
     "n": "ANZ Group Holdings"
   },
   {
-    "t": "7011.T",
-    "n": "Mitsubishi Heavy Industries"
+    "t": "NG.L",
+    "n": "National Grid"
   },
   {
-    "t": "ATCO-A.ST",
-    "n": "Atlas Copco AB Class A"
+    "t": "AEM",
+    "n": "Agnico Eagle Mines"
+  },
+  {
+    "t": "HDFCBANK.NS",
+    "n": "HDFC Bank"
+  },
+  {
+    "t": "RELIANCE.NS",
+    "n": "Reliance Industries"
+  },
+  {
+    "t": "BN.TO",
+    "n": "Brookfield Corp. Class A"
+  },
+  {
+    "t": "BA.L",
+    "n": "BAE Systems"
   },
   {
     "t": "1398.HK",
     "n": "Industrial & Commercial Bank of China"
+  },
+  {
+    "t": "CP.TO",
+    "n": "Canadian Pacific Kansas City"
+  },
+  {
+    "t": "MUV2.DE",
+    "n": "Muenchener Rueckversicherungs-Gesellschaft AG in Muenchen"
+  },
+  {
+    "t": "ICICIBANK.NS",
+    "n": "ICICI Bank"
+  },
+  {
+    "t": "ENEL.MI",
+    "n": "Enel SPA"
   },
   {
     "t": "CS.PA",
@@ -372,28 +368,32 @@
     "n": "Mitsui & Co"
   },
   {
-    "t": "BN.TO",
-    "n": "Brookfield Corp. Class A"
+    "t": "2308.TW",
+    "n": "Delta Electronics"
   },
   {
-    "t": "NG.L",
-    "n": "National Grid"
+    "t": "ABI.BR",
+    "n": "Anheuser-Busch InBev SA/NV"
   },
   {
-    "t": "BA.L",
-    "n": "BAE Systems"
+    "t": "BARC.L",
+    "n": "Barclays"
   },
   {
-    "t": "CP.TO",
-    "n": "Canadian Pacific Kansas City"
+    "t": "MFC.TO",
+    "n": "Manulife Financial"
   },
   {
-    "t": "402340.KS",
-    "n": "SK Square Co"
+    "t": "IFX.DE",
+    "n": "Infineon Technologies"
   },
   {
-    "t": "ENEL.MI",
-    "n": "Enel SPA"
+    "t": "O39.SI",
+    "n": "Oversea-Chinese Banking Corp"
+  },
+  {
+    "t": "LLOY.L",
+    "n": "Lloyds Banking Group"
   },
   {
     "t": "GLEN.L",
