@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T03:15:16.057685Z",
+  "updated": "2026-11-23T01:49:33.807128Z",
   "source": "yahoo",
   "stocks": {
     "ADBE": {
@@ -41,7 +41,7 @@
       "eps": 17.91,
       "pb": 7.236016,
       "evRevenue": 3.307,
-      "pegTTM": 0.5339,
+      "pegTTM": 0.5243,
       "roa": 20.075001,
       "ebitdaMargin": 38.186002,
       "quickRatio": 0.65,
@@ -58,8 +58,8 @@
       "low52": 190.12,
       "ma200": 246.36365,
       "change52w": -31.694537,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AMD": {
       "t": "AMD",
@@ -100,7 +100,7 @@
       "eps": 4.68,
       "pb": 10.176974,
       "evRevenue": 15.175,
-      "pegTTM": 0.4376,
+      "pegTTM": 0.3797,
       "roa": 5.8950000000000005,
       "ebitdaMargin": 24.525,
       "quickRatio": 1.725,
@@ -111,14 +111,14 @@
       "heldInsiders": 0.44600000000000006,
       "heldInstitutions": 75.33,
       "targetMean": 657.74286,
-      "analystRating": 1.35185,
+      "analystRating": 1.33333,
       "analystCount": 49.0,
       "high52": 658.52,
       "low52": 188.22,
       "ma200": 429.7861,
       "change52w": 97.344804,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ABNB": {
       "t": "ABNB",
@@ -176,8 +176,8 @@
       "low52": 113.38,
       "ma200": 150.41302,
       "change52w": 48.903071999999995,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ALNY": {
       "t": "ALNY",
@@ -235,8 +235,8 @@
       "low52": 143.4,
       "ma200": 270.71115,
       "change52w": -66.8793,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "GOOGL": {
       "t": "GOOGL",
@@ -294,8 +294,8 @@
       "low52": 264.22,
       "ma200": 336.97345,
       "change52w": -16.727352,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AMZN": {
       "t": "AMZN",
@@ -353,8 +353,8 @@
       "low52": 196.0,
       "ma200": 245.15054,
       "change52w": 9.077251,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AEP": {
       "t": "AEP",
@@ -412,8 +412,8 @@
       "low52": 112.54,
       "ma200": 128.77174,
       "change52w": 2.5401473,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AMGN": {
       "t": "AMGN",
@@ -465,14 +465,14 @@
       "heldInsiders": 0.23800000000000002,
       "heldInstitutions": 85.00700599999999,
       "targetMean": 440.779,
-      "analystRating": 2.70588,
+      "analystRating": 2.65714,
       "analystCount": 30.0,
       "high52": 483.99,
       "low52": 312.39,
       "ma200": 383.4049,
       "change52w": 30.314088,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ADI": {
       "t": "ADI",
@@ -524,14 +524,14 @@
       "heldInsiders": 0.25600002,
       "heldInstitutions": 93.438005,
       "targetMean": 474.46875,
-      "analystRating": 1.35294,
+      "analystRating": 1.32353,
       "analystCount": 32.0,
       "high52": 445.91,
       "low52": 229.29,
       "ma200": 378.1163,
       "change52w": 44.49457,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AAPL": {
       "t": "AAPL",
@@ -589,8 +589,8 @@
       "low52": 243.42,
       "ma200": 303.2406,
       "change52w": 24.151933,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AMAT": {
       "t": "AMAT",
@@ -642,14 +642,14 @@
       "heldInsiders": 0.373,
       "heldInstitutions": 85.04599999999999,
       "targetMean": 557.8611,
-      "analystRating": 1.475,
+      "analystRating": 1.45,
       "analystCount": 36.0,
       "high52": 739.67,
       "low52": 222.86,
       "ma200": 447.1513,
       "change52w": 31.059717999999997,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "APP": {
       "t": "APP",
@@ -707,8 +707,8 @@
       "low52": 225.19,
       "ma200": 404.5539,
       "change52w": -37.783134000000004,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ARM": {
       "t": "ARM",
@@ -749,7 +749,7 @@
       "eps": 0.87,
       "pb": 17.92064,
       "evRevenue": 29.234,
-      "pegTTM": 1.4437,
+      "pegTTM": 1.2402,
       "roa": 5.503,
       "ebitdaMargin": 20.639,
       "quickRatio": 6.123,
@@ -766,16 +766,16 @@
       "low52": 100.02,
       "ma200": 234.50908,
       "change52w": 12.983441000000001,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ASML": {
       "t": "ASML",
       "name": "ASML",
       "price": 1266.22,
       "marketCap": 488023621632.0,
-      "cash": 13976186330.044415,
-      "debt": 2154302272.237056,
+      "cash": 13991539766.488678,
+      "debt": 2156668865.1142144,
       "cur": "USD",
       "prevClose": 1356.2,
       "changePct": -6.634714643857842,
@@ -792,23 +792,23 @@
       "revFwd": 36.189997,
       "pegFwd": 0.68,
       "peTTM": 31.156988,
-      "psTTM": 11.265458713292212,
+      "psTTM": 11.253096706875715,
       "evEbitda": 1664.83,
       "divYield": 0.74,
       "opMargin": 38.551998,
       "roe": 65.636003,
       "debtToEquity": 0.08897000000000001,
       "currentRatio": 1.487,
-      "fcfYield": 2.3329043867257853,
-      "revenue": 43320350644.592636,
-      "ebitda": 17757903384.711166,
-      "netIncome": 14787424326.844416,
-      "ev": 29563884750388.59,
-      "fcf": 11385124477.310976,
+      "fcfYield": 2.3354671816389536,
+      "revenue": 43367939896.38554,
+      "ebitda": 17777411198.54264,
+      "netIncome": 14803668942.808678,
+      "ev": 29596361938001.984,
+      "fcf": 11397631521.861221,
       "eps": 40.64,
       "pb": 1087.2385,
       "evRevenue": 682.448,
-      "pegTTM": 0.7226,
+      "pegTTM": 0.676,
       "roa": 18.276999999999997,
       "ebitdaMargin": 40.992,
       "quickRatio": 0.934,
@@ -818,15 +818,15 @@
       "shortFloat": 0.3,
       "heldInsiders": 0.0089999994,
       "heldInstitutions": 19.927,
-      "targetMean": 2107.5134,
+      "targetMean": 2109.8289,
       "analystRating": 1.36585,
       "analystCount": 17.0,
       "high52": 1999.96,
       "low52": 973.74,
       "ma200": 1601.5038,
       "change52w": 28.18327,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ALAB": {
       "t": "ALAB",
@@ -884,8 +884,8 @@
       "low52": 97.89,
       "ma200": 258.83167,
       "change52w": 22.064292,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ADSK": {
       "t": "ADSK",
@@ -943,8 +943,8 @@
       "low52": 185.5,
       "ma200": 233.97556,
       "change52w": -15.652925000000002,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ADP": {
       "t": "ADP",
@@ -1002,8 +1002,8 @@
       "low52": 188.16,
       "ma200": 244.4385,
       "change52w": 20.635748,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AXON": {
       "t": "AXON",
@@ -1064,8 +1064,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "BKR": {
       "t": "BKR",
@@ -1123,8 +1123,8 @@
       "low52": 44.26,
       "ma200": 59.7334,
       "change52w": -9.2179894,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "BKNG": {
       "t": "BKNG",
@@ -1182,8 +1182,8 @@
       "low52": 144.1,
       "ma200": 173.6786,
       "change52w": -25.69282,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "AVGO": {
       "t": "AVGO",
@@ -1241,8 +1241,8 @@
       "low52": 289.77,
       "ma200": 367.8177,
       "change52w": -19.45973,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CDNS": {
       "t": "CDNS",
@@ -1300,8 +1300,8 @@
       "low52": 262.75,
       "ma200": 328.6536,
       "change52w": -7.517981499999999,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CTAS": {
       "t": "CTAS",
@@ -1359,8 +1359,8 @@
       "low52": 161.16,
       "ma200": 192.618,
       "change52w": 20.778441,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CSCO": {
       "t": "CSCO",
@@ -1418,16 +1418,16 @@
       "low52": 72.8,
       "ma200": 102.68335,
       "change52w": 18.887722,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CCEP": {
       "t": "CCEP",
       "name": "Coca-Cola Europacific",
       "price": 115.53,
       "marketCap": 50657034240.0,
-      "cash": 2188323276.0,
-      "debt": 13376866454.814718,
+      "cash": 2190727242.4,
+      "debt": 13391561512.828928,
       "cur": "USD",
       "prevClose": 114.67,
       "changePct": 0.7499781983081988,
@@ -1444,19 +1444,19 @@
       "revFwd": 3.7699999999999996,
       "pegFwd": 3.13,
       "peTTM": 22.30309,
-      "psTTM": 2.161898063175963,
+      "psTTM": 2.1595257321054793,
       "evEbitda": 17.525,
       "divYield": 2.17,
       "opMargin": 13.568,
       "roe": 23.544,
       "debtToEquity": 1.3906399999999999,
       "currentRatio": 0.889,
-      "fcfYield": 3.4294738693274427,
-      "revenue": 23431740424.237053,
-      "ebitda": 3875110144.237056,
-      "netIncome": 2190518184.0,
-      "ev": 67913025320.04249,
-      "fcf": 1737269752.2370558,
+      "fcfYield": 3.433241292560546,
+      "revenue": 23457481189.914215,
+      "ebitda": 3879367117.914214,
+      "netIncome": 2192924561.6,
+      "ev": 67987630673.27447,
+      "fcf": 1739178217.1142144,
       "eps": 5.18,
       "pb": 5.5055285,
       "evRevenue": 2.898,
@@ -1470,15 +1470,15 @@
       "shortFloat": 9.5699996,
       "heldInsiders": 56.052,
       "heldInstitutions": 38.751000000000005,
-      "targetMean": 113.55255,
+      "targetMean": 113.6773,
       "analystRating": 2.0,
       "analystCount": 12.0,
       "high52": 120.41,
       "low52": 84.66,
       "ma200": 102.5818,
       "change52w": 28.681220000000003,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CMCSA": {
       "t": "CMCSA",
@@ -1536,8 +1536,8 @@
       "low52": 20.48,
       "ma200": 25.7474,
       "change52w": 0.40929317,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CEG": {
       "t": "CEG",
@@ -1595,8 +1595,8 @@
       "low52": 228.63,
       "ma200": 278.30615,
       "change52w": -32.954913000000005,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CPRT": {
       "t": "CPRT",
@@ -1654,8 +1654,8 @@
       "low52": 25.72,
       "ma200": 31.7127,
       "change52w": -20.097661,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CRWV": {
       "t": "CRWV",
@@ -1716,8 +1716,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "COST": {
       "t": "COST",
@@ -1775,8 +1775,8 @@
       "low52": 844.06,
       "ma200": 978.9958,
       "change52w": 24.379313,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CRWD": {
       "t": "CRWD",
@@ -1817,7 +1817,7 @@
       "eps": 0.06,
       "pb": 46.044556,
       "evRevenue": 42.767,
-      "pegTTM": 6.2828,
+      "pegTTM": 5.921,
       "roa": -0.78100003,
       "ebitdaMargin": 1.9800000000000002,
       "quickRatio": 1.366,
@@ -1837,8 +1837,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "CSX": {
       "t": "CSX",
@@ -1896,8 +1896,8 @@
       "low52": 33.97,
       "ma200": 46.6206,
       "change52w": 42.774057,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "DDOG": {
       "t": "DDOG",
@@ -1938,7 +1938,7 @@
       "eps": 0.72,
       "pb": 12.047925,
       "evRevenue": 12.363,
-      "pegTTM": 0.8066,
+      "pegTTM": 0.7625,
       "roa": 0.9079999999999999,
       "ebitdaMargin": 3.9800000000000004,
       "quickRatio": 3.393,
@@ -1955,8 +1955,8 @@
       "low52": 98.01,
       "ma200": 202.50618,
       "change52w": -0.67533255,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "DXCM": {
       "t": "DXCM",
@@ -2014,8 +2014,8 @@
       "low52": 56.72,
       "ma200": 75.3171,
       "change52w": 27.503622,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "FANG": {
       "t": "FANG",
@@ -2056,7 +2056,7 @@
       "eps": 7.43,
       "pb": 1.2594774,
       "evRevenue": 3.845,
-      "pegTTM": 1.1001,
+      "pegTTM": 1.0938,
       "roa": 2.0660000000000003,
       "ebitdaMargin": 72.347,
       "quickRatio": 0.509,
@@ -2073,8 +2073,8 @@
       "low52": 139.41,
       "ma200": 191.41685,
       "change52w": 19.03956,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "DASH": {
       "t": "DASH",
@@ -2132,8 +2132,8 @@
       "low52": 143.3,
       "ma200": 180.48343,
       "change52w": -18.864316,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "EXC": {
       "t": "EXC",
@@ -2191,8 +2191,8 @@
       "low52": 39.73,
       "ma200": 45.7164,
       "change52w": -1.1464417,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "FAST": {
       "t": "FAST",
@@ -2244,22 +2244,22 @@
       "heldInsiders": 0.10300000000000001,
       "heldInstitutions": 89.10299499999999,
       "targetMean": 50.76154,
-      "analystRating": 2.88889,
+      "analystRating": 2.83333,
       "analystCount": 13.0,
       "high52": 56.27,
       "low52": 39.38,
       "ma200": 47.9054,
       "change52w": 27.835310000000003,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "FER": {
       "t": "FER",
       "name": "Ferrovial",
       "price": 57.34,
       "marketCap": 41184006144.0,
-      "cash": 4240562255.9999995,
-      "debt": 11695567769.659391,
+      "cash": 4245220694.3999996,
+      "debt": 11708415849.3995,
       "cur": "USD",
       "prevClose": 59.03,
       "changePct": -2.8629510418431314,
@@ -2276,19 +2276,19 @@
       "revFwd": 6.29,
       "pegFwd": 8.2,
       "peTTM": 31.505493,
-      "psTTM": 3.8063558168273595,
+      "psTTM": 3.8021789611636336,
       "evEbitda": 32.181,
       "divYield": 3.84,
       "opMargin": 11.451,
       "roe": 11.615,
       "debtToEquity": 1.4409100000000001,
       "currentRatio": 1.198,
-      "fcfYield": 2.370635187055823,
-      "revenue": 10819799337.18528,
-      "ebitda": 1698858792.0,
-      "netIncome": 649692768.0,
-      "ev": 54670456611.47136,
-      "fcf": 976322541.0888959,
+      "fcfYield": 2.373239430861499,
+      "revenue": 10831685347.971071,
+      "ebitda": 1700725060.8,
+      "netIncome": 650406483.1999999,
+      "ev": 54730514438.48806,
+      "fcf": 977395073.0178304,
       "eps": 1.82,
       "pb": 6.4315233,
       "evRevenue": 5.053,
@@ -2302,15 +2302,15 @@
       "shortFloat": 1.08,
       "heldInsiders": 35.158001999999996,
       "heldInstitutions": 42.211999999999996,
-      "targetMean": 71.8792,
+      "targetMean": 71.958176,
       "analystRating": null,
       "analystCount": 3.0,
       "high52": 74.79,
       "low52": 48.0,
       "ma200": 63.6831,
       "change52w": -11.771041,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "FTNT": {
       "t": "FTNT",
@@ -2368,8 +2368,8 @@
       "low52": 73.55,
       "ma200": 131.87985,
       "change52w": 56.148920000000004,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "GEHC": {
       "t": "GEHC",
@@ -2427,8 +2427,8 @@
       "low52": 58.75,
       "ma200": 69.97385,
       "change52w": 3.0674815,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "GILD": {
       "t": "GILD",
@@ -2486,8 +2486,8 @@
       "low52": 116.88,
       "ma200": 142.30275,
       "change52w": 32.857025,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "HON": {
       "t": "HON",
@@ -2545,8 +2545,8 @@
       "low52": 196.16151,
       "ma200": 229.81856,
       "change52w": 7.469654,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "HONA": {
       "t": "HONA",
@@ -2604,8 +2604,8 @@
       "low52": 147.4,
       "ma200": 180.41295,
       "change52w": -24.645,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "IDXX": {
       "t": "IDXX",
@@ -2663,8 +2663,8 @@
       "low52": 500.61,
       "ma200": 573.4795,
       "change52w": -10.095197,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "INTC": {
       "t": "INTC",
@@ -2722,8 +2722,8 @@
       "low52": 34.68,
       "ma200": 87.5539,
       "change52w": 43.280244,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "INTU": {
       "t": "INTU",
@@ -2762,7 +2762,7 @@
       "ev": 73790218240.0,
       "fcf": 6919499776.0,
       "eps": 17.57,
-      "pb": 3.9598222,
+      "pb": 3.9235144,
       "evRevenue": 3.367,
       "pegTTM": 0.8582,
       "roa": 11.833999,
@@ -2781,8 +2781,8 @@
       "low52": 252.84,
       "ma200": 347.0514,
       "change52w": -58.59957300000001,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ISRG": {
       "t": "ISRG",
@@ -2840,8 +2840,8 @@
       "low52": 328.57,
       "ma200": 427.6851,
       "change52w": -29.804039999999997,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "KDP": {
       "t": "KDP",
@@ -2882,7 +2882,7 @@
       "eps": 1.11,
       "pb": 1.8647969,
       "evRevenue": 3.765,
-      "pegTTM": 0.985,
+      "pegTTM": 0.9973,
       "roa": 3.73,
       "ebitdaMargin": 23.171,
       "quickRatio": 0.206,
@@ -2899,8 +2899,8 @@
       "low52": 24.88,
       "ma200": 30.63205,
       "change52w": 27.339184,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "KLAC": {
       "t": "KLAC",
@@ -2958,8 +2958,8 @@
       "low52": 110.3,
       "ma200": 181.86433,
       "change52w": 11.609614,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "LRCX": {
       "t": "LRCX",
@@ -3017,8 +3017,8 @@
       "low52": 144.43,
       "ma200": 283.3517,
       "change52w": 21.871257,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "LIN": {
       "t": "LIN",
@@ -3076,8 +3076,8 @@
       "low52": 387.78,
       "ma200": 497.92307,
       "change52w": 23.342407,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "LITE": {
       "t": "LITE",
@@ -3135,8 +3135,8 @@
       "low52": 266.005,
       "ma200": 816.0388,
       "change52w": 53.841530000000006,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MAR": {
       "t": "MAR",
@@ -3194,8 +3194,8 @@
       "low52": 282.03,
       "ma200": 363.60196,
       "change52w": 37.271714,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MRVL": {
       "t": "MRVL",
@@ -3253,8 +3253,8 @@
       "low52": 70.69,
       "ma200": 188.5953,
       "change52w": 45.936275,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MELI": {
       "t": "MELI",
@@ -3312,8 +3312,8 @@
       "low52": 1333.54,
       "ma200": 1766.4196,
       "change52w": -32.550824,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "META": {
       "t": "META",
@@ -3354,7 +3354,7 @@
       "eps": 29.31,
       "pb": 5.2627926,
       "evRevenue": 6.068,
-      "pegTTM": 0.775,
+      "pegTTM": 0.729,
       "roa": 14.577000000000002,
       "ebitdaMargin": 48.091,
       "quickRatio": 1.669,
@@ -3371,8 +3371,8 @@
       "low52": 520.26,
       "ma200": 628.592,
       "change52w": -8.516437,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MCHP": {
       "t": "MCHP",
@@ -3430,8 +3430,8 @@
       "low52": 49.8,
       "ma200": 78.7418,
       "change52w": 8.1756115,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MU": {
       "t": "MU",
@@ -3489,8 +3489,8 @@
       "low52": 212.36,
       "ma200": 772.5427,
       "change52w": 165.48922,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MSFT": {
       "t": "MSFT",
@@ -3542,14 +3542,14 @@
       "heldInsiders": 0.116,
       "heldInstitutions": 76.912004,
       "targetMean": 636.12427,
-      "analystRating": 1.37931,
+      "analystRating": 1.36207,
       "analystCount": 54.0,
       "high52": 559.15,
       "low52": 349.2,
       "ma200": 443.63245,
       "change52w": 2.2194147,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MSTR": {
       "t": "MSTR",
@@ -3607,8 +3607,8 @@
       "low52": 77.69,
       "ma200": 131.759,
       "change52w": -56.54602,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MRNA": {
       "t": "MRNA",
@@ -3669,8 +3669,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MDLZ": {
       "t": "MDLZ",
@@ -3728,8 +3728,8 @@
       "low52": 51.2,
       "ma200": 61.0067,
       "change52w": 17.956936000000002,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MPWR": {
       "t": "MPWR",
@@ -3787,8 +3787,8 @@
       "low52": 864.45,
       "ma200": 1331.4454,
       "change52w": 27.893435999999998,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "MNST": {
       "t": "MNST",
@@ -3846,8 +3846,8 @@
       "low52": 35.43,
       "ma200": 43.49515,
       "change52w": 19.306386,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "NBIS": {
       "t": "NBIS",
@@ -3908,8 +3908,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "NFLX": {
       "t": "NFLX",
@@ -3967,8 +3967,8 @@
       "low52": 56.56,
       "ma200": 79.93895,
       "change52w": -46.96644,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "NVDA": {
       "t": "NVDA",
@@ -4026,8 +4026,8 @@
       "low52": 124.5,
       "ma200": 203.3454,
       "change52w": -31.235278,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "NXPI": {
       "t": "NXPI",
@@ -4068,7 +4068,7 @@
       "eps": 12.71,
       "pb": 4.9032483,
       "evRevenue": 4.833,
-      "pegTTM": 0.5056,
+      "pegTTM": 0.4722,
       "roa": 10.818,
       "ebitdaMargin": 39.042,
       "quickRatio": 1.311,
@@ -4085,8 +4085,8 @@
       "low52": 184.68,
       "ma200": 248.4848,
       "change52w": 22.755277,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ORLY": {
       "t": "ORLY",
@@ -4144,8 +4144,8 @@
       "low52": 82.59,
       "ma200": 90.07145,
       "change52w": -6.4141390000000005,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ODFL": {
       "t": "ODFL",
@@ -4203,8 +4203,8 @@
       "low52": 131.75,
       "ma200": 201.1241,
       "change52w": 27.02335,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PCAR": {
       "t": "PCAR",
@@ -4262,8 +4262,8 @@
       "low52": 100.07,
       "ma200": 118.7002,
       "change52w": -0.25375485,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PLTR": {
       "t": "PLTR",
@@ -4321,8 +4321,8 @@
       "low52": 106.37,
       "ma200": 153.96788,
       "change52w": -11.562401,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PANW": {
       "t": "PANW",
@@ -4380,8 +4380,8 @@
       "low52": 139.57,
       "ma200": 281.3842,
       "change52w": 86.69857,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PAYX": {
       "t": "PAYX",
@@ -4439,8 +4439,8 @@
       "low52": 85.45,
       "ma200": 104.26015,
       "change52w": 2.474749,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PYPL": {
       "t": "PYPL",
@@ -4498,16 +4498,16 @@
       "low52": 38.46,
       "ma200": 50.42455,
       "change52w": -12.004626,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PDD": {
       "t": "PDD",
       "name": "PDD Holdings",
       "price": 83.68,
       "marketCap": 119109820416.0,
-      "cash": 68351769752.68086,
-      "debt": 717469960.2251674,
+      "cash": 68235014872.1836,
+      "debt": 716244415.9595314,
       "cur": "USD",
       "prevClose": 86.0,
       "changePct": -2.6976744186046453,
@@ -4524,23 +4524,23 @@
       "revFwd": 5.3100000000000005,
       "pegFwd": 0.73,
       "peTTM": 9.22602,
-      "psTTM": 1.7601497080591069,
+      "psTTM": 1.7631614472549828,
       "evEbitda": -3.163,
       "divYield": 0.0,
       "opMargin": 23.221001,
       "roe": 21.288,
       "debtToEquity": 0.010049999999999998,
       "currentRatio": 2.686,
-      "fcfYield": 6.937672329969148,
-      "revenue": 67670278198.85888,
-      "ebitda": 15792167100.048262,
-      "netIncome": 13852503999.08684,
-      "ev": -49952638873.25725,
-      "fcf": 8263449053.276775,
+      "fcfYield": 6.9258217647717055,
+      "revenue": 67554687406.215,
+      "ebitda": 15765191754.870947,
+      "netIncome": 13828841883.901623,
+      "ev": -49867312415.67944,
+      "fcf": 8249333866.35182,
       "eps": 9.07,
       "pb": 1.6539007,
       "evRevenue": -0.738,
-      "pegTTM": 0.7474,
+      "pegTTM": 0.7272,
       "roa": 10.0530006,
       "ebitdaMargin": 23.337,
       "quickRatio": 2.25,
@@ -4550,15 +4550,15 @@
       "shortFloat": 3.3000000000000003,
       "heldInsiders": 0.72500003,
       "heldInstitutions": 29.830000000000002,
-      "targetMean": 114.06599,
+      "targetMean": 113.87114,
       "analystRating": 1.85294,
       "analystCount": 33.0,
       "high52": 125.36,
       "low52": 71.94,
       "ma200": 89.267,
       "change52w": -26.266629000000002,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "PEP": {
       "t": "PEP",
@@ -4616,8 +4616,8 @@
       "low52": 123.47,
       "ma200": 145.2759,
       "change52w": -3.4089327000000003,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "QCOM": {
       "t": "QCOM",
@@ -4678,8 +4678,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "REGN": {
       "t": "REGN",
@@ -4737,8 +4737,8 @@
       "low52": 591.52,
       "ma200": 751.4133,
       "change52w": 20.91273,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "RKLB": {
       "t": "RKLB",
@@ -4799,8 +4799,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ROP": {
       "t": "ROP",
@@ -4858,8 +4858,8 @@
       "low52": 305.96,
       "ma200": 371.78104,
       "change52w": 4.592395,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "ROST": {
       "t": "ROST",
@@ -4917,8 +4917,8 @@
       "low52": 172.92,
       "ma200": 225.54315,
       "change52w": 22.586572,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "SNDK": {
       "t": "SNDK",
@@ -4976,8 +4976,8 @@
       "low52": 23.4625,
       "ma200": 160.72542,
       "change52w": 179.30912999999998,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "STX": {
       "t": "STX",
@@ -5035,8 +5035,8 @@
       "low52": 242.91,
       "ma200": 702.98126,
       "change52w": 80.365455,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "SHOP": {
       "t": "SHOP",
@@ -5094,8 +5094,8 @@
       "low52": 94.0,
       "ma200": 130.55695,
       "change52w": -20.339966,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "SPCX": {
       "t": "SPCX",
@@ -5156,8 +5156,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "SBUX": {
       "t": "SBUX",
@@ -5215,8 +5215,8 @@
       "low52": 81.97,
       "ma200": 100.7761,
       "change52w": 23.746097,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "SNPS": {
       "t": "SNPS",
@@ -5274,8 +5274,8 @@
       "low52": 362.55,
       "ma200": 440.92175,
       "change52w": -2.0907998,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TMUS": {
       "t": "TMUS",
@@ -5333,8 +5333,8 @@
       "low52": 143.75,
       "ma200": 185.06226,
       "change52w": -20.131183,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TTWO": {
       "t": "TTWO",
@@ -5395,8 +5395,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TER": {
       "t": "TER",
@@ -5454,8 +5454,8 @@
       "low52": 159.5,
       "ma200": 349.3178,
       "change52w": 23.383749,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TSLA": {
       "t": "TSLA",
@@ -5496,7 +5496,7 @@
       "eps": 0.91,
       "pb": 15.3099,
       "evRevenue": 12.924,
-      "pegTTM": 4.3663,
+      "pegTTM": 4.0329,
       "roa": 1.345,
       "ebitdaMargin": 9.498999,
       "quickRatio": 1.239,
@@ -5513,8 +5513,8 @@
       "low52": 297.38,
       "ma200": 381.6629,
       "change52w": -17.224377,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TXN": {
       "t": "TXN",
@@ -5572,8 +5572,8 @@
       "low52": 158.69,
       "ma200": 266.36975,
       "change52w": 63.555753,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "TRI": {
       "t": "TRI",
@@ -5631,8 +5631,8 @@
       "low52": 76.28,
       "ma200": 96.19905,
       "change52w": -23.350942,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "VRTX": {
       "t": "VRTX",
@@ -5690,8 +5690,8 @@
       "low52": 412.27,
       "ma200": 484.87875,
       "change52w": 21.466982,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "WMT": {
       "t": "WMT",
@@ -5749,8 +5749,8 @@
       "low52": 102.15,
       "ma200": 118.9912,
       "change52w": 22.957909,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "WDC": {
       "t": "WDC",
@@ -5808,8 +5808,8 @@
       "low52": 142.55,
       "ma200": 422.33475,
       "change52w": 73.00073,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "WDAY": {
       "t": "WDAY",
@@ -5850,7 +5850,7 @@
       "eps": 4.91,
       "pb": 6.5107255,
       "evRevenue": 4.178,
-      "pegTTM": 0.5218,
+      "pegTTM": 0.5253,
       "roa": 4.513,
       "ebitdaMargin": 15.618000000000002,
       "quickRatio": 0.81,
@@ -5867,8 +5867,8 @@
       "low52": 110.36,
       "ma200": 156.33624,
       "change52w": -22.996825,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     },
     "XEL": {
       "t": "XEL",
@@ -5926,8 +5926,8 @@
       "low52": 68.72,
       "ma200": 78.5853,
       "change52w": -1.1961102499999998,
-      "priceUpdated": "2026-11-22T03:15:16.057685Z",
-      "fundamentalsUpdated": "2026-11-22T03:15:16.057685Z"
+      "priceUpdated": "2026-11-23T01:49:33.807128Z",
+      "fundamentalsUpdated": "2026-11-23T01:49:33.807128Z"
     }
   }
 }
