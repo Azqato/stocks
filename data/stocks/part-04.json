@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T03:40:02.384739Z",
+  "updated": "2026-11-23T01:48:55.386715Z",
   "source": "yahoo",
   "part": 4,
   "stocks": {
@@ -62,8 +62,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MANE": {
       "t": "MANE",
@@ -124,8 +124,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NAVN": {
       "t": "NAVN",
@@ -186,8 +186,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IRON": {
       "t": "IRON",
@@ -248,8 +248,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HWKN": {
       "t": "HWKN",
@@ -307,8 +307,8 @@
       "low52": 116.05,
       "ma200": 143.7909,
       "change52w": 16.254556,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CBC": {
       "t": "CBC",
@@ -366,8 +366,8 @@
       "low52": 22.5,
       "ma200": 29.68355,
       "change52w": 50.184200000000004,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HHH": {
       "t": "HHH",
@@ -428,8 +428,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ATRC": {
       "t": "ATRC",
@@ -490,8 +490,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AVPT": {
       "t": "AVPT",
@@ -549,8 +549,8 @@
       "low52": 8.835,
       "ma200": 12.222775,
       "change52w": 30.873013,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CXT": {
       "t": "CXT",
@@ -608,8 +608,8 @@
       "low52": 35.71,
       "ma200": 48.2916,
       "change52w": -6.826061,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ACHC": {
       "t": "ACHC",
@@ -667,8 +667,8 @@
       "low52": 11.43,
       "ma200": 27.45845,
       "change52w": 122.65122,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMC": {
       "t": "AMC",
@@ -729,8 +729,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BLLN": {
       "t": "BLLN",
@@ -788,8 +788,8 @@
       "low52": 61.96,
       "ma200": 97.89605,
       "change52w": -25.016676999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SMMT": {
       "t": "SMMT",
@@ -840,7 +840,7 @@
       "shortFloat": 26.669999999999998,
       "heldInsiders": 80.754995,
       "heldInstitutions": 17.496000000000002,
-      "targetMean": 28.770233,
+      "targetMean": 28.830954,
       "analystRating": 1.82353,
       "analystCount": 13.0,
       "high52": 29.23,
@@ -850,8 +850,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KSS": {
       "t": "KSS",
@@ -909,8 +909,8 @@
       "low52": 11.38,
       "ma200": 17.4215,
       "change52w": 41.449462999999994,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRVA": {
       "t": "PRVA",
@@ -968,8 +968,8 @@
       "low52": 18.915,
       "ma200": 22.7285,
       "change52w": 4.4620514,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NGVT": {
       "t": "NGVT",
@@ -1027,8 +1027,8 @@
       "low52": 49.15,
       "ma200": 70.88305,
       "change52w": 5.4748774000000004,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CUBI": {
       "t": "CUBI",
@@ -1086,8 +1086,8 @@
       "low52": 63.75,
       "ma200": 76.37935,
       "change52w": 15.854561,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LION": {
       "t": "LION",
@@ -1151,8 +1151,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IOND": {
       "t": "IOND",
@@ -1213,8 +1213,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VVX": {
       "t": "VVX",
@@ -1272,8 +1272,8 @@
       "low52": 50.889,
       "ma200": 74.71475,
       "change52w": 42.22474,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PENG": {
       "t": "PENG",
@@ -1331,8 +1331,8 @@
       "low52": 16.04,
       "ma200": 45.902924,
       "change52w": 99.17127,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IOSP": {
       "t": "IOSP",
@@ -1390,8 +1390,8 @@
       "low52": 65.51,
       "ma200": 84.34305,
       "change52w": 6.347644,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LTC": {
       "t": "LTC",
@@ -1452,8 +1452,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BANF": {
       "t": "BANF",
@@ -1511,8 +1511,8 @@
       "low52": 101.48,
       "ma200": 112.0201,
       "change52w": 6.900906599999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PLUS": {
       "t": "PLUS",
@@ -1570,8 +1570,8 @@
       "low52": 73.09,
       "ma200": 86.29005,
       "change52w": 1.3531327,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BLKB": {
       "t": "BLKB",
@@ -1629,8 +1629,8 @@
       "low52": 25.58,
       "ma200": 41.2497,
       "change52w": -11.024052,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MD": {
       "t": "MD",
@@ -1688,8 +1688,8 @@
       "low52": 17.23,
       "ma200": 24.60585,
       "change52w": 26.814937999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BATRK": {
       "t": "BATRK",
@@ -1747,8 +1747,8 @@
       "low52": 37.92,
       "ma200": 49.027424,
       "change52w": 33.850193,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WTTR": {
       "t": "WTTR",
@@ -1806,8 +1806,8 @@
       "low52": 9.61,
       "ma200": 17.70215,
       "change52w": 49.298596,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HTO": {
       "t": "HTO",
@@ -1865,8 +1865,8 @@
       "low52": 44.16,
       "ma200": 59.4446,
       "change52w": 27.6345,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ROG": {
       "t": "ROG",
@@ -1924,8 +1924,8 @@
       "low52": 78.82,
       "ma200": 129.73515,
       "change52w": 36.996746,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SKWD": {
       "t": "SKWD",
@@ -1983,8 +1983,8 @@
       "low52": 40.6,
       "ma200": 52.908276,
       "change52w": 32.708549999999995,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SHO": {
       "t": "SHO",
@@ -2045,8 +2045,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRN": {
       "t": "TRN",
@@ -2104,8 +2104,8 @@
       "low52": 24.28,
       "ma200": 31.546,
       "change52w": 10.538638,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BHE": {
       "t": "BHE",
@@ -2163,8 +2163,8 @@
       "low52": 42.68,
       "ma200": 73.5082,
       "change52w": 26.059365,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ADMA": {
       "t": "ADMA",
@@ -2222,8 +2222,8 @@
       "low52": 7.21,
       "ma200": 10.637225,
       "change52w": -28.111355999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DXPE": {
       "t": "DXPE",
@@ -2281,8 +2281,8 @@
       "low52": 86.21,
       "ma200": 163.3959,
       "change52w": 71.5574,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TALO": {
       "t": "TALO",
@@ -2343,8 +2343,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CRVL": {
       "t": "CRVL",
@@ -2402,8 +2402,8 @@
       "low52": 44.83,
       "ma200": 63.99355,
       "change52w": 19.491065,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PEB": {
       "t": "PEB",
@@ -2464,8 +2464,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SEZL": {
       "t": "SEZL",
@@ -2506,7 +2506,7 @@
       "eps": 5.19,
       "pb": 16.719795,
       "evRevenue": 8.038,
-      "pegTTM": 0.0879,
+      "pegTTM": 0.0827,
       "roa": 51.43600000000001,
       "ebitdaMargin": 60.175,
       "quickRatio": 4.035,
@@ -2523,8 +2523,8 @@
       "low52": 52.14,
       "ma200": 114.72278,
       "change52w": 157.19633,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "COHU": {
       "t": "COHU",
@@ -2585,8 +2585,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LCII": {
       "t": "LCII",
@@ -2644,8 +2644,8 @@
       "low52": 77.58,
       "ma200": 107.8061,
       "change52w": -12.110418000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FLYW": {
       "t": "FLYW",
@@ -2703,8 +2703,8 @@
       "low52": 10.55,
       "ma200": 16.162575,
       "change52w": 56.310680000000005,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PACS": {
       "t": "PACS",
@@ -2762,8 +2762,8 @@
       "low52": 27.37,
       "ma200": 40.61605,
       "change52w": 45.761013,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DXC": {
       "t": "DXC",
@@ -2821,8 +2821,8 @@
       "low52": 7.9,
       "ma200": 11.5572,
       "change52w": 7.0477724,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LEVI": {
       "t": "LEVI",
@@ -2880,8 +2880,8 @@
       "low52": 17.72,
       "ma200": 21.9162,
       "change52w": 9.686744,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BANR": {
       "t": "BANR",
@@ -2939,8 +2939,8 @@
       "low52": 57.05,
       "ma200": 66.5732,
       "change52w": 8.7074995,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PHIN": {
       "t": "PHIN",
@@ -2998,8 +2998,8 @@
       "low52": 52.63,
       "ma200": 71.4949,
       "change52w": 27.587485,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GOLF": {
       "t": "GOLF",
@@ -3057,8 +3057,8 @@
       "low52": 76.955,
       "ma200": 93.3403,
       "change52w": -3.5662649999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BUSE": {
       "t": "BUSE",
@@ -3116,8 +3116,8 @@
       "low52": 22.94,
       "ma200": 28.1892,
       "change52w": 17.794049,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ADUS": {
       "t": "ADUS",
@@ -3175,8 +3175,8 @@
       "low52": 87.95,
       "ma200": 107.6382,
       "change52w": 5.694568,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NEO": {
       "t": "NEO",
@@ -3237,8 +3237,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NWBI": {
       "t": "NWBI",
@@ -3296,8 +3296,8 @@
       "low52": 11.67,
       "ma200": 14.37445,
       "change52w": 22.74276,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PPLI": {
       "t": "PPLI",
@@ -3358,8 +3358,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RH": {
       "t": "RH",
@@ -3417,8 +3417,8 @@
       "low52": 106.3,
       "ma200": 146.9338,
       "change52w": -27.78967,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KMT": {
       "t": "KMT",
@@ -3476,8 +3476,8 @@
       "low52": 21.17,
       "ma200": 33.839,
       "change52w": -21.497053,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FOUR": {
       "t": "FOUR",
@@ -3535,8 +3535,8 @@
       "low52": 34.56,
       "ma200": 44.86755,
       "change52w": -45.317435,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XNCR": {
       "t": "XNCR",
@@ -3597,8 +3597,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HLIO": {
       "t": "HLIO",
@@ -3656,8 +3656,8 @@
       "low52": 41.89,
       "ma200": 72.30725,
       "change52w": -20.445954999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BWIN": {
       "t": "BWIN",
@@ -3718,8 +3718,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RAMP": {
       "t": "RAMP",
@@ -3777,8 +3777,8 @@
       "low52": 21.71,
       "ma200": 33.45675,
       "change52w": 26.31234,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRGO": {
       "t": "PRGO",
@@ -3839,8 +3839,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EEFT": {
       "t": "EEFT",
@@ -3898,8 +3898,8 @@
       "low52": 57.48,
       "ma200": 70.1358,
       "change52w": -11.720359,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WLK": {
       "t": "WLK",
@@ -3960,8 +3960,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRCH": {
       "t": "PRCH",
@@ -4022,8 +4022,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NCNO": {
       "t": "NCNO",
@@ -4084,8 +4084,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PBI": {
       "t": "PBI",
@@ -4143,8 +4143,8 @@
       "low52": 9.45,
       "ma200": 15.24245,
       "change52w": 50.411519999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PTON": {
       "t": "PTON",
@@ -4168,7 +4168,7 @@
       "epsFwd": 167.91,
       "revFwd": -3.1400003,
       "pegFwd": 0.09125767970936811,
-      "peTTM": 16.599998,
+      "peTTM": 17.785715,
       "psTTM": 0.9046346,
       "evEbitda": 8.306,
       "divYield": 0.0,
@@ -4182,7 +4182,7 @@
       "netIncome": 145500000.0,
       "ev": 2571535104.0,
       "fcf": 398249984.0,
-      "eps": 0.3,
+      "eps": 0.28,
       "pb": -415.0,
       "evRevenue": 1.048,
       "pegTTM": null,
@@ -4202,8 +4202,8 @@
       "low52": 3.65,
       "ma200": 5.19555,
       "change52w": -24.545455,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INTA": {
       "t": "INTA",
@@ -4264,8 +4264,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PENN": {
       "t": "PENN",
@@ -4326,8 +4326,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EFSC": {
       "t": "EFSC",
@@ -4385,8 +4385,8 @@
       "low52": 51.79,
       "ma200": 60.97095,
       "change52w": 8.048332,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OFG": {
       "t": "OFG",
@@ -4444,8 +4444,8 @@
       "low52": 35.71,
       "ma200": 47.5633,
       "change52w": 21.817719999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CALX": {
       "t": "CALX",
@@ -4503,8 +4503,8 @@
       "low52": 30.55,
       "ma200": 41.0361,
       "change52w": -39.475614,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ARXS": {
       "t": "ARXS",
@@ -4565,8 +4565,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EPAC": {
       "t": "EPAC",
@@ -4624,8 +4624,8 @@
       "low52": 32.35,
       "ma200": 36.5055,
       "change52w": -2.4416447,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NWN": {
       "t": "NWN",
@@ -4686,8 +4686,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UFPT": {
       "t": "UFPT",
@@ -4745,8 +4745,8 @@
       "low52": 173.86,
       "ma200": 252.806,
       "change52w": 31.031215,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MZTI": {
       "t": "MZTI",
@@ -4804,8 +4804,8 @@
       "low52": 97.0,
       "ma200": 120.3972,
       "change52w": -37.219465,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ANDE": {
       "t": "ANDE",
@@ -4863,8 +4863,8 @@
       "low52": 44.75,
       "ma200": 68.6946,
       "change52w": -10.3468895,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CNS": {
       "t": "CNS",
@@ -4922,8 +4922,8 @@
       "low52": 58.39,
       "ma200": 72.4259,
       "change52w": 3.1794667,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HCI": {
       "t": "HCI",
@@ -4981,8 +4981,8 @@
       "low52": 144.75,
       "ma200": 172.92445,
       "change52w": 8.055925,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KWR": {
       "t": "KWR",
@@ -5040,8 +5040,8 @@
       "low52": 112.18,
       "ma200": 149.85,
       "change52w": 8.3217025,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SYBT": {
       "t": "SYBT",
@@ -5099,8 +5099,8 @@
       "low52": 61.51,
       "ma200": 74.6368,
       "change52w": 14.29007,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VCEL": {
       "t": "VCEL",
@@ -5158,8 +5158,8 @@
       "low52": 28.95,
       "ma200": 39.94135,
       "change52w": 47.942388,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IPAR": {
       "t": "IPAR",
@@ -5217,8 +5217,8 @@
       "low52": 79.37,
       "ma200": 107.1768,
       "change52w": 72.70328,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WOR": {
       "t": "WOR",
@@ -5276,8 +5276,8 @@
       "low52": 45.01,
       "ma200": 56.8302,
       "change52w": 2.0445704,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OUST": {
       "t": "OUST",
@@ -5338,8 +5338,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FA": {
       "t": "FA",
@@ -5397,8 +5397,8 @@
       "low52": 8.82,
       "ma200": 16.94605,
       "change52w": 54.812634,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CC": {
       "t": "CC",
@@ -5456,8 +5456,8 @@
       "low52": 10.83,
       "ma200": 18.17,
       "change52w": -5.3913057,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RXRX": {
       "t": "RXRX",
@@ -5518,8 +5518,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TILE": {
       "t": "TILE",
@@ -5577,8 +5577,8 @@
       "low52": 24.4,
       "ma200": 32.20585,
       "change52w": 10.4970336,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IPGP": {
       "t": "IPGP",
@@ -5636,8 +5636,8 @@
       "low52": 58.08,
       "ma200": 99.5611,
       "change52w": -23.436481,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FCF": {
       "t": "FCF",
@@ -5695,8 +5695,8 @@
       "low52": 15.97,
       "ma200": 19.66145,
       "change52w": 24.332714,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ECPG": {
       "t": "ECPG",
@@ -5754,8 +5754,8 @@
       "low52": 48.9,
       "ma200": 87.06725,
       "change52w": 103.35352,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SMA": {
       "t": "SMA",
@@ -5813,8 +5813,8 @@
       "low52": 29.41,
       "ma200": 33.0975,
       "change52w": 24.246311000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PGNY": {
       "t": "PGNY",
@@ -5872,8 +5872,8 @@
       "low52": 16.1,
       "ma200": 25.145025,
       "change52w": 35.624766,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PAY": {
       "t": "PAY",
@@ -5931,8 +5931,8 @@
       "low52": 20.11,
       "ma200": 29.2057,
       "change52w": -5.3808928,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FTRE": {
       "t": "FTRE",
@@ -5993,8 +5993,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OLN": {
       "t": "OLN",
@@ -6052,8 +6052,8 @@
       "low52": 14.64,
       "ma200": 21.8819,
       "change52w": -23.321557000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RDW": {
       "t": "RDW",
@@ -6114,8 +6114,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NVTS": {
       "t": "NVTS",
@@ -6176,8 +6176,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRVI": {
       "t": "TRVI",
@@ -6238,8 +6238,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LASR": {
       "t": "LASR",
@@ -6300,8 +6300,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LLYVA": {
       "t": "LLYVA",
@@ -6362,8 +6362,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INSP": {
       "t": "INSP",
@@ -6424,8 +6424,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MTX": {
       "t": "MTX",
@@ -6483,8 +6483,8 @@
       "low52": 57.25,
       "ma200": 70.9661,
       "change52w": 0.41573048,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KMPR": {
       "t": "KMPR",
@@ -6545,8 +6545,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CPRI": {
       "t": "CPRI",
@@ -6587,7 +6587,7 @@
       "eps": 1.31,
       "pb": 27.885534,
       "evRevenue": 0.941,
-      "pegTTM": 0.2851,
+      "pegTTM": 0.2703,
       "roa": 1.308,
       "ebitdaMargin": 6.267,
       "quickRatio": 0.364,
@@ -6607,8 +6607,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GPGI": {
       "t": "GPGI",
@@ -6669,8 +6669,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PAYO": {
       "t": "PAYO",
@@ -6728,8 +6728,8 @@
       "low52": 4.08,
       "ma200": 6.21805,
       "change52w": 30.490017,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HMN": {
       "t": "HMN",
@@ -6787,8 +6787,8 @@
       "low52": 41.29,
       "ma200": 47.54245,
       "change52w": 15.564895,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NMRK": {
       "t": "NMRK",
@@ -6846,8 +6846,8 @@
       "low52": 9.64,
       "ma200": 14.396775,
       "change52w": -41.81164,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WU": {
       "t": "WU",
@@ -6905,8 +6905,8 @@
       "low52": 5.87,
       "ma200": 7.84965,
       "change52w": -29.439807000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CENTA": {
       "t": "CENTA",
@@ -6964,8 +6964,8 @@
       "low52": 28.43,
       "ma200": 35.8774,
       "change52w": 38.509965,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CHCO": {
       "t": "CHCO",
@@ -7023,8 +7023,8 @@
       "low52": 113.21,
       "ma200": 132.86575,
       "change52w": 13.441622,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HRMY": {
       "t": "HRMY",
@@ -7082,8 +7082,8 @@
       "low52": 25.902,
       "ma200": 34.468174,
       "change52w": -7.598525,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FWONA": {
       "t": "FWONA",
@@ -7144,8 +7144,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MAIR": {
       "t": "MAIR",
@@ -7203,8 +7203,8 @@
       "low52": 20.85,
       "ma200": 31.317713,
       "change52w": -30.677164,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AIN": {
       "t": "AIN",
@@ -7265,8 +7265,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VERA": {
       "t": "VERA",
@@ -7327,8 +7327,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XRAY": {
       "t": "XRAY",
@@ -7389,8 +7389,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MBX": {
       "t": "MBX",
@@ -7451,8 +7451,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XERS": {
       "t": "XERS",
@@ -7510,8 +7510,8 @@
       "low52": 5.25,
       "ma200": 8.0707,
       "change52w": 141.05113,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XHR": {
       "t": "XHR",
@@ -7572,8 +7572,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AGM": {
       "t": "AGM",
@@ -7631,8 +7631,8 @@
       "low52": 136.57,
       "ma200": 189.51414,
       "change52w": -3.1600952,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRDO": {
       "t": "PRDO",
@@ -7690,8 +7690,8 @@
       "low52": 26.24,
       "ma200": 33.1188,
       "change52w": 0.21890401999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UPST": {
       "t": "UPST",
@@ -7749,8 +7749,8 @@
       "low52": 15.5406,
       "ma200": 28.1552,
       "change52w": -59.86673999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ZD": {
       "t": "ZD",
@@ -7767,7 +7767,7 @@
       "earnTime": "amc",
       "earnEst": false,
       "revTTM": -5.6000000000000005,
-      "epsTTM": null,
+      "epsTTM": -844.4444444444445,
       "grossMargin": 84.853995,
       "netMargin": 43.523996999999994,
       "peFwd": 9.538849,
@@ -7808,8 +7808,11 @@
       "low52": 22.45,
       "ma200": 48.43115,
       "change52w": 50.319827,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "derived": [
+        "epsTTM"
+      ],
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NNI": {
       "t": "NNI",
@@ -7867,8 +7870,8 @@
       "low52": 116.62,
       "ma200": 129.78355,
       "change52w": -4.3591797,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SRPT": {
       "t": "SRPT",
@@ -7929,8 +7932,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GRBK": {
       "t": "GRBK",
@@ -7988,8 +7991,8 @@
       "low52": 56.93,
       "ma200": 68.7854,
       "change52w": -12.036466599999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SPB": {
       "t": "SPB",
@@ -8047,8 +8050,8 @@
       "low52": 55.93,
       "ma200": 82.03805,
       "change52w": 40.824163,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DDS": {
       "t": "DDS",
@@ -8106,8 +8109,8 @@
       "low52": 503.06,
       "ma200": 603.4386,
       "change52w": -10.242683,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TIC": {
       "t": "TIC",
@@ -8168,8 +8171,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WLY": {
       "t": "WLY",
@@ -8230,8 +8233,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FIGS": {
       "t": "FIGS",
@@ -8289,8 +8292,8 @@
       "low52": 9.17,
       "ma200": 14.19965,
       "change52w": 109.0625,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRGS": {
       "t": "PRGS",
@@ -8348,8 +8351,8 @@
       "low52": 23.82,
       "ma200": 36.86755,
       "change52w": -0.32443404000000003,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CTRI": {
       "t": "CTRI",
@@ -8407,8 +8410,8 @@
       "low52": 18.505,
       "ma200": 26.8909,
       "change52w": -3.8986325,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EVTC": {
       "t": "EVTC",
@@ -8466,8 +8469,8 @@
       "low52": 21.81,
       "ma200": 28.6101,
       "change52w": 2.936101,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CLOV": {
       "t": "CLOV",
@@ -8528,8 +8531,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SAIL": {
       "t": "SAIL",
@@ -8590,8 +8593,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WKC": {
       "t": "WKC",
@@ -8649,8 +8652,8 @@
       "low52": 22.21,
       "ma200": 31.47635,
       "change52w": 52.76613,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LIND": {
       "t": "LIND",
@@ -8708,8 +8711,8 @@
       "low52": 11.64,
       "ma200": 25.6991,
       "change52w": 157.97102,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SONO": {
       "t": "SONO",
@@ -8717,7 +8720,7 @@
       "price": 17.08,
       "marketCap": 2009299712.0,
       "cash": 227138000.0,
-      "debt": 51803000.0,
+      "debt": 57652000.0,
       "cur": "USD",
       "prevClose": 17.06,
       "changePct": 0.11723329425556983,
@@ -8735,24 +8738,24 @@
       "pegFwd": null,
       "peTTM": 23.397259,
       "psTTM": 1.2989286,
-      "evEbitda": 15.519,
+      "evEbitda": 16.038,
       "divYield": 0.0,
       "opMargin": 4.625,
       "roe": 24.125,
-      "debtToEquity": 0.13366,
+      "debtToEquity": 0.14875,
       "currentRatio": 1.496,
-      "fcfYield": 3.7574472115387434,
+      "fcfYield": 3.478295228064015,
       "revenue": 1546889984.0,
-      "ebitda": 118918000.0,
+      "ebitda": 114718000.0,
       "netIncome": 89600000.0,
-      "ev": 1845435904.0,
-      "fcf": 75498376.0,
+      "ev": 1839813632.0,
+      "fcf": 69889376.0,
       "eps": 0.73,
-      "pb": 5.213675,
-      "evRevenue": 1.193,
+      "pb": 5.1836114,
+      "evRevenue": 1.189,
       "pegTTM": null,
       "roa": 5.079000000000001,
-      "ebitdaMargin": 7.688000000000001,
+      "ebitdaMargin": 7.416,
       "quickRatio": 0.753,
       "payoutRatio": 0.0,
       "divYield5yAvg": null,
@@ -8770,8 +8773,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AGIO": {
       "t": "AGIO",
@@ -8832,8 +8835,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PVLA": {
       "t": "PVLA",
@@ -8894,8 +8897,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMN": {
       "t": "AMN",
@@ -8953,8 +8956,8 @@
       "low52": 14.97,
       "ma200": 29.9252,
       "change52w": 109.14419,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MFP": {
       "t": "MFP",
@@ -8978,7 +8981,7 @@
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": null,
-      "peTTM": 86.64706,
+      "peTTM": 122.74999,
       "psTTM": 2.068608,
       "evEbitda": 15.76,
       "divYield": 0.0,
@@ -8992,7 +8995,7 @@
       "netIncome": 73098000.0,
       "ev": 2201117696.0,
       "fcf": null,
-      "eps": 0.51,
+      "eps": 0.36,
       "pb": 2.467061,
       "evRevenue": 2.281,
       "pegTTM": null,
@@ -9012,8 +9015,8 @@
       "low52": 21.0,
       "ma200": 44.146828,
       "change52w": -60.009049999999995,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SGRY": {
       "t": "SGRY",
@@ -9074,8 +9077,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PFSI": {
       "t": "PFSI",
@@ -9136,8 +9139,8 @@
       "derived": [
         "revTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "STBA": {
       "t": "STBA",
@@ -9195,8 +9198,8 @@
       "low52": 38.27,
       "ma200": 47.07075,
       "change52w": 23.289740000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BLBD": {
       "t": "BLBD",
@@ -9254,8 +9257,8 @@
       "low52": 46.14,
       "ma200": 63.7058,
       "change52w": 2.9711962,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NTST": {
       "t": "NTST",
@@ -9313,8 +9316,8 @@
       "low52": 16.18,
       "ma200": 19.82265,
       "change52w": 2.2050738,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LMAT": {
       "t": "LMAT",
@@ -9332,7 +9335,7 @@
       "earnEst": false,
       "revTTM": 11.3,
       "epsTTM": -13.700000000000001,
-      "grossMargin": 70.039004,
+      "grossMargin": 71.042,
       "netMargin": 23.513001,
       "peFwd": 26.230734,
       "epsFwd": 11.359999,
@@ -9340,24 +9343,24 @@
       "pegFwd": 1.95,
       "peTTM": 26.767273,
       "psTTM": 6.2529182,
-      "evEbitda": 19.196,
+      "evEbitda": 18.548,
       "divYield": 1.36,
-      "opMargin": 24.689,
+      "opMargin": 25.691000000000003,
       "roe": 15.618000000000002,
       "debtToEquity": 0.43701999999999996,
       "currentRatio": 14.602,
-      "fcfYield": 2.55534173174035,
+      "fcfYield": 2.655534042077963,
       "revenue": 269356000.0,
-      "ebitda": 77276000.0,
+      "ebitda": 79976000.0,
       "netIncome": 63335000.0,
       "ev": 1483390976.0,
-      "fcf": 43038624.0,
+      "fcf": 44726124.0,
       "eps": 2.75,
       "pb": 3.89739,
       "evRevenue": 5.507,
       "pegTTM": 1.9536,
-      "roa": 6.628,
-      "ebitdaMargin": 28.688999999999997,
+      "roa": 6.896999500000001,
+      "ebitdaMargin": 29.692,
       "quickRatio": 12.293,
       "payoutRatio": 34.55,
       "divYield5yAvg": 0.88,
@@ -9372,8 +9375,8 @@
       "low52": 73.44,
       "ma200": 93.95225,
       "change52w": -12.660182,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ABSI": {
       "t": "ABSI",
@@ -9434,8 +9437,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DCOM": {
       "t": "DCOM",
@@ -9493,8 +9496,8 @@
       "low52": 26.75,
       "ma200": 38.17955,
       "change52w": 42.680264,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DV": {
       "t": "DV",
@@ -9552,14 +9555,14 @@
       "low52": 8.6,
       "ma200": 11.54805,
       "change52w": 32.810974,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CALY": {
       "t": "CALY",
       "name": "Callaway Golf Co",
       "price": 15.96,
-      "marketCap": 2868930816.0,
+      "marketCap": 2849028096.0,
       "cash": 433500000.0,
       "debt": 268700000.0,
       "cur": "USD",
@@ -9578,14 +9581,14 @@
       "revFwd": 0.66000004,
       "pegFwd": 0.72,
       "peTTM": 13.081967,
-      "psTTM": 1.3634955,
+      "psTTM": 1.3540365,
       "evEbitda": 10.257,
       "divYield": 0.0,
       "opMargin": 10.104000000000001,
       "roe": 5.723000000000001,
       "debtToEquity": 0.12409,
       "currentRatio": 3.091,
-      "fcfYield": 2.0159949371187627,
+      "fcfYield": 2.030078260063603,
       "revenue": 2104099968.0,
       "ebitda": 256500000.0,
       "netIncome": 132800000.0,
@@ -9614,8 +9617,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BXMT": {
       "t": "BXMT",
@@ -9677,8 +9680,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BL": {
       "t": "BL",
@@ -9736,8 +9739,8 @@
       "low52": 24.3,
       "ma200": 31.32265,
       "change52w": -56.027733999999995,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XPRO": {
       "t": "XPRO",
@@ -9798,8 +9801,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CVI": {
       "t": "CVI",
@@ -9857,8 +9860,8 @@
       "low52": 19.62,
       "ma200": 36.97365,
       "change52w": -4.699737,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GABC": {
       "t": "GABC",
@@ -9916,8 +9919,8 @@
       "low52": 38.55,
       "ma200": 46.27475,
       "change52w": 22.478234999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CTS": {
       "t": "CTS",
@@ -9975,8 +9978,8 @@
       "low52": 41.39,
       "ma200": 58.03765,
       "change52w": 29.969275,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ARR": {
       "t": "ARR",
@@ -10038,8 +10041,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALGT": {
       "t": "ALGT",
@@ -10100,8 +10103,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SLDE": {
       "t": "SLDE",
@@ -10159,8 +10162,8 @@
       "low52": 15.72,
       "ma200": 20.9128,
       "change52w": 53.364540000000005,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RLJ": {
       "t": "RLJ",
@@ -10221,8 +10224,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VIR": {
       "t": "VIR",
@@ -10284,8 +10287,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ICFI": {
       "t": "ICFI",
@@ -10343,8 +10346,8 @@
       "low52": 58.83,
       "ma200": 78.1611,
       "change52w": 1.1608243,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WWW": {
       "t": "WWW",
@@ -10402,8 +10405,8 @@
       "low52": 14.0,
       "ma200": 18.46505,
       "change52w": 60.570693,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HAPN": {
       "t": "HAPN",
@@ -10461,8 +10464,8 @@
       "low52": 13.05,
       "ma200": 16.692175,
       "change52w": -16.011906,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AEHR": {
       "t": "AEHR",
@@ -10503,7 +10506,7 @@
       "eps": -0.23,
       "pb": 5.8588233,
       "evRevenue": 24.228,
-      "pegTTM": 0.4625,
+      "pegTTM": 0.3849,
       "roa": -4.473,
       "ebitdaMargin": -22.688,
       "quickRatio": 7.602,
@@ -10524,8 +10527,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NTLA": {
       "t": "NTLA",
@@ -10586,8 +10589,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DHC": {
       "t": "DHC",
@@ -10648,8 +10651,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SBH": {
       "t": "SBH",
@@ -10707,8 +10710,8 @@
       "low52": 11.54,
       "ma200": 15.27235,
       "change52w": 13.452911,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RUN": {
       "t": "RUN",
@@ -10766,8 +10769,8 @@
       "low52": 6.525,
       "ma200": 11.62645,
       "change52w": -63.51576,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "APPN": {
       "t": "APPN",
@@ -10825,8 +10828,8 @@
       "low52": 18.63,
       "ma200": 30.738525,
       "change52w": 25.399518,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ATEN": {
       "t": "ATEN",
@@ -10884,8 +10887,8 @@
       "low52": 16.63,
       "ma200": 27.26805,
       "change52w": 80.285037,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MQ": {
       "t": "MQ",
@@ -10946,8 +10949,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SDGR": {
       "t": "SDGR",
@@ -11008,8 +11011,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NSP": {
       "t": "NSP",
@@ -11070,8 +11073,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VSTS": {
       "t": "VSTS",
@@ -11132,14 +11135,14 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WERN": {
       "t": "WERN",
       "name": "Werner Enterprises",
       "price": 25.75,
-      "marketCap": 1543715456.0,
+      "marketCap": 1544411776.0,
       "cash": 39200000.0,
       "debt": 995105984.0,
       "cur": "USD",
@@ -11158,14 +11161,14 @@
       "revFwd": 23.020001,
       "pegFwd": 3.83,
       "peTTM": null,
-      "psTTM": 0.4499736,
+      "psTTM": 0.45017657,
       "evEbitda": 6.949,
       "divYield": 2.17,
       "opMargin": 1.591,
       "roe": -1.9949999999999999,
       "debtToEquity": 0.73182,
       "currentRatio": 1.418,
-      "fcfYield": 3.347014231099336,
+      "fcfYield": 3.3455051821619883,
       "revenue": 3430680064.0,
       "ebitda": 359790016.0,
       "netIncome": -19105000.0,
@@ -11194,8 +11197,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LUNR": {
       "t": "LUNR",
@@ -11256,8 +11259,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRLB": {
       "t": "PRLB",
@@ -11315,8 +11318,8 @@
       "low52": 48.71,
       "ma200": 74.11465,
       "change52w": 16.768169999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TNET": {
       "t": "TNET",
@@ -11374,8 +11377,8 @@
       "low52": 33.61,
       "ma200": 53.7776,
       "change52w": 9.669566,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NVAX": {
       "t": "NVAX",
@@ -11436,8 +11439,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GTY": {
       "t": "GTY",
@@ -11495,8 +11498,8 @@
       "low52": 27.08,
       "ma200": 32.0518,
       "change52w": -0.17599462999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INGM": {
       "t": "INGM",
@@ -11554,8 +11557,8 @@
       "low52": 20.0,
       "ma200": 26.83315,
       "change52w": 26.84337,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMR": {
       "t": "AMR",
@@ -11616,8 +11619,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IDT": {
       "t": "IDT",
@@ -11675,8 +11678,8 @@
       "low52": 46.48,
       "ma200": 61.81835,
       "change52w": 49.959314,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ASTH": {
       "t": "ASTH",
@@ -11734,8 +11737,8 @@
       "low52": 18.08,
       "ma200": 34.51945,
       "change52w": 27.876103,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRAX": {
       "t": "TRAX",
@@ -11796,8 +11799,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DEI": {
       "t": "DEI",
@@ -11858,8 +11861,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GNL": {
       "t": "GNL",
@@ -11920,8 +11923,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "STOK": {
       "t": "STOK",
@@ -11982,8 +11985,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "QCRH": {
       "t": "QCRH",
@@ -12041,8 +12044,8 @@
       "low52": 74.78,
       "ma200": 95.39495,
       "change52w": 23.36222,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HOPE": {
       "t": "HOPE",
@@ -12100,8 +12103,8 @@
       "low52": 10.23,
       "ma200": 12.89505,
       "change52w": 15.688157,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NBHC": {
       "t": "NBHC",
@@ -12162,8 +12165,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "THRM": {
       "t": "THRM",
@@ -12224,8 +12227,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CASH": {
       "t": "CASH",
@@ -12283,8 +12286,8 @@
       "low52": 68.75,
       "ma200": 84.3072,
       "change52w": -1.4320493,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HUN": {
       "t": "HUN",
@@ -12345,8 +12348,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DFIN": {
       "t": "DFIN",
@@ -12407,8 +12410,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AI": {
       "t": "AI",
@@ -12469,8 +12472,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EZPW": {
       "t": "EZPW",
@@ -12528,8 +12531,8 @@
       "low52": 17.68,
       "ma200": 30.0747,
       "change52w": 37.271214,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OMCL": {
       "t": "OMCL",
@@ -12587,8 +12590,8 @@
       "low52": 31.75,
       "ma200": 38.05985,
       "change52w": -10.292494000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WS": {
       "t": "WS",
@@ -12649,8 +12652,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AZTA": {
       "t": "AZTA",
@@ -12708,8 +12711,8 @@
       "low52": 15.93,
       "ma200": 28.73465,
       "change52w": 22.070849,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BFC": {
       "t": "BFC",
@@ -12767,8 +12770,8 @@
       "low52": 120.05,
       "ma200": 145.84164,
       "change52w": 15.242028,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PLAB": {
       "t": "PLAB",
@@ -12826,8 +12829,8 @@
       "low52": 21.14,
       "ma200": 34.84395,
       "change52w": 10.3812575,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CBRL": {
       "t": "CBRL",
@@ -12885,8 +12888,8 @@
       "low52": 24.85,
       "ma200": 45.4755,
       "change52w": 170.34774,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CNXC": {
       "t": "CNXC",
@@ -12927,7 +12930,7 @@
       "eps": -38.36,
       "pb": 1.0082701,
       "evRevenue": 0.685,
-      "pegTTM": 0.35,
+      "pegTTM": 0.358,
       "roa": 3.4730002000000004,
       "ebitdaMargin": 12.487,
       "quickRatio": 0.934,
@@ -12947,8 +12950,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VIA": {
       "t": "VIA",
@@ -13009,8 +13012,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PDFS": {
       "t": "PDFS",
@@ -13062,14 +13065,14 @@
       "heldInsiders": 10.5179995,
       "heldInstitutions": 104.024,
       "targetMean": 56.25,
-      "analystRating": 1.5,
+      "analystRating": null,
       "analystCount": 8.0,
       "high52": 71.69,
       "low52": 24.96,
       "ma200": 44.96355,
       "change52w": 18.906248,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OBK": {
       "t": "OBK",
@@ -13127,8 +13130,8 @@
       "low52": 34.77,
       "ma200": 49.15545,
       "change52w": 45.780408,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALG": {
       "t": "ALG",
@@ -13169,7 +13172,7 @@
       "eps": 6.42,
       "pb": 1.2670856,
       "evRevenue": 0.942,
-      "pegTTM": 1.3673,
+      "pegTTM": 1.3254,
       "roa": 4.321,
       "ebitdaMargin": 10.416,
       "quickRatio": 2.352,
@@ -13186,8 +13189,8 @@
       "low52": 125.44,
       "ma200": 164.6141,
       "change52w": -21.434826,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GRC": {
       "t": "GRC",
@@ -13245,8 +13248,8 @@
       "low52": 44.5,
       "ma200": 73.6939,
       "change52w": 42.605793,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CNOB": {
       "t": "CNOB",
@@ -13304,8 +13307,8 @@
       "low52": 24.18,
       "ma200": 30.403,
       "change52w": 23.825097,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SAFT": {
       "t": "SAFT",
@@ -13363,8 +13366,8 @@
       "low52": 67.93,
       "ma200": 86.7071,
       "change52w": 37.547743,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TDOC": {
       "t": "TDOC",
@@ -13425,8 +13428,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INVX": {
       "t": "INVX",
@@ -13484,8 +13487,8 @@
       "low52": 20.94,
       "ma200": 27.1554,
       "change52w": -1.8445313,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HLMN": {
       "t": "HLMN",
@@ -13543,8 +13546,8 @@
       "low52": 6.655,
       "ma200": 7.994625,
       "change52w": -8.6227536,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ANIP": {
       "t": "ANIP",
@@ -13602,8 +13605,8 @@
       "low52": 67.14,
       "ma200": 76.73655,
       "change52w": -15.349472,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMPL": {
       "t": "AMPL",
@@ -13664,8 +13667,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HCSG": {
       "t": "HCSG",
@@ -13723,8 +13726,8 @@
       "low52": 16.78,
       "ma200": 21.86175,
       "change52w": 32.90323,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RARE": {
       "t": "RARE",
@@ -13785,8 +13788,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALH": {
       "t": "ALH",
@@ -13844,8 +13847,8 @@
       "low52": 18.64,
       "ma200": 23.61715,
       "change52w": 2.7519107000000003,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SCL": {
       "t": "SCL",
@@ -13903,8 +13906,8 @@
       "low52": 43.0,
       "ma200": 57.6905,
       "change52w": 44.404006,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INVA": {
       "t": "INVA",
@@ -13965,8 +13968,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NIQ": {
       "t": "NIQ",
@@ -14030,8 +14033,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SAM": {
       "t": "SAM",
@@ -14089,8 +14092,8 @@
       "low52": 158.68,
       "ma200": 199.0901,
       "change52w": 7.801378000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ARLO": {
       "t": "ARLO",
@@ -14131,7 +14134,7 @@
       "eps": 0.22,
       "pb": 7.457521,
       "evRevenue": 1.906,
-      "pegTTM": 0.4316,
+      "pegTTM": 0.4251,
       "roa": 0.77899997,
       "ebitdaMargin": 2.2780001000000003,
       "quickRatio": 1.089,
@@ -14148,8 +14151,8 @@
       "low52": 11.05,
       "ma200": 13.35355,
       "change52w": -12.739325000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FLY": {
       "t": "FLY",
@@ -14210,8 +14213,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EFOR": {
       "t": "EFOR",
@@ -14269,8 +14272,8 @@
       "low52": 16.9,
       "ma200": 30.8383,
       "change52w": -29.71275,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HUBG": {
       "t": "HUBG",
@@ -14322,14 +14325,14 @@
       "heldInsiders": 2.869,
       "heldInstitutions": 104.249,
       "targetMean": 37.16667,
-      "analystRating": 2.15385,
+      "analystRating": 2.07692,
       "analystCount": 12.0,
       "high52": 53.26,
       "low52": 22.39,
       "ma200": 38.21315,
       "change52w": -39.036858,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OCFC": {
       "t": "OCFC",
@@ -14387,8 +14390,8 @@
       "low52": 15.6,
       "ma200": 18.42155,
       "change52w": -6.0589492,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ICHR": {
       "t": "ICHR",
@@ -14429,7 +14432,7 @@
       "eps": 0.07,
       "pb": 1.1538787,
       "evRevenue": 0.873,
-      "pegTTM": 0.1301,
+      "pegTTM": 0.1104,
       "roa": 2.7590000999999997,
       "ebitdaMargin": 7.170999999999999,
       "quickRatio": 1.794,
@@ -14449,8 +14452,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MLKN": {
       "t": "MLKN",
@@ -14508,8 +14511,8 @@
       "low52": 13.84,
       "ma200": 19.54745,
       "change52w": 29.373371999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INOD": {
       "t": "INOD",
@@ -14567,8 +14570,8 @@
       "low52": 27.84,
       "ma200": 59.831,
       "change52w": -50.606006,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SEPN": {
       "t": "SEPN",
@@ -14629,8 +14632,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BKE": {
       "t": "BKE",
@@ -14688,8 +14691,8 @@
       "low52": 39.44,
       "ma200": 46.9057,
       "change52w": -17.921549,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NVCR": {
       "t": "NVCR",
@@ -14750,8 +14753,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OCUL": {
       "t": "OCUL",
@@ -14812,8 +14815,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TCBK": {
       "t": "TCBK",
@@ -14871,8 +14874,8 @@
       "low52": 45.37,
       "ma200": 52.08175,
       "change52w": 3.3290624999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WGS": {
       "t": "WGS",
@@ -14933,8 +14936,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AVAH": {
       "t": "AVAH",
@@ -14992,8 +14995,8 @@
       "low52": 5.93,
       "ma200": 9.516925,
       "change52w": 21.79203,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IIPR": {
       "t": "IIPR",
@@ -15051,8 +15054,8 @@
       "low52": 44.853,
       "ma200": 55.3574,
       "change52w": -3.0444503000000003,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VISN": {
       "t": "VISN",
@@ -15110,8 +15113,8 @@
       "low52": 3.764,
       "ma200": 11.907925,
       "change52w": -79.76695000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HE": {
       "t": "HE",
@@ -15169,8 +15172,8 @@
       "low52": 7.88,
       "ma200": 12.62955,
       "change52w": -31.010454999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ETON": {
       "t": "ETON",
@@ -15231,8 +15234,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LKFN": {
       "t": "LKFN",
@@ -15290,8 +15293,8 @@
       "low52": 54.36,
       "ma200": 60.0121,
       "change52w": 2.4600029,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SRCE": {
       "t": "SRCE",
@@ -15349,8 +15352,8 @@
       "low52": 60.3,
       "ma200": 79.3223,
       "change52w": 37.69617,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TFIN": {
       "t": "TFIN",
@@ -15408,8 +15411,8 @@
       "low52": 52.94,
       "ma200": 66.757,
       "change52w": 2.8208494,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MBC": {
       "t": "MBC",
@@ -15470,8 +15473,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "STUB": {
       "t": "STUB",
@@ -15532,8 +15535,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "COLM": {
       "t": "COLM",
@@ -15591,8 +15594,8 @@
       "low52": 51.72,
       "ma200": 61.1043,
       "change52w": 43.356907,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MAZE": {
       "t": "MAZE",
@@ -15653,8 +15656,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EFC": {
       "t": "EFC",
@@ -15712,8 +15715,8 @@
       "low52": 10.6,
       "ma200": 12.72265,
       "change52w": -19.517540999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ASST": {
       "t": "ASST",
@@ -15774,8 +15777,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ZYME": {
       "t": "ZYME",
@@ -15836,8 +15839,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HTH": {
       "t": "HTH",
@@ -15895,8 +15898,8 @@
       "low52": 33.45,
       "ma200": 37.66255,
       "change52w": 2.2525190999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NN": {
       "t": "NN",
@@ -15957,8 +15960,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PNTG": {
       "t": "PNTG",
@@ -15999,7 +16002,7 @@
       "eps": 1.01,
       "pb": 3.2507505,
       "evRevenue": 1.474,
-      "pegTTM": 1.6597,
+      "pegTTM": 1.6918,
       "roa": 4.995,
       "ebitdaMargin": 7.112,
       "quickRatio": 0.983,
@@ -16016,8 +16019,8 @@
       "low52": 26.4,
       "ma200": 36.063026,
       "change52w": 29.253732999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NBR": {
       "t": "NBR",
@@ -16078,8 +16081,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RYZ": {
       "t": "RYZ",
@@ -16140,8 +16143,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PPC": {
       "t": "PPC",
@@ -16199,8 +16202,8 @@
       "low52": 25.0,
       "ma200": 31.37305,
       "change52w": -23.590702,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "STC": {
       "t": "STC",
@@ -16258,8 +16261,8 @@
       "low52": 41.18,
       "ma200": 63.0304,
       "change52w": -40.82203,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BAND": {
       "t": "BAND",
@@ -16320,8 +16323,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VOYG": {
       "t": "VOYG",
@@ -16382,8 +16385,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "STRA": {
       "t": "STRA",
@@ -16444,8 +16447,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ENR": {
       "t": "ENR",
@@ -16503,8 +16506,8 @@
       "low52": 15.75,
       "ma200": 20.69945,
       "change52w": 58.843160000000005,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "COTY": {
       "t": "COTY",
@@ -16562,8 +16565,8 @@
       "low52": 1.82,
       "ma200": 2.58595,
       "change52w": 25.396824000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "QUBT": {
       "t": "QUBT",
@@ -16624,8 +16627,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NSSC": {
       "t": "NSSC",
@@ -16683,8 +16686,8 @@
       "low52": 28.57,
       "ma200": 38.455,
       "change52w": -26.070142,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "REPL": {
       "t": "REPL",
@@ -16745,8 +16748,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WABC": {
       "t": "WABC",
@@ -16804,8 +16807,8 @@
       "low52": 46.54,
       "ma200": 56.72765,
       "change52w": 22.699511,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NUVB": {
       "t": "NUVB",
@@ -16866,8 +16869,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ADIG": {
       "t": "ADIG",
@@ -16928,8 +16931,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BJRI": {
       "t": "BJRI",
@@ -16987,8 +16990,8 @@
       "low52": 33.36,
       "ma200": 51.9188,
       "change52w": 62.521195,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BFLY": {
       "t": "BFLY",
@@ -17049,8 +17052,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CNMD": {
       "t": "CNMD",
@@ -17108,8 +17111,8 @@
       "low52": 31.44,
       "ma200": 42.1138,
       "change52w": 7.528865,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NKTR": {
       "t": "NKTR",
@@ -17170,8 +17173,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TMP": {
       "t": "TMP",
@@ -17229,8 +17232,8 @@
       "low52": 66.57,
       "ma200": 90.65875,
       "change52w": 39.579356,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PEBO": {
       "t": "PEBO",
@@ -17288,8 +17291,8 @@
       "low52": 29.02,
       "ma200": 36.54245,
       "change52w": 26.916468,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRG": {
       "t": "PRG",
@@ -17347,8 +17350,8 @@
       "low52": 25.18,
       "ma200": 36.10495,
       "change52w": 39.985776,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EPC": {
       "t": "EPC",
@@ -17409,8 +17412,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GRDN": {
       "t": "GRDN",
@@ -17468,8 +17471,8 @@
       "low52": 26.34,
       "ma200": 39.27205,
       "change52w": 63.668060000000004,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TNDM": {
       "t": "TNDM",
@@ -17530,8 +17533,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CCS": {
       "t": "CCS",
@@ -17589,8 +17592,8 @@
       "low52": 47.275,
       "ma200": 61.09645,
       "change52w": -18.424124,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALNT": {
       "t": "ALNT",
@@ -17648,8 +17651,8 @@
       "low52": 50.59,
       "ma200": 83.90665,
       "change52w": 38.40804,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PCRX": {
       "t": "PCRX",
@@ -17703,12 +17706,12 @@
       "targetMean": 35.0,
       "analystRating": 3.0,
       "analystCount": 6.0,
-      "high52": 36.67,
+      "high52": 36.665,
       "low52": 18.8,
-      "ma200": 25.8112,
+      "ma200": 25.9677,
       "change52w": 57.51295,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ACT": {
       "t": "ACT",
@@ -17766,8 +17769,8 @@
       "low52": 37.03,
       "ma200": 44.79285,
       "change52w": 15.382612000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "REAL": {
       "t": "REAL",
@@ -17828,8 +17831,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HLF": {
       "t": "HLF",
@@ -17887,8 +17890,8 @@
       "low52": 10.41,
       "ma200": 13.88855,
       "change52w": 29.958164999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LOB": {
       "t": "LOB",
@@ -17946,8 +17949,8 @@
       "low52": 30.18,
       "ma200": 37.7077,
       "change52w": 3.9633155,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PGEN": {
       "t": "PGEN",
@@ -18008,8 +18011,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MCRI": {
       "t": "MCRI",
@@ -18067,8 +18070,8 @@
       "low52": 88.34,
       "ma200": 114.1425,
       "change52w": 8.906245,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRS": {
       "t": "TRS",
@@ -18100,12 +18103,12 @@
       "roe": 9.182,
       "debtToEquity": 0.30103,
       "currentRatio": 8.032,
-      "fcfYield": 14.593233095762054,
+      "fcfYield": 14.4777360044498,
       "revenue": 677089984.0,
       "ebitda": 73190000.0,
       "netIncome": 99830000.0,
       "ev": 575241728.0,
-      "fcf": 189337248.0,
+      "fcf": 187838752.0,
       "eps": 2.55,
       "pb": 0.90410626,
       "evRevenue": 0.85,
@@ -18126,8 +18129,8 @@
       "low52": 31.67,
       "ma200": 38.9191,
       "change52w": 11.933029000000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OMER": {
       "t": "OMER",
@@ -18188,8 +18191,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DBD": {
       "t": "DBD",
@@ -18247,8 +18250,8 @@
       "low52": 49.772,
       "ma200": 73.89105,
       "change52w": -18.13733,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BF.A": {
       "t": "BF.A",
@@ -18306,8 +18309,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BBAI": {
       "t": "BBAI",
@@ -18368,8 +18371,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "REYN": {
       "t": "REYN",
@@ -18427,8 +18430,8 @@
       "low52": 20.44,
       "ma200": 23.28445,
       "change52w": 0.041139126,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LZB": {
       "t": "LZB",
@@ -18467,7 +18470,7 @@
       "ev": 1457569152.0,
       "fcf": 172115376.0,
       "eps": 1.73,
-      "pb": 1.1428351,
+      "pb": 1.166366,
       "evRevenue": 0.69,
       "pegTTM": 1.0815,
       "roa": 4.1890003,
@@ -18486,8 +18489,8 @@
       "low52": 28.39,
       "ma200": 34.83485,
       "change52w": -19.425629999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EYE": {
       "t": "EYE",
@@ -18545,8 +18548,8 @@
       "low52": 14.75,
       "ma200": 20.650475,
       "change52w": -40.26438,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GBX": {
       "t": "GBX",
@@ -18604,8 +18607,8 @@
       "low52": 35.34,
       "ma200": 47.41695,
       "change52w": -18.188119,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UFCS": {
       "t": "UFCS",
@@ -18663,8 +18666,8 @@
       "low52": 33.53,
       "ma200": 47.74645,
       "change52w": 36.608124,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NP": {
       "t": "NP",
@@ -18722,8 +18725,8 @@
       "low52": 14.78,
       "ma200": 27.7092,
       "change52w": 19.249034,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SNDR": {
       "t": "SNDR",
@@ -18781,8 +18784,8 @@
       "low52": 21.46,
       "ma200": 31.8703,
       "change52w": 28.366493999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TPB": {
       "t": "TPB",
@@ -18840,8 +18843,8 @@
       "low52": 45.21,
       "ma200": 81.92975,
       "change52w": -52.127219999999994,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMSC": {
       "t": "AMSC",
@@ -18899,8 +18902,8 @@
       "low52": 19.1,
       "ma200": 34.84675,
       "change52w": -38.34346,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UNIT": {
       "t": "UNIT",
@@ -18961,8 +18964,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PSNL": {
       "t": "PSNL",
@@ -19023,8 +19026,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SNDX": {
       "t": "SNDX",
@@ -19085,8 +19088,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UVE": {
       "t": "UVE",
@@ -19144,8 +19147,8 @@
       "low52": 28.32,
       "ma200": 40.259,
       "change52w": 45.484543,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PDM": {
       "t": "PDM",
@@ -19206,8 +19209,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CRAI": {
       "t": "CRAI",
@@ -19265,8 +19268,8 @@
       "low52": 132.17,
       "ma200": 166.45605,
       "change52w": 26.387143000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GO": {
       "t": "GO",
@@ -19324,8 +19327,8 @@
       "low52": 5.655,
       "ma200": 9.796075,
       "change52w": 10.3883505,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FMBH": {
       "t": "FMBH",
@@ -19383,8 +19386,8 @@
       "low52": 37.12,
       "ma200": 46.6892,
       "change52w": 28.815365,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SHLS": {
       "t": "SHLS",
@@ -19442,8 +19445,8 @@
       "low52": 5.43,
       "ma200": 8.364,
       "change52w": -16.494846,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MLYS": {
       "t": "MLYS",
@@ -19504,8 +19507,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ANDG": {
       "t": "ANDG",
@@ -19566,8 +19569,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FSUN": {
       "t": "FSUN",
@@ -19625,8 +19628,8 @@
       "low52": 32.4,
       "ma200": 37.832127,
       "change52w": 8.791542,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "JJSF": {
       "t": "JJSF",
@@ -19684,8 +19687,8 @@
       "low52": 68.87,
       "ma200": 81.2915,
       "change52w": 6.419229499999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BHRB": {
       "t": "BHRB",
@@ -19743,8 +19746,8 @@
       "low52": 60.11,
       "ma200": 67.82055,
       "change52w": 7.294309,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FLO": {
       "t": "FLO",
@@ -19802,8 +19805,8 @@
       "low52": 4.9,
       "ma200": 7.622,
       "change52w": -52.78846,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TSHA": {
       "t": "TSHA",
@@ -19865,8 +19868,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OSBC": {
       "t": "OSBC",
@@ -19924,8 +19927,8 @@
       "low52": 17.87,
       "ma200": 22.8338,
       "change52w": 31.216073,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ROCK": {
       "t": "ROCK",
@@ -19986,8 +19989,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PFBC": {
       "t": "PFBC",
@@ -20045,8 +20048,8 @@
       "low52": 81.5,
       "ma200": 99.36935,
       "change52w": 6.299972500000001,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PD": {
       "t": "PD",
@@ -20104,8 +20107,8 @@
       "low52": 5.7,
       "ma200": 10.5425,
       "change52w": -1.54777765,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMPX": {
       "t": "AMPX",
@@ -20166,8 +20169,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ARX": {
       "t": "ARX",
@@ -20228,8 +20231,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GT": {
       "t": "GT",
@@ -20290,8 +20293,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TNC": {
       "t": "TNC",
@@ -20349,8 +20352,8 @@
       "low52": 60.18,
       "ma200": 75.6098,
       "change52w": 4.5499563,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VYX": {
       "t": "VYX",
@@ -20411,8 +20414,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HFWA": {
       "t": "HFWA",
@@ -20470,8 +20473,8 @@
       "low52": 23.07,
       "ma200": 27.9464,
       "change52w": 14.721036000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IMKTA": {
       "t": "IMKTA",
@@ -20529,8 +20532,8 @@
       "low52": 67.92,
       "ma200": 87.1194,
       "change52w": 11.957526,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UMH": {
       "t": "UMH",
@@ -20591,8 +20594,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RAPP": {
       "t": "RAPP",
@@ -20653,8 +20656,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RUSHB": {
       "t": "RUSHB",
@@ -20712,8 +20715,8 @@
       "low52": 34.213333,
       "ma200": 49.564068,
       "change52w": 64.921916,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "USPH": {
       "t": "USPH",
@@ -20774,8 +20777,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRSU": {
       "t": "PRSU",
@@ -20833,8 +20836,8 @@
       "low52": 32.41,
       "ma200": 46.44915,
       "change52w": 48.726404,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WD": {
       "t": "WD",
@@ -20895,8 +20898,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UTI": {
       "t": "UTI",
@@ -20954,8 +20957,8 @@
       "low52": 17.14,
       "ma200": 31.83795,
       "change52w": -21.129996000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MNKD": {
       "t": "MNKD",
@@ -21016,8 +21019,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ATEX": {
       "t": "ATEX",
@@ -21078,8 +21081,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MCB": {
       "t": "MCB",
@@ -21137,8 +21140,8 @@
       "low52": 71.71,
       "ma200": 90.79375,
       "change52w": 25.020647,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OMDA": {
       "t": "OMDA",
@@ -21199,8 +21202,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SNDA": {
       "t": "SNDA",
@@ -21261,8 +21264,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMTB": {
       "t": "AMTB",
@@ -21320,8 +21323,8 @@
       "low52": 17.69,
       "ma200": 25.75055,
       "change52w": 54.281009999999995,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "USLM": {
       "t": "USLM",
@@ -21379,8 +21382,8 @@
       "low52": 96.27,
       "ma200": 114.27485,
       "change52w": -17.449057,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MYE": {
       "t": "MYE",
@@ -21441,8 +21444,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SCSC": {
       "t": "SCSC",
@@ -21500,8 +21503,8 @@
       "low52": 33.76,
       "ma200": 48.2561,
       "change52w": 8.383083,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ECVT": {
       "t": "ECVT",
@@ -21562,8 +21565,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IAUX": {
       "t": "IAUX",
@@ -21624,8 +21627,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HLIT": {
       "t": "HLIT",
@@ -21683,8 +21686,8 @@
       "low52": 8.47,
       "ma200": 11.5935,
       "change52w": 4.439509,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WEN": {
       "t": "WEN",
@@ -21742,8 +21745,8 @@
       "low52": 5.94,
       "ma200": 7.3714,
       "change52w": 8.860755,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "REX": {
       "t": "REX",
@@ -21801,8 +21804,8 @@
       "low52": 31.26,
       "ma200": 42.8169,
       "change52w": 6.696009999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CRI": {
       "t": "CRI",
@@ -21860,8 +21863,8 @@
       "low52": 28.86,
       "ma200": 36.09595,
       "change52w": 18.710327,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LNN": {
       "t": "LNN",
@@ -21919,8 +21922,8 @@
       "low52": 94.47,
       "ma200": 115.2923,
       "change52w": -17.164111000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "XPEL": {
       "t": "XPEL",
@@ -21978,8 +21981,8 @@
       "low52": 36.0,
       "ma200": 45.1592,
       "change52w": -13.853109,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ENOV": {
       "t": "ENOV",
@@ -22040,8 +22043,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VERX": {
       "t": "VERX",
@@ -22102,8 +22105,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UPBD": {
       "t": "UPBD",
@@ -22161,8 +22164,8 @@
       "low52": 14.98,
       "ma200": 19.25485,
       "change52w": 45.371425,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DMC": {
       "t": "DMC",
@@ -22223,8 +22226,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CRK": {
       "t": "CRK",
@@ -22282,8 +22285,8 @@
       "low52": 11.67,
       "ma200": 15.501,
       "change52w": -53.29627,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GIII": {
       "t": "GIII",
@@ -22341,8 +22344,8 @@
       "low52": 24.61,
       "ma200": 31.02135,
       "change52w": 8.179891,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MBIN": {
       "t": "MBIN",
@@ -22400,8 +22403,8 @@
       "low52": 30.95,
       "ma200": 48.67225,
       "change52w": 56.38162,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GTM": {
       "t": "GTM",
@@ -22459,8 +22462,8 @@
       "low52": 2.54,
       "ma200": 4.411025,
       "change52w": -70.916754,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MPT": {
       "t": "MPT",
@@ -22521,8 +22524,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CERT": {
       "t": "CERT",
@@ -22580,8 +22583,8 @@
       "low52": 4.45,
       "ma200": 7.44155,
       "change52w": 19.074488000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ZBIO": {
       "t": "ZBIO",
@@ -22619,7 +22622,7 @@
       "netIncome": -541808000.0,
       "ev": 1333036416.0,
       "fcf": -250622880.0,
-      "eps": -10.08,
+      "eps": -9.59,
       "pb": 7.6149426,
       "evRevenue": 121.185,
       "pegTTM": null,
@@ -22642,8 +22645,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GSHD": {
       "t": "GSHD",
@@ -22701,8 +22704,8 @@
       "low52": 33.68,
       "ma200": 49.547375,
       "change52w": -33.881485,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRIP": {
       "t": "TRIP",
@@ -22763,8 +22766,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DCH": {
       "t": "DCH",
@@ -22825,8 +22828,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CTBI": {
       "t": "CTBI",
@@ -22884,8 +22887,8 @@
       "low52": 54.71,
       "ma200": 69.5422,
       "change52w": 20.953071,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UVSP": {
       "t": "UVSP",
@@ -22943,8 +22946,8 @@
       "low52": 30.92,
       "ma200": 39.74915,
       "change52w": 22.833382999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BRBR": {
       "t": "BRBR",
@@ -22983,7 +22986,7 @@
       "ev": 2760471040.0,
       "fcf": 74662496.0,
       "eps": 1.25,
-      "pb": -3.626182,
+      "pb": -3.98632,
       "evRevenue": 1.151,
       "pegTTM": null,
       "roa": 19.424,
@@ -23002,8 +23005,8 @@
       "low52": 7.33,
       "ma200": 12.2918,
       "change52w": -52.617884000000004,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UPWK": {
       "t": "UPWK",
@@ -23061,8 +23064,8 @@
       "low52": 7.44,
       "ma200": 9.8363,
       "change52w": -53.90836,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HZO": {
       "t": "HZO",
@@ -23123,8 +23126,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WLDN": {
       "t": "WLDN",
@@ -23182,8 +23185,8 @@
       "low52": 61.51,
       "ma200": 82.5082,
       "change52w": -30.666529999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VTOL": {
       "t": "VTOL",
@@ -23241,8 +23244,8 @@
       "low52": 35.65,
       "ma200": 43.7482,
       "change52w": 1.7944574000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LZ": {
       "t": "LZ",
@@ -23300,8 +23303,8 @@
       "low52": 4.425,
       "ma200": 6.28925,
       "change52w": -51.307190000000006,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BY": {
       "t": "BY",
@@ -23359,8 +23362,8 @@
       "low52": 27.32,
       "ma200": 35.50725,
       "change52w": 35.264122,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AORT": {
       "t": "AORT",
@@ -23421,8 +23424,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UTL": {
       "t": "UTL",
@@ -23483,8 +23486,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PRCT": {
       "t": "PRCT",
@@ -23545,8 +23548,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PBLS": {
       "t": "PBLS",
@@ -23607,8 +23610,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MSEX": {
       "t": "MSEX",
@@ -23666,8 +23669,8 @@
       "low52": 49.0,
       "ma200": 54.5609,
       "change52w": 14.417480999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HOS": {
       "t": "HOS",
@@ -23725,8 +23728,8 @@
       "low52": 4.87,
       "ma200": 8.8934,
       "change52w": -23.919755000000002,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SLVM": {
       "t": "SLVM",
@@ -23787,14 +23790,14 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WMK": {
       "t": "WMK",
       "name": "Weis Markets",
       "price": 78.63,
-      "marketCap": 1945667456.0,
+      "marketCap": null,
       "cash": 227330000.0,
       "debt": 167676000.0,
       "cur": "USD",
@@ -23811,16 +23814,16 @@
       "peFwd": null,
       "epsFwd": null,
       "revFwd": null,
-      "pegFwd": 1.38,
+      "pegFwd": null,
       "peTTM": 19.224937,
-      "psTTM": 0.38104495,
+      "psTTM": null,
       "evEbitda": 7.548,
       "divYield": 1.73,
       "opMargin": 2.39,
       "roe": 7.657000399999999,
       "debtToEquity": 0.1201,
       "currentRatio": 2.042,
-      "fcfYield": 3.1814595967626644,
+      "fcfYield": null,
       "revenue": 5106136064.0,
       "ebitda": 249856992.0,
       "netIncome": 104881000.0,
@@ -23846,8 +23849,8 @@
       "low52": 59.99,
       "ma200": 73.26765,
       "change52w": 22.077322,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HBNC": {
       "t": "HBNC",
@@ -23909,8 +23912,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "APPS": {
       "t": "APPS",
@@ -23971,8 +23974,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RDVT": {
       "t": "RDVT",
@@ -24030,8 +24033,8 @@
       "low52": 33.4,
       "ma200": 58.98935,
       "change52w": 25.151574999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AAT": {
       "t": "AAT",
@@ -24089,14 +24092,14 @@
       "low52": 17.72,
       "ma200": 21.6944,
       "change52w": 9.719336,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UTZ": {
       "t": "UTZ",
       "name": "Utz Brands",
       "price": 14.29,
-      "marketCap": 1266282880.0,
+      "marketCap": 2057219968.0,
       "cash": 70100000.0,
       "debt": 1066400000.0,
       "cur": "USD",
@@ -24115,14 +24118,14 @@
       "revFwd": 2.07,
       "pegFwd": null,
       "peTTM": null,
-      "psTTM": 0.8766237,
+      "psTTM": 1.4241744,
       "evEbitda": 34.232,
       "divYield": 1.76,
       "opMargin": -0.43599996999999996,
       "roe": -4.066,
       "debtToEquity": 0.8302700000000001,
       "currentRatio": 1.073,
-      "fcfYield": 6.5417850393744565,
+      "fcfYield": 4.026672173541726,
       "revenue": 1444499968.0,
       "ebitda": 83900000.0,
       "netIncome": -38600000.0,
@@ -24146,13 +24149,13 @@
       "analystCount": 7.0,
       "high52": 14.36,
       "low52": 6.78,
-      "ma200": 10.65535,
+      "ma200": 10.60675,
       "change52w": 54.989160000000005,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MWH": {
       "t": "MWH",
@@ -24213,8 +24216,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CCNE": {
       "t": "CCNE",
@@ -24272,8 +24275,8 @@
       "low52": 24.64,
       "ma200": 32.3183,
       "change52w": 33.518445,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PWP": {
       "t": "PWP",
@@ -24331,8 +24334,8 @@
       "low52": 11.75,
       "ma200": 16.795475,
       "change52w": -32.934475,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LBRX": {
       "t": "LBRX",
@@ -24393,8 +24396,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LADR": {
       "t": "LADR",
@@ -24452,8 +24455,8 @@
       "low52": 8.18,
       "ma200": 9.7781,
       "change52w": -23.911029,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BFST": {
       "t": "BFST",
@@ -24511,8 +24514,8 @@
       "low52": 25.11,
       "ma200": 29.66575,
       "change52w": 20.43767,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AGL": {
       "t": "AGL",
@@ -24573,8 +24576,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DEA": {
       "t": "DEA",
@@ -24632,8 +24635,8 @@
       "low52": 20.95,
       "ma200": 23.4855,
       "change52w": -2.0248532,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CNXN": {
       "t": "CNXN",
@@ -24691,8 +24694,8 @@
       "low52": 55.51,
       "ma200": 74.1825,
       "change52w": 40.468693,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MBWM": {
       "t": "MBWM",
@@ -24750,8 +24753,8 @@
       "low52": 44.87,
       "ma200": 56.0454,
       "change52w": 29.538393000000003,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRUP": {
       "t": "TRUP",
@@ -24809,8 +24812,8 @@
       "low52": 21.16,
       "ma200": 26.781925,
       "change52w": 0.451982,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DLX": {
       "t": "DLX",
@@ -24868,8 +24871,8 @@
       "low52": 19.3,
       "ma200": 25.4097,
       "change52w": 26.905607999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ANAB": {
       "t": "ANAB",
@@ -24927,8 +24930,8 @@
       "low52": 26.013332,
       "ma200": 51.54188,
       "change52w": 66.734207,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ZG": {
       "t": "ZG",
@@ -24989,8 +24992,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "YELP": {
       "t": "YELP",
@@ -25048,8 +25051,8 @@
       "low52": 17.27,
       "ma200": 23.16955,
       "change52w": -36.487429999999996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UVV": {
       "t": "UVV",
@@ -25107,8 +25110,8 @@
       "low52": 32.18,
       "ma200": 48.97585,
       "change52w": -37.743866,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IE": {
       "t": "IE",
@@ -25169,8 +25172,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CMP": {
       "t": "CMP",
@@ -25231,8 +25234,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HAFC": {
       "t": "HAFC",
@@ -25290,8 +25293,8 @@
       "low52": 24.54,
       "ma200": 30.2262,
       "change52w": 11.898636999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AMBQ": {
       "t": "AMBQ",
@@ -25352,8 +25355,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CMPR": {
       "t": "CMPR",
@@ -25414,8 +25417,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SEB": {
       "t": "SEB",
@@ -25473,8 +25476,8 @@
       "low52": 3309.11,
       "ma200": 4666.514,
       "change52w": -16.793930000000003,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VOR": {
       "t": "VOR",
@@ -25535,8 +25538,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ORC": {
       "t": "ORC",
@@ -25598,8 +25601,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CFFN": {
       "t": "CFFN",
@@ -25657,8 +25660,8 @@
       "low52": 6.38,
       "ma200": 8.09055,
       "change52w": 22.720242,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CPF": {
       "t": "CPF",
@@ -25716,8 +25719,8 @@
       "low52": 29.38,
       "ma200": 35.8706,
       "change52w": 23.954117,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PUMP": {
       "t": "PUMP",
@@ -25778,8 +25781,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "QNST": {
       "t": "QNST",
@@ -25837,8 +25840,8 @@
       "low52": 10.29,
       "ma200": 14.87765,
       "change52w": 36.156106,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "QNT": {
       "t": "QNT",
@@ -25899,8 +25902,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GPRE": {
       "t": "GPRE",
@@ -25958,8 +25961,8 @@
       "low52": 9.31,
       "ma200": 15.34665,
       "change52w": 16.065907,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ASTE": {
       "t": "ASTE",
@@ -26020,8 +26023,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "INBX": {
       "t": "INBX",
@@ -26082,8 +26085,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SVRA": {
       "t": "SVRA",
@@ -26144,8 +26147,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CBL": {
       "t": "CBL",
@@ -26165,7 +26168,7 @@
       "epsTTM": -84.39999999999999,
       "grossMargin": 65.005,
       "netMargin": 25.724000000000004,
-      "peFwd": -125.82052,
+      "peFwd": null,
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": null,
@@ -26203,8 +26206,8 @@
       "low52": 32.52,
       "ma200": 48.2157,
       "change52w": 49.78633,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CGEM": {
       "t": "CGEM",
@@ -26265,8 +26268,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TFSL": {
       "t": "TFSL",
@@ -26324,8 +26327,8 @@
       "low52": 13.21,
       "ma200": 16.09945,
       "change52w": 7.498252399999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RVLV": {
       "t": "RVLV",
@@ -26383,8 +26386,8 @@
       "low52": 17.35,
       "ma200": 22.62245,
       "change52w": -20.199823,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CAC": {
       "t": "CAC",
@@ -26442,8 +26445,8 @@
       "low52": 39.31,
       "ma200": 53.04405,
       "change52w": 42.118406,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TRST": {
       "t": "TRST",
@@ -26501,8 +26504,8 @@
       "low52": 40.33,
       "ma200": 51.93105,
       "change52w": 34.36525,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "JBLU": {
       "t": "JBLU",
@@ -26563,8 +26566,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KFRC": {
       "t": "KFRC",
@@ -26622,8 +26625,8 @@
       "low52": 25.07,
       "ma200": 45.595,
       "change52w": 85.1035,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "QDEL": {
       "t": "QDEL",
@@ -26684,8 +26687,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PLOW": {
       "t": "PLOW",
@@ -26726,7 +26729,7 @@
       "eps": 2.77,
       "pb": 2.5757577,
       "evRevenue": 1.513,
-      "pegTTM": 0.7677,
+      "pegTTM": 0.7466,
       "roa": 8.062999999999999,
       "ebitdaMargin": 14.754000000000001,
       "quickRatio": 1.087,
@@ -26743,8 +26746,8 @@
       "low52": 30.9,
       "ma200": 43.0243,
       "change52w": 11.299968,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NWPX": {
       "t": "NWPX",
@@ -26802,8 +26805,8 @@
       "low52": 55.43,
       "ma200": 103.34395,
       "change52w": 48.111713,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SMPL": {
       "t": "SMPL",
@@ -26864,8 +26867,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NUTX": {
       "t": "NUTX",
@@ -26923,8 +26926,8 @@
       "low52": 83.99,
       "ma200": 152.76355,
       "change52w": 18.533635,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HROW": {
       "t": "HROW",
@@ -26982,8 +26985,8 @@
       "low52": 25.76,
       "ma200": 37.14175,
       "change52w": -22.025638999999998,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LGIH": {
       "t": "LGIH",
@@ -27041,8 +27044,8 @@
       "low52": 33.55,
       "ma200": 49.5259,
       "change52w": -19.51977,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "WINA": {
       "t": "WINA",
@@ -27100,8 +27103,8 @@
       "low52": 247.24,
       "ma200": 365.13715,
       "change52w": -38.10717,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GLUE": {
       "t": "GLUE",
@@ -27162,8 +27165,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "KURA": {
       "t": "KURA",
@@ -27224,8 +27227,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ORIC": {
       "t": "ORIC",
@@ -27286,8 +27289,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ANRO": {
       "t": "ANRO",
@@ -27348,8 +27351,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "DJT": {
       "t": "DJT",
@@ -27410,8 +27413,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FCEL": {
       "t": "FCEL",
@@ -27472,8 +27475,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "JMKE": {
       "t": "JMKE",
@@ -27514,7 +27517,7 @@
       "eps": -0.16,
       "pb": 1.1988696,
       "evRevenue": 9.02,
-      "pegTTM": 0.8044,
+      "pegTTM": 0.7665,
       "roa": null,
       "ebitdaMargin": 33.973998,
       "quickRatio": 2.448,
@@ -27531,8 +27534,8 @@
       "low52": 15.96,
       "ma200": 19.778149,
       "change52w": -21.544152,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "IART": {
       "t": "IART",
@@ -27593,8 +27596,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "HYMC": {
       "t": "HYMC",
@@ -27655,8 +27658,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RBCAA": {
       "t": "RBCAA",
@@ -27714,8 +27717,8 @@
       "low52": 66.5,
       "ma200": 84.70395,
       "change52w": 32.693458,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "TTI": {
       "t": "TTI",
@@ -27773,8 +27776,8 @@
       "low52": 4.87,
       "ma200": 8.3188,
       "change52w": -24.511081,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ATEC": {
       "t": "ATEC",
@@ -27835,8 +27838,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BKV": {
       "t": "BKV",
@@ -27894,8 +27897,8 @@
       "low52": 17.355,
       "ma200": 25.8658,
       "change52w": -32.818532,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "COUR": {
       "t": "COUR",
@@ -27956,8 +27959,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GHM": {
       "t": "GHM",
@@ -28015,8 +28018,8 @@
       "low52": 53.88,
       "ma200": 91.73055,
       "change52w": 26.1544,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FMC": {
       "t": "FMC",
@@ -28077,8 +28080,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SAH": {
       "t": "SAH",
@@ -28136,8 +28139,8 @@
       "low52": 54.11,
       "ma200": 73.17445,
       "change52w": -3.3750415,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GOLD": {
       "t": "GOLD",
@@ -28198,8 +28201,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CRVS": {
       "t": "CRVS",
@@ -28260,8 +28263,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "JBIO": {
       "t": "JBIO",
@@ -28322,8 +28325,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "NPKI": {
       "t": "NPKI",
@@ -28381,8 +28384,8 @@
       "low52": 8.115,
       "ma200": 13.4801,
       "change52w": -31.882845999999997,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AESI": {
       "t": "AESI",
@@ -28443,8 +28446,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GLIBK": {
       "t": "GLIBK",
@@ -28505,8 +28508,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "VRTS": {
       "t": "VRTS",
@@ -28564,8 +28567,8 @@
       "low52": 100.26,
       "ma200": 141.73595,
       "change52w": -34.991634,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SENEA": {
       "t": "SENEA",
@@ -28623,8 +28626,8 @@
       "low52": 21.01,
       "ma200": 32.17441,
       "change52w": 39.610386,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OI": {
       "t": "OI",
@@ -28685,8 +28688,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AVBP": {
       "t": "AVBP",
@@ -28747,8 +28750,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SVC": {
       "t": "SVC",
@@ -28809,8 +28812,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALKT": {
       "t": "ALKT",
@@ -28871,8 +28874,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PLPC": {
       "t": "PLPC",
@@ -28930,8 +28933,8 @@
       "low52": 189.67,
       "ma200": 344.74084,
       "change52w": 26.43714,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "EOSE": {
       "t": "EOSE",
@@ -28992,8 +28995,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "MFA": {
       "t": "MFA",
@@ -29055,8 +29058,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ALMS": {
       "t": "ALMS",
@@ -29117,8 +29120,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "UMAC": {
       "t": "UMAC",
@@ -29179,8 +29182,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CIM": {
       "t": "CIM",
@@ -29242,8 +29245,8 @@
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FUN": {
       "t": "FUN",
@@ -29304,8 +29307,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CSQR": {
       "t": "CSQR",
@@ -29366,8 +29369,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "RCAT": {
       "t": "RCAT",
@@ -29428,8 +29431,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "OPY": {
       "t": "OPY",
@@ -29487,8 +29490,8 @@
       "low52": 65.66,
       "ma200": 103.11225,
       "change52w": 23.950839,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "SLDB": {
       "t": "SLDB",
@@ -29549,8 +29552,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BW": {
       "t": "BW",
@@ -29608,8 +29611,8 @@
       "low52": 3.065,
       "ma200": 11.0868,
       "change52w": -39.693356,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "PCT": {
       "t": "PCT",
@@ -29670,8 +29673,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "GERN": {
       "t": "GERN",
@@ -29732,8 +29735,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "FRVO": {
       "t": "FRVO",
@@ -29794,8 +29797,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "BCAX": {
       "t": "BCAX",
@@ -29856,8 +29859,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ABR": {
       "t": "ABR",
@@ -29918,8 +29921,8 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "AVTX": {
       "t": "AVTX",
@@ -29980,14 +29983,14 @@
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "ARI": {
       "t": "ARI",
       "name": "Apollo Commercial Real Estate Finance",
       "price": 2.32,
-      "marketCap": 297452064.0,
+      "marketCap": 298222880.0,
       "cash": 1239480064.0,
       "debt": 371428000.0,
       "cur": "USD",
@@ -30006,7 +30009,7 @@
       "revFwd": null,
       "pegFwd": 1.33,
       "peTTM": 2.8999999,
-      "psTTM": 0.47646227,
+      "psTTM": 0.47769699,
       "evEbitda": null,
       "divYield": 43.1,
       "opMargin": 75.282997,
@@ -30039,8 +30042,8 @@
       "low52": 2.26,
       "ma200": 8.5491,
       "change52w": -76.65996,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "LYCA": {
       "t": "LYCA",
@@ -30098,8 +30101,8 @@
       "low52": 22.19,
       "ma200": 29.523333,
       "change52w": 10.233331,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     },
     "CTY": {
       "t": "CTY",
@@ -30157,8 +30160,8 @@
       "low52": 15.81,
       "ma200": 19.44923,
       "change52w": -13.749998999999999,
-      "priceUpdated": "2026-11-22T03:40:02.384739Z",
-      "fundamentalsUpdated": "2026-11-22T03:40:02.384739Z"
+      "priceUpdated": "2026-11-23T01:48:55.386715Z",
+      "fundamentalsUpdated": "2026-11-23T01:48:55.386715Z"
     }
   }
 }
