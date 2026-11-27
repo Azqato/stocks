@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T03:45:45.834519Z",
+  "updated": "2026-11-27T03:46:23.585313Z",
   "source": "yahoo",
   "part": 8,
   "stocks": {
@@ -28,7 +28,7 @@
       "peTTM": null,
       "psTTM": 1.1191103,
       "evEbitda": 13.95,
-      "divYield": 3.08,
+      "divYield": 3.06,
       "opMargin": 6.896999500000001,
       "roe": -1.7489999999999999,
       "debtToEquity": 1.23335,
@@ -57,13 +57,13 @@
       "analystCount": 18.0,
       "high52": 16.05,
       "low52": 6.17,
-      "ma200": 9.745,
-      "change52w": -58.83471,
+      "ma200": 9.72345,
+      "change52w": -59.23845,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "VYLR": {
       "t": "VYLR",
@@ -83,14 +83,14 @@
       "epsTTM": -243.5153044594463,
       "grossMargin": 49.705002,
       "netMargin": 4.3,
-      "peFwd": 29.331049,
-      "epsFwd": -29.09,
-      "revFwd": -40.65,
+      "peFwd": 29.551767,
+      "epsFwd": -29.62,
+      "revFwd": -40.64,
       "pegFwd": 0.6106,
       "peTTM": 347.35,
       "psTTM": 2.626192,
       "evEbitda": 11.952,
-      "divYield": 0.76,
+      "divYield": 0.75,
       "opMargin": 16.683999999999997,
       "roe": 3.4979999999999998,
       "debtToEquity": 0.30101,
@@ -113,19 +113,19 @@
       "beta": 0.604,
       "shortFloat": null,
       "heldInsiders": 0.22599999999999998,
-      "heldInstitutions": 20.28,
+      "heldInstitutions": 20.347,
       "targetMean": 84.25,
       "analystRating": 1.66667,
       "analystCount": 16.0,
       "high52": 77.39,
       "low52": 65.0,
-      "ma200": 71.90718,
-      "change52w": 0.45415163000000003,
+      "ma200": 71.84625,
+      "change52w": 1.7726302,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ACCV": {
       "t": "ACCV",
@@ -175,19 +175,19 @@
       "beta": null,
       "shortFloat": null,
       "heldInsiders": 90.13099700000001,
-      "heldInstitutions": 26.018,
+      "heldInstitutions": 28.664,
       "targetMean": 18.57143,
       "analystRating": 1.5,
       "analystCount": 7.0,
       "high52": 17.0,
       "low52": 8.795,
-      "ma200": 12.918056,
-      "change52w": -41.15854,
+      "ma200": 12.826216,
+      "change52w": -41.95122,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "XZO": {
       "t": "XZO",
@@ -237,16 +237,16 @@
       "beta": null,
       "shortFloat": 9.92,
       "heldInsiders": 87.728,
-      "heldInstitutions": 9.336001,
+      "heldInstitutions": 9.337,
       "targetMean": 25.25,
       "analystRating": 1.33333,
       "analystCount": 2.0,
       "high52": 24.6,
       "low52": 12.36,
-      "ma200": 15.64315,
-      "change52w": -16.247141000000003,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 15.63525,
+      "change52w": -22.228116,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "YARW": {
       "t": "YARW",
@@ -285,7 +285,7 @@
       "ev": -9408904.0,
       "fcf": null,
       "eps": null,
-      "pb": -1.0195163,
+      "pb": 0.73036844,
       "evRevenue": null,
       "pegTTM": null,
       "roa": null,
@@ -302,14 +302,14 @@
       "analystCount": 4.0,
       "high52": 46.95,
       "low52": 12.385,
-      "ma200": 29.676825,
-      "change52w": -15.851063000000002,
+      "ma200": 29.622725,
+      "change52w": -11.5324676,
       "derived": [
         "revTTM",
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ABTC": {
       "t": "ABTC",
@@ -365,10 +365,10 @@
       "analystCount": 4.0,
       "high52": 66.6,
       "low52": 3.3,
-      "ma200": 11.141375,
-      "change52w": -94.17460600000001,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 11.069875,
+      "change52w": -94.18239,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MNOV": {
       "t": "MNOV",
@@ -424,13 +424,13 @@
       "analystCount": 4.0,
       "high52": 3.9,
       "low52": 1.22,
-      "ma200": 1.49015,
-      "change52w": 9.6551776,
+      "ma200": 1.4896,
+      "change52w": 4.827583,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "HUCK": {
       "t": "HUCK",
@@ -468,7 +468,7 @@
       "netIncome": -42145000.0,
       "ev": 264208560.0,
       "fcf": 10888000.0,
-      "eps": -1.02,
+      "eps": -0.97,
       "pb": -0.7609241,
       "evRevenue": 0.838,
       "pegTTM": null,
@@ -486,13 +486,13 @@
       "analystCount": 2.0,
       "high52": 11.88,
       "low52": 1.84,
-      "ma200": 3.520325,
-      "change52w": -74.758136,
+      "ma200": 3.508375,
+      "change52w": -73.513985,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "HSDT": {
       "t": "HSDT",
@@ -548,13 +548,13 @@
       "analystCount": 2.0,
       "high52": 4.36,
       "low52": 1.185,
-      "ma200": 2.016625,
-      "change52w": -61.59601,
+      "ma200": 2.014725,
+      "change52w": -61.68675,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "FCBM": {
       "t": "FCBM",
@@ -604,19 +604,19 @@
       "beta": null,
       "shortFloat": 0.8699999999999999,
       "heldInsiders": 19.444,
-      "heldInstitutions": 31.555,
+      "heldInstitutions": 31.557000000000002,
       "targetMean": 15.0,
       "analystRating": null,
       "analystCount": 3.0,
       "high52": 14.0,
       "low52": 12.17,
-      "ma200": 12.805856,
-      "change52w": 3.8888930000000004,
+      "ma200": 12.808572,
+      "change52w": 4.0476203,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "CEPL": {
       "t": "CEPL",
@@ -638,7 +638,7 @@
       "netMargin": -1.361,
       "peFwd": -11.799999,
       "epsFwd": -170.77,
-      "revFwd": -8.870000000000001,
+      "revFwd": -5.3200003,
       "pegFwd": null,
       "peTTM": null,
       "psTTM": 0.8042599,
@@ -672,13 +672,13 @@
       "analystCount": 2.0,
       "high52": 12.33,
       "low52": 2.0,
-      "ma200": 5.6644444,
-      "change52w": -81.397307,
+      "ma200": 5.6314,
+      "change52w": -80.13468,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "OIG": {
       "t": "OIG",
@@ -734,10 +734,10 @@
       "analystCount": 5.0,
       "high52": 12.06,
       "low52": 7.78,
-      "ma200": 9.668125,
-      "change52w": -11.320752,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 9.672653,
+      "change52w": -15.180105,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "AIAI": {
       "t": "AIAI",
@@ -793,10 +793,10 @@
       "analystCount": null,
       "high52": 19.57,
       "low52": 0.35,
-      "ma200": 6.6857038,
-      "change52w": -97.34924000000001,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 6.6400733,
+      "change52w": -96.819085,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "QMLS": {
       "t": "QMLS",
@@ -834,7 +834,7 @@
       "netIncome": -91822800.0,
       "ev": 296939616.0,
       "fcf": -161098832.0,
-      "eps": -1.93,
+      "eps": -2.02,
       "pb": 2.9249616,
       "evRevenue": 10.355,
       "pegTTM": null,
@@ -848,17 +848,17 @@
       "heldInsiders": 46.066,
       "heldInstitutions": 16.028999,
       "targetMean": 10.33333,
-      "analystRating": 1.0,
+      "analystRating": null,
       "analystCount": 3.0,
       "high52": 38.0,
       "low52": 1.77,
-      "ma200": 5.613118,
-      "change52w": -90.76062,
+      "ma200": 5.5737233,
+      "change52w": -91.08726,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NAKA": {
       "t": "NAKA",
@@ -879,7 +879,7 @@
       "grossMargin": -43.631,
       "netMargin": 0.0,
       "peFwd": null,
-      "epsFwd": 15.959999999999999,
+      "epsFwd": -64.9,
       "revFwd": 2208.77,
       "pegFwd": null,
       "peTTM": 0.13819619,
@@ -914,13 +914,13 @@
       "analystCount": 3.0,
       "high52": 23.2,
       "low52": 2.941,
-      "ma200": 7.154675,
-      "change52w": -83.28313,
+      "ma200": 7.1147,
+      "change52w": -83.375,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ETRA": {
       "t": "ETRA",
@@ -970,16 +970,16 @@
       "beta": null,
       "shortFloat": null,
       "heldInsiders": 5.2849997,
-      "heldInstitutions": 94.227,
+      "heldInstitutions": 95.211,
       "targetMean": 33.2,
       "analystRating": 1.16667,
       "analystCount": 5.0,
       "high52": 15.5,
       "low52": 6.87,
-      "ma200": 9.391875,
-      "change52w": -36.5283,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 9.376735,
+      "change52w": -34.716982,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "FGC": {
       "t": "FGC",
@@ -1035,13 +1035,13 @@
       "analystCount": null,
       "high52": 16.95,
       "low52": 4.175,
-      "ma200": 6.613725,
-      "change52w": -56.52778000000001,
+      "ma200": 6.600375,
+      "change52w": -61.132073,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ADRX": {
       "t": "ADRX",
@@ -1097,13 +1097,13 @@
       "analystCount": 4.0,
       "high52": 23.21,
       "low52": 12.5,
-      "ma200": 16.551163,
-      "change52w": -28.992247999999996,
+      "ma200": 16.487955,
+      "change52w": -28.837210000000002,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ASBH": {
       "t": "ASBH",
@@ -1130,7 +1130,7 @@
       "peTTM": null,
       "psTTM": 4.1671667,
       "evEbitda": null,
-      "divYield": 1.36,
+      "divYield": 1.38,
       "opMargin": 27.93,
       "roe": null,
       "debtToEquity": null,
@@ -1159,10 +1159,10 @@
       "analystCount": 4.0,
       "high52": 22.51,
       "low52": 16.54,
-      "ma200": 18.9068,
-      "change52w": 16.470587000000002,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 18.919216,
+      "change52w": 14.941180000000001,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "GRML": {
       "t": "GRML",
@@ -1217,11 +1217,11 @@
       "analystRating": null,
       "analystCount": 1.0,
       "high52": 37.0,
-      "low52": 2.751,
-      "ma200": 12.8261,
-      "change52w": -86.355555,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "low52": 2.75,
+      "ma200": 12.78325,
+      "change52w": -87.03157999999999,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "XTND": {
       "t": "XTND",
@@ -1277,13 +1277,13 @@
       "analystCount": 2.0,
       "high52": 7.15,
       "low52": 0.8,
-      "ma200": 2.678421,
-      "change52w": -76.898223,
+      "ma200": 2.6562068,
+      "change52w": -77.544427,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "BSEM": {
       "t": "BSEM",
@@ -1333,16 +1333,16 @@
       "beta": 0.688,
       "shortFloat": null,
       "heldInsiders": 30.470000000000002,
-      "heldInstitutions": 16.504999,
+      "heldInstitutions": 16.506,
       "targetMean": 7.0,
       "analystRating": null,
       "analystCount": 1.0,
       "high52": 8.4,
       "low52": 0.53,
-      "ma200": 3.766775,
-      "change52w": -86.23188999999999,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 3.738105,
+      "change52w": -88.76543,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "AMOD": {
       "t": "AMOD",
@@ -1380,7 +1380,7 @@
       "netIncome": -9494974.0,
       "ev": 48438392.0,
       "fcf": -6363874.0,
-      "eps": -1.41,
+      "eps": -1.5,
       "pb": 0.14678062,
       "evRevenue": 6785.989,
       "pegTTM": null,
@@ -1398,13 +1398,13 @@
       "analystCount": 1.0,
       "high52": 48.4,
       "low52": 0.61,
-      "ma200": 7.58346,
-      "change52w": -97.47004,
+      "ma200": 7.461965,
+      "change52w": -97.86222599999999,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "COHN": {
       "t": "COHN",
@@ -1428,10 +1428,10 @@
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": 0.06,
-      "peTTM": 4.054054,
+      "peTTM": 4.072398,
       "psTTM": 0.11784953,
       "evEbitda": null,
-      "divYield": 11.19,
+      "divYield": 11.11,
       "opMargin": 17.407,
       "roe": 39.382,
       "debtToEquity": 5.703200000000001,
@@ -1442,7 +1442,7 @@
       "netIncome": 19867000.0,
       "ev": -63398060.0,
       "fcf": null,
-      "eps": 2.22,
+      "eps": 2.21,
       "pb": 0.34969112,
       "evRevenue": -0.247,
       "pegTTM": null,
@@ -1450,7 +1450,7 @@
       "ebitdaMargin": null,
       "quickRatio": 1.055,
       "payoutRatio": 45.25,
-      "divYield5yAvg": 8.54,
+      "divYield5yAvg": 8.55,
       "beta": 0.981,
       "shortFloat": 0.47999998000000005,
       "heldInsiders": 19.485001,
@@ -1460,10 +1460,10 @@
       "analystCount": 1.0,
       "high52": 32.6,
       "low52": 8.3,
-      "ma200": 13.19025,
-      "change52w": -39.959705,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 13.14965,
+      "change52w": -41.40625,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "XHLD": {
       "t": "XHLD",
@@ -1519,13 +1519,13 @@
       "analystCount": null,
       "high52": 15.427,
       "low52": 0.38,
-      "ma200": 2.594445,
-      "change52w": -70.140845,
+      "ma200": 2.585445,
+      "change52w": -70.83334,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "CNXU": {
       "t": "CNXU",
@@ -1581,13 +1581,13 @@
       "analystCount": 1.0,
       "high52": 18.79,
       "low52": 1.45,
-      "ma200": 7.1728463,
-      "change52w": -88.52333399999999,
+      "ma200": 7.129924,
+      "change52w": -88.14077999999999,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "LSBK": {
       "t": "LSBK",
@@ -1611,10 +1611,10 @@
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": 4.33,
-      "peTTM": 15.961206,
+      "peTTM": 16.241228,
       "psTTM": 4.7785773,
       "evEbitda": null,
-      "divYield": 1.97,
+      "divYield": 1.94,
       "opMargin": 34.983003000000004,
       "roe": 5.94,
       "debtToEquity": null,
@@ -1625,7 +1625,7 @@
       "netIncome": 8343000.0,
       "ev": 76079840.0,
       "fcf": null,
-      "eps": 1.16,
+      "eps": 1.14,
       "pb": 0.9527607,
       "evRevenue": 2.544,
       "pegTTM": null,
@@ -1633,7 +1633,7 @@
       "ebitdaMargin": null,
       "quickRatio": null,
       "payoutRatio": 31.580000000000002,
-      "divYield5yAvg": 3.01,
+      "divYield5yAvg": 3.0,
       "beta": 0.298,
       "shortFloat": 0.49,
       "heldInsiders": 16.146,
@@ -1642,11 +1642,11 @@
       "analystRating": null,
       "analystCount": null,
       "high52": 19.34,
-      "low52": 14.21,
-      "ma200": 16.8063,
-      "change52w": 27.494764,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "low52": 14.27,
+      "ma200": 16.82145,
+      "change52w": 28.879607,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MGLD": {
       "t": "MGLD",
@@ -1702,13 +1702,13 @@
       "analystCount": null,
       "high52": 2.12,
       "low52": 0.836,
-      "ma200": 1.28751,
+      "ma200": 1.29186,
       "change52w": 93.13725000000001,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ASPSW": {
       "t": "ASPSW",
@@ -1766,8 +1766,8 @@
       "low52": 0.2,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "RDIB": {
       "t": "RDIB",
@@ -1823,13 +1823,13 @@
       "analystCount": null,
       "high52": 24.0,
       "low52": 8.0,
-      "ma200": 10.828396,
+      "ma200": 10.821621,
       "change52w": -11.900824,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ATHR": {
       "t": "ATHR",
@@ -1885,13 +1885,13 @@
       "analystCount": 1.0,
       "high52": 6.86,
       "low52": 0.858,
-      "ma200": 3.346585,
-      "change52w": -82.11243999999999,
+      "ma200": 3.324635,
+      "change52w": -81.18812,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "AIFA": {
       "t": "AIFA",
@@ -1947,13 +1947,13 @@
       "analystCount": null,
       "high52": 8.93,
       "low52": 1.506,
-      "ma200": 2.82382,
-      "change52w": 27.499997999999998,
+      "ma200": 2.83,
+      "change52w": 16.788316000000002,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "DLPN": {
       "t": "DLPN",
@@ -2005,17 +2005,17 @@
       "heldInsiders": 29.064,
       "heldInstitutions": 3.447,
       "targetMean": 3.0,
-      "analystRating": 2.0,
+      "analystRating": null,
       "analystCount": 1.0,
       "high52": 1.87,
       "low52": 0.83,
-      "ma200": 1.2313,
-      "change52w": -46.62577,
+      "ma200": 1.2279,
+      "change52w": -46.296299000000005,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NTRP": {
       "t": "NTRP",
@@ -2067,17 +2067,17 @@
       "heldInsiders": 42.536,
       "heldInstitutions": 5.094,
       "targetMean": 7.0,
-      "analystRating": null,
+      "analystRating": 1.0,
       "analystCount": 3.0,
       "high52": 4.71,
       "low52": 0.6427,
-      "ma200": 2.0873995,
-      "change52w": -79.531074,
+      "ma200": 2.0761094,
+      "change52w": -80.593485,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ASPSZ": {
       "t": "ASPSZ",
@@ -2135,8 +2135,8 @@
       "low52": 0.1403,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "RMCO": {
       "t": "RMCO",
@@ -2163,7 +2163,7 @@
       "peTTM": null,
       "psTTM": 4.6484494,
       "evEbitda": -143.116,
-      "divYield": 0.5,
+      "divYield": 0.48,
       "opMargin": -4.438000000000001,
       "roe": -4.7319997,
       "debtToEquity": 0.03388,
@@ -2192,13 +2192,13 @@
       "analystCount": null,
       "high52": 5.0,
       "low52": 1.74,
-      "ma200": 2.758815,
-      "change52w": -11.6228044,
+      "ma200": 2.749865,
+      "change52w": -5.8256686,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NOMA": {
       "t": "NOMA",
@@ -2236,7 +2236,7 @@
       "netIncome": -4193029.0,
       "ev": 20384112.0,
       "fcf": -10070669.0,
-      "eps": -0.31,
+      "eps": -0.29,
       "pb": 1.5274463,
       "evRevenue": 10.398,
       "pegTTM": null,
@@ -2254,13 +2254,13 @@
       "analystCount": null,
       "high52": 8.95,
       "low52": 0.802,
-      "ma200": 2.99718,
-      "change52w": -84.993994,
+      "ma200": 2.98078,
+      "change52w": -85.421413,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "JVA": {
       "t": "JVA",
@@ -2287,7 +2287,7 @@
       "peTTM": 6.060241,
       "psTTM": 0.29563946,
       "evEbitda": 4.482,
-      "divYield": 1.57,
+      "divYield": 1.59,
       "opMargin": 5.9830000000000005,
       "roe": 16.320999,
       "debtToEquity": 0.13236,
@@ -2316,13 +2316,13 @@
       "analystCount": null,
       "high52": 5.24,
       "low52": 2.93,
-      "ma200": 4.0102,
-      "change52w": 38.14714,
+      "ma200": 4.0201,
+      "change52w": 35.215056,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "LOCL": {
       "t": "LOCL",
@@ -2360,7 +2360,7 @@
       "netIncome": -57820000.0,
       "ev": 563865344.0,
       "fcf": null,
-      "eps": -1.65,
+      "eps": -1.61,
       "pb": -0.084029235,
       "evRevenue": 10.839,
       "pegTTM": null,
@@ -2378,13 +2378,13 @@
       "analystCount": null,
       "high52": 3.13,
       "low52": 0.6,
-      "ma200": 1.28737,
-      "change52w": -69.380164,
+      "ma200": 1.281565,
+      "change52w": -69.02041,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "SMXT": {
       "t": "SMXT",
@@ -2440,13 +2440,13 @@
       "analystCount": null,
       "high52": 15.24,
       "low52": 1.82,
-      "ma200": 5.3991,
-      "change52w": -62.903225,
+      "ma200": 5.37751,
+      "change52w": -56.800145,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "GIFT": {
       "t": "GIFT",
@@ -2502,13 +2502,13 @@
       "analystCount": 1.0,
       "high52": 1.29,
       "low52": 0.39,
-      "ma200": 0.8432,
-      "change52w": -54.128443999999995,
+      "ma200": 0.840645,
+      "change52w": -57.747746,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "BCG": {
       "t": "BCG",
@@ -2562,12 +2562,12 @@
       "targetMean": 4.48,
       "analystRating": 0.0,
       "analystCount": 1.0,
-      "high52": 3.44,
+      "high52": 3.25,
       "low52": 0.95,
-      "ma200": 1.604795,
-      "change52w": -46.822745,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 1.60057,
+      "change52w": -44.107144999999996,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "REFR": {
       "t": "REFR",
@@ -2621,15 +2621,15 @@
       "targetMean": null,
       "analystRating": null,
       "analystCount": null,
-      "high52": 2.01,
+      "high52": 1.97,
       "low52": 0.2257,
-      "ma200": 0.6709,
-      "change52w": -86.91099,
+      "ma200": 0.66695,
+      "change52w": -86.77249,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "KFFB": {
       "t": "KFFB",
@@ -2656,7 +2656,7 @@
       "peTTM": 17.419355,
       "psTTM": 3.600022,
       "evEbitda": null,
-      "divYield": 3.57,
+      "divYield": 3.7,
       "opMargin": 29.126,
       "roe": 4.981,
       "debtToEquity": null,
@@ -2685,10 +2685,10 @@
       "analystCount": null,
       "high52": 6.46,
       "low52": 4.05,
-      "ma200": 5.07955,
-      "change52w": 30.232560000000003,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 5.08315,
+      "change52w": 28.571427,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MSGM": {
       "t": "MSGM",
@@ -2712,7 +2712,7 @@
       "epsFwd": null,
       "revFwd": null,
       "pegFwd": 0.11,
-      "peTTM": 12.444444,
+      "peTTM": 11.199999,
       "psTTM": 1.0147494,
       "evEbitda": 3.131,
       "divYield": 0.0,
@@ -2726,7 +2726,7 @@
       "netIncome": 1884991.0,
       "ev": 13252925.0,
       "fcf": 2957657.0,
-      "eps": 0.27,
+      "eps": 0.3,
       "pb": 2.3398328,
       "evRevenue": 0.872,
       "pegTTM": 0.131,
@@ -2740,14 +2740,14 @@
       "heldInsiders": 45.312000000000005,
       "heldInstitutions": 19.149,
       "targetMean": 9.0,
-      "analystRating": null,
+      "analystRating": 0.0,
       "analystCount": 1.0,
       "high52": 5.65,
       "low52": 2.55,
-      "ma200": 4.292675,
-      "change52w": 29.32862,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 4.291975,
+      "change52w": 20.430112,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "TVGN": {
       "t": "TVGN",
@@ -2801,15 +2801,15 @@
       "targetMean": null,
       "analystRating": null,
       "analystCount": null,
-      "high52": 24.9,
+      "high52": 24.85,
       "low52": 3.636,
-      "ma200": 7.3662,
-      "change52w": -74.42827,
+      "ma200": 7.337,
+      "change52w": -69.79592,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "AIRI": {
       "t": "AIRI",
@@ -2865,13 +2865,13 @@
       "analystCount": null,
       "high52": 3.95,
       "low52": 1.91,
-      "ma200": 2.8699,
-      "change52w": -27.457625000000004,
+      "ma200": 2.86435,
+      "change52w": -25.75251,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NYC": {
       "t": "NYC",
@@ -2927,13 +2927,13 @@
       "analystCount": null,
       "high52": 13.97,
       "low52": 4.5,
-      "ma200": 7.6345,
-      "change52w": -36.400002,
+      "ma200": 7.61545,
+      "change52w": -37.341774,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ZEO": {
       "t": "ZEO",
@@ -2989,13 +2989,13 @@
       "analystCount": null,
       "high52": 1.58,
       "low52": 0.187,
-      "ma200": 0.61173,
-      "change52w": -81.5331,
+      "ma200": 0.607745,
+      "change52w": -83.8,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "CISO": {
       "t": "CISO",
@@ -3033,7 +3033,7 @@
       "netIncome": -9351887.0,
       "ev": 9230703.0,
       "fcf": -353568.0,
-      "eps": -0.22,
+      "eps": -0.21,
       "pb": 0.5547619,
       "evRevenue": 0.386,
       "pegTTM": null,
@@ -3051,13 +3051,13 @@
       "analystCount": null,
       "high52": 0.603,
       "low52": 0.101,
-      "ma200": 0.275385,
-      "change52w": -78.28572,
+      "ma200": 0.274155,
+      "change52w": -78.00752,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ELWT": {
       "t": "ELWT",
@@ -3113,13 +3113,13 @@
       "analystCount": 1.0,
       "high52": 9.72,
       "low52": 2.601,
-      "ma200": 6.60586,
-      "change52w": -51.60584,
+      "ma200": 6.59396,
+      "change52w": -52.78195,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "SNTI": {
       "t": "SNTI",
@@ -3157,7 +3157,7 @@
       "netIncome": -43024000.0,
       "ev": 19152446.0,
       "fcf": -18354750.0,
-      "eps": -40.67,
+      "eps": -46.2,
       "pb": -0.12283806,
       "evRevenue": 258.817,
       "pegTTM": null,
@@ -3175,13 +3175,13 @@
       "analystCount": 2.0,
       "high52": 95.04,
       "low52": 1.1868,
-      "ma200": 21.424965,
-      "change52w": -97.96065,
+      "ma200": 21.28552,
+      "change52w": -98.3014,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NXB": {
       "t": "NXB",
@@ -3203,7 +3203,7 @@
       "netMargin": -7.1419999999999995,
       "peFwd": 26.0,
       "epsFwd": 171.42999,
-      "revFwd": 41.619998,
+      "revFwd": 41.410000000000004,
       "pegFwd": 0.15166541163538538,
       "peTTM": null,
       "psTTM": 0.18492481,
@@ -3230,20 +3230,20 @@
       "divYield5yAvg": null,
       "beta": null,
       "shortFloat": 0.43,
-      "heldInsiders": 63.400999999999996,
+      "heldInsiders": 63.5,
       "heldInstitutions": 1.6619999,
       "targetMean": 6.25,
       "analystRating": 1.0,
       "analystCount": 2.0,
       "high52": 3.84,
       "low52": 1.0,
-      "ma200": 2.20731,
-      "change52w": -61.424330000000005,
+      "ma200": 2.20101,
+      "change52w": -62.643677,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ETS": {
       "t": "ETS",
@@ -3299,13 +3299,13 @@
       "analystCount": null,
       "high52": 2.75,
       "low52": 0.39,
-      "ma200": 0.9874,
-      "change52w": 209.09089999999998,
+      "ma200": 0.993675,
+      "change52w": 211.94296000000003,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "TPST": {
       "t": "TPST",
@@ -3361,13 +3361,13 @@
       "analystCount": 1.0,
       "high52": 3.499,
       "low52": 0.223,
-      "ma200": 1.310315,
-      "change52w": -91.30841,
+      "ma200": 1.29957,
+      "change52w": -91.53125,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "BCDA": {
       "t": "BCDA",
@@ -3417,19 +3417,19 @@
       "beta": 0.654,
       "shortFloat": 4.2600001999999995,
       "heldInsiders": 18.823,
-      "heldInstitutions": 15.439998999999998,
+      "heldInstitutions": 15.437001,
       "targetMean": 15.5,
       "analystRating": 1.0,
       "analystCount": 2.0,
       "high52": 1.8,
       "low52": 0.66,
-      "ma200": 1.03925,
-      "change52w": -51.048950000000005,
+      "ma200": 1.0365,
+      "change52w": -51.724136,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "FEMY": {
       "t": "FEMY",
@@ -3485,13 +3485,13 @@
       "analystCount": 2.0,
       "high52": 20.6,
       "low52": 1.07,
-      "ma200": 5.260275,
-      "change52w": -93.895054,
+      "ma200": 5.215025,
+      "change52w": -94.20792,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "BTOC": {
       "t": "BTOC",
@@ -3547,13 +3547,13 @@
       "analystCount": null,
       "high52": 11.488,
       "low52": 1.51,
-      "ma200": 4.236725,
-      "change52w": -83.04181,
+      "ma200": 4.209475,
+      "change52w": -84.72896,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MSAI": {
       "t": "MSAI",
@@ -3609,13 +3609,13 @@
       "analystCount": 1.0,
       "high52": 27.2,
       "low52": 2.08,
-      "ma200": 6.222735,
-      "change52w": -90.546876,
+      "ma200": 6.172035,
+      "change52w": -90.40562,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "VHUB": {
       "t": "VHUB",
@@ -3670,14 +3670,14 @@
       "analystRating": null,
       "analystCount": null,
       "high52": 40.3,
-      "low52": 0.1505,
-      "ma200": 0.9585,
-      "change52w": -97.35203,
+      "low52": 0.15,
+      "ma200": 0.94185,
+      "change52w": -97.0405,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NXPL": {
       "t": "NXPL",
@@ -3733,13 +3733,13 @@
       "analystCount": 1.0,
       "high52": 9.94,
       "low52": 3.4,
-      "ma200": 6.9045,
-      "change52w": 13.064516000000001,
+      "ma200": 6.9114,
+      "change52w": 16.33333,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MAMO": {
       "t": "MAMO",
@@ -3795,10 +3795,10 @@
       "analystCount": null,
       "high52": 5.59,
       "low52": 0.66,
-      "ma200": 0.986985,
-      "change52w": -82.173914,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 0.985895,
+      "change52w": -81.91781,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "FATN": {
       "t": "FATN",
@@ -3854,10 +3854,10 @@
       "analystCount": 4.0,
       "high52": 8.607,
       "low52": 1.31,
-      "ma200": 4.383125,
-      "change52w": 26.551723,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "ma200": 4.391825,
+      "change52w": 30.035339999999998,
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ZSTK": {
       "t": "ZSTK",
@@ -3913,13 +3913,13 @@
       "analystCount": 1.0,
       "high52": 15.041,
       "low52": 1.32,
-      "ma200": 4.684385,
-      "change52w": -70.9375,
+      "ma200": 4.644785,
+      "change52w": -71.411264,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ATCH": {
       "t": "ATCH",
@@ -3975,13 +3975,13 @@
       "analystCount": 2.0,
       "high52": 0.376,
       "low52": 0.047,
-      "ma200": 0.198165,
-      "change52w": -78.45118,
+      "ma200": 0.19727,
+      "change52w": -80.32258,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "MWYN": {
       "t": "MWYN",
@@ -4037,13 +4037,13 @@
       "analystCount": null,
       "high52": 2.8,
       "low52": 0.454,
-      "ma200": 1.019345,
-      "change52w": 38.750005,
+      "ma200": 1.02281,
+      "change52w": 77.70035,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "SCNX": {
       "t": "SCNX",
@@ -4099,13 +4099,13 @@
       "analystCount": 1.0,
       "high52": 18.75,
       "low52": 1.74,
-      "ma200": 8.39964,
-      "change52w": -86.08108,
+      "ma200": 8.35164,
+      "change52w": -86.644405,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "RAIN": {
       "t": "RAIN",
@@ -4161,13 +4161,13 @@
       "analystCount": null,
       "high52": 8.52,
       "low52": 0.46,
-      "ma200": 1.660965,
-      "change52w": -87.598944,
+      "ma200": 1.652885,
+      "change52w": -89.25926,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "INTZ": {
       "t": "INTZ",
@@ -4206,7 +4206,7 @@
       "ev": 12888856.0,
       "fcf": -3774500.0,
       "eps": -0.55,
-      "pb": 2.3584907,
+      "pb": 2.5252526,
       "evRevenue": 1.982,
       "pegTTM": null,
       "roa": -55.96600000000001,
@@ -4223,13 +4223,13 @@
       "analystCount": 1.0,
       "high52": 1.56,
       "low52": 0.24,
-      "ma200": 0.77975,
-      "change52w": -80.43477999999999,
+      "ma200": 0.776,
+      "change52w": -82.39437,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ADTI": {
       "t": "ADTI",
@@ -4285,17 +4285,17 @@
       "analystCount": null,
       "high52": 3.22,
       "low52": 0.01,
-      "ma200": 1.917006,
+      "ma200": 1.909256,
       "change52w": -99.68943999999999,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "SQFTW": {
       "t": "SQFTW",
       "name": "PRESIDIO PROPERTY TRST -CW27",
       "price": 0.0072,
       "marketCap": null,
-      "cash": 2501703.0,
+      "cash": 1201703.0,
       "debt": 61859384.0,
       "cur": "USD",
       "prevClose": 0.007,
@@ -4319,23 +4319,23 @@
       "opMargin": -2.313,
       "roe": -29.825002,
       "debtToEquity": 2.99942,
-      "currentRatio": 0.656,
+      "currentRatio": 0.936,
       "fcfYield": null,
       "revenue": 14682590.0,
       "ebitda": 3108961.0,
       "netIncome": -10156910.0,
       "ev": null,
-      "fcf": 7682597.0,
+      "fcf": 4131903.0,
       "eps": -0.631,
       "pb": 0.00070305634,
       "evRevenue": null,
       "pegTTM": null,
       "roa": -0.198,
       "ebitdaMargin": 21.174,
-      "quickRatio": 0.656,
+      "quickRatio": 0.484,
       "payoutRatio": null,
       "divYield5yAvg": null,
-      "beta": null,
+      "beta": 1.939,
       "shortFloat": null,
       "heldInsiders": null,
       "heldInstitutions": null,
@@ -4346,16 +4346,16 @@
       "low52": 0.0071,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ADGM": {
       "t": "ADGM",
       "name": "Adagio Medical Holdings",
       "price": 1.25,
       "marketCap": 1229260.0,
-      "cash": 7740000.0,
-      "debt": 26001000.0,
+      "cash": 3095000.0,
+      "debt": 3122000.0,
       "cur": "USD",
       "prevClose": 1.4,
       "changePct": -10.71428571428571,
@@ -4373,43 +4373,43 @@
       "pegFwd": -0.0016523815171127175,
       "peTTM": null,
       "psTTM": null,
-      "evEbitda": -1.025,
+      "evEbitda": -0.071,
       "divYield": 0.0,
       "opMargin": 0.0,
-      "roe": -657.763,
-      "debtToEquity": null,
-      "currentRatio": 1.414,
-      "fcfYield": -642.8461025332314,
+      "roe": 9.6420005,
+      "debtToEquity": 0.17001999999999998,
+      "currentRatio": 0.896,
+      "fcfYield": -1068.956119942079,
       "revenue": null,
-      "ebitda": -18984000.0,
-      "netIncome": -27136000.0,
-      "ev": 19452960.0,
-      "fcf": -7902250.0,
-      "eps": -19.83,
+      "ebitda": -17631000.0,
+      "netIncome": 822000.0,
+      "ev": 1256292.0,
+      "fcf": -13140250.0,
+      "eps": -17.71,
       "pb": 0.07461795,
       "evRevenue": null,
       "pegTTM": null,
-      "roa": -35.52,
+      "roa": -37.604,
       "ebitdaMargin": 0.0,
-      "quickRatio": 1.024,
+      "quickRatio": 0.401,
       "payoutRatio": null,
       "divYield5yAvg": null,
-      "beta": 0.072,
-      "shortFloat": 0.8999999999999999,
+      "beta": null,
+      "shortFloat": 3.47,
       "heldInsiders": null,
       "heldInstitutions": null,
       "targetMean": 120.00012,
       "analystRating": 1.0,
       "analystCount": 1.0,
       "high52": 50.7,
-      "low52": 1.221,
-      "ma200": 20.20245,
-      "change52w": -94.44444,
+      "low52": 1.22,
+      "ma200": 20.0572,
+      "change52w": -94.804657,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ARAI": {
       "t": "ARAI",
@@ -4465,13 +4465,13 @@
       "analystCount": 1.0,
       "high52": 198.24,
       "low52": 0.92,
-      "ma200": 23.79552,
-      "change52w": -99.245876,
+      "ma200": 23.498144,
+      "change52w": -99.226564,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "SBT": {
       "t": "SBT",
@@ -4529,8 +4529,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "RLMT": {
       "t": "RLMT",
@@ -4588,8 +4588,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "ARAV": {
       "t": "ARAV",
@@ -4647,8 +4647,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "BTCSP": {
       "t": "BTCSP",
@@ -4706,8 +4706,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "NOVS": {
       "t": "NOVS",
@@ -4765,8 +4765,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "HYZN": {
       "t": "HYZN",
@@ -4824,8 +4824,8 @@
       "low52": null,
       "ma200": null,
       "change52w": null,
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     },
     "INAB": {
       "t": "INAB",
@@ -4861,7 +4861,7 @@
       "revenue": null,
       "ebitda": -18602000.0,
       "netIncome": -19405000.0,
-      "ev": -2749299.0,
+      "ev": -2755784.0,
       "fcf": -7931875.0,
       "eps": -1.0,
       "pb": 0.5447844,
@@ -4881,13 +4881,13 @@
       "analystCount": 3.0,
       "high52": 2.73,
       "low52": 0.724,
-      "ma200": 1.3438,
-      "change52w": -61.64178999999999,
+      "ma200": 1.338165,
+      "change52w": -60.45455,
       "derived": [
         "epsTTM"
       ],
-      "priceUpdated": "2026-11-26T03:45:45.834519Z",
-      "fundamentalsUpdated": "2026-11-26T03:45:45.834519Z"
+      "priceUpdated": "2026-11-27T03:46:23.585313Z",
+      "fundamentalsUpdated": "2026-11-27T03:46:23.585313Z"
     }
   }
 }
